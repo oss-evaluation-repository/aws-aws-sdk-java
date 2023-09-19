@@ -72,7 +72,7 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
     private String previousLineItemId;
     /**
      * <p>
-     * The ID of the previous order item.
+     * The ID of the previous order.
      * </p>
      */
     private String previousOrderId;
@@ -408,11 +408,11 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the previous order item.
+     * The ID of the previous order.
      * </p>
      * 
      * @param previousOrderId
-     *        The ID of the previous order item.
+     *        The ID of the previous order.
      */
 
     public void setPreviousOrderId(String previousOrderId) {
@@ -421,10 +421,10 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the previous order item.
+     * The ID of the previous order.
      * </p>
      * 
-     * @return The ID of the previous order item.
+     * @return The ID of the previous order.
      */
 
     public String getPreviousOrderId() {
@@ -433,11 +433,11 @@ public class LineItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the previous order item.
+     * The ID of the previous order.
      * </p>
      * 
      * @param previousOrderId
-     *        The ID of the previous order item.
+     *        The ID of the previous order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

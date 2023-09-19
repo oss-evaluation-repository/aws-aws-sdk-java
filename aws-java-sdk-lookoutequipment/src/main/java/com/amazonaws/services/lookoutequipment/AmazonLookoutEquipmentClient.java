@@ -44,6 +44,7 @@ import com.amazonaws.services.lookoutequipment.AmazonLookoutEquipmentClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lookoutequipment.model.*;
+
 import com.amazonaws.services.lookoutequipment.model.transform.*;
 
 /**

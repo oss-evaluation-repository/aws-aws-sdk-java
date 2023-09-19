@@ -45,6 +45,7 @@ import com.amazonaws.services.lexmodelsv2.waiters.AmazonLexModelsV2Waiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lexmodelsv2.model.*;
+
 import com.amazonaws.services.lexmodelsv2.model.transform.*;
 
 /**

@@ -44,6 +44,7 @@ import com.amazonaws.services.wellarchitected.AWSWellArchitectedClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.wellarchitected.model.*;
+
 import com.amazonaws.services.wellarchitected.model.transform.*;
 
 /**

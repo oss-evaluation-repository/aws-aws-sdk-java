@@ -44,6 +44,7 @@ import com.amazonaws.services.iotfleetwise.AWSIoTFleetWiseClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotfleetwise.model.*;
+
 import com.amazonaws.services.iotfleetwise.model.transform.*;
 
 /**

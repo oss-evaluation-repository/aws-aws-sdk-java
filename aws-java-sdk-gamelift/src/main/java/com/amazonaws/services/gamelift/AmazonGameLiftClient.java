@@ -44,6 +44,7 @@ import com.amazonaws.services.gamelift.AmazonGameLiftClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.gamelift.model.*;
+
 import com.amazonaws.services.gamelift.model.transform.*;
 
 /**

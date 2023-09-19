@@ -44,6 +44,7 @@ import com.amazonaws.services.opensearchserverless.AWSOpenSearchServerlessClient
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.opensearchserverless.model.*;
+
 import com.amazonaws.services.opensearchserverless.model.transform.*;
 
 /**

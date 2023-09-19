@@ -107,6 +107,11 @@ public class BatchTransformInputJsonUnmarshaller implements Unmarshaller<BatchTr
                     context.nextToken();
                     batchTransformInput.setEndTimeOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExcludeFeaturesAttribute", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    batchTransformInput.setExcludeFeaturesAttribute(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (token == FIELD_NAME && !knownMember) {
                     context.nextToken();
                     com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);

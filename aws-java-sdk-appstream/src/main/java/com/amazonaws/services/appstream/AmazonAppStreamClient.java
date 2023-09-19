@@ -45,6 +45,7 @@ import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.appstream.model.*;
+
 import com.amazonaws.services.appstream.model.transform.*;
 
 /**

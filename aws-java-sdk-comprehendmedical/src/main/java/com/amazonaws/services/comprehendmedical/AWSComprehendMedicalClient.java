@@ -44,6 +44,7 @@ import com.amazonaws.services.comprehendmedical.AWSComprehendMedicalClientBuilde
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.comprehendmedical.model.*;
+
 import com.amazonaws.services.comprehendmedical.model.transform.*;
 
 /**

@@ -44,6 +44,7 @@ import com.amazonaws.services.health.AWSHealthClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.health.model.*;
+
 import com.amazonaws.services.health.model.transform.*;
 
 /**

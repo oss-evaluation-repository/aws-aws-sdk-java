@@ -44,6 +44,7 @@ import com.amazonaws.services.athena.AmazonAthenaClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.athena.model.*;
+
 import com.amazonaws.services.athena.model.transform.*;
 
 /**

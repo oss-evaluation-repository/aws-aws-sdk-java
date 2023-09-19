@@ -44,6 +44,7 @@ import com.amazonaws.services.marketplacecommerceanalytics.AWSMarketplaceCommerc
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
+
 import com.amazonaws.services.marketplacecommerceanalytics.model.transform.*;
 
 /**

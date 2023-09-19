@@ -44,6 +44,7 @@ import com.amazonaws.services.marketplacecatalog.AWSMarketplaceCatalogClientBuil
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.marketplacecatalog.model.*;
+
 import com.amazonaws.services.marketplacecatalog.model.transform.*;
 
 /**

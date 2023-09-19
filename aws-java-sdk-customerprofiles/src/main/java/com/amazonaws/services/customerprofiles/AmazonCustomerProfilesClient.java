@@ -44,6 +44,7 @@ import com.amazonaws.services.customerprofiles.AmazonCustomerProfilesClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.customerprofiles.model.*;
+
 import com.amazonaws.services.customerprofiles.model.transform.*;
 
 /**

@@ -57,6 +57,16 @@ public class ScheduleConfigJsonUnmarshaller implements Unmarshaller<ScheduleConf
                     context.nextToken();
                     scheduleConfig.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DataAnalysisStartTime", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    scheduleConfig.setDataAnalysisStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataAnalysisEndTime", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    scheduleConfig.setDataAnalysisEndTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (token == FIELD_NAME && !knownMember) {
                     context.nextToken();
                     com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);

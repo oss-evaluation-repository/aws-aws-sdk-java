@@ -44,6 +44,7 @@ import com.amazonaws.services.codegurusecurity.AmazonCodeGuruSecurityClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.codegurusecurity.model.*;
+
 import com.amazonaws.services.codegurusecurity.model.transform.*;
 
 /**

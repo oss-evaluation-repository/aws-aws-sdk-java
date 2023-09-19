@@ -44,6 +44,7 @@ import com.amazonaws.services.personalize.AmazonPersonalizeClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.personalize.model.*;
+
 import com.amazonaws.services.personalize.model.transform.*;
 
 /**

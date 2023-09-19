@@ -44,6 +44,7 @@ import com.amazonaws.services.verifiedpermissions.AmazonVerifiedPermissionsClien
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.verifiedpermissions.model.*;
+
 import com.amazonaws.services.verifiedpermissions.model.transform.*;
 
 /**

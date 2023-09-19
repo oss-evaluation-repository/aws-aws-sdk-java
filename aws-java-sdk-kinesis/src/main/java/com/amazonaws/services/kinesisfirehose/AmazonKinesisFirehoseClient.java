@@ -44,6 +44,7 @@ import com.amazonaws.services.kinesisfirehose.AmazonKinesisFirehoseClientBuilder
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
+
 import com.amazonaws.services.kinesisfirehose.model.transform.*;
 
 /**

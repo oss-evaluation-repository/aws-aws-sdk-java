@@ -45,6 +45,7 @@ import com.amazonaws.services.timestreamwrite.AmazonTimestreamWriteClientBuilder
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.timestreamwrite.model.*;
+
 import com.amazonaws.services.timestreamwrite.model.transform.*;
 
 /**

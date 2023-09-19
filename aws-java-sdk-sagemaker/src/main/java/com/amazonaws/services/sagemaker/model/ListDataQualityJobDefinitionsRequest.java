@@ -39,8 +39,7 @@ public class ListDataQualityJobDefinitionsRequest extends com.amazonaws.AmazonWe
     private String sortBy;
     /**
      * <p>
-     * Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     * <code>Descending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      */
     private String sortOrder;
@@ -179,13 +178,11 @@ public class ListDataQualityJobDefinitionsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     * <code>Descending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     *        <code>Descending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @see SortOrder
      */
 
@@ -195,12 +192,10 @@ public class ListDataQualityJobDefinitionsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     * <code>Descending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
-     * @return Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     *         <code>Descending</code>.
+     * @return The sort order for results. The default is <code>Descending</code>.
      * @see SortOrder
      */
 
@@ -210,13 +205,11 @@ public class ListDataQualityJobDefinitionsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     * <code>Descending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     *        <code>Descending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -228,13 +221,11 @@ public class ListDataQualityJobDefinitionsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     * <code>Descending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is
-     *        <code>Descending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */

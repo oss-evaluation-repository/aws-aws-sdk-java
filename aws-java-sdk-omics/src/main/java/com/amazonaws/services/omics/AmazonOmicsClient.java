@@ -45,6 +45,7 @@ import com.amazonaws.services.omics.waiters.AmazonOmicsWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.omics.model.*;
+
 import com.amazonaws.services.omics.model.transform.*;
 
 /**

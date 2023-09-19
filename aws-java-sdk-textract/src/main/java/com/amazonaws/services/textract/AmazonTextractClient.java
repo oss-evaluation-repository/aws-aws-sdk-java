@@ -44,6 +44,7 @@ import com.amazonaws.services.textract.AmazonTextractClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.textract.model.*;
+
 import com.amazonaws.services.textract.model.transform.*;
 
 /**

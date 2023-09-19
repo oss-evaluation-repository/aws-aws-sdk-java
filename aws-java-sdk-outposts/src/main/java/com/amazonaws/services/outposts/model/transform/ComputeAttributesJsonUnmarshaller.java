@@ -62,6 +62,13 @@ public class ComputeAttributesJsonUnmarshaller implements Unmarshaller<ComputeAt
                     context.nextToken();
                     computeAttributes.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InstanceFamilies", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    computeAttributes.setInstanceFamilies(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (token == FIELD_NAME && !knownMember) {
                     context.nextToken();
                     com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);

@@ -44,6 +44,7 @@ import com.amazonaws.services.chimesdkidentity.AmazonChimeSDKIdentityClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.chimesdkidentity.model.*;
+
 import com.amazonaws.services.chimesdkidentity.model.transform.*;
 
 /**

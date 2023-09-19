@@ -44,6 +44,7 @@ import com.amazonaws.services.kendra.AWSkendraClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kendra.model.*;
+
 import com.amazonaws.services.kendra.model.transform.*;
 
 /**

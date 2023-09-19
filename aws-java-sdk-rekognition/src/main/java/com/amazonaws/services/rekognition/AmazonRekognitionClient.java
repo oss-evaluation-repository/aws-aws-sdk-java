@@ -45,6 +45,7 @@ import com.amazonaws.services.rekognition.waiters.AmazonRekognitionWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.rekognition.model.*;
+
 import com.amazonaws.services.rekognition.model.transform.*;
 
 /**

@@ -44,6 +44,7 @@ import com.amazonaws.services.location.AmazonLocationClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.location.model.*;
+
 import com.amazonaws.services.location.model.transform.*;
 
 /**

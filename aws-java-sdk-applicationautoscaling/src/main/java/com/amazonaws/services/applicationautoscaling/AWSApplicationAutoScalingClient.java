@@ -44,6 +44,7 @@ import com.amazonaws.services.applicationautoscaling.AWSApplicationAutoScalingCl
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.applicationautoscaling.model.*;
+
 import com.amazonaws.services.applicationautoscaling.model.transform.*;
 
 /**

@@ -44,6 +44,7 @@ import com.amazonaws.services.frauddetector.AmazonFraudDetectorClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.frauddetector.model.*;
+
 import com.amazonaws.services.frauddetector.model.transform.*;
 
 /**

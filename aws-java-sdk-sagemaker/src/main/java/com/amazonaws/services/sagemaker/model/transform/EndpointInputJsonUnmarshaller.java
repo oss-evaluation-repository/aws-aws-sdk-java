@@ -102,6 +102,11 @@ public class EndpointInputJsonUnmarshaller implements Unmarshaller<EndpointInput
                     context.nextToken();
                     endpointInput.setEndTimeOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExcludeFeaturesAttribute", targetDepth)) {
+                    knownMember = true;
+                    context.nextToken();
+                    endpointInput.setExcludeFeaturesAttribute(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (token == FIELD_NAME && !knownMember) {
                     context.nextToken();
                     com.amazonaws.transform.UnknownMemberJsonUnmarshaller.getInstance().unmarshall(context);

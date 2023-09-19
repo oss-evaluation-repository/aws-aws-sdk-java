@@ -44,6 +44,7 @@ import com.amazonaws.services.iot.AWSIotClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iot.model.*;
+
 import com.amazonaws.services.iot.model.transform.*;
 
 /**

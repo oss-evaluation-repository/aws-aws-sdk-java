@@ -44,6 +44,7 @@ import com.amazonaws.services.cleanrooms.AWSCleanRoomsClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.cleanrooms.model.*;
+
 import com.amazonaws.services.cleanrooms.model.transform.*;
 
 /**

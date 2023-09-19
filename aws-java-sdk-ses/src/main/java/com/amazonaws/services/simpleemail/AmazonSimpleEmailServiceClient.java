@@ -45,6 +45,7 @@ import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiter
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.simpleemail.model.*;
+
 import com.amazonaws.services.simpleemail.model.transform.*;
 
 /**

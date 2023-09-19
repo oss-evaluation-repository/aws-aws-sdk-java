@@ -44,6 +44,7 @@ import com.amazonaws.services.identitystore.AWSIdentityStoreClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.identitystore.model.*;
+
 import com.amazonaws.services.identitystore.model.transform.*;
 
 /**

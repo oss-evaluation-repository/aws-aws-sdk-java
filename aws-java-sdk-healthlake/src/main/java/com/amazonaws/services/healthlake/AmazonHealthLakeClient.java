@@ -44,6 +44,7 @@ import com.amazonaws.services.healthlake.AmazonHealthLakeClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.healthlake.model.*;
+
 import com.amazonaws.services.healthlake.model.transform.*;
 
 /**

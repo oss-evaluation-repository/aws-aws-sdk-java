@@ -44,6 +44,7 @@ import com.amazonaws.services.simpleemailv2.AmazonSimpleEmailServiceV2ClientBuil
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.simpleemailv2.model.*;
+
 import com.amazonaws.services.simpleemailv2.model.transform.*;
 
 /**

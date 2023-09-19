@@ -103,6 +103,12 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String endTimeOffset;
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     */
+    private String excludeFeaturesAttribute;
 
     /**
      * <p>
@@ -643,6 +649,46 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @param excludeFeaturesAttribute
+     *        The attributes of the input data to exclude from the analysis.
+     */
+
+    public void setExcludeFeaturesAttribute(String excludeFeaturesAttribute) {
+        this.excludeFeaturesAttribute = excludeFeaturesAttribute;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @return The attributes of the input data to exclude from the analysis.
+     */
+
+    public String getExcludeFeaturesAttribute() {
+        return this.excludeFeaturesAttribute;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @param excludeFeaturesAttribute
+     *        The attributes of the input data to exclude from the analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchTransformInput withExcludeFeaturesAttribute(String excludeFeaturesAttribute) {
+        setExcludeFeaturesAttribute(excludeFeaturesAttribute);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -675,7 +721,9 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
         if (getStartTimeOffset() != null)
             sb.append("StartTimeOffset: ").append(getStartTimeOffset()).append(",");
         if (getEndTimeOffset() != null)
-            sb.append("EndTimeOffset: ").append(getEndTimeOffset());
+            sb.append("EndTimeOffset: ").append(getEndTimeOffset()).append(",");
+        if (getExcludeFeaturesAttribute() != null)
+            sb.append("ExcludeFeaturesAttribute: ").append(getExcludeFeaturesAttribute());
         sb.append("}");
         return sb.toString();
     }
@@ -735,6 +783,10 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getEndTimeOffset() != null && other.getEndTimeOffset().equals(this.getEndTimeOffset()) == false)
             return false;
+        if (other.getExcludeFeaturesAttribute() == null ^ this.getExcludeFeaturesAttribute() == null)
+            return false;
+        if (other.getExcludeFeaturesAttribute() != null && other.getExcludeFeaturesAttribute().equals(this.getExcludeFeaturesAttribute()) == false)
+            return false;
         return true;
     }
 
@@ -754,6 +806,7 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getProbabilityThresholdAttribute() == null) ? 0 : getProbabilityThresholdAttribute().hashCode());
         hashCode = prime * hashCode + ((getStartTimeOffset() == null) ? 0 : getStartTimeOffset().hashCode());
         hashCode = prime * hashCode + ((getEndTimeOffset() == null) ? 0 : getEndTimeOffset().hashCode());
+        hashCode = prime * hashCode + ((getExcludeFeaturesAttribute() == null) ? 0 : getExcludeFeaturesAttribute().hashCode());
         return hashCode;
     }
 

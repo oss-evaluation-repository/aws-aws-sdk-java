@@ -44,6 +44,7 @@ import com.amazonaws.services.connectparticipant.AmazonConnectParticipantClientB
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.connectparticipant.model.*;
+
 import com.amazonaws.services.connectparticipant.model.transform.*;
 
 /**

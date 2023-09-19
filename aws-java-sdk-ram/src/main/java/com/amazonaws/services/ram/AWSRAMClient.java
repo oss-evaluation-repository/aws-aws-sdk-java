@@ -44,6 +44,7 @@ import com.amazonaws.services.ram.AWSRAMClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ram.model.*;
+
 import com.amazonaws.services.ram.model.transform.*;
 
 /**

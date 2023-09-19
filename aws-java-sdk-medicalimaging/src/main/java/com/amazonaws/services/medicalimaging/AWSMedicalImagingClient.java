@@ -44,6 +44,7 @@ import com.amazonaws.services.medicalimaging.AWSMedicalImagingClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.medicalimaging.model.*;
+
 import com.amazonaws.services.medicalimaging.model.transform.*;
 
 /**

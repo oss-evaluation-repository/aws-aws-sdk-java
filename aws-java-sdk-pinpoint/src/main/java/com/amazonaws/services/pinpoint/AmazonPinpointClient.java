@@ -44,6 +44,7 @@ import com.amazonaws.services.pinpoint.AmazonPinpointClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.pinpoint.model.*;
+
 import com.amazonaws.services.pinpoint.model.transform.*;
 
 /**

@@ -44,6 +44,7 @@ import com.amazonaws.services.managedblockchainquery.AmazonManagedBlockchainQuer
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.managedblockchainquery.model.*;
+
 import com.amazonaws.services.managedblockchainquery.model.transform.*;
 
 /**

@@ -739,7 +739,27 @@ public enum InstanceType {
     R7gd4xlarge("r7gd.4xlarge"),
     R7gd8xlarge("r7gd.8xlarge"),
     R7gd12xlarge("r7gd.12xlarge"),
-    R7gd16xlarge("r7gd.16xlarge");
+    R7gd16xlarge("r7gd.16xlarge"),
+    R7aMedium("r7a.medium"),
+    R7aLarge("r7a.large"),
+    R7aXlarge("r7a.xlarge"),
+    R7a2xlarge("r7a.2xlarge"),
+    R7a4xlarge("r7a.4xlarge"),
+    R7a8xlarge("r7a.8xlarge"),
+    R7a12xlarge("r7a.12xlarge"),
+    R7a16xlarge("r7a.16xlarge"),
+    R7a24xlarge("r7a.24xlarge"),
+    R7a32xlarge("r7a.32xlarge"),
+    R7a48xlarge("r7a.48xlarge"),
+    C7iLarge("c7i.large"),
+    C7iXlarge("c7i.xlarge"),
+    C7i2xlarge("c7i.2xlarge"),
+    C7i4xlarge("c7i.4xlarge"),
+    C7i8xlarge("c7i.8xlarge"),
+    C7i12xlarge("c7i.12xlarge"),
+    C7i16xlarge("c7i.16xlarge"),
+    C7i24xlarge("c7i.24xlarge"),
+    C7i48xlarge("c7i.48xlarge");
 
     private String value;
 

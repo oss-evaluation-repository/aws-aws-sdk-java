@@ -44,6 +44,7 @@ import com.amazonaws.services.migrationhubstrategyrecommendations.AWSMigrationHu
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.migrationhubstrategyrecommendations.model.*;
+
 import com.amazonaws.services.migrationhubstrategyrecommendations.model.transform.*;
 
 /**

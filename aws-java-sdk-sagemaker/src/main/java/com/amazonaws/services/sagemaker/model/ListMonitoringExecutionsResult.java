@@ -31,8 +31,8 @@ public class ListMonitoringExecutionsResult extends com.amazonaws.AmazonWebServi
     private java.util.List<MonitoringExecutionSummary> monitoringExecutionSummaries;
     /**
      * <p>
-     * The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next
-     * request.
+     * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
+     * the subsequent reques
      * </p>
      */
     private String nextToken;
@@ -109,13 +109,13 @@ public class ListMonitoringExecutionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next
-     * request.
+     * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
+     * the subsequent reques
      * </p>
      * 
      * @param nextToken
-     *        The token returned if the response is truncated. To retrieve the next set of job executions, use it in the
-     *        next request.
+     *        If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
+     *        it in the subsequent reques
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +124,12 @@ public class ListMonitoringExecutionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next
-     * request.
+     * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
+     * the subsequent reques
      * </p>
      * 
-     * @return The token returned if the response is truncated. To retrieve the next set of job executions, use it in
-     *         the next request.
+     * @return If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
+     *         it in the subsequent reques
      */
 
     public String getNextToken() {
@@ -138,13 +138,13 @@ public class ListMonitoringExecutionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next
-     * request.
+     * If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use it in
+     * the subsequent reques
      * </p>
      * 
      * @param nextToken
-     *        The token returned if the response is truncated. To retrieve the next set of job executions, use it in the
-     *        next request.
+     *        If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of jobs, use
+     *        it in the subsequent reques
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

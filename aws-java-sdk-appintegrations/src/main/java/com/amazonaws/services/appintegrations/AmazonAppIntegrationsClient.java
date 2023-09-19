@@ -44,6 +44,7 @@ import com.amazonaws.services.appintegrations.AmazonAppIntegrationsClientBuilder
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.appintegrations.model.*;
+
 import com.amazonaws.services.appintegrations.model.transform.*;
 
 /**

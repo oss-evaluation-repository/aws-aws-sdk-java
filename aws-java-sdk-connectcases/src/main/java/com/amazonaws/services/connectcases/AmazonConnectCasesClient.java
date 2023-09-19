@@ -44,6 +44,7 @@ import com.amazonaws.services.connectcases.AmazonConnectCasesClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.connectcases.model.*;
+
 import com.amazonaws.services.connectcases.model.transform.*;
 
 /**

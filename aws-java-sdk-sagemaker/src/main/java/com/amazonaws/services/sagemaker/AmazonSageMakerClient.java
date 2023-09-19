@@ -45,6 +45,7 @@ import com.amazonaws.services.sagemaker.waiters.AmazonSageMakerWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.sagemaker.model.*;
+
 import com.amazonaws.services.sagemaker.model.transform.*;
 
 /**
@@ -737,8 +738,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version
-     * <code>CreateAutoMLJob</code>, as well as time-series forecasting, and non-tabular problem types such as image or
-     * text classification.
+     * <code>CreateAutoMLJob</code>, as well as non-tabular problem types such as image or text classification.
      * </p>
      * <p>
      * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
@@ -826,8 +826,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those of its previous version
-     * <code>CreateAutoMLJob</code>, as well as time-series forecasting, and non-tabular problem types such as image or
-     * text classification.
+     * <code>CreateAutoMLJob</code>, as well as non-tabular problem types such as image or text classification.
      * </p>
      * <p>
      * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=

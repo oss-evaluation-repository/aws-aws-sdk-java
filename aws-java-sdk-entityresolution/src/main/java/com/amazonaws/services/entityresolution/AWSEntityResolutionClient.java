@@ -44,6 +44,7 @@ import com.amazonaws.services.entityresolution.AWSEntityResolutionClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.entityresolution.model.*;
+
 import com.amazonaws.services.entityresolution.model.transform.*;
 
 /**
