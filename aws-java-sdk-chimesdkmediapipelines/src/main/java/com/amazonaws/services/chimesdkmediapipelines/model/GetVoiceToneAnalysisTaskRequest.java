@@ -34,7 +34,7 @@ public class GetVoiceToneAnalysisTaskRequest extends com.amazonaws.AmazonWebServ
     private String identifier;
     /**
      * <p>
-     * The ID of the voice tone anlysis task.
+     * The ID of the voice tone analysis task.
      * </p>
      */
     private String voiceToneAnalysisTaskId;
@@ -87,11 +87,11 @@ public class GetVoiceToneAnalysisTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the voice tone anlysis task.
+     * The ID of the voice tone analysis task.
      * </p>
      * 
      * @param voiceToneAnalysisTaskId
-     *        The ID of the voice tone anlysis task.
+     *        The ID of the voice tone analysis task.
      */
 
     public void setVoiceToneAnalysisTaskId(String voiceToneAnalysisTaskId) {
@@ -100,10 +100,10 @@ public class GetVoiceToneAnalysisTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the voice tone anlysis task.
+     * The ID of the voice tone analysis task.
      * </p>
      * 
-     * @return The ID of the voice tone anlysis task.
+     * @return The ID of the voice tone analysis task.
      */
 
     public String getVoiceToneAnalysisTaskId() {
@@ -112,11 +112,11 @@ public class GetVoiceToneAnalysisTaskRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the voice tone anlysis task.
+     * The ID of the voice tone analysis task.
      * </p>
      * 
      * @param voiceToneAnalysisTaskId
-     *        The ID of the voice tone anlysis task.
+     *        The ID of the voice tone analysis task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

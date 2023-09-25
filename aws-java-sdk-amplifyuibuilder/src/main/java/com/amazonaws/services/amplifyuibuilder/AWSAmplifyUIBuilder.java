@@ -178,8 +178,13 @@ public interface AWSAmplifyUIBuilder {
     DeleteThemeResult deleteTheme(DeleteThemeRequest deleteThemeRequest);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -426,8 +431,13 @@ public interface AWSAmplifyUIBuilder {
     PutMetadataFlagResult putMetadataFlag(PutMetadataFlagRequest putMetadataFlagRequest);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest

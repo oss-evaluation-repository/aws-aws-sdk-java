@@ -162,6 +162,19 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private HeaderOrder headerOrder;
+    /**
+     * <p>
+     * Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS Client
+     * Hello packet for the request.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     */
+    private JA3Fingerprint jA3Fingerprint;
 
     /**
      * <p>
@@ -920,6 +933,82 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS Client
+     * Hello packet for the request.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * 
+     * @param jA3Fingerprint
+     *        Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS
+     *        Client Hello packet for the request. </p> <note>
+     *        <p>
+     *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *        </p>
+     */
+
+    public void setJA3Fingerprint(JA3Fingerprint jA3Fingerprint) {
+        this.jA3Fingerprint = jA3Fingerprint;
+    }
+
+    /**
+     * <p>
+     * Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS Client
+     * Hello packet for the request.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * 
+     * @return Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS
+     *         Client Hello packet for the request. </p> <note>
+     *         <p>
+     *         You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *         <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *         </p>
+     */
+
+    public JA3Fingerprint getJA3Fingerprint() {
+        return this.jA3Fingerprint;
+    }
+
+    /**
+     * <p>
+     * Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS Client
+     * Hello packet for the request.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * 
+     * @param jA3Fingerprint
+     *        Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS
+     *        Client Hello packet for the request. </p> <note>
+     *        <p>
+     *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldToMatch withJA3Fingerprint(JA3Fingerprint jA3Fingerprint) {
+        setJA3Fingerprint(jA3Fingerprint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -952,7 +1041,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
         if (getCookies() != null)
             sb.append("Cookies: ").append(getCookies()).append(",");
         if (getHeaderOrder() != null)
-            sb.append("HeaderOrder: ").append(getHeaderOrder());
+            sb.append("HeaderOrder: ").append(getHeaderOrder()).append(",");
+        if (getJA3Fingerprint() != null)
+            sb.append("JA3Fingerprint: ").append(getJA3Fingerprint());
         sb.append("}");
         return sb.toString();
     }
@@ -1011,6 +1102,10 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHeaderOrder() != null && other.getHeaderOrder().equals(this.getHeaderOrder()) == false)
             return false;
+        if (other.getJA3Fingerprint() == null ^ this.getJA3Fingerprint() == null)
+            return false;
+        if (other.getJA3Fingerprint() != null && other.getJA3Fingerprint().equals(this.getJA3Fingerprint()) == false)
+            return false;
         return true;
     }
 
@@ -1030,6 +1125,7 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         hashCode = prime * hashCode + ((getCookies() == null) ? 0 : getCookies().hashCode());
         hashCode = prime * hashCode + ((getHeaderOrder() == null) ? 0 : getHeaderOrder().hashCode());
+        hashCode = prime * hashCode + ((getJA3Fingerprint() == null) ? 0 : getJA3Fingerprint().hashCode());
         return hashCode;
     }
 

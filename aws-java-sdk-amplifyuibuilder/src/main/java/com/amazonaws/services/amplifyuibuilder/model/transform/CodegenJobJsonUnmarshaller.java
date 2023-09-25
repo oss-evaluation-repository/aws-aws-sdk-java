@@ -101,6 +101,12 @@ public class CodegenJobJsonUnmarshaller implements Unmarshaller<CodegenJob, Json
                     context.nextToken();
                     codegenJob.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("dependencies", targetDepth)) {
+                    context.nextToken();
+                    codegenJob.setDependencies(new ListUnmarshaller<CodegenDependency>(CodegenDependencyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

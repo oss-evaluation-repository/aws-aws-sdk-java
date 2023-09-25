@@ -536,8 +536,13 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -1372,8 +1377,13 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest

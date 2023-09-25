@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.amplifyuibuilder.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +41,8 @@ public class ReactStartCodegenJobDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inlineSourceMap").build();
     private static final MarshallingInfo<StructuredPojo> APICONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiConfiguration").build();
+    private static final MarshallingInfo<Map> DEPENDENCIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("dependencies").build();
 
     private static final ReactStartCodegenJobDataMarshaller instance = new ReactStartCodegenJobDataMarshaller();
 
@@ -62,6 +66,7 @@ public class ReactStartCodegenJobDataMarshaller {
             protocolMarshaller.marshall(reactStartCodegenJobData.getRenderTypeDeclarations(), RENDERTYPEDECLARATIONS_BINDING);
             protocolMarshaller.marshall(reactStartCodegenJobData.getInlineSourceMap(), INLINESOURCEMAP_BINDING);
             protocolMarshaller.marshall(reactStartCodegenJobData.getApiConfiguration(), APICONFIGURATION_BINDING);
+            protocolMarshaller.marshall(reactStartCodegenJobData.getDependencies(), DEPENDENCIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

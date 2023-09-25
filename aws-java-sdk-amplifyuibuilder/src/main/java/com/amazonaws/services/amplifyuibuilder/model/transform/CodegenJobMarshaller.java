@@ -13,7 +13,7 @@
 package com.amazonaws.services.amplifyuibuilder.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -55,6 +55,8 @@ public class CodegenJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> MODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<List> DEPENDENCIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("dependencies").build();
 
     private static final CodegenJobMarshaller instance = new CodegenJobMarshaller();
 
@@ -85,6 +87,7 @@ public class CodegenJobMarshaller {
             protocolMarshaller.marshall(codegenJob.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(codegenJob.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(codegenJob.getModifiedAt(), MODIFIEDAT_BINDING);
+            protocolMarshaller.marshall(codegenJob.getDependencies(), DEPENDENCIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

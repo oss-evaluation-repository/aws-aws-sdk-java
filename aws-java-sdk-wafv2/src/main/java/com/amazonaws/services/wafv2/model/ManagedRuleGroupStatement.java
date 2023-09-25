@@ -25,7 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or
- * <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+ * <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a
+ * managed rule group as a top-level statement within a rule that you define in a web ACL.
  * </p>
  * <note>
  * <p>

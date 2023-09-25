@@ -232,8 +232,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
             com.amazonaws.handlers.AsyncHandler<DeleteThemeRequest, DeleteThemeResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -245,8 +250,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
     java.util.concurrent.Future<ExchangeCodeForTokenResult> exchangeCodeForTokenAsync(ExchangeCodeForTokenRequest exchangeCodeForTokenRequest);
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -666,8 +676,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
             com.amazonaws.handlers.AsyncHandler<PutMetadataFlagRequest, PutMetadataFlagResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest
@@ -679,8 +694,13 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
     java.util.concurrent.Future<RefreshTokenResult> refreshTokenAsync(RefreshTokenRequest refreshTokenRequest);
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest

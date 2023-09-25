@@ -192,6 +192,67 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
+     * Creates an Kinesis video stream pool for the media pipeline.
+     * </p>
+     * 
+     * @param createMediaPipelineKinesisVideoStreamPoolRequest
+     * @return Result of the CreateMediaPipelineKinesisVideoStreamPool operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.CreateMediaPipelineKinesisVideoStreamPool
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMediaPipelineKinesisVideoStreamPoolResult createMediaPipelineKinesisVideoStreamPool(
+            CreateMediaPipelineKinesisVideoStreamPoolRequest createMediaPipelineKinesisVideoStreamPoolRequest);
+
+    /**
+     * <p>
+     * Creates a streaming media pipeline.
+     * </p>
+     * 
+     * @param createMediaStreamPipelineRequest
+     * @return Result of the CreateMediaStreamPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.CreateMediaStreamPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMediaStreamPipelineResult createMediaStreamPipeline(CreateMediaStreamPipelineRequest createMediaStreamPipelineRequest);
+
+    /**
+     * <p>
      * Deletes the media pipeline.
      * </p>
      * 
@@ -280,6 +341,37 @@ public interface AmazonChimeSDKMediaPipelines {
 
     /**
      * <p>
+     * Deletes an Kinesis video stream pool.
+     * </p>
+     * 
+     * @param deleteMediaPipelineKinesisVideoStreamPoolRequest
+     * @return Result of the DeleteMediaPipelineKinesisVideoStreamPool operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.DeleteMediaPipelineKinesisVideoStreamPool
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMediaPipelineKinesisVideoStreamPoolResult deleteMediaPipelineKinesisVideoStreamPool(
+            DeleteMediaPipelineKinesisVideoStreamPoolRequest deleteMediaPipelineKinesisVideoStreamPoolRequest);
+
+    /**
+     * <p>
      * Gets an existing media pipeline.
      * </p>
      * 
@@ -361,6 +453,35 @@ public interface AmazonChimeSDKMediaPipelines {
      *      target="_top">AWS API Documentation</a>
      */
     GetMediaPipelineResult getMediaPipeline(GetMediaPipelineRequest getMediaPipelineRequest);
+
+    /**
+     * <p>
+     * Gets an Kinesis video stream pool.
+     * </p>
+     * 
+     * @param getMediaPipelineKinesisVideoStreamPoolRequest
+     * @return Result of the GetMediaPipelineKinesisVideoStreamPool operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.GetMediaPipelineKinesisVideoStreamPool
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMediaPipelineKinesisVideoStreamPoolResult getMediaPipelineKinesisVideoStreamPool(
+            GetMediaPipelineKinesisVideoStreamPoolRequest getMediaPipelineKinesisVideoStreamPoolRequest);
 
     /**
      * <p>
@@ -473,6 +594,35 @@ public interface AmazonChimeSDKMediaPipelines {
      */
     ListMediaInsightsPipelineConfigurationsResult listMediaInsightsPipelineConfigurations(
             ListMediaInsightsPipelineConfigurationsRequest listMediaInsightsPipelineConfigurationsRequest);
+
+    /**
+     * <p>
+     * Lists the video stream pools in the media pipeline.
+     * </p>
+     * 
+     * @param listMediaPipelineKinesisVideoStreamPoolsRequest
+     * @return Result of the ListMediaPipelineKinesisVideoStreamPools operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.ListMediaPipelineKinesisVideoStreamPools
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMediaPipelineKinesisVideoStreamPoolsResult listMediaPipelineKinesisVideoStreamPools(
+            ListMediaPipelineKinesisVideoStreamPoolsRequest listMediaPipelineKinesisVideoStreamPoolsRequest);
 
     /**
      * <p>
@@ -777,6 +927,37 @@ public interface AmazonChimeSDKMediaPipelines {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateMediaInsightsPipelineStatusResult updateMediaInsightsPipelineStatus(UpdateMediaInsightsPipelineStatusRequest updateMediaInsightsPipelineStatusRequest);
+
+    /**
+     * <p>
+     * Updates an Kinesis video stream pool in a media pipeline.
+     * </p>
+     * 
+     * @param updateMediaPipelineKinesisVideoStreamPoolRequest
+     * @return Result of the UpdateMediaPipelineKinesisVideoStreamPool operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.UpdateMediaPipelineKinesisVideoStreamPool
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMediaPipelineKinesisVideoStreamPoolResult updateMediaPipelineKinesisVideoStreamPool(
+            UpdateMediaPipelineKinesisVideoStreamPoolRequest updateMediaPipelineKinesisVideoStreamPoolRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

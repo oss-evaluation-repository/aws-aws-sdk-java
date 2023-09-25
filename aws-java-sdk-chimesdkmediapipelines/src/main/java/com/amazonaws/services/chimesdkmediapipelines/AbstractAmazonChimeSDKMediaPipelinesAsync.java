@@ -99,6 +99,34 @@ public class AbstractAmazonChimeSDKMediaPipelinesAsync extends AbstractAmazonChi
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMediaPipelineKinesisVideoStreamPoolResult> createMediaPipelineKinesisVideoStreamPoolAsync(
+            CreateMediaPipelineKinesisVideoStreamPoolRequest request) {
+
+        return createMediaPipelineKinesisVideoStreamPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaPipelineKinesisVideoStreamPoolResult> createMediaPipelineKinesisVideoStreamPoolAsync(
+            CreateMediaPipelineKinesisVideoStreamPoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMediaPipelineKinesisVideoStreamPoolRequest, CreateMediaPipelineKinesisVideoStreamPoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaStreamPipelineResult> createMediaStreamPipelineAsync(CreateMediaStreamPipelineRequest request) {
+
+        return createMediaStreamPipelineAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaStreamPipelineResult> createMediaStreamPipelineAsync(CreateMediaStreamPipelineRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMediaStreamPipelineRequest, CreateMediaStreamPipelineResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMediaCapturePipelineResult> deleteMediaCapturePipelineAsync(DeleteMediaCapturePipelineRequest request) {
 
         return deleteMediaCapturePipelineAsync(request, null);
@@ -140,6 +168,21 @@ public class AbstractAmazonChimeSDKMediaPipelinesAsync extends AbstractAmazonChi
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMediaPipelineKinesisVideoStreamPoolResult> deleteMediaPipelineKinesisVideoStreamPoolAsync(
+            DeleteMediaPipelineKinesisVideoStreamPoolRequest request) {
+
+        return deleteMediaPipelineKinesisVideoStreamPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaPipelineKinesisVideoStreamPoolResult> deleteMediaPipelineKinesisVideoStreamPoolAsync(
+            DeleteMediaPipelineKinesisVideoStreamPoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMediaPipelineKinesisVideoStreamPoolRequest, DeleteMediaPipelineKinesisVideoStreamPoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMediaCapturePipelineResult> getMediaCapturePipelineAsync(GetMediaCapturePipelineRequest request) {
 
         return getMediaCapturePipelineAsync(request, null);
@@ -176,6 +219,21 @@ public class AbstractAmazonChimeSDKMediaPipelinesAsync extends AbstractAmazonChi
     @Override
     public java.util.concurrent.Future<GetMediaPipelineResult> getMediaPipelineAsync(GetMediaPipelineRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMediaPipelineRequest, GetMediaPipelineResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMediaPipelineKinesisVideoStreamPoolResult> getMediaPipelineKinesisVideoStreamPoolAsync(
+            GetMediaPipelineKinesisVideoStreamPoolRequest request) {
+
+        return getMediaPipelineKinesisVideoStreamPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMediaPipelineKinesisVideoStreamPoolResult> getMediaPipelineKinesisVideoStreamPoolAsync(
+            GetMediaPipelineKinesisVideoStreamPoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMediaPipelineKinesisVideoStreamPoolRequest, GetMediaPipelineKinesisVideoStreamPoolResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -230,6 +288,21 @@ public class AbstractAmazonChimeSDKMediaPipelinesAsync extends AbstractAmazonChi
     public java.util.concurrent.Future<ListMediaInsightsPipelineConfigurationsResult> listMediaInsightsPipelineConfigurationsAsync(
             ListMediaInsightsPipelineConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListMediaInsightsPipelineConfigurationsRequest, ListMediaInsightsPipelineConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaPipelineKinesisVideoStreamPoolsResult> listMediaPipelineKinesisVideoStreamPoolsAsync(
+            ListMediaPipelineKinesisVideoStreamPoolsRequest request) {
+
+        return listMediaPipelineKinesisVideoStreamPoolsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaPipelineKinesisVideoStreamPoolsResult> listMediaPipelineKinesisVideoStreamPoolsAsync(
+            ListMediaPipelineKinesisVideoStreamPoolsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMediaPipelineKinesisVideoStreamPoolsRequest, ListMediaPipelineKinesisVideoStreamPoolsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -364,6 +437,21 @@ public class AbstractAmazonChimeSDKMediaPipelinesAsync extends AbstractAmazonChi
     public java.util.concurrent.Future<UpdateMediaInsightsPipelineStatusResult> updateMediaInsightsPipelineStatusAsync(
             UpdateMediaInsightsPipelineStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMediaInsightsPipelineStatusRequest, UpdateMediaInsightsPipelineStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaPipelineKinesisVideoStreamPoolResult> updateMediaPipelineKinesisVideoStreamPoolAsync(
+            UpdateMediaPipelineKinesisVideoStreamPoolRequest request) {
+
+        return updateMediaPipelineKinesisVideoStreamPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaPipelineKinesisVideoStreamPoolResult> updateMediaPipelineKinesisVideoStreamPoolAsync(
+            UpdateMediaPipelineKinesisVideoStreamPoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMediaPipelineKinesisVideoStreamPoolRequest, UpdateMediaPipelineKinesisVideoStreamPoolResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

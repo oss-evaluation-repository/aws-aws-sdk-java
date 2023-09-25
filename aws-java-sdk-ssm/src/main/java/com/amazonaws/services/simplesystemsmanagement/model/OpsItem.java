@@ -70,7 +70,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>/aws/insights</code>
+     * <code>/aws/insight</code>
      * </p>
      * <p>
      * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -295,7 +295,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>/aws/insights</code>
+     * <code>/aws/insight</code>
      * </p>
      * <p>
      * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -324,7 +324,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/aws/insights</code>
+     *        <code>/aws/insight</code>
      *        </p>
      *        <p>
      *        This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -359,7 +359,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>/aws/insights</code>
+     * <code>/aws/insight</code>
      * </p>
      * <p>
      * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -387,7 +387,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/aws/insights</code>
+     *         <code>/aws/insight</code>
      *         </p>
      *         <p>
      *         This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -422,7 +422,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>/aws/insights</code>
+     * <code>/aws/insight</code>
      * </p>
      * <p>
      * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -451,7 +451,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/aws/insights</code>
+     *        <code>/aws/insight</code>
      *        </p>
      *        <p>
      *        This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.

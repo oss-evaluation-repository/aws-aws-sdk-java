@@ -27,8 +27,13 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the OpsItem.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
+     * <note>
+     * <p>
+     * Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     * </p>
+     * </note>
      */
     private String description;
     /**
@@ -54,7 +59,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * <code>/aws/insights</code>
+     * <code>/aws/insight</code>
      * </p>
      * <p>
      * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -201,11 +206,19 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the OpsItem.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
+     * <note>
+     * <p>
+     * Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     * </p>
+     * </note>
      * 
      * @param description
-     *        Information about the OpsItem.
+     *        User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+     *        <p>
+     *        Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -214,10 +227,18 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the OpsItem.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
+     * <note>
+     * <p>
+     * Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     * </p>
+     * </note>
      * 
-     * @return Information about the OpsItem.
+     * @return User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+     *         <p>
+     *         Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     *         </p>
      */
 
     public String getDescription() {
@@ -226,11 +247,19 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Information about the OpsItem.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
+     * <note>
+     * <p>
+     * Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     * </p>
+     * </note>
      * 
      * @param description
-     *        Information about the OpsItem.
+     *        User-defined text that contains information about the OpsItem, in Markdown format. </p> <note>
+     *        <p>
+     *        Provide enough information so that users viewing this OpsItem for the first time understand the issue.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,7 +291,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * <code>/aws/insights</code>
+     * <code>/aws/insight</code>
      * </p>
      * <p>
      * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -291,7 +320,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/aws/insights</code>
+     *        <code>/aws/insight</code>
      *        </p>
      *        <p>
      *        This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -326,7 +355,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * <code>/aws/insights</code>
+     * <code>/aws/insight</code>
      * </p>
      * <p>
      * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -354,7 +383,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/aws/insights</code>
+     *         <code>/aws/insight</code>
      *         </p>
      *         <p>
      *         This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -389,7 +418,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * <code>/aws/insights</code>
+     * <code>/aws/insight</code>
      * </p>
      * <p>
      * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
@@ -418,7 +447,7 @@ public class CreateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/aws/insights</code>
+     *        <code>/aws/insight</code>
      *        </p>
      *        <p>
      *        This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.

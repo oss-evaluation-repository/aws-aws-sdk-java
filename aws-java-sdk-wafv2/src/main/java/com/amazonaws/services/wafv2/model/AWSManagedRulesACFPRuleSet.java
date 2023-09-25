@@ -35,8 +35,12 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      * completed registration form for a new user. This page must accept <code>POST</code> requests.
      * </p>
      * <p>
-     * For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.
+     * For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path
+     * <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are
+     * considered a match. For example <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and
+     * <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>.
      * </p>
      */
     private String creationPath;
@@ -51,8 +55,11 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      * </p>
      * </note>
      * <p>
-     * For example, for the URL <code>https://example.com/web/register</code>, you would provide the path
-     * <code>/web/register</code>.
+     * For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path
+     * <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered
+     * a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and
+     * <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>.
      * </p>
      */
     private String registrationPagePath;
@@ -94,8 +101,12 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      * completed registration form for a new user. This page must accept <code>POST</code> requests.
      * </p>
      * <p>
-     * For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.
+     * For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path
+     * <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are
+     * considered a match. For example <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and
+     * <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>.
      * </p>
      * 
      * @param creationPath
@@ -103,8 +114,12 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      *        accepts the completed registration form for a new user. This page must accept <code>POST</code>
      *        requests.</p>
      *        <p>
-     *        For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path
-     *        <code>/web/signup</code>.
+     *        For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path
+     *        <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are
+     *        considered a match. For example <code>/web/newaccount</code> matches the account creation paths
+     *        <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and
+     *        <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or
+     *        <code>/website/newaccount</code>.
      */
 
     public void setCreationPath(String creationPath) {
@@ -117,16 +132,24 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      * completed registration form for a new user. This page must accept <code>POST</code> requests.
      * </p>
      * <p>
-     * For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.
+     * For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path
+     * <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are
+     * considered a match. For example <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and
+     * <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>.
      * </p>
      * 
      * @return The path of the account creation endpoint for your application. This is the page on your website that
      *         accepts the completed registration form for a new user. This page must accept <code>POST</code>
      *         requests.</p>
      *         <p>
-     *         For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path
-     *         <code>/web/signup</code>.
+     *         For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path
+     *         <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are
+     *         considered a match. For example <code>/web/newaccount</code> matches the account creation paths
+     *         <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and
+     *         <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or
+     *         <code>/website/newaccount</code>.
      */
 
     public String getCreationPath() {
@@ -139,8 +162,12 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      * completed registration form for a new user. This page must accept <code>POST</code> requests.
      * </p>
      * <p>
-     * For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path
-     * <code>/web/signup</code>.
+     * For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path
+     * <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are
+     * considered a match. For example <code>/web/newaccount</code> matches the account creation paths
+     * <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and
+     * <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or
+     * <code>/website/newaccount</code>.
      * </p>
      * 
      * @param creationPath
@@ -148,8 +175,12 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      *        accepts the completed registration form for a new user. This page must accept <code>POST</code>
      *        requests.</p>
      *        <p>
-     *        For example, for the URL <code>https://example.com/web/signup</code>, you would provide the path
-     *        <code>/web/signup</code>.
+     *        For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path
+     *        <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are
+     *        considered a match. For example <code>/web/newaccount</code> matches the account creation paths
+     *        <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and
+     *        <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or
+     *        <code>/website/newaccount</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,8 +200,11 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      * </p>
      * </note>
      * <p>
-     * For example, for the URL <code>https://example.com/web/register</code>, you would provide the path
-     * <code>/web/register</code>.
+     * For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path
+     * <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered
+     * a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and
+     * <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>.
      * </p>
      * 
      * @param registrationPagePath
@@ -181,8 +215,12 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      *        </p>
      *        </note>
      *        <p>
-     *        For example, for the URL <code>https://example.com/web/register</code>, you would provide the path
-     *        <code>/web/register</code>.
+     *        For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path
+     *        <code>/web/registration</code>. Registration page paths that start with the path that you provide are
+     *        considered a match. For example <code>/web/registration</code> matches the registration paths
+     *        <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and
+     *        <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or
+     *        <code>/website/registration</code>.
      */
 
     public void setRegistrationPagePath(String registrationPagePath) {
@@ -200,8 +238,11 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      * </p>
      * </note>
      * <p>
-     * For example, for the URL <code>https://example.com/web/register</code>, you would provide the path
-     * <code>/web/register</code>.
+     * For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path
+     * <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered
+     * a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and
+     * <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>.
      * </p>
      * 
      * @return The path of the account registration endpoint for your application. This is the page on your website that
@@ -211,8 +252,12 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      *         </p>
      *         </note>
      *         <p>
-     *         For example, for the URL <code>https://example.com/web/register</code>, you would provide the path
-     *         <code>/web/register</code>.
+     *         For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path
+     *         <code>/web/registration</code>. Registration page paths that start with the path that you provide are
+     *         considered a match. For example <code>/web/registration</code> matches the registration paths
+     *         <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and
+     *         <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code>
+     *         or <code>/website/registration</code>.
      */
 
     public String getRegistrationPagePath() {
@@ -230,8 +275,11 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      * </p>
      * </note>
      * <p>
-     * For example, for the URL <code>https://example.com/web/register</code>, you would provide the path
-     * <code>/web/register</code>.
+     * For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path
+     * <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered
+     * a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and
+     * <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or
+     * <code>/website/registration</code>.
      * </p>
      * 
      * @param registrationPagePath
@@ -242,8 +290,12 @@ public class AWSManagedRulesACFPRuleSet implements Serializable, Cloneable, Stru
      *        </p>
      *        </note>
      *        <p>
-     *        For example, for the URL <code>https://example.com/web/register</code>, you would provide the path
-     *        <code>/web/register</code>.
+     *        For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path
+     *        <code>/web/registration</code>. Registration page paths that start with the path that you provide are
+     *        considered a match. For example <code>/web/registration</code> matches the registration paths
+     *        <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and
+     *        <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or
+     *        <code>/website/registration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

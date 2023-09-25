@@ -54,6 +54,12 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>JA3Fingerprint</code>: The string to match against the web request's JA3 fingerprint header. The header
+     * contains a hash fingerprint of the TLS Client Hello packet for the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>HeaderOrder</code>: The comma-separated list of header names to match for. WAF creates a string that
      * contains the ordered list of header names, from the headers in the web request, and then matches against that
      * string.
@@ -97,7 +103,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
      * to transform request components before using them as custom aggregation keys. If you specify one or more
      * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents.
+     * priority setting, and then uses the transformed component contents.
      * </p>
      */
     private java.util.List<TextTransformation> textTransformations;
@@ -181,6 +187,12 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>JA3Fingerprint</code>: The string to match against the web request's JA3 fingerprint header. The header
+     * contains a hash fingerprint of the TLS Client Hello packet for the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>HeaderOrder</code>: The comma-separated list of header names to match for. WAF creates a string that
      * contains the ordered list of header names, from the headers in the web request, and then matches against that
      * string.
@@ -237,6 +249,12 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *        <code>/images/daily-ad.jpg</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JA3Fingerprint</code>: The string to match against the web request's JA3 fingerprint header. The
+     *        header contains a hash fingerprint of the TLS Client Hello packet for the request.
      *        </p>
      *        </li>
      *        <li>
@@ -298,6 +316,12 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>JA3Fingerprint</code>: The string to match against the web request's JA3 fingerprint header. The header
+     * contains a hash fingerprint of the TLS Client Hello packet for the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>HeaderOrder</code>: The comma-separated list of header names to match for. WAF creates a string that
      * contains the ordered list of header names, from the headers in the web request, and then matches against that
      * string.
@@ -350,6 +374,12 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *         <code>/images/daily-ad.jpg</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>JA3Fingerprint</code>: The string to match against the web request's JA3 fingerprint header. The
+     *         header contains a hash fingerprint of the TLS Client Hello packet for the request.
      *         </p>
      *         </li>
      *         <li>
@@ -411,6 +441,12 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
+     * <code>JA3Fingerprint</code>: The string to match against the web request's JA3 fingerprint header. The header
+     * contains a hash fingerprint of the TLS Client Hello packet for the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>HeaderOrder</code>: The comma-separated list of header names to match for. WAF creates a string that
      * contains the ordered list of header names, from the headers in the web request, and then matches against that
      * string.
@@ -467,6 +503,12 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        <code>UriPath</code>: The value that you want WAF to search for in the URI path, for example,
      *        <code>/images/daily-ad.jpg</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>JA3Fingerprint</code>: The string to match against the web request's JA3 fingerprint header. The
+     *        header contains a hash fingerprint of the TLS Client Hello packet for the request.
      *        </p>
      *        </li>
      *        <li>
@@ -554,7 +596,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
      * to transform request components before using them as custom aggregation keys. If you specify one or more
      * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents.
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
@@ -562,7 +604,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *         <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
      *         statements, to transform request components before using them as custom aggregation keys. If you specify
      *         one or more transformations to apply, WAF performs all transformations on the specified content, starting
-     *         from the lowest priority setting, and then uses the component contents.
+     *         from the lowest priority setting, and then uses the transformed component contents.
      */
 
     public java.util.List<TextTransformation> getTextTransformations() {
@@ -576,7 +618,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
      * to transform request components before using them as custom aggregation keys. If you specify one or more
      * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents.
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @param textTransformations
@@ -585,7 +627,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
      *        statements, to transform request components before using them as custom aggregation keys. If you specify
      *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
-     *        from the lowest priority setting, and then uses the component contents.
+     *        from the lowest priority setting, and then uses the transformed component contents.
      */
 
     public void setTextTransformations(java.util.Collection<TextTransformation> textTransformations) {
@@ -604,7 +646,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
      * to transform request components before using them as custom aggregation keys. If you specify one or more
      * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents.
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -618,7 +660,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
      *        statements, to transform request components before using them as custom aggregation keys. If you specify
      *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
-     *        from the lowest priority setting, and then uses the component contents.
+     *        from the lowest priority setting, and then uses the transformed component contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -639,7 +681,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
      * to transform request components before using them as custom aggregation keys. If you specify one or more
      * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents.
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @param textTransformations
@@ -648,7 +690,7 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
      *        statements, to transform request components before using them as custom aggregation keys. If you specify
      *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
-     *        from the lowest priority setting, and then uses the component contents.
+     *        from the lowest priority setting, and then uses the transformed component contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

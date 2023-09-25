@@ -32,7 +32,11 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The path of the login endpoint for your application. For example, for the URL
-     * <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.
+     * <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that
+     * start with the path that you provide are considered a match. For example <code>/web/login</code> matches the
+     * login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and
+     * <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.
      * </p>
      * <p>
      * The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.
@@ -72,7 +76,11 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The path of the login endpoint for your application. For example, for the URL
-     * <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.
+     * <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that
+     * start with the path that you provide are considered a match. For example <code>/web/login</code> matches the
+     * login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and
+     * <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.
      * </p>
      * <p>
      * The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.
@@ -80,7 +88,11 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      * 
      * @param loginPath
      *        The path of the login endpoint for your application. For example, for the URL
-     *        <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
+     *        <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login
+     *        paths that start with the path that you provide are considered a match. For example
+     *        <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>,
+     *        <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path
+     *        <code>/home/web/login</code> or <code>/website/login</code>.</p>
      *        <p>
      *        The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.
      */
@@ -92,14 +104,22 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The path of the login endpoint for your application. For example, for the URL
-     * <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.
+     * <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that
+     * start with the path that you provide are considered a match. For example <code>/web/login</code> matches the
+     * login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and
+     * <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.
      * </p>
      * <p>
      * The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.
      * </p>
      * 
      * @return The path of the login endpoint for your application. For example, for the URL
-     *         <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
+     *         <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login
+     *         paths that start with the path that you provide are considered a match. For example
+     *         <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>,
+     *         <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path
+     *         <code>/home/web/login</code> or <code>/website/login</code>.</p>
      *         <p>
      *         The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.
      */
@@ -111,7 +131,11 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The path of the login endpoint for your application. For example, for the URL
-     * <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.
+     * <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login paths that
+     * start with the path that you provide are considered a match. For example <code>/web/login</code> matches the
+     * login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>, and
+     * <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code> or
+     * <code>/website/login</code>.
      * </p>
      * <p>
      * The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.
@@ -119,7 +143,11 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      * 
      * @param loginPath
      *        The path of the login endpoint for your application. For example, for the URL
-     *        <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
+     *        <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>. Login
+     *        paths that start with the path that you provide are considered a match. For example
+     *        <code>/web/login</code> matches the login paths <code>/web/login</code>, <code>/web/login/</code>,
+     *        <code>/web/loginPage</code>, and <code>/web/login/thisPage</code>, but doesn't match the login path
+     *        <code>/home/web/login</code> or <code>/website/login</code>.</p>
      *        <p>
      *        The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.

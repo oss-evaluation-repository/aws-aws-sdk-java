@@ -1,3 +1,32 @@
+# __1.12.557__ __2023-09-25__
+## __AWS Amplify UI Builder__
+  - ### Features
+    - Support for generating code that is compatible with future versions of amplify project dependencies.
+
+## __AWS WAFV2__
+  - ### Features
+    - You can now perform an exact match against the web request's JA3 fingerprint.
+
+## __Amazon Chime SDK Media Pipelines__
+  - ### Features
+    - Adds support for sending WebRTC audio to Amazon Kineses Video Streams.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Added ability to tag users upon creation.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release updates the enum values for ResourceType in SSM DescribeInstanceInformation input and ConnectionStatus in GetConnectionStatus output.
+
+## __EMR Serverless__
+  - ### Features
+    - This release adds support for application-wide default job configurations.
+
+## __FinSpace Public API__
+  - ### Features
+    - Adding sensitive trait to attributes. Change max SessionDuration from 720 to 60. Correct "ApiAccess" attribute to "apiAccess" to maintain consistency between APIs.
+
 # __1.12.556__ __2023-09-22__
 ## __AWS Database Migration Service__
   - ### Features

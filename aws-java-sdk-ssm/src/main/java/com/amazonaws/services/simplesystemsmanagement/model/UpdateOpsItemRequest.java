@@ -27,8 +27,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the
-     * first time understand the issue.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
      */
     private String description;
@@ -160,13 +159,11 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the
-     * first time understand the issue.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
      * 
      * @param description
-     *        Update the information about the OpsItem. Provide enough information so that users reading this OpsItem
-     *        for the first time understand the issue.
+     *        User-defined text that contains information about the OpsItem, in Markdown format.
      */
 
     public void setDescription(String description) {
@@ -175,12 +172,10 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the
-     * first time understand the issue.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
      * 
-     * @return Update the information about the OpsItem. Provide enough information so that users reading this OpsItem
-     *         for the first time understand the issue.
+     * @return User-defined text that contains information about the OpsItem, in Markdown format.
      */
 
     public String getDescription() {
@@ -189,13 +184,11 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the
-     * first time understand the issue.
+     * User-defined text that contains information about the OpsItem, in Markdown format.
      * </p>
      * 
      * @param description
-     *        Update the information about the OpsItem. Provide enough information so that users reading this OpsItem
-     *        for the first time understand the issue.
+     *        User-defined text that contains information about the OpsItem, in Markdown format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

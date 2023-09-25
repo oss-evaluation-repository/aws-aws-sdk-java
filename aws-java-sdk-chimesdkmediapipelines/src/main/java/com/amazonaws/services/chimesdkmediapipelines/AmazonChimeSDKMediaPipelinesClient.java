@@ -83,6 +83,12 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkmediapipelines.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkmediapipelines.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkmediapipelines.model.transform.UnauthorizedClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -100,12 +106,6 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkmediapipelines.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkmediapipelines.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkmediapipelines.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkmediapipelines.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
@@ -528,6 +528,155 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
+     * Creates an Kinesis video stream pool for the media pipeline.
+     * </p>
+     * 
+     * @param createMediaPipelineKinesisVideoStreamPoolRequest
+     * @return Result of the CreateMediaPipelineKinesisVideoStreamPool operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.CreateMediaPipelineKinesisVideoStreamPool
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaPipelineKinesisVideoStreamPool"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMediaPipelineKinesisVideoStreamPoolResult createMediaPipelineKinesisVideoStreamPool(CreateMediaPipelineKinesisVideoStreamPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMediaPipelineKinesisVideoStreamPool(request);
+    }
+
+    @SdkInternalApi
+    final CreateMediaPipelineKinesisVideoStreamPoolResult executeCreateMediaPipelineKinesisVideoStreamPool(
+            CreateMediaPipelineKinesisVideoStreamPoolRequest createMediaPipelineKinesisVideoStreamPoolRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMediaPipelineKinesisVideoStreamPoolRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMediaPipelineKinesisVideoStreamPoolRequest> request = null;
+        Response<CreateMediaPipelineKinesisVideoStreamPoolResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMediaPipelineKinesisVideoStreamPoolRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMediaPipelineKinesisVideoStreamPoolRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMediaPipelineKinesisVideoStreamPool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMediaPipelineKinesisVideoStreamPoolResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateMediaPipelineKinesisVideoStreamPoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a streaming media pipeline.
+     * </p>
+     * 
+     * @param createMediaStreamPipelineRequest
+     * @return Result of the CreateMediaStreamPipeline operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.CreateMediaStreamPipeline
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaStreamPipeline"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMediaStreamPipelineResult createMediaStreamPipeline(CreateMediaStreamPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMediaStreamPipeline(request);
+    }
+
+    @SdkInternalApi
+    final CreateMediaStreamPipelineResult executeCreateMediaStreamPipeline(CreateMediaStreamPipelineRequest createMediaStreamPipelineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMediaStreamPipelineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMediaStreamPipelineRequest> request = null;
+        Response<CreateMediaStreamPipelineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMediaStreamPipelineRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMediaStreamPipelineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMediaStreamPipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMediaStreamPipelineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMediaStreamPipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the media pipeline.
      * </p>
      * 
@@ -746,6 +895,81 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
     /**
      * <p>
+     * Deletes an Kinesis video stream pool.
+     * </p>
+     * 
+     * @param deleteMediaPipelineKinesisVideoStreamPoolRequest
+     * @return Result of the DeleteMediaPipelineKinesisVideoStreamPool operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.DeleteMediaPipelineKinesisVideoStreamPool
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipelineKinesisVideoStreamPool"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMediaPipelineKinesisVideoStreamPoolResult deleteMediaPipelineKinesisVideoStreamPool(DeleteMediaPipelineKinesisVideoStreamPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMediaPipelineKinesisVideoStreamPool(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMediaPipelineKinesisVideoStreamPoolResult executeDeleteMediaPipelineKinesisVideoStreamPool(
+            DeleteMediaPipelineKinesisVideoStreamPoolRequest deleteMediaPipelineKinesisVideoStreamPoolRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMediaPipelineKinesisVideoStreamPoolRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMediaPipelineKinesisVideoStreamPoolRequest> request = null;
+        Response<DeleteMediaPipelineKinesisVideoStreamPoolResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMediaPipelineKinesisVideoStreamPoolRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMediaPipelineKinesisVideoStreamPoolRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMediaPipelineKinesisVideoStreamPool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMediaPipelineKinesisVideoStreamPoolResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteMediaPipelineKinesisVideoStreamPoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets an existing media pipeline.
      * </p>
      * 
@@ -948,6 +1172,79 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMediaPipelineResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMediaPipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets an Kinesis video stream pool.
+     * </p>
+     * 
+     * @param getMediaPipelineKinesisVideoStreamPoolRequest
+     * @return Result of the GetMediaPipelineKinesisVideoStreamPool operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.GetMediaPipelineKinesisVideoStreamPool
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipelineKinesisVideoStreamPool"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMediaPipelineKinesisVideoStreamPoolResult getMediaPipelineKinesisVideoStreamPool(GetMediaPipelineKinesisVideoStreamPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMediaPipelineKinesisVideoStreamPool(request);
+    }
+
+    @SdkInternalApi
+    final GetMediaPipelineKinesisVideoStreamPoolResult executeGetMediaPipelineKinesisVideoStreamPool(
+            GetMediaPipelineKinesisVideoStreamPoolRequest getMediaPipelineKinesisVideoStreamPoolRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMediaPipelineKinesisVideoStreamPoolRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMediaPipelineKinesisVideoStreamPoolRequest> request = null;
+        Response<GetMediaPipelineKinesisVideoStreamPoolResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMediaPipelineKinesisVideoStreamPoolRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getMediaPipelineKinesisVideoStreamPoolRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMediaPipelineKinesisVideoStreamPool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMediaPipelineKinesisVideoStreamPoolResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetMediaPipelineKinesisVideoStreamPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1234,6 +1531,79 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
             HttpResponseHandler<AmazonWebServiceResponse<ListMediaInsightsPipelineConfigurationsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListMediaInsightsPipelineConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the video stream pools in the media pipeline.
+     * </p>
+     * 
+     * @param listMediaPipelineKinesisVideoStreamPoolsRequest
+     * @return Result of the ListMediaPipelineKinesisVideoStreamPools operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.ListMediaPipelineKinesisVideoStreamPools
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelineKinesisVideoStreamPools"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMediaPipelineKinesisVideoStreamPoolsResult listMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMediaPipelineKinesisVideoStreamPools(request);
+    }
+
+    @SdkInternalApi
+    final ListMediaPipelineKinesisVideoStreamPoolsResult executeListMediaPipelineKinesisVideoStreamPools(
+            ListMediaPipelineKinesisVideoStreamPoolsRequest listMediaPipelineKinesisVideoStreamPoolsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMediaPipelineKinesisVideoStreamPoolsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMediaPipelineKinesisVideoStreamPoolsRequest> request = null;
+        Response<ListMediaPipelineKinesisVideoStreamPoolsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMediaPipelineKinesisVideoStreamPoolsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listMediaPipelineKinesisVideoStreamPoolsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMediaPipelineKinesisVideoStreamPools");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMediaPipelineKinesisVideoStreamPoolsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListMediaPipelineKinesisVideoStreamPoolsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1969,6 +2339,81 @@ public class AmazonChimeSDKMediaPipelinesClient extends AmazonWebServiceClient i
             HttpResponseHandler<AmazonWebServiceResponse<UpdateMediaInsightsPipelineStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateMediaInsightsPipelineStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an Kinesis video stream pool in a media pipeline.
+     * </p>
+     * 
+     * @param updateMediaPipelineKinesisVideoStreamPoolRequest
+     * @return Result of the UpdateMediaPipelineKinesisVideoStreamPool operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMediaPipelines.UpdateMediaPipelineKinesisVideoStreamPool
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/UpdateMediaPipelineKinesisVideoStreamPool"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMediaPipelineKinesisVideoStreamPoolResult updateMediaPipelineKinesisVideoStreamPool(UpdateMediaPipelineKinesisVideoStreamPoolRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMediaPipelineKinesisVideoStreamPool(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMediaPipelineKinesisVideoStreamPoolResult executeUpdateMediaPipelineKinesisVideoStreamPool(
+            UpdateMediaPipelineKinesisVideoStreamPoolRequest updateMediaPipelineKinesisVideoStreamPoolRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMediaPipelineKinesisVideoStreamPoolRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMediaPipelineKinesisVideoStreamPoolRequest> request = null;
+        Response<UpdateMediaPipelineKinesisVideoStreamPoolResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMediaPipelineKinesisVideoStreamPoolRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMediaPipelineKinesisVideoStreamPoolRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Media Pipelines");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMediaPipelineKinesisVideoStreamPool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMediaPipelineKinesisVideoStreamPoolResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateMediaPipelineKinesisVideoStreamPoolResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

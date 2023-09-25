@@ -49,7 +49,7 @@ public class HorizontalLayoutConfiguration implements Serializable, Cloneable, S
     private Integer tileCount;
     /**
      * <p>
-     * Sets the aspect ratio of the video tiles, such as 16:9.
+     * Specifies the aspect ratio of all video tiles.
      * </p>
      */
     private String tileAspectRatio;
@@ -214,11 +214,11 @@ public class HorizontalLayoutConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Sets the aspect ratio of the video tiles, such as 16:9.
+     * Specifies the aspect ratio of all video tiles.
      * </p>
      * 
      * @param tileAspectRatio
-     *        Sets the aspect ratio of the video tiles, such as 16:9.
+     *        Specifies the aspect ratio of all video tiles.
      */
 
     public void setTileAspectRatio(String tileAspectRatio) {
@@ -227,10 +227,10 @@ public class HorizontalLayoutConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Sets the aspect ratio of the video tiles, such as 16:9.
+     * Specifies the aspect ratio of all video tiles.
      * </p>
      * 
-     * @return Sets the aspect ratio of the video tiles, such as 16:9.
+     * @return Specifies the aspect ratio of all video tiles.
      */
 
     public String getTileAspectRatio() {
@@ -239,11 +239,11 @@ public class HorizontalLayoutConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Sets the aspect ratio of the video tiles, such as 16:9.
+     * Specifies the aspect ratio of all video tiles.
      * </p>
      * 
      * @param tileAspectRatio
-     *        Sets the aspect ratio of the video tiles, such as 16:9.
+     *        Specifies the aspect ratio of all video tiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

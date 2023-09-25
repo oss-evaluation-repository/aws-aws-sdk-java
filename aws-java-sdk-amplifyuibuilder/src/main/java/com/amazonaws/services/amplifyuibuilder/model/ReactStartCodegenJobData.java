@@ -64,6 +64,12 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
      * </p>
      */
     private ApiConfiguration apiConfiguration;
+    /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     */
+    private java.util.Map<String, String> dependencies;
 
     /**
      * <p>
@@ -387,6 +393,74 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     * 
+     * @return Lists the dependency packages that may be required for the project code to run.
+     */
+
+    public java.util.Map<String, String> getDependencies() {
+        return dependencies;
+    }
+
+    /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     * 
+     * @param dependencies
+     *        Lists the dependency packages that may be required for the project code to run.
+     */
+
+    public void setDependencies(java.util.Map<String, String> dependencies) {
+        this.dependencies = dependencies;
+    }
+
+    /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     * 
+     * @param dependencies
+     *        Lists the dependency packages that may be required for the project code to run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReactStartCodegenJobData withDependencies(java.util.Map<String, String> dependencies) {
+        setDependencies(dependencies);
+        return this;
+    }
+
+    /**
+     * Add a single Dependencies entry
+     *
+     * @see ReactStartCodegenJobData#withDependencies
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReactStartCodegenJobData addDependenciesEntry(String key, String value) {
+        if (null == this.dependencies) {
+            this.dependencies = new java.util.HashMap<String, String>();
+        }
+        if (this.dependencies.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.dependencies.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Dependencies.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReactStartCodegenJobData clearDependenciesEntries() {
+        this.dependencies = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -409,7 +483,9 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
         if (getInlineSourceMap() != null)
             sb.append("InlineSourceMap: ").append(getInlineSourceMap()).append(",");
         if (getApiConfiguration() != null)
-            sb.append("ApiConfiguration: ").append(getApiConfiguration());
+            sb.append("ApiConfiguration: ").append(getApiConfiguration()).append(",");
+        if (getDependencies() != null)
+            sb.append("Dependencies: ").append(getDependencies());
         sb.append("}");
         return sb.toString();
     }
@@ -448,6 +524,10 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
             return false;
         if (other.getApiConfiguration() != null && other.getApiConfiguration().equals(this.getApiConfiguration()) == false)
             return false;
+        if (other.getDependencies() == null ^ this.getDependencies() == null)
+            return false;
+        if (other.getDependencies() != null && other.getDependencies().equals(this.getDependencies()) == false)
+            return false;
         return true;
     }
 
@@ -462,6 +542,7 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getRenderTypeDeclarations() == null) ? 0 : getRenderTypeDeclarations().hashCode());
         hashCode = prime * hashCode + ((getInlineSourceMap() == null) ? 0 : getInlineSourceMap().hashCode());
         hashCode = prime * hashCode + ((getApiConfiguration() == null) ? 0 : getApiConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDependencies() == null) ? 0 : getDependencies().hashCode());
         return hashCode;
     }
 

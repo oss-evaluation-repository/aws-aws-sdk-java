@@ -920,13 +920,14 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * Creates a <a>WebACL</a> per the specifications provided.
      * </p>
      * <p>
-     * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action
-     * defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a
-     * default action to take (allow, block) for any request that does not match any of the rules. The rules in a web
-     * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
-     * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
-     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-     * Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
+     * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has a statement
+     * that defines what to look for in web requests and an action that WAF applies to requests that match the
+     * statement. In the web ACL, you assign a default action to take (allow, block) for any request that does not match
+     * any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and
+     * managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The
+     * resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer,
+     * an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified
+     * Access instance.
      * </p>
      * 
      * @param createWebACLRequest
@@ -5684,13 +5685,14 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * associated with a resource. Generally, any inconsistencies of this type last only a few seconds.
      * </p>
      * <p>
-     * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action
-     * defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a
-     * default action to take (allow, block) for any request that does not match any of the rules. The rules in a web
-     * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
-     * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
-     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-     * Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
+     * A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has a statement
+     * that defines what to look for in web requests and an action that WAF applies to requests that match the
+     * statement. In the web ACL, you assign a default action to take (allow, block) for any request that does not match
+     * any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and
+     * managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The
+     * resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer,
+     * an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified
+     * Access instance.
      * </p>
      * 
      * @param updateWebACLRequest

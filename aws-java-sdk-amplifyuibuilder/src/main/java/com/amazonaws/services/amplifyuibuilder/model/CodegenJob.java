@@ -94,6 +94,12 @@ public class CodegenJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date modifiedAt;
+    /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     */
+    private java.util.List<CodegenDependency> dependencies;
 
     /**
      * <p>
@@ -633,6 +639,76 @@ public class CodegenJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     * 
+     * @return Lists the dependency packages that may be required for the project code to run.
+     */
+
+    public java.util.List<CodegenDependency> getDependencies() {
+        return dependencies;
+    }
+
+    /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     * 
+     * @param dependencies
+     *        Lists the dependency packages that may be required for the project code to run.
+     */
+
+    public void setDependencies(java.util.Collection<CodegenDependency> dependencies) {
+        if (dependencies == null) {
+            this.dependencies = null;
+            return;
+        }
+
+        this.dependencies = new java.util.ArrayList<CodegenDependency>(dependencies);
+    }
+
+    /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDependencies(java.util.Collection)} or {@link #withDependencies(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dependencies
+     *        Lists the dependency packages that may be required for the project code to run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodegenJob withDependencies(CodegenDependency... dependencies) {
+        if (this.dependencies == null) {
+            setDependencies(new java.util.ArrayList<CodegenDependency>(dependencies.length));
+        }
+        for (CodegenDependency ele : dependencies) {
+            this.dependencies.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists the dependency packages that may be required for the project code to run.
+     * </p>
+     * 
+     * @param dependencies
+     *        Lists the dependency packages that may be required for the project code to run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodegenJob withDependencies(java.util.Collection<CodegenDependency> dependencies) {
+        setDependencies(dependencies);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -669,7 +745,9 @@ public class CodegenJob implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getModifiedAt() != null)
-            sb.append("ModifiedAt: ").append(getModifiedAt());
+            sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
+        if (getDependencies() != null)
+            sb.append("Dependencies: ").append(getDependencies());
         sb.append("}");
         return sb.toString();
     }
@@ -736,6 +814,10 @@ public class CodegenJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getModifiedAt() != null && other.getModifiedAt().equals(this.getModifiedAt()) == false)
             return false;
+        if (other.getDependencies() == null ^ this.getDependencies() == null)
+            return false;
+        if (other.getDependencies() != null && other.getDependencies().equals(this.getDependencies()) == false)
+            return false;
         return true;
     }
 
@@ -757,6 +839,7 @@ public class CodegenJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
+        hashCode = prime * hashCode + ((getDependencies() == null) ? 0 : getDependencies().hashCode());
         return hashCode;
     }
 

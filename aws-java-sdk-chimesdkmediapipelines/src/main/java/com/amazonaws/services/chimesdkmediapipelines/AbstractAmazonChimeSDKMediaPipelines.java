@@ -53,6 +53,16 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
     }
 
     @Override
+    public CreateMediaPipelineKinesisVideoStreamPoolResult createMediaPipelineKinesisVideoStreamPool(CreateMediaPipelineKinesisVideoStreamPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMediaStreamPipelineResult createMediaStreamPipeline(CreateMediaStreamPipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMediaCapturePipelineResult deleteMediaCapturePipeline(DeleteMediaCapturePipelineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -68,6 +78,11 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
     }
 
     @Override
+    public DeleteMediaPipelineKinesisVideoStreamPoolResult deleteMediaPipelineKinesisVideoStreamPool(DeleteMediaPipelineKinesisVideoStreamPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMediaCapturePipelineResult getMediaCapturePipeline(GetMediaCapturePipelineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +94,11 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
 
     @Override
     public GetMediaPipelineResult getMediaPipeline(GetMediaPipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMediaPipelineKinesisVideoStreamPoolResult getMediaPipelineKinesisVideoStreamPool(GetMediaPipelineKinesisVideoStreamPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +119,11 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
 
     @Override
     public ListMediaInsightsPipelineConfigurationsResult listMediaInsightsPipelineConfigurations(ListMediaInsightsPipelineConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMediaPipelineKinesisVideoStreamPoolsResult listMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +174,11 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
 
     @Override
     public UpdateMediaInsightsPipelineStatusResult updateMediaInsightsPipelineStatus(UpdateMediaInsightsPipelineStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMediaPipelineKinesisVideoStreamPoolResult updateMediaPipelineKinesisVideoStreamPool(UpdateMediaPipelineKinesisVideoStreamPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -125,8 +125,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the
-     * top level inside a web ACL.
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside
+     * another rule group. You can only reference a rule group as a top-level statement within a rule that you define in
+     * a web ACL.
      * </p>
      */
     private RuleGroupReferenceStatement ruleGroupReferenceStatement;
@@ -326,7 +327,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
-     * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+     * or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only
+     * reference a managed rule group as a top-level statement within a rule that you define in a web ACL.
      * </p>
      * <note>
      * <p>
@@ -906,8 +908,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the
-     * top level inside a web ACL.
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside
+     * another rule group. You can only reference a rule group as a top-level statement within a rule that you define in
+     * a web ACL.
      * </p>
      * 
      * @param ruleGroupReferenceStatement
@@ -915,8 +918,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        group with your rules, then provide the ARN of the rule group in this statement.</p>
      *        <p>
      *        You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     *        <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement
-     *        at the top level inside a web ACL.
+     *        <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement
+     *        inside another rule group. You can only reference a rule group as a top-level statement within a rule that
+     *        you define in a web ACL.
      */
 
     public void setRuleGroupReferenceStatement(RuleGroupReferenceStatement ruleGroupReferenceStatement) {
@@ -930,16 +934,18 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the
-     * top level inside a web ACL.
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside
+     * another rule group. You can only reference a rule group as a top-level statement within a rule that you define in
+     * a web ACL.
      * </p>
      * 
      * @return A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule
      *         group with your rules, then provide the ARN of the rule group in this statement.</p>
      *         <p>
      *         You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     *         <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement
-     *         at the top level inside a web ACL.
+     *         <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement
+     *         inside another rule group. You can only reference a rule group as a top-level statement within a rule
+     *         that you define in a web ACL.
      */
 
     public RuleGroupReferenceStatement getRuleGroupReferenceStatement() {
@@ -953,8 +959,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the
-     * top level inside a web ACL.
+     * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement inside
+     * another rule group. You can only reference a rule group as a top-level statement within a rule that you define in
+     * a web ACL.
      * </p>
      * 
      * @param ruleGroupReferenceStatement
@@ -962,8 +969,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        group with your rules, then provide the ARN of the rule group in this statement.</p>
      *        <p>
      *        You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a
-     *        <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement
-     *        at the top level inside a web ACL.
+     *        <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group reference statement
+     *        inside another rule group. You can only reference a rule group as a top-level statement within a rule that
+     *        you define in a web ACL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2135,7 +2143,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
-     * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+     * or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only
+     * reference a managed rule group as a top-level statement within a rule that you define in a web ACL.
      * </p>
      * <note>
      * <p>
@@ -2153,8 +2162,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        calling <a>ListAvailableManagedRuleGroups</a>.</p>
      *        <p>
      *        You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     *        <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
-     *        within a rule.
+     *        <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another
+     *        rule group. You can only reference a managed rule group as a top-level statement within a rule that you
+     *        define in a web ACL.
      *        </p>
      *        <note>
      *        <p>
@@ -2178,7 +2188,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
-     * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+     * or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only
+     * reference a managed rule group as a top-level statement within a rule that you define in a web ACL.
      * </p>
      * <note>
      * <p>
@@ -2195,8 +2206,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         calling <a>ListAvailableManagedRuleGroups</a>.</p>
      *         <p>
      *         You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     *         <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
-     *         within a rule.
+     *         <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another
+     *         rule group. You can only reference a managed rule group as a top-level statement within a rule that you
+     *         define in a web ACL.
      *         </p>
      *         <note>
      *         <p>
@@ -2220,7 +2232,8 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code>
-     * or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+     * or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only
+     * reference a managed rule group as a top-level statement within a rule that you define in a web ACL.
      * </p>
      * <note>
      * <p>
@@ -2238,8 +2251,9 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        calling <a>ListAvailableManagedRuleGroups</a>.</p>
      *        <p>
      *        You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a
-     *        <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement
-     *        within a rule.
+     *        <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another
+     *        rule group. You can only reference a managed rule group as a top-level statement within a rule that you
+     *        define in a web ACL.
      *        </p>
      *        <note>
      *        <p>
