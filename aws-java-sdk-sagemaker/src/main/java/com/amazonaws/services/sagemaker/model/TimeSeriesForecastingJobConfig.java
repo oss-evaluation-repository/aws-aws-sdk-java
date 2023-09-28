@@ -139,7 +139,7 @@ public class TimeSeriesForecastingJobConfig implements Serializable, Cloneable, 
     private TimeSeriesConfig timeSeriesConfig;
     /**
      * <p>
-     * The collection of holidays featurization attributes used to incorporate national holiday information into your
+     * The collection of holiday featurization attributes used to incorporate national holiday information into your
      * forecasting model.
      * </p>
      */
@@ -872,11 +872,11 @@ public class TimeSeriesForecastingJobConfig implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The collection of holidays featurization attributes used to incorporate national holiday information into your
+     * The collection of holiday featurization attributes used to incorporate national holiday information into your
      * forecasting model.
      * </p>
      * 
-     * @return The collection of holidays featurization attributes used to incorporate national holiday information into
+     * @return The collection of holiday featurization attributes used to incorporate national holiday information into
      *         your forecasting model.
      */
 
@@ -886,12 +886,12 @@ public class TimeSeriesForecastingJobConfig implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The collection of holidays featurization attributes used to incorporate national holiday information into your
+     * The collection of holiday featurization attributes used to incorporate national holiday information into your
      * forecasting model.
      * </p>
      * 
      * @param holidayConfig
-     *        The collection of holidays featurization attributes used to incorporate national holiday information into
+     *        The collection of holiday featurization attributes used to incorporate national holiday information into
      *        your forecasting model.
      */
 
@@ -906,7 +906,7 @@ public class TimeSeriesForecastingJobConfig implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The collection of holidays featurization attributes used to incorporate national holiday information into your
+     * The collection of holiday featurization attributes used to incorporate national holiday information into your
      * forecasting model.
      * </p>
      * <p>
@@ -916,7 +916,7 @@ public class TimeSeriesForecastingJobConfig implements Serializable, Cloneable, 
      * </p>
      * 
      * @param holidayConfig
-     *        The collection of holidays featurization attributes used to incorporate national holiday information into
+     *        The collection of holiday featurization attributes used to incorporate national holiday information into
      *        your forecasting model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -933,12 +933,12 @@ public class TimeSeriesForecastingJobConfig implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The collection of holidays featurization attributes used to incorporate national holiday information into your
+     * The collection of holiday featurization attributes used to incorporate national holiday information into your
      * forecasting model.
      * </p>
      * 
      * @param holidayConfig
-     *        The collection of holidays featurization attributes used to incorporate national holiday information into
+     *        The collection of holiday featurization attributes used to incorporate national holiday information into
      *        your forecasting model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

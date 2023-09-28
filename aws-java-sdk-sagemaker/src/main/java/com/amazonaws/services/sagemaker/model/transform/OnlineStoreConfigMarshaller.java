@@ -33,6 +33,8 @@ public class OnlineStoreConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableOnlineStore").build();
     private static final MarshallingInfo<StructuredPojo> TTLDURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TtlDuration").build();
+    private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageType").build();
 
     private static final OnlineStoreConfigMarshaller instance = new OnlineStoreConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class OnlineStoreConfigMarshaller {
             protocolMarshaller.marshall(onlineStoreConfig.getSecurityConfig(), SECURITYCONFIG_BINDING);
             protocolMarshaller.marshall(onlineStoreConfig.getEnableOnlineStore(), ENABLEONLINESTORE_BINDING);
             protocolMarshaller.marshall(onlineStoreConfig.getTtlDuration(), TTLDURATION_BINDING);
+            protocolMarshaller.marshall(onlineStoreConfig.getStorageType(), STORAGETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

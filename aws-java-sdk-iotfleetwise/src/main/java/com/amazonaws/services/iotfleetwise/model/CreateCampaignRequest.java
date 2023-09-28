@@ -163,7 +163,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
-     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
      * </p>
      * <p>
      * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
@@ -1198,7 +1200,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
-     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
      * </p>
      * <p>
      * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
@@ -1209,7 +1213,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Amazon Timestream.</p>
      *         <p>
      *         Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
-     *         as data lakes, centralized data storage, data processing pipelines, and analytics.
+     *         as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services
+     *         IoT FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon
+     *         Web Services IoT FleetWise servers for redundancy and high availability.
      *         </p>
      *         <p>
      *         You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle
@@ -1227,7 +1233,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
-     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
      * </p>
      * <p>
      * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
@@ -1239,7 +1247,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Amazon Timestream.</p>
      *        <p>
      *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
-     *        as data lakes, centralized data storage, data processing pipelines, and analytics.
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT
+     *        FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web
+     *        Services IoT FleetWise servers for redundancy and high availability.
      *        </p>
      *        <p>
      *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data
@@ -1262,7 +1272,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
-     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
      * </p>
      * <p>
      * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
@@ -1279,7 +1291,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Amazon Timestream.</p>
      *        <p>
      *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
-     *        as data lakes, centralized data storage, data processing pipelines, and analytics.
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT
+     *        FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web
+     *        Services IoT FleetWise servers for redundancy and high availability.
      *        </p>
      *        <p>
      *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data
@@ -1304,7 +1318,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
-     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT FleetWise
+     * supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web Services IoT
+     * FleetWise servers for redundancy and high availability.
      * </p>
      * <p>
      * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
@@ -1316,7 +1332,9 @@ public class CreateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Amazon Timestream.</p>
      *        <p>
      *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
-     *        as data lakes, centralized data storage, data processing pipelines, and analytics.
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics. Amazon Web Services IoT
+     *        FleetWise supports at-least-once file delivery to S3. Your vehicle data is stored on multiple Amazon Web
+     *        Services IoT FleetWise servers for redundancy and high availability.
      *        </p>
      *        <p>
      *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data

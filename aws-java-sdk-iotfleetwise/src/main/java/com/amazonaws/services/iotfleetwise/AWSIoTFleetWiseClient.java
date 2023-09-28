@@ -1492,6 +1492,73 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves the encryption configuration for resources and data in Amazon Web Services IoT FleetWise.
+     * </p>
+     * 
+     * @param getEncryptionConfigurationRequest
+     * @return Result of the GetEncryptionConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws InternalServerException
+     *         The request couldn't be completed because the server temporarily failed.
+     * @throws ThrottlingException
+     *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @sample AWSIoTFleetWise.GetEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEncryptionConfigurationResult getEncryptionConfiguration(GetEncryptionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEncryptionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetEncryptionConfigurationResult executeGetEncryptionConfiguration(GetEncryptionConfigurationRequest getEncryptionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEncryptionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEncryptionConfigurationRequest> request = null;
+        Response<GetEncryptionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEncryptionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEncryptionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTFleetWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEncryptionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEncryptionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEncryptionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about a fleet.
      * </p>
      * 
@@ -3012,6 +3079,80 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListVehiclesInFleetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVehiclesInFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise can encrypt your data and
+     * resources using an Amazon Web Services managed key. Or, you can use a KMS key that you own and manage. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data encryption</a>
+     * in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+     * </p>
+     * 
+     * @param putEncryptionConfigurationRequest
+     * @return Result of the PutEncryptionConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws InternalServerException
+     *         The request couldn't be completed because the server temporarily failed.
+     * @throws ConflictException
+     *         The request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws ThrottlingException
+     *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @sample AWSIoTFleetWise.PutEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutEncryptionConfigurationResult putEncryptionConfiguration(PutEncryptionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEncryptionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutEncryptionConfigurationResult executePutEncryptionConfiguration(PutEncryptionConfigurationRequest putEncryptionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putEncryptionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutEncryptionConfigurationRequest> request = null;
+        Response<PutEncryptionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutEncryptionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putEncryptionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTFleetWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEncryptionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutEncryptionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutEncryptionConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

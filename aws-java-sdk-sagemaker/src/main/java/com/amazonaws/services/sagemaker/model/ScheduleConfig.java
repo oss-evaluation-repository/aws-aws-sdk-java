@@ -52,6 +52,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * <code>cron(0 [00-23] ? * * *)</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * If you want to run the job one time, immediately, use the following keyword:
+     * </p>
+     * <p>
+     * <code>NOW</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, the following are valid cron expressions:
@@ -168,6 +176,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * <code>cron(0 [00-23] ? * * *)</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * If you want to run the job one time, immediately, use the following keyword:
+     * </p>
+     * <p>
+     * <code>NOW</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, the following are valid cron expressions:
@@ -246,6 +262,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>cron(0 [00-23] ? * * *)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you want to run the job one time, immediately, use the following keyword:
+     *        </p>
+     *        <p>
+     *        <code>NOW</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -334,6 +358,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * <code>cron(0 [00-23] ? * * *)</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * If you want to run the job one time, immediately, use the following keyword:
+     * </p>
+     * <p>
+     * <code>NOW</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, the following are valid cron expressions:
@@ -411,6 +443,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         <code>cron(0 [00-23] ? * * *)</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you want to run the job one time, immediately, use the following keyword:
+     *         </p>
+     *         <p>
+     *         <code>NOW</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -499,6 +539,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * <code>cron(0 [00-23] ? * * *)</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * If you want to run the job one time, immediately, use the following keyword:
+     * </p>
+     * <p>
+     * <code>NOW</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For example, the following are valid cron expressions:
@@ -577,6 +625,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>cron(0 [00-23] ? * * *)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you want to run the job one time, immediately, use the following keyword:
+     *        </p>
+     *        <p>
+     *        <code>NOW</code>
      *        </p>
      *        </li>
      *        </ul>

@@ -34,9 +34,9 @@ public class HolidayConfigAttributes implements Serializable, Cloneable, Structu
      * The country code for the holiday calendar.
      * </p>
      * <p>
-     * For the list of public holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use
-     * the country code corresponding to the country of your choice.
+     * For the list of public holiday calendars supported by AutoML job V2, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes"
+     * >Country Codes</a>. Use the country code corresponding to the country of your choice.
      * </p>
      */
     private String countryCode;
@@ -46,17 +46,17 @@ public class HolidayConfigAttributes implements Serializable, Cloneable, Structu
      * The country code for the holiday calendar.
      * </p>
      * <p>
-     * For the list of public holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use
-     * the country code corresponding to the country of your choice.
+     * For the list of public holiday calendars supported by AutoML job V2, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes"
+     * >Country Codes</a>. Use the country code corresponding to the country of your choice.
      * </p>
      * 
      * @param countryCode
      *        The country code for the holiday calendar.</p>
      *        <p>
-     *        For the list of public holiday calendars supported by AutoML job V2, see <a
-     *        href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
-     *        Codes</a>. Use the country code corresponding to the country of your choice.
+     *        For the list of public holiday calendars supported by AutoML job V2, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes"
+     *        >Country Codes</a>. Use the country code corresponding to the country of your choice.
      */
 
     public void setCountryCode(String countryCode) {
@@ -68,16 +68,16 @@ public class HolidayConfigAttributes implements Serializable, Cloneable, Structu
      * The country code for the holiday calendar.
      * </p>
      * <p>
-     * For the list of public holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use
-     * the country code corresponding to the country of your choice.
+     * For the list of public holiday calendars supported by AutoML job V2, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes"
+     * >Country Codes</a>. Use the country code corresponding to the country of your choice.
      * </p>
      * 
      * @return The country code for the holiday calendar.</p>
      *         <p>
-     *         For the list of public holiday calendars supported by AutoML job V2, see <a
-     *         href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
-     *         Codes</a>. Use the country code corresponding to the country of your choice.
+     *         For the list of public holiday calendars supported by AutoML job V2, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes"
+     *         >Country Codes</a>. Use the country code corresponding to the country of your choice.
      */
 
     public String getCountryCode() {
@@ -89,17 +89,17 @@ public class HolidayConfigAttributes implements Serializable, Cloneable, Structu
      * The country code for the holiday calendar.
      * </p>
      * <p>
-     * For the list of public holiday calendars supported by AutoML job V2, see <a
-     * href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country Codes</a>. Use
-     * the country code corresponding to the country of your choice.
+     * For the list of public holiday calendars supported by AutoML job V2, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes"
+     * >Country Codes</a>. Use the country code corresponding to the country of your choice.
      * </p>
      * 
      * @param countryCode
      *        The country code for the holiday calendar.</p>
      *        <p>
-     *        For the list of public holiday calendars supported by AutoML job V2, see <a
-     *        href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html#holidays-country-codes">Country
-     *        Codes</a>. Use the country code corresponding to the country of your choice.
+     *        For the list of public holiday calendars supported by AutoML job V2, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-timeseries-forecasting-holiday-calendars.html#holiday-country-codes"
+     *        >Country Codes</a>. Use the country code corresponding to the country of your choice.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

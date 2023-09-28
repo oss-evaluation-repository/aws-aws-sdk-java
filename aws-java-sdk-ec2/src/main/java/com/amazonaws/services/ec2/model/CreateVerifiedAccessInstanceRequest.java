@@ -49,7 +49,7 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
     private String clientToken;
     /**
      * <p>
-     * Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      * </p>
      */
     private Boolean fIPSEnabled;
@@ -227,11 +227,11 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      * </p>
      * 
      * @param fIPSEnabled
-     *        Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     *        Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      */
 
     public void setFIPSEnabled(Boolean fIPSEnabled) {
@@ -240,10 +240,10 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      * </p>
      * 
-     * @return Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * @return Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      */
 
     public Boolean getFIPSEnabled() {
@@ -252,11 +252,11 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      * </p>
      * 
      * @param fIPSEnabled
-     *        Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     *        Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,10 +267,10 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      * </p>
      * 
-     * @return Choose to enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
+     * @return Enable or disable support for Federal Information Processing Standards (FIPS) on the instance.
      */
 
     public Boolean isFIPSEnabled() {

@@ -50,7 +50,7 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
     private String s3InputMode;
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      */
@@ -261,13 +261,13 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
-     *        <code>FullyReplicated</code>
+     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults
+     *        to <code>FullyReplicated</code>
      * @see ProcessingS3DataDistributionType
      */
 
@@ -277,12 +277,12 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      * 
-     * @return Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
-     *         <code>FullyReplicated</code>
+     * @return Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults
+     *         to <code>FullyReplicated</code>
      * @see ProcessingS3DataDistributionType
      */
 
@@ -292,13 +292,13 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
-     *        <code>FullyReplicated</code>
+     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults
+     *        to <code>FullyReplicated</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3DataDistributionType
      */
@@ -310,13 +310,13 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
-     *        <code>FullyReplicated</code>
+     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults
+     *        to <code>FullyReplicated</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3DataDistributionType
      */

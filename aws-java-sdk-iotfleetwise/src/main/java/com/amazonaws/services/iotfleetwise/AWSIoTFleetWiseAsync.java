@@ -837,6 +837,39 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
 
     /**
      * <p>
+     * Retrieves the encryption configuration for resources and data in Amazon Web Services IoT FleetWise.
+     * </p>
+     * 
+     * @param getEncryptionConfigurationRequest
+     * @return A Java Future containing the result of the GetEncryptionConfiguration operation returned by the service.
+     * @sample AWSIoTFleetWiseAsync.GetEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEncryptionConfigurationResult> getEncryptionConfigurationAsync(
+            GetEncryptionConfigurationRequest getEncryptionConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the encryption configuration for resources and data in Amazon Web Services IoT FleetWise.
+     * </p>
+     * 
+     * @param getEncryptionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEncryptionConfiguration operation returned by the service.
+     * @sample AWSIoTFleetWiseAsyncHandler.GetEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEncryptionConfigurationResult> getEncryptionConfigurationAsync(
+            GetEncryptionConfigurationRequest getEncryptionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigurationRequest, GetEncryptionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about a fleet.
      * </p>
      * 
@@ -1698,6 +1731,47 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
      */
     java.util.concurrent.Future<ListVehiclesInFleetResult> listVehiclesInFleetAsync(ListVehiclesInFleetRequest listVehiclesInFleetRequest,
             com.amazonaws.handlers.AsyncHandler<ListVehiclesInFleetRequest, ListVehiclesInFleetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise can encrypt your data and
+     * resources using an Amazon Web Services managed key. Or, you can use a KMS key that you own and manage. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data encryption</a>
+     * in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+     * </p>
+     * 
+     * @param putEncryptionConfigurationRequest
+     * @return A Java Future containing the result of the PutEncryptionConfiguration operation returned by the service.
+     * @sample AWSIoTFleetWiseAsync.PutEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEncryptionConfigurationResult> putEncryptionConfigurationAsync(
+            PutEncryptionConfigurationRequest putEncryptionConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise can encrypt your data and
+     * resources using an Amazon Web Services managed key. Or, you can use a KMS key that you own and manage. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data encryption</a>
+     * in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+     * </p>
+     * 
+     * @param putEncryptionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEncryptionConfiguration operation returned by the service.
+     * @sample AWSIoTFleetWiseAsyncHandler.PutEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEncryptionConfigurationResult> putEncryptionConfigurationAsync(
+            PutEncryptionConfigurationRequest putEncryptionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEncryptionConfigurationRequest, PutEncryptionConfigurationResult> asyncHandler);
 
     /**
      * <p>

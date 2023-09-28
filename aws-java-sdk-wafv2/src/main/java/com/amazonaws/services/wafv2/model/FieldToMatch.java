@@ -164,8 +164,10 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
     private HeaderOrder headerOrder;
     /**
      * <p>
-     * Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS Client
-     * Hello packet for the request.
+     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     * information for the calculation. Almost all web requests include this information.
      * </p>
      * <note>
      * <p>
@@ -173,6 +175,16 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      * </p>
      * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
      */
     private JA3Fingerprint jA3Fingerprint;
 
@@ -934,8 +946,10 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS Client
-     * Hello packet for the request.
+     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     * information for the calculation. Almost all web requests include this information.
      * </p>
      * <note>
      * <p>
@@ -943,14 +957,36 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      * </p>
      * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
      * 
      * @param jA3Fingerprint
-     *        Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS
-     *        Client Hello packet for the request. </p> <note>
+     *        Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
+     *        TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
+     *        TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
+     *        Hello information for the calculation. Almost all web requests include this information.</p> <note>
      *        <p>
      *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
      *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      *        </p>
+     *        </note>
+     *        <p>
+     *        You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *        the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *        <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *        with any future requests that have the same TLS configuration.
      */
 
     public void setJA3Fingerprint(JA3Fingerprint jA3Fingerprint) {
@@ -959,8 +995,10 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS Client
-     * Hello packet for the request.
+     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     * information for the calculation. Almost all web requests include this information.
      * </p>
      * <note>
      * <p>
@@ -968,13 +1006,35 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      * </p>
      * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
      * 
-     * @return Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS
-     *         Client Hello packet for the request. </p> <note>
+     * @return Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
+     *         TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
+     *         TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
+     *         Hello information for the calculation. Almost all web requests include this information.</p> <note>
      *         <p>
      *         You can use this choice only with a string match <code>ByteMatchStatement</code> with the
      *         <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      *         </p>
+     *         </note>
+     *         <p>
+     *         You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *         the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *         <i>WAF Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *         with any future requests that have the same TLS configuration.
      */
 
     public JA3Fingerprint getJA3Fingerprint() {
@@ -983,8 +1043,10 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS Client
-     * Hello packet for the request.
+     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
+     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     * information for the calculation. Almost all web requests include this information.
      * </p>
      * <note>
      * <p>
@@ -992,14 +1054,36 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      * </p>
      * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
      * 
      * @param jA3Fingerprint
-     *        Match against the request's JA3 fingerprint header. The header contains a hash fingerprint of the TLS
-     *        Client Hello packet for the request. </p> <note>
+     *        Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
+     *        TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
+     *        TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
+     *        Hello information for the calculation. Almost all web requests include this information.</p> <note>
      *        <p>
      *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
      *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      *        </p>
+     *        </note>
+     *        <p>
+     *        You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *        the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *        <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *        with any future requests that have the same TLS configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

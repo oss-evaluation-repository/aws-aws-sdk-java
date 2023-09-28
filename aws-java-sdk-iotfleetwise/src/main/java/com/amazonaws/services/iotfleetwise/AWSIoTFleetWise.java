@@ -617,6 +617,29 @@ public interface AWSIoTFleetWise {
 
     /**
      * <p>
+     * Retrieves the encryption configuration for resources and data in Amazon Web Services IoT FleetWise.
+     * </p>
+     * 
+     * @param getEncryptionConfigurationRequest
+     * @return Result of the GetEncryptionConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws InternalServerException
+     *         The request couldn't be completed because the server temporarily failed.
+     * @throws ThrottlingException
+     *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @sample AWSIoTFleetWise.GetEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetEncryptionConfigurationResult getEncryptionConfiguration(GetEncryptionConfigurationRequest getEncryptionConfigurationRequest);
+
+    /**
+     * <p>
      * Retrieves information about a fleet.
      * </p>
      * 
@@ -1213,6 +1236,36 @@ public interface AWSIoTFleetWise {
      *      target="_top">AWS API Documentation</a>
      */
     ListVehiclesInFleetResult listVehiclesInFleet(ListVehiclesInFleetRequest listVehiclesInFleetRequest);
+
+    /**
+     * <p>
+     * Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise can encrypt your data and
+     * resources using an Amazon Web Services managed key. Or, you can use a KMS key that you own and manage. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data encryption</a>
+     * in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+     * </p>
+     * 
+     * @param putEncryptionConfigurationRequest
+     * @return Result of the PutEncryptionConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws InternalServerException
+     *         The request couldn't be completed because the server temporarily failed.
+     * @throws ConflictException
+     *         The request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws ThrottlingException
+     *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @sample AWSIoTFleetWise.PutEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutEncryptionConfigurationResult putEncryptionConfiguration(PutEncryptionConfigurationRequest putEncryptionConfigurationRequest);
 
     /**
      * <p>

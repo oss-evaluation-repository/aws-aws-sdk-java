@@ -1,3 +1,36 @@
+# __1.12.560__ __2023-09-28__
+## __AWS Budgets__
+  - ### Features
+    - Update DescribeBudgets and DescribeBudgetNotificationsForAccount MaxResults limit to 1000.
+
+## __AWS IoT FleetWise__
+  - ### Features
+    - AWS IoT FleetWise now supports encryption through a customer managed AWS KMS key. The PutEncryptionConfiguration and GetEncryptionConfiguration APIs were added.
+
+## __AWS WAFV2__
+  - ### Features
+    - Correct and improve the documentation for the FieldToMatch option JA3 fingerprint.
+
+## __Amazon Bedrock__
+  - ### Features
+    - Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
+
+## __Amazon Bedrock Runtime__
+  - ### Features
+    - Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Adds support for Customer Managed Key encryption for Amazon Verified Access resources
+
+## __Amazon SageMaker Feature Store Runtime__
+  - ### Features
+    - Feature Store supports read/write of records with collection type features.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Online store feature groups supports Standard and InMemory tier storage types for low latency storage for real-time data retrieval. The InMemory tier supports collection types List, Set, and Vector.
+
 # __1.12.559__ __2023-09-27__
 ## __AWS IoT__
   - ### Features

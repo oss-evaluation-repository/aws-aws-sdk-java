@@ -58,6 +58,24 @@ public class OnlineStoreConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private TtlDuration ttlDuration;
+    /**
+     * <p>
+     * Option for different tiers of low latency storage for real-time data retrieval.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Standard</code>: A managed low latency data store for feature groups.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String storageType;
 
     /**
      * <p>
@@ -246,6 +264,157 @@ public class OnlineStoreConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Option for different tiers of low latency storage for real-time data retrieval.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Standard</code>: A managed low latency data store for feature groups.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param storageType
+     *        Option for different tiers of low latency storage for real-time data retrieval.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Standard</code>: A managed low latency data store for feature groups.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     *        </p>
+     *        </li>
+     * @see StorageType
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * Option for different tiers of low latency storage for real-time data retrieval.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Standard</code>: A managed low latency data store for feature groups.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Option for different tiers of low latency storage for real-time data retrieval.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Standard</code>: A managed low latency data store for feature groups.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     *         </p>
+     *         </li>
+     * @see StorageType
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * Option for different tiers of low latency storage for real-time data retrieval.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Standard</code>: A managed low latency data store for feature groups.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param storageType
+     *        Option for different tiers of low latency storage for real-time data retrieval.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Standard</code>: A managed low latency data store for feature groups.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public OnlineStoreConfig withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Option for different tiers of low latency storage for real-time data retrieval.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Standard</code>: A managed low latency data store for feature groups.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param storageType
+     *        Option for different tiers of low latency storage for real-time data retrieval.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Standard</code>: A managed low latency data store for feature groups.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public OnlineStoreConfig withStorageType(StorageType storageType) {
+        this.storageType = storageType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +431,9 @@ public class OnlineStoreConfig implements Serializable, Cloneable, StructuredPoj
         if (getEnableOnlineStore() != null)
             sb.append("EnableOnlineStore: ").append(getEnableOnlineStore()).append(",");
         if (getTtlDuration() != null)
-            sb.append("TtlDuration: ").append(getTtlDuration());
+            sb.append("TtlDuration: ").append(getTtlDuration()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -289,6 +460,10 @@ public class OnlineStoreConfig implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getTtlDuration() != null && other.getTtlDuration().equals(this.getTtlDuration()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +475,7 @@ public class OnlineStoreConfig implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getSecurityConfig() == null) ? 0 : getSecurityConfig().hashCode());
         hashCode = prime * hashCode + ((getEnableOnlineStore() == null) ? 0 : getEnableOnlineStore().hashCode());
         hashCode = prime * hashCode + ((getTtlDuration() == null) ? 0 : getTtlDuration().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

@@ -64,7 +64,7 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      * </p>
      */
     private Boolean fipsEnabled;
@@ -378,11 +378,11 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      * </p>
      * 
      * @param fipsEnabled
-     *        Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     *        Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      */
 
     public void setFipsEnabled(Boolean fipsEnabled) {
@@ -391,10 +391,10 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      * </p>
      * 
-     * @return Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * @return Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      */
 
     public Boolean getFipsEnabled() {
@@ -403,11 +403,11 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      * </p>
      * 
      * @param fipsEnabled
-     *        Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     *        Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,10 +418,10 @@ public class VerifiedAccessInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      * </p>
      * 
-     * @return Describes if support for Federal Information Processing Standards (FIPS) is enabled on the instance.
+     * @return Describes whether support for Federal Information Processing Standards (FIPS) is enabled on the instance.
      */
 
     public Boolean isFipsEnabled() {

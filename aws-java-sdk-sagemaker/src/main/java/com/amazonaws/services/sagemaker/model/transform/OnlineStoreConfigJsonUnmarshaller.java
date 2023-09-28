@@ -60,6 +60,10 @@ public class OnlineStoreConfigJsonUnmarshaller implements Unmarshaller<OnlineSto
                     context.nextToken();
                     onlineStoreConfig.setTtlDuration(TtlDurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("StorageType", targetDepth)) {
+                    context.nextToken();
+                    onlineStoreConfig.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
