@@ -166,6 +166,18 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private String retentionMode;
+    /**
+     * <p>
+     * The reason a run has failed.
+     * </p>
+     */
+    private String failureReason;
+    /**
+     * <p>
+     * The location of the run log.
+     * </p>
+     */
+    private RunLogLocation logLocation;
 
     /**
      * <p>
@@ -1279,6 +1291,86 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The reason a run has failed.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason a run has failed.
+     */
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason a run has failed.
+     * </p>
+     * 
+     * @return The reason a run has failed.
+     */
+
+    public String getFailureReason() {
+        return this.failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason a run has failed.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason a run has failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRunResult withFailureReason(String failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The location of the run log.
+     * </p>
+     * 
+     * @param logLocation
+     *        The location of the run log.
+     */
+
+    public void setLogLocation(RunLogLocation logLocation) {
+        this.logLocation = logLocation;
+    }
+
+    /**
+     * <p>
+     * The location of the run log.
+     * </p>
+     * 
+     * @return The location of the run log.
+     */
+
+    public RunLogLocation getLogLocation() {
+        return this.logLocation;
+    }
+
+    /**
+     * <p>
+     * The location of the run log.
+     * </p>
+     * 
+     * @param logLocation
+     *        The location of the run log.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRunResult withLogLocation(RunLogLocation logLocation) {
+        setLogLocation(logLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1337,7 +1429,11 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getAccelerators() != null)
             sb.append("Accelerators: ").append(getAccelerators()).append(",");
         if (getRetentionMode() != null)
-            sb.append("RetentionMode: ").append(getRetentionMode());
+            sb.append("RetentionMode: ").append(getRetentionMode()).append(",");
+        if (getFailureReason() != null)
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getLogLocation() != null)
+            sb.append("LogLocation: ").append(getLogLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -1448,6 +1544,14 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getRetentionMode() != null && other.getRetentionMode().equals(this.getRetentionMode()) == false)
             return false;
+        if (other.getFailureReason() == null ^ this.getFailureReason() == null)
+            return false;
+        if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
+            return false;
+        if (other.getLogLocation() == null ^ this.getLogLocation() == null)
+            return false;
+        if (other.getLogLocation() != null && other.getLogLocation().equals(this.getLogLocation()) == false)
+            return false;
         return true;
     }
 
@@ -1480,6 +1584,8 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAccelerators() == null) ? 0 : getAccelerators().hashCode());
         hashCode = prime * hashCode + ((getRetentionMode() == null) ? 0 : getRetentionMode().hashCode());
+        hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getLogLocation() == null) ? 0 : getLogLocation().hashCode());
         return hashCode;
     }
 

@@ -42,9 +42,9 @@ public class RDFGraphSummaryValueMap implements Serializable, Cloneable, Structu
     private java.util.Date lastStatisticsComputationTime;
     /**
      * <p>
-     * The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary
-     * response for an RDF graph</a>.
+     * The graph summary of an RDF graph. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response"
+     * >Graph summary response for an RDF graph</a>.
      * </p>
      */
     private RDFGraphSummary graphSummary;
@@ -131,15 +131,15 @@ public class RDFGraphSummaryValueMap implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary
-     * response for an RDF graph</a>.
+     * The graph summary of an RDF graph. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response"
+     * >Graph summary response for an RDF graph</a>.
      * </p>
      * 
      * @param graphSummary
-     *        The graph summary of an RDF graph. See <a
-     *        href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
-     *        summary response for an RDF graph</a>.
+     *        The graph summary of an RDF graph. See <a href=
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response"
+     *        >Graph summary response for an RDF graph</a>.
      */
 
     public void setGraphSummary(RDFGraphSummary graphSummary) {
@@ -148,14 +148,14 @@ public class RDFGraphSummaryValueMap implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary
-     * response for an RDF graph</a>.
+     * The graph summary of an RDF graph. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response"
+     * >Graph summary response for an RDF graph</a>.
      * </p>
      * 
-     * @return The graph summary of an RDF graph. See <a
-     *         href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
-     *         summary response for an RDF graph</a>.
+     * @return The graph summary of an RDF graph. See <a href=
+     *         "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response"
+     *         >Graph summary response for an RDF graph</a>.
      */
 
     public RDFGraphSummary getGraphSummary() {
@@ -164,15 +164,15 @@ public class RDFGraphSummaryValueMap implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The graph summary of an RDF graph. See <a
-     * href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph summary
-     * response for an RDF graph</a>.
+     * The graph summary of an RDF graph. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response"
+     * >Graph summary response for an RDF graph</a>.
      * </p>
      * 
      * @param graphSummary
-     *        The graph summary of an RDF graph. See <a
-     *        href="https://docs.aws.amazon.com/neptune-graph-summary.html#neptune-graph-summary-rdf-response">Graph
-     *        summary response for an RDF graph</a>.
+     *        The graph summary of an RDF graph. See <a href=
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-graph-summary.html#neptune-graph-summary-rdf-response"
+     *        >Graph summary response for an RDF graph</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

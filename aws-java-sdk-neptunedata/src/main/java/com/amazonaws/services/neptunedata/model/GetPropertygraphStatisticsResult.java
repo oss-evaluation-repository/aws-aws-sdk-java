@@ -25,8 +25,8 @@ public class GetPropertygraphStatisticsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      * >Common error codes for DFE statistics request</a> for a list of common errors.
      * </p>
      */
@@ -40,14 +40,14 @@ public class GetPropertygraphStatisticsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      * >Common error codes for DFE statistics request</a> for a list of common errors.
      * </p>
      * 
      * @param status
      *        The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
-     *        "docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      *        >Common error codes for DFE statistics request</a> for a list of common errors.
      */
 
@@ -57,13 +57,13 @@ public class GetPropertygraphStatisticsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      * >Common error codes for DFE statistics request</a> for a list of common errors.
      * </p>
      * 
-     * @return The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     *         href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * @return The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     *         "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      *         >Common error codes for DFE statistics request</a> for a list of common errors.
      */
 
@@ -73,14 +73,14 @@ public class GetPropertygraphStatisticsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      * >Common error codes for DFE statistics request</a> for a list of common errors.
      * </p>
      * 
      * @param status
      *        The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
-     *        "docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      *        >Common error codes for DFE statistics request</a> for a list of common errors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

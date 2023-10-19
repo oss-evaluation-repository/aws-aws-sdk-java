@@ -71,7 +71,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -325,7 +335,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -340,7 +360,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -362,7 +392,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -376,7 +416,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *         </li>
      *         <li>
      *         <p>
-     *         <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     *         <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXTERNAL</code> - External configuration file
      *         </p>
      *         </li>
      * @see ProvisioningArtifactType
@@ -398,7 +448,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -413,7 +473,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -437,7 +507,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -452,7 +532,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -474,7 +564,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
      * </p>
      * </li>
      * </ul>
@@ -489,7 +589,17 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

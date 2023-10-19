@@ -95,6 +95,12 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private String instanceType;
+    /**
+     * <p>
+     * The reason a task has failed.
+     * </p>
+     */
+    private String failureReason;
 
     /**
      * <p>
@@ -596,6 +602,46 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The reason a task has failed.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason a task has failed.
+     */
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason a task has failed.
+     * </p>
+     * 
+     * @return The reason a task has failed.
+     */
+
+    public String getFailureReason() {
+        return this.failureReason;
+    }
+
+    /**
+     * <p>
+     * The reason a task has failed.
+     * </p>
+     * 
+     * @param failureReason
+     *        The reason a task has failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRunTaskResult withFailureReason(String failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -630,7 +676,9 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getGpus() != null)
             sb.append("Gpus: ").append(getGpus()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType());
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getFailureReason() != null)
+            sb.append("FailureReason: ").append(getFailureReason());
         sb.append("}");
         return sb.toString();
     }
@@ -693,6 +741,10 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getFailureReason() == null ^ this.getFailureReason() == null)
+            return false;
+        if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
+            return false;
         return true;
     }
 
@@ -713,6 +765,7 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getLogStream() == null) ? 0 : getLogStream().hashCode());
         hashCode = prime * hashCode + ((getGpus() == null) ? 0 : getGpus().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         return hashCode;
     }
 

@@ -114,7 +114,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * <p>
      * You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as
-     * <code>IAM_PATTERN</code>
+     * <code>IAM_PATTERN</code>.
      * </p>
      * <note>
      * <p>
@@ -152,7 +152,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * <p>
      * You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code> as
-     * <code>IAM_PATTERN</code>
+     * <code>IAM_PATTERN</code>.
      * </p>
      * <note>
      * <p>

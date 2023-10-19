@@ -48,6 +48,8 @@ public class CreateAnalysisRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Definition").build();
     private static final MarshallingInfo<StructuredPojo> VALIDATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStrategy").build();
+    private static final MarshallingInfo<List> FOLDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FolderArns").build();
 
     private static final CreateAnalysisRequestMarshaller instance = new CreateAnalysisRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class CreateAnalysisRequestMarshaller {
             protocolMarshaller.marshall(createAnalysisRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createAnalysisRequest.getDefinition(), DEFINITION_BINDING);
             protocolMarshaller.marshall(createAnalysisRequest.getValidationStrategy(), VALIDATIONSTRATEGY_BINDING);
+            protocolMarshaller.marshall(createAnalysisRequest.getFolderArns(), FOLDERARNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

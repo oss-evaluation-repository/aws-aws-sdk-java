@@ -2209,6 +2209,72 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Get the status of the maintenance action.
+     * </p>
+     * 
+     * @param getDomainMaintenanceStatusRequest
+     *        Container for the parameters to the <code>GetDomainMaintenanceStatus</code> operation.
+     * @return Result of the GetDomainMaintenanceStatus operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @sample AmazonOpenSearch.GetDomainMaintenanceStatus
+     */
+    @Override
+    public GetDomainMaintenanceStatusResult getDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomainMaintenanceStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainMaintenanceStatusResult executeGetDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest getDomainMaintenanceStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDomainMaintenanceStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDomainMaintenanceStatusRequest> request = null;
+        Response<GetDomainMaintenanceStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDomainMaintenanceStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDomainMaintenanceStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainMaintenanceStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDomainMaintenanceStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDomainMaintenanceStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of Amazon OpenSearch Service package versions, along with their creation time, commit message, and
      * plugin properties (if the package is a zip plugin package). For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
@@ -2395,6 +2461,71 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<GetUpgradeStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUpgradeStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the list of the maintenance action.
+     * </p>
+     * 
+     * @param listDomainMaintenancesRequest
+     *        Container for the parameters to the <code>ListDomainMaintenances</code> operation.
+     * @return Result of the ListDomainMaintenances operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @sample AmazonOpenSearch.ListDomainMaintenances
+     */
+    @Override
+    public ListDomainMaintenancesResult listDomainMaintenances(ListDomainMaintenancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomainMaintenances(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainMaintenancesResult executeListDomainMaintenances(ListDomainMaintenancesRequest listDomainMaintenancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDomainMaintenancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDomainMaintenancesRequest> request = null;
+        Response<ListDomainMaintenancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDomainMaintenancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainMaintenancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainMaintenances");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDomainMaintenancesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDomainMaintenancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3285,6 +3416,72 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<RevokeVpcEndpointAccessResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RevokeVpcEndpointAccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the node maintenance (Node restart, Node reboot, Opensearch/Elasticsearch process restart,
+     * Dashboard/kibana restart) on the data node.
+     * </p>
+     * 
+     * @param startDomainMaintenanceRequest
+     *        Container for the parameters to the <code>StartDomainMaintenance</code> operation.
+     * @return Result of the StartDomainMaintenance operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @sample AmazonOpenSearch.StartDomainMaintenance
+     */
+    @Override
+    public StartDomainMaintenanceResult startDomainMaintenance(StartDomainMaintenanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDomainMaintenance(request);
+    }
+
+    @SdkInternalApi
+    final StartDomainMaintenanceResult executeStartDomainMaintenance(StartDomainMaintenanceRequest startDomainMaintenanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDomainMaintenanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDomainMaintenanceRequest> request = null;
+        Response<StartDomainMaintenanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDomainMaintenanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDomainMaintenanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDomainMaintenance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDomainMaintenanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDomainMaintenanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

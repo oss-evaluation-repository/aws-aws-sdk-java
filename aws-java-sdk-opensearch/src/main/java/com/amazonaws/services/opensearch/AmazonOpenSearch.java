@@ -754,6 +754,28 @@ public interface AmazonOpenSearch {
 
     /**
      * <p>
+     * Get the status of the maintenance action.
+     * </p>
+     * 
+     * @param getDomainMaintenanceStatusRequest
+     *        Container for the parameters to the <code>GetDomainMaintenanceStatus</code> operation.
+     * @return Result of the GetDomainMaintenanceStatus operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @sample AmazonOpenSearch.GetDomainMaintenanceStatus
+     */
+    GetDomainMaintenanceStatusResult getDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest getDomainMaintenanceStatusRequest);
+
+    /**
+     * <p>
      * Returns a list of Amazon OpenSearch Service package versions, along with their creation time, commit message, and
      * plugin properties (if the package is a zip plugin package). For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
@@ -821,6 +843,28 @@ public interface AmazonOpenSearch {
      * @sample AmazonOpenSearch.GetUpgradeStatus
      */
     GetUpgradeStatusResult getUpgradeStatus(GetUpgradeStatusRequest getUpgradeStatusRequest);
+
+    /**
+     * <p>
+     * Get the list of the maintenance action.
+     * </p>
+     * 
+     * @param listDomainMaintenancesRequest
+     *        Container for the parameters to the <code>ListDomainMaintenances</code> operation.
+     * @return Result of the ListDomainMaintenances operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @sample AmazonOpenSearch.ListDomainMaintenances
+     */
+    ListDomainMaintenancesResult listDomainMaintenances(ListDomainMaintenancesRequest listDomainMaintenancesRequest);
 
     /**
      * <p>
@@ -1109,6 +1153,29 @@ public interface AmazonOpenSearch {
      * @sample AmazonOpenSearch.RevokeVpcEndpointAccess
      */
     RevokeVpcEndpointAccessResult revokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest revokeVpcEndpointAccessRequest);
+
+    /**
+     * <p>
+     * Starts the node maintenance (Node restart, Node reboot, Opensearch/Elasticsearch process restart,
+     * Dashboard/kibana restart) on the data node.
+     * </p>
+     * 
+     * @param startDomainMaintenanceRequest
+     *        Container for the parameters to the <code>StartDomainMaintenance</code> operation.
+     * @return Result of the StartDomainMaintenance operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @sample AmazonOpenSearch.StartDomainMaintenance
+     */
+    StartDomainMaintenanceResult startDomainMaintenance(StartDomainMaintenanceRequest startDomainMaintenanceRequest);
 
     /**
      * <p>

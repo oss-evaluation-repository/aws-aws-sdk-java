@@ -13715,6 +13715,9 @@
       }, {
         "name" : "BITCOIN_TESTNET",
         "value" : "BITCOIN_TESTNET"
+      }, {
+        "name" : "ETHEREUM_SEPOLIA_TESTNET",
+        "value" : "ETHEREUM_SEPOLIA_TESTNET"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.managedblockchainquery.enum.QueryNetwork",

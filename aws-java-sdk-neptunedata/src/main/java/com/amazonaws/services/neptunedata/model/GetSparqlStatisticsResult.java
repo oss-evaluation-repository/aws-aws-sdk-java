@@ -25,9 +25,15 @@ public class GetSparqlStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      * >Common error codes for DFE statistics request</a> for a list of common errors.
+     * </p>
+     * <p>
+     * When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role
+     * making the request must have a policy attached that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus"
+     * >neptune-db:GetStatisticsStatus</a> IAM action in that cluster.
      * </p>
      */
     private String status;
@@ -40,15 +46,26 @@ public class GetSparqlStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      * >Common error codes for DFE statistics request</a> for a list of common errors.
+     * </p>
+     * <p>
+     * When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role
+     * making the request must have a policy attached that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus"
+     * >neptune-db:GetStatisticsStatus</a> IAM action in that cluster.
      * </p>
      * 
      * @param status
      *        The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
-     *        "docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
-     *        >Common error codes for DFE statistics request</a> for a list of common errors.
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     *        >Common error codes for DFE statistics request</a> for a list of common errors.</p>
+     *        <p>
+     *        When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or
+     *        role making the request must have a policy attached that allows the <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus"
+     *        >neptune-db:GetStatisticsStatus</a> IAM action in that cluster.
      */
 
     public void setStatus(String status) {
@@ -57,14 +74,25 @@ public class GetSparqlStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      * >Common error codes for DFE statistics request</a> for a list of common errors.
      * </p>
+     * <p>
+     * When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role
+     * making the request must have a policy attached that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus"
+     * >neptune-db:GetStatisticsStatus</a> IAM action in that cluster.
+     * </p>
      * 
-     * @return The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     *         href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
-     *         >Common error codes for DFE statistics request</a> for a list of common errors.
+     * @return The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     *         "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     *         >Common error codes for DFE statistics request</a> for a list of common errors.</p>
+     *         <p>
+     *         When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or
+     *         role making the request must have a policy attached that allows the <a
+     *         href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus"
+     *         >neptune-db:GetStatisticsStatus</a> IAM action in that cluster.
      */
 
     public String getStatus() {
@@ -73,15 +101,26 @@ public class GetSparqlStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     * The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
+     * "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
      * >Common error codes for DFE statistics request</a> for a list of common errors.
+     * </p>
+     * <p>
+     * When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role
+     * making the request must have a policy attached that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus"
+     * >neptune-db:GetStatisticsStatus</a> IAM action in that cluster.
      * </p>
      * 
      * @param status
      *        The HTTP return code of the request. If the request succeeded, the code is 200. See <a href=
-     *        "docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
-     *        >Common error codes for DFE statistics request</a> for a list of common errors.
+     *        "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors"
+     *        >Common error codes for DFE statistics request</a> for a list of common errors.</p>
+     *        <p>
+     *        When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or
+     *        role making the request must have a policy attached that allows the <a
+     *        href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus"
+     *        >neptune-db:GetStatisticsStatus</a> IAM action in that cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

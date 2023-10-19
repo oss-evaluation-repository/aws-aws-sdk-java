@@ -96,6 +96,10 @@ public class GetRunTaskResultJsonUnmarshaller implements Unmarshaller<GetRunTask
                     context.nextToken();
                     getRunTaskResult.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("failureReason", targetDepth)) {
+                    context.nextToken();
+                    getRunTaskResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

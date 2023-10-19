@@ -183,6 +183,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public GetDomainMaintenanceStatusResult getDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPackageVersionHistoryResult getPackageVersionHistory(GetPackageVersionHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -194,6 +199,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public GetUpgradeStatusResult getUpgradeStatus(GetUpgradeStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDomainMaintenancesResult listDomainMaintenances(ListDomainMaintenancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -264,6 +274,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public RevokeVpcEndpointAccessResult revokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartDomainMaintenanceResult startDomainMaintenance(StartDomainMaintenanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

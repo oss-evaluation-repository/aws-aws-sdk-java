@@ -433,6 +433,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request) {
+
+        return getDomainMaintenanceStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDomainMaintenanceStatusRequest, GetDomainMaintenanceStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPackageVersionHistoryResult> getPackageVersionHistoryAsync(GetPackageVersionHistoryRequest request) {
 
         return getPackageVersionHistoryAsync(request, null);
@@ -467,6 +480,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(ListDomainMaintenancesRequest request) {
+
+        return listDomainMaintenancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(ListDomainMaintenancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDomainMaintenancesRequest, ListDomainMaintenancesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -651,6 +677,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<RevokeVpcEndpointAccessResult> revokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokeVpcEndpointAccessRequest, RevokeVpcEndpointAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(StartDomainMaintenanceRequest request) {
+
+        return startDomainMaintenanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(StartDomainMaintenanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDomainMaintenanceRequest, StartDomainMaintenanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

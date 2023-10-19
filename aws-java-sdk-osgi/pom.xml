@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.12.570-SNAPSHOT</version>
+    <version>1.12.570</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -341,12 +341,6 @@
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-pinpointsmsvoicev2</artifactId>
-        <groupId>com.amazonaws</groupId>
-        <optional>false</optional>
-        <version>${awsjavasdk.version}</version>
-    </dependency>
-    <dependency>
-        <artifactId>aws-java-sdk-gamesparks</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>
@@ -2489,10 +2483,6 @@
                               <group>
                                   <title>Amazon Pinpoint SMS Voice V2</title>
                                   <packages>com.amazonaws.services.pinpointsmsvoicev2*</packages>
-                              </group>
-                              <group>
-                                  <title>GameSparks</title>
-                                  <packages>com.amazonaws.services.gamesparks*</packages>
                               </group>
                               <group>
                                   <title>AWSBillingConductor</title>

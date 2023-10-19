@@ -50,9 +50,28 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
@@ -212,14 +231,52 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
      *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -231,13 +288,51 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The type of provisioning artifact.</p>
+     *         <ul>
+     *         <li>
      *         <p>
      *         <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXTERNAL</code> - External configuration file
+     *         </p>
+     *         </li>
      * @see ProvisioningArtifactType
      */
 
@@ -249,14 +344,52 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
      *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
@@ -270,14 +403,52 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
      *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
+     *        </p>
+     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -289,14 +460,52 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
+     * <ul>
+     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXTERNAL</code> - External configuration file
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
      *        The type of provisioning artifact.</p>
+     *        <ul>
+     *        <li>
      *        <p>
      *        <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXTERNAL</code> - External configuration file
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */

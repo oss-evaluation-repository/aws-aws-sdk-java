@@ -1339,7 +1339,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * </li>
      * <li>
      * <p>
-     * PCoIP is only available for Windows bundles.
+     * You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because <code>WSP</code> is the
+     * default protocol for those bundles.
      * </p>
      * </li>
      * </ul>

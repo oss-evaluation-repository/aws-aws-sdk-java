@@ -318,8 +318,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -330,8 +330,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -362,6 +362,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         </li>
      * @throws ServiceQuotaExceededException
      *         The request failed because it would cause a service quota to be exceeded.
+     * @throws ConflictException
+     *         The request failed because another request to modify a resource occurred at the same.
      * @throws AccessDeniedException
      *         You don't have sufficient access to perform this action.
      * @throws ResourceNotFoundException
@@ -510,8 +512,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -522,8 +524,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -554,6 +556,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         </li>
      * @throws ServiceQuotaExceededException
      *         The request failed because it would cause a service quota to be exceeded.
+     * @throws ConflictException
+     *         The request failed because another request to modify a resource occurred at the same.
      * @throws AccessDeniedException
      *         You don't have sufficient access to perform this action.
      * @throws ResourceNotFoundException
@@ -616,8 +620,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      * </p>
      * <note>
      * <p>
-     * Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports multiple namespaces</a>,
-     * Verified Permissions currently supports only one namespace per policy store.
+     * Although <a href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar supports multiple
+     * namespaces</a>, Verified Permissions currently supports only one namespace per policy store.
      * </p>
      * </note> <note>
      * <p>
@@ -685,8 +689,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -697,8 +701,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -729,6 +733,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         </li>
      * @throws ServiceQuotaExceededException
      *         The request failed because it would cause a service quota to be exceeded.
+     * @throws ConflictException
+     *         The request failed because another request to modify a resource occurred at the same.
      * @throws AccessDeniedException
      *         You don't have sufficient access to perform this action.
      * @throws ThrottlingException
@@ -857,8 +863,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -869,8 +875,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -901,6 +907,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         </li>
      * @throws ServiceQuotaExceededException
      *         The request failed because it would cause a service quota to be exceeded.
+     * @throws ConflictException
+     *         The request failed because another request to modify a resource occurred at the same.
      * @throws AccessDeniedException
      *         You don't have sufficient access to perform this action.
      * @throws ResourceNotFoundException
@@ -1024,8 +1032,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1036,8 +1044,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1191,8 +1199,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1203,8 +1211,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1358,8 +1366,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1370,8 +1378,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1523,8 +1531,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1535,8 +1543,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1686,8 +1694,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1698,8 +1706,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1847,8 +1855,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1859,8 +1867,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2008,8 +2016,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2020,8 +2028,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2169,8 +2177,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2181,8 +2189,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2330,8 +2338,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2342,8 +2350,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2494,8 +2502,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2506,8 +2514,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2684,8 +2692,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2696,8 +2704,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2846,8 +2854,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -2858,8 +2866,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3007,8 +3015,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3019,8 +3027,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3168,8 +3176,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3180,8 +3188,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3327,8 +3335,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3339,8 +3347,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3498,8 +3506,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3510,8 +3518,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3671,8 +3679,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3683,8 +3691,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3904,8 +3912,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -3916,8 +3924,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -4076,8 +4084,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -4088,8 +4096,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -4184,8 +4192,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      * </p>
      * <important>
      * <p>
-     * Changes you make to the policy template content are immediately reflected in authorization decisions that involve
-     * all template-linked policies instantiated from this template.
+     * Changes you make to the policy template content are immediately (within the constraints of eventual consistency)
+     * reflected in authorization decisions that involve all template-linked policies instantiated from this template.
      * </p>
      * </important> <note>
      * <p>
@@ -4253,8 +4261,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         <p>
      *         The policy attempts to access a record or entity attribute that isn't specified in the schema. Test for
      *         the existence of the attribute first before attempting to access its value. For more information, see the
-     *         <a href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence
-     *         of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -4265,8 +4273,8 @@ public class AmazonVerifiedPermissionsClient extends AmazonWebServiceClient impl
      *         The policy attempts to access a record or entity attribute that is optional and isn't guaranteed to be
      *         present. Test for the existence of the attribute first before attempting to access its value. For more
      *         information, see the <a
-     *         href="https://docs.cedarpolicy.com/syntax-operators.html#has-presence-of-attribute-test">has (presence of
-     *         attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+     *         href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+     *         (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
      *         </p>
      *         </li>
      *         <li>

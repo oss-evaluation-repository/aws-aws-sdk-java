@@ -303,8 +303,8 @@ public interface AmazonVerifiedPermissionsAsync extends AmazonVerifiedPermission
      * </p>
      * <note>
      * <p>
-     * Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports multiple namespaces</a>,
-     * Verified Permissions currently supports only one namespace per policy store.
+     * Although <a href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar supports multiple
+     * namespaces</a>, Verified Permissions currently supports only one namespace per policy store.
      * </p>
      * </note> <note>
      * <p>
@@ -328,8 +328,8 @@ public interface AmazonVerifiedPermissionsAsync extends AmazonVerifiedPermission
      * </p>
      * <note>
      * <p>
-     * Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports multiple namespaces</a>,
-     * Verified Permissions currently supports only one namespace per policy store.
+     * Although <a href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar supports multiple
+     * namespaces</a>, Verified Permissions currently supports only one namespace per policy store.
      * </p>
      * </note> <note>
      * <p>
@@ -1292,8 +1292,8 @@ public interface AmazonVerifiedPermissionsAsync extends AmazonVerifiedPermission
      * </p>
      * <important>
      * <p>
-     * Changes you make to the policy template content are immediately reflected in authorization decisions that involve
-     * all template-linked policies instantiated from this template.
+     * Changes you make to the policy template content are immediately (within the constraints of eventual consistency)
+     * reflected in authorization decisions that involve all template-linked policies instantiated from this template.
      * </p>
      * </important> <note>
      * <p>
@@ -1319,8 +1319,8 @@ public interface AmazonVerifiedPermissionsAsync extends AmazonVerifiedPermission
      * </p>
      * <important>
      * <p>
-     * Changes you make to the policy template content are immediately reflected in authorization decisions that involve
-     * all template-linked policies instantiated from this template.
+     * Changes you make to the policy template content are immediately (within the constraints of eventual consistency)
+     * reflected in authorization decisions that involve all template-linked policies instantiated from this template.
      * </p>
      * </important> <note>
      * <p>

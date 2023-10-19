@@ -35,8 +35,8 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
     private String instanceType;
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation
+     * exception.
      * </p>
      */
     private Integer instanceCount;
@@ -170,13 +170,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation
+     * exception.
      * </p>
      * 
      * @param instanceCount
-     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
-     *        a validation exception.
+     *        Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     *        validation exception.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -185,12 +185,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation
+     * exception.
      * </p>
      * 
-     * @return Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you
-     *         receive a validation exception.
+     * @return Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     *         validation exception.
      */
 
     public Integer getInstanceCount() {
@@ -199,13 +199,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
-     * validation exception.
+     * Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a validation
+     * exception.
      * </p>
      * 
      * @param instanceCount
-     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
-     *        a validation exception.
+     *        Number of data nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     *        validation exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

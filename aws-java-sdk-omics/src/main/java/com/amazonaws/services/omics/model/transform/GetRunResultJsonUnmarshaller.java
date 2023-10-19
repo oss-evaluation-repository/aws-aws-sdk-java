@@ -146,6 +146,14 @@ public class GetRunResultJsonUnmarshaller implements Unmarshaller<GetRunResult, 
                     context.nextToken();
                     getRunResult.setRetentionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("failureReason", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("logLocation", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setLogLocation(RunLogLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
