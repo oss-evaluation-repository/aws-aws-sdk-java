@@ -1146,6 +1146,84 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     }
 
     /**
+     * <note>
+     * <p>
+     * Only the Amazon Connect outbound campaigns service principal is allowed to assume a role in your account and call
+     * this API.
+     * </p>
+     * </note>
+     * <p>
+     * Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns capability ingests dial
+     * requests via the <a
+     * href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html"
+     * >PutDialRequestBatch</a> API. It then uses BatchPutContact to create contacts corresponding to those dial
+     * requests. If agents are available, the dial requests are dialed out, which results in a voice call. The resulting
+     * voice call uses the same contactId that was created by BatchPutContact.
+     * </p>
+     * 
+     * @param batchPutContactRequest
+     * @return Result of the BatchPutContact operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws IdempotencyException
+     *         An entity with the same name already exists.
+     * @sample AmazonConnect.BatchPutContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchPutContactResult batchPutContact(BatchPutContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchPutContact(request);
+    }
+
+    @SdkInternalApi
+    final BatchPutContactResult executeBatchPutContact(BatchPutContactRequest batchPutContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchPutContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchPutContactRequest> request = null;
+        Response<BatchPutContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchPutContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchPutContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchPutContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchPutContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this
      * API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group

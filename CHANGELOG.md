@@ -1,3 +1,36 @@
+# __1.12.582__ __2023-11-06__
+## __AWS CodeBuild__
+  - ### Features
+    - AWS CodeBuild now supports AWS Lambda compute.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This release extends the GetReservationPurchaseRecommendation API to support recommendations for Amazon MemoryDB reservations.
+
+## __AWS Identity and Access Management__
+  - ### Features
+    - Add partitional endpoint for iso-e.
+
+## __Amazon Connect Service__
+  - ### Features
+    - Added new API that allows Amazon Connect Outbound Campaigns to create contacts in Amazon Connect when ingesting your dial requests.
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - Update the input of CreateDBInstance and ModifyDBInstance to support setting CA Certificates. Update the output of DescribeDBInstance and DescribeDBEngineVersions to show current and supported CA certificates.
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds new US English voices - Danielle and Gregory. Danielle and Gregory are available as Neural voices only.
+
+## __Amazon Route 53__
+  - ### Features
+    - Add partitional endpoints for iso-e and iso-f.
+
+## __AmazonMWAA__
+  - ### Features
+    - This release adds support for Apache Airflow version 2.7.2. This version release includes support for deferrable operators and triggers.
+
 # __1.12.581__ __2023-11-03__
 ## __AWS Config__
   - ### Features

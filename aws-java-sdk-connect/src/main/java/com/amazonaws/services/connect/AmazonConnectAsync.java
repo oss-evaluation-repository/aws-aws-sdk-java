@@ -552,6 +552,59 @@ public interface AmazonConnectAsync extends AmazonConnect {
             com.amazonaws.handlers.AsyncHandler<BatchGetFlowAssociationRequest, BatchGetFlowAssociationResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * Only the Amazon Connect outbound campaigns service principal is allowed to assume a role in your account and call
+     * this API.
+     * </p>
+     * </note>
+     * <p>
+     * Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns capability ingests dial
+     * requests via the <a
+     * href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html"
+     * >PutDialRequestBatch</a> API. It then uses BatchPutContact to create contacts corresponding to those dial
+     * requests. If agents are available, the dial requests are dialed out, which results in a voice call. The resulting
+     * voice call uses the same contactId that was created by BatchPutContact.
+     * </p>
+     * 
+     * @param batchPutContactRequest
+     * @return A Java Future containing the result of the BatchPutContact operation returned by the service.
+     * @sample AmazonConnectAsync.BatchPutContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchPutContactResult> batchPutContactAsync(BatchPutContactRequest batchPutContactRequest);
+
+    /**
+     * <note>
+     * <p>
+     * Only the Amazon Connect outbound campaigns service principal is allowed to assume a role in your account and call
+     * this API.
+     * </p>
+     * </note>
+     * <p>
+     * Allows you to create a batch of contacts in Amazon Connect. The outbound campaigns capability ingests dial
+     * requests via the <a
+     * href="https://docs.aws.amazon.com/connect-outbound/latest/APIReference/API_PutDialRequestBatch.html"
+     * >PutDialRequestBatch</a> API. It then uses BatchPutContact to create contacts corresponding to those dial
+     * requests. If agents are available, the dial requests are dialed out, which results in a voice call. The resulting
+     * voice call uses the same contactId that was created by BatchPutContact.
+     * </p>
+     * 
+     * @param batchPutContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchPutContact operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.BatchPutContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchPutContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchPutContactResult> batchPutContactAsync(BatchPutContactRequest batchPutContactRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchPutContactRequest, BatchPutContactResult> asyncHandler);
+
+    /**
      * <p>
      * Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this
      * API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group

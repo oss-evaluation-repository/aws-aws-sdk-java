@@ -201,6 +201,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<BatchPutContactResult> batchPutContactAsync(BatchPutContactRequest request) {
+
+        return batchPutContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchPutContactResult> batchPutContactAsync(BatchPutContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchPutContactRequest, BatchPutContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ClaimPhoneNumberResult> claimPhoneNumberAsync(ClaimPhoneNumberRequest request) {
 
         return claimPhoneNumberAsync(request, null);

@@ -93,6 +93,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public BatchPutContactResult batchPutContact(BatchPutContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ClaimPhoneNumberResult claimPhoneNumber(ClaimPhoneNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

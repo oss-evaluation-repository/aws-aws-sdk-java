@@ -525,6 +525,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<BatchPutContactResult> batchPutContactAsync(BatchPutContactRequest request) {
+
+        return batchPutContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchPutContactResult> batchPutContactAsync(final BatchPutContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchPutContactRequest, BatchPutContactResult> asyncHandler) {
+        final BatchPutContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchPutContactResult>() {
+            @Override
+            public BatchPutContactResult call() throws Exception {
+                BatchPutContactResult result = null;
+
+                try {
+                    result = executeBatchPutContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ClaimPhoneNumberResult> claimPhoneNumberAsync(ClaimPhoneNumberRequest request) {
 
         return claimPhoneNumberAsync(request, null);
