@@ -52,6 +52,8 @@ public class ReportDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReportVersioning").build();
     private static final MarshallingInfo<String> BILLINGVIEWARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingViewArn").build();
+    private static final MarshallingInfo<StructuredPojo> REPORTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReportStatus").build();
 
     private static final ReportDefinitionMarshaller instance = new ReportDefinitionMarshaller();
 
@@ -81,6 +83,7 @@ public class ReportDefinitionMarshaller {
             protocolMarshaller.marshall(reportDefinition.getRefreshClosedReports(), REFRESHCLOSEDREPORTS_BINDING);
             protocolMarshaller.marshall(reportDefinition.getReportVersioning(), REPORTVERSIONING_BINDING);
             protocolMarshaller.marshall(reportDefinition.getBillingViewArn(), BILLINGVIEWARN_BINDING);
+            protocolMarshaller.marshall(reportDefinition.getReportStatus(), REPORTSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

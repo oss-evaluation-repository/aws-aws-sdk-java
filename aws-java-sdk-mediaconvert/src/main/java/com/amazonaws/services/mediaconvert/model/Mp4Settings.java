@@ -57,8 +57,8 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     /** Inserts a free-space box immediately after the moov box. */
     private String freeSpaceBox;
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
-     * progressive downloading. Otherwise it is placed normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank
+     * or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      */
     private String moovPlacement;
     /** Overrides the "Major Brand" field in the output file. Usually not necessary to specify. */
@@ -353,12 +353,12 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
-     * progressive downloading. Otherwise it is placed normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank
+     * or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      * 
      * @param moovPlacement
-     *        If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
-     *        progressive downloading. Otherwise it is placed normally at the end.
+     *        To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave
+     *        blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      * @see Mp4MoovPlacement
      */
 
@@ -367,11 +367,11 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
-     * progressive downloading. Otherwise it is placed normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank
+     * or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      * 
-     * @return If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required
-     *         for progressive downloading. Otherwise it is placed normally at the end.
+     * @return To place the MOOV atom at the beginning of your output, which is useful for progressive downloading:
+     *         Leave blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      * @see Mp4MoovPlacement
      */
 
@@ -380,12 +380,12 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
-     * progressive downloading. Otherwise it is placed normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank
+     * or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      * 
      * @param moovPlacement
-     *        If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
-     *        progressive downloading. Otherwise it is placed normally at the end.
+     *        To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave
+     *        blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mp4MoovPlacement
      */
@@ -396,12 +396,12 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
-     * progressive downloading. Otherwise it is placed normally at the end.
+     * To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank
+     * or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      * 
      * @param moovPlacement
-     *        If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
-     *        progressive downloading. Otherwise it is placed normally at the end.
+     *        To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave
+     *        blank or choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mp4MoovPlacement
      */

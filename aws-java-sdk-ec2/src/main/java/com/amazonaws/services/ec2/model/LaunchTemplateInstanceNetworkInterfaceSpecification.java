@@ -156,6 +156,12 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
      * </p>
      */
     private Boolean primaryIpv6;
+    /**
+     * <p>
+     * Contains the ENA Express settings for instances launched from your launch template.
+     * </p>
+     */
+    private LaunchTemplateEnaSrdSpecification enaSrdSpecification;
 
     /**
      * <p>
@@ -1239,6 +1245,46 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
     }
 
     /**
+     * <p>
+     * Contains the ENA Express settings for instances launched from your launch template.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Contains the ENA Express settings for instances launched from your launch template.
+     */
+
+    public void setEnaSrdSpecification(LaunchTemplateEnaSrdSpecification enaSrdSpecification) {
+        this.enaSrdSpecification = enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Contains the ENA Express settings for instances launched from your launch template.
+     * </p>
+     * 
+     * @return Contains the ENA Express settings for instances launched from your launch template.
+     */
+
+    public LaunchTemplateEnaSrdSpecification getEnaSrdSpecification() {
+        return this.enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Contains the ENA Express settings for instances launched from your launch template.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Contains the ENA Express settings for instances launched from your launch template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecification withEnaSrdSpecification(LaunchTemplateEnaSrdSpecification enaSrdSpecification) {
+        setEnaSrdSpecification(enaSrdSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1289,7 +1335,9 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         if (getIpv6PrefixCount() != null)
             sb.append("Ipv6PrefixCount: ").append(getIpv6PrefixCount()).append(",");
         if (getPrimaryIpv6() != null)
-            sb.append("PrimaryIpv6: ").append(getPrimaryIpv6());
+            sb.append("PrimaryIpv6: ").append(getPrimaryIpv6()).append(",");
+        if (getEnaSrdSpecification() != null)
+            sb.append("EnaSrdSpecification: ").append(getEnaSrdSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -1385,6 +1433,10 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
             return false;
         if (other.getPrimaryIpv6() != null && other.getPrimaryIpv6().equals(this.getPrimaryIpv6()) == false)
             return false;
+        if (other.getEnaSrdSpecification() == null ^ this.getEnaSrdSpecification() == null)
+            return false;
+        if (other.getEnaSrdSpecification() != null && other.getEnaSrdSpecification().equals(this.getEnaSrdSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -1413,6 +1465,7 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
         hashCode = prime * hashCode + ((getIpv6PrefixCount() == null) ? 0 : getIpv6PrefixCount().hashCode());
         hashCode = prime * hashCode + ((getPrimaryIpv6() == null) ? 0 : getPrimaryIpv6().hashCode());
+        hashCode = prime * hashCode + ((getEnaSrdSpecification() == null) ? 0 : getEnaSrdSpecification().hashCode());
         return hashCode;
     }
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The types of manifest that you want AWS to create for this report.
+ * The types of manifest that you want Amazon Web Services to create for this report.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

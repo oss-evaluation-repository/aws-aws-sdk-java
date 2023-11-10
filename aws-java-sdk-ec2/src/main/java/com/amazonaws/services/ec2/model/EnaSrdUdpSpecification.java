@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * ENA Express is compatible with both TCP and UDP transport protocols. When it’s enabled, TCP traffic automatically
+ * ENA Express is compatible with both TCP and UDP transport protocols. When it's enabled, TCP traffic automatically
  * uses it. However, some UDP-based applications are designed to handle network packets that are out of order, without a
  * need for retransmission, such as live video broadcasting or other near-real-time applications. For UDP traffic, you
  * can specify whether to use ENA Express, based on your application environment needs.
@@ -31,19 +31,21 @@ public class EnaSrdUdpSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA Express.
+     * Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first
+     * enable ENA Express.
      * </p>
      */
     private Boolean enaSrdUdpEnabled;
 
     /**
      * <p>
-     * Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA Express.
+     * Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first
+     * enable ENA Express.
      * </p>
      * 
      * @param enaSrdUdpEnabled
-     *        Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA
-     *        Express.
+     *        Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must
+     *        first enable ENA Express.
      */
 
     public void setEnaSrdUdpEnabled(Boolean enaSrdUdpEnabled) {
@@ -52,11 +54,12 @@ public class EnaSrdUdpSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA Express.
+     * Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first
+     * enable ENA Express.
      * </p>
      * 
-     * @return Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA
-     *         Express.
+     * @return Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you
+     *         must first enable ENA Express.
      */
 
     public Boolean getEnaSrdUdpEnabled() {
@@ -65,12 +68,13 @@ public class EnaSrdUdpSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA Express.
+     * Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first
+     * enable ENA Express.
      * </p>
      * 
      * @param enaSrdUdpEnabled
-     *        Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA
-     *        Express.
+     *        Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must
+     *        first enable ENA Express.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +85,12 @@ public class EnaSrdUdpSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA Express.
+     * Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you must first
+     * enable ENA Express.
      * </p>
      * 
-     * @return Indicates whether UDP traffic uses ENA Express. To specify this setting, you must first enable ENA
-     *         Express.
+     * @return Indicates whether UDP traffic to and from the instance uses ENA Express. To specify this setting, you
+     *         must first enable ENA Express.
      */
 
     public Boolean isEnaSrdUdpEnabled() {

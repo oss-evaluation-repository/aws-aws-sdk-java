@@ -17,7 +17,16 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the ENA Express configuration for the network interface that's attached to the instance.
+ * ENA Express uses Amazon Web Services Scalable Reliable Datagram (SRD) technology to increase the maximum bandwidth
+ * used per stream and minimize tail latency of network traffic between EC2 instances. With ENA Express, you can
+ * communicate between two EC2 instances in the same subnet within the same account, or in different accounts. Both
+ * sending and receiving instances must have ENA Express enabled.
+ * </p>
+ * <p>
+ * To improve the reliability of network packet delivery, ENA Express reorders network packets on the receiving end by
+ * default. However, some UDP-based applications are designed to handle network packets that are out of order to reduce
+ * the overhead for packet delivery at the network layer. When ENA Express is enabled, you can specify whether UDP
+ * network traffic uses it.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachmentEnaSrdSpecification" target="_top">AWS
@@ -28,24 +37,24 @@ public class AttachmentEnaSrdSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     * Indicates whether ENA Express is enabled for the network interface.
      * </p>
      */
     private Boolean enaSrdEnabled;
     /**
      * <p>
-     * ENA Express configuration for UDP network traffic.
+     * Configures ENA Express for UDP network traffic.
      * </p>
      */
     private AttachmentEnaSrdUdpSpecification enaSrdUdpSpecification;
 
     /**
      * <p>
-     * Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     * Indicates whether ENA Express is enabled for the network interface.
      * </p>
      * 
      * @param enaSrdEnabled
-     *        Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     *        Indicates whether ENA Express is enabled for the network interface.
      */
 
     public void setEnaSrdEnabled(Boolean enaSrdEnabled) {
@@ -54,10 +63,10 @@ public class AttachmentEnaSrdSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     * Indicates whether ENA Express is enabled for the network interface.
      * </p>
      * 
-     * @return Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     * @return Indicates whether ENA Express is enabled for the network interface.
      */
 
     public Boolean getEnaSrdEnabled() {
@@ -66,11 +75,11 @@ public class AttachmentEnaSrdSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     * Indicates whether ENA Express is enabled for the network interface.
      * </p>
      * 
      * @param enaSrdEnabled
-     *        Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     *        Indicates whether ENA Express is enabled for the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +90,10 @@ public class AttachmentEnaSrdSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     * Indicates whether ENA Express is enabled for the network interface.
      * </p>
      * 
-     * @return Indicates whether ENA Express is enabled for the network interface that's attached to the instance.
+     * @return Indicates whether ENA Express is enabled for the network interface.
      */
 
     public Boolean isEnaSrdEnabled() {
@@ -93,11 +102,11 @@ public class AttachmentEnaSrdSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ENA Express configuration for UDP network traffic.
+     * Configures ENA Express for UDP network traffic.
      * </p>
      * 
      * @param enaSrdUdpSpecification
-     *        ENA Express configuration for UDP network traffic.
+     *        Configures ENA Express for UDP network traffic.
      */
 
     public void setEnaSrdUdpSpecification(AttachmentEnaSrdUdpSpecification enaSrdUdpSpecification) {
@@ -106,10 +115,10 @@ public class AttachmentEnaSrdSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ENA Express configuration for UDP network traffic.
+     * Configures ENA Express for UDP network traffic.
      * </p>
      * 
-     * @return ENA Express configuration for UDP network traffic.
+     * @return Configures ENA Express for UDP network traffic.
      */
 
     public AttachmentEnaSrdUdpSpecification getEnaSrdUdpSpecification() {
@@ -118,11 +127,11 @@ public class AttachmentEnaSrdSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ENA Express configuration for UDP network traffic.
+     * Configures ENA Express for UDP network traffic.
      * </p>
      * 
      * @param enaSrdUdpSpecification
-     *        ENA Express configuration for UDP network traffic.
+     *        Configures ENA Express for UDP network traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

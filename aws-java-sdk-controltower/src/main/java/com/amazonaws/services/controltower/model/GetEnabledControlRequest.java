@@ -27,18 +27,18 @@ public class GetEnabledControlRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the enabled control.
+     * The <code>controlIdentifier</code> of the enabled control.
      * </p>
      */
     private String enabledControlIdentifier;
 
     /**
      * <p>
-     * The ARN of the enabled control.
+     * The <code>controlIdentifier</code> of the enabled control.
      * </p>
      * 
      * @param enabledControlIdentifier
-     *        The ARN of the enabled control.
+     *        The <code>controlIdentifier</code> of the enabled control.
      */
 
     public void setEnabledControlIdentifier(String enabledControlIdentifier) {
@@ -47,10 +47,10 @@ public class GetEnabledControlRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the enabled control.
+     * The <code>controlIdentifier</code> of the enabled control.
      * </p>
      * 
-     * @return The ARN of the enabled control.
+     * @return The <code>controlIdentifier</code> of the enabled control.
      */
 
     public String getEnabledControlIdentifier() {
@@ -59,11 +59,11 @@ public class GetEnabledControlRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the enabled control.
+     * The <code>controlIdentifier</code> of the enabled control.
      * </p>
      * 
      * @param enabledControlIdentifier
-     *        The ARN of the enabled control.
+     *        The <code>controlIdentifier</code> of the enabled control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

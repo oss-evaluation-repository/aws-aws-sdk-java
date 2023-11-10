@@ -48,6 +48,10 @@ public class EnableControlResultJsonUnmarshaller implements Unmarshaller<EnableC
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    enableControlResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("operationIdentifier", targetDepth)) {
                     context.nextToken();
                     enableControlResult.setOperationIdentifier(context.getUnmarshaller(String.class).unmarshall(context));

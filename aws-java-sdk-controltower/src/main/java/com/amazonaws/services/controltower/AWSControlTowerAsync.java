@@ -27,7 +27,7 @@ import com.amazonaws.services.controltower.model.*;
  * <p>
  * <p>
  * These interfaces allow you to apply the AWS library of pre-defined <i>controls</i> to your organizational units,
- * programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms. .
+ * programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms.
  * </p>
  * <p>
  * To call these APIs, you'll need to know:
@@ -41,6 +41,11 @@ import com.amazonaws.services.controltower.model.*;
  * <li>
  * <p>
  * the ARN associated with the target organizational unit (OU), which we call the <code>targetIdentifier</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * the ARN associated with a resource that you wish to tag or untag.
  * </p>
  * </li>
  * </ul>
@@ -61,7 +66,7 @@ import com.amazonaws.services.controltower.model.*;
  * A quick-reference list of control identifers for the AWS Control Tower legacy <i>Strongly recommended</i> and
  * <i>Elective</i> controls is given in <a
  * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource identifiers
- * for APIs and guardrails</a> in the <a
+ * for APIs and controls</a> in the <a
  * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls reference guide
  * section</a> of the <i>AWS Control Tower User Guide</i>. Remember that <i>Mandatory</i> controls cannot be added or
  * removed.
@@ -207,7 +212,7 @@ public interface AWSControlTowerAsync extends AWSControlTower {
      * specified organizational unit and the accounts it contains. The resources created will vary according to the
      * control that you specify. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param enableControlRequest
@@ -224,7 +229,7 @@ public interface AWSControlTowerAsync extends AWSControlTower {
      * specified organizational unit and the accounts it contains. The resources created will vary according to the
      * control that you specify. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param enableControlRequest
@@ -245,7 +250,7 @@ public interface AWSControlTowerAsync extends AWSControlTower {
      * Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays
      * a message in case of error. Details for an operation are available for 90 days. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param getControlOperationRequest
@@ -261,7 +266,7 @@ public interface AWSControlTowerAsync extends AWSControlTower {
      * Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays
      * a message in case of error. Details for an operation are available for 90 days. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param getControlOperationRequest
@@ -279,30 +284,10 @@ public interface AWSControlTowerAsync extends AWSControlTower {
 
     /**
      * <p>
-     * Provides details about the enabled control. For usage examples, see <a
+     * Retrieves details about an enabled control. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
      * Control Tower User Guide</i> </a>.
      * </p>
-     * <p class="title">
-     * <b>Returned values</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * TargetRegions: Shows target AWS Regions where the enabled control is available to be deployed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * StatusSummary: Provides a detailed summary of the deployment status.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DriftSummary: Provides a detailed summary of the drifted status.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param getEnabledControlRequest
      * @return A Java Future containing the result of the GetEnabledControl operation returned by the service.
@@ -314,30 +299,10 @@ public interface AWSControlTowerAsync extends AWSControlTower {
 
     /**
      * <p>
-     * Provides details about the enabled control. For usage examples, see <a
+     * Retrieves details about an enabled control. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
      * Control Tower User Guide</i> </a>.
      * </p>
-     * <p class="title">
-     * <b>Returned values</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * TargetRegions: Shows target AWS Regions where the enabled control is available to be deployed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * StatusSummary: Provides a detailed summary of the deployment status.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DriftSummary: Provides a detailed summary of the drifted status.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param getEnabledControlRequest
      * @param asyncHandler
@@ -357,7 +322,7 @@ public interface AWSControlTowerAsync extends AWSControlTower {
      * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
      * contains. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param listEnabledControlsRequest
@@ -373,7 +338,7 @@ public interface AWSControlTowerAsync extends AWSControlTower {
      * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
      * contains. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param listEnabledControlsRequest
@@ -388,5 +353,110 @@ public interface AWSControlTowerAsync extends AWSControlTower {
      */
     java.util.concurrent.Future<ListEnabledControlsResult> listEnabledControlsAsync(ListEnabledControlsRequest listEnabledControlsRequest,
             com.amazonaws.handlers.AsyncHandler<ListEnabledControlsRequest, ListEnabledControlsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of tags associated with the resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSControlTowerAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags associated with the resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSControlTowerAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Applies tags to a resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSControlTowerAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Applies tags to a resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSControlTowerAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from a resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSControlTowerAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSControlTowerAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

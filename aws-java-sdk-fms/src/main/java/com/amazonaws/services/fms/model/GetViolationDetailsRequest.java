@@ -27,9 +27,36 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Firewall Manager policy that you want the details for. This currently only supports security group
-     * content audit policies.
+     * The ID of the Firewall Manager policy that you want the details for. You can get violation details for the
+     * following policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DNS Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Imported Network Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Network Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group content audit
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Third-party firewall
+     * </p>
+     * </li>
+     * </ul>
      */
     private String policyId;
     /**
@@ -57,13 +84,66 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Firewall Manager policy that you want the details for. This currently only supports security group
-     * content audit policies.
+     * The ID of the Firewall Manager policy that you want the details for. You can get violation details for the
+     * following policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DNS Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Imported Network Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Network Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group content audit
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Third-party firewall
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyId
-     *        The ID of the Firewall Manager policy that you want the details for. This currently only supports security
-     *        group content audit policies.
+     *        The ID of the Firewall Manager policy that you want the details for. You can get violation details for the
+     *        following policy types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DNS Firewall
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Imported Network Firewall
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Network Firewall
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Security group content audit
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Third-party firewall
+     *        </p>
+     *        </li>
      */
 
     public void setPolicyId(String policyId) {
@@ -72,12 +152,65 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Firewall Manager policy that you want the details for. This currently only supports security group
-     * content audit policies.
+     * The ID of the Firewall Manager policy that you want the details for. You can get violation details for the
+     * following policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DNS Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Imported Network Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Network Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group content audit
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Third-party firewall
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the Firewall Manager policy that you want the details for. This currently only supports
-     *         security group content audit policies.
+     * @return The ID of the Firewall Manager policy that you want the details for. You can get violation details for
+     *         the following policy types:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DNS Firewall
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Imported Network Firewall
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Network Firewall
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Security group content audit
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Third-party firewall
+     *         </p>
+     *         </li>
      */
 
     public String getPolicyId() {
@@ -86,13 +219,66 @@ public class GetViolationDetailsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Firewall Manager policy that you want the details for. This currently only supports security group
-     * content audit policies.
+     * The ID of the Firewall Manager policy that you want the details for. You can get violation details for the
+     * following policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DNS Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Imported Network Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Network Firewall
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group content audit
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Third-party firewall
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyId
-     *        The ID of the Firewall Manager policy that you want the details for. This currently only supports security
-     *        group content audit policies.
+     *        The ID of the Firewall Manager policy that you want the details for. You can get violation details for the
+     *        following policy types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DNS Firewall
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Imported Network Firewall
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Network Firewall
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Security group content audit
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Third-party firewall
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

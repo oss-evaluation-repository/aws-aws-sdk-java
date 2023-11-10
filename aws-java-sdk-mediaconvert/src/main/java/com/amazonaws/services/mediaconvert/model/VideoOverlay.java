@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Overlay one or more videos on top of your input video.
+ * Overlay one or more videos on top of your input video. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-overlays.html
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoOverlay" target="_top">AWS API
  *      Documentation</a>

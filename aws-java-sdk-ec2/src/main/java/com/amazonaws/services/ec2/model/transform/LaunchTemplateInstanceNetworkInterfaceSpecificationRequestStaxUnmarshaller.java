@@ -178,6 +178,12 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequestStaxUnmar
                     launchTemplateInstanceNetworkInterfaceSpecificationRequest.setPrimaryIpv6(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("EnaSrdSpecification", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecificationRequest.setEnaSrdSpecification(EnaSrdSpecificationRequestStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchTemplateInstanceNetworkInterfaceSpecificationRequest;

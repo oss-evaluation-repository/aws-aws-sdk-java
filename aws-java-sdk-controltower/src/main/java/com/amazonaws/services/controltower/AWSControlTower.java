@@ -28,7 +28,7 @@ import com.amazonaws.services.controltower.model.*;
  * <p>
  * <p>
  * These interfaces allow you to apply the AWS library of pre-defined <i>controls</i> to your organizational units,
- * programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms. .
+ * programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms.
  * </p>
  * <p>
  * To call these APIs, you'll need to know:
@@ -42,6 +42,11 @@ import com.amazonaws.services.controltower.model.*;
  * <li>
  * <p>
  * the ARN associated with the target organizational unit (OU), which we call the <code>targetIdentifier</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * the ARN associated with a resource that you wish to tag or untag.
  * </p>
  * </li>
  * </ul>
@@ -62,7 +67,7 @@ import com.amazonaws.services.controltower.model.*;
  * A quick-reference list of control identifers for the AWS Control Tower legacy <i>Strongly recommended</i> and
  * <i>Elective</i> controls is given in <a
  * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource identifiers
- * for APIs and guardrails</a> in the <a
+ * for APIs and controls</a> in the <a
  * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls reference guide
  * section</a> of the <i>AWS Control Tower User Guide</i>. Remember that <i>Mandatory</i> controls cannot be added or
  * removed.
@@ -208,7 +213,7 @@ public interface AWSControlTower {
      * specified organizational unit and the accounts it contains. The resources created will vary according to the
      * control that you specify. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param enableControlRequest
@@ -238,7 +243,7 @@ public interface AWSControlTower {
      * Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays
      * a message in case of error. Details for an operation are available for 90 days. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param getControlOperationRequest
@@ -261,30 +266,10 @@ public interface AWSControlTower {
 
     /**
      * <p>
-     * Provides details about the enabled control. For usage examples, see <a
+     * Retrieves details about an enabled control. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
      * Control Tower User Guide</i> </a>.
      * </p>
-     * <p class="title">
-     * <b>Returned values</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * TargetRegions: Shows target AWS Regions where the enabled control is available to be deployed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * StatusSummary: Provides a detailed summary of the deployment status.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DriftSummary: Provides a detailed summary of the drifted status.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param getEnabledControlRequest
      * @return Result of the GetEnabledControl operation returned by the service.
@@ -309,7 +294,7 @@ public interface AWSControlTower {
      * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
      * contains. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param listEnabledControlsRequest
@@ -329,6 +314,69 @@ public interface AWSControlTower {
      *      target="_top">AWS API Documentation</a>
      */
     ListEnabledControlsResult listEnabledControls(ListEnabledControlsRequest listEnabledControlsRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags associated with the resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @sample AWSControlTower.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Applies tags to a resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @sample AWSControlTower.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @sample AWSControlTower.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

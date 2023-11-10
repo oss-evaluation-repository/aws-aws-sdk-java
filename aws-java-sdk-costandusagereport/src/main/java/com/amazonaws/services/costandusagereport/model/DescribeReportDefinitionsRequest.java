@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Requests a list of AWS Cost and Usage reports owned by the account.
+ * Requests a Amazon Web Services Cost and Usage Report list owned by the account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions" target="_top">AWS API

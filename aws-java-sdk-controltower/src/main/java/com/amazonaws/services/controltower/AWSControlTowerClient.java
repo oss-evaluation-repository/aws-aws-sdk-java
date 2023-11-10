@@ -53,7 +53,7 @@ import com.amazonaws.services.controltower.model.transform.*;
  * <p>
  * <p>
  * These interfaces allow you to apply the AWS library of pre-defined <i>controls</i> to your organizational units,
- * programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms. .
+ * programmatically. In AWS Control Tower, the terms "control" and "guardrail" are synonyms.
  * </p>
  * <p>
  * To call these APIs, you'll need to know:
@@ -67,6 +67,11 @@ import com.amazonaws.services.controltower.model.transform.*;
  * <li>
  * <p>
  * the ARN associated with the target organizational unit (OU), which we call the <code>targetIdentifier</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * the ARN associated with a resource that you wish to tag or untag.
  * </p>
  * </li>
  * </ul>
@@ -87,7 +92,7 @@ import com.amazonaws.services.controltower.model.transform.*;
  * A quick-reference list of control identifers for the AWS Control Tower legacy <i>Strongly recommended</i> and
  * <i>Elective</i> controls is given in <a
  * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html.html">Resource identifiers
- * for APIs and guardrails</a> in the <a
+ * for APIs and controls</a> in the <a
  * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-identifiers.html">Controls reference guide
  * section</a> of the <i>AWS Control Tower User Guide</i>. Remember that <i>Mandatory</i> controls cannot be added or
  * removed.
@@ -356,7 +361,7 @@ public class AWSControlTowerClient extends AmazonWebServiceClient implements AWS
      * specified organizational unit and the accounts it contains. The resources created will vary according to the
      * control that you specify. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param enableControlRequest
@@ -428,7 +433,7 @@ public class AWSControlTowerClient extends AmazonWebServiceClient implements AWS
      * Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays
      * a message in case of error. Details for an operation are available for 90 days. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param getControlOperationRequest
@@ -493,30 +498,10 @@ public class AWSControlTowerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Provides details about the enabled control. For usage examples, see <a
+     * Retrieves details about an enabled control. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
      * Control Tower User Guide</i> </a>.
      * </p>
-     * <p class="title">
-     * <b>Returned values</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * TargetRegions: Shows target AWS Regions where the enabled control is available to be deployed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * StatusSummary: Provides a detailed summary of the deployment status.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DriftSummary: Provides a detailed summary of the drifted status.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param getEnabledControlRequest
      * @return Result of the GetEnabledControl operation returned by the service.
@@ -583,7 +568,7 @@ public class AWSControlTowerClient extends AmazonWebServiceClient implements AWS
      * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
      * contains. For usage examples, see <a
      * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
-     * Control Tower User Guide</i> </a>
+     * Control Tower User Guide</i> </a>.
      * </p>
      * 
      * @param listEnabledControlsRequest
@@ -636,6 +621,195 @@ public class AWSControlTowerClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListEnabledControlsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEnabledControlsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of tags associated with the resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @sample AWSControlTower.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ControlTower");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Applies tags to a resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @sample AWSControlTower.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ControlTower");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes tags from a resource. For usage examples, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html"> <i>the AWS
+     * Control Tower User Guide</i> </a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @sample AWSControlTower.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ControlTower");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The region of the S3 bucket that AWS delivers the report into.
+ * The region of the S3 bucket that Amazon Web Services delivers the report into.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

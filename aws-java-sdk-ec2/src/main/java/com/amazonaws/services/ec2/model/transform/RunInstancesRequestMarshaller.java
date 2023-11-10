@@ -444,6 +444,25 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".PrimaryIpv6",
                             StringUtils.fromBoolean(runInstancesRequestNetworkInterfacesListValue.getPrimaryIpv6()));
                 }
+
+                EnaSrdSpecificationRequest enaSrdSpecification = runInstancesRequestNetworkInterfacesListValue.getEnaSrdSpecification();
+                if (enaSrdSpecification != null) {
+
+                    if (enaSrdSpecification.getEnaSrdEnabled() != null) {
+                        request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".EnaSrdSpecification.EnaSrdEnabled",
+                                StringUtils.fromBoolean(enaSrdSpecification.getEnaSrdEnabled()));
+                    }
+
+                    EnaSrdUdpSpecificationRequest enaSrdUdpSpecification = enaSrdSpecification.getEnaSrdUdpSpecification();
+                    if (enaSrdUdpSpecification != null) {
+
+                        if (enaSrdUdpSpecification.getEnaSrdUdpEnabled() != null) {
+                            request.addParameter("NetworkInterface." + networkInterfacesListIndex
+                                    + ".EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled",
+                                    StringUtils.fromBoolean(enaSrdUdpSpecification.getEnaSrdUdpEnabled()));
+                        }
+                    }
+                }
                 networkInterfacesListIndex++;
             }
         }

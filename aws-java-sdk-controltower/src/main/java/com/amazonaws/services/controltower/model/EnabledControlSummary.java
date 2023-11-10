@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of enabled controls.
+ * Returns a summary of information about an enabled control.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/controltower-2018-05-10/EnabledControlSummary" target="_top">AWS
@@ -36,9 +36,7 @@ public class EnabledControlSummary implements Serializable, Cloneable, Structure
     private String arn;
     /**
      * <p>
-     * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the
-     * exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>,
-     * see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
+     * The <code>controlIdentifier</code> of the enabled control.
      * </p>
      */
     private String controlIdentifier;
@@ -48,7 +46,11 @@ public class EnabledControlSummary implements Serializable, Cloneable, Structure
      * </p>
      */
     private DriftStatusSummary driftStatusSummary;
-    /** <zonbook></zonbook><xhtml></xhtml> */
+    /**
+     * <p>
+     * A short description of the status of the enabled control.
+     * </p>
+     */
     private EnablementStatusSummary statusSummary;
     /**
      * <p>
@@ -99,16 +101,11 @@ public class EnabledControlSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the
-     * exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>,
-     * see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
+     * The <code>controlIdentifier</code> of the enabled control.
      * </p>
      * 
      * @param controlIdentifier
-     *        The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with
-     *        the exception of the <b>Region deny</b> control. For information on how to find the
-     *        <code>controlIdentifier</code>, see <a
-     *        href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
+     *        The <code>controlIdentifier</code> of the enabled control.
      */
 
     public void setControlIdentifier(String controlIdentifier) {
@@ -117,15 +114,10 @@ public class EnabledControlSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the
-     * exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>,
-     * see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
+     * The <code>controlIdentifier</code> of the enabled control.
      * </p>
      * 
-     * @return The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with
-     *         the exception of the <b>Region deny</b> control. For information on how to find the
-     *         <code>controlIdentifier</code>, see <a
-     *         href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
+     * @return The <code>controlIdentifier</code> of the enabled control.
      */
 
     public String getControlIdentifier() {
@@ -134,16 +126,11 @@ public class EnabledControlSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the
-     * exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>,
-     * see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
+     * The <code>controlIdentifier</code> of the enabled control.
      * </p>
      * 
      * @param controlIdentifier
-     *        The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with
-     *        the exception of the <b>Region deny</b> control. For information on how to find the
-     *        <code>controlIdentifier</code>, see <a
-     *        href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
+     *        The <code>controlIdentifier</code> of the enabled control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,9 +180,12 @@ public class EnabledControlSummary implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <zonbook></zonbook><xhtml></xhtml>
+     * <p>
+     * A short description of the status of the enabled control.
+     * </p>
      * 
      * @param statusSummary
+     *        A short description of the status of the enabled control.
      */
 
     public void setStatusSummary(EnablementStatusSummary statusSummary) {
@@ -203,9 +193,11 @@ public class EnabledControlSummary implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <zonbook></zonbook><xhtml></xhtml>
+     * <p>
+     * A short description of the status of the enabled control.
+     * </p>
      * 
-     * @return
+     * @return A short description of the status of the enabled control.
      */
 
     public EnablementStatusSummary getStatusSummary() {
@@ -213,9 +205,12 @@ public class EnabledControlSummary implements Serializable, Cloneable, Structure
     }
 
     /**
-     * <zonbook></zonbook><xhtml></xhtml>
+     * <p>
+     * A short description of the status of the enabled control.
+     * </p>
      * 
      * @param statusSummary
+     *        A short description of the status of the enabled control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

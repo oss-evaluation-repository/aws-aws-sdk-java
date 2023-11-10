@@ -62,15 +62,45 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.
      * </p>
      * <p>
-     * For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit
-     * policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     * <code>AWS::EC2::VPC</code>.
+     * The following are valid resource types for each Firewall Manager policy type:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>
+     * , and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceType;
     /**
@@ -408,15 +438,45 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.
      * </p>
      * <p>
-     * For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit
-     * policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     * <code>AWS::EC2::VPC</code>.
+     * The following are valid resource types for each Firewall Manager policy type:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>
+     * , and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
@@ -425,13 +485,44 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      *        specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a
      *        <code>ResourceTypeList</code>.</p>
      *        <p>
-     *        For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
-     *        <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are
-     *        <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content
-     *        audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
-     *        <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage
-     *        audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     *        Firewall policy, the value is <code>AWS::EC2::VPC</code>.
+     *        The following are valid resource types for each Firewall Manager policy type:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>,
+     *        <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     *        <code>AWS::CloudFront::Distribution</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     *        <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
+     *        <code>AWS::CloudFront::Distribution</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     *        <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setResourceType(String resourceType) {
@@ -446,15 +537,45 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.
      * </p>
      * <p>
-     * For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit
-     * policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     * <code>AWS::EC2::VPC</code>.
+     * The following are valid resource types for each Firewall Manager policy type:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>
+     * , and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
@@ -462,15 +583,44 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      *         specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a
      *         <code>ResourceTypeList</code>.</p>
      *         <p>
-     *         For WAF and Shield Advanced, resource types include
-     *         <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     *         The following are valid resource types for each Firewall Manager policy type:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>,
+     *         <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     *         <code>AWS::CloudFront::Distribution</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
      *         <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
-     *         <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are
-     *         <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content
-     *         audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
-     *         <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage
-     *         audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     *         Firewall policy, the value is <code>AWS::EC2::VPC</code>.
+     *         <code>AWS::CloudFront::Distribution</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     *         <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getResourceType() {
@@ -485,15 +635,45 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * type of <code>ResourceTypeList</code> and then specify the resource types in a <code>ResourceTypeList</code>.
      * </p>
      * <p>
-     * For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
-     * <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are
-     * <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content audit
-     * policy, valid values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     * <code>AWS::EC2::VPC</code>.
+     * The following are valid resource types for each Firewall Manager policy type:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>
+     * , and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     * <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
+     * <code>AWS::CloudFront::Distribution</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
+     * <code>AWS::EC2::Instance</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
      *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
@@ -502,13 +682,44 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      *        specify a resource type of <code>ResourceTypeList</code> and then specify the resource types in a
      *        <code>ResourceTypeList</code>.</p>
      *        <p>
-     *        For WAF and Shield Advanced, resource types include <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
-     *        <code>AWS::CloudFront::Distribution</code>. For a security group common policy, valid values are
-     *        <code>AWS::EC2::NetworkInterface</code> and <code>AWS::EC2::Instance</code>. For a security group content
-     *        audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
-     *        <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For a security group usage
-     *        audit policy, the value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-     *        Firewall policy, the value is <code>AWS::EC2::VPC</code>.
+     *        The following are valid resource types for each Firewall Manager policy type:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>,
+     *        <code>AWS::CloudFront::Distribution</code>, and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, and
+     *        <code>AWS::CloudFront::Distribution</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
+     *        <code>AWS::ElasticLoadBalancing::LoadBalancer</code>, <code>AWS::EC2::EIP</code>, and
+     *        <code>AWS::CloudFront::Distribution</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Security group content audit - <code>AWS::EC2::SecurityGroup</code>,
+     *        <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconvert.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class AudioChannelTaggingSettingsMarshaller {
 
     private static final MarshallingInfo<String> CHANNELTAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelTag").build();
+    private static final MarshallingInfo<List> CHANNELTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("channelTags").build();
 
     private static final AudioChannelTaggingSettingsMarshaller instance = new AudioChannelTaggingSettingsMarshaller();
 
@@ -47,6 +50,7 @@ public class AudioChannelTaggingSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(audioChannelTaggingSettings.getChannelTag(), CHANNELTAG_BINDING);
+            protocolMarshaller.marshall(audioChannelTaggingSettings.getChannelTags(), CHANNELTAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

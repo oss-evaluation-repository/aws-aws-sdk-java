@@ -195,6 +195,12 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      */
     private Boolean primaryIpv6;
+    /**
+     * <p>
+     * Specifies the ENA Express settings for the network interface that's attached to the instance.
+     * </p>
+     */
+    private EnaSrdSpecificationRequest enaSrdSpecification;
 
     /**
      * <p>
@@ -1544,6 +1550,46 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * Specifies the ENA Express settings for the network interface that's attached to the instance.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Specifies the ENA Express settings for the network interface that's attached to the instance.
+     */
+
+    public void setEnaSrdSpecification(EnaSrdSpecificationRequest enaSrdSpecification) {
+        this.enaSrdSpecification = enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Specifies the ENA Express settings for the network interface that's attached to the instance.
+     * </p>
+     * 
+     * @return Specifies the ENA Express settings for the network interface that's attached to the instance.
+     */
+
+    public EnaSrdSpecificationRequest getEnaSrdSpecification() {
+        return this.enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Specifies the ENA Express settings for the network interface that's attached to the instance.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Specifies the ENA Express settings for the network interface that's attached to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withEnaSrdSpecification(EnaSrdSpecificationRequest enaSrdSpecification) {
+        setEnaSrdSpecification(enaSrdSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1594,7 +1640,9 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         if (getIpv6PrefixCount() != null)
             sb.append("Ipv6PrefixCount: ").append(getIpv6PrefixCount()).append(",");
         if (getPrimaryIpv6() != null)
-            sb.append("PrimaryIpv6: ").append(getPrimaryIpv6());
+            sb.append("PrimaryIpv6: ").append(getPrimaryIpv6()).append(",");
+        if (getEnaSrdSpecification() != null)
+            sb.append("EnaSrdSpecification: ").append(getEnaSrdSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -1690,6 +1738,10 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
             return false;
         if (other.getPrimaryIpv6() != null && other.getPrimaryIpv6().equals(this.getPrimaryIpv6()) == false)
             return false;
+        if (other.getEnaSrdSpecification() == null ^ this.getEnaSrdSpecification() == null)
+            return false;
+        if (other.getEnaSrdSpecification() != null && other.getEnaSrdSpecification().equals(this.getEnaSrdSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -1718,6 +1770,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
         hashCode = prime * hashCode + ((getIpv6PrefixCount() == null) ? 0 : getIpv6PrefixCount().hashCode());
         hashCode = prime * hashCode + ((getPrimaryIpv6() == null) ? 0 : getPrimaryIpv6().hashCode());
+        hashCode = prime * hashCode + ((getEnaSrdSpecification() == null) ? 0 : getEnaSrdSpecification().hashCode());
         return hashCode;
     }
 

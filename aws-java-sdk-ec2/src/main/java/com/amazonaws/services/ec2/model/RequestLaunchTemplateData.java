@@ -283,14 +283,13 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * One or more security group IDs. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     * >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same request.
+     * >CreateSecurityGroup</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot
-     * specify both a security group ID and security name in the same request.
+     * One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
@@ -2346,13 +2345,12 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * One or more security group IDs. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     * >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same request.
+     * >CreateSecurityGroup</a>.
      * </p>
      * 
      * @return One or more security group IDs. You can create a security group using <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     *         >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same
-     *         request.
+     *         >CreateSecurityGroup</a>.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -2366,14 +2364,13 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * One or more security group IDs. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     * >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same request.
+     * >CreateSecurityGroup</a>.
      * </p>
      * 
      * @param securityGroupIds
      *        One or more security group IDs. You can create a security group using <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     *        >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same
-     *        request.
+     *        >CreateSecurityGroup</a>.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -2389,7 +2386,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * One or more security group IDs. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     * >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same request.
+     * >CreateSecurityGroup</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2400,8 +2397,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * @param securityGroupIds
      *        One or more security group IDs. You can create a security group using <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     *        >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same
-     *        request.
+     *        >CreateSecurityGroup</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2419,14 +2415,13 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * <p>
      * One or more security group IDs. You can create a security group using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     * >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same request.
+     * >CreateSecurityGroup</a>.
      * </p>
      * 
      * @param securityGroupIds
      *        One or more security group IDs. You can create a security group using <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
-     *        >CreateSecurityGroup</a>. You cannot specify both a security group ID and security name in the same
-     *        request.
+     *        >CreateSecurityGroup</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2437,12 +2432,10 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot
-     * specify both a security group ID and security name in the same request.
+     * One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      * </p>
      * 
-     * @return One or more security group names. For a nondefault VPC, you must use security group IDs instead. You
-     *         cannot specify both a security group ID and security name in the same request.
+     * @return One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -2454,13 +2447,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot
-     * specify both a security group ID and security name in the same request.
+     * One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      * </p>
      * 
      * @param securityGroups
-     *        One or more security group names. For a nondefault VPC, you must use security group IDs instead. You
-     *        cannot specify both a security group ID and security name in the same request.
+     *        One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -2474,8 +2465,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot
-     * specify both a security group ID and security name in the same request.
+     * One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2484,8 +2474,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      * 
      * @param securityGroups
-     *        One or more security group names. For a nondefault VPC, you must use security group IDs instead. You
-     *        cannot specify both a security group ID and security name in the same request.
+     *        One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2501,13 +2490,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group names. For a nondefault VPC, you must use security group IDs instead. You cannot
-     * specify both a security group ID and security name in the same request.
+     * One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      * </p>
      * 
      * @param securityGroups
-     *        One or more security group names. For a nondefault VPC, you must use security group IDs instead. You
-     *        cannot specify both a security group ID and security name in the same request.
+     *        One or more security group names. For a nondefault VPC, you must use security group IDs instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

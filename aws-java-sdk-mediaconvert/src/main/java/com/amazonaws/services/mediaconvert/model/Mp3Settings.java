@@ -38,7 +38,7 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
      * (VBR).
      */
     private String rateControlMode;
-    /** Sample rate in hz. */
+    /** Sample rate in Hz. */
     private Integer sampleRate;
     /**
      * Required when you set Bitrate control mode to VBR. Specify the audio quality of this MP3 output from 0 (highest
@@ -180,10 +180,10 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
      * @param sampleRate
-     *        Sample rate in hz.
+     *        Sample rate in Hz.
      */
 
     public void setSampleRate(Integer sampleRate) {
@@ -191,9 +191,9 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
-     * @return Sample rate in hz.
+     * @return Sample rate in Hz.
      */
 
     public Integer getSampleRate() {
@@ -201,10 +201,10 @@ public class Mp3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
      * @param sampleRate
-     *        Sample rate in hz.
+     *        Sample rate in Hz.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

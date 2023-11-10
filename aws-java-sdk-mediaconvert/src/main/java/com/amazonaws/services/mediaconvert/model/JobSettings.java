@@ -42,6 +42,14 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private ExtendedDataServices extendedDataServices;
     /**
+     * Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's
+     * Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output
+     * settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot
+     * follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input
+     * instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+     */
+    private Integer followSource;
+    /**
      * Use Inputs to define source file used in the transcode job. There can be multiple inputs add in a job. These
      * inputs will be concantenated together to create the output.
      */
@@ -250,6 +258,67 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     public JobSettings withExtendedDataServices(ExtendedDataServices extendedDataServices) {
         setExtendedDataServices(extendedDataServices);
+        return this;
+    }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's
+     * Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output
+     * settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot
+     * follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input
+     * instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+     * 
+     * @param followSource
+     *        Specify the input that MediaConvert references for your default output settings. MediaConvert uses this
+     *        input's Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify
+     *        different output settings for. Enabling this setting will disable "Follow source" for all other inputs. If
+     *        MediaConvert cannot follow your source, for example if you specify an audio-only input, MediaConvert uses
+     *        the first followable input instead. In your JSON job specification, enter an integer from 1 to 150
+     *        corresponding to the order of your inputs.
+     */
+
+    public void setFollowSource(Integer followSource) {
+        this.followSource = followSource;
+    }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's
+     * Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output
+     * settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot
+     * follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input
+     * instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+     * 
+     * @return Specify the input that MediaConvert references for your default output settings. MediaConvert uses this
+     *         input's Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify
+     *         different output settings for. Enabling this setting will disable "Follow source" for all other inputs.
+     *         If MediaConvert cannot follow your source, for example if you specify an audio-only input, MediaConvert
+     *         uses the first followable input instead. In your JSON job specification, enter an integer from 1 to 150
+     *         corresponding to the order of your inputs.
+     */
+
+    public Integer getFollowSource() {
+        return this.followSource;
+    }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings. MediaConvert uses this input's
+     * Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify different output
+     * settings for. Enabling this setting will disable "Follow source" for all other inputs. If MediaConvert cannot
+     * follow your source, for example if you specify an audio-only input, MediaConvert uses the first followable input
+     * instead. In your JSON job specification, enter an integer from 1 to 150 corresponding to the order of your inputs.
+     * 
+     * @param followSource
+     *        Specify the input that MediaConvert references for your default output settings. MediaConvert uses this
+     *        input's Resolution, Frame rate, and Pixel aspect ratio for all outputs that you don't manually specify
+     *        different output settings for. Enabling this setting will disable "Follow source" for all other inputs. If
+     *        MediaConvert cannot follow your source, for example if you specify an audio-only input, MediaConvert uses
+     *        the first followable input instead. In your JSON job specification, enter an integer from 1 to 150
+     *        corresponding to the order of your inputs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSettings withFollowSource(Integer followSource) {
+        setFollowSource(followSource);
         return this;
     }
 
@@ -733,6 +802,8 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("Esam: ").append(getEsam()).append(",");
         if (getExtendedDataServices() != null)
             sb.append("ExtendedDataServices: ").append(getExtendedDataServices()).append(",");
+        if (getFollowSource() != null)
+            sb.append("FollowSource: ").append(getFollowSource()).append(",");
         if (getInputs() != null)
             sb.append("Inputs: ").append(getInputs()).append(",");
         if (getKantarWatermark() != null)
@@ -779,6 +850,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExtendedDataServices() != null && other.getExtendedDataServices().equals(this.getExtendedDataServices()) == false)
             return false;
+        if (other.getFollowSource() == null ^ this.getFollowSource() == null)
+            return false;
+        if (other.getFollowSource() != null && other.getFollowSource().equals(this.getFollowSource()) == false)
+            return false;
         if (other.getInputs() == null ^ this.getInputs() == null)
             return false;
         if (other.getInputs() != null && other.getInputs().equals(this.getInputs()) == false)
@@ -823,6 +898,7 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAvailBlanking() == null) ? 0 : getAvailBlanking().hashCode());
         hashCode = prime * hashCode + ((getEsam() == null) ? 0 : getEsam().hashCode());
         hashCode = prime * hashCode + ((getExtendedDataServices() == null) ? 0 : getExtendedDataServices().hashCode());
+        hashCode = prime * hashCode + ((getFollowSource() == null) ? 0 : getFollowSource().hashCode());
         hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
         hashCode = prime * hashCode + ((getKantarWatermark() == null) ? 0 : getKantarWatermark().hashCode());
         hashCode = prime * hashCode + ((getMotionImageInserter() == null) ? 0 : getMotionImageInserter().hashCode());

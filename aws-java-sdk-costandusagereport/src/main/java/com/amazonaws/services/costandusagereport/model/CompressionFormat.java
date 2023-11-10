@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The compression format that AWS uses for the report.
+ * The compression format that Amazon Web Services uses for the report.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

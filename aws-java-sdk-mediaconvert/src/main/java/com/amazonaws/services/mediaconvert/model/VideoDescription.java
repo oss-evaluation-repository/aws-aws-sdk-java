@@ -87,10 +87,8 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      */
     private String respondToAfd;
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
-     * Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the
-     * service letterbox your video instead. This setting overrides any value that you specify for the setting Selection
-     * placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     private String scalingBehavior;
     /**
@@ -705,16 +703,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
-     * Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the
-     * service letterbox your video instead. This setting overrides any value that you specify for the setting Selection
-     * placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      * 
      * @param scalingBehavior
-     *        Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio.
-     *        Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to
-     *        have the service letterbox your video instead. This setting overrides any value that you specify for the
-     *        setting Selection placement in this output.
+     *        Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      * @see ScalingBehavior
      */
 
@@ -723,15 +717,11 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
-     * Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the
-     * service letterbox your video instead. This setting overrides any value that you specify for the setting Selection
-     * placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      * 
-     * @return Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio.
-     *         Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to
-     *         have the service letterbox your video instead. This setting overrides any value that you specify for the
-     *         setting Selection placement in this output.
+     * @return Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     *         information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      * @see ScalingBehavior
      */
 
@@ -740,16 +730,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
-     * Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the
-     * service letterbox your video instead. This setting overrides any value that you specify for the setting Selection
-     * placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      * 
      * @param scalingBehavior
-     *        Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio.
-     *        Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to
-     *        have the service letterbox your video instead. This setting overrides any value that you specify for the
-     *        setting Selection placement in this output.
+     *        Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingBehavior
      */
@@ -760,16 +746,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose
-     * Stretch to output to have the service stretch your video image to fit. Keep the setting Default to have the
-     * service letterbox your video instead. This setting overrides any value that you specify for the setting Selection
-     * placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      * 
      * @param scalingBehavior
-     *        Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio.
-     *        Choose Stretch to output to have the service stretch your video image to fit. Keep the setting Default to
-     *        have the service letterbox your video instead. This setting overrides any value that you specify for the
-     *        setting Selection placement in this output.
+     *        Specify the video Scaling behavior when your output has a different resolution than your input. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingBehavior
      */

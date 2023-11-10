@@ -27,7 +27,7 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.
+     * The Amazon Resource Name (ARN) of the database to use as the source for replication.
      * </p>
      */
     private String sourceArn;
@@ -46,7 +46,7 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to
-     * encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned
+     * encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned
      * key.
      * </p>
      */
@@ -68,11 +68,11 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.
+     * The Amazon Resource Name (ARN) of the database to use as the source for replication.
      * </p>
      * 
      * @param sourceArn
-     *        The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.
+     *        The Amazon Resource Name (ARN) of the database to use as the source for replication.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -81,10 +81,10 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.
+     * The Amazon Resource Name (ARN) of the database to use as the source for replication.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.
+     * @return The Amazon Resource Name (ARN) of the database to use as the source for replication.
      */
 
     public String getSourceArn() {
@@ -93,11 +93,11 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.
+     * The Amazon Resource Name (ARN) of the database to use as the source for replication.
      * </p>
      * 
      * @param sourceArn
-     *        The Amazon Resource Name (ARN) of the Aurora DB cluster to use as the source for replication.
+     *        The Amazon Resource Name (ARN) of the database to use as the source for replication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,14 +189,14 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to
-     * encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned
+     * encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned
      * key.
      * </p>
      * 
      * @param kMSKeyId
      *        The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use
-     *        to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web
-     *        Services owned key.
+     *        to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services
+     *        owned key.
      */
 
     public void setKMSKeyId(String kMSKeyId) {
@@ -206,12 +206,12 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to
-     * encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned
+     * encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned
      * key.
      * </p>
      * 
      * @return The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use
-     *         to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web
+     *         to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web
      *         Services owned key.
      */
 
@@ -222,14 +222,14 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use to
-     * encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web Services owned
+     * encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services owned
      * key.
      * </p>
      * 
      * @param kMSKeyId
      *        The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier for the key to use
-     *        to encrypt the integration. If you don't specify an encryption key, Aurora uses a default Amazon Web
-     *        Services owned key.
+     *        to encrypt the integration. If you don't specify an encryption key, RDS uses a default Amazon Web Services
+     *        owned key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

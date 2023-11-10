@@ -72,6 +72,12 @@ public class InstanceNetworkInterfaceAttachmentStaxUnmarshaller implements Unmar
                     instanceNetworkInterfaceAttachment.setNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("enaSrdSpecification", targetDepth)) {
+                    instanceNetworkInterfaceAttachment.setEnaSrdSpecification(InstanceAttachmentEnaSrdSpecificationStaxUnmarshaller.getInstance().unmarshall(
+                            context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceNetworkInterfaceAttachment;

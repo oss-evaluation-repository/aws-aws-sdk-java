@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.controltower.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +31,8 @@ public class EnableControlRequestMarshaller {
 
     private static final MarshallingInfo<String> CONTROLIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("controlIdentifier").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TARGETIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetIdentifier").build();
 
@@ -49,6 +53,7 @@ public class EnableControlRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(enableControlRequest.getControlIdentifier(), CONTROLIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(enableControlRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(enableControlRequest.getTargetIdentifier(), TARGETIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

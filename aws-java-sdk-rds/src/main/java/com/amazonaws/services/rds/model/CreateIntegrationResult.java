@@ -17,9 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An Aurora zero-ETL integration with Amazon Redshift. For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html">Working with Amazon Aurora zero-ETL
- * integrations with Amazon Redshift</a> in the <i>Amazon Aurora User Guide</i>.
+ * A zero-ETL integration with Amazon Redshift.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration" target="_top">AWS API
@@ -30,7 +28,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.
+     * The Amazon Resource Name (ARN) of the database used as the source for replication.
      * </p>
      */
     private String sourceArn;
@@ -90,11 +88,11 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.
+     * The Amazon Resource Name (ARN) of the database used as the source for replication.
      * </p>
      * 
      * @param sourceArn
-     *        The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.
+     *        The Amazon Resource Name (ARN) of the database used as the source for replication.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -103,10 +101,10 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.
+     * The Amazon Resource Name (ARN) of the database used as the source for replication.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.
+     * @return The Amazon Resource Name (ARN) of the database used as the source for replication.
      */
 
     public String getSourceArn() {
@@ -115,11 +113,11 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.
+     * The Amazon Resource Name (ARN) of the database used as the source for replication.
      * </p>
      * 
      * @param sourceArn
-     *        The Amazon Resource Name (ARN) of the Aurora DB cluster used as the source for replication.
+     *        The Amazon Resource Name (ARN) of the database used as the source for replication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

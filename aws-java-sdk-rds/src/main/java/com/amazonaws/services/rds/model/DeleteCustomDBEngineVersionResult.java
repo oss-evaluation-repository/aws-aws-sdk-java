@@ -260,7 +260,7 @@ public class DeleteCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     private Boolean supportsLocalWriteForwarding;
     /**
      * <p>
-     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      * </p>
      */
     private Boolean supportsIntegrations;
@@ -2240,11 +2240,11 @@ public class DeleteCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      * </p>
      * 
      * @param supportsIntegrations
-     *        Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     *        Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      */
 
     public void setSupportsIntegrations(Boolean supportsIntegrations) {
@@ -2253,10 +2253,10 @@ public class DeleteCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      * </p>
      * 
-     * @return Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * @return Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      */
 
     public Boolean getSupportsIntegrations() {
@@ -2265,11 +2265,11 @@ public class DeleteCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      * </p>
      * 
      * @param supportsIntegrations
-     *        Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     *        Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2280,10 +2280,10 @@ public class DeleteCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      * </p>
      * 
-     * @return Indicates whether the DB engine version supports Aurora zero-ETL integrations with Amazon Redshift.
+     * @return Indicates whether the DB engine version supports zero-ETL integrations with Amazon Redshift.
      */
 
     public Boolean isSupportsIntegrations() {

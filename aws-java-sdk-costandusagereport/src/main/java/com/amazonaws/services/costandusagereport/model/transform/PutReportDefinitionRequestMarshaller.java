@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.costandusagereport.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class PutReportDefinitionRequestMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> REPORTDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReportDefinition").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final PutReportDefinitionRequestMarshaller instance = new PutReportDefinitionRequestMarshaller();
 
@@ -47,6 +50,7 @@ public class PutReportDefinitionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putReportDefinitionRequest.getReportDefinition(), REPORTDEFINITION_BINDING);
+            protocolMarshaller.marshall(putReportDefinitionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

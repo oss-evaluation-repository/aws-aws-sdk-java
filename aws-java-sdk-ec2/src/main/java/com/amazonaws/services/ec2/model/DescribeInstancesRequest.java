@@ -182,8 +182,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -963,8 +963,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -1717,8 +1717,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     *         <code>spot</code> | <code>scheduled</code>).
+     *         <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a
+     *         Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -2485,8 +2485,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -3240,8 +3240,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     *        <code>spot</code> | <code>scheduled</code>).
+     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a
+     *        Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -4009,8 +4009,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -4769,8 +4769,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     *        <code>spot</code> | <code>scheduled</code>).
+     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a
+     *        Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -5540,8 +5540,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -6295,8 +6295,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     *        <code>spot</code> | <code>scheduled</code>).
+     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a
+     *        Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      *        </p>
      *        </li>
      *        <li>

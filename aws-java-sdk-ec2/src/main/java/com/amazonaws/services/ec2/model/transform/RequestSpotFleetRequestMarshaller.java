@@ -458,6 +458,27 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                         + networkInterfacesListIndex + ".PrimaryIpv6",
                                         StringUtils.fromBoolean(spotFleetLaunchSpecificationNetworkInterfacesListValue.getPrimaryIpv6()));
                             }
+
+                            EnaSrdSpecificationRequest enaSrdSpecification = spotFleetLaunchSpecificationNetworkInterfacesListValue.getEnaSrdSpecification();
+                            if (enaSrdSpecification != null) {
+
+                                if (enaSrdSpecification.getEnaSrdEnabled() != null) {
+                                    request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                            + ".NetworkInterfaceSet." + networkInterfacesListIndex + ".EnaSrdSpecification.EnaSrdEnabled",
+                                            StringUtils.fromBoolean(enaSrdSpecification.getEnaSrdEnabled()));
+                                }
+
+                                EnaSrdUdpSpecificationRequest enaSrdUdpSpecification = enaSrdSpecification.getEnaSrdUdpSpecification();
+                                if (enaSrdUdpSpecification != null) {
+
+                                    if (enaSrdUdpSpecification.getEnaSrdUdpEnabled() != null) {
+                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                                + ".NetworkInterfaceSet." + networkInterfacesListIndex
+                                                + ".EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled",
+                                                StringUtils.fromBoolean(enaSrdUdpSpecification.getEnaSrdUdpEnabled()));
+                                    }
+                                }
+                            }
                             networkInterfacesListIndex++;
                         }
                     }

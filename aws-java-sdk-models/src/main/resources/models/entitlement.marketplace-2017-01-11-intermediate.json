@@ -1997,7 +1997,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "MaxResults",
-        "c2jShape" : "Integer",
+        "c2jShape" : "PageSizeInteger",
         "deprecated" : false,
         "documentation" : "<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>",
         "endpointDiscoveryId" : false,
@@ -2375,7 +2375,7 @@
         },
         "MaxResults" : {
           "c2jName" : "MaxResults",
-          "c2jShape" : "Integer",
+          "c2jShape" : "PageSizeInteger",
           "deprecated" : false,
           "documentation" : "<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>",
           "endpointDiscoveryId" : false,

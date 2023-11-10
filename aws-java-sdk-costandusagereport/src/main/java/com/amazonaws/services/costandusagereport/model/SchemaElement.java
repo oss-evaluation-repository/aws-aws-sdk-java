@@ -16,14 +16,15 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Whether or not AWS includes resource IDs in the report.
+ * Whether or not Amazon Web Services includes resource IDs in the report.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SchemaElement {
 
     RESOURCES("RESOURCES"),
-    SPLIT_COST_ALLOCATION_DATA("SPLIT_COST_ALLOCATION_DATA");
+    SPLIT_COST_ALLOCATION_DATA("SPLIT_COST_ALLOCATION_DATA"),
+    MANUAL_DISCOUNT_COMPATIBILITY("MANUAL_DISCOUNT_COMPATIBILITY");
 
     private String value;
 

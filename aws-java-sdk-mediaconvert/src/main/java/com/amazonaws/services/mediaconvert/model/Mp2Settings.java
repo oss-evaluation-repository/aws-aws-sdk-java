@@ -33,7 +33,7 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
      * output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
      */
     private Integer channels;
-    /** Sample rate in hz. */
+    /** Sample rate in Hz. */
     private Integer sampleRate;
 
     /**
@@ -111,10 +111,10 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
      * @param sampleRate
-     *        Sample rate in hz.
+     *        Sample rate in Hz.
      */
 
     public void setSampleRate(Integer sampleRate) {
@@ -122,9 +122,9 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
-     * @return Sample rate in hz.
+     * @return Sample rate in Hz.
      */
 
     public Integer getSampleRate() {
@@ -132,10 +132,10 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
      * @param sampleRate
-     *        Sample rate in hz.
+     *        Sample rate in Hz.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

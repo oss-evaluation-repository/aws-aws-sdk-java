@@ -36,7 +36,7 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
      * Stereo gives you 2. In the API, valid values are 1 and 2.
      */
     private Integer channels;
-    /** Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000. */
+    /** Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000. */
     private Integer sampleRate;
 
     /**
@@ -120,10 +120,10 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      * 
      * @param sampleRate
-     *        Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     *        Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      */
 
     public void setSampleRate(Integer sampleRate) {
@@ -131,9 +131,9 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      * 
-     * @return Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     * @return Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      */
 
     public Integer getSampleRate() {
@@ -141,10 +141,10 @@ public class OpusSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      * 
      * @param sampleRate
-     *        Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
+     *        Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The default value is 48000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -325,6 +325,25 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                         request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".PrimaryIpv6",
                                 StringUtils.fromBoolean(requestLaunchTemplateDataNetworkInterfacesListValue.getPrimaryIpv6()));
                     }
+
+                    EnaSrdSpecificationRequest enaSrdSpecification = requestLaunchTemplateDataNetworkInterfacesListValue.getEnaSrdSpecification();
+                    if (enaSrdSpecification != null) {
+
+                        if (enaSrdSpecification.getEnaSrdEnabled() != null) {
+                            request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".EnaSrdSpecification.EnaSrdEnabled",
+                                    StringUtils.fromBoolean(enaSrdSpecification.getEnaSrdEnabled()));
+                        }
+
+                        EnaSrdUdpSpecificationRequest enaSrdUdpSpecification = enaSrdSpecification.getEnaSrdUdpSpecification();
+                        if (enaSrdUdpSpecification != null) {
+
+                            if (enaSrdUdpSpecification.getEnaSrdUdpEnabled() != null) {
+                                request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex
+                                        + ".EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled",
+                                        StringUtils.fromBoolean(enaSrdUdpSpecification.getEnaSrdUdpEnabled()));
+                            }
+                        }
+                    }
                     networkInterfacesListIndex++;
                 }
             }
