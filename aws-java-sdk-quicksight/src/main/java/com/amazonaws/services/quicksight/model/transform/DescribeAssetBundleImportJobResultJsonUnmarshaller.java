@@ -102,6 +102,20 @@ public class DescribeAssetBundleImportJobResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     describeAssetBundleImportJobResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OverridePermissions", targetDepth)) {
+                    context.nextToken();
+                    describeAssetBundleImportJobResult.setOverridePermissions(AssetBundleImportJobOverridePermissionsJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("OverrideTags", targetDepth)) {
+                    context.nextToken();
+                    describeAssetBundleImportJobResult.setOverrideTags(AssetBundleImportJobOverrideTagsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OverrideValidationStrategy", targetDepth)) {
+                    context.nextToken();
+                    describeAssetBundleImportJobResult.setOverrideValidationStrategy(AssetBundleImportJobOverrideValidationStrategyJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

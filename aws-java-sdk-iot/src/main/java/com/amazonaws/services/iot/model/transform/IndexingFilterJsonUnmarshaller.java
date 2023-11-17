@@ -54,6 +54,12 @@ public class IndexingFilterJsonUnmarshaller implements Unmarshaller<IndexingFilt
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("geoLocations", targetDepth)) {
+                    context.nextToken();
+                    indexingFilter.setGeoLocations(new ListUnmarshaller<GeoLocationTarget>(GeoLocationTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

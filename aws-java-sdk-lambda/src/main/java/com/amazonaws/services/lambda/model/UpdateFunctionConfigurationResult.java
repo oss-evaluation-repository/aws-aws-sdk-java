@@ -240,10 +240,8 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
     private com.amazonaws.internal.SdkInternalList<String> architectures;
     /**
      * <p>
-     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB. For more information, see <a href=
-     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     * >Configuring ephemeral storage (console)</a>.
+     * The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole
+     * number between 512 and 10,240 MB.
      * </p>
      */
     private EphemeralStorage ephemeralStorage;
@@ -262,6 +260,12 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private RuntimeVersionConfig runtimeVersionConfig;
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     */
+    private LoggingConfig loggingConfig;
 
     /**
      * <p>
@@ -2046,17 +2050,13 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB. For more information, see <a href=
-     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     * >Configuring ephemeral storage (console)</a>.
+     * The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole
+     * number between 512 and 10,240 MB.
      * </p>
      * 
      * @param ephemeralStorage
-     *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *        whole number between 512 and 10,240 MB. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     *        >Configuring ephemeral storage (console)</a>.
+     *        The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any
+     *        whole number between 512 and 10,240 MB.
      */
 
     public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
@@ -2065,16 +2065,12 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB. For more information, see <a href=
-     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     * >Configuring ephemeral storage (console)</a>.
+     * The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole
+     * number between 512 and 10,240 MB.
      * </p>
      * 
-     * @return The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *         whole number between 512 and 10,240 MB. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     *         >Configuring ephemeral storage (console)</a>.
+     * @return The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any
+     *         whole number between 512 and 10,240 MB.
      */
 
     public EphemeralStorage getEphemeralStorage() {
@@ -2083,17 +2079,13 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB. For more information, see <a href=
-     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     * >Configuring ephemeral storage (console)</a>.
+     * The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole
+     * number between 512 and 10,240 MB.
      * </p>
      * 
      * @param ephemeralStorage
-     *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *        whole number between 512 and 10,240 MB. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     *        >Configuring ephemeral storage (console)</a>.
+     *        The size of the function’s <code>/tmp</code> directory in MB. The default value is 512, but it can be any
+     *        whole number between 512 and 10,240 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2201,6 +2193,46 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @param loggingConfig
+     *        The function's Amazon CloudWatch Logs configuration settings.
+     */
+
+    public void setLoggingConfig(LoggingConfig loggingConfig) {
+        this.loggingConfig = loggingConfig;
+    }
+
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @return The function's Amazon CloudWatch Logs configuration settings.
+     */
+
+    public LoggingConfig getLoggingConfig() {
+        return this.loggingConfig;
+    }
+
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @param loggingConfig
+     *        The function's Amazon CloudWatch Logs configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withLoggingConfig(LoggingConfig loggingConfig) {
+        setLoggingConfig(loggingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2281,7 +2313,9 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
         if (getSnapStart() != null)
             sb.append("SnapStart: ").append(getSnapStart()).append(",");
         if (getRuntimeVersionConfig() != null)
-            sb.append("RuntimeVersionConfig: ").append(getRuntimeVersionConfig());
+            sb.append("RuntimeVersionConfig: ").append(getRuntimeVersionConfig()).append(",");
+        if (getLoggingConfig() != null)
+            sb.append("LoggingConfig: ").append(getLoggingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -2436,6 +2470,10 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getRuntimeVersionConfig() != null && other.getRuntimeVersionConfig().equals(this.getRuntimeVersionConfig()) == false)
             return false;
+        if (other.getLoggingConfig() == null ^ this.getLoggingConfig() == null)
+            return false;
+        if (other.getLoggingConfig() != null && other.getLoggingConfig().equals(this.getLoggingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -2479,6 +2517,7 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         hashCode = prime * hashCode + ((getSnapStart() == null) ? 0 : getSnapStart().hashCode());
         hashCode = prime * hashCode + ((getRuntimeVersionConfig() == null) ? 0 : getRuntimeVersionConfig().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfig() == null) ? 0 : getLoggingConfig().hashCode());
         return hashCode;
     }
 

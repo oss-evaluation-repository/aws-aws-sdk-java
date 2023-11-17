@@ -59,12 +59,15 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
     private String edition;
     /**
      * <p>
-     * The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for
-     * this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.
+     * The method that you want to use to authenticate your Amazon QuickSight account.
      * </p>
      * <p>
      * If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      * <code>AdminGroup</code> associated with your Active Directory.
+     * </p>
+     * <p>
+     * If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM
+     * Identity Center account.
      * </p>
      */
     private String authenticationMethod;
@@ -111,9 +114,15 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
     private String directoryId;
     /**
      * <p>
-     * The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is
-     * the selected authentication method of the new Amazon QuickSight account. For more information about using Active
-     * Directory in Amazon QuickSight, see <a
+     * The admin group associated with your Active Directory or IAM Identity Center account. This field is required if
+     * <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
+     * new Amazon QuickSight account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
@@ -121,8 +130,13 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<String> adminGroup;
     /**
      * <p>
-     * The author group associated with your Active Directory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The author group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
@@ -130,10 +144,15 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
     private java.util.List<String> authorGroup;
     /**
      * <p>
-     * The reader group associated with your Active Direcrtory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The reader group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
-     * Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      */
     private java.util.List<String> readerGroup;
@@ -431,21 +450,26 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for
-     * this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.
+     * The method that you want to use to authenticate your Amazon QuickSight account.
      * </p>
      * <p>
      * If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      * <code>AdminGroup</code> associated with your Active Directory.
      * </p>
+     * <p>
+     * If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM
+     * Identity Center account.
+     * </p>
      * 
      * @param authenticationMethod
-     *        The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid
-     *        values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and
-     *        <code>ACTIVE_DIRECTORY</code>.</p>
+     *        The method that you want to use to authenticate your Amazon QuickSight account.</p>
      *        <p>
      *        If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      *        <code>AdminGroup</code> associated with your Active Directory.
+     *        </p>
+     *        <p>
+     *        If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your
+     *        IAM Identity Center account.
      * @see AuthenticationMethodOption
      */
 
@@ -455,20 +479,25 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for
-     * this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.
+     * The method that you want to use to authenticate your Amazon QuickSight account.
      * </p>
      * <p>
      * If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      * <code>AdminGroup</code> associated with your Active Directory.
      * </p>
+     * <p>
+     * If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM
+     * Identity Center account.
+     * </p>
      * 
-     * @return The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid
-     *         values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and
-     *         <code>ACTIVE_DIRECTORY</code>.</p>
+     * @return The method that you want to use to authenticate your Amazon QuickSight account.</p>
      *         <p>
      *         If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      *         <code>AdminGroup</code> associated with your Active Directory.
+     *         </p>
+     *         <p>
+     *         If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your
+     *         IAM Identity Center account.
      * @see AuthenticationMethodOption
      */
 
@@ -478,21 +507,26 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for
-     * this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.
+     * The method that you want to use to authenticate your Amazon QuickSight account.
      * </p>
      * <p>
      * If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      * <code>AdminGroup</code> associated with your Active Directory.
      * </p>
+     * <p>
+     * If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM
+     * Identity Center account.
+     * </p>
      * 
      * @param authenticationMethod
-     *        The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid
-     *        values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and
-     *        <code>ACTIVE_DIRECTORY</code>.</p>
+     *        The method that you want to use to authenticate your Amazon QuickSight account.</p>
      *        <p>
      *        If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      *        <code>AdminGroup</code> associated with your Active Directory.
+     *        </p>
+     *        <p>
+     *        If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your
+     *        IAM Identity Center account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationMethodOption
      */
@@ -504,21 +538,26 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid values for
-     * this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and <code>ACTIVE_DIRECTORY</code>.
+     * The method that you want to use to authenticate your Amazon QuickSight account.
      * </p>
      * <p>
      * If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      * <code>AdminGroup</code> associated with your Active Directory.
      * </p>
+     * <p>
+     * If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your IAM
+     * Identity Center account.
+     * </p>
      * 
      * @param authenticationMethod
-     *        The method that you want to use to authenticate your Amazon QuickSight account. Currently, the valid
-     *        values for this parameter are <code>IAM_AND_QUICKSIGHT</code>, <code>IAM_ONLY</code>, and
-     *        <code>ACTIVE_DIRECTORY</code>.</p>
+     *        The method that you want to use to authenticate your Amazon QuickSight account.</p>
      *        <p>
      *        If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code> and an
      *        <code>AdminGroup</code> associated with your Active Directory.
+     *        </p>
+     *        <p>
+     *        If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code> associated with your
+     *        IAM Identity Center account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationMethodOption
      */
@@ -806,16 +845,27 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is
-     * the selected authentication method of the new Amazon QuickSight account. For more information about using Active
-     * Directory in Amazon QuickSight, see <a
+     * The admin group associated with your Active Directory or IAM Identity Center account. This field is required if
+     * <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
+     * new Amazon QuickSight account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
-     * @return The admin group associated with your Active Directory. This field is required if
-     *         <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.
-     *         For more information about using Active Directory in Amazon QuickSight, see <a
+     * @return The admin group associated with your Active Directory or IAM Identity Center account. This field is
+     *         required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected
+     *         authentication method of the new Amazon QuickSight account.</p>
+     *         <p>
+     *         For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *         >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *         Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *         href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
      *         Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      */
@@ -826,17 +876,28 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is
-     * the selected authentication method of the new Amazon QuickSight account. For more information about using Active
-     * Directory in Amazon QuickSight, see <a
+     * The admin group associated with your Active Directory or IAM Identity Center account. This field is required if
+     * <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
+     * new Amazon QuickSight account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
      * @param adminGroup
-     *        The admin group associated with your Active Directory. This field is required if
-     *        <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.
-     *        For more information about using Active Directory in Amazon QuickSight, see <a
+     *        The admin group associated with your Active Directory or IAM Identity Center account. This field is
+     *        required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected
+     *        authentication method of the new Amazon QuickSight account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
      *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      */
@@ -852,9 +913,15 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is
-     * the selected authentication method of the new Amazon QuickSight account. For more information about using Active
-     * Directory in Amazon QuickSight, see <a
+     * The admin group associated with your Active Directory or IAM Identity Center account. This field is required if
+     * <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
+     * new Amazon QuickSight account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
@@ -865,9 +932,14 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param adminGroup
-     *        The admin group associated with your Active Directory. This field is required if
-     *        <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.
-     *        For more information about using Active Directory in Amazon QuickSight, see <a
+     *        The admin group associated with your Active Directory or IAM Identity Center account. This field is
+     *        required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected
+     *        authentication method of the new Amazon QuickSight account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
      *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -885,17 +957,28 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The admin group associated with your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code> is
-     * the selected authentication method of the new Amazon QuickSight account. For more information about using Active
-     * Directory in Amazon QuickSight, see <a
+     * The admin group associated with your Active Directory or IAM Identity Center account. This field is required if
+     * <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected authentication method of the
+     * new Amazon QuickSight account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
      * @param adminGroup
-     *        The admin group associated with your Active Directory. This field is required if
-     *        <code>ACTIVE_DIRECTORY</code> is the selected authentication method of the new Amazon QuickSight account.
-     *        For more information about using Active Directory in Amazon QuickSight, see <a
+     *        The admin group associated with your Active Directory or IAM Identity Center account. This field is
+     *        required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code> is the selected
+     *        authentication method of the new Amazon QuickSight account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
      *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -908,14 +991,23 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The author group associated with your Active Directory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The author group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
-     * @return The author group associated with your Active Directory. For more information about using Active Directory
-     *         in Amazon QuickSight, see <a
+     * @return The author group associated with your Active Directory or IAM Identity Center account.</p>
+     *         <p>
+     *         For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *         >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *         Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *         href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
      *         Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      */
@@ -926,15 +1018,24 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The author group associated with your Active Directory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The author group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
      * @param authorGroup
-     *        The author group associated with your Active Directory. For more information about using Active Directory
-     *        in Amazon QuickSight, see <a
+     *        The author group associated with your Active Directory or IAM Identity Center account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
      *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      */
@@ -950,8 +1051,13 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The author group associated with your Active Directory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The author group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
@@ -962,8 +1068,12 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param authorGroup
-     *        The author group associated with your Active Directory. For more information about using Active Directory
-     *        in Amazon QuickSight, see <a
+     *        The author group associated with your Active Directory or IAM Identity Center account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
      *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -981,15 +1091,24 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The author group associated with your Active Directory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The author group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
      * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
      * @param authorGroup
-     *        The author group associated with your Active Directory. For more information about using Active Directory
-     *        in Amazon QuickSight, see <a
+     *        The author group associated with your Active Directory or IAM Identity Center account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
      *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1002,16 +1121,25 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The reader group associated with your Active Direcrtory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The reader group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
-     * Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
-     * @return The reader group associated with your Active Direcrtory. For more information about using Active
-     *         Directory in Amazon QuickSight, see <a
+     * @return The reader group associated with your Active Directory or IAM Identity Center account.</p>
+     *         <p>
+     *         For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *         href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *         >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *         Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *         href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
-     *         Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     *         Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      */
 
     public java.util.List<String> getReaderGroup() {
@@ -1020,17 +1148,26 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The reader group associated with your Active Direcrtory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The reader group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
-     * Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
      * @param readerGroup
-     *        The reader group associated with your Active Direcrtory. For more information about using Active Directory
-     *        in Amazon QuickSight, see <a
+     *        The reader group associated with your Active Directory or IAM Identity Center account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
-     *        Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      */
 
     public void setReaderGroup(java.util.Collection<String> readerGroup) {
@@ -1044,10 +1181,15 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The reader group associated with your Active Direcrtory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The reader group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
-     * Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1056,10 +1198,14 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param readerGroup
-     *        The reader group associated with your Active Direcrtory. For more information about using Active Directory
-     *        in Amazon QuickSight, see <a
+     *        The reader group associated with your Active Directory or IAM Identity Center account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
-     *        Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1075,17 +1221,26 @@ public class CreateAccountSubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The reader group associated with your Active Direcrtory. For more information about using Active Directory in
-     * Amazon QuickSight, see <a
+     * The reader group associated with your Active Directory or IAM Identity Center account.
+     * </p>
+     * <p>
+     * For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html">Using IAM
+     * Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide. For more
+     * information about using Active Directory in Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active Directory with
-     * Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     * Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * </p>
      * 
      * @param readerGroup
-     *        The reader group associated with your Active Direcrtory. For more information about using Active Directory
-     *        in Amazon QuickSight, see <a
+     *        The reader group associated with your Active Directory or IAM Identity Center account.</p>
+     *        <p>
+     *        For more information about using IAM Identity Center in Amazon QuickSight, see <a
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/sec-identity-management-identity-center.html"
+     *        >Using IAM Identity Center with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User
+     *        Guide. For more information about using Active Directory in Amazon QuickSight, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/user/aws-directory-service.html">Using Active
-     *        Directory with Amazon QuickSight Enterprise Edition</a> in the <i>Amazon QuickSight User Guide</i>.
+     *        Directory with Amazon QuickSight Enterprise Edition</a> in the Amazon QuickSight User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

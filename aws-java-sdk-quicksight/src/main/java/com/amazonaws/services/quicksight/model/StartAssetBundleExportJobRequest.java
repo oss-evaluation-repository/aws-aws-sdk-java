@@ -111,6 +111,29 @@ public class StartAssetBundleExportJobRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private AssetBundleCloudFormationOverridePropertyConfiguration cloudFormationOverridePropertyConfiguration;
+    /**
+     * <p>
+     * A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set
+     * <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     */
+    private Boolean includePermissions;
+    /**
+     * <p>
+     * A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     * <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     * </p>
+     */
+    private Boolean includeTags;
+    /**
+     * <p>
+     * An optional parameter that determines which validation strategy to use for the export job. If
+     * <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is
+     * enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as
+     * warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.
+     * </p>
+     */
+    private AssetBundleExportJobValidationStrategy validationStrategy;
 
     /**
      * <p>
@@ -797,6 +820,188 @@ public class StartAssetBundleExportJobRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set
+     * <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     * 
+     * @param includePermissions
+     *        A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you
+     *        set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource
+     *        are exported.
+     */
+
+    public void setIncludePermissions(Boolean includePermissions) {
+        this.includePermissions = includePermissions;
+    }
+
+    /**
+     * <p>
+     * A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set
+     * <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     * 
+     * @return A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you
+     *         set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource
+     *         are exported.
+     */
+
+    public Boolean getIncludePermissions() {
+        return this.includePermissions;
+    }
+
+    /**
+     * <p>
+     * A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set
+     * <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     * 
+     * @param includePermissions
+     *        A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you
+     *        set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource
+     *        are exported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAssetBundleExportJobRequest withIncludePermissions(Boolean includePermissions) {
+        setIncludePermissions(includePermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set
+     * <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     * 
+     * @return A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you
+     *         set <code>IncludePermissions</code> to <code>TRUE</code>, any permissions associated with each resource
+     *         are exported.
+     */
+
+    public Boolean isIncludePermissions() {
+        return this.includePermissions;
+    }
+
+    /**
+     * <p>
+     * A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     * <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     * </p>
+     * 
+     * @param includeTags
+     *        A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     *        <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     */
+
+    public void setIncludeTags(Boolean includeTags) {
+        this.includeTags = includeTags;
+    }
+
+    /**
+     * <p>
+     * A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     * <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     * </p>
+     * 
+     * @return A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     *         <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     */
+
+    public Boolean getIncludeTags() {
+        return this.includeTags;
+    }
+
+    /**
+     * <p>
+     * A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     * <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     * </p>
+     * 
+     * @param includeTags
+     *        A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     *        <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAssetBundleExportJobRequest withIncludeTags(Boolean includeTags) {
+        setIncludeTags(includeTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     * <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     * </p>
+     * 
+     * @return A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set
+     *         <code>IncludeTags</code> to <code>TRUE</code>, any tags associated with each resource are exported.
+     */
+
+    public Boolean isIncludeTags() {
+        return this.includeTags;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that determines which validation strategy to use for the export job. If
+     * <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is
+     * enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as
+     * warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        An optional parameter that determines which validation strategy to use for the export job. If
+     *        <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is
+     *        enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown
+     *        as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.
+     */
+
+    public void setValidationStrategy(AssetBundleExportJobValidationStrategy validationStrategy) {
+        this.validationStrategy = validationStrategy;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that determines which validation strategy to use for the export job. If
+     * <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is
+     * enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as
+     * warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.
+     * </p>
+     * 
+     * @return An optional parameter that determines which validation strategy to use for the export job. If
+     *         <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is
+     *         enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown
+     *         as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.
+     */
+
+    public AssetBundleExportJobValidationStrategy getValidationStrategy() {
+        return this.validationStrategy;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that determines which validation strategy to use for the export job. If
+     * <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is
+     * enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown as
+     * warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        An optional parameter that determines which validation strategy to use for the export job. If
+     *        <code>StrictModeForAllResources</code> is set to <code>TRUE</code>, strict validation for every error is
+     *        enforced. If it is set to <code>FALSE</code>, validation is skipped for specific UI errors that are shown
+     *        as warnings. The default value for <code>StrictModeForAllResources</code> is <code>FALSE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAssetBundleExportJobRequest withValidationStrategy(AssetBundleExportJobValidationStrategy validationStrategy) {
+        setValidationStrategy(validationStrategy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -819,7 +1024,13 @@ public class StartAssetBundleExportJobRequest extends com.amazonaws.AmazonWebSer
         if (getExportFormat() != null)
             sb.append("ExportFormat: ").append(getExportFormat()).append(",");
         if (getCloudFormationOverridePropertyConfiguration() != null)
-            sb.append("CloudFormationOverridePropertyConfiguration: ").append(getCloudFormationOverridePropertyConfiguration());
+            sb.append("CloudFormationOverridePropertyConfiguration: ").append(getCloudFormationOverridePropertyConfiguration()).append(",");
+        if (getIncludePermissions() != null)
+            sb.append("IncludePermissions: ").append(getIncludePermissions()).append(",");
+        if (getIncludeTags() != null)
+            sb.append("IncludeTags: ").append(getIncludeTags()).append(",");
+        if (getValidationStrategy() != null)
+            sb.append("ValidationStrategy: ").append(getValidationStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -859,6 +1070,18 @@ public class StartAssetBundleExportJobRequest extends com.amazonaws.AmazonWebSer
         if (other.getCloudFormationOverridePropertyConfiguration() != null
                 && other.getCloudFormationOverridePropertyConfiguration().equals(this.getCloudFormationOverridePropertyConfiguration()) == false)
             return false;
+        if (other.getIncludePermissions() == null ^ this.getIncludePermissions() == null)
+            return false;
+        if (other.getIncludePermissions() != null && other.getIncludePermissions().equals(this.getIncludePermissions()) == false)
+            return false;
+        if (other.getIncludeTags() == null ^ this.getIncludeTags() == null)
+            return false;
+        if (other.getIncludeTags() != null && other.getIncludeTags().equals(this.getIncludeTags()) == false)
+            return false;
+        if (other.getValidationStrategy() == null ^ this.getValidationStrategy() == null)
+            return false;
+        if (other.getValidationStrategy() != null && other.getValidationStrategy().equals(this.getValidationStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -874,6 +1097,9 @@ public class StartAssetBundleExportJobRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getExportFormat() == null) ? 0 : getExportFormat().hashCode());
         hashCode = prime * hashCode
                 + ((getCloudFormationOverridePropertyConfiguration() == null) ? 0 : getCloudFormationOverridePropertyConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getIncludePermissions() == null) ? 0 : getIncludePermissions().hashCode());
+        hashCode = prime * hashCode + ((getIncludeTags() == null) ? 0 : getIncludeTags().hashCode());
+        hashCode = prime * hashCode + ((getValidationStrategy() == null) ? 0 : getValidationStrategy().hashCode());
         return hashCode;
     }
 

@@ -37,7 +37,8 @@ public enum AutomationExecutionStatus {
     ChangeCalendarOverrideApproved("ChangeCalendarOverrideApproved"),
     ChangeCalendarOverrideRejected("ChangeCalendarOverrideRejected"),
     CompletedWithSuccess("CompletedWithSuccess"),
-    CompletedWithFailure("CompletedWithFailure");
+    CompletedWithFailure("CompletedWithFailure"),
+    Exited("Exited");
 
     private String value;
 

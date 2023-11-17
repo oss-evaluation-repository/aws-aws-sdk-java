@@ -189,6 +189,111 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
+     * Creates an application in IAM Identity Center for the given application provider.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return Result of the CreateApplication operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         Indicates that the principal has crossed the permitted number of resources that can be created.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
+     * Grant application access to a user or group.
+     * </p>
+     * 
+     * @param createApplicationAssignmentRequest
+     * @return Result of the CreateApplicationAssignment operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         Indicates that the principal has crossed the permitted number of resources that can be created.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateApplicationAssignmentResult createApplicationAssignment(CreateApplicationAssignmentRequest createApplicationAssignmentRequest);
+
+    /**
+     * <p>
+     * Creates an instance of IAM Identity Center for a standalone Amazon Web Services account that is not managed by
+     * Organizations or a member Amazon Web Services account in an organization. You can create only one instance per
+     * account and across all Amazon Web Services Regions.
+     * </p>
+     * <p>
+     * The CreateInstance request is rejected if the following apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The instance is created within the organization management account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An instance already exists in the same account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createInstanceRequest
+     * @return Result of the CreateInstance operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         Indicates that the principal has crossed the permitted number of resources that can be created.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest);
+
+    /**
+     * <p>
      * Enables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance. You
      * can also specify new attributes to add to your ABAC configuration during the enabling process. For more
      * information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a>
@@ -264,6 +369,41 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
+     * Creates a connection to a trusted token issuer in an instance of IAM Identity Center. A trusted token issuer
+     * enables trusted identity propagation to be used with applications that authenticate outside of Amazon Web
+     * Services.
+     * </p>
+     * <p>
+     * This trusted token issuer describes an external identity provider (IdP) that can generate claims or assertions in
+     * the form of access tokens for a user. Applications enabled for IAM Identity Center can use these tokens for
+     * authentication.
+     * </p>
+     * 
+     * @param createTrustedTokenIssuerRequest
+     * @return Result of the CreateTrustedTokenIssuer operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         Indicates that the principal has crossed the permitted number of resources that can be created.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTrustedTokenIssuerResult createTrustedTokenIssuer(CreateTrustedTokenIssuerRequest createTrustedTokenIssuerRequest);
+
+    /**
+     * <p>
      * Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.
      * </p>
      * <note>
@@ -298,6 +438,147 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
+     * Deletes the association with the application. The connected service resource still exists.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return Result of the DeleteApplication operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes an IAM Identity Center access scope from an application.
+     * </p>
+     * 
+     * @param deleteApplicationAccessScopeRequest
+     * @return Result of the DeleteApplicationAccessScope operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApplicationAccessScopeResult deleteApplicationAccessScope(DeleteApplicationAccessScopeRequest deleteApplicationAccessScopeRequest);
+
+    /**
+     * <p>
+     * Revoke application access to an application by deleting application assignments for a user or group.
+     * </p>
+     * 
+     * @param deleteApplicationAssignmentRequest
+     * @return Result of the DeleteApplicationAssignment operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApplicationAssignmentResult deleteApplicationAssignment(DeleteApplicationAssignmentRequest deleteApplicationAssignmentRequest);
+
+    /**
+     * <p>
+     * Deletes an authentication method from an application.
+     * </p>
+     * 
+     * @param deleteApplicationAuthenticationMethodRequest
+     * @return Result of the DeleteApplicationAuthenticationMethod operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApplicationAuthenticationMethodResult deleteApplicationAuthenticationMethod(
+            DeleteApplicationAuthenticationMethodRequest deleteApplicationAuthenticationMethodRequest);
+
+    /**
+     * <p>
+     * Deletes a grant from an application.
+     * </p>
+     * 
+     * @param deleteApplicationGrantRequest
+     * @return Result of the DeleteApplicationGrant operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApplicationGrantResult deleteApplicationGrant(DeleteApplicationGrantRequest deleteApplicationGrantRequest);
+
+    /**
+     * <p>
      * Deletes the inline policy from a specified permission set.
      * </p>
      * 
@@ -324,6 +605,34 @@ public interface AWSSSOAdmin {
      */
     DeleteInlinePolicyFromPermissionSetResult deleteInlinePolicyFromPermissionSet(
             DeleteInlinePolicyFromPermissionSetRequest deleteInlinePolicyFromPermissionSetRequest);
+
+    /**
+     * <p>
+     * Deletes the instance of IAM Identity Center. Only the account that owns the instance can call this API. Neither
+     * the delegated administrator nor member account can delete the organization instance, but those roles can delete
+     * their own instance.
+     * </p>
+     * 
+     * @param deleteInstanceRequest
+     * @return Result of the DeleteInstance operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteInstanceResult deleteInstance(DeleteInstanceRequest deleteInstanceRequest);
 
     /**
      * <p>
@@ -405,6 +714,10 @@ public interface AWSSSOAdmin {
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
      * @sample AWSSSOAdmin.DeletePermissionsBoundaryFromPermissionSet
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet"
@@ -412,6 +725,40 @@ public interface AWSSSOAdmin {
      */
     DeletePermissionsBoundaryFromPermissionSetResult deletePermissionsBoundaryFromPermissionSet(
             DeletePermissionsBoundaryFromPermissionSetRequest deletePermissionsBoundaryFromPermissionSetRequest);
+
+    /**
+     * <p>
+     * Deletes a trusted token issuer configuration from an instance of IAM Identity Center.
+     * </p>
+     * <note>
+     * <p>
+     * Deleting this trusted token issuer configuration will cause users to lose access to any applications that are
+     * configured to use the trusted token issuer.
+     * </p>
+     * </note>
+     * 
+     * @param deleteTrustedTokenIssuerRequest
+     * @return Result of the DeleteTrustedTokenIssuer operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTrustedTokenIssuerResult deleteTrustedTokenIssuer(DeleteTrustedTokenIssuerRequest deleteTrustedTokenIssuerRequest);
 
     /**
      * <p>
@@ -464,6 +811,123 @@ public interface AWSSSOAdmin {
      */
     DescribeAccountAssignmentDeletionStatusResult describeAccountAssignmentDeletionStatus(
             DescribeAccountAssignmentDeletionStatusRequest describeAccountAssignmentDeletionStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of an application associated with an instance of IAM Identity Center.
+     * </p>
+     * 
+     * @param describeApplicationRequest
+     * @return Result of the DescribeApplication operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeApplicationResult describeApplication(DescribeApplicationRequest describeApplicationRequest);
+
+    /**
+     * <p>
+     * Retrieves a direct assignment of a user or group to an application. If the user doesn’t have a direct assignment
+     * to the application, the user may still have access to the application through a group. Therefore, don’t use this
+     * API to test access to an application for a user. Instead use <a>ListApplicationAssignmentsForPrincipal</a>.
+     * </p>
+     * 
+     * @param describeApplicationAssignmentRequest
+     * @return Result of the DescribeApplicationAssignment operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeApplicationAssignmentResult describeApplicationAssignment(DescribeApplicationAssignmentRequest describeApplicationAssignmentRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a provider that can be used to connect an Amazon Web Services managed application or
+     * customer managed application to IAM Identity Center.
+     * </p>
+     * 
+     * @param describeApplicationProviderRequest
+     * @return Result of the DescribeApplicationProvider operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeApplicationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeApplicationProviderResult describeApplicationProvider(DescribeApplicationProviderRequest describeApplicationProviderRequest);
+
+    /**
+     * <p>
+     * Returns the details of an instance of IAM Identity Center. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The instance is in the process of being created. When the instance is ready for
+     * use, DescribeInstance returns the status of <code>ACTIVE</code>. While the instance is in the
+     * <code>CREATE_IN_PROGRESS</code> state, you can call only DescribeInstance and DeleteInstance operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> - The instance is being deleted. Returns <code>AccessDeniedException</code> after
+     * the delete operation completes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The instance is active.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeInstanceRequest
+     * @return Result of the DescribeInstance operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeInstanceResult describeInstance(DescribeInstanceRequest describeInstanceRequest);
 
     /**
      * <p>
@@ -547,6 +1011,32 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
+     * Retrieves details about a trusted token issuer configuration stored in an instance of IAM Identity Center.
+     * Details include the name of the trusted token issuer, the issuer URL, and the path of the source attribute and
+     * the destination attribute for a trusted token issuer configuration.
+     * </p>
+     * 
+     * @param describeTrustedTokenIssuerRequest
+     * @return Result of the DescribeTrustedTokenIssuer operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTrustedTokenIssuerResult describeTrustedTokenIssuer(DescribeTrustedTokenIssuerRequest describeTrustedTokenIssuerRequest);
+
+    /**
+     * <p>
      * Detaches the specified customer managed policy from the specified <a>PermissionSet</a>.
      * </p>
      * 
@@ -603,6 +1093,104 @@ public interface AWSSSOAdmin {
      */
     DetachManagedPolicyFromPermissionSetResult detachManagedPolicyFromPermissionSet(
             DetachManagedPolicyFromPermissionSetRequest detachManagedPolicyFromPermissionSetRequest);
+
+    /**
+     * <p>
+     * Retrieves the authorized targets for an IAM Identity Center access scope for an application.
+     * </p>
+     * 
+     * @param getApplicationAccessScopeRequest
+     * @return Result of the GetApplicationAccessScope operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.GetApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetApplicationAccessScopeResult getApplicationAccessScope(GetApplicationAccessScopeRequest getApplicationAccessScopeRequest);
+
+    /**
+     * <p>
+     * Retrieves the configuration of <a>PutApplicationAssignmentConfiguration</a>.
+     * </p>
+     * 
+     * @param getApplicationAssignmentConfigurationRequest
+     * @return Result of the GetApplicationAssignmentConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.GetApplicationAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetApplicationAssignmentConfigurationResult getApplicationAssignmentConfiguration(
+            GetApplicationAssignmentConfigurationRequest getApplicationAssignmentConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an authentication method used by an application.
+     * </p>
+     * 
+     * @param getApplicationAuthenticationMethodRequest
+     * @return Result of the GetApplicationAuthenticationMethod operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.GetApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetApplicationAuthenticationMethodResult getApplicationAuthenticationMethod(
+            GetApplicationAuthenticationMethodRequest getApplicationAuthenticationMethodRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an application grant.
+     * </p>
+     * 
+     * @param getApplicationGrantRequest
+     * @return Result of the GetApplicationGrant operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.GetApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetApplicationGrantResult getApplicationGrant(GetApplicationGrantRequest getApplicationGrantRequest);
 
     /**
      * <p>
@@ -731,6 +1319,32 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
+     * Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts that the principal has access
+     * to.
+     * </p>
+     * 
+     * @param listAccountAssignmentsForPrincipalRequest
+     * @return Result of the ListAccountAssignmentsForPrincipal operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListAccountAssignmentsForPrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAccountAssignmentsForPrincipalResult listAccountAssignmentsForPrincipal(
+            ListAccountAssignmentsForPrincipalRequest listAccountAssignmentsForPrincipalRequest);
+
+    /**
+     * <p>
      * Lists all the Amazon Web Services accounts where the specified permission set is provisioned.
      * </p>
      * 
@@ -754,6 +1368,174 @@ public interface AWSSSOAdmin {
      */
     ListAccountsForProvisionedPermissionSetResult listAccountsForProvisionedPermissionSet(
             ListAccountsForProvisionedPermissionSetRequest listAccountsForProvisionedPermissionSetRequest);
+
+    /**
+     * <p>
+     * Lists the access scopes and authorized targets associated with an application.
+     * </p>
+     * 
+     * @param listApplicationAccessScopesRequest
+     * @return Result of the ListApplicationAccessScopes operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationAccessScopes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationAccessScopesResult listApplicationAccessScopes(ListApplicationAccessScopesRequest listApplicationAccessScopesRequest);
+
+    /**
+     * <p>
+     * Lists Amazon Web Services account users that are assigned to an application.
+     * </p>
+     * 
+     * @param listApplicationAssignmentsRequest
+     * @return Result of the ListApplicationAssignments operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationAssignments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationAssignmentsResult listApplicationAssignments(ListApplicationAssignmentsRequest listApplicationAssignmentsRequest);
+
+    /**
+     * <p>
+     * Lists the applications to which a specified principal is assigned.
+     * </p>
+     * 
+     * @param listApplicationAssignmentsForPrincipalRequest
+     * @return Result of the ListApplicationAssignmentsForPrincipal operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationAssignmentsForPrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationAssignmentsForPrincipalResult listApplicationAssignmentsForPrincipal(
+            ListApplicationAssignmentsForPrincipalRequest listApplicationAssignmentsForPrincipalRequest);
+
+    /**
+     * <p>
+     * Lists all of the authentication methods supported by the specified application.
+     * </p>
+     * 
+     * @param listApplicationAuthenticationMethodsRequest
+     * @return Result of the ListApplicationAuthenticationMethods operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationAuthenticationMethods
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationAuthenticationMethodsResult listApplicationAuthenticationMethods(
+            ListApplicationAuthenticationMethodsRequest listApplicationAuthenticationMethodsRequest);
+
+    /**
+     * <p>
+     * List the grants associated with an application.
+     * </p>
+     * 
+     * @param listApplicationGrantsRequest
+     * @return Result of the ListApplicationGrants operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationGrantsResult listApplicationGrants(ListApplicationGrantsRequest listApplicationGrantsRequest);
+
+    /**
+     * <p>
+     * Lists the application providers configured in the IAM Identity Center identity store.
+     * </p>
+     * 
+     * @param listApplicationProvidersRequest
+     * @return Result of the ListApplicationProviders operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationProvidersResult listApplicationProviders(ListApplicationProvidersRequest listApplicationProvidersRequest);
+
+    /**
+     * <p>
+     * Lists all applications associated with the instance of IAM Identity Center. When listing applications for an
+     * instance in the management account, member accounts must use the <code>applicationAccount</code> parameter to
+     * filter the list to only applications created from that account.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @return Result of the ListApplications operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest);
 
     /**
      * <p>
@@ -783,7 +1565,8 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
-     * Lists the IAM Identity Center instances that the caller has access to.
+     * Lists the details of the organization and account instances of IAM Identity Center that were created in or
+     * visible to the account calling this API.
      * </p>
      * 
      * @param listInstancesRequest
@@ -928,6 +1711,28 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
+     * Lists all the trusted token issuers configured in an instance of IAM Identity Center.
+     * </p>
+     * 
+     * @param listTrustedTokenIssuersRequest
+     * @return Result of the ListTrustedTokenIssuers operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListTrustedTokenIssuers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTrustedTokenIssuersResult listTrustedTokenIssuers(ListTrustedTokenIssuersRequest listTrustedTokenIssuersRequest);
+
+    /**
+     * <p>
      * The process by which a specified permission set is provisioned to the specified target.
      * </p>
      * 
@@ -953,6 +1758,127 @@ public interface AWSSSOAdmin {
      *      target="_top">AWS API Documentation</a>
      */
     ProvisionPermissionSetResult provisionPermissionSet(ProvisionPermissionSetRequest provisionPermissionSetRequest);
+
+    /**
+     * <p>
+     * Adds or updates the list of authorized targets for an IAM Identity Center access scope for an application.
+     * </p>
+     * 
+     * @param putApplicationAccessScopeRequest
+     * @return Result of the PutApplicationAccessScope operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.PutApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutApplicationAccessScopeResult putApplicationAccessScope(PutApplicationAccessScopeRequest putApplicationAccessScopeRequest);
+
+    /**
+     * <p>
+     * Configure how users gain access to an application. If <code>AssignmentsRequired</code> is <code>true</code>
+     * (default value), users don’t have access to the application unless an assignment is created using the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+     * >CreateApplicationAssignment API</a>. If <code>false</code>, all users have access to the application. If an
+     * assignment is created using <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+     * >CreateApplicationAssignment</a>., the user retains access if <code>AssignmentsRequired</code> is set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param putApplicationAssignmentConfigurationRequest
+     * @return Result of the PutApplicationAssignmentConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.PutApplicationAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutApplicationAssignmentConfigurationResult putApplicationAssignmentConfiguration(
+            PutApplicationAssignmentConfigurationRequest putApplicationAssignmentConfigurationRequest);
+
+    /**
+     * <p>
+     * Adds or updates an authentication method for an application.
+     * </p>
+     * 
+     * @param putApplicationAuthenticationMethodRequest
+     * @return Result of the PutApplicationAuthenticationMethod operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.PutApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutApplicationAuthenticationMethodResult putApplicationAuthenticationMethod(
+            PutApplicationAuthenticationMethodRequest putApplicationAuthenticationMethodRequest);
+
+    /**
+     * <p>
+     * Adds a grant to an application.
+     * </p>
+     * 
+     * @param putApplicationGrantRequest
+     * @return Result of the PutApplicationGrant operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.PutApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutApplicationGrantResult putApplicationGrant(PutApplicationGrantRequest putApplicationGrantRequest);
 
     /**
      * <p>
@@ -1081,6 +2007,60 @@ public interface AWSSSOAdmin {
 
     /**
      * <p>
+     * Updates application properties.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * Update the details for the instance of IAM Identity Center that is owned by the Amazon Web Services account.
+     * </p>
+     * 
+     * @param updateInstanceRequest
+     * @return Result of the UpdateInstance operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.UpdateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateInstanceResult updateInstance(UpdateInstanceRequest updateInstanceRequest);
+
+    /**
+     * <p>
      * Updates the IAM Identity Center identity store attributes that you can use with the IAM Identity Center instance
      * for attributes-based access control (ABAC). When using an external identity provider as an identity source, you
      * can pass attributes through the SAML assertion as an alternative to configuring attributes from the IAM Identity
@@ -1142,6 +2122,41 @@ public interface AWSSSOAdmin {
      *      API Documentation</a>
      */
     UpdatePermissionSetResult updatePermissionSet(UpdatePermissionSetRequest updatePermissionSetRequest);
+
+    /**
+     * <p>
+     * Updates the name of the trusted token issuer, or the path of a source attribute or destination attribute for a
+     * trusted token issuer configuration.
+     * </p>
+     * <note>
+     * <p>
+     * Updating this trusted token issuer configuration might cause users to lose access to any applications that are
+     * configured to use the trusted token issuer.
+     * </p>
+     * </note>
+     * 
+     * @param updateTrustedTokenIssuerRequest
+     * @return Result of the UpdateTrustedTokenIssuer operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.UpdateTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTrustedTokenIssuerResult updateTrustedTokenIssuer(UpdateTrustedTokenIssuerRequest updateTrustedTokenIssuerRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

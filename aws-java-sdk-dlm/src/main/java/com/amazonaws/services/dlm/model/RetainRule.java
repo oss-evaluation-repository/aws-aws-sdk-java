@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots created by snapshot policies, or for
- * AMIs created by AMI policies.
+ * <b>[Custom snapshot and AMI policies only]</b> Specifies a retention rule for snapshots created by snapshot policies,
+ * or for AMIs created by AMI policies.
  * </p>
  * <note>
  * <p>

@@ -179,6 +179,12 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
      * </p>
      */
     private TrinoParameters trinoParameters;
+    /**
+     * <p>
+     * The parameters that are required to connect to a Google BigQuery data source.
+     * </p>
+     */
+    private BigQueryParameters bigQueryParameters;
 
     /**
      * <p>
@@ -1181,6 +1187,46 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The parameters that are required to connect to a Google BigQuery data source.
+     * </p>
+     * 
+     * @param bigQueryParameters
+     *        The parameters that are required to connect to a Google BigQuery data source.
+     */
+
+    public void setBigQueryParameters(BigQueryParameters bigQueryParameters) {
+        this.bigQueryParameters = bigQueryParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Google BigQuery data source.
+     * </p>
+     * 
+     * @return The parameters that are required to connect to a Google BigQuery data source.
+     */
+
+    public BigQueryParameters getBigQueryParameters() {
+        return this.bigQueryParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Google BigQuery data source.
+     * </p>
+     * 
+     * @param bigQueryParameters
+     *        The parameters that are required to connect to a Google BigQuery data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withBigQueryParameters(BigQueryParameters bigQueryParameters) {
+        setBigQueryParameters(bigQueryParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1241,7 +1287,9 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         if (getStarburstParameters() != null)
             sb.append("StarburstParameters: ").append(getStarburstParameters()).append(",");
         if (getTrinoParameters() != null)
-            sb.append("TrinoParameters: ").append(getTrinoParameters());
+            sb.append("TrinoParameters: ").append(getTrinoParameters()).append(",");
+        if (getBigQueryParameters() != null)
+            sb.append("BigQueryParameters: ").append(getBigQueryParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1357,6 +1405,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
             return false;
         if (other.getTrinoParameters() != null && other.getTrinoParameters().equals(this.getTrinoParameters()) == false)
             return false;
+        if (other.getBigQueryParameters() == null ^ this.getBigQueryParameters() == null)
+            return false;
+        if (other.getBigQueryParameters() != null && other.getBigQueryParameters().equals(this.getBigQueryParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1390,6 +1442,7 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getDatabricksParameters() == null) ? 0 : getDatabricksParameters().hashCode());
         hashCode = prime * hashCode + ((getStarburstParameters() == null) ? 0 : getStarburstParameters().hashCode());
         hashCode = prime * hashCode + ((getTrinoParameters() == null) ? 0 : getTrinoParameters().hashCode());
+        hashCode = prime * hashCode + ((getBigQueryParameters() == null) ? 0 : getBigQueryParameters().hashCode());
         return hashCode;
     }
 

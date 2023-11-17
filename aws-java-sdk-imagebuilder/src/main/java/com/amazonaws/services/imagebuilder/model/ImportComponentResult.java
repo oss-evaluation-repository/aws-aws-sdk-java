@@ -31,7 +31,7 @@ public class ImportComponentResult extends com.amazonaws.AmazonWebServiceResult<
     private String requestId;
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * The client token that uniquely identifies the request.
      * </p>
      */
     private String clientToken;
@@ -84,11 +84,11 @@ public class ImportComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token used to make this request idempotent.
+     *        The client token that uniquely identifies the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -97,10 +97,10 @@ public class ImportComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
-     * @return The idempotency token used to make this request idempotent.
+     * @return The client token that uniquely identifies the request.
      */
 
     public String getClientToken() {
@@ -109,11 +109,11 @@ public class ImportComponentResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token used to make this request idempotent.
+     *        The client token that uniquely identifies the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

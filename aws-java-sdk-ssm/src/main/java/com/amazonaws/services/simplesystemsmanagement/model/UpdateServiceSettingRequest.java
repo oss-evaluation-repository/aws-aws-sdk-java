@@ -93,43 +93,45 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code>
+     * For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     * For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group
+     * For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log
+     * group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     * For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     * <code>Disable</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     * For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     * For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     * <code>Intelligent-Tiering</code>
+     * For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>,
+     * or <code>Intelligent-Tiering</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     * For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -487,43 +489,45 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code>
+     * For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     * For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group
+     * For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log
+     * group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     * For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     * <code>Disable</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     * For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     * For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     * <code>Intelligent-Tiering</code>
+     * For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>,
+     * or <code>Intelligent-Tiering</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     * For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -534,44 +538,48 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code>
+     *        For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM
+     *        role.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     *        For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log
-     *        group
+     *        For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch
+     *        Logs log group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     *        For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     *        <code>Disable</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     *        For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or
+     *        <code>advanced</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     *        For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     *        <code>Intelligent-Tiering</code>
+     *        For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>,
+     *        <code>Advanced</code>, or <code>Intelligent-Tiering</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     *        For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or
+     *        <code>false</code>.
      *        </p>
      *        </li>
      */
@@ -588,43 +596,45 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code>
+     * For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     * For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group
+     * For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log
+     * group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     * For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     * <code>Disable</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     * For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     * For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     * <code>Intelligent-Tiering</code>
+     * For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>,
+     * or <code>Intelligent-Tiering</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     * For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -634,45 +644,48 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code>
+     *         For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM
+     *         role.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     *         For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log
-     *         group
+     *         For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch
+     *         Logs log group.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or
-     *         <code>Disable</code>
+     *         For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     *         <code>Disable</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     *         For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or
+     *         <code>advanced</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     *         For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     *         <code>Intelligent-Tiering</code>
+     *         For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>,
+     *         <code>Advanced</code>, or <code>Intelligent-Tiering</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     *         For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or
+     *         <code>false</code>.
      *         </p>
      *         </li>
      */
@@ -689,43 +702,45 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code>
+     * For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     * For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group
+     * For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log
+     * group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     * For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     * <code>Disable</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     * For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     * For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     * <code>Intelligent-Tiering</code>
+     * For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>,
+     * or <code>Intelligent-Tiering</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     * For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -736,44 +751,48 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code>
+     *        For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM
+     *        role.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     *        For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log
-     *        group
+     *        For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch
+     *        Logs log group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     *        For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     *        <code>Disable</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     *        For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or
+     *        <code>advanced</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     *        For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     *        <code>Intelligent-Tiering</code>
+     *        For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>,
+     *        <code>Advanced</code>, or <code>Intelligent-Tiering</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     *        For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or
+     *        <code>false</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -25,7 +25,7 @@ public class ListStagesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
+     * If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
      * set.
      * </p>
      */
@@ -39,13 +39,13 @@ public class ListStagesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
+     * If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
      * set.
      * </p>
      * 
      * @param nextToken
-     *        If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the
-     *        next set.
+     *        If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get
+     *        the next set.
      */
 
     public void setNextToken(String nextToken) {
@@ -54,11 +54,11 @@ public class ListStagesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
+     * If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
      * set.
      * </p>
      * 
-     * @return If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get
+     * @return If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get
      *         the next set.
      */
 
@@ -68,13 +68,13 @@ public class ListStagesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
+     * If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
      * set.
      * </p>
      * 
      * @param nextToken
-     *        If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the
-     *        next set.
+     *        If there are more stages than <code>maxResults</code>, use <code>nextToken</code> in the request to get
+     *        the next set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

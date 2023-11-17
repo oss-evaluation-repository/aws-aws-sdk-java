@@ -73,6 +73,10 @@ public class ImageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanState").build();
     private static final MarshallingInfo<StructuredPojo> IMAGESCANNINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageScanningConfiguration").build();
+    private static final MarshallingInfo<java.util.Date> DEPRECATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LIFECYCLEEXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifecycleExecutionId").build();
 
     private static final ImageMarshaller instance = new ImageMarshaller();
 
@@ -112,6 +116,8 @@ public class ImageMarshaller {
             protocolMarshaller.marshall(image.getImageSource(), IMAGESOURCE_BINDING);
             protocolMarshaller.marshall(image.getScanState(), SCANSTATE_BINDING);
             protocolMarshaller.marshall(image.getImageScanningConfiguration(), IMAGESCANNINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(image.getDeprecationTime(), DEPRECATIONTIME_BINDING);
+            protocolMarshaller.marshall(image.getLifecycleExecutionId(), LIFECYCLEEXECUTIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

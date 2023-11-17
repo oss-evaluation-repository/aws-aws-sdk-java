@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DeviceTrustProviderType {
 
     Jamf("jamf"),
-    Crowdstrike("crowdstrike");
+    Crowdstrike("crowdstrike"),
+    Jumpcloud("jumpcloud");
 
     private String value;
 

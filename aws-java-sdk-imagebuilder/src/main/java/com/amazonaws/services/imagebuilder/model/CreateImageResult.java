@@ -31,13 +31,13 @@ public class CreateImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String requestId;
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * The client token that uniquely identifies the request.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image that this request created.
+     * The Amazon Resource Name (ARN) of the image that the request created.
      * </p>
      */
     private String imageBuildVersionArn;
@@ -84,11 +84,11 @@ public class CreateImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token used to make this request idempotent.
+     *        The client token that uniquely identifies the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -97,10 +97,10 @@ public class CreateImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
-     * @return The idempotency token used to make this request idempotent.
+     * @return The client token that uniquely identifies the request.
      */
 
     public String getClientToken() {
@@ -109,11 +109,11 @@ public class CreateImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token used to make this request idempotent.
+     *        The client token that uniquely identifies the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class CreateImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image that this request created.
+     * The Amazon Resource Name (ARN) of the image that the request created.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image that this request created.
+     *        The Amazon Resource Name (ARN) of the image that the request created.
      */
 
     public void setImageBuildVersionArn(String imageBuildVersionArn) {
@@ -137,10 +137,10 @@ public class CreateImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image that this request created.
+     * The Amazon Resource Name (ARN) of the image that the request created.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image that this request created.
+     * @return The Amazon Resource Name (ARN) of the image that the request created.
      */
 
     public String getImageBuildVersionArn() {
@@ -149,11 +149,11 @@ public class CreateImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image that this request created.
+     * The Amazon Resource Name (ARN) of the image that the request created.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image that this request created.
+     *        The Amazon Resource Name (ARN) of the image that the request created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

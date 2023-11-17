@@ -64,6 +64,18 @@ public class AssetBundleExportJobSummary implements Serializable, Cloneable, Str
      * </p>
      */
     private String exportFormat;
+    /**
+     * <p>
+     * The flag that determines the inclusion of permissions associated with each resource ARN.
+     * </p>
+     */
+    private Boolean includePermissions;
+    /**
+     * <p>
+     * The flag that determines the inclusion of tags associated with each resource ARN.
+     * </p>
+     */
+    private Boolean includeTags;
 
     /**
      * <p>
@@ -356,6 +368,110 @@ public class AssetBundleExportJobSummary implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The flag that determines the inclusion of permissions associated with each resource ARN.
+     * </p>
+     * 
+     * @param includePermissions
+     *        The flag that determines the inclusion of permissions associated with each resource ARN.
+     */
+
+    public void setIncludePermissions(Boolean includePermissions) {
+        this.includePermissions = includePermissions;
+    }
+
+    /**
+     * <p>
+     * The flag that determines the inclusion of permissions associated with each resource ARN.
+     * </p>
+     * 
+     * @return The flag that determines the inclusion of permissions associated with each resource ARN.
+     */
+
+    public Boolean getIncludePermissions() {
+        return this.includePermissions;
+    }
+
+    /**
+     * <p>
+     * The flag that determines the inclusion of permissions associated with each resource ARN.
+     * </p>
+     * 
+     * @param includePermissions
+     *        The flag that determines the inclusion of permissions associated with each resource ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleExportJobSummary withIncludePermissions(Boolean includePermissions) {
+        setIncludePermissions(includePermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The flag that determines the inclusion of permissions associated with each resource ARN.
+     * </p>
+     * 
+     * @return The flag that determines the inclusion of permissions associated with each resource ARN.
+     */
+
+    public Boolean isIncludePermissions() {
+        return this.includePermissions;
+    }
+
+    /**
+     * <p>
+     * The flag that determines the inclusion of tags associated with each resource ARN.
+     * </p>
+     * 
+     * @param includeTags
+     *        The flag that determines the inclusion of tags associated with each resource ARN.
+     */
+
+    public void setIncludeTags(Boolean includeTags) {
+        this.includeTags = includeTags;
+    }
+
+    /**
+     * <p>
+     * The flag that determines the inclusion of tags associated with each resource ARN.
+     * </p>
+     * 
+     * @return The flag that determines the inclusion of tags associated with each resource ARN.
+     */
+
+    public Boolean getIncludeTags() {
+        return this.includeTags;
+    }
+
+    /**
+     * <p>
+     * The flag that determines the inclusion of tags associated with each resource ARN.
+     * </p>
+     * 
+     * @param includeTags
+     *        The flag that determines the inclusion of tags associated with each resource ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleExportJobSummary withIncludeTags(Boolean includeTags) {
+        setIncludeTags(includeTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The flag that determines the inclusion of tags associated with each resource ARN.
+     * </p>
+     * 
+     * @return The flag that determines the inclusion of tags associated with each resource ARN.
+     */
+
+    public Boolean isIncludeTags() {
+        return this.includeTags;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -378,7 +494,11 @@ public class AssetBundleExportJobSummary implements Serializable, Cloneable, Str
         if (getIncludeAllDependencies() != null)
             sb.append("IncludeAllDependencies: ").append(getIncludeAllDependencies()).append(",");
         if (getExportFormat() != null)
-            sb.append("ExportFormat: ").append(getExportFormat());
+            sb.append("ExportFormat: ").append(getExportFormat()).append(",");
+        if (getIncludePermissions() != null)
+            sb.append("IncludePermissions: ").append(getIncludePermissions()).append(",");
+        if (getIncludeTags() != null)
+            sb.append("IncludeTags: ").append(getIncludeTags());
         sb.append("}");
         return sb.toString();
     }
@@ -417,6 +537,14 @@ public class AssetBundleExportJobSummary implements Serializable, Cloneable, Str
             return false;
         if (other.getExportFormat() != null && other.getExportFormat().equals(this.getExportFormat()) == false)
             return false;
+        if (other.getIncludePermissions() == null ^ this.getIncludePermissions() == null)
+            return false;
+        if (other.getIncludePermissions() != null && other.getIncludePermissions().equals(this.getIncludePermissions()) == false)
+            return false;
+        if (other.getIncludeTags() == null ^ this.getIncludeTags() == null)
+            return false;
+        if (other.getIncludeTags() != null && other.getIncludeTags().equals(this.getIncludeTags()) == false)
+            return false;
         return true;
     }
 
@@ -431,6 +559,8 @@ public class AssetBundleExportJobSummary implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getAssetBundleExportJobId() == null) ? 0 : getAssetBundleExportJobId().hashCode());
         hashCode = prime * hashCode + ((getIncludeAllDependencies() == null) ? 0 : getIncludeAllDependencies().hashCode());
         hashCode = prime * hashCode + ((getExportFormat() == null) ? 0 : getExportFormat().hashCode());
+        hashCode = prime * hashCode + ((getIncludePermissions() == null) ? 0 : getIncludePermissions().hashCode());
+        hashCode = prime * hashCode + ((getIncludeTags() == null) ? 0 : getIncludeTags().hashCode());
         return hashCode;
     }
 

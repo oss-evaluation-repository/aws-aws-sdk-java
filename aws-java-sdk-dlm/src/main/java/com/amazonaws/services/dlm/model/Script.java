@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot policies that target instances only]</b> Information about pre and/or post scripts for a snapshot
+ * <b>[Custom snapshot policies that target instances only]</b> Information about pre and/or post scripts for a snapshot
  * lifecycle policy that targets instances. For more information, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html"> Automating
  * application-consistent snapshots with pre and post scripts</a>.

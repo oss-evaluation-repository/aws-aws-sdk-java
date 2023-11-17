@@ -171,6 +171,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AlarmStateInformation> triggeredAlarms;
+    /**
+     * <p>
+     * Information about the parent step.
+     * </p>
+     */
+    private ParentStepDetails parentStepDetails;
 
     /**
      * <p>
@@ -1372,6 +1378,46 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the parent step.
+     * </p>
+     * 
+     * @param parentStepDetails
+     *        Information about the parent step.
+     */
+
+    public void setParentStepDetails(ParentStepDetails parentStepDetails) {
+        this.parentStepDetails = parentStepDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the parent step.
+     * </p>
+     * 
+     * @return Information about the parent step.
+     */
+
+    public ParentStepDetails getParentStepDetails() {
+        return this.parentStepDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the parent step.
+     * </p>
+     * 
+     * @param parentStepDetails
+     *        Information about the parent step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withParentStepDetails(ParentStepDetails parentStepDetails) {
+        setParentStepDetails(parentStepDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1428,7 +1474,9 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         if (getTargetLocation() != null)
             sb.append("TargetLocation: ").append(getTargetLocation()).append(",");
         if (getTriggeredAlarms() != null)
-            sb.append("TriggeredAlarms: ").append(getTriggeredAlarms());
+            sb.append("TriggeredAlarms: ").append(getTriggeredAlarms()).append(",");
+        if (getParentStepDetails() != null)
+            sb.append("ParentStepDetails: ").append(getParentStepDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1535,6 +1583,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTriggeredAlarms() != null && other.getTriggeredAlarms().equals(this.getTriggeredAlarms()) == false)
             return false;
+        if (other.getParentStepDetails() == null ^ this.getParentStepDetails() == null)
+            return false;
+        if (other.getParentStepDetails() != null && other.getParentStepDetails().equals(this.getParentStepDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1566,6 +1618,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getTargetLocation() == null) ? 0 : getTargetLocation().hashCode());
         hashCode = prime * hashCode + ((getTriggeredAlarms() == null) ? 0 : getTriggeredAlarms().hashCode());
+        hashCode = prime * hashCode + ((getParentStepDetails() == null) ? 0 : getParentStepDetails().hashCode());
         return hashCode;
     }
 

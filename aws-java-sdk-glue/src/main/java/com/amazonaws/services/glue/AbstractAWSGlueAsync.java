@@ -1049,6 +1049,32 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetColumnStatisticsTaskRunResult> getColumnStatisticsTaskRunAsync(GetColumnStatisticsTaskRunRequest request) {
+
+        return getColumnStatisticsTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsTaskRunResult> getColumnStatisticsTaskRunAsync(GetColumnStatisticsTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsTaskRunRequest, GetColumnStatisticsTaskRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsTaskRunsResult> getColumnStatisticsTaskRunsAsync(GetColumnStatisticsTaskRunsRequest request) {
+
+        return getColumnStatisticsTaskRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsTaskRunsResult> getColumnStatisticsTaskRunsAsync(GetColumnStatisticsTaskRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsTaskRunsRequest, GetColumnStatisticsTaskRunsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest request) {
 
         return getConnectionAsync(request, null);
@@ -1837,6 +1863,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListColumnStatisticsTaskRunsResult> listColumnStatisticsTaskRunsAsync(ListColumnStatisticsTaskRunsRequest request) {
+
+        return listColumnStatisticsTaskRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListColumnStatisticsTaskRunsResult> listColumnStatisticsTaskRunsAsync(ListColumnStatisticsTaskRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListColumnStatisticsTaskRunsRequest, ListColumnStatisticsTaskRunsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCrawlersResult> listCrawlersAsync(ListCrawlersRequest request) {
 
         return listCrawlersAsync(request, null);
@@ -2233,6 +2272,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<StartColumnStatisticsTaskRunResult> startColumnStatisticsTaskRunAsync(StartColumnStatisticsTaskRunRequest request) {
+
+        return startColumnStatisticsTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartColumnStatisticsTaskRunResult> startColumnStatisticsTaskRunAsync(StartColumnStatisticsTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartColumnStatisticsTaskRunRequest, StartColumnStatisticsTaskRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartCrawlerResult> startCrawlerAsync(StartCrawlerRequest request) {
 
         return startCrawlerAsync(request, null);
@@ -2377,6 +2429,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<StartWorkflowRunResult> startWorkflowRunAsync(StartWorkflowRunRequest request,
             com.amazonaws.handlers.AsyncHandler<StartWorkflowRunRequest, StartWorkflowRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopColumnStatisticsTaskRunResult> stopColumnStatisticsTaskRunAsync(StopColumnStatisticsTaskRunRequest request) {
+
+        return stopColumnStatisticsTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopColumnStatisticsTaskRunResult> stopColumnStatisticsTaskRunAsync(StopColumnStatisticsTaskRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopColumnStatisticsTaskRunRequest, StopColumnStatisticsTaskRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

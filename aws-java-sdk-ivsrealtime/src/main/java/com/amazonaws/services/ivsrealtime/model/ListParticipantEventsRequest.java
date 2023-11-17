@@ -33,7 +33,8 @@ public class ListParticipantEventsRequest extends com.amazonaws.AmazonWebService
     private Integer maxResults;
     /**
      * <p>
-     * The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     * field.
      * </p>
      */
     private String nextToken;
@@ -98,12 +99,13 @@ public class ListParticipantEventsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     * field.
      * </p>
      * 
      * @param nextToken
-     *        The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *        field.
+     *        The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code>
+     *        response field.
      */
 
     public void setNextToken(String nextToken) {
@@ -112,11 +114,12 @@ public class ListParticipantEventsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     * field.
      * </p>
      * 
-     * @return The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *         field.
+     * @return The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code>
+     *         response field.
      */
 
     public String getNextToken() {
@@ -125,12 +128,13 @@ public class ListParticipantEventsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     * field.
      * </p>
      * 
      * @param nextToken
-     *        The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *        field.
+     *        The first participant event to retrieve. This is used for pagination; see the <code>nextToken</code>
+     *        response field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,8 @@ public enum PhoneNumberFilterName {
     TwoWayEnabled("two-way-enabled"),
     SelfManagedOptOutsEnabled("self-managed-opt-outs-enabled"),
     OptOutListName("opt-out-list-name"),
-    DeletionProtectionEnabled("deletion-protection-enabled");
+    DeletionProtectionEnabled("deletion-protection-enabled"),
+    TwoWayChannelArn("two-way-channel-arn");
 
     private String value;
 

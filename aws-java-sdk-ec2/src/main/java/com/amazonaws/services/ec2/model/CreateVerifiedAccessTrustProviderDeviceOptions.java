@@ -33,6 +33,12 @@ public class CreateVerifiedAccessTrustProviderDeviceOptions implements Serializa
      * </p>
      */
     private String tenantId;
+    /**
+     * <p>
+     * The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.
+     * </p>
+     */
+    private String publicSigningKeyUrl;
 
     /**
      * <p>
@@ -75,6 +81,46 @@ public class CreateVerifiedAccessTrustProviderDeviceOptions implements Serializa
     }
 
     /**
+     * <p>
+     * The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.
+     * </p>
+     * 
+     * @param publicSigningKeyUrl
+     *        The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.
+     */
+
+    public void setPublicSigningKeyUrl(String publicSigningKeyUrl) {
+        this.publicSigningKeyUrl = publicSigningKeyUrl;
+    }
+
+    /**
+     * <p>
+     * The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.
+     * </p>
+     * 
+     * @return The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.
+     */
+
+    public String getPublicSigningKeyUrl() {
+        return this.publicSigningKeyUrl;
+    }
+
+    /**
+     * <p>
+     * The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.
+     * </p>
+     * 
+     * @param publicSigningKeyUrl
+     *        The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVerifiedAccessTrustProviderDeviceOptions withPublicSigningKeyUrl(String publicSigningKeyUrl) {
+        setPublicSigningKeyUrl(publicSigningKeyUrl);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -87,7 +133,9 @@ public class CreateVerifiedAccessTrustProviderDeviceOptions implements Serializa
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTenantId() != null)
-            sb.append("TenantId: ").append(getTenantId());
+            sb.append("TenantId: ").append(getTenantId()).append(",");
+        if (getPublicSigningKeyUrl() != null)
+            sb.append("PublicSigningKeyUrl: ").append(getPublicSigningKeyUrl());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +154,10 @@ public class CreateVerifiedAccessTrustProviderDeviceOptions implements Serializa
             return false;
         if (other.getTenantId() != null && other.getTenantId().equals(this.getTenantId()) == false)
             return false;
+        if (other.getPublicSigningKeyUrl() == null ^ this.getPublicSigningKeyUrl() == null)
+            return false;
+        if (other.getPublicSigningKeyUrl() != null && other.getPublicSigningKeyUrl().equals(this.getPublicSigningKeyUrl()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +167,7 @@ public class CreateVerifiedAccessTrustProviderDeviceOptions implements Serializa
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTenantId() == null) ? 0 : getTenantId().hashCode());
+        hashCode = prime * hashCode + ((getPublicSigningKeyUrl() == null) ? 0 : getPublicSigningKeyUrl().hashCode());
         return hashCode;
     }
 

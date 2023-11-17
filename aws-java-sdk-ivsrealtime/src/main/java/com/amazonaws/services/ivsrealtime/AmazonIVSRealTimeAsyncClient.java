@@ -50,7 +50,19 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * A <i>participant object</i> represents participants (people) in the stage and contains information about them. When a
  * token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant
- * is associated with that participant ID There is a 1:1 mapping between participant tokens and participants.
+ * is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Server-side composition: The <i>composition</i> process composites participants of a stage into a single video and
+ * forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support this process.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Server-side composition: A <i>composition</i> controls the look of the outputs, including how participants are
+ * positioned in the video.
  * </p>
  * </li>
  * </ul>
@@ -161,6 +173,86 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * </ul>
  * <p>
+ * <b>Composition Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>GetComposition</a> — Gets information about the specified Composition resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListCompositions</a> — Gets summary information about all Compositions in your account, in the AWS region where
+ * the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartComposition</a> — Starts a Composition from a stage based on the configuration provided in the request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopComposition</a> — Stops and deletes a Composition resource. Any broadcast from the Composition resource is
+ * stopped.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>EncoderConfiguration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateEncoderConfiguration</a> — Creates an EncoderConfiguration object.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteEncoderConfiguration</a> — Deletes an EncoderConfiguration resource. Ensures that no Compositions are using
+ * this template; otherwise, returns an error.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetEncoderConfiguration</a> — Gets information about the specified EncoderConfiguration resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListEncoderConfigurations</a> — Gets summary information about all EncoderConfigurations in your account, in the
+ * AWS region where the API request is processed.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>StorageConfiguration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateStorageConfiguration</a> — Creates a new storage configuration, used to enable recording to Amazon S3.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteStorageConfiguration</a> — Deletes the storage configuration for the specified ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetStorageConfiguration</a> — Gets the storage configuration for the specified ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListStorageConfigurations</a> — Gets summary information about all storage configurations in your account, in the
+ * AWS region where the API request is processed.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * <b>Tags Endpoints</b>
  * </p>
  * <ul>
@@ -223,6 +315,39 @@ public class AmazonIVSRealTimeAsyncClient extends AmazonIVSRealTimeClient implem
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEncoderConfigurationResult> createEncoderConfigurationAsync(CreateEncoderConfigurationRequest request) {
+
+        return createEncoderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEncoderConfigurationResult> createEncoderConfigurationAsync(final CreateEncoderConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEncoderConfigurationRequest, CreateEncoderConfigurationResult> asyncHandler) {
+        final CreateEncoderConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEncoderConfigurationResult>() {
+            @Override
+            public CreateEncoderConfigurationResult call() throws Exception {
+                CreateEncoderConfigurationResult result = null;
+
+                try {
+                    result = executeCreateEncoderConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -292,6 +417,72 @@ public class AmazonIVSRealTimeAsyncClient extends AmazonIVSRealTimeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStorageConfigurationResult> createStorageConfigurationAsync(CreateStorageConfigurationRequest request) {
+
+        return createStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStorageConfigurationResult> createStorageConfigurationAsync(final CreateStorageConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateStorageConfigurationRequest, CreateStorageConfigurationResult> asyncHandler) {
+        final CreateStorageConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateStorageConfigurationResult>() {
+            @Override
+            public CreateStorageConfigurationResult call() throws Exception {
+                CreateStorageConfigurationResult result = null;
+
+                try {
+                    result = executeCreateStorageConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEncoderConfigurationResult> deleteEncoderConfigurationAsync(DeleteEncoderConfigurationRequest request) {
+
+        return deleteEncoderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEncoderConfigurationResult> deleteEncoderConfigurationAsync(final DeleteEncoderConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEncoderConfigurationRequest, DeleteEncoderConfigurationResult> asyncHandler) {
+        final DeleteEncoderConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEncoderConfigurationResult>() {
+            @Override
+            public DeleteEncoderConfigurationResult call() throws Exception {
+                DeleteEncoderConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteEncoderConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(DeleteStageRequest request) {
 
         return deleteStageAsync(request, null);
@@ -325,6 +516,39 @@ public class AmazonIVSRealTimeAsyncClient extends AmazonIVSRealTimeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteStorageConfigurationResult> deleteStorageConfigurationAsync(DeleteStorageConfigurationRequest request) {
+
+        return deleteStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStorageConfigurationResult> deleteStorageConfigurationAsync(final DeleteStorageConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteStorageConfigurationRequest, DeleteStorageConfigurationResult> asyncHandler) {
+        final DeleteStorageConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteStorageConfigurationResult>() {
+            @Override
+            public DeleteStorageConfigurationResult call() throws Exception {
+                DeleteStorageConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteStorageConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisconnectParticipantResult> disconnectParticipantAsync(DisconnectParticipantRequest request) {
 
         return disconnectParticipantAsync(request, null);
@@ -342,6 +566,72 @@ public class AmazonIVSRealTimeAsyncClient extends AmazonIVSRealTimeClient implem
 
                 try {
                     result = executeDisconnectParticipant(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCompositionResult> getCompositionAsync(GetCompositionRequest request) {
+
+        return getCompositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCompositionResult> getCompositionAsync(final GetCompositionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCompositionRequest, GetCompositionResult> asyncHandler) {
+        final GetCompositionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCompositionResult>() {
+            @Override
+            public GetCompositionResult call() throws Exception {
+                GetCompositionResult result = null;
+
+                try {
+                    result = executeGetComposition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncoderConfigurationResult> getEncoderConfigurationAsync(GetEncoderConfigurationRequest request) {
+
+        return getEncoderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncoderConfigurationResult> getEncoderConfigurationAsync(final GetEncoderConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEncoderConfigurationRequest, GetEncoderConfigurationResult> asyncHandler) {
+        final GetEncoderConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEncoderConfigurationResult>() {
+            @Override
+            public GetEncoderConfigurationResult call() throws Exception {
+                GetEncoderConfigurationResult result = null;
+
+                try {
+                    result = executeGetEncoderConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -441,6 +731,105 @@ public class AmazonIVSRealTimeAsyncClient extends AmazonIVSRealTimeClient implem
 
                 try {
                     result = executeGetStageSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStorageConfigurationResult> getStorageConfigurationAsync(GetStorageConfigurationRequest request) {
+
+        return getStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStorageConfigurationResult> getStorageConfigurationAsync(final GetStorageConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetStorageConfigurationRequest, GetStorageConfigurationResult> asyncHandler) {
+        final GetStorageConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetStorageConfigurationResult>() {
+            @Override
+            public GetStorageConfigurationResult call() throws Exception {
+                GetStorageConfigurationResult result = null;
+
+                try {
+                    result = executeGetStorageConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompositionsResult> listCompositionsAsync(ListCompositionsRequest request) {
+
+        return listCompositionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompositionsResult> listCompositionsAsync(final ListCompositionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCompositionsRequest, ListCompositionsResult> asyncHandler) {
+        final ListCompositionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCompositionsResult>() {
+            @Override
+            public ListCompositionsResult call() throws Exception {
+                ListCompositionsResult result = null;
+
+                try {
+                    result = executeListCompositions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEncoderConfigurationsResult> listEncoderConfigurationsAsync(ListEncoderConfigurationsRequest request) {
+
+        return listEncoderConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEncoderConfigurationsResult> listEncoderConfigurationsAsync(final ListEncoderConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEncoderConfigurationsRequest, ListEncoderConfigurationsResult> asyncHandler) {
+        final ListEncoderConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEncoderConfigurationsResult>() {
+            @Override
+            public ListEncoderConfigurationsResult call() throws Exception {
+                ListEncoderConfigurationsResult result = null;
+
+                try {
+                    result = executeListEncoderConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -589,6 +978,39 @@ public class AmazonIVSRealTimeAsyncClient extends AmazonIVSRealTimeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListStorageConfigurationsResult> listStorageConfigurationsAsync(ListStorageConfigurationsRequest request) {
+
+        return listStorageConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStorageConfigurationsResult> listStorageConfigurationsAsync(final ListStorageConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStorageConfigurationsRequest, ListStorageConfigurationsResult> asyncHandler) {
+        final ListStorageConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStorageConfigurationsResult>() {
+            @Override
+            public ListStorageConfigurationsResult call() throws Exception {
+                ListStorageConfigurationsResult result = null;
+
+                try {
+                    result = executeListStorageConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -606,6 +1028,72 @@ public class AmazonIVSRealTimeAsyncClient extends AmazonIVSRealTimeClient implem
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCompositionResult> startCompositionAsync(StartCompositionRequest request) {
+
+        return startCompositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCompositionResult> startCompositionAsync(final StartCompositionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartCompositionRequest, StartCompositionResult> asyncHandler) {
+        final StartCompositionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartCompositionResult>() {
+            @Override
+            public StartCompositionResult call() throws Exception {
+                StartCompositionResult result = null;
+
+                try {
+                    result = executeStartComposition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCompositionResult> stopCompositionAsync(StopCompositionRequest request) {
+
+        return stopCompositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCompositionResult> stopCompositionAsync(final StopCompositionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopCompositionRequest, StopCompositionResult> asyncHandler) {
+        final StopCompositionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopCompositionResult>() {
+            @Override
+            public StopCompositionResult call() throws Exception {
+                StopCompositionResult result = null;
+
+                try {
+                    result = executeStopComposition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

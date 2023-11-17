@@ -36,33 +36,32 @@ public class StartIncidentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all
-     * customers.
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - High impact, partial application failure with impact to many customers.
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - Low impact, customer might aren't impacted by the problem yet.
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -140,33 +139,32 @@ public class StartIncidentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all
-     * customers.
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - High impact, partial application failure with impact to many customers.
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - Low impact, customer might aren't impacted by the problem yet.
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -175,34 +173,32 @@ public class StartIncidentRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Defines the impact to the customers. Providing an impact overwrites the impact provided by a response
      *        plan.</p>
      *        <p class="title">
-     *        <b>Possible impacts:</b>
+     *        <b>Supported impact codes</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to
-     *        all customers.
+     *        <code>1</code> - Critical
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>2</code> - High impact, partial application failure with impact to many customers.
+     *        <code>2</code> - High
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     *        <code>3</code> - Medium
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>4</code> - Low impact, customer might aren't impacted by the problem yet.
+     *        <code>4</code> - Low
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid
-     *        impact.
+     *        <code>5</code> - No Impact
      *        </p>
      *        </li>
      */
@@ -216,33 +212,32 @@ public class StartIncidentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all
-     * customers.
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - High impact, partial application failure with impact to many customers.
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - Low impact, customer might aren't impacted by the problem yet.
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -250,34 +245,32 @@ public class StartIncidentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return Defines the impact to the customers. Providing an impact overwrites the impact provided by a response
      *         plan.</p>
      *         <p class="title">
-     *         <b>Possible impacts:</b>
+     *         <b>Supported impact codes</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to
-     *         all customers.
+     *         <code>1</code> - Critical
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>2</code> - High impact, partial application failure with impact to many customers.
+     *         <code>2</code> - High
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     *         <code>3</code> - Medium
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>4</code> - Low impact, customer might aren't impacted by the problem yet.
+     *         <code>4</code> - Low
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid
-     *         impact.
+     *         <code>5</code> - No Impact
      *         </p>
      *         </li>
      */
@@ -291,33 +284,32 @@ public class StartIncidentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all
-     * customers.
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - High impact, partial application failure with impact to many customers.
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - Low impact, customer might aren't impacted by the problem yet.
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -326,34 +318,32 @@ public class StartIncidentRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Defines the impact to the customers. Providing an impact overwrites the impact provided by a response
      *        plan.</p>
      *        <p class="title">
-     *        <b>Possible impacts:</b>
+     *        <b>Supported impact codes</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to
-     *        all customers.
+     *        <code>1</code> - Critical
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>2</code> - High impact, partial application failure with impact to many customers.
+     *        <code>2</code> - High
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     *        <code>3</code> - Medium
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>4</code> - Low impact, customer might aren't impacted by the problem yet.
+     *        <code>4</code> - Low
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid
-     *        impact.
+     *        <code>5</code> - No Impact
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

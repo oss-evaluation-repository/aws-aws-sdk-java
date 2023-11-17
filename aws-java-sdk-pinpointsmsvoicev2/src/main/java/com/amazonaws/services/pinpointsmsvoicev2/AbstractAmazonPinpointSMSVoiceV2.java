@@ -53,6 +53,31 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public CreateRegistrationResult createRegistration(CreateRegistrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRegistrationAssociationResult createRegistrationAssociation(CreateRegistrationAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRegistrationAttachmentResult createRegistrationAttachment(CreateRegistrationAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRegistrationVersionResult createRegistrationVersion(CreateRegistrationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVerifiedDestinationNumberResult createVerifiedDestinationNumber(CreateVerifiedDestinationNumberRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,7 +118,27 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public DeleteRegistrationResult deleteRegistration(DeleteRegistrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRegistrationAttachmentResult deleteRegistrationAttachment(DeleteRegistrationAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRegistrationFieldValueResult deleteRegistrationFieldValue(DeleteRegistrationFieldValueRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTextMessageSpendLimitOverrideResult deleteTextMessageSpendLimitOverride(DeleteTextMessageSpendLimitOverrideRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVerifiedDestinationNumberResult deleteVerifiedDestinationNumber(DeleteVerifiedDestinationNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,6 +188,41 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public DescribeRegistrationAttachmentsResult describeRegistrationAttachments(DescribeRegistrationAttachmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRegistrationFieldDefinitionsResult describeRegistrationFieldDefinitions(DescribeRegistrationFieldDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRegistrationFieldValuesResult describeRegistrationFieldValues(DescribeRegistrationFieldValuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRegistrationSectionDefinitionsResult describeRegistrationSectionDefinitions(DescribeRegistrationSectionDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRegistrationTypeDefinitionsResult describeRegistrationTypeDefinitions(DescribeRegistrationTypeDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRegistrationVersionsResult describeRegistrationVersions(DescribeRegistrationVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRegistrationsResult describeRegistrations(DescribeRegistrationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSenderIdsResult describeSenderIds(DescribeSenderIdsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -153,12 +233,27 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public DescribeVerifiedDestinationNumbersResult describeVerifiedDestinationNumbers(DescribeVerifiedDestinationNumbersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateOriginationIdentityResult disassociateOriginationIdentity(DisassociateOriginationIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public DiscardRegistrationVersionResult discardRegistrationVersion(DiscardRegistrationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPoolOriginationIdentitiesResult listPoolOriginationIdentities(ListPoolOriginationIdentitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRegistrationAssociationsResult listRegistrationAssociations(ListRegistrationAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,12 +273,32 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public PutRegistrationFieldValueResult putRegistrationFieldValue(PutRegistrationFieldValueRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ReleasePhoneNumberResult releasePhoneNumber(ReleasePhoneNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public ReleaseSenderIdResult releaseSenderId(ReleaseSenderIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RequestPhoneNumberResult requestPhoneNumber(RequestPhoneNumberRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RequestSenderIdResult requestSenderId(RequestSenderIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendDestinationNumberVerificationCodeResult sendDestinationNumberVerificationCode(SendDestinationNumberVerificationCodeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -218,6 +333,11 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public SubmitRegistrationVersionResult submitRegistrationVersion(SubmitRegistrationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -239,6 +359,16 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
 
     @Override
     public UpdatePoolResult updatePool(UpdatePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSenderIdResult updateSenderId(UpdateSenderIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public VerifyDestinationNumberResult verifyDestinationNumber(VerifyDestinationNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

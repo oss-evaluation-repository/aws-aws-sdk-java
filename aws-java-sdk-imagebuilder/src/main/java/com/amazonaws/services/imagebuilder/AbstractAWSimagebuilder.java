@@ -33,6 +33,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public CancelLifecycleExecutionResult cancelLifecycleExecution(CancelLifecycleExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateComponentResult createComponent(CreateComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -68,6 +73,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public CreateLifecyclePolicyResult createLifecyclePolicy(CreateLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteComponentResult deleteComponent(DeleteComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +109,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public DeleteInfrastructureConfigurationResult deleteInfrastructureConfiguration(DeleteInfrastructureConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +169,16 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public GetInfrastructureConfigurationResult getInfrastructureConfiguration(GetInfrastructureConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLifecycleExecutionResult getLifecycleExecution(GetLifecycleExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -243,6 +268,21 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public ListLifecycleExecutionResourcesResult listLifecycleExecutionResources(ListLifecycleExecutionResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLifecycleExecutionsResult listLifecycleExecutions(ListLifecycleExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLifecyclePoliciesResult listLifecyclePolicies(ListLifecyclePoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -283,6 +323,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public StartResourceStateUpdateResult startResourceStateUpdate(StartResourceStateUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -304,6 +349,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public UpdateInfrastructureConfigurationResult updateInfrastructureConfiguration(UpdateInfrastructureConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLifecyclePolicyResult updateLifecyclePolicy(UpdateLifecyclePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

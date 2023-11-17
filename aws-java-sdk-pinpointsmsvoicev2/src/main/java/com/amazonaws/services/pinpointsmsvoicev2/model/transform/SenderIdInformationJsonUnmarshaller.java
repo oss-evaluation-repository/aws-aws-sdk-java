@@ -70,6 +70,18 @@ public class SenderIdInformationJsonUnmarshaller implements Unmarshaller<SenderI
                     context.nextToken();
                     senderIdInformation.setMonthlyLeasingPrice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeletionProtectionEnabled", targetDepth)) {
+                    context.nextToken();
+                    senderIdInformation.setDeletionProtectionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("Registered", targetDepth)) {
+                    context.nextToken();
+                    senderIdInformation.setRegistered(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("RegistrationId", targetDepth)) {
+                    context.nextToken();
+                    senderIdInformation.setRegistrationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

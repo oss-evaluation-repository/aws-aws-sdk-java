@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for a snapshot and AMI policies.
+ * <b>[Custom snapshot and AMI policies only]</b> Specifies a cross-Region copy rule for a snapshot and AMI policies.
  * </p>
  * <note>
  * <p>
@@ -44,8 +44,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * <p/>
      * </note>
      * <p>
-     * <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.
+     * <b>[Custom AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.
      * </p>
      */
     private String targetRegion;
@@ -56,8 +56,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.
+     * <b>[Custom snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
+     * for the snapshot copies.
      * </p>
      */
     private String target;
@@ -91,7 +91,7 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
     private CrossRegionCopyRetainRule retainRule;
     /**
      * <p>
-     * <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * </p>
      */
     private CrossRegionCopyDeprecateRule deprecateRule;
@@ -106,8 +106,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * <p/>
      * </note>
      * <p>
-     * <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.
+     * <b>[Custom AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.
      * </p>
      * 
      * @param targetRegion
@@ -119,8 +119,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      *        <p/>
      *        </note>
      *        <p>
-     *        <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
-     *        the snapshot copies.
+     *        <b>[Custom AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     *        Outpost for the snapshot copies.
      */
 
     public void setTargetRegion(String targetRegion) {
@@ -137,8 +137,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * <p/>
      * </note>
      * <p>
-     * <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.
+     * <b>[Custom AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.
      * </p>
      * 
      * @return <p>
@@ -149,8 +149,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      *         <p/>
      *         </note>
      *         <p>
-     *         <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
-     *         the snapshot copies.
+     *         <b>[Custom AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     *         Outpost for the snapshot copies.
      */
 
     public String getTargetRegion() {
@@ -167,8 +167,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * <p/>
      * </note>
      * <p>
-     * <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.
+     * <b>[Custom AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
+     * the snapshot copies.
      * </p>
      * 
      * @param targetRegion
@@ -180,8 +180,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      *        <p/>
      *        </note>
      *        <p>
-     *        <b>[AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for
-     *        the snapshot copies.
+     *        <b>[Custom AMI policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     *        Outpost for the snapshot copies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,8 +197,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.
+     * <b>[Custom snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
+     * for the snapshot copies.
      * </p>
      * 
      * @param target
@@ -207,8 +207,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      *        </p>
      *        </note>
      *        <p>
-     *        <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
-     *        for the snapshot copies.
+     *        <b>[Custom snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     *        Outpost for the snapshot copies.
      */
 
     public void setTarget(String target) {
@@ -222,8 +222,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.
+     * <b>[Custom snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
+     * for the snapshot copies.
      * </p>
      * 
      * @return <p>
@@ -231,8 +231,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      *         </p>
      *         </note>
      *         <p>
-     *         <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
-     *         for the snapshot copies.
+     *         <b>[Custom snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     *         Outpost for the snapshot copies.
      */
 
     public String getTarget() {
@@ -246,8 +246,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * <p>
-     * <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost for the
-     * snapshot copies.
+     * <b>[Custom snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
+     * for the snapshot copies.
      * </p>
      * 
      * @param target
@@ -256,8 +256,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
      *        </p>
      *        </note>
      *        <p>
-     *        <b>[Snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target Outpost
-     *        for the snapshot copies.
+     *        <b>[Custom snapshot policies only]</b> The target Region or the Amazon Resource Name (ARN) of the target
+     *        Outpost for the snapshot copies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -480,11 +480,12 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * </p>
      * 
      * @param deprecateRule
-     *        <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     *        <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the
+     *        rule.
      */
 
     public void setDeprecateRule(CrossRegionCopyDeprecateRule deprecateRule) {
@@ -493,10 +494,11 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * </p>
      * 
-     * @return <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * @return <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the
+     *         rule.
      */
 
     public CrossRegionCopyDeprecateRule getDeprecateRule() {
@@ -505,11 +507,12 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     * <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
      * </p>
      * 
      * @param deprecateRule
-     *        <b>[AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the rule.
+     *        <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region AMI copies created by the
+     *        rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

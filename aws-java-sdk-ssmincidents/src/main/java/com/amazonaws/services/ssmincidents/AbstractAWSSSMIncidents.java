@@ -29,6 +29,11 @@ public class AbstractAWSSSMIncidents implements AWSSSMIncidents {
     }
 
     @Override
+    public BatchGetIncidentFindingsResult batchGetIncidentFindings(BatchGetIncidentFindingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReplicationSetResult createReplicationSet(CreateReplicationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,6 +95,11 @@ public class AbstractAWSSSMIncidents implements AWSSSMIncidents {
 
     @Override
     public GetTimelineEventResult getTimelineEvent(GetTimelineEventRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIncidentFindingsResult listIncidentFindings(ListIncidentFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

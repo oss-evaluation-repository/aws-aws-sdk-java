@@ -105,6 +105,26 @@ public class DescribeAssetBundleExportJobResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     describeAssetBundleExportJobResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IncludePermissions", targetDepth)) {
+                    context.nextToken();
+                    describeAssetBundleExportJobResult.setIncludePermissions(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeTags", targetDepth)) {
+                    context.nextToken();
+                    describeAssetBundleExportJobResult.setIncludeTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationStrategy", targetDepth)) {
+                    context.nextToken();
+                    describeAssetBundleExportJobResult.setValidationStrategy(AssetBundleExportJobValidationStrategyJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("Warnings", targetDepth)) {
+                    context.nextToken();
+                    describeAssetBundleExportJobResult.setWarnings(new ListUnmarshaller<AssetBundleExportJobWarning>(
+                            AssetBundleExportJobWarningJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

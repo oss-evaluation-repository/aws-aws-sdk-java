@@ -50,7 +50,8 @@ public class UpdateSensitivityInspectionTemplateRequest extends com.amazonaws.Am
     private String id;
     /**
      * <p>
-     * The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.
+     * The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when analyzing
+     * data.
      * </p>
      */
     private SensitivityInspectionTemplateIncludes includes;
@@ -213,12 +214,13 @@ public class UpdateSensitivityInspectionTemplateRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.
+     * The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when analyzing
+     * data.
      * </p>
      * 
      * @param includes
-     *        The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing
-     *        data.
+     *        The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when
+     *        analyzing data.
      */
 
     public void setIncludes(SensitivityInspectionTemplateIncludes includes) {
@@ -227,11 +229,12 @@ public class UpdateSensitivityInspectionTemplateRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.
+     * The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when analyzing
+     * data.
      * </p>
      * 
-     * @return The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing
-     *         data.
+     * @return The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when
+     *         analyzing data.
      */
 
     public SensitivityInspectionTemplateIncludes getIncludes() {
@@ -240,12 +243,13 @@ public class UpdateSensitivityInspectionTemplateRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing data.
+     * The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when analyzing
+     * data.
      * </p>
      * 
      * @param includes
-     *        The allow lists, custom data identifiers, and managed data identifiers to include (use) when analyzing
-     *        data.
+     *        The allow lists, custom data identifiers, and managed data identifiers to explicitly include (use) when
+     *        analyzing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

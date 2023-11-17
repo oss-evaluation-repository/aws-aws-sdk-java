@@ -31,6 +31,8 @@ public class StoppingConditionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRuntimeInSeconds").build();
     private static final MarshallingInfo<Integer> MAXWAITTIMEINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxWaitTimeInSeconds").build();
+    private static final MarshallingInfo<Integer> MAXPENDINGTIMEINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxPendingTimeInSeconds").build();
 
     private static final StoppingConditionMarshaller instance = new StoppingConditionMarshaller();
 
@@ -50,6 +52,7 @@ public class StoppingConditionMarshaller {
         try {
             protocolMarshaller.marshall(stoppingCondition.getMaxRuntimeInSeconds(), MAXRUNTIMEINSECONDS_BINDING);
             protocolMarshaller.marshall(stoppingCondition.getMaxWaitTimeInSeconds(), MAXWAITTIMEINSECONDS_BINDING);
+            protocolMarshaller.marshall(stoppingCondition.getMaxPendingTimeInSeconds(), MAXPENDINGTIMEINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

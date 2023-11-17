@@ -94,6 +94,10 @@ public class ReleasePhoneNumberResultJsonUnmarshaller implements Unmarshaller<Re
                     context.nextToken();
                     releasePhoneNumberResult.setTwoWayChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TwoWayChannelRole", targetDepth)) {
+                    context.nextToken();
+                    releasePhoneNumberResult.setTwoWayChannelRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SelfManagedOptOutsEnabled", targetDepth)) {
                     context.nextToken();
                     releasePhoneNumberResult.setSelfManagedOptOutsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -101,6 +105,10 @@ public class ReleasePhoneNumberResultJsonUnmarshaller implements Unmarshaller<Re
                 if (context.testExpression("OptOutListName", targetDepth)) {
                     context.nextToken();
                     releasePhoneNumberResult.setOptOutListName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RegistrationId", targetDepth)) {
+                    context.nextToken();
+                    releasePhoneNumberResult.setRegistrationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();

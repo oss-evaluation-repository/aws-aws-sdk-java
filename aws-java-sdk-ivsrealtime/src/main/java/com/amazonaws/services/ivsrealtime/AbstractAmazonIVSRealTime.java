@@ -28,6 +28,11 @@ public class AbstractAmazonIVSRealTime implements AmazonIVSRealTime {
     }
 
     @Override
+    public CreateEncoderConfigurationResult createEncoderConfiguration(CreateEncoderConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateParticipantTokenResult createParticipantToken(CreateParticipantTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -38,12 +43,37 @@ public class AbstractAmazonIVSRealTime implements AmazonIVSRealTime {
     }
 
     @Override
+    public CreateStorageConfigurationResult createStorageConfiguration(CreateStorageConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteEncoderConfigurationResult deleteEncoderConfiguration(DeleteEncoderConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteStageResult deleteStage(DeleteStageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public DeleteStorageConfigurationResult deleteStorageConfiguration(DeleteStorageConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisconnectParticipantResult disconnectParticipant(DisconnectParticipantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCompositionResult getComposition(GetCompositionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEncoderConfigurationResult getEncoderConfiguration(GetEncoderConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,6 +89,21 @@ public class AbstractAmazonIVSRealTime implements AmazonIVSRealTime {
 
     @Override
     public GetStageSessionResult getStageSession(GetStageSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetStorageConfigurationResult getStorageConfiguration(GetStorageConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCompositionsResult listCompositions(ListCompositionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListEncoderConfigurationsResult listEncoderConfigurations(ListEncoderConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,7 +128,22 @@ public class AbstractAmazonIVSRealTime implements AmazonIVSRealTime {
     }
 
     @Override
+    public ListStorageConfigurationsResult listStorageConfigurations(ListStorageConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartCompositionResult startComposition(StartCompositionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopCompositionResult stopComposition(StopCompositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

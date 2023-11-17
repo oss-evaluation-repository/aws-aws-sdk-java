@@ -56,6 +56,10 @@ public class StoppingConditionJsonUnmarshaller implements Unmarshaller<StoppingC
                     context.nextToken();
                     stoppingCondition.setMaxWaitTimeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MaxPendingTimeInSeconds", targetDepth)) {
+                    context.nextToken();
+                    stoppingCondition.setMaxPendingTimeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

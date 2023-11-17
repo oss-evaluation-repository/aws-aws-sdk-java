@@ -153,7 +153,7 @@ public class AssetBundleImportSourceDescription implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBody() != null)
-            sb.append("Body: ").append(getBody()).append(",");
+            sb.append("Body: ").append("***Sensitive Data Redacted***").append(",");
         if (getS3Uri() != null)
             sb.append("S3Uri: ").append(getS3Uri());
         sb.append("}");

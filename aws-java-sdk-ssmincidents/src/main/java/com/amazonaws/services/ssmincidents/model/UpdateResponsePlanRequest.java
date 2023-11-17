@@ -77,32 +77,32 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>5</code> - Severe impact
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - High impact
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - Low impact
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>1</code> - No impact
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -516,32 +516,32 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>5</code> - Severe impact
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - High impact
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - Low impact
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>1</code> - No impact
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -550,32 +550,32 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      *        Defines the impact to the customers. Providing an impact overwrites the impact provided by a response
      *        plan.</p>
      *        <p class="title">
-     *        <b>Possible impacts:</b>
+     *        <b>Supported impact codes</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>5</code> - Severe impact
+     *        <code>1</code> - Critical
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>4</code> - High impact
+     *        <code>2</code> - High
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>3</code> - Medium impact
+     *        <code>3</code> - Medium
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>2</code> - Low impact
+     *        <code>4</code> - Low
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>1</code> - No impact
+     *        <code>5</code> - No Impact
      *        </p>
      *        </li>
      */
@@ -589,32 +589,32 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>5</code> - Severe impact
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - High impact
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - Low impact
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>1</code> - No impact
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -622,32 +622,32 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * @return Defines the impact to the customers. Providing an impact overwrites the impact provided by a response
      *         plan.</p>
      *         <p class="title">
-     *         <b>Possible impacts:</b>
+     *         <b>Supported impact codes</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>5</code> - Severe impact
+     *         <code>1</code> - Critical
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>4</code> - High impact
+     *         <code>2</code> - High
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>3</code> - Medium impact
+     *         <code>3</code> - Medium
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>2</code> - Low impact
+     *         <code>4</code> - Low
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>1</code> - No impact
+     *         <code>5</code> - No Impact
      *         </p>
      *         </li>
      */
@@ -661,32 +661,32 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>5</code> - Severe impact
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - High impact
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - Low impact
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>1</code> - No impact
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -695,32 +695,32 @@ public class UpdateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      *        Defines the impact to the customers. Providing an impact overwrites the impact provided by a response
      *        plan.</p>
      *        <p class="title">
-     *        <b>Possible impacts:</b>
+     *        <b>Supported impact codes</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>5</code> - Severe impact
+     *        <code>1</code> - Critical
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>4</code> - High impact
+     *        <code>2</code> - High
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>3</code> - Medium impact
+     *        <code>3</code> - Medium
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>2</code> - Low impact
+     *        <code>4</code> - Low
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>1</code> - No impact
+     *        <code>5</code> - No Impact
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

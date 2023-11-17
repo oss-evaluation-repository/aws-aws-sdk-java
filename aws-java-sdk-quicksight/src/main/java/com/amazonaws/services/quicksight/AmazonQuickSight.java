@@ -625,6 +625,36 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to an existing role.
+     * </p>
+     * 
+     * @param createRoleMembershipRequest
+     * @return Result of the CreateRoleMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.CreateRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRoleMembershipResult createRoleMembership(CreateRoleMembershipRequest createRoleMembershipRequest);
+
+    /**
+     * <p>
      * Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis
      * or template. You can use the resulting template to create additional dashboards, templates, or analyses.
      * </p>
@@ -1298,6 +1328,66 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteRefreshScheduleResult deleteRefreshSchedule(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Removes custom permissions from the role.
+     * </p>
+     * 
+     * @param deleteRoleCustomPermissionRequest
+     * @return Result of the DeleteRoleCustomPermission operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRoleCustomPermissionResult deleteRoleCustomPermission(DeleteRoleCustomPermissionRequest deleteRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Removes a group from a role.
+     * </p>
+     * 
+     * @param deleteRoleMembershipRequest
+     * @return Result of the DeleteRoleMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRoleMembershipResult deleteRoleMembership(DeleteRoleMembershipRequest deleteRoleMembershipRequest);
 
     /**
      * <p>
@@ -2476,6 +2566,36 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes all custom permissions that are mapped to a role.
+     * </p>
+     * 
+     * @param describeRoleCustomPermissionRequest
+     * @return Result of the DescribeRoleCustomPermission operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DescribeRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRoleCustomPermissionResult describeRoleCustomPermission(DescribeRoleCustomPermissionRequest describeRoleCustomPermissionRequest);
+
+    /**
+     * <p>
      * Describes a template's metadata.
      * </p>
      * 
@@ -3651,6 +3771,40 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     ListRefreshSchedulesResult listRefreshSchedules(ListRefreshSchedulesRequest listRefreshSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists all groups that are associated with a role.
+     * </p>
+     * 
+     * @param listRoleMembershipsRequest
+     * @return Result of the ListRoleMemberships operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.ListRoleMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRoleMembershipsResult listRoleMemberships(ListRoleMembershipsRequest listRoleMembershipsRequest);
 
     /**
      * <p>
@@ -5095,6 +5249,36 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateRefreshScheduleResult updateRefreshSchedule(UpdateRefreshScheduleRequest updateRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Updates the custom permissions that are associated with a role.
+     * </p>
+     * 
+     * @param updateRoleCustomPermissionRequest
+     * @return Result of the UpdateRoleCustomPermission operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.UpdateRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRoleCustomPermissionResult updateRoleCustomPermission(UpdateRoleCustomPermissionRequest updateRoleCustomPermissionRequest);
 
     /**
      * <p>

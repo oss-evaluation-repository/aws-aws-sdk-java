@@ -52,6 +52,10 @@ public class UpdateRevealConfigurationResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     updateRevealConfigurationResult.setConfiguration(RevealConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("retrievalConfiguration", targetDepth)) {
+                    context.nextToken();
+                    updateRevealConfigurationResult.setRetrievalConfiguration(RetrievalConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

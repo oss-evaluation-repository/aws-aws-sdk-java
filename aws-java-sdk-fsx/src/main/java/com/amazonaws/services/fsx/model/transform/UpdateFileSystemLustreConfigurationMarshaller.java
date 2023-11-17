@@ -41,6 +41,8 @@ public class UpdateFileSystemLustreConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> ROOTSQUASHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootSquashConfiguration").build();
+    private static final MarshallingInfo<Integer> PERUNITSTORAGETHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerUnitStorageThroughput").build();
 
     private static final UpdateFileSystemLustreConfigurationMarshaller instance = new UpdateFileSystemLustreConfigurationMarshaller();
 
@@ -65,6 +67,7 @@ public class UpdateFileSystemLustreConfigurationMarshaller {
             protocolMarshaller.marshall(updateFileSystemLustreConfiguration.getDataCompressionType(), DATACOMPRESSIONTYPE_BINDING);
             protocolMarshaller.marshall(updateFileSystemLustreConfiguration.getLogConfiguration(), LOGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateFileSystemLustreConfiguration.getRootSquashConfiguration(), ROOTSQUASHCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateFileSystemLustreConfiguration.getPerUnitStorageThroughput(), PERUNITSTORAGETHROUGHPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

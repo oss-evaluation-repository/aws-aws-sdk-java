@@ -1908,6 +1908,40 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Get the associated metadata/information for a task run, given a task run ID.
+     * </p>
+     * 
+     * @param getColumnStatisticsTaskRunRequest
+     * @return Result of the GetColumnStatisticsTaskRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @sample AWSGlue.GetColumnStatisticsTaskRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetColumnStatisticsTaskRunResult getColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest getColumnStatisticsTaskRunRequest);
+
+    /**
+     * <p>
+     * Retrieves information about all runs associated with the specified table.
+     * </p>
+     * 
+     * @param getColumnStatisticsTaskRunsRequest
+     * @return Result of the GetColumnStatisticsTaskRuns operation returned by the service.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetColumnStatisticsTaskRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetColumnStatisticsTaskRunsResult getColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest getColumnStatisticsTaskRunsRequest);
+
+    /**
+     * <p>
      * Retrieves a connection definition from the Data Catalog.
      * </p>
      * 
@@ -3287,6 +3321,21 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * List all task runs for a particular account.
+     * </p>
+     * 
+     * @param listColumnStatisticsTaskRunsRequest
+     * @return Result of the ListColumnStatisticsTaskRuns operation returned by the service.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.ListColumnStatisticsTaskRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListColumnStatisticsTaskRunsResult listColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest listColumnStatisticsTaskRunsRequest);
+
+    /**
+     * <p>
      * Retrieves the names of all crawler resources in this Amazon Web Services account, or the resources with the
      * specified tag. This operation allows you to see which resources are available in your account, and their names.
      * </p>
@@ -4035,6 +4084,31 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Starts a column statistics task run, for a specified table and columns.
+     * </p>
+     * 
+     * @param startColumnStatisticsTaskRunRequest
+     * @return Result of the StartColumnStatisticsTaskRun operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ColumnStatisticsTaskRunningException
+     *         An exception thrown when you try to start another job while running a column stats generation job.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @sample AWSGlue.StartColumnStatisticsTaskRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartColumnStatisticsTaskRunResult startColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest startColumnStatisticsTaskRunRequest);
+
+    /**
+     * <p>
      * Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running,
      * returns a <a href=
      * "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException"
@@ -4350,6 +4424,27 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     StartWorkflowRunResult startWorkflowRun(StartWorkflowRunRequest startWorkflowRunRequest);
+
+    /**
+     * <p>
+     * Stops a task run for the specified table.
+     * </p>
+     * 
+     * @param stopColumnStatisticsTaskRunRequest
+     * @return Result of the StopColumnStatisticsTaskRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ColumnStatisticsTaskNotRunningException
+     *         An exception thrown when you try to stop a task run when there is no task running.
+     * @throws ColumnStatisticsTaskStoppingException
+     *         An exception thrown when you try to stop a task run.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.StopColumnStatisticsTaskRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopColumnStatisticsTaskRunResult stopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest stopColumnStatisticsTaskRunRequest);
 
     /**
      * <p>

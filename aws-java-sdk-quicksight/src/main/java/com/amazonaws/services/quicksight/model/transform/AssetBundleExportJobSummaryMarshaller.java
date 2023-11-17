@@ -39,6 +39,10 @@ public class AssetBundleExportJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeAllDependencies").build();
     private static final MarshallingInfo<String> EXPORTFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportFormat").build();
+    private static final MarshallingInfo<Boolean> INCLUDEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludePermissions").build();
+    private static final MarshallingInfo<Boolean> INCLUDETAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeTags").build();
 
     private static final AssetBundleExportJobSummaryMarshaller instance = new AssetBundleExportJobSummaryMarshaller();
 
@@ -62,6 +66,8 @@ public class AssetBundleExportJobSummaryMarshaller {
             protocolMarshaller.marshall(assetBundleExportJobSummary.getAssetBundleExportJobId(), ASSETBUNDLEEXPORTJOBID_BINDING);
             protocolMarshaller.marshall(assetBundleExportJobSummary.getIncludeAllDependencies(), INCLUDEALLDEPENDENCIES_BINDING);
             protocolMarshaller.marshall(assetBundleExportJobSummary.getExportFormat(), EXPORTFORMAT_BINDING);
+            protocolMarshaller.marshall(assetBundleExportJobSummary.getIncludePermissions(), INCLUDEPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(assetBundleExportJobSummary.getIncludeTags(), INCLUDETAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

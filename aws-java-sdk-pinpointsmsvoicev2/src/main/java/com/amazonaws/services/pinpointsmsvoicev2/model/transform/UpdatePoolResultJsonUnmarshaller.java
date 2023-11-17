@@ -72,6 +72,10 @@ public class UpdatePoolResultJsonUnmarshaller implements Unmarshaller<UpdatePool
                     context.nextToken();
                     updatePoolResult.setTwoWayChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TwoWayChannelRole", targetDepth)) {
+                    context.nextToken();
+                    updatePoolResult.setTwoWayChannelRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SelfManagedOptOutsEnabled", targetDepth)) {
                     context.nextToken();
                     updatePoolResult.setSelfManagedOptOutsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));

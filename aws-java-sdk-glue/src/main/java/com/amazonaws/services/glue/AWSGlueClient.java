@@ -118,6 +118,12 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                             new JsonErrorShapeMetadata().withErrorCode("OperationTimeoutException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.OperationTimeoutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ColumnStatisticsTaskRunningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ColumnStatisticsTaskRunningExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ColumnStatisticsTaskStoppingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ColumnStatisticsTaskStoppingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("VersionMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.VersionMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -135,6 +141,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MLTransformNotReadyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.MLTransformNotReadyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ColumnStatisticsTaskNotRunningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ColumnStatisticsTaskNotRunningExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CrawlerStoppingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.CrawlerStoppingExceptionUnmarshaller.getInstance()))
@@ -5402,6 +5411,128 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Get the associated metadata/information for a task run, given a task run ID.
+     * </p>
+     * 
+     * @param getColumnStatisticsTaskRunRequest
+     * @return Result of the GetColumnStatisticsTaskRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @sample AWSGlue.GetColumnStatisticsTaskRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetColumnStatisticsTaskRunResult getColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetColumnStatisticsTaskRun(request);
+    }
+
+    @SdkInternalApi
+    final GetColumnStatisticsTaskRunResult executeGetColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest getColumnStatisticsTaskRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getColumnStatisticsTaskRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetColumnStatisticsTaskRunRequest> request = null;
+        Response<GetColumnStatisticsTaskRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetColumnStatisticsTaskRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getColumnStatisticsTaskRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetColumnStatisticsTaskRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetColumnStatisticsTaskRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetColumnStatisticsTaskRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about all runs associated with the specified table.
+     * </p>
+     * 
+     * @param getColumnStatisticsTaskRunsRequest
+     * @return Result of the GetColumnStatisticsTaskRuns operation returned by the service.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetColumnStatisticsTaskRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetColumnStatisticsTaskRunsResult getColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetColumnStatisticsTaskRuns(request);
+    }
+
+    @SdkInternalApi
+    final GetColumnStatisticsTaskRunsResult executeGetColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest getColumnStatisticsTaskRunsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getColumnStatisticsTaskRunsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetColumnStatisticsTaskRunsRequest> request = null;
+        Response<GetColumnStatisticsTaskRunsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetColumnStatisticsTaskRunsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getColumnStatisticsTaskRunsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetColumnStatisticsTaskRuns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetColumnStatisticsTaskRunsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetColumnStatisticsTaskRunsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a connection definition from the Data Catalog.
      * </p>
      * 
@@ -9327,6 +9458,65 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * List all task runs for a particular account.
+     * </p>
+     * 
+     * @param listColumnStatisticsTaskRunsRequest
+     * @return Result of the ListColumnStatisticsTaskRuns operation returned by the service.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.ListColumnStatisticsTaskRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListColumnStatisticsTaskRunsResult listColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListColumnStatisticsTaskRuns(request);
+    }
+
+    @SdkInternalApi
+    final ListColumnStatisticsTaskRunsResult executeListColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest listColumnStatisticsTaskRunsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listColumnStatisticsTaskRunsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListColumnStatisticsTaskRunsRequest> request = null;
+        Response<ListColumnStatisticsTaskRunsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListColumnStatisticsTaskRunsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listColumnStatisticsTaskRunsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListColumnStatisticsTaskRuns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListColumnStatisticsTaskRunsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListColumnStatisticsTaskRunsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the names of all crawler resources in this Amazon Web Services account, or the resources with the
      * specified tag. This operation allows you to see which resources are available in your account, and their names.
      * </p>
@@ -11356,6 +11546,75 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Starts a column statistics task run, for a specified table and columns.
+     * </p>
+     * 
+     * @param startColumnStatisticsTaskRunRequest
+     * @return Result of the StartColumnStatisticsTaskRun operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ColumnStatisticsTaskRunningException
+     *         An exception thrown when you try to start another job while running a column stats generation job.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @sample AWSGlue.StartColumnStatisticsTaskRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartColumnStatisticsTaskRunResult startColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartColumnStatisticsTaskRun(request);
+    }
+
+    @SdkInternalApi
+    final StartColumnStatisticsTaskRunResult executeStartColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest startColumnStatisticsTaskRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startColumnStatisticsTaskRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartColumnStatisticsTaskRunRequest> request = null;
+        Response<StartColumnStatisticsTaskRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartColumnStatisticsTaskRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startColumnStatisticsTaskRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartColumnStatisticsTaskRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartColumnStatisticsTaskRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartColumnStatisticsTaskRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running,
      * returns a <a href=
      * "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException"
@@ -12136,6 +12395,71 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<StartWorkflowRunResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartWorkflowRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a task run for the specified table.
+     * </p>
+     * 
+     * @param stopColumnStatisticsTaskRunRequest
+     * @return Result of the StopColumnStatisticsTaskRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ColumnStatisticsTaskNotRunningException
+     *         An exception thrown when you try to stop a task run when there is no task running.
+     * @throws ColumnStatisticsTaskStoppingException
+     *         An exception thrown when you try to stop a task run.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.StopColumnStatisticsTaskRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopColumnStatisticsTaskRunResult stopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopColumnStatisticsTaskRun(request);
+    }
+
+    @SdkInternalApi
+    final StopColumnStatisticsTaskRunResult executeStopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest stopColumnStatisticsTaskRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopColumnStatisticsTaskRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopColumnStatisticsTaskRunRequest> request = null;
+        Response<StopColumnStatisticsTaskRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopColumnStatisticsTaskRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopColumnStatisticsTaskRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopColumnStatisticsTaskRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopColumnStatisticsTaskRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopColumnStatisticsTaskRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

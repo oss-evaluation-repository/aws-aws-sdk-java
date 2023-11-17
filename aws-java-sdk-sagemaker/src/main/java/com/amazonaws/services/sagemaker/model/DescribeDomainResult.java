@@ -55,6 +55,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String singleSignOnManagedApplicationInstanceId;
     /**
      * <p>
+     * The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.
+     * </p>
+     */
+    private String singleSignOnApplicationArn;
+    /**
+     * <p>
      * The status.
      * </p>
      */
@@ -365,6 +371,46 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public DescribeDomainResult withSingleSignOnManagedApplicationInstanceId(String singleSignOnManagedApplicationInstanceId) {
         setSingleSignOnManagedApplicationInstanceId(singleSignOnManagedApplicationInstanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.
+     * </p>
+     * 
+     * @param singleSignOnApplicationArn
+     *        The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.
+     */
+
+    public void setSingleSignOnApplicationArn(String singleSignOnApplicationArn) {
+        this.singleSignOnApplicationArn = singleSignOnApplicationArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.
+     * </p>
+     * 
+     * @return The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.
+     */
+
+    public String getSingleSignOnApplicationArn() {
+        return this.singleSignOnApplicationArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.
+     * </p>
+     * 
+     * @param singleSignOnApplicationArn
+     *        The ARN of the associated Amazon Web Services Single Sign-On application for this Domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainResult withSingleSignOnApplicationArn(String singleSignOnApplicationArn) {
+        setSingleSignOnApplicationArn(singleSignOnApplicationArn);
         return this;
     }
 
@@ -1268,6 +1314,8 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("HomeEfsFileSystemId: ").append(getHomeEfsFileSystemId()).append(",");
         if (getSingleSignOnManagedApplicationInstanceId() != null)
             sb.append("SingleSignOnManagedApplicationInstanceId: ").append(getSingleSignOnManagedApplicationInstanceId()).append(",");
+        if (getSingleSignOnApplicationArn() != null)
+            sb.append("SingleSignOnApplicationArn: ").append(getSingleSignOnApplicationArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationTime() != null)
@@ -1334,6 +1382,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getSingleSignOnManagedApplicationInstanceId() != null
                 && other.getSingleSignOnManagedApplicationInstanceId().equals(this.getSingleSignOnManagedApplicationInstanceId()) == false)
+            return false;
+        if (other.getSingleSignOnApplicationArn() == null ^ this.getSingleSignOnApplicationArn() == null)
+            return false;
+        if (other.getSingleSignOnApplicationArn() != null && other.getSingleSignOnApplicationArn().equals(this.getSingleSignOnApplicationArn()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -1413,6 +1465,7 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getHomeEfsFileSystemId() == null) ? 0 : getHomeEfsFileSystemId().hashCode());
         hashCode = prime * hashCode + ((getSingleSignOnManagedApplicationInstanceId() == null) ? 0 : getSingleSignOnManagedApplicationInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getSingleSignOnApplicationArn() == null) ? 0 : getSingleSignOnApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());

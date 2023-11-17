@@ -47,7 +47,7 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
     private AssetBundleImportSource assetBundleImportSource;
     /**
      * <p>
-     * Optional overrides to be applied to the resource configuration before import.
+     * Optional overrides that are applied to the resource configuration before import.
      * </p>
      */
     private AssetBundleImportJobOverrideParameters overrideParameters;
@@ -65,6 +65,25 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String failureAction;
+    /**
+     * <p>
+     * Optional permission overrides that are applied to the resource configuration before import.
+     * </p>
+     */
+    private AssetBundleImportJobOverridePermissions overridePermissions;
+    /**
+     * <p>
+     * Optional tag overrides that are applied to the resource configuration before import.
+     * </p>
+     */
+    private AssetBundleImportJobOverrideTags overrideTags;
+    /**
+     * <p>
+     * An optional validation strategy override for all analyses and dashboards that is applied to the resource
+     * configuration before import.
+     * </p>
+     */
+    private AssetBundleImportJobOverrideValidationStrategy overrideValidationStrategy;
 
     /**
      * <p>
@@ -200,11 +219,11 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional overrides to be applied to the resource configuration before import.
+     * Optional overrides that are applied to the resource configuration before import.
      * </p>
      * 
      * @param overrideParameters
-     *        Optional overrides to be applied to the resource configuration before import.
+     *        Optional overrides that are applied to the resource configuration before import.
      */
 
     public void setOverrideParameters(AssetBundleImportJobOverrideParameters overrideParameters) {
@@ -213,10 +232,10 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional overrides to be applied to the resource configuration before import.
+     * Optional overrides that are applied to the resource configuration before import.
      * </p>
      * 
-     * @return Optional overrides to be applied to the resource configuration before import.
+     * @return Optional overrides that are applied to the resource configuration before import.
      */
 
     public AssetBundleImportJobOverrideParameters getOverrideParameters() {
@@ -225,11 +244,11 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional overrides to be applied to the resource configuration before import.
+     * Optional overrides that are applied to the resource configuration before import.
      * </p>
      * 
      * @param overrideParameters
-     *        Optional overrides to be applied to the resource configuration before import.
+     *        Optional overrides that are applied to the resource configuration before import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,6 +377,132 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Optional permission overrides that are applied to the resource configuration before import.
+     * </p>
+     * 
+     * @param overridePermissions
+     *        Optional permission overrides that are applied to the resource configuration before import.
+     */
+
+    public void setOverridePermissions(AssetBundleImportJobOverridePermissions overridePermissions) {
+        this.overridePermissions = overridePermissions;
+    }
+
+    /**
+     * <p>
+     * Optional permission overrides that are applied to the resource configuration before import.
+     * </p>
+     * 
+     * @return Optional permission overrides that are applied to the resource configuration before import.
+     */
+
+    public AssetBundleImportJobOverridePermissions getOverridePermissions() {
+        return this.overridePermissions;
+    }
+
+    /**
+     * <p>
+     * Optional permission overrides that are applied to the resource configuration before import.
+     * </p>
+     * 
+     * @param overridePermissions
+     *        Optional permission overrides that are applied to the resource configuration before import.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAssetBundleImportJobRequest withOverridePermissions(AssetBundleImportJobOverridePermissions overridePermissions) {
+        setOverridePermissions(overridePermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional tag overrides that are applied to the resource configuration before import.
+     * </p>
+     * 
+     * @param overrideTags
+     *        Optional tag overrides that are applied to the resource configuration before import.
+     */
+
+    public void setOverrideTags(AssetBundleImportJobOverrideTags overrideTags) {
+        this.overrideTags = overrideTags;
+    }
+
+    /**
+     * <p>
+     * Optional tag overrides that are applied to the resource configuration before import.
+     * </p>
+     * 
+     * @return Optional tag overrides that are applied to the resource configuration before import.
+     */
+
+    public AssetBundleImportJobOverrideTags getOverrideTags() {
+        return this.overrideTags;
+    }
+
+    /**
+     * <p>
+     * Optional tag overrides that are applied to the resource configuration before import.
+     * </p>
+     * 
+     * @param overrideTags
+     *        Optional tag overrides that are applied to the resource configuration before import.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAssetBundleImportJobRequest withOverrideTags(AssetBundleImportJobOverrideTags overrideTags) {
+        setOverrideTags(overrideTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional validation strategy override for all analyses and dashboards that is applied to the resource
+     * configuration before import.
+     * </p>
+     * 
+     * @param overrideValidationStrategy
+     *        An optional validation strategy override for all analyses and dashboards that is applied to the resource
+     *        configuration before import.
+     */
+
+    public void setOverrideValidationStrategy(AssetBundleImportJobOverrideValidationStrategy overrideValidationStrategy) {
+        this.overrideValidationStrategy = overrideValidationStrategy;
+    }
+
+    /**
+     * <p>
+     * An optional validation strategy override for all analyses and dashboards that is applied to the resource
+     * configuration before import.
+     * </p>
+     * 
+     * @return An optional validation strategy override for all analyses and dashboards that is applied to the resource
+     *         configuration before import.
+     */
+
+    public AssetBundleImportJobOverrideValidationStrategy getOverrideValidationStrategy() {
+        return this.overrideValidationStrategy;
+    }
+
+    /**
+     * <p>
+     * An optional validation strategy override for all analyses and dashboards that is applied to the resource
+     * configuration before import.
+     * </p>
+     * 
+     * @param overrideValidationStrategy
+     *        An optional validation strategy override for all analyses and dashboards that is applied to the resource
+     *        configuration before import.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAssetBundleImportJobRequest withOverrideValidationStrategy(AssetBundleImportJobOverrideValidationStrategy overrideValidationStrategy) {
+        setOverrideValidationStrategy(overrideValidationStrategy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -378,7 +523,13 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
         if (getOverrideParameters() != null)
             sb.append("OverrideParameters: ").append(getOverrideParameters()).append(",");
         if (getFailureAction() != null)
-            sb.append("FailureAction: ").append(getFailureAction());
+            sb.append("FailureAction: ").append(getFailureAction()).append(",");
+        if (getOverridePermissions() != null)
+            sb.append("OverridePermissions: ").append(getOverridePermissions()).append(",");
+        if (getOverrideTags() != null)
+            sb.append("OverrideTags: ").append(getOverrideTags()).append(",");
+        if (getOverrideValidationStrategy() != null)
+            sb.append("OverrideValidationStrategy: ").append(getOverrideValidationStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +564,18 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getFailureAction() != null && other.getFailureAction().equals(this.getFailureAction()) == false)
             return false;
+        if (other.getOverridePermissions() == null ^ this.getOverridePermissions() == null)
+            return false;
+        if (other.getOverridePermissions() != null && other.getOverridePermissions().equals(this.getOverridePermissions()) == false)
+            return false;
+        if (other.getOverrideTags() == null ^ this.getOverrideTags() == null)
+            return false;
+        if (other.getOverrideTags() != null && other.getOverrideTags().equals(this.getOverrideTags()) == false)
+            return false;
+        if (other.getOverrideValidationStrategy() == null ^ this.getOverrideValidationStrategy() == null)
+            return false;
+        if (other.getOverrideValidationStrategy() != null && other.getOverrideValidationStrategy().equals(this.getOverrideValidationStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -426,6 +589,9 @@ public class StartAssetBundleImportJobRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getAssetBundleImportSource() == null) ? 0 : getAssetBundleImportSource().hashCode());
         hashCode = prime * hashCode + ((getOverrideParameters() == null) ? 0 : getOverrideParameters().hashCode());
         hashCode = prime * hashCode + ((getFailureAction() == null) ? 0 : getFailureAction().hashCode());
+        hashCode = prime * hashCode + ((getOverridePermissions() == null) ? 0 : getOverridePermissions().hashCode());
+        hashCode = prime * hashCode + ((getOverrideTags() == null) ? 0 : getOverrideTags().hashCode());
+        hashCode = prime * hashCode + ((getOverrideValidationStrategy() == null) ? 0 : getOverrideValidationStrategy().hashCode());
         return hashCode;
     }
 

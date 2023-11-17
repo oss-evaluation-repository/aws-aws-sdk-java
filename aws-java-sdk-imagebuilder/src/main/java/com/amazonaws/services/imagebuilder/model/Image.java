@@ -229,6 +229,18 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ImageScanningConfiguration imageScanningConfiguration;
+    /**
+     * <p>
+     * The time when deprecation occurs for an image resource. This can be a past or future date.
+     * </p>
+     */
+    private java.util.Date deprecationTime;
+    /**
+     * <p>
+     * Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * </p>
+     */
+    private String lifecycleExecutionId;
 
     /**
      * <p>
@@ -1653,6 +1665,86 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time when deprecation occurs for an image resource. This can be a past or future date.
+     * </p>
+     * 
+     * @param deprecationTime
+     *        The time when deprecation occurs for an image resource. This can be a past or future date.
+     */
+
+    public void setDeprecationTime(java.util.Date deprecationTime) {
+        this.deprecationTime = deprecationTime;
+    }
+
+    /**
+     * <p>
+     * The time when deprecation occurs for an image resource. This can be a past or future date.
+     * </p>
+     * 
+     * @return The time when deprecation occurs for an image resource. This can be a past or future date.
+     */
+
+    public java.util.Date getDeprecationTime() {
+        return this.deprecationTime;
+    }
+
+    /**
+     * <p>
+     * The time when deprecation occurs for an image resource. This can be a past or future date.
+     * </p>
+     * 
+     * @param deprecationTime
+     *        The time when deprecation occurs for an image resource. This can be a past or future date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withDeprecationTime(java.util.Date deprecationTime) {
+        setDeprecationTime(deprecationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * </p>
+     * 
+     * @param lifecycleExecutionId
+     *        Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     */
+
+    public void setLifecycleExecutionId(String lifecycleExecutionId) {
+        this.lifecycleExecutionId = lifecycleExecutionId;
+    }
+
+    /**
+     * <p>
+     * Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * </p>
+     * 
+     * @return Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     */
+
+    public String getLifecycleExecutionId() {
+        return this.lifecycleExecutionId;
+    }
+
+    /**
+     * <p>
+     * Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * </p>
+     * 
+     * @param lifecycleExecutionId
+     *        Identifies the last runtime instance of the lifecycle policy to take action on the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withLifecycleExecutionId(String lifecycleExecutionId) {
+        setLifecycleExecutionId(lifecycleExecutionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1707,7 +1799,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (getScanState() != null)
             sb.append("ScanState: ").append(getScanState()).append(",");
         if (getImageScanningConfiguration() != null)
-            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration());
+            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration()).append(",");
+        if (getDeprecationTime() != null)
+            sb.append("DeprecationTime: ").append(getDeprecationTime()).append(",");
+        if (getLifecycleExecutionId() != null)
+            sb.append("LifecycleExecutionId: ").append(getLifecycleExecutionId());
         sb.append("}");
         return sb.toString();
     }
@@ -1810,6 +1906,14 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageScanningConfiguration() != null && other.getImageScanningConfiguration().equals(this.getImageScanningConfiguration()) == false)
             return false;
+        if (other.getDeprecationTime() == null ^ this.getDeprecationTime() == null)
+            return false;
+        if (other.getDeprecationTime() != null && other.getDeprecationTime().equals(this.getDeprecationTime()) == false)
+            return false;
+        if (other.getLifecycleExecutionId() == null ^ this.getLifecycleExecutionId() == null)
+            return false;
+        if (other.getLifecycleExecutionId() != null && other.getLifecycleExecutionId().equals(this.getLifecycleExecutionId()) == false)
+            return false;
         return true;
     }
 
@@ -1840,6 +1944,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getImageSource() == null) ? 0 : getImageSource().hashCode());
         hashCode = prime * hashCode + ((getScanState() == null) ? 0 : getScanState().hashCode());
         hashCode = prime * hashCode + ((getImageScanningConfiguration() == null) ? 0 : getImageScanningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationTime() == null) ? 0 : getDeprecationTime().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleExecutionId() == null) ? 0 : getLifecycleExecutionId().hashCode());
         return hashCode;
     }
 

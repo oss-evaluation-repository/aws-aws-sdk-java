@@ -33,7 +33,7 @@ public class ListStageSessionsRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxResults;
     /**
      * <p>
-     * The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      */
     private String nextToken;
@@ -86,11 +86,12 @@ public class ListStageSessionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      * 
      * @param nextToken
-     *        The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     *        The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     *        field.
      */
 
     public void setNextToken(String nextToken) {
@@ -99,10 +100,11 @@ public class ListStageSessionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      * 
-     * @return The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * @return The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     *         field.
      */
 
     public String getNextToken() {
@@ -111,11 +113,12 @@ public class ListStageSessionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      * 
      * @param nextToken
-     *        The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     *        The first stage session to retrieve. This is used for pagination; see the <code>nextToken</code> response
+     *        field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

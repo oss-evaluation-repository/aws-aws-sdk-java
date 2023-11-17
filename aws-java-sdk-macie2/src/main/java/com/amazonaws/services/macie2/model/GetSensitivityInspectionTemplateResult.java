@@ -38,8 +38,8 @@ public class GetSensitivityInspectionTemplateResult extends com.amazonaws.Amazon
     private SensitivityInspectionTemplateExcludes excludes;
     /**
      * <p>
-     * The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing
-     * data.
+     * The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when
+     * analyzing data.
      * </p>
      */
     private SensitivityInspectionTemplateIncludes includes;
@@ -144,13 +144,13 @@ public class GetSensitivityInspectionTemplateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing
-     * data.
+     * The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when
+     * analyzing data.
      * </p>
      * 
      * @param includes
-     *        The allow lists, custom data identifiers, and managed data identifiers that are included (used) when
-     *        analyzing data.
+     *        The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used)
+     *        when analyzing data.
      */
 
     public void setIncludes(SensitivityInspectionTemplateIncludes includes) {
@@ -159,12 +159,12 @@ public class GetSensitivityInspectionTemplateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing
-     * data.
+     * The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when
+     * analyzing data.
      * </p>
      * 
-     * @return The allow lists, custom data identifiers, and managed data identifiers that are included (used) when
-     *         analyzing data.
+     * @return The allow lists, custom data identifiers, and managed data identifiers that are explicitly included
+     *         (used) when analyzing data.
      */
 
     public SensitivityInspectionTemplateIncludes getIncludes() {
@@ -173,13 +173,13 @@ public class GetSensitivityInspectionTemplateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The allow lists, custom data identifiers, and managed data identifiers that are included (used) when analyzing
-     * data.
+     * The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used) when
+     * analyzing data.
      * </p>
      * 
      * @param includes
-     *        The allow lists, custom data identifiers, and managed data identifiers that are included (used) when
-     *        analyzing data.
+     *        The allow lists, custom data identifiers, and managed data identifiers that are explicitly included (used)
+     *        when analyzing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

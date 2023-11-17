@@ -46,8 +46,8 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
     private String messageBody;
     /**
      * <p>
-     * The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     * PROMOTIONAL for messages that aren't critical or time-sensitive.
+     * The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for
+     * messages that aren't critical or time-sensitive.
      * </p>
      */
     private String messageType;
@@ -227,13 +227,13 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     * PROMOTIONAL for messages that aren't critical or time-sensitive.
+     * The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for
+     * messages that aren't critical or time-sensitive.
      * </p>
      * 
      * @param messageType
-     *        The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     *        PROMOTIONAL for messages that aren't critical or time-sensitive.
+     *        The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for
+     *        messages that aren't critical or time-sensitive.
      * @see MessageType
      */
 
@@ -243,12 +243,12 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     * PROMOTIONAL for messages that aren't critical or time-sensitive.
+     * The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for
+     * messages that aren't critical or time-sensitive.
      * </p>
      * 
-     * @return The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     *         PROMOTIONAL for messages that aren't critical or time-sensitive.
+     * @return The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL
+     *         for messages that aren't critical or time-sensitive.
      * @see MessageType
      */
 
@@ -258,13 +258,13 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     * PROMOTIONAL for messages that aren't critical or time-sensitive.
+     * The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for
+     * messages that aren't critical or time-sensitive.
      * </p>
      * 
      * @param messageType
-     *        The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     *        PROMOTIONAL for messages that aren't critical or time-sensitive.
+     *        The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for
+     *        messages that aren't critical or time-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -276,13 +276,13 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     * PROMOTIONAL for messages that aren't critical or time-sensitive.
+     * The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for
+     * messages that aren't critical or time-sensitive.
      * </p>
      * 
      * @param messageType
-     *        The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and
-     *        PROMOTIONAL for messages that aren't critical or time-sensitive.
+     *        The type of message. Valid values are for messages that are critical or time-sensitive and PROMOTIONAL for
+     *        messages that aren't critical or time-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */

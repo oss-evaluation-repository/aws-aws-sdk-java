@@ -124,6 +124,35 @@ public class DescribeAssetBundleExportJobResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Integer status;
+    /**
+     * <p>
+     * The include permissions flag.
+     * </p>
+     */
+    private Boolean includePermissions;
+    /**
+     * <p>
+     * The include tags flag.
+     * </p>
+     */
+    private Boolean includeTags;
+    /**
+     * <p>
+     * The validation strategy that is used to export the analysis or dashboard.
+     * </p>
+     */
+    private AssetBundleExportJobValidationStrategy validationStrategy;
+    /**
+     * <p>
+     * An array of warning records that describe the analysis or dashboard that is exported. This array includes UI
+     * errors that can be skipped during the validation process.
+     * </p>
+     * <p>
+     * This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to
+     * <code>FALSE</code>.
+     * </p>
+     */
+    private java.util.List<AssetBundleExportJobWarning> warnings;
 
     /**
      * <p>
@@ -905,6 +934,256 @@ public class DescribeAssetBundleExportJobResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The include permissions flag.
+     * </p>
+     * 
+     * @param includePermissions
+     *        The include permissions flag.
+     */
+
+    public void setIncludePermissions(Boolean includePermissions) {
+        this.includePermissions = includePermissions;
+    }
+
+    /**
+     * <p>
+     * The include permissions flag.
+     * </p>
+     * 
+     * @return The include permissions flag.
+     */
+
+    public Boolean getIncludePermissions() {
+        return this.includePermissions;
+    }
+
+    /**
+     * <p>
+     * The include permissions flag.
+     * </p>
+     * 
+     * @param includePermissions
+     *        The include permissions flag.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetBundleExportJobResult withIncludePermissions(Boolean includePermissions) {
+        setIncludePermissions(includePermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The include permissions flag.
+     * </p>
+     * 
+     * @return The include permissions flag.
+     */
+
+    public Boolean isIncludePermissions() {
+        return this.includePermissions;
+    }
+
+    /**
+     * <p>
+     * The include tags flag.
+     * </p>
+     * 
+     * @param includeTags
+     *        The include tags flag.
+     */
+
+    public void setIncludeTags(Boolean includeTags) {
+        this.includeTags = includeTags;
+    }
+
+    /**
+     * <p>
+     * The include tags flag.
+     * </p>
+     * 
+     * @return The include tags flag.
+     */
+
+    public Boolean getIncludeTags() {
+        return this.includeTags;
+    }
+
+    /**
+     * <p>
+     * The include tags flag.
+     * </p>
+     * 
+     * @param includeTags
+     *        The include tags flag.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetBundleExportJobResult withIncludeTags(Boolean includeTags) {
+        setIncludeTags(includeTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The include tags flag.
+     * </p>
+     * 
+     * @return The include tags flag.
+     */
+
+    public Boolean isIncludeTags() {
+        return this.includeTags;
+    }
+
+    /**
+     * <p>
+     * The validation strategy that is used to export the analysis or dashboard.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        The validation strategy that is used to export the analysis or dashboard.
+     */
+
+    public void setValidationStrategy(AssetBundleExportJobValidationStrategy validationStrategy) {
+        this.validationStrategy = validationStrategy;
+    }
+
+    /**
+     * <p>
+     * The validation strategy that is used to export the analysis or dashboard.
+     * </p>
+     * 
+     * @return The validation strategy that is used to export the analysis or dashboard.
+     */
+
+    public AssetBundleExportJobValidationStrategy getValidationStrategy() {
+        return this.validationStrategy;
+    }
+
+    /**
+     * <p>
+     * The validation strategy that is used to export the analysis or dashboard.
+     * </p>
+     * 
+     * @param validationStrategy
+     *        The validation strategy that is used to export the analysis or dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetBundleExportJobResult withValidationStrategy(AssetBundleExportJobValidationStrategy validationStrategy) {
+        setValidationStrategy(validationStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of warning records that describe the analysis or dashboard that is exported. This array includes UI
+     * errors that can be skipped during the validation process.
+     * </p>
+     * <p>
+     * This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to
+     * <code>FALSE</code>.
+     * </p>
+     * 
+     * @return An array of warning records that describe the analysis or dashboard that is exported. This array includes
+     *         UI errors that can be skipped during the validation process.</p>
+     *         <p>
+     *         This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code>
+     *         is set to <code>FALSE</code>.
+     */
+
+    public java.util.List<AssetBundleExportJobWarning> getWarnings() {
+        return warnings;
+    }
+
+    /**
+     * <p>
+     * An array of warning records that describe the analysis or dashboard that is exported. This array includes UI
+     * errors that can be skipped during the validation process.
+     * </p>
+     * <p>
+     * This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to
+     * <code>FALSE</code>.
+     * </p>
+     * 
+     * @param warnings
+     *        An array of warning records that describe the analysis or dashboard that is exported. This array includes
+     *        UI errors that can be skipped during the validation process.</p>
+     *        <p>
+     *        This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is
+     *        set to <code>FALSE</code>.
+     */
+
+    public void setWarnings(java.util.Collection<AssetBundleExportJobWarning> warnings) {
+        if (warnings == null) {
+            this.warnings = null;
+            return;
+        }
+
+        this.warnings = new java.util.ArrayList<AssetBundleExportJobWarning>(warnings);
+    }
+
+    /**
+     * <p>
+     * An array of warning records that describe the analysis or dashboard that is exported. This array includes UI
+     * errors that can be skipped during the validation process.
+     * </p>
+     * <p>
+     * This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to
+     * <code>FALSE</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWarnings(java.util.Collection)} or {@link #withWarnings(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param warnings
+     *        An array of warning records that describe the analysis or dashboard that is exported. This array includes
+     *        UI errors that can be skipped during the validation process.</p>
+     *        <p>
+     *        This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is
+     *        set to <code>FALSE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetBundleExportJobResult withWarnings(AssetBundleExportJobWarning... warnings) {
+        if (this.warnings == null) {
+            setWarnings(new java.util.ArrayList<AssetBundleExportJobWarning>(warnings.length));
+        }
+        for (AssetBundleExportJobWarning ele : warnings) {
+            this.warnings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of warning records that describe the analysis or dashboard that is exported. This array includes UI
+     * errors that can be skipped during the validation process.
+     * </p>
+     * <p>
+     * This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set to
+     * <code>FALSE</code>.
+     * </p>
+     * 
+     * @param warnings
+     *        An array of warning records that describe the analysis or dashboard that is exported. This array includes
+     *        UI errors that can be skipped during the validation process.</p>
+     *        <p>
+     *        This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is
+     *        set to <code>FALSE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetBundleExportJobResult withWarnings(java.util.Collection<AssetBundleExportJobWarning> warnings) {
+        setWarnings(warnings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -919,7 +1198,7 @@ public class DescribeAssetBundleExportJobResult extends com.amazonaws.AmazonWebS
         if (getJobStatus() != null)
             sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getDownloadUrl() != null)
-            sb.append("DownloadUrl: ").append(getDownloadUrl()).append(",");
+            sb.append("DownloadUrl: ").append("***Sensitive Data Redacted***").append(",");
         if (getErrors() != null)
             sb.append("Errors: ").append(getErrors()).append(",");
         if (getArn() != null)
@@ -941,7 +1220,15 @@ public class DescribeAssetBundleExportJobResult extends com.amazonaws.AmazonWebS
         if (getRequestId() != null)
             sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getIncludePermissions() != null)
+            sb.append("IncludePermissions: ").append(getIncludePermissions()).append(",");
+        if (getIncludeTags() != null)
+            sb.append("IncludeTags: ").append(getIncludeTags()).append(",");
+        if (getValidationStrategy() != null)
+            sb.append("ValidationStrategy: ").append(getValidationStrategy()).append(",");
+        if (getWarnings() != null)
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }
@@ -1009,6 +1296,22 @@ public class DescribeAssetBundleExportJobResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getIncludePermissions() == null ^ this.getIncludePermissions() == null)
+            return false;
+        if (other.getIncludePermissions() != null && other.getIncludePermissions().equals(this.getIncludePermissions()) == false)
+            return false;
+        if (other.getIncludeTags() == null ^ this.getIncludeTags() == null)
+            return false;
+        if (other.getIncludeTags() != null && other.getIncludeTags().equals(this.getIncludeTags()) == false)
+            return false;
+        if (other.getValidationStrategy() == null ^ this.getValidationStrategy() == null)
+            return false;
+        if (other.getValidationStrategy() != null && other.getValidationStrategy().equals(this.getValidationStrategy()) == false)
+            return false;
+        if (other.getWarnings() == null ^ this.getWarnings() == null)
+            return false;
+        if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
+            return false;
         return true;
     }
 
@@ -1031,6 +1334,10 @@ public class DescribeAssetBundleExportJobResult extends com.amazonaws.AmazonWebS
                 + ((getCloudFormationOverridePropertyConfiguration() == null) ? 0 : getCloudFormationOverridePropertyConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getIncludePermissions() == null) ? 0 : getIncludePermissions().hashCode());
+        hashCode = prime * hashCode + ((getIncludeTags() == null) ? 0 : getIncludeTags().hashCode());
+        hashCode = prime * hashCode + ((getValidationStrategy() == null) ? 0 : getValidationStrategy().hashCode());
+        hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         return hashCode;
     }
 

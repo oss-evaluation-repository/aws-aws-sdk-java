@@ -93,6 +93,73 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRegistrationResult> createRegistrationAsync(CreateRegistrationRequest request) {
+
+        return createRegistrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationResult> createRegistrationAsync(CreateRegistrationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRegistrationRequest, CreateRegistrationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationAssociationResult> createRegistrationAssociationAsync(CreateRegistrationAssociationRequest request) {
+
+        return createRegistrationAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationAssociationResult> createRegistrationAssociationAsync(CreateRegistrationAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRegistrationAssociationRequest, CreateRegistrationAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationAttachmentResult> createRegistrationAttachmentAsync(CreateRegistrationAttachmentRequest request) {
+
+        return createRegistrationAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationAttachmentResult> createRegistrationAttachmentAsync(CreateRegistrationAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRegistrationAttachmentRequest, CreateRegistrationAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationVersionResult> createRegistrationVersionAsync(CreateRegistrationVersionRequest request) {
+
+        return createRegistrationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRegistrationVersionResult> createRegistrationVersionAsync(CreateRegistrationVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRegistrationVersionRequest, CreateRegistrationVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVerifiedDestinationNumberResult> createVerifiedDestinationNumberAsync(
+            CreateVerifiedDestinationNumberRequest request) {
+
+        return createVerifiedDestinationNumberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVerifiedDestinationNumberResult> createVerifiedDestinationNumberAsync(
+            CreateVerifiedDestinationNumberRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedDestinationNumberRequest, CreateVerifiedDestinationNumberResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(DeleteConfigurationSetRequest request) {
 
         return deleteConfigurationSetAsync(request, null);
@@ -197,6 +264,45 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRegistrationResult> deleteRegistrationAsync(DeleteRegistrationRequest request) {
+
+        return deleteRegistrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationResult> deleteRegistrationAsync(DeleteRegistrationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationRequest, DeleteRegistrationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationAttachmentResult> deleteRegistrationAttachmentAsync(DeleteRegistrationAttachmentRequest request) {
+
+        return deleteRegistrationAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationAttachmentResult> deleteRegistrationAttachmentAsync(DeleteRegistrationAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationAttachmentRequest, DeleteRegistrationAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationFieldValueResult> deleteRegistrationFieldValueAsync(DeleteRegistrationFieldValueRequest request) {
+
+        return deleteRegistrationFieldValueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationFieldValueResult> deleteRegistrationFieldValueAsync(DeleteRegistrationFieldValueRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationFieldValueRequest, DeleteRegistrationFieldValueResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTextMessageSpendLimitOverrideResult> deleteTextMessageSpendLimitOverrideAsync(
             DeleteTextMessageSpendLimitOverrideRequest request) {
 
@@ -207,6 +313,21 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     public java.util.concurrent.Future<DeleteTextMessageSpendLimitOverrideResult> deleteTextMessageSpendLimitOverrideAsync(
             DeleteTextMessageSpendLimitOverrideRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTextMessageSpendLimitOverrideRequest, DeleteTextMessageSpendLimitOverrideResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVerifiedDestinationNumberResult> deleteVerifiedDestinationNumberAsync(
+            DeleteVerifiedDestinationNumberRequest request) {
+
+        return deleteVerifiedDestinationNumberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVerifiedDestinationNumberResult> deleteVerifiedDestinationNumberAsync(
+            DeleteVerifiedDestinationNumberRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedDestinationNumberRequest, DeleteVerifiedDestinationNumberResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -331,6 +452,107 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRegistrationAttachmentsResult> describeRegistrationAttachmentsAsync(
+            DescribeRegistrationAttachmentsRequest request) {
+
+        return describeRegistrationAttachmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationAttachmentsResult> describeRegistrationAttachmentsAsync(
+            DescribeRegistrationAttachmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationAttachmentsRequest, DescribeRegistrationAttachmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationFieldDefinitionsResult> describeRegistrationFieldDefinitionsAsync(
+            DescribeRegistrationFieldDefinitionsRequest request) {
+
+        return describeRegistrationFieldDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationFieldDefinitionsResult> describeRegistrationFieldDefinitionsAsync(
+            DescribeRegistrationFieldDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationFieldDefinitionsRequest, DescribeRegistrationFieldDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationFieldValuesResult> describeRegistrationFieldValuesAsync(
+            DescribeRegistrationFieldValuesRequest request) {
+
+        return describeRegistrationFieldValuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationFieldValuesResult> describeRegistrationFieldValuesAsync(
+            DescribeRegistrationFieldValuesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationFieldValuesRequest, DescribeRegistrationFieldValuesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationSectionDefinitionsResult> describeRegistrationSectionDefinitionsAsync(
+            DescribeRegistrationSectionDefinitionsRequest request) {
+
+        return describeRegistrationSectionDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationSectionDefinitionsResult> describeRegistrationSectionDefinitionsAsync(
+            DescribeRegistrationSectionDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationSectionDefinitionsRequest, DescribeRegistrationSectionDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationTypeDefinitionsResult> describeRegistrationTypeDefinitionsAsync(
+            DescribeRegistrationTypeDefinitionsRequest request) {
+
+        return describeRegistrationTypeDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationTypeDefinitionsResult> describeRegistrationTypeDefinitionsAsync(
+            DescribeRegistrationTypeDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationTypeDefinitionsRequest, DescribeRegistrationTypeDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationVersionsResult> describeRegistrationVersionsAsync(DescribeRegistrationVersionsRequest request) {
+
+        return describeRegistrationVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationVersionsResult> describeRegistrationVersionsAsync(DescribeRegistrationVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationVersionsRequest, DescribeRegistrationVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationsResult> describeRegistrationsAsync(DescribeRegistrationsRequest request) {
+
+        return describeRegistrationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistrationsResult> describeRegistrationsAsync(DescribeRegistrationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationsRequest, DescribeRegistrationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSenderIdsResult> describeSenderIdsAsync(DescribeSenderIdsRequest request) {
 
         return describeSenderIdsAsync(request, null);
@@ -357,6 +579,21 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeVerifiedDestinationNumbersResult> describeVerifiedDestinationNumbersAsync(
+            DescribeVerifiedDestinationNumbersRequest request) {
+
+        return describeVerifiedDestinationNumbersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVerifiedDestinationNumbersResult> describeVerifiedDestinationNumbersAsync(
+            DescribeVerifiedDestinationNumbersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedDestinationNumbersRequest, DescribeVerifiedDestinationNumbersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateOriginationIdentityResult> disassociateOriginationIdentityAsync(
             DisassociateOriginationIdentityRequest request) {
 
@@ -372,6 +609,19 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     }
 
     @Override
+    public java.util.concurrent.Future<DiscardRegistrationVersionResult> discardRegistrationVersionAsync(DiscardRegistrationVersionRequest request) {
+
+        return discardRegistrationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscardRegistrationVersionResult> discardRegistrationVersionAsync(DiscardRegistrationVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DiscardRegistrationVersionRequest, DiscardRegistrationVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPoolOriginationIdentitiesResult> listPoolOriginationIdentitiesAsync(ListPoolOriginationIdentitiesRequest request) {
 
         return listPoolOriginationIdentitiesAsync(request, null);
@@ -380,6 +630,19 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     @Override
     public java.util.concurrent.Future<ListPoolOriginationIdentitiesResult> listPoolOriginationIdentitiesAsync(ListPoolOriginationIdentitiesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPoolOriginationIdentitiesRequest, ListPoolOriginationIdentitiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegistrationAssociationsResult> listRegistrationAssociationsAsync(ListRegistrationAssociationsRequest request) {
+
+        return listRegistrationAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegistrationAssociationsResult> listRegistrationAssociationsAsync(ListRegistrationAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRegistrationAssociationsRequest, ListRegistrationAssociationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -424,6 +687,19 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     }
 
     @Override
+    public java.util.concurrent.Future<PutRegistrationFieldValueResult> putRegistrationFieldValueAsync(PutRegistrationFieldValueRequest request) {
+
+        return putRegistrationFieldValueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRegistrationFieldValueResult> putRegistrationFieldValueAsync(PutRegistrationFieldValueRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRegistrationFieldValueRequest, PutRegistrationFieldValueResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ReleasePhoneNumberResult> releasePhoneNumberAsync(ReleasePhoneNumberRequest request) {
 
         return releasePhoneNumberAsync(request, null);
@@ -437,6 +713,19 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     }
 
     @Override
+    public java.util.concurrent.Future<ReleaseSenderIdResult> releaseSenderIdAsync(ReleaseSenderIdRequest request) {
+
+        return releaseSenderIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReleaseSenderIdResult> releaseSenderIdAsync(ReleaseSenderIdRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReleaseSenderIdRequest, ReleaseSenderIdResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestPhoneNumberResult> requestPhoneNumberAsync(RequestPhoneNumberRequest request) {
 
         return requestPhoneNumberAsync(request, null);
@@ -445,6 +734,34 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     @Override
     public java.util.concurrent.Future<RequestPhoneNumberResult> requestPhoneNumberAsync(RequestPhoneNumberRequest request,
             com.amazonaws.handlers.AsyncHandler<RequestPhoneNumberRequest, RequestPhoneNumberResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestSenderIdResult> requestSenderIdAsync(RequestSenderIdRequest request) {
+
+        return requestSenderIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestSenderIdResult> requestSenderIdAsync(RequestSenderIdRequest request,
+            com.amazonaws.handlers.AsyncHandler<RequestSenderIdRequest, RequestSenderIdResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendDestinationNumberVerificationCodeResult> sendDestinationNumberVerificationCodeAsync(
+            SendDestinationNumberVerificationCodeRequest request) {
+
+        return sendDestinationNumberVerificationCodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendDestinationNumberVerificationCodeResult> sendDestinationNumberVerificationCodeAsync(
+            SendDestinationNumberVerificationCodeRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendDestinationNumberVerificationCodeRequest, SendDestinationNumberVerificationCodeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -532,6 +849,19 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     }
 
     @Override
+    public java.util.concurrent.Future<SubmitRegistrationVersionResult> submitRegistrationVersionAsync(SubmitRegistrationVersionRequest request) {
+
+        return submitRegistrationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitRegistrationVersionResult> submitRegistrationVersionAsync(SubmitRegistrationVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<SubmitRegistrationVersionRequest, SubmitRegistrationVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -592,6 +922,32 @@ public class AbstractAmazonPinpointSMSVoiceV2Async extends AbstractAmazonPinpoin
     @Override
     public java.util.concurrent.Future<UpdatePoolResult> updatePoolAsync(UpdatePoolRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePoolRequest, UpdatePoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSenderIdResult> updateSenderIdAsync(UpdateSenderIdRequest request) {
+
+        return updateSenderIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSenderIdResult> updateSenderIdAsync(UpdateSenderIdRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSenderIdRequest, UpdateSenderIdResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyDestinationNumberResult> verifyDestinationNumberAsync(VerifyDestinationNumberRequest request) {
+
+        return verifyDestinationNumberAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyDestinationNumberResult> verifyDestinationNumberAsync(VerifyDestinationNumberRequest request,
+            com.amazonaws.handlers.AsyncHandler<VerifyDestinationNumberRequest, VerifyDestinationNumberResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

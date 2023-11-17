@@ -48,6 +48,11 @@ public class CreateVerifiedAccessTrustProviderDeviceOptionsStaxUnmarshaller impl
                     createVerifiedAccessTrustProviderDeviceOptions.setTenantId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PublicSigningKeyUrl", targetDepth)) {
+                    createVerifiedAccessTrustProviderDeviceOptions.setPublicSigningKeyUrl(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createVerifiedAccessTrustProviderDeviceOptions;

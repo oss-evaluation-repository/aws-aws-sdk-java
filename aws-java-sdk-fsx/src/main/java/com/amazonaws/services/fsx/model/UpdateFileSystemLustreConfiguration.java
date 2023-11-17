@@ -126,6 +126,31 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      */
     private LustreRootSquashConfiguration rootSquashConfiguration;
+    /**
+     * <p>
+     * The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per
+     * tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the
+     * deployment type of the file system, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput
+     * capacity</a>.
+     * </p>
+     */
+    private Integer perUnitStorageThroughput;
 
     /**
      * <p>
@@ -906,6 +931,160 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per
+     * tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the
+     * deployment type of the file system, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput
+     * capacity</a>.
+     * </p>
+     * 
+     * @param perUnitStorageThroughput
+     *        The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per
+     *        second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values
+     *        depend on the deployment type of the file system, as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000
+     *        MB/s/TiB.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing
+     *        throughput capacity</a>.
+     */
+
+    public void setPerUnitStorageThroughput(Integer perUnitStorageThroughput) {
+        this.perUnitStorageThroughput = perUnitStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per
+     * tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the
+     * deployment type of the file system, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput
+     * capacity</a>.
+     * </p>
+     * 
+     * @return The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per
+     *         second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values
+     *         depend on the deployment type of the file system, as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000
+     *         MB/s/TiB.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing
+     *         throughput capacity</a>.
+     */
+
+    public Integer getPerUnitStorageThroughput() {
+        return this.perUnitStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per
+     * tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the
+     * deployment type of the file system, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput
+     * capacity</a>.
+     * </p>
+     * 
+     * @param perUnitStorageThroughput
+     *        The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per
+     *        second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values
+     *        depend on the deployment type of the file system, as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000
+     *        MB/s/TiB.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing
+     *        throughput capacity</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemLustreConfiguration withPerUnitStorageThroughput(Integer perUnitStorageThroughput) {
+        setPerUnitStorageThroughput(perUnitStorageThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -930,7 +1109,9 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
         if (getLogConfiguration() != null)
             sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
         if (getRootSquashConfiguration() != null)
-            sb.append("RootSquashConfiguration: ").append(getRootSquashConfiguration());
+            sb.append("RootSquashConfiguration: ").append(getRootSquashConfiguration()).append(",");
+        if (getPerUnitStorageThroughput() != null)
+            sb.append("PerUnitStorageThroughput: ").append(getPerUnitStorageThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -974,6 +1155,10 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
             return false;
         if (other.getRootSquashConfiguration() != null && other.getRootSquashConfiguration().equals(this.getRootSquashConfiguration()) == false)
             return false;
+        if (other.getPerUnitStorageThroughput() == null ^ this.getPerUnitStorageThroughput() == null)
+            return false;
+        if (other.getPerUnitStorageThroughput() != null && other.getPerUnitStorageThroughput().equals(this.getPerUnitStorageThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -989,6 +1174,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
         hashCode = prime * hashCode + ((getDataCompressionType() == null) ? 0 : getDataCompressionType().hashCode());
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRootSquashConfiguration() == null) ? 0 : getRootSquashConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPerUnitStorageThroughput() == null) ? 0 : getPerUnitStorageThroughput().hashCode());
         return hashCode;
     }
 

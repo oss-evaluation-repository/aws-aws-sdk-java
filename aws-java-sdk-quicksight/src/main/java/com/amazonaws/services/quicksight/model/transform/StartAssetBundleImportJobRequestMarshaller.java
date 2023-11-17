@@ -37,6 +37,12 @@ public class StartAssetBundleImportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverrideParameters").build();
     private static final MarshallingInfo<String> FAILUREACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureAction").build();
+    private static final MarshallingInfo<StructuredPojo> OVERRIDEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverridePermissions").build();
+    private static final MarshallingInfo<StructuredPojo> OVERRIDETAGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverrideTags").build();
+    private static final MarshallingInfo<StructuredPojo> OVERRIDEVALIDATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverrideValidationStrategy").build();
 
     private static final StartAssetBundleImportJobRequestMarshaller instance = new StartAssetBundleImportJobRequestMarshaller();
 
@@ -59,6 +65,9 @@ public class StartAssetBundleImportJobRequestMarshaller {
             protocolMarshaller.marshall(startAssetBundleImportJobRequest.getAssetBundleImportSource(), ASSETBUNDLEIMPORTSOURCE_BINDING);
             protocolMarshaller.marshall(startAssetBundleImportJobRequest.getOverrideParameters(), OVERRIDEPARAMETERS_BINDING);
             protocolMarshaller.marshall(startAssetBundleImportJobRequest.getFailureAction(), FAILUREACTION_BINDING);
+            protocolMarshaller.marshall(startAssetBundleImportJobRequest.getOverridePermissions(), OVERRIDEPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(startAssetBundleImportJobRequest.getOverrideTags(), OVERRIDETAGS_BINDING);
+            protocolMarshaller.marshall(startAssetBundleImportJobRequest.getOverrideValidationStrategy(), OVERRIDEVALIDATIONSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

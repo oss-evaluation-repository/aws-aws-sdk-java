@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots or AMIs.
+ * <b>[Custom snapshot and AMI policies only]</b> Specifies when the policy should create snapshots or AMIs.
  * </p>
  * <note>
  * <ul>
@@ -46,7 +46,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
+     * <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
      * snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
      * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
      * <code>CLOUD</code> is used by default.
@@ -91,9 +91,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
     private String cronExpression;
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle
-     * policy that targets instances. This is useful for creating application-consistent snapshots, or for performing
-     * specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.
+     * <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
+     * lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for
+     * performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot
+     * creation.
      * </p>
      * <p>
      * For more information, see <a
@@ -105,7 +106,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
+     * <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
      * snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
      * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
      * <code>CLOUD</code> is used by default.
@@ -117,10 +118,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param location
-     *        <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
-     *        snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on
-     *        the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
-     *        <code>CLOUD</code> is used by default.</p>
+     *        <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To
+     *        create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create
+     *        snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     *        parameter, <code>CLOUD</code> is used by default.</p>
      *        <p>
      *        If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the
      *        same Region as the source resource. If the policy targets resources on an Outpost, then you can create
@@ -134,7 +135,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
+     * <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
      * snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
      * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
      * <code>CLOUD</code> is used by default.
@@ -145,10 +146,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * the same Outpost as the source resource, or in the Region of that Outpost.
      * </p>
      * 
-     * @return <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
-     *         snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on
-     *         the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
-     *         <code>CLOUD</code> is used by default.</p>
+     * @return <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To
+     *         create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create
+     *         snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit
+     *         this parameter, <code>CLOUD</code> is used by default.</p>
      *         <p>
      *         If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the
      *         same Region as the source resource. If the policy targets resources on an Outpost, then you can create
@@ -162,7 +163,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
+     * <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
      * snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
      * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
      * <code>CLOUD</code> is used by default.
@@ -174,10 +175,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param location
-     *        <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
-     *        snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on
-     *        the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
-     *        <code>CLOUD</code> is used by default.</p>
+     *        <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To
+     *        create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create
+     *        snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     *        parameter, <code>CLOUD</code> is used by default.</p>
      *        <p>
      *        If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the
      *        same Region as the source resource. If the policy targets resources on an Outpost, then you can create
@@ -193,7 +194,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
+     * <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
      * snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on the same
      * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
      * <code>CLOUD</code> is used by default.
@@ -205,10 +206,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param location
-     *        <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To create
-     *        snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots on
-     *        the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this parameter,
-     *        <code>CLOUD</code> is used by default.</p>
+     *        <b>[Custom snapshot policies only]</b> Specifies the destination for snapshots created by the policy. To
+     *        create snapshots in the same Region as the source resource, specify <code>CLOUD</code>. To create
+     *        snapshots on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
+     *        parameter, <code>CLOUD</code> is used by default.</p>
      *        <p>
      *        If the policy targets resources in an Amazon Web Services Region, then you must create snapshots in the
      *        same Region as the source resource. If the policy targets resources on an Outpost, then you can create
@@ -479,9 +480,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle
-     * policy that targets instances. This is useful for creating application-consistent snapshots, or for performing
-     * specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.
+     * <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
+     * lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for
+     * performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot
+     * creation.
      * </p>
      * <p>
      * For more information, see <a
@@ -489,10 +491,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * application-consistent snapshots with pre and post scripts</a>.
      * </p>
      * 
-     * @return <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
-     *         lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or
-     *         for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates
-     *         snapshot creation.</p>
+     * @return <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a
+     *         snapshot lifecycle policy that targets instances. This is useful for creating application-consistent
+     *         snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager
+     *         initiates snapshot creation.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html"
@@ -505,9 +507,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle
-     * policy that targets instances. This is useful for creating application-consistent snapshots, or for performing
-     * specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.
+     * <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
+     * lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for
+     * performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot
+     * creation.
      * </p>
      * <p>
      * For more information, see <a
@@ -516,10 +519,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param scripts
-     *        <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
-     *        lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or
-     *        for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates
-     *        snapshot creation.</p>
+     *        <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a
+     *        snapshot lifecycle policy that targets instances. This is useful for creating application-consistent
+     *        snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager
+     *        initiates snapshot creation.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
@@ -537,9 +540,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle
-     * policy that targets instances. This is useful for creating application-consistent snapshots, or for performing
-     * specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.
+     * <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
+     * lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for
+     * performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot
+     * creation.
      * </p>
      * <p>
      * For more information, see <a
@@ -553,10 +557,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param scripts
-     *        <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
-     *        lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or
-     *        for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates
-     *        snapshot creation.</p>
+     *        <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a
+     *        snapshot lifecycle policy that targets instances. This is useful for creating application-consistent
+     *        snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager
+     *        initiates snapshot creation.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
@@ -576,9 +580,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot lifecycle
-     * policy that targets instances. This is useful for creating application-consistent snapshots, or for performing
-     * specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot creation.
+     * <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
+     * lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or for
+     * performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates snapshot
+     * creation.
      * </p>
      * <p>
      * For more information, see <a
@@ -587,10 +592,10 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param scripts
-     *        <b>[Snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a snapshot
-     *        lifecycle policy that targets instances. This is useful for creating application-consistent snapshots, or
-     *        for performing specific administrative tasks before or after Amazon Data Lifecycle Manager initiates
-     *        snapshot creation.</p>
+     *        <b>[Custom snapshot policies that target instances only]</b> Specifies pre and/or post scripts for a
+     *        snapshot lifecycle policy that targets instances. This is useful for creating application-consistent
+     *        snapshots, or for performing specific administrative tasks before or after Amazon Data Lifecycle Manager
+     *        initiates snapshot creation.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating

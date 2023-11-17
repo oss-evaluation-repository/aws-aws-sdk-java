@@ -75,6 +75,8 @@ public class CreateFunctionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EphemeralStorage").build();
     private static final MarshallingInfo<StructuredPojo> SNAPSTART_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapStart").build();
+    private static final MarshallingInfo<StructuredPojo> LOGGINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingConfig").build();
 
     private static final CreateFunctionRequestMarshaller instance = new CreateFunctionRequestMarshaller();
 
@@ -115,6 +117,7 @@ public class CreateFunctionRequestMarshaller {
             protocolMarshaller.marshall(createFunctionRequest.getArchitectures(), ARCHITECTURES_BINDING);
             protocolMarshaller.marshall(createFunctionRequest.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
             protocolMarshaller.marshall(createFunctionRequest.getSnapStart(), SNAPSTART_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getLoggingConfig(), LOGGINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

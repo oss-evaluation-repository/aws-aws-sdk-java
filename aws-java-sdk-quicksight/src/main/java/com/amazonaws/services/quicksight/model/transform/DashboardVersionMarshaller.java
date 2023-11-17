@@ -48,8 +48,6 @@ public class DashboardVersionMarshaller {
             .marshallLocationName("ThemeArn").build();
     private static final MarshallingInfo<List> SHEETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Sheets").build();
-    private static final MarshallingInfo<StructuredPojo> OPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Options").build();
 
     private static final DashboardVersionMarshaller instance = new DashboardVersionMarshaller();
 
@@ -77,7 +75,6 @@ public class DashboardVersionMarshaller {
             protocolMarshaller.marshall(dashboardVersion.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(dashboardVersion.getThemeArn(), THEMEARN_BINDING);
             protocolMarshaller.marshall(dashboardVersion.getSheets(), SHEETS_BINDING);
-            protocolMarshaller.marshall(dashboardVersion.getOptions(), OPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

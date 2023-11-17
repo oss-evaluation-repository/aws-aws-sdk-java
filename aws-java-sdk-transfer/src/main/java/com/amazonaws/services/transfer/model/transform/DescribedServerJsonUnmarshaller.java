@@ -134,6 +134,10 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("S3StorageOptions", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setS3StorageOptions(S3StorageOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

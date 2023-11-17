@@ -209,7 +209,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * completes.
      * </p>
      * <p>
-     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
      * </p>
      */
     private java.util.List<String> destinationPackageVersions;
@@ -1552,13 +1552,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * completes.
      * </p>
      * <p>
-     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
      * </p>
      * 
      * @return The package version Amazon Resource Names (ARNs) that are installed on the device when the job
      *         successfully completes. </p>
      *         <p>
-     *         <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     *         <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *         allowed.
      */
 
     public java.util.List<String> getDestinationPackageVersions() {
@@ -1571,14 +1572,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * completes.
      * </p>
      * <p>
-     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
      * </p>
      * 
      * @param destinationPackageVersions
      *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
      *        successfully completes. </p>
      *        <p>
-     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
      */
 
     public void setDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
@@ -1596,7 +1598,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * completes.
      * </p>
      * <p>
-     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1608,7 +1610,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
      *        successfully completes. </p>
      *        <p>
-     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1628,14 +1631,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * completes.
      * </p>
      * <p>
-     * <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
      * </p>
      * 
      * @param destinationPackageVersions
      *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
      *        successfully completes. </p>
      *        <p>
-     *        <b>Note:</b>The following Length Constraints relates to a single string. Up to five strings are allowed.
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

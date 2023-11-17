@@ -53,8 +53,8 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     private String status;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon
-     * Macie account.
+     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration
+     * settings for the Amazon Macie account.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -289,13 +289,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon
-     * Macie account.
+     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration
+     * settings for the Amazon Macie account.
      * </p>
      * 
      * @param updatedAt
-     *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *        Amazon Macie account.
+     *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or
+     *        configuration settings for the Amazon Macie account.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -304,12 +304,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon
-     * Macie account.
+     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration
+     * settings for the Amazon Macie account.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *         Amazon Macie account.
+     * @return The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or
+     *         configuration settings for the Amazon Macie account.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -318,13 +318,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon
-     * Macie account.
+     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or configuration
+     * settings for the Amazon Macie account.
      * </p>
      * 
      * @param updatedAt
-     *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *        Amazon Macie account.
+     *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status or
+     *        configuration settings for the Amazon Macie account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

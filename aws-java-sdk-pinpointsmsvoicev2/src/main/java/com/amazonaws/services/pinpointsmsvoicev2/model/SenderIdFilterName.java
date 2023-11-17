@@ -22,7 +22,9 @@ public enum SenderIdFilterName {
 
     SenderId("sender-id"),
     IsoCountryCode("iso-country-code"),
-    MessageType("message-type");
+    MessageType("message-type"),
+    DeletionProtectionEnabled("deletion-protection-enabled"),
+    Registered("registered");
 
     private String value;
 

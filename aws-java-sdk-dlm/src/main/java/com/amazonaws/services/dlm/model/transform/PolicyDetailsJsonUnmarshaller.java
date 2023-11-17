@@ -90,6 +90,40 @@ public class PolicyDetailsJsonUnmarshaller implements Unmarshaller<PolicyDetails
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("PolicyLanguage", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setPolicyLanguage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceType", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreateInterval", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setCreateInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("RetainInterval", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setRetainInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("CopyTags", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setCopyTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CrossRegionCopyTargets", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setCrossRegionCopyTargets(new ListUnmarshaller<CrossRegionCopyTarget>(CrossRegionCopyTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ExtendDeletion", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setExtendDeletion(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("Exclusions", targetDepth)) {
+                    context.nextToken();
+                    policyDetails.setExclusions(ExclusionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

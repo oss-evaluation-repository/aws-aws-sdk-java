@@ -56,6 +56,8 @@ public class UpdateServerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowDetails").build();
     private static final MarshallingInfo<List> STRUCTUREDLOGDESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StructuredLogDestinations").build();
+    private static final MarshallingInfo<StructuredPojo> S3STORAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3StorageOptions").build();
 
     private static final UpdateServerRequestMarshaller instance = new UpdateServerRequestMarshaller();
 
@@ -87,6 +89,7 @@ public class UpdateServerRequestMarshaller {
             protocolMarshaller.marshall(updateServerRequest.getServerId(), SERVERID_BINDING);
             protocolMarshaller.marshall(updateServerRequest.getWorkflowDetails(), WORKFLOWDETAILS_BINDING);
             protocolMarshaller.marshall(updateServerRequest.getStructuredLogDestinations(), STRUCTUREDLOGDESTINATIONS_BINDING);
+            protocolMarshaller.marshall(updateServerRequest.getS3StorageOptions(), S3STORAGEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

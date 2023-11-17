@@ -25,8 +25,8 @@ public class ListParticipantsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
-     * set.
+     * If there are more participants than <code>maxResults</code>, use <code>nextToken</code> in the request to get the
+     * next set.
      * </p>
      */
     private String nextToken;
@@ -39,13 +39,13 @@ public class ListParticipantsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
-     * set.
+     * If there are more participants than <code>maxResults</code>, use <code>nextToken</code> in the request to get the
+     * next set.
      * </p>
      * 
      * @param nextToken
-     *        If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the
-     *        next set.
+     *        If there are more participants than <code>maxResults</code>, use <code>nextToken</code> in the request to
+     *        get the next set.
      */
 
     public void setNextToken(String nextToken) {
@@ -54,12 +54,12 @@ public class ListParticipantsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
-     * set.
+     * If there are more participants than <code>maxResults</code>, use <code>nextToken</code> in the request to get the
+     * next set.
      * </p>
      * 
-     * @return If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get
-     *         the next set.
+     * @return If there are more participants than <code>maxResults</code>, use <code>nextToken</code> in the request to
+     *         get the next set.
      */
 
     public String getNextToken() {
@@ -68,13 +68,13 @@ public class ListParticipantsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next
-     * set.
+     * If there are more participants than <code>maxResults</code>, use <code>nextToken</code> in the request to get the
+     * next set.
      * </p>
      * 
      * @param nextToken
-     *        If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the
-     *        next set.
+     *        If there are more participants than <code>maxResults</code>, use <code>nextToken</code> in the request to
+     *        get the next set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

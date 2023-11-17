@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot policies only]</b> Specifies information about the archive storage tier retention period.
+ * <b>[Custom snapshot policies only]</b> Specifies information about the archive storage tier retention period.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ArchiveRetainRule" target="_top">AWS API

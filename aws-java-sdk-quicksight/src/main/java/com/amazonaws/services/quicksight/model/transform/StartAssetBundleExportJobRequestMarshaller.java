@@ -41,6 +41,12 @@ public class StartAssetBundleExportJobRequestMarshaller {
     private static final MarshallingInfo<StructuredPojo> CLOUDFORMATIONOVERRIDEPROPERTYCONFIGURATION_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudFormationOverridePropertyConfiguration")
             .build();
+    private static final MarshallingInfo<Boolean> INCLUDEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludePermissions").build();
+    private static final MarshallingInfo<Boolean> INCLUDETAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeTags").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStrategy").build();
 
     private static final StartAssetBundleExportJobRequestMarshaller instance = new StartAssetBundleExportJobRequestMarshaller();
 
@@ -65,6 +71,9 @@ public class StartAssetBundleExportJobRequestMarshaller {
             protocolMarshaller.marshall(startAssetBundleExportJobRequest.getExportFormat(), EXPORTFORMAT_BINDING);
             protocolMarshaller.marshall(startAssetBundleExportJobRequest.getCloudFormationOverridePropertyConfiguration(),
                     CLOUDFORMATIONOVERRIDEPROPERTYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(startAssetBundleExportJobRequest.getIncludePermissions(), INCLUDEPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(startAssetBundleExportJobRequest.getIncludeTags(), INCLUDETAGS_BINDING);
+            protocolMarshaller.marshall(startAssetBundleExportJobRequest.getValidationStrategy(), VALIDATIONSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

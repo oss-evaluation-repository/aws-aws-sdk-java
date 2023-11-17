@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteLifecyclePolicyRequestProtocolMarshaller implements Marshaller<Request<DeleteLifecyclePolicyRequest>, DeleteLifecyclePolicyRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/policies/{policyId}/")
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/policies/{policyId}")
             .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonDLM").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

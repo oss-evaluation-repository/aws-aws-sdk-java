@@ -66,6 +66,10 @@ public class OriginationIdentityMetadataJsonUnmarshaller implements Unmarshaller
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("PhoneNumber", targetDepth)) {
+                    context.nextToken();
+                    originationIdentityMetadata.setPhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -79,7 +79,10 @@ public enum AppInstanceType {
     MlG548xlarge("ml.g5.48xlarge"),
     MlGeospatialInteractive("ml.geospatial.interactive"),
     MlP4d24xlarge("ml.p4d.24xlarge"),
-    MlP4de24xlarge("ml.p4de.24xlarge");
+    MlP4de24xlarge("ml.p4de.24xlarge"),
+    MlTrn12xlarge("ml.trn1.2xlarge"),
+    MlTrn132xlarge("ml.trn1.32xlarge"),
+    MlTrn1n32xlarge("ml.trn1n.32xlarge");
 
     private String value;
 

@@ -69,6 +69,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
+     * Cancel a specific image lifecycle policy runtime instance.
+     * </p>
+     * 
+     * @param cancelLifecycleExecutionRequest
+     * @return A Java Future containing the result of the CancelLifecycleExecution operation returned by the service.
+     * @sample AWSimagebuilderAsync.CancelLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelLifecycleExecutionResult> cancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest cancelLifecycleExecutionRequest);
+
+    /**
+     * <p>
+     * Cancel a specific image lifecycle policy runtime instance.
+     * </p>
+     * 
+     * @param cancelLifecycleExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelLifecycleExecution operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.CancelLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelLifecycleExecutionResult> cancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest cancelLifecycleExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelLifecycleExecutionRequest, CancelLifecycleExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new component that can be used to build, validate, test, and assess your image. The component is based
      * on a YAML document that you specify using exactly one of the following methods:
      * </p>
@@ -327,6 +358,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
     java.util.concurrent.Future<CreateInfrastructureConfigurationResult> createInfrastructureConfigurationAsync(
             CreateInfrastructureConfigurationRequest createInfrastructureConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInfrastructureConfigurationRequest, CreateInfrastructureConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a lifecycle policy resource.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @return A Java Future containing the result of the CreateLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest createLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Create a lifecycle policy resource.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest createLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLifecyclePolicyRequest, CreateLifecyclePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -602,6 +664,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
     java.util.concurrent.Future<DeleteInfrastructureConfigurationResult> deleteInfrastructureConfigurationAsync(
             DeleteInfrastructureConfigurationRequest deleteInfrastructureConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInfrastructureConfigurationRequest, DeleteInfrastructureConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete the specified lifecycle policy resource.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Delete the specified lifecycle policy resource.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -953,6 +1046,68 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
     java.util.concurrent.Future<GetInfrastructureConfigurationResult> getInfrastructureConfigurationAsync(
             GetInfrastructureConfigurationRequest getInfrastructureConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetInfrastructureConfigurationRequest, GetInfrastructureConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecycleExecutionRequest
+     * @return A Java Future containing the result of the GetLifecycleExecution operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecycleExecutionResult> getLifecycleExecutionAsync(GetLifecycleExecutionRequest getLifecycleExecutionRequest);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecycleExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLifecycleExecution operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecycleExecutionResult> getLifecycleExecutionAsync(GetLifecycleExecutionRequest getLifecycleExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLifecycleExecutionRequest, GetLifecycleExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get details for the specified image lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return A Java Future containing the result of the GetLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Get details for the specified image lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest getLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1621,6 +1776,103 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
+     * List resources that the runtime instance of the image lifecycle identified for lifecycle actions.
+     * </p>
+     * 
+     * @param listLifecycleExecutionResourcesRequest
+     * @return A Java Future containing the result of the ListLifecycleExecutionResources operation returned by the
+     *         service.
+     * @sample AWSimagebuilderAsync.ListLifecycleExecutionResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecycleExecutionResourcesResult> listLifecycleExecutionResourcesAsync(
+            ListLifecycleExecutionResourcesRequest listLifecycleExecutionResourcesRequest);
+
+    /**
+     * <p>
+     * List resources that the runtime instance of the image lifecycle identified for lifecycle actions.
+     * </p>
+     * 
+     * @param listLifecycleExecutionResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLifecycleExecutionResources operation returned by the
+     *         service.
+     * @sample AWSimagebuilderAsyncHandler.ListLifecycleExecutionResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecycleExecutionResourcesResult> listLifecycleExecutionResourcesAsync(
+            ListLifecycleExecutionResourcesRequest listLifecycleExecutionResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLifecycleExecutionResourcesRequest, ListLifecycleExecutionResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the lifecycle runtime history for the specified resource.
+     * </p>
+     * 
+     * @param listLifecycleExecutionsRequest
+     * @return A Java Future containing the result of the ListLifecycleExecutions operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListLifecycleExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecycleExecutionsResult> listLifecycleExecutionsAsync(ListLifecycleExecutionsRequest listLifecycleExecutionsRequest);
+
+    /**
+     * <p>
+     * Get the lifecycle runtime history for the specified resource.
+     * </p>
+     * 
+     * @param listLifecycleExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLifecycleExecutions operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListLifecycleExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecycleExecutionsResult> listLifecycleExecutionsAsync(ListLifecycleExecutionsRequest listLifecycleExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLifecycleExecutionsRequest, ListLifecycleExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a list of lifecycle policies in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @return A Java Future containing the result of the ListLifecyclePolicies operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest);
+
+    /**
+     * <p>
+     * Get a list of lifecycle policies in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLifecyclePolicies operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLifecyclePoliciesRequest, ListLifecyclePoliciesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the list of tags for the specified resource.
      * </p>
      * 
@@ -1915,6 +2167,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
+     * Begin asynchronous resource state update for lifecycle changes to the specified image resources.
+     * </p>
+     * 
+     * @param startResourceStateUpdateRequest
+     * @return A Java Future containing the result of the StartResourceStateUpdate operation returned by the service.
+     * @sample AWSimagebuilderAsync.StartResourceStateUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartResourceStateUpdateResult> startResourceStateUpdateAsync(StartResourceStateUpdateRequest startResourceStateUpdateRequest);
+
+    /**
+     * <p>
+     * Begin asynchronous resource state update for lifecycle changes to the specified image resources.
+     * </p>
+     * 
+     * @param startResourceStateUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartResourceStateUpdate operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.StartResourceStateUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartResourceStateUpdateResult> startResourceStateUpdateAsync(StartResourceStateUpdateRequest startResourceStateUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<StartResourceStateUpdateRequest, StartResourceStateUpdateResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a tag to a resource.
      * </p>
      * 
@@ -2091,5 +2374,36 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
     java.util.concurrent.Future<UpdateInfrastructureConfigurationResult> updateInfrastructureConfigurationAsync(
             UpdateInfrastructureConfigurationRequest updateInfrastructureConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInfrastructureConfigurationRequest, UpdateInfrastructureConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the specified lifecycle policy.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @return A Java Future containing the result of the UpdateLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Update the specified lifecycle policy.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLifecyclePolicyRequest, UpdateLifecyclePolicyResult> asyncHandler);
 
 }

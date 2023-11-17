@@ -40,6 +40,13 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
     private ModifyVerifiedAccessTrustProviderOidcOptions oidcOptions;
     /**
      * <p>
+     * The options for a device-based trust provider. This parameter is required when the provider type is
+     * <code>device</code>.
+     * </p>
+     */
+    private ModifyVerifiedAccessTrustProviderDeviceOptions deviceOptions;
+    /**
+     * <p>
      * A description for the Verified Access trust provider.
      * </p>
      */
@@ -137,6 +144,52 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     public ModifyVerifiedAccessTrustProviderRequest withOidcOptions(ModifyVerifiedAccessTrustProviderOidcOptions oidcOptions) {
         setOidcOptions(oidcOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options for a device-based trust provider. This parameter is required when the provider type is
+     * <code>device</code>.
+     * </p>
+     * 
+     * @param deviceOptions
+     *        The options for a device-based trust provider. This parameter is required when the provider type is
+     *        <code>device</code>.
+     */
+
+    public void setDeviceOptions(ModifyVerifiedAccessTrustProviderDeviceOptions deviceOptions) {
+        this.deviceOptions = deviceOptions;
+    }
+
+    /**
+     * <p>
+     * The options for a device-based trust provider. This parameter is required when the provider type is
+     * <code>device</code>.
+     * </p>
+     * 
+     * @return The options for a device-based trust provider. This parameter is required when the provider type is
+     *         <code>device</code>.
+     */
+
+    public ModifyVerifiedAccessTrustProviderDeviceOptions getDeviceOptions() {
+        return this.deviceOptions;
+    }
+
+    /**
+     * <p>
+     * The options for a device-based trust provider. This parameter is required when the provider type is
+     * <code>device</code>.
+     * </p>
+     * 
+     * @param deviceOptions
+     *        The options for a device-based trust provider. This parameter is required when the provider type is
+     *        <code>device</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessTrustProviderRequest withDeviceOptions(ModifyVerifiedAccessTrustProviderDeviceOptions deviceOptions) {
+        setDeviceOptions(deviceOptions);
         return this;
     }
 
@@ -305,6 +358,8 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
             sb.append("VerifiedAccessTrustProviderId: ").append(getVerifiedAccessTrustProviderId()).append(",");
         if (getOidcOptions() != null)
             sb.append("OidcOptions: ").append(getOidcOptions()).append(",");
+        if (getDeviceOptions() != null)
+            sb.append("DeviceOptions: ").append(getDeviceOptions()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getClientToken() != null)
@@ -334,6 +389,10 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
             return false;
         if (other.getOidcOptions() != null && other.getOidcOptions().equals(this.getOidcOptions()) == false)
             return false;
+        if (other.getDeviceOptions() == null ^ this.getDeviceOptions() == null)
+            return false;
+        if (other.getDeviceOptions() != null && other.getDeviceOptions().equals(this.getDeviceOptions()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -356,6 +415,7 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getVerifiedAccessTrustProviderId() == null) ? 0 : getVerifiedAccessTrustProviderId().hashCode());
         hashCode = prime * hashCode + ((getOidcOptions() == null) ? 0 : getOidcOptions().hashCode());
+        hashCode = prime * hashCode + ((getDeviceOptions() == null) ? 0 : getDeviceOptions().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getSseSpecification() == null) ? 0 : getSseSpecification().hashCode());

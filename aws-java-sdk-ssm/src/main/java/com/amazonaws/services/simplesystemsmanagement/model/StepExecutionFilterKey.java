@@ -25,7 +25,10 @@ public enum StepExecutionFilterKey {
     StepExecutionStatus("StepExecutionStatus"),
     StepExecutionId("StepExecutionId"),
     StepName("StepName"),
-    Action("Action");
+    Action("Action"),
+    ParentStepExecutionId("ParentStepExecutionId"),
+    ParentStepIteration("ParentStepIteration"),
+    ParentStepIteratorValue("ParentStepIteratorValue");
 
     private String value;
 

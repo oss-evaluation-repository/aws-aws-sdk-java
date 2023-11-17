@@ -69,7 +69,7 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue
-     * or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to
+     * or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to
      * analyze for reasons reported by other statistics in the ResourceStatistics object.
      * </p>
      */
@@ -330,13 +330,13 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue
-     * or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to
+     * or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to
      * analyze for reasons reported by other statistics in the ResourceStatistics object.
      * </p>
      * 
      * @param totalItemsSkipped
      *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level
-     *        issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't
+     *        issue or error. For example, an object is a malformed file. This value includes objects that Macie wasn't
      *        able to analyze for reasons reported by other statistics in the ResourceStatistics object.
      */
 
@@ -347,13 +347,13 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue
-     * or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to
+     * or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to
      * analyze for reasons reported by other statistics in the ResourceStatistics object.
      * </p>
      * 
      * @return The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level
-     *         issue or error. For example, the object is a malformed file. This value includes objects that Macie
-     *         wasn't able to analyze for reasons reported by other statistics in the ResourceStatistics object.
+     *         issue or error. For example, an object is a malformed file. This value includes objects that Macie wasn't
+     *         able to analyze for reasons reported by other statistics in the ResourceStatistics object.
      */
 
     public Long getTotalItemsSkipped() {
@@ -363,13 +363,13 @@ public class ResourceStatistics implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level issue
-     * or error. For example, the object is a malformed file. This value includes objects that Macie wasn't able to
+     * or error. For example, an object is a malformed file. This value includes objects that Macie wasn't able to
      * analyze for reasons reported by other statistics in the ResourceStatistics object.
      * </p>
      * 
      * @param totalItemsSkipped
      *        The total number of objects that Amazon Macie wasn't able to analyze in the bucket due to an object-level
-     *        issue or error. For example, the object is a malformed file. This value includes objects that Macie wasn't
+     *        issue or error. For example, an object is a malformed file. This value includes objects that Macie wasn't
      *        able to analyze for reasons reported by other statistics in the ResourceStatistics object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

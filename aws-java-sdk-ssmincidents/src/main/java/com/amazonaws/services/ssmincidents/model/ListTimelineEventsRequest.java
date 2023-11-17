@@ -33,6 +33,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * <code>eventReference</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>eventTime</code>
      * </p>
      * </li>
@@ -80,7 +85,7 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
     private String nextToken;
@@ -103,6 +108,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      * following keys:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>eventReference</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>eventTime</code>
@@ -140,6 +150,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      * @return Filters the timeline events based on the provided conditional values. You can filter timeline events with
      *         the following keys:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>eventReference</code>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>eventTime</code>
@@ -186,6 +201,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * <code>eventReference</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>eventTime</code>
      * </p>
      * </li>
@@ -222,6 +242,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      *        Filters the timeline events based on the provided conditional values. You can filter timeline events with
      *        the following keys:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>eventReference</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>eventTime</code>
@@ -273,6 +298,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * <code>eventReference</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>eventTime</code>
      * </p>
      * </li>
@@ -314,6 +344,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      *        Filters the timeline events based on the provided conditional values. You can filter timeline events with
      *        the following keys:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>eventReference</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>eventTime</code>
@@ -367,6 +402,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * <code>eventReference</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>eventTime</code>
      * </p>
      * </li>
@@ -403,6 +443,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
      *        Filters the timeline events based on the provided conditional values. You can filter timeline events with
      *        the following keys:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>eventReference</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>eventTime</code>
@@ -525,11 +570,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to continue to the next page of results.
+     *        The pagination token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public void setNextToken(String nextToken) {
@@ -538,10 +583,10 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
-     * @return The pagination token to continue to the next page of results.
+     * @return The pagination token for the next set of items to return. (You received this token from a previous call.)
      */
 
     public String getNextToken() {
@@ -550,11 +595,11 @@ public class ListTimelineEventsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The pagination token to continue to the next page of results.
+     * The pagination token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      * 
      * @param nextToken
-     *        The pagination token to continue to the next page of results.
+     *        The pagination token for the next set of items to return. (You received this token from a previous call.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

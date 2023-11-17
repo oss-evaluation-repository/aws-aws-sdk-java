@@ -51,7 +51,19 @@ import com.amazonaws.services.ivsrealtime.model.*;
  * <p>
  * A <i>participant object</i> represents participants (people) in the stage and contains information about them. When a
  * token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant
- * is associated with that participant ID There is a 1:1 mapping between participant tokens and participants.
+ * is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Server-side composition: The <i>composition</i> process composites participants of a stage into a single video and
+ * forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support this process.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Server-side composition: A <i>composition</i> controls the look of the outputs, including how participants are
+ * positioned in the video.
  * </p>
  * </li>
  * </ul>
@@ -162,6 +174,86 @@ import com.amazonaws.services.ivsrealtime.model.*;
  * </li>
  * </ul>
  * <p>
+ * <b>Composition Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>GetComposition</a> — Gets information about the specified Composition resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListCompositions</a> — Gets summary information about all Compositions in your account, in the AWS region where
+ * the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartComposition</a> — Starts a Composition from a stage based on the configuration provided in the request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopComposition</a> — Stops and deletes a Composition resource. Any broadcast from the Composition resource is
+ * stopped.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>EncoderConfiguration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateEncoderConfiguration</a> — Creates an EncoderConfiguration object.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteEncoderConfiguration</a> — Deletes an EncoderConfiguration resource. Ensures that no Compositions are using
+ * this template; otherwise, returns an error.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetEncoderConfiguration</a> — Gets information about the specified EncoderConfiguration resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListEncoderConfigurations</a> — Gets summary information about all EncoderConfigurations in your account, in the
+ * AWS region where the API request is processed.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>StorageConfiguration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateStorageConfiguration</a> — Creates a new storage configuration, used to enable recording to Amazon S3.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteStorageConfiguration</a> — Deletes the storage configuration for the specified ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetStorageConfiguration</a> — Gets the storage configuration for the specified ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListStorageConfigurations</a> — Gets summary information about all storage configurations in your account, in the
+ * AWS region where the API request is processed.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * <b>Tags Endpoints</b>
  * </p>
  * <ul>
@@ -192,6 +284,26 @@ public interface AmazonIVSRealTime {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "ivsrealtime";
+
+    /**
+     * <p>
+     * Creates an EncoderConfiguration object.
+     * </p>
+     * 
+     * @param createEncoderConfigurationRequest
+     * @return Result of the CreateEncoderConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws PendingVerificationException
+     * @sample AmazonIVSRealTime.CreateEncoderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateEncoderConfigurationResult createEncoderConfiguration(CreateEncoderConfigurationRequest createEncoderConfigurationRequest);
 
     /**
      * <p>
@@ -234,6 +346,48 @@ public interface AmazonIVSRealTime {
 
     /**
      * <p>
+     * Creates a new storage configuration, used to enable recording to Amazon S3. When a StorageConfiguration is
+     * created, IVS will modify the S3 bucketPolicy of the provided bucket. This will ensure that IVS has sufficient
+     * permissions to write content to the provided bucket.
+     * </p>
+     * 
+     * @param createStorageConfigurationRequest
+     * @return Result of the CreateStorageConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws PendingVerificationException
+     * @sample AmazonIVSRealTime.CreateStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateStorageConfigurationResult createStorageConfiguration(CreateStorageConfigurationRequest createStorageConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes an EncoderConfiguration resource. Ensures that no Compositions are using this template; otherwise,
+     * returns an error.
+     * </p>
+     * 
+     * @param deleteEncoderConfigurationRequest
+     * @return Result of the DeleteEncoderConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.DeleteEncoderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteEncoderConfigurationResult deleteEncoderConfiguration(DeleteEncoderConfigurationRequest deleteEncoderConfigurationRequest);
+
+    /**
+     * <p>
      * Shuts down and deletes the specified stage (disconnecting all participants).
      * </p>
      * 
@@ -252,6 +406,30 @@ public interface AmazonIVSRealTime {
 
     /**
      * <p>
+     * Deletes the storage configuration for the specified ARN.
+     * </p>
+     * <p>
+     * If you try to delete a storage configuration that is used by a Composition, you will get an error (409
+     * ConflictException). To avoid this, for all Compositions that reference the storage configuration, first use
+     * <a>StopComposition</a> and wait for it to complete, then use DeleteStorageConfiguration.
+     * </p>
+     * 
+     * @param deleteStorageConfigurationRequest
+     * @return Result of the DeleteStorageConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.DeleteStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteStorageConfigurationResult deleteStorageConfiguration(DeleteStorageConfigurationRequest deleteStorageConfigurationRequest);
+
+    /**
+     * <p>
      * Disconnects a specified participant and revokes the participant permanently from a specified stage.
      * </p>
      * 
@@ -266,6 +444,44 @@ public interface AmazonIVSRealTime {
      *      target="_top">AWS API Documentation</a>
      */
     DisconnectParticipantResult disconnectParticipant(DisconnectParticipantRequest disconnectParticipantRequest);
+
+    /**
+     * <p>
+     * Get information about the specified Composition resource.
+     * </p>
+     * 
+     * @param getCompositionRequest
+     * @return Result of the GetComposition operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.GetComposition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetCompositionResult getComposition(GetCompositionRequest getCompositionRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified EncoderConfiguration resource.
+     * </p>
+     * 
+     * @param getEncoderConfigurationRequest
+     * @return Result of the GetEncoderConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.GetEncoderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetEncoderConfigurationResult getEncoderConfiguration(GetEncoderConfigurationRequest getEncoderConfigurationRequest);
 
     /**
      * <p>
@@ -314,6 +530,63 @@ public interface AmazonIVSRealTime {
      *      API Documentation</a>
      */
     GetStageSessionResult getStageSession(GetStageSessionRequest getStageSessionRequest);
+
+    /**
+     * <p>
+     * Gets the storage configuration for the specified ARN.
+     * </p>
+     * 
+     * @param getStorageConfigurationRequest
+     * @return Result of the GetStorageConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.GetStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetStorageConfigurationResult getStorageConfiguration(GetStorageConfigurationRequest getStorageConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets summary information about all Compositions in your account, in the AWS region where the API request is
+     * processed.
+     * </p>
+     * 
+     * @param listCompositionsRequest
+     * @return Result of the ListCompositions operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.ListCompositions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListCompositionsResult listCompositions(ListCompositionsRequest listCompositionsRequest);
+
+    /**
+     * <p>
+     * Gets summary information about all EncoderConfigurations in your account, in the AWS region where the API request
+     * is processed.
+     * </p>
+     * 
+     * @param listEncoderConfigurationsRequest
+     * @return Result of the ListEncoderConfigurations operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.ListEncoderConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEncoderConfigurationsResult listEncoderConfigurations(ListEncoderConfigurationsRequest listEncoderConfigurationsRequest);
 
     /**
      * <p>
@@ -378,6 +651,25 @@ public interface AmazonIVSRealTime {
 
     /**
      * <p>
+     * Gets summary information about all storage configurations in your account, in the AWS region where the API
+     * request is processed.
+     * </p>
+     * 
+     * @param listStorageConfigurationsRequest
+     * @return Result of the ListStorageConfigurations operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.ListStorageConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListStorageConfigurationsResult listStorageConfigurations(ListStorageConfigurationsRequest listStorageConfigurationsRequest);
+
+    /**
+     * <p>
      * Gets information about AWS tags for the specified ARN.
      * </p>
      * 
@@ -391,6 +683,76 @@ public interface AmazonIVSRealTime {
      *      target="_top">AWS API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Starts a Composition from a stage based on the configuration provided in the request.
+     * </p>
+     * <p>
+     * A Composition is an ephemeral resource that exists after this endpoint returns successfully. Composition stops
+     * and the resource is deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <a>StopComposition</a> is called.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After a 1-minute timeout, when all participants are disconnected from the stage.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After a 1-minute timeout, if there are no participants in the stage when StartComposition is called.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When broadcasting to the IVS channel fails and all retries are exhausted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When broadcasting is disconnected and all attempts to reconnect are exhausted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startCompositionRequest
+     * @return Result of the StartComposition operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws PendingVerificationException
+     * @sample AmazonIVSRealTime.StartComposition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartCompositionResult startComposition(StartCompositionRequest startCompositionRequest);
+
+    /**
+     * <p>
+     * Stops and deletes a Composition resource. Any broadcast from the Composition resource is stopped.
+     * </p>
+     * 
+     * @param stopCompositionRequest
+     * @return Result of the StopComposition operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.StopComposition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopCompositionResult stopComposition(StopCompositionRequest stopCompositionRequest);
 
     /**
      * <p>

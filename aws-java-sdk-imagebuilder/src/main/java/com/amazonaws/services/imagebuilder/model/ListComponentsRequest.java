@@ -85,7 +85,7 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxResults;
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      */
     private String nextToken;
@@ -581,11 +581,11 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     *        A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -594,10 +594,10 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
-     * @return A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * @return A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      */
 
     public String getNextToken() {
@@ -606,11 +606,11 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     *        A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

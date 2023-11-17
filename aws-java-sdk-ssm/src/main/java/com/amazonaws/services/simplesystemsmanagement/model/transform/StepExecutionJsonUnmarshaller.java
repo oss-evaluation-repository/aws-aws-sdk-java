@@ -153,6 +153,10 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ParentStepDetails", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setParentStepDetails(ParentStepDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

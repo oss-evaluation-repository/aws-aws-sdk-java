@@ -61,13 +61,13 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<EventReference> eventReferences;
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      */
     private java.util.Date eventTime;
     /**
      * <p>
-     * The type of event. You can update events of type <code>Custom Event</code>.
+     * The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * </p>
      */
     private String eventType;
@@ -346,11 +346,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -359,10 +359,10 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
-     * @return The time that the event occurred.
+     * @return The timestamp for when the event occurred.
      */
 
     public java.util.Date getEventTime() {
@@ -371,11 +371,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,11 +386,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of event. You can update events of type <code>Custom Event</code>.
+     * The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * </p>
      * 
      * @param eventType
-     *        The type of event. You can update events of type <code>Custom Event</code>.
+     *        The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      */
 
     public void setEventType(String eventType) {
@@ -399,10 +399,10 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of event. You can update events of type <code>Custom Event</code>.
+     * The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * </p>
      * 
-     * @return The type of event. You can update events of type <code>Custom Event</code>.
+     * @return The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      */
 
     public String getEventType() {
@@ -411,11 +411,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of event. You can update events of type <code>Custom Event</code>.
+     * The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * </p>
      * 
      * @param eventType
-     *        The type of event. You can update events of type <code>Custom Event</code>.
+     *        The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

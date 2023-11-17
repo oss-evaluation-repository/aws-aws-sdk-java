@@ -19,10 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number
- * between 512 and 10,240 MB. For more information, see <a href=
- * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
- * >Configuring ephemeral storage (console)</a>.
+ * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole
+ * number between 512 and 10,240 MB.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EphemeralStorage" target="_top">AWS API

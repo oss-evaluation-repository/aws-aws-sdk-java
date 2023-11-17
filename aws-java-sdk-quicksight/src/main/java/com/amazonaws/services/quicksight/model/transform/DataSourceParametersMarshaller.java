@@ -77,6 +77,8 @@ public class DataSourceParametersMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StarburstParameters").build();
     private static final MarshallingInfo<StructuredPojo> TRINOPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrinoParameters").build();
+    private static final MarshallingInfo<StructuredPojo> BIGQUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BigQueryParameters").build();
 
     private static final DataSourceParametersMarshaller instance = new DataSourceParametersMarshaller();
 
@@ -119,6 +121,7 @@ public class DataSourceParametersMarshaller {
             protocolMarshaller.marshall(dataSourceParameters.getDatabricksParameters(), DATABRICKSPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getStarburstParameters(), STARBURSTPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getTrinoParameters(), TRINOPARAMETERS_BINDING);
+            protocolMarshaller.marshall(dataSourceParameters.getBigQueryParameters(), BIGQUERYPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

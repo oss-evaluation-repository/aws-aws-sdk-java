@@ -574,6 +574,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRoleMembershipResult> createRoleMembershipAsync(CreateRoleMembershipRequest request) {
+
+        return createRoleMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRoleMembershipResult> createRoleMembershipAsync(final CreateRoleMembershipRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRoleMembershipRequest, CreateRoleMembershipResult> asyncHandler) {
+        final CreateRoleMembershipRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRoleMembershipResult>() {
+            @Override
+            public CreateRoleMembershipResult call() throws Exception {
+                CreateRoleMembershipResult result = null;
+
+                try {
+                    result = executeCreateRoleMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest request) {
 
         return createTemplateAsync(request, null);
@@ -1252,6 +1285,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeDeleteRefreshSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoleCustomPermissionResult> deleteRoleCustomPermissionAsync(DeleteRoleCustomPermissionRequest request) {
+
+        return deleteRoleCustomPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoleCustomPermissionResult> deleteRoleCustomPermissionAsync(final DeleteRoleCustomPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRoleCustomPermissionRequest, DeleteRoleCustomPermissionResult> asyncHandler) {
+        final DeleteRoleCustomPermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRoleCustomPermissionResult>() {
+            @Override
+            public DeleteRoleCustomPermissionResult call() throws Exception {
+                DeleteRoleCustomPermissionResult result = null;
+
+                try {
+                    result = executeDeleteRoleCustomPermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoleMembershipResult> deleteRoleMembershipAsync(DeleteRoleMembershipRequest request) {
+
+        return deleteRoleMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoleMembershipResult> deleteRoleMembershipAsync(final DeleteRoleMembershipRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRoleMembershipRequest, DeleteRoleMembershipResult> asyncHandler) {
+        final DeleteRoleMembershipRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRoleMembershipResult>() {
+            @Override
+            public DeleteRoleMembershipResult call() throws Exception {
+                DeleteRoleMembershipResult result = null;
+
+                try {
+                    result = executeDeleteRoleMembership(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2496,6 +2595,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRoleCustomPermissionResult> describeRoleCustomPermissionAsync(DescribeRoleCustomPermissionRequest request) {
+
+        return describeRoleCustomPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRoleCustomPermissionResult> describeRoleCustomPermissionAsync(final DescribeRoleCustomPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRoleCustomPermissionRequest, DescribeRoleCustomPermissionResult> asyncHandler) {
+        final DescribeRoleCustomPermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRoleCustomPermissionResult>() {
+            @Override
+            public DescribeRoleCustomPermissionResult call() throws Exception {
+                DescribeRoleCustomPermissionResult result = null;
+
+                try {
+                    result = executeDescribeRoleCustomPermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTemplateResult> describeTemplateAsync(DescribeTemplateRequest request) {
 
         return describeTemplateAsync(request, null);
@@ -3575,6 +3707,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeListRefreshSchedules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleMembershipsResult> listRoleMembershipsAsync(ListRoleMembershipsRequest request) {
+
+        return listRoleMembershipsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleMembershipsResult> listRoleMembershipsAsync(final ListRoleMembershipsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRoleMembershipsRequest, ListRoleMembershipsResult> asyncHandler) {
+        final ListRoleMembershipsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRoleMembershipsResult>() {
+            @Override
+            public ListRoleMembershipsResult call() throws Exception {
+                ListRoleMembershipsResult result = null;
+
+                try {
+                    result = executeListRoleMemberships(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -5029,6 +5194,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeUpdateRefreshSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleCustomPermissionResult> updateRoleCustomPermissionAsync(UpdateRoleCustomPermissionRequest request) {
+
+        return updateRoleCustomPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleCustomPermissionResult> updateRoleCustomPermissionAsync(final UpdateRoleCustomPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRoleCustomPermissionRequest, UpdateRoleCustomPermissionResult> asyncHandler) {
+        final UpdateRoleCustomPermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRoleCustomPermissionResult>() {
+            @Override
+            public UpdateRoleCustomPermissionResult call() throws Exception {
+                UpdateRoleCustomPermissionResult result = null;
+
+                try {
+                    result = executeUpdateRoleCustomPermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

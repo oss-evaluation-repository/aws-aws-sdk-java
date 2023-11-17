@@ -2588,6 +2588,11 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>PerUnitStorageThroughput</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>StorageCapacity</code>
      * </p>
      * </li>
@@ -2799,6 +2804,11 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <li>
      * <p>
      * <code>LustreRootSquashConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PerUnitStorageThroughput</code>
      * </p>
      * </li>
      * <li>

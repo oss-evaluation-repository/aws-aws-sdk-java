@@ -106,26 +106,26 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ssoadmin.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssoadmin.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssoadmin.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ssoadmin.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ssoadmin.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssoadmin.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ssoadmin.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ssoadmin.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ssoadmin.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ssoadmin.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.ssoadmin.model.AWSSSOAdminException.class));
 
     public static AWSSSOAdminClientBuilder builder() {
@@ -427,6 +427,239 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Creates an application in IAM Identity Center for the given application provider.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return Result of the CreateApplication operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         Indicates that the principal has crossed the permitted number of resources that can be created.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApplicationRequest> request = null;
+        Response<CreateApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Grant application access to a user or group.
+     * </p>
+     * 
+     * @param createApplicationAssignmentRequest
+     * @return Result of the CreateApplicationAssignment operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         Indicates that the principal has crossed the permitted number of resources that can be created.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateApplicationAssignmentResult createApplicationAssignment(CreateApplicationAssignmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplicationAssignment(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationAssignmentResult executeCreateApplicationAssignment(CreateApplicationAssignmentRequest createApplicationAssignmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createApplicationAssignmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApplicationAssignmentRequest> request = null;
+        Response<CreateApplicationAssignmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApplicationAssignmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createApplicationAssignmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationAssignment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApplicationAssignmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateApplicationAssignmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an instance of IAM Identity Center for a standalone Amazon Web Services account that is not managed by
+     * Organizations or a member Amazon Web Services account in an organization. You can create only one instance per
+     * account and across all Amazon Web Services Regions.
+     * </p>
+     * <p>
+     * The CreateInstance request is rejected if the following apply:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The instance is created within the organization management account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An instance already exists in the same account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createInstanceRequest
+     * @return Result of the CreateInstance operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         Indicates that the principal has crossed the permitted number of resources that can be created.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateInstanceResult createInstance(CreateInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInstance(request);
+    }
+
+    @SdkInternalApi
+    final CreateInstanceResult executeCreateInstance(CreateInstanceRequest createInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateInstanceRequest> request = null;
+        Response<CreateInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance. You
      * can also specify new attributes to add to your ABAC configuration during the enabling process. For more
      * information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a>
@@ -589,6 +822,85 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Creates a connection to a trusted token issuer in an instance of IAM Identity Center. A trusted token issuer
+     * enables trusted identity propagation to be used with applications that authenticate outside of Amazon Web
+     * Services.
+     * </p>
+     * <p>
+     * This trusted token issuer describes an external identity provider (IdP) that can generate claims or assertions in
+     * the form of access tokens for a user. Applications enabled for IAM Identity Center can use these tokens for
+     * authentication.
+     * </p>
+     * 
+     * @param createTrustedTokenIssuerRequest
+     * @return Result of the CreateTrustedTokenIssuer operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         Indicates that the principal has crossed the permitted number of resources that can be created.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.CreateTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/CreateTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTrustedTokenIssuerResult createTrustedTokenIssuer(CreateTrustedTokenIssuerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrustedTokenIssuer(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrustedTokenIssuerResult executeCreateTrustedTokenIssuer(CreateTrustedTokenIssuerRequest createTrustedTokenIssuerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTrustedTokenIssuerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrustedTokenIssuerRequest> request = null;
+        Response<CreateTrustedTokenIssuerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrustedTokenIssuerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createTrustedTokenIssuerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrustedTokenIssuer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTrustedTokenIssuerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateTrustedTokenIssuerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.
      * </p>
      * <note>
@@ -667,6 +979,364 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Deletes the association with the application. The connected service resource still exists.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return Result of the DeleteApplication operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplication(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationResult executeDeleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationRequest> request = null;
+        Response<DeleteApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an IAM Identity Center access scope from an application.
+     * </p>
+     * 
+     * @param deleteApplicationAccessScopeRequest
+     * @return Result of the DeleteApplicationAccessScope operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteApplicationAccessScopeResult deleteApplicationAccessScope(DeleteApplicationAccessScopeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationAccessScope(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationAccessScopeResult executeDeleteApplicationAccessScope(DeleteApplicationAccessScopeRequest deleteApplicationAccessScopeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationAccessScopeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationAccessScopeRequest> request = null;
+        Response<DeleteApplicationAccessScopeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationAccessScopeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteApplicationAccessScopeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationAccessScope");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApplicationAccessScopeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteApplicationAccessScopeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Revoke application access to an application by deleting application assignments for a user or group.
+     * </p>
+     * 
+     * @param deleteApplicationAssignmentRequest
+     * @return Result of the DeleteApplicationAssignment operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteApplicationAssignmentResult deleteApplicationAssignment(DeleteApplicationAssignmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationAssignment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationAssignmentResult executeDeleteApplicationAssignment(DeleteApplicationAssignmentRequest deleteApplicationAssignmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationAssignmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationAssignmentRequest> request = null;
+        Response<DeleteApplicationAssignmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationAssignmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteApplicationAssignmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationAssignment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApplicationAssignmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteApplicationAssignmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an authentication method from an application.
+     * </p>
+     * 
+     * @param deleteApplicationAuthenticationMethodRequest
+     * @return Result of the DeleteApplicationAuthenticationMethod operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteApplicationAuthenticationMethodResult deleteApplicationAuthenticationMethod(DeleteApplicationAuthenticationMethodRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationAuthenticationMethod(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationAuthenticationMethodResult executeDeleteApplicationAuthenticationMethod(
+            DeleteApplicationAuthenticationMethodRequest deleteApplicationAuthenticationMethodRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationAuthenticationMethodRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationAuthenticationMethodRequest> request = null;
+        Response<DeleteApplicationAuthenticationMethodResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationAuthenticationMethodRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteApplicationAuthenticationMethodRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationAuthenticationMethod");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApplicationAuthenticationMethodResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteApplicationAuthenticationMethodResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a grant from an application.
+     * </p>
+     * 
+     * @param deleteApplicationGrantRequest
+     * @return Result of the DeleteApplicationGrant operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteApplicationGrant"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteApplicationGrantResult deleteApplicationGrant(DeleteApplicationGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationGrant(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationGrantResult executeDeleteApplicationGrant(DeleteApplicationGrantRequest deleteApplicationGrantRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationGrantRequest> request = null;
+        Response<DeleteApplicationGrantResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApplicationGrantResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteApplicationGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the inline policy from a specified permission set.
      * </p>
      * 
@@ -728,6 +1398,76 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
             HttpResponseHandler<AmazonWebServiceResponse<DeleteInlinePolicyFromPermissionSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteInlinePolicyFromPermissionSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the instance of IAM Identity Center. Only the account that owns the instance can call this API. Neither
+     * the delegated administrator nor member account can delete the organization instance, but those roles can delete
+     * their own instance.
+     * </p>
+     * 
+     * @param deleteInstanceRequest
+     * @return Result of the DeleteInstance operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteInstanceResult deleteInstance(DeleteInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInstanceResult executeDeleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteInstanceRequest> request = null;
+        Response<DeleteInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -905,6 +1645,10 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
      * @sample AWSSSOAdmin.DeletePermissionsBoundaryFromPermissionSet
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet"
@@ -947,6 +1691,84 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
             HttpResponseHandler<AmazonWebServiceResponse<DeletePermissionsBoundaryFromPermissionSetResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeletePermissionsBoundaryFromPermissionSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a trusted token issuer configuration from an instance of IAM Identity Center.
+     * </p>
+     * <note>
+     * <p>
+     * Deleting this trusted token issuer configuration will cause users to lose access to any applications that are
+     * configured to use the trusted token issuer.
+     * </p>
+     * </note>
+     * 
+     * @param deleteTrustedTokenIssuerRequest
+     * @return Result of the DeleteTrustedTokenIssuer operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.DeleteTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeleteTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTrustedTokenIssuerResult deleteTrustedTokenIssuer(DeleteTrustedTokenIssuerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrustedTokenIssuer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrustedTokenIssuerResult executeDeleteTrustedTokenIssuer(DeleteTrustedTokenIssuerRequest deleteTrustedTokenIssuerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTrustedTokenIssuerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrustedTokenIssuerRequest> request = null;
+        Response<DeleteTrustedTokenIssuerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrustedTokenIssuerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteTrustedTokenIssuerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrustedTokenIssuer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTrustedTokenIssuerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteTrustedTokenIssuerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1087,6 +1909,295 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAccountAssignmentDeletionStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeAccountAssignmentDeletionStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the details of an application associated with an instance of IAM Identity Center.
+     * </p>
+     * 
+     * @param describeApplicationRequest
+     * @return Result of the DescribeApplication operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeApplicationResult describeApplication(DescribeApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplication(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationResult executeDescribeApplication(DescribeApplicationRequest describeApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeApplicationRequest> request = null;
+        Response<DescribeApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a direct assignment of a user or group to an application. If the user doesn’t have a direct assignment
+     * to the application, the user may still have access to the application through a group. Therefore, don’t use this
+     * API to test access to an application for a user. Instead use <a>ListApplicationAssignmentsForPrincipal</a>.
+     * </p>
+     * 
+     * @param describeApplicationAssignmentRequest
+     * @return Result of the DescribeApplicationAssignment operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeApplicationAssignment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationAssignment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeApplicationAssignmentResult describeApplicationAssignment(DescribeApplicationAssignmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplicationAssignment(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationAssignmentResult executeDescribeApplicationAssignment(DescribeApplicationAssignmentRequest describeApplicationAssignmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeApplicationAssignmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeApplicationAssignmentRequest> request = null;
+        Response<DescribeApplicationAssignmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeApplicationAssignmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeApplicationAssignmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplicationAssignment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeApplicationAssignmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeApplicationAssignmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details about a provider that can be used to connect an Amazon Web Services managed application or
+     * customer managed application to IAM Identity Center.
+     * </p>
+     * 
+     * @param describeApplicationProviderRequest
+     * @return Result of the DescribeApplicationProvider operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeApplicationProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeApplicationProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeApplicationProviderResult describeApplicationProvider(DescribeApplicationProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplicationProvider(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationProviderResult executeDescribeApplicationProvider(DescribeApplicationProviderRequest describeApplicationProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeApplicationProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeApplicationProviderRequest> request = null;
+        Response<DescribeApplicationProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeApplicationProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeApplicationProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplicationProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeApplicationProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeApplicationProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the details of an instance of IAM Identity Center. The status can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The instance is in the process of being created. When the instance is ready for
+     * use, DescribeInstance returns the status of <code>ACTIVE</code>. While the instance is in the
+     * <code>CREATE_IN_PROGRESS</code> state, you can call only DescribeInstance and DeleteInstance operations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> - The instance is being deleted. Returns <code>AccessDeniedException</code> after
+     * the delete operation completes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The instance is active.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeInstanceRequest
+     * @return Result of the DescribeInstance operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeInstanceResult describeInstance(DescribeInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstance(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceResult executeDescribeInstance(DescribeInstanceRequest describeInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstanceRequest> request = null;
+        Response<DescribeInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1311,6 +2422,76 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Retrieves details about a trusted token issuer configuration stored in an instance of IAM Identity Center.
+     * Details include the name of the trusted token issuer, the issuer URL, and the path of the source attribute and
+     * the destination attribute for a trusted token issuer configuration.
+     * </p>
+     * 
+     * @param describeTrustedTokenIssuerRequest
+     * @return Result of the DescribeTrustedTokenIssuer operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.DescribeTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DescribeTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrustedTokenIssuerResult describeTrustedTokenIssuer(DescribeTrustedTokenIssuerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustedTokenIssuer(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustedTokenIssuerResult executeDescribeTrustedTokenIssuer(DescribeTrustedTokenIssuerRequest describeTrustedTokenIssuerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrustedTokenIssuerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrustedTokenIssuerRequest> request = null;
+        Response<DescribeTrustedTokenIssuerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrustedTokenIssuerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTrustedTokenIssuerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustedTokenIssuer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrustedTokenIssuerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeTrustedTokenIssuerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Detaches the specified customer managed policy from the specified <a>PermissionSet</a>.
      * </p>
      * 
@@ -1447,6 +2628,278 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
             HttpResponseHandler<AmazonWebServiceResponse<DetachManagedPolicyFromPermissionSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DetachManagedPolicyFromPermissionSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the authorized targets for an IAM Identity Center access scope for an application.
+     * </p>
+     * 
+     * @param getApplicationAccessScopeRequest
+     * @return Result of the GetApplicationAccessScope operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.GetApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetApplicationAccessScopeResult getApplicationAccessScope(GetApplicationAccessScopeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApplicationAccessScope(request);
+    }
+
+    @SdkInternalApi
+    final GetApplicationAccessScopeResult executeGetApplicationAccessScope(GetApplicationAccessScopeRequest getApplicationAccessScopeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getApplicationAccessScopeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApplicationAccessScopeRequest> request = null;
+        Response<GetApplicationAccessScopeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApplicationAccessScopeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getApplicationAccessScopeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationAccessScope");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetApplicationAccessScopeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetApplicationAccessScopeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the configuration of <a>PutApplicationAssignmentConfiguration</a>.
+     * </p>
+     * 
+     * @param getApplicationAssignmentConfigurationRequest
+     * @return Result of the GetApplicationAssignmentConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.GetApplicationAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetApplicationAssignmentConfigurationResult getApplicationAssignmentConfiguration(GetApplicationAssignmentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApplicationAssignmentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetApplicationAssignmentConfigurationResult executeGetApplicationAssignmentConfiguration(
+            GetApplicationAssignmentConfigurationRequest getApplicationAssignmentConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getApplicationAssignmentConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApplicationAssignmentConfigurationRequest> request = null;
+        Response<GetApplicationAssignmentConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApplicationAssignmentConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getApplicationAssignmentConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationAssignmentConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetApplicationAssignmentConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetApplicationAssignmentConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details about an authentication method used by an application.
+     * </p>
+     * 
+     * @param getApplicationAuthenticationMethodRequest
+     * @return Result of the GetApplicationAuthenticationMethod operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.GetApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetApplicationAuthenticationMethodResult getApplicationAuthenticationMethod(GetApplicationAuthenticationMethodRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApplicationAuthenticationMethod(request);
+    }
+
+    @SdkInternalApi
+    final GetApplicationAuthenticationMethodResult executeGetApplicationAuthenticationMethod(
+            GetApplicationAuthenticationMethodRequest getApplicationAuthenticationMethodRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getApplicationAuthenticationMethodRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApplicationAuthenticationMethodRequest> request = null;
+        Response<GetApplicationAuthenticationMethodResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApplicationAuthenticationMethodRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getApplicationAuthenticationMethodRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationAuthenticationMethod");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetApplicationAuthenticationMethodResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetApplicationAuthenticationMethodResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details about an application grant.
+     * </p>
+     * 
+     * @param getApplicationGrantRequest
+     * @return Result of the GetApplicationGrant operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.GetApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetApplicationGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetApplicationGrantResult getApplicationGrant(GetApplicationGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApplicationGrant(request);
+    }
+
+    @SdkInternalApi
+    final GetApplicationGrantResult executeGetApplicationGrant(GetApplicationGrantRequest getApplicationGrantRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getApplicationGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApplicationGrantRequest> request = null;
+        Response<GetApplicationGrantResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApplicationGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApplicationGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetApplicationGrantResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetApplicationGrantResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1804,6 +3257,76 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Retrieves a list of the IAM Identity Center associated Amazon Web Services accounts that the principal has access
+     * to.
+     * </p>
+     * 
+     * @param listAccountAssignmentsForPrincipalRequest
+     * @return Result of the ListAccountAssignmentsForPrincipal operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListAccountAssignmentsForPrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListAccountAssignmentsForPrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAccountAssignmentsForPrincipalResult listAccountAssignmentsForPrincipal(ListAccountAssignmentsForPrincipalRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccountAssignmentsForPrincipal(request);
+    }
+
+    @SdkInternalApi
+    final ListAccountAssignmentsForPrincipalResult executeListAccountAssignmentsForPrincipal(
+            ListAccountAssignmentsForPrincipalRequest listAccountAssignmentsForPrincipalRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccountAssignmentsForPrincipalRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccountAssignmentsForPrincipalRequest> request = null;
+        Response<ListAccountAssignmentsForPrincipalResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccountAssignmentsForPrincipalRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAccountAssignmentsForPrincipalRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountAssignmentsForPrincipal");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAccountAssignmentsForPrincipalResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAccountAssignmentsForPrincipalResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all the Amazon Web Services accounts where the specified permission set is provisioned.
      * </p>
      * 
@@ -1862,6 +3385,479 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
             HttpResponseHandler<AmazonWebServiceResponse<ListAccountsForProvisionedPermissionSetResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListAccountsForProvisionedPermissionSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the access scopes and authorized targets associated with an application.
+     * </p>
+     * 
+     * @param listApplicationAccessScopesRequest
+     * @return Result of the ListApplicationAccessScopes operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationAccessScopes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAccessScopes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationAccessScopesResult listApplicationAccessScopes(ListApplicationAccessScopesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationAccessScopes(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationAccessScopesResult executeListApplicationAccessScopes(ListApplicationAccessScopesRequest listApplicationAccessScopesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationAccessScopesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationAccessScopesRequest> request = null;
+        Response<ListApplicationAccessScopesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationAccessScopesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listApplicationAccessScopesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationAccessScopes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationAccessScopesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListApplicationAccessScopesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists Amazon Web Services account users that are assigned to an application.
+     * </p>
+     * 
+     * @param listApplicationAssignmentsRequest
+     * @return Result of the ListApplicationAssignments operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationAssignments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationAssignmentsResult listApplicationAssignments(ListApplicationAssignmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationAssignments(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationAssignmentsResult executeListApplicationAssignments(ListApplicationAssignmentsRequest listApplicationAssignmentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationAssignmentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationAssignmentsRequest> request = null;
+        Response<ListApplicationAssignmentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationAssignmentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listApplicationAssignmentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationAssignments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationAssignmentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListApplicationAssignmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the applications to which a specified principal is assigned.
+     * </p>
+     * 
+     * @param listApplicationAssignmentsForPrincipalRequest
+     * @return Result of the ListApplicationAssignmentsForPrincipal operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationAssignmentsForPrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAssignmentsForPrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationAssignmentsForPrincipalResult listApplicationAssignmentsForPrincipal(ListApplicationAssignmentsForPrincipalRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationAssignmentsForPrincipal(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationAssignmentsForPrincipalResult executeListApplicationAssignmentsForPrincipal(
+            ListApplicationAssignmentsForPrincipalRequest listApplicationAssignmentsForPrincipalRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationAssignmentsForPrincipalRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationAssignmentsForPrincipalRequest> request = null;
+        Response<ListApplicationAssignmentsForPrincipalResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationAssignmentsForPrincipalRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listApplicationAssignmentsForPrincipalRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationAssignmentsForPrincipal");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationAssignmentsForPrincipalResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListApplicationAssignmentsForPrincipalResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all of the authentication methods supported by the specified application.
+     * </p>
+     * 
+     * @param listApplicationAuthenticationMethodsRequest
+     * @return Result of the ListApplicationAuthenticationMethods operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationAuthenticationMethods
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationAuthenticationMethods"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationAuthenticationMethodsResult listApplicationAuthenticationMethods(ListApplicationAuthenticationMethodsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationAuthenticationMethods(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationAuthenticationMethodsResult executeListApplicationAuthenticationMethods(
+            ListApplicationAuthenticationMethodsRequest listApplicationAuthenticationMethodsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationAuthenticationMethodsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationAuthenticationMethodsRequest> request = null;
+        Response<ListApplicationAuthenticationMethodsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationAuthenticationMethodsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listApplicationAuthenticationMethodsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationAuthenticationMethods");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationAuthenticationMethodsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListApplicationAuthenticationMethodsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List the grants associated with an application.
+     * </p>
+     * 
+     * @param listApplicationGrantsRequest
+     * @return Result of the ListApplicationGrants operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationGrants
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationGrants"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationGrantsResult listApplicationGrants(ListApplicationGrantsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationGrants(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationGrantsResult executeListApplicationGrants(ListApplicationGrantsRequest listApplicationGrantsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationGrantsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationGrantsRequest> request = null;
+        Response<ListApplicationGrantsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationGrantsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationGrants");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationGrantsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListApplicationGrantsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the application providers configured in the IAM Identity Center identity store.
+     * </p>
+     * 
+     * @param listApplicationProvidersRequest
+     * @return Result of the ListApplicationProviders operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplicationProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplicationProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationProvidersResult listApplicationProviders(ListApplicationProvidersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationProviders(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationProvidersResult executeListApplicationProviders(ListApplicationProvidersRequest listApplicationProvidersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationProvidersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationProvidersRequest> request = null;
+        Response<ListApplicationProvidersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationProvidersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listApplicationProvidersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationProvidersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListApplicationProvidersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all applications associated with the instance of IAM Identity Center. When listing applications for an
+     * instance in the management account, member accounts must use the <code>applicationAccount</code> parameter to
+     * filter the list to only applications created from that account.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @return Result of the ListApplications operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListApplicationsResult listApplications(ListApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplications(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationsResult executeListApplications(ListApplicationsRequest listApplicationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationsRequest> request = null;
+        Response<ListApplicationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListApplicationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1945,7 +3941,8 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
-     * Lists the IAM Identity Center instances that the caller has access to.
+     * Lists the details of the organization and account instances of IAM Identity Center that were created in or
+     * visible to the account calling this API.
      * </p>
      * 
      * @param listInstancesRequest
@@ -2348,6 +4345,72 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Lists all the trusted token issuers configured in an instance of IAM Identity Center.
+     * </p>
+     * 
+     * @param listTrustedTokenIssuersRequest
+     * @return Result of the ListTrustedTokenIssuers operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @sample AWSSSOAdmin.ListTrustedTokenIssuers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListTrustedTokenIssuers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTrustedTokenIssuersResult listTrustedTokenIssuers(ListTrustedTokenIssuersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrustedTokenIssuers(request);
+    }
+
+    @SdkInternalApi
+    final ListTrustedTokenIssuersResult executeListTrustedTokenIssuers(ListTrustedTokenIssuersRequest listTrustedTokenIssuersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTrustedTokenIssuersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTrustedTokenIssuersRequest> request = null;
+        Response<ListTrustedTokenIssuersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTrustedTokenIssuersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTrustedTokenIssuersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrustedTokenIssuers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTrustedTokenIssuersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTrustedTokenIssuersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The process by which a specified permission set is provisioned to the specified target.
      * </p>
      * 
@@ -2407,6 +4470,301 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
             HttpResponseHandler<AmazonWebServiceResponse<ProvisionPermissionSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ProvisionPermissionSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or updates the list of authorized targets for an IAM Identity Center access scope for an application.
+     * </p>
+     * 
+     * @param putApplicationAccessScopeRequest
+     * @return Result of the PutApplicationAccessScope operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.PutApplicationAccessScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAccessScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutApplicationAccessScopeResult putApplicationAccessScope(PutApplicationAccessScopeRequest request) {
+        request = beforeClientExecution(request);
+        return executePutApplicationAccessScope(request);
+    }
+
+    @SdkInternalApi
+    final PutApplicationAccessScopeResult executePutApplicationAccessScope(PutApplicationAccessScopeRequest putApplicationAccessScopeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putApplicationAccessScopeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutApplicationAccessScopeRequest> request = null;
+        Response<PutApplicationAccessScopeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutApplicationAccessScopeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putApplicationAccessScopeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApplicationAccessScope");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutApplicationAccessScopeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutApplicationAccessScopeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Configure how users gain access to an application. If <code>AssignmentsRequired</code> is <code>true</code>
+     * (default value), users don’t have access to the application unless an assignment is created using the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+     * >CreateApplicationAssignment API</a>. If <code>false</code>, all users have access to the application. If an
+     * assignment is created using <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html"
+     * >CreateApplicationAssignment</a>., the user retains access if <code>AssignmentsRequired</code> is set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param putApplicationAssignmentConfigurationRequest
+     * @return Result of the PutApplicationAssignmentConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.PutApplicationAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutApplicationAssignmentConfigurationResult putApplicationAssignmentConfiguration(PutApplicationAssignmentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutApplicationAssignmentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutApplicationAssignmentConfigurationResult executePutApplicationAssignmentConfiguration(
+            PutApplicationAssignmentConfigurationRequest putApplicationAssignmentConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putApplicationAssignmentConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutApplicationAssignmentConfigurationRequest> request = null;
+        Response<PutApplicationAssignmentConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutApplicationAssignmentConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putApplicationAssignmentConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApplicationAssignmentConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutApplicationAssignmentConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutApplicationAssignmentConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or updates an authentication method for an application.
+     * </p>
+     * 
+     * @param putApplicationAuthenticationMethodRequest
+     * @return Result of the PutApplicationAuthenticationMethod operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.PutApplicationAuthenticationMethod
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationAuthenticationMethod"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutApplicationAuthenticationMethodResult putApplicationAuthenticationMethod(PutApplicationAuthenticationMethodRequest request) {
+        request = beforeClientExecution(request);
+        return executePutApplicationAuthenticationMethod(request);
+    }
+
+    @SdkInternalApi
+    final PutApplicationAuthenticationMethodResult executePutApplicationAuthenticationMethod(
+            PutApplicationAuthenticationMethodRequest putApplicationAuthenticationMethodRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putApplicationAuthenticationMethodRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutApplicationAuthenticationMethodRequest> request = null;
+        Response<PutApplicationAuthenticationMethodResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutApplicationAuthenticationMethodRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putApplicationAuthenticationMethodRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApplicationAuthenticationMethod");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutApplicationAuthenticationMethodResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutApplicationAuthenticationMethodResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a grant to an application.
+     * </p>
+     * 
+     * @param putApplicationGrantRequest
+     * @return Result of the PutApplicationGrant operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.PutApplicationGrant
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutApplicationGrant" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutApplicationGrantResult putApplicationGrant(PutApplicationGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executePutApplicationGrant(request);
+    }
+
+    @SdkInternalApi
+    final PutApplicationGrantResult executePutApplicationGrant(PutApplicationGrantRequest putApplicationGrantRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putApplicationGrantRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutApplicationGrantRequest> request = null;
+        Response<PutApplicationGrantResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutApplicationGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putApplicationGrantRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApplicationGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutApplicationGrantResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutApplicationGrantResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2716,6 +5074,144 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
     /**
      * <p>
+     * Updates application properties.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApplicationRequest> request = null;
+        Response<UpdateApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the details for the instance of IAM Identity Center that is owned by the Amazon Web Services account.
+     * </p>
+     * 
+     * @param updateInstanceRequest
+     * @return Result of the UpdateInstance operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.UpdateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateInstanceResult updateInstance(UpdateInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInstance(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInstanceResult executeUpdateInstance(UpdateInstanceRequest updateInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInstanceRequest> request = null;
+        Response<UpdateInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the IAM Identity Center identity store attributes that you can use with the IAM Identity Center instance
      * for attributes-based access control (ABAC). When using an external identity provider as an identity source, you
      * can pass attributes through the SAML assertion as an alternative to configuring attributes from the IAM Identity
@@ -2855,6 +5351,85 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePermissionSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePermissionSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the name of the trusted token issuer, or the path of a source attribute or destination attribute for a
+     * trusted token issuer configuration.
+     * </p>
+     * <note>
+     * <p>
+     * Updating this trusted token issuer configuration might cause users to lose access to any applications that are
+     * configured to use the trusted token issuer.
+     * </p>
+     * </note>
+     * 
+     * @param updateTrustedTokenIssuerRequest
+     * @return Result of the UpdateTrustedTokenIssuer operation returned by the service.
+     * @throws ThrottlingException
+     *         Indicates that the principal has crossed the throttling limits of the API operations.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure with an internal
+     *         server.
+     * @throws ResourceNotFoundException
+     *         Indicates that a requested resource is not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws ConflictException
+     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
+     *         previous write did not have time to propagate to the host serving the current request. A retry (with
+     *         appropriate backoff logic) is the recommended response to this exception.
+     * @sample AWSSSOAdmin.UpdateTrustedTokenIssuer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateTrustedTokenIssuer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTrustedTokenIssuerResult updateTrustedTokenIssuer(UpdateTrustedTokenIssuerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrustedTokenIssuer(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrustedTokenIssuerResult executeUpdateTrustedTokenIssuer(UpdateTrustedTokenIssuerRequest updateTrustedTokenIssuerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTrustedTokenIssuerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTrustedTokenIssuerRequest> request = null;
+        Response<UpdateTrustedTokenIssuerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTrustedTokenIssuerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateTrustedTokenIssuerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrustedTokenIssuer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTrustedTokenIssuerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateTrustedTokenIssuerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

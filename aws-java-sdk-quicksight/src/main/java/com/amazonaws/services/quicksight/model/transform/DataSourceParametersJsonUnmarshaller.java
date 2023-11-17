@@ -148,6 +148,10 @@ public class DataSourceParametersJsonUnmarshaller implements Unmarshaller<DataSo
                     context.nextToken();
                     dataSourceParameters.setTrinoParameters(TrinoParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BigQueryParameters", targetDepth)) {
+                    context.nextToken();
+                    dataSourceParameters.setBigQueryParameters(BigQueryParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

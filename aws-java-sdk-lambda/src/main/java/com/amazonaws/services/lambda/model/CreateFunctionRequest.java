@@ -213,9 +213,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB. For more information, see <a href=
-     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     * >Configuring ephemeral storage (console)</a>.
+     * number between 512 and 10,240 MB.
      * </p>
      */
     private EphemeralStorage ephemeralStorage;
@@ -225,6 +223,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private SnapStart snapStart;
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     */
+    private LoggingConfig loggingConfig;
 
     /**
      * <p>
@@ -1708,16 +1712,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB. For more information, see <a href=
-     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     * >Configuring ephemeral storage (console)</a>.
+     * number between 512 and 10,240 MB.
      * </p>
      * 
      * @param ephemeralStorage
      *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *        whole number between 512 and 10,240 MB. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     *        >Configuring ephemeral storage (console)</a>.
+     *        whole number between 512 and 10,240 MB.
      */
 
     public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
@@ -1727,15 +1727,11 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB. For more information, see <a href=
-     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     * >Configuring ephemeral storage (console)</a>.
+     * number between 512 and 10,240 MB.
      * </p>
      * 
      * @return The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *         whole number between 512 and 10,240 MB. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     *         >Configuring ephemeral storage (console)</a>.
+     *         whole number between 512 and 10,240 MB.
      */
 
     public EphemeralStorage getEphemeralStorage() {
@@ -1745,16 +1741,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
-     * number between 512 and 10,240 MB. For more information, see <a href=
-     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     * >Configuring ephemeral storage (console)</a>.
+     * number between 512 and 10,240 MB.
      * </p>
      * 
      * @param ephemeralStorage
      *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
-     *        whole number between 512 and 10,240 MB. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
-     *        >Configuring ephemeral storage (console)</a>.
+     *        whole number between 512 and 10,240 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1803,6 +1795,46 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateFunctionRequest withSnapStart(SnapStart snapStart) {
         setSnapStart(snapStart);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @param loggingConfig
+     *        The function's Amazon CloudWatch Logs configuration settings.
+     */
+
+    public void setLoggingConfig(LoggingConfig loggingConfig) {
+        this.loggingConfig = loggingConfig;
+    }
+
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @return The function's Amazon CloudWatch Logs configuration settings.
+     */
+
+    public LoggingConfig getLoggingConfig() {
+        return this.loggingConfig;
+    }
+
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @param loggingConfig
+     *        The function's Amazon CloudWatch Logs configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withLoggingConfig(LoggingConfig loggingConfig) {
+        setLoggingConfig(loggingConfig);
         return this;
     }
 
@@ -1863,7 +1895,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getEphemeralStorage() != null)
             sb.append("EphemeralStorage: ").append(getEphemeralStorage()).append(",");
         if (getSnapStart() != null)
-            sb.append("SnapStart: ").append(getSnapStart());
+            sb.append("SnapStart: ").append(getSnapStart()).append(",");
+        if (getLoggingConfig() != null)
+            sb.append("LoggingConfig: ").append(getLoggingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1970,6 +2004,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getSnapStart() != null && other.getSnapStart().equals(this.getSnapStart()) == false)
             return false;
+        if (other.getLoggingConfig() == null ^ this.getLoggingConfig() == null)
+            return false;
+        if (other.getLoggingConfig() != null && other.getLoggingConfig().equals(this.getLoggingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -2001,6 +2039,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getArchitectures() == null) ? 0 : getArchitectures().hashCode());
         hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         hashCode = prime * hashCode + ((getSnapStart() == null) ? 0 : getSnapStart().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfig() == null) ? 0 : getLoggingConfig().hashCode());
         return hashCode;
     }
 

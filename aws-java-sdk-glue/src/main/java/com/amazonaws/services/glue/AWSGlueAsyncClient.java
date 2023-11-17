@@ -2658,6 +2658,72 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetColumnStatisticsTaskRunResult> getColumnStatisticsTaskRunAsync(GetColumnStatisticsTaskRunRequest request) {
+
+        return getColumnStatisticsTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsTaskRunResult> getColumnStatisticsTaskRunAsync(final GetColumnStatisticsTaskRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsTaskRunRequest, GetColumnStatisticsTaskRunResult> asyncHandler) {
+        final GetColumnStatisticsTaskRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetColumnStatisticsTaskRunResult>() {
+            @Override
+            public GetColumnStatisticsTaskRunResult call() throws Exception {
+                GetColumnStatisticsTaskRunResult result = null;
+
+                try {
+                    result = executeGetColumnStatisticsTaskRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsTaskRunsResult> getColumnStatisticsTaskRunsAsync(GetColumnStatisticsTaskRunsRequest request) {
+
+        return getColumnStatisticsTaskRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetColumnStatisticsTaskRunsResult> getColumnStatisticsTaskRunsAsync(final GetColumnStatisticsTaskRunsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetColumnStatisticsTaskRunsRequest, GetColumnStatisticsTaskRunsResult> asyncHandler) {
+        final GetColumnStatisticsTaskRunsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetColumnStatisticsTaskRunsResult>() {
+            @Override
+            public GetColumnStatisticsTaskRunsResult call() throws Exception {
+                GetColumnStatisticsTaskRunsResult result = null;
+
+                try {
+                    result = executeGetColumnStatisticsTaskRuns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest request) {
 
         return getConnectionAsync(request, null);
@@ -4647,6 +4713,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListColumnStatisticsTaskRunsResult> listColumnStatisticsTaskRunsAsync(ListColumnStatisticsTaskRunsRequest request) {
+
+        return listColumnStatisticsTaskRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListColumnStatisticsTaskRunsResult> listColumnStatisticsTaskRunsAsync(final ListColumnStatisticsTaskRunsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListColumnStatisticsTaskRunsRequest, ListColumnStatisticsTaskRunsResult> asyncHandler) {
+        final ListColumnStatisticsTaskRunsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListColumnStatisticsTaskRunsResult>() {
+            @Override
+            public ListColumnStatisticsTaskRunsResult call() throws Exception {
+                ListColumnStatisticsTaskRunsResult result = null;
+
+                try {
+                    result = executeListColumnStatisticsTaskRuns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCrawlersResult> listCrawlersAsync(ListCrawlersRequest request) {
 
         return listCrawlersAsync(request, null);
@@ -5643,6 +5742,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartColumnStatisticsTaskRunResult> startColumnStatisticsTaskRunAsync(StartColumnStatisticsTaskRunRequest request) {
+
+        return startColumnStatisticsTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartColumnStatisticsTaskRunResult> startColumnStatisticsTaskRunAsync(final StartColumnStatisticsTaskRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartColumnStatisticsTaskRunRequest, StartColumnStatisticsTaskRunResult> asyncHandler) {
+        final StartColumnStatisticsTaskRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartColumnStatisticsTaskRunResult>() {
+            @Override
+            public StartColumnStatisticsTaskRunResult call() throws Exception {
+                StartColumnStatisticsTaskRunResult result = null;
+
+                try {
+                    result = executeStartColumnStatisticsTaskRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartCrawlerResult> startCrawlerAsync(StartCrawlerRequest request) {
 
         return startCrawlerAsync(request, null);
@@ -5996,6 +6128,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeStartWorkflowRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopColumnStatisticsTaskRunResult> stopColumnStatisticsTaskRunAsync(StopColumnStatisticsTaskRunRequest request) {
+
+        return stopColumnStatisticsTaskRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopColumnStatisticsTaskRunResult> stopColumnStatisticsTaskRunAsync(final StopColumnStatisticsTaskRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopColumnStatisticsTaskRunRequest, StopColumnStatisticsTaskRunResult> asyncHandler) {
+        final StopColumnStatisticsTaskRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopColumnStatisticsTaskRunResult>() {
+            @Override
+            public StopColumnStatisticsTaskRunResult call() throws Exception {
+                StopColumnStatisticsTaskRunResult result = null;
+
+                try {
+                    result = executeStopColumnStatisticsTaskRun(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

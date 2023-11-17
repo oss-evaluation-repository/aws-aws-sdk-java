@@ -48,19 +48,20 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<EventReference> eventReferences;
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      */
     private java.util.Date eventTime;
     /**
      * <p>
-     * The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.
+     * The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and
+     * <code>Note</code> types.
      * </p>
      */
     private String eventType;
     /**
      * <p>
-     * The time that the timeline event was last updated.
+     * The timestamp for when the timeline event was last updated.
      * </p>
      */
     private java.util.Date eventUpdatedTime;
@@ -223,11 +224,11 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -236,10 +237,10 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
-     * @return The time that the event occurred.
+     * @return The timestamp for when the event occurred.
      */
 
     public java.util.Date getEventTime() {
@@ -248,11 +249,11 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,12 +264,13 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.
+     * The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and
+     * <code>Note</code> types.
      * </p>
      * 
      * @param eventType
      *        The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code>
-     *        type.
+     *        and <code>Note</code> types.
      */
 
     public void setEventType(String eventType) {
@@ -277,11 +279,12 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.
+     * The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and
+     * <code>Note</code> types.
      * </p>
      * 
      * @return The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code>
-     *         type.
+     *         and <code>Note</code> types.
      */
 
     public String getEventType() {
@@ -290,12 +293,13 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> type.
+     * The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code> and
+     * <code>Note</code> types.
      * </p>
      * 
      * @param eventType
      *        The type of event that occurred. Currently Incident Manager supports only the <code>Custom Event</code>
-     *        type.
+     *        and <code>Note</code> types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +310,11 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the timeline event was last updated.
+     * The timestamp for when the timeline event was last updated.
      * </p>
      * 
      * @param eventUpdatedTime
-     *        The time that the timeline event was last updated.
+     *        The timestamp for when the timeline event was last updated.
      */
 
     public void setEventUpdatedTime(java.util.Date eventUpdatedTime) {
@@ -319,10 +323,10 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the timeline event was last updated.
+     * The timestamp for when the timeline event was last updated.
      * </p>
      * 
-     * @return The time that the timeline event was last updated.
+     * @return The timestamp for when the timeline event was last updated.
      */
 
     public java.util.Date getEventUpdatedTime() {
@@ -331,11 +335,11 @@ public class TimelineEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the timeline event was last updated.
+     * The timestamp for when the timeline event was last updated.
      * </p>
      * 
      * @param eventUpdatedTime
-     *        The time that the timeline event was last updated.
+     *        The timestamp for when the timeline event was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

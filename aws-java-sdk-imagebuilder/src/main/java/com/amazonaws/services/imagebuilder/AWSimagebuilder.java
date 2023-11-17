@@ -79,6 +79,39 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
+     * Cancel a specific image lifecycle policy runtime instance.
+     * </p>
+     * 
+     * @param cancelLifecycleExecutionRequest
+     * @return Result of the CancelLifecycleExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.CancelLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelLifecycleExecutionResult cancelLifecycleExecution(CancelLifecycleExecutionRequest cancelLifecycleExecutionRequest);
+
+    /**
+     * <p>
      * Creates a new component that can be used to build, validate, test, and assess your image. The component is based
      * on a YAML document that you specify using exactly one of the following methods:
      * </p>
@@ -376,6 +409,45 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
+     * Create a lifecycle policy resource.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @return Result of the CreateLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws ResourceAlreadyExistsException
+     *         The resource that you are trying to create already exists.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
+     * @sample AWSimagebuilder.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLifecyclePolicyResult createLifecyclePolicy(CreateLifecyclePolicyRequest createLifecyclePolicyRequest);
+
+    /**
+     * <p>
      * Deletes a component build version.
      * </p>
      * 
@@ -608,6 +680,36 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteInfrastructureConfigurationResult deleteInfrastructureConfiguration(DeleteInfrastructureConfigurationRequest deleteInfrastructureConfigurationRequest);
+
+    /**
+     * <p>
+     * Delete the specified lifecycle policy resource.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceDependencyException
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
+     * @sample AWSimagebuilder.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -898,6 +1000,60 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     GetInfrastructureConfigurationResult getInfrastructureConfiguration(GetInfrastructureConfigurationRequest getInfrastructureConfigurationRequest);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecycleExecutionRequest
+     * @return Result of the GetLifecycleExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLifecycleExecutionResult getLifecycleExecution(GetLifecycleExecutionRequest getLifecycleExecutionRequest);
+
+    /**
+     * <p>
+     * Get details for the specified image lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return Result of the GetLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -1456,6 +1612,93 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
+     * List resources that the runtime instance of the image lifecycle identified for lifecycle actions.
+     * </p>
+     * 
+     * @param listLifecycleExecutionResourcesRequest
+     * @return Result of the ListLifecycleExecutionResources operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecycleExecutionResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLifecycleExecutionResourcesResult listLifecycleExecutionResources(ListLifecycleExecutionResourcesRequest listLifecycleExecutionResourcesRequest);
+
+    /**
+     * <p>
+     * Get the lifecycle runtime history for the specified resource.
+     * </p>
+     * 
+     * @param listLifecycleExecutionsRequest
+     * @return Result of the ListLifecycleExecutions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecycleExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLifecycleExecutionsResult listLifecycleExecutions(ListLifecycleExecutionsRequest listLifecycleExecutionsRequest);
+
+    /**
+     * <p>
+     * Get a list of lifecycle policies in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @return Result of the ListLifecyclePolicies operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLifecyclePoliciesResult listLifecyclePolicies(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest);
+
+    /**
+     * <p>
      * Returns the list of tags for the specified resource.
      * </p>
      * 
@@ -1713,6 +1956,41 @@ public interface AWSimagebuilder {
 
     /**
      * <p>
+     * Begin asynchronous resource state update for lifecycle changes to the specified image resources.
+     * </p>
+     * 
+     * @param startResourceStateUpdateRequest
+     * @return Result of the StartResourceStateUpdate operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ResourceNotFoundException
+     *         At least one of the resources referenced by your request does not exist.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.StartResourceStateUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartResourceStateUpdateResult startResourceStateUpdate(StartResourceStateUpdateRequest startResourceStateUpdateRequest);
+
+    /**
+     * <p>
      * Adds a tag to a resource.
      * </p>
      * 
@@ -1857,6 +2135,41 @@ public interface AWSimagebuilder {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateInfrastructureConfigurationResult updateInfrastructureConfiguration(UpdateInfrastructureConfigurationRequest updateInfrastructureConfigurationRequest);
+
+    /**
+     * <p>
+     * Update the specified lifecycle policy.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @return Result of the UpdateLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws InvalidParameterCombinationException
+     *         You have specified two or more mutually exclusive parameters. Review the error message for details.
+     * @sample AWSimagebuilder.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLifecyclePolicyResult updateLifecyclePolicy(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

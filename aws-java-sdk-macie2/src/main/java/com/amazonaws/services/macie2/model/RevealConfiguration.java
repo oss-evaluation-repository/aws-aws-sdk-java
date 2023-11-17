@@ -19,10 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the configuration settings for retrieving occurrences of sensitive data reported by findings, and the
- * status of the configuration for an Amazon Macie account. When you enable the configuration for the first time, your
- * request must specify an Key Management Service (KMS) key. Otherwise, an error occurs. Macie uses the specified key to
- * encrypt the sensitive data that you retrieve.
+ * Specifies the status of the Amazon Macie configuration for retrieving occurrences of sensitive data reported by
+ * findings, and the Key Management Service (KMS) key to use to encrypt sensitive data that's retrieved. When you enable
+ * the configuration for the first time, your request must specify an KMS key. Otherwise, an error occurs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/RevealConfiguration" target="_top">AWS API
@@ -34,8 +33,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved.
-     * The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services
-     * Region as the Amazon Macie account.
+     * The key must be an existing, customer managed, symmetric encryption key that's enabled in the same Amazon Web
+     * Services Region as the Amazon Macie account.
      * </p>
      * <p>
      * If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key
@@ -57,8 +56,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved.
-     * The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services
-     * Region as the Amazon Macie account.
+     * The key must be an existing, customer managed, symmetric encryption key that's enabled in the same Amazon Web
+     * Services Region as the Amazon Macie account.
      * </p>
      * <p>
      * If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key
@@ -68,8 +67,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's
-     *        retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same
-     *        Amazon Web Services Region as the Amazon Macie account.</p>
+     *        retrieved. The key must be an existing, customer managed, symmetric encryption key that's enabled in the
+     *        same Amazon Web Services Region as the Amazon Macie account.</p>
      *        <p>
      *        If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a
      *        key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of
@@ -83,8 +82,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved.
-     * The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services
-     * Region as the Amazon Macie account.
+     * The key must be an existing, customer managed, symmetric encryption key that's enabled in the same Amazon Web
+     * Services Region as the Amazon Macie account.
      * </p>
      * <p>
      * If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key
@@ -93,8 +92,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's
-     *         retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same
-     *         Amazon Web Services Region as the Amazon Macie account.</p>
+     *         retrieved. The key must be an existing, customer managed, symmetric encryption key that's enabled in the
+     *         same Amazon Web Services Region as the Amazon Macie account.</p>
      *         <p>
      *         If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a
      *         key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of
@@ -108,8 +107,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's retrieved.
-     * The key must be an existing, customer managed, symmetric encryption key that's in the same Amazon Web Services
-     * Region as the Amazon Macie account.
+     * The key must be an existing, customer managed, symmetric encryption key that's enabled in the same Amazon Web
+     * Services Region as the Amazon Macie account.
      * </p>
      * <p>
      * If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a key
@@ -119,8 +118,8 @@ public class RevealConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt sensitive data that's
-     *        retrieved. The key must be an existing, customer managed, symmetric encryption key that's in the same
-     *        Amazon Web Services Region as the Amazon Macie account.</p>
+     *        retrieved. The key must be an existing, customer managed, symmetric encryption key that's enabled in the
+     *        same Amazon Web Services Region as the Amazon Macie account.</p>
      *        <p>
      *        If this value specifies an alias, it must include the following prefix: alias/. If this value specifies a
      *        key that's owned by another Amazon Web Services account, it must specify the ARN of the key or the ARN of

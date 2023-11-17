@@ -29,7 +29,9 @@ public enum ResourceType {
     EventDestination("event-destination"),
     Keyword("keyword"),
     OptedOutNumber("opted-out-number"),
-    Registration("registration");
+    Registration("registration"),
+    RegistrationAttachment("registration-attachment"),
+    VerifiedDestinationNumber("verified-destination-number");
 
     private String value;
 

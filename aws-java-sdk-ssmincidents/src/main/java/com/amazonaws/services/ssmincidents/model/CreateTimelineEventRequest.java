@@ -49,13 +49,18 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<EventReference> eventReferences;
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      */
     private java.util.Date eventTime;
     /**
      * <p>
-     * The type of event. You can create timeline events of type <code>Custom Event</code>.
+     * The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>.
+     * </p>
+     * <p>
+     * To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify
+     * <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the value
+     * for <code>eventReference</code>.
      * </p>
      */
     private String eventType;
@@ -250,11 +255,11 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -263,10 +268,10 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
-     * @return The time that the event occurred.
+     * @return The timestamp for when the event occurred.
      */
 
     public java.util.Date getEventTime() {
@@ -275,11 +280,11 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,11 +295,21 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of event. You can create timeline events of type <code>Custom Event</code>.
+     * The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>.
+     * </p>
+     * <p>
+     * To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify
+     * <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the value
+     * for <code>eventReference</code>.
      * </p>
      * 
      * @param eventType
-     *        The type of event. You can create timeline events of type <code>Custom Event</code>.
+     *        The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>
+     *        .</p>
+     *        <p>
+     *        To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify
+     *        <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the
+     *        value for <code>eventReference</code>.
      */
 
     public void setEventType(String eventType) {
@@ -303,10 +318,20 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of event. You can create timeline events of type <code>Custom Event</code>.
+     * The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>.
+     * </p>
+     * <p>
+     * To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify
+     * <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the value
+     * for <code>eventReference</code>.
      * </p>
      * 
-     * @return The type of event. You can create timeline events of type <code>Custom Event</code>.
+     * @return The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>
+     *         .</p>
+     *         <p>
+     *         To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify
+     *         <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as
+     *         the value for <code>eventReference</code>.
      */
 
     public String getEventType() {
@@ -315,11 +340,21 @@ public class CreateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of event. You can create timeline events of type <code>Custom Event</code>.
+     * The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>.
+     * </p>
+     * <p>
+     * To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify
+     * <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the value
+     * for <code>eventReference</code>.
      * </p>
      * 
      * @param eventType
-     *        The type of event. You can create timeline events of type <code>Custom Event</code>.
+     *        The type of event. You can create timeline events of type <code>Custom Event</code> and <code>Note</code>
+     *        .</p>
+     *        <p>
+     *        To make a Note-type event appear on the <i>Incident notes</i> panel in the console, specify
+     *        <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name (ARN) of the incident as the
+     *        value for <code>eventReference</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

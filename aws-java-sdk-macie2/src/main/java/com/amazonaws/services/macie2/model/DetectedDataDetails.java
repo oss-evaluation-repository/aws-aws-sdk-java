@@ -30,18 +30,18 @@ public class DetectedDataDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.
+     * An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.
+     * An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.
      * </p>
      * 
      * @param value
-     *        An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.
+     *        An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.
      */
 
     public void setValue(String value) {
@@ -50,10 +50,10 @@ public class DetectedDataDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.
+     * An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.
      * </p>
      * 
-     * @return An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.
+     * @return An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.
      */
 
     public String getValue() {
@@ -62,11 +62,11 @@ public class DetectedDataDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.
+     * An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.
      * </p>
      * 
      * @param value
-     *        An occurrence of the specified type of sensitive data. Each occurrence can contain 1-128 characters.
+     *        An occurrence of the specified type of sensitive data. Each occurrence contains 1-128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

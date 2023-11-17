@@ -305,6 +305,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<String> structuredLogDestinations;
+    /**
+     * <p>
+     * Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.
+     * </p>
+     * <p>
+     * By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     * <code>FILE</code> if you want a mapping to have a file target.
+     * </p>
+     */
+    private S3StorageOptions s3StorageOptions;
 
     /**
      * <p>
@@ -2545,6 +2556,76 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.
+     * </p>
+     * <p>
+     * By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     * <code>FILE</code> if you want a mapping to have a file target.
+     * </p>
+     * 
+     * @param s3StorageOptions
+     *        Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by
+     *        default.</p>
+     *        <p>
+     *        By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     *        option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     *        <code>FILE</code> if you want a mapping to have a file target.
+     */
+
+    public void setS3StorageOptions(S3StorageOptions s3StorageOptions) {
+        this.s3StorageOptions = s3StorageOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.
+     * </p>
+     * <p>
+     * By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     * <code>FILE</code> if you want a mapping to have a file target.
+     * </p>
+     * 
+     * @return Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by
+     *         default.</p>
+     *         <p>
+     *         By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable
+     *         this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
+     *         <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.
+     */
+
+    public S3StorageOptions getS3StorageOptions() {
+        return this.s3StorageOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.
+     * </p>
+     * <p>
+     * By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     * <code>FILE</code> if you want a mapping to have a file target.
+     * </p>
+     * 
+     * @param s3StorageOptions
+     *        Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by
+     *        default.</p>
+     *        <p>
+     *        By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     *        option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to
+     *        <code>FILE</code> if you want a mapping to have a file target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withS3StorageOptions(S3StorageOptions s3StorageOptions) {
+        setS3StorageOptions(s3StorageOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2595,7 +2676,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         if (getWorkflowDetails() != null)
             sb.append("WorkflowDetails: ").append(getWorkflowDetails()).append(",");
         if (getStructuredLogDestinations() != null)
-            sb.append("StructuredLogDestinations: ").append(getStructuredLogDestinations());
+            sb.append("StructuredLogDestinations: ").append(getStructuredLogDestinations()).append(",");
+        if (getS3StorageOptions() != null)
+            sb.append("S3StorageOptions: ").append(getS3StorageOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -2691,6 +2774,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getStructuredLogDestinations() != null && other.getStructuredLogDestinations().equals(this.getStructuredLogDestinations()) == false)
             return false;
+        if (other.getS3StorageOptions() == null ^ this.getS3StorageOptions() == null)
+            return false;
+        if (other.getS3StorageOptions() != null && other.getS3StorageOptions().equals(this.getS3StorageOptions()) == false)
+            return false;
         return true;
     }
 
@@ -2719,6 +2806,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getUserCount() == null) ? 0 : getUserCount().hashCode());
         hashCode = prime * hashCode + ((getWorkflowDetails() == null) ? 0 : getWorkflowDetails().hashCode());
         hashCode = prime * hashCode + ((getStructuredLogDestinations() == null) ? 0 : getStructuredLogDestinations().hashCode());
+        hashCode = prime * hashCode + ((getS3StorageOptions() == null) ? 0 : getS3StorageOptions().hashCode());
         return hashCode;
     }
 

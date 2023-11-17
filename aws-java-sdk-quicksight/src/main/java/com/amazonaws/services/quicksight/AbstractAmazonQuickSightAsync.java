@@ -223,6 +223,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRoleMembershipResult> createRoleMembershipAsync(CreateRoleMembershipRequest request) {
+
+        return createRoleMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRoleMembershipResult> createRoleMembershipAsync(CreateRoleMembershipRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRoleMembershipRequest, CreateRoleMembershipResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest request) {
 
         return createTemplateAsync(request, null);
@@ -491,6 +504,32 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DeleteRefreshScheduleResult> deleteRefreshScheduleAsync(DeleteRefreshScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRefreshScheduleRequest, DeleteRefreshScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoleCustomPermissionResult> deleteRoleCustomPermissionAsync(DeleteRoleCustomPermissionRequest request) {
+
+        return deleteRoleCustomPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoleCustomPermissionResult> deleteRoleCustomPermissionAsync(DeleteRoleCustomPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleCustomPermissionRequest, DeleteRoleCustomPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoleMembershipResult> deleteRoleMembershipAsync(DeleteRoleMembershipRequest request) {
+
+        return deleteRoleMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRoleMembershipResult> deleteRoleMembershipAsync(DeleteRoleMembershipRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleMembershipRequest, DeleteRoleMembershipResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -983,6 +1022,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRoleCustomPermissionResult> describeRoleCustomPermissionAsync(DescribeRoleCustomPermissionRequest request) {
+
+        return describeRoleCustomPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRoleCustomPermissionResult> describeRoleCustomPermissionAsync(DescribeRoleCustomPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRoleCustomPermissionRequest, DescribeRoleCustomPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTemplateResult> describeTemplateAsync(DescribeTemplateRequest request) {
 
         return describeTemplateAsync(request, null);
@@ -1413,6 +1465,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<ListRefreshSchedulesResult> listRefreshSchedulesAsync(ListRefreshSchedulesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRefreshSchedulesRequest, ListRefreshSchedulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleMembershipsResult> listRoleMembershipsAsync(ListRoleMembershipsRequest request) {
+
+        return listRoleMembershipsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleMembershipsResult> listRoleMembershipsAsync(ListRoleMembershipsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRoleMembershipsRequest, ListRoleMembershipsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1987,6 +2052,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<UpdateRefreshScheduleResult> updateRefreshScheduleAsync(UpdateRefreshScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRefreshScheduleRequest, UpdateRefreshScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleCustomPermissionResult> updateRoleCustomPermissionAsync(UpdateRoleCustomPermissionRequest request) {
+
+        return updateRoleCustomPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleCustomPermissionResult> updateRoleCustomPermissionAsync(UpdateRoleCustomPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoleCustomPermissionRequest, UpdateRoleCustomPermissionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

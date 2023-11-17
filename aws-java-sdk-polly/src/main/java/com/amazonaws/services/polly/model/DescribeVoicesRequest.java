@@ -27,8 +27,8 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
-     * text for speech synthesis.
+     * Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly
+     * when processing input text for speech synthesis.
      * </p>
      */
     private String engine;
@@ -58,13 +58,13 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
-     * text for speech synthesis.
+     * Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly
+     * when processing input text for speech synthesis.
      * </p>
      * 
      * @param engine
-     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
-     *        input text for speech synthesis.
+     *        Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon
+     *        Polly when processing input text for speech synthesis.
      * @see Engine
      */
 
@@ -74,12 +74,12 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
-     * text for speech synthesis.
+     * Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly
+     * when processing input text for speech synthesis.
      * </p>
      * 
-     * @return Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
-     *         input text for speech synthesis.
+     * @return Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by
+     *         Amazon Polly when processing input text for speech synthesis.
      * @see Engine
      */
 
@@ -89,13 +89,13 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
-     * text for speech synthesis.
+     * Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly
+     * when processing input text for speech synthesis.
      * </p>
      * 
      * @param engine
-     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
-     *        input text for speech synthesis.
+     *        Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon
+     *        Polly when processing input text for speech synthesis.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Engine
      */
@@ -107,13 +107,13 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
-     * text for speech synthesis.
+     * Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly
+     * when processing input text for speech synthesis.
      * </p>
      * 
      * @param engine
-     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
-     *        input text for speech synthesis.
+     *        Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon
+     *        Polly when processing input text for speech synthesis.
      * @see Engine
      */
 
@@ -123,13 +123,13 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input
-     * text for speech synthesis.
+     * Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon Polly
+     * when processing input text for speech synthesis.
      * </p>
      * 
      * @param engine
-     *        Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing
-     *        input text for speech synthesis.
+     *        Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>) used by Amazon
+     *        Polly when processing input text for speech synthesis.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Engine
      */

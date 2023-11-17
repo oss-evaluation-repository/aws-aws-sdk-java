@@ -69,6 +69,10 @@ public class LifecyclePolicySummaryJsonUnmarshaller implements Unmarshaller<Life
                     context.nextToken();
                     lifecyclePolicySummary.setPolicyType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DefaultPolicy", targetDepth)) {
+                    context.nextToken();
+                    lifecyclePolicySummary.setDefaultPolicy(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

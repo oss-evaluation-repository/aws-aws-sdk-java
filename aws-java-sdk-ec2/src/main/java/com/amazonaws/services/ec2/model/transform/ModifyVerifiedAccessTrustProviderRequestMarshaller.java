@@ -80,6 +80,14 @@ public class ModifyVerifiedAccessTrustProviderRequestMarshaller implements
             }
         }
 
+        ModifyVerifiedAccessTrustProviderDeviceOptions deviceOptions = modifyVerifiedAccessTrustProviderRequest.getDeviceOptions();
+        if (deviceOptions != null) {
+
+            if (deviceOptions.getPublicSigningKeyUrl() != null) {
+                request.addParameter("DeviceOptions.PublicSigningKeyUrl", StringUtils.fromString(deviceOptions.getPublicSigningKeyUrl()));
+            }
+        }
+
         if (modifyVerifiedAccessTrustProviderRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(modifyVerifiedAccessTrustProviderRequest.getDescription()));
         }

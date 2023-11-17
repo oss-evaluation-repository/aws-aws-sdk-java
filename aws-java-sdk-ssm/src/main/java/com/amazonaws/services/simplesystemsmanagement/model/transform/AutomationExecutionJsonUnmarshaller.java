@@ -203,6 +203,13 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                     context.nextToken();
                     automationExecution.setChangeRequestName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Variables", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setVariables(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

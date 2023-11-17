@@ -38,7 +38,7 @@ public class ImportVmImageResult extends com.amazonaws.AmazonWebServiceResult<co
     private String imageArn;
     /**
      * <p>
-     * The idempotency token that was used for this request.
+     * The client token that uniquely identifies the request.
      * </p>
      */
     private String clientToken;
@@ -131,11 +131,11 @@ public class ImportVmImageResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The idempotency token that was used for this request.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token that was used for this request.
+     *        The client token that uniquely identifies the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -144,10 +144,10 @@ public class ImportVmImageResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The idempotency token that was used for this request.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
-     * @return The idempotency token that was used for this request.
+     * @return The client token that uniquely identifies the request.
      */
 
     public String getClientToken() {
@@ -156,11 +156,11 @@ public class ImportVmImageResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The idempotency token that was used for this request.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token that was used for this request.
+     *        The client token that uniquely identifies the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -418,6 +418,16 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetColumnStatisticsTaskRunResult getColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetColumnStatisticsTaskRunsResult getColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetConnectionResult getConnection(GetConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -718,6 +728,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public ListColumnStatisticsTaskRunsResult listColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCrawlersResult listCrawlers(ListCrawlersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -868,6 +883,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public StartColumnStatisticsTaskRunResult startColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartCrawlerResult startCrawler(StartCrawlerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -919,6 +939,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public StartWorkflowRunResult startWorkflowRun(StartWorkflowRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopColumnStatisticsTaskRunResult stopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1697,6 +1697,11 @@ public interface AmazonFSx {
      * </li>
      * <li>
      * <p>
+     * <code>PerUnitStorageThroughput</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>StorageCapacity</code>
      * </p>
      * </li>

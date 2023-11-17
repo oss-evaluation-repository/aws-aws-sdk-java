@@ -76,7 +76,19 @@ import com.amazonaws.services.ivsrealtime.model.transform.*;
  * <p>
  * A <i>participant object</i> represents participants (people) in the stage and contains information about them. When a
  * token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant
- * is associated with that participant ID There is a 1:1 mapping between participant tokens and participants.
+ * is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Server-side composition: The <i>composition</i> process composites participants of a stage into a single video and
+ * forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support this process.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Server-side composition: A <i>composition</i> controls the look of the outputs, including how participants are
+ * positioned in the video.
  * </p>
  * </li>
  * </ul>
@@ -183,6 +195,86 @@ import com.amazonaws.services.ivsrealtime.model.transform.*;
  * <li>
  * <p>
  * <a>UpdateStage</a> — Updates a stage’s configuration.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Composition Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>GetComposition</a> — Gets information about the specified Composition resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListCompositions</a> — Gets summary information about all Compositions in your account, in the AWS region where
+ * the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartComposition</a> — Starts a Composition from a stage based on the configuration provided in the request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopComposition</a> — Stops and deletes a Composition resource. Any broadcast from the Composition resource is
+ * stopped.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>EncoderConfiguration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateEncoderConfiguration</a> — Creates an EncoderConfiguration object.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteEncoderConfiguration</a> — Deletes an EncoderConfiguration resource. Ensures that no Compositions are using
+ * this template; otherwise, returns an error.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetEncoderConfiguration</a> — Gets information about the specified EncoderConfiguration resource.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListEncoderConfigurations</a> — Gets summary information about all EncoderConfigurations in your account, in the
+ * AWS region where the API request is processed.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>StorageConfiguration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateStorageConfiguration</a> — Creates a new storage configuration, used to enable recording to Amazon S3.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteStorageConfiguration</a> — Deletes the storage configuration for the specified ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetStorageConfiguration</a> — Gets the storage configuration for the specified ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListStorageConfigurations</a> — Gets summary information about all storage configurations in your account, in the
+ * AWS region where the API request is processed.
  * </p>
  * </li>
  * </ul>
@@ -297,6 +389,70 @@ public class AmazonIVSRealTimeClient extends AmazonWebServiceClient implements A
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/ivsrealtime/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/ivsrealtime/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Creates an EncoderConfiguration object.
+     * </p>
+     * 
+     * @param createEncoderConfigurationRequest
+     * @return Result of the CreateEncoderConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws PendingVerificationException
+     * @sample AmazonIVSRealTime.CreateEncoderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateEncoderConfigurationResult createEncoderConfiguration(CreateEncoderConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEncoderConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateEncoderConfigurationResult executeCreateEncoderConfiguration(CreateEncoderConfigurationRequest createEncoderConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEncoderConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEncoderConfigurationRequest> request = null;
+        Response<CreateEncoderConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEncoderConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createEncoderConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEncoderConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEncoderConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateEncoderConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -425,6 +581,136 @@ public class AmazonIVSRealTimeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a new storage configuration, used to enable recording to Amazon S3. When a StorageConfiguration is
+     * created, IVS will modify the S3 bucketPolicy of the provided bucket. This will ensure that IVS has sufficient
+     * permissions to write content to the provided bucket.
+     * </p>
+     * 
+     * @param createStorageConfigurationRequest
+     * @return Result of the CreateStorageConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws PendingVerificationException
+     * @sample AmazonIVSRealTime.CreateStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateStorageConfigurationResult createStorageConfiguration(CreateStorageConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStorageConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateStorageConfigurationResult executeCreateStorageConfiguration(CreateStorageConfigurationRequest createStorageConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createStorageConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateStorageConfigurationRequest> request = null;
+        Response<CreateStorageConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateStorageConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createStorageConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStorageConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateStorageConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateStorageConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an EncoderConfiguration resource. Ensures that no Compositions are using this template; otherwise,
+     * returns an error.
+     * </p>
+     * 
+     * @param deleteEncoderConfigurationRequest
+     * @return Result of the DeleteEncoderConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.DeleteEncoderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteEncoderConfigurationResult deleteEncoderConfiguration(DeleteEncoderConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEncoderConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEncoderConfigurationResult executeDeleteEncoderConfiguration(DeleteEncoderConfigurationRequest deleteEncoderConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEncoderConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEncoderConfigurationRequest> request = null;
+        Response<DeleteEncoderConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEncoderConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEncoderConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEncoderConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEncoderConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteEncoderConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Shuts down and deletes the specified stage (disconnecting all participants).
      * </p>
      * 
@@ -485,6 +771,74 @@ public class AmazonIVSRealTimeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Deletes the storage configuration for the specified ARN.
+     * </p>
+     * <p>
+     * If you try to delete a storage configuration that is used by a Composition, you will get an error (409
+     * ConflictException). To avoid this, for all Compositions that reference the storage configuration, first use
+     * <a>StopComposition</a> and wait for it to complete, then use DeleteStorageConfiguration.
+     * </p>
+     * 
+     * @param deleteStorageConfigurationRequest
+     * @return Result of the DeleteStorageConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.DeleteStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteStorageConfigurationResult deleteStorageConfiguration(DeleteStorageConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStorageConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStorageConfigurationResult executeDeleteStorageConfiguration(DeleteStorageConfigurationRequest deleteStorageConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteStorageConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteStorageConfigurationRequest> request = null;
+        Response<DeleteStorageConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteStorageConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteStorageConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStorageConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteStorageConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteStorageConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disconnects a specified participant and revokes the participant permanently from a specified stage.
      * </p>
      * 
@@ -533,6 +887,130 @@ public class AmazonIVSRealTimeClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DisconnectParticipantResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DisconnectParticipantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get information about the specified Composition resource.
+     * </p>
+     * 
+     * @param getCompositionRequest
+     * @return Result of the GetComposition operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.GetComposition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCompositionResult getComposition(GetCompositionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetComposition(request);
+    }
+
+    @SdkInternalApi
+    final GetCompositionResult executeGetComposition(GetCompositionRequest getCompositionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCompositionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCompositionRequest> request = null;
+        Response<GetCompositionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCompositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCompositionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComposition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCompositionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCompositionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about the specified EncoderConfiguration resource.
+     * </p>
+     * 
+     * @param getEncoderConfigurationRequest
+     * @return Result of the GetEncoderConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.GetEncoderConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetEncoderConfigurationResult getEncoderConfiguration(GetEncoderConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEncoderConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetEncoderConfigurationResult executeGetEncoderConfiguration(GetEncoderConfigurationRequest getEncoderConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEncoderConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEncoderConfigurationRequest> request = null;
+        Response<GetEncoderConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEncoderConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getEncoderConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEncoderConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEncoderConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetEncoderConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -707,6 +1185,193 @@ public class AmazonIVSRealTimeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<GetStageSessionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetStageSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the storage configuration for the specified ARN.
+     * </p>
+     * 
+     * @param getStorageConfigurationRequest
+     * @return Result of the GetStorageConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.GetStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetStorageConfigurationResult getStorageConfiguration(GetStorageConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStorageConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetStorageConfigurationResult executeGetStorageConfiguration(GetStorageConfigurationRequest getStorageConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getStorageConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetStorageConfigurationRequest> request = null;
+        Response<GetStorageConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetStorageConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getStorageConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStorageConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetStorageConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetStorageConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets summary information about all Compositions in your account, in the AWS region where the API request is
+     * processed.
+     * </p>
+     * 
+     * @param listCompositionsRequest
+     * @return Result of the ListCompositions operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.ListCompositions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListCompositionsResult listCompositions(ListCompositionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCompositions(request);
+    }
+
+    @SdkInternalApi
+    final ListCompositionsResult executeListCompositions(ListCompositionsRequest listCompositionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCompositionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCompositionsRequest> request = null;
+        Response<ListCompositionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCompositionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCompositionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCompositions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCompositionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCompositionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets summary information about all EncoderConfigurations in your account, in the AWS region where the API request
+     * is processed.
+     * </p>
+     * 
+     * @param listEncoderConfigurationsRequest
+     * @return Result of the ListEncoderConfigurations operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.ListEncoderConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEncoderConfigurationsResult listEncoderConfigurations(ListEncoderConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEncoderConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListEncoderConfigurationsResult executeListEncoderConfigurations(ListEncoderConfigurationsRequest listEncoderConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEncoderConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEncoderConfigurationsRequest> request = null;
+        Response<ListEncoderConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEncoderConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listEncoderConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEncoderConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEncoderConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListEncoderConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -949,6 +1614,69 @@ public class AmazonIVSRealTimeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets summary information about all storage configurations in your account, in the AWS region where the API
+     * request is processed.
+     * </p>
+     * 
+     * @param listStorageConfigurationsRequest
+     * @return Result of the ListStorageConfigurations operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.ListStorageConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListStorageConfigurationsResult listStorageConfigurations(ListStorageConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStorageConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListStorageConfigurationsResult executeListStorageConfigurations(ListStorageConfigurationsRequest listStorageConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStorageConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStorageConfigurationsRequest> request = null;
+        Response<ListStorageConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStorageConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listStorageConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStorageConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListStorageConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListStorageConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about AWS tags for the specified ARN.
      * </p>
      * 
@@ -995,6 +1723,160 @@ public class AmazonIVSRealTimeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a Composition from a stage based on the configuration provided in the request.
+     * </p>
+     * <p>
+     * A Composition is an ephemeral resource that exists after this endpoint returns successfully. Composition stops
+     * and the resource is deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <a>StopComposition</a> is called.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After a 1-minute timeout, when all participants are disconnected from the stage.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After a 1-minute timeout, if there are no participants in the stage when StartComposition is called.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When broadcasting to the IVS channel fails and all retries are exhausted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When broadcasting is disconnected and all attempts to reconnect are exhausted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startCompositionRequest
+     * @return Result of the StartComposition operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws PendingVerificationException
+     * @sample AmazonIVSRealTime.StartComposition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartCompositionResult startComposition(StartCompositionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartComposition(request);
+    }
+
+    @SdkInternalApi
+    final StartCompositionResult executeStartComposition(StartCompositionRequest startCompositionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startCompositionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartCompositionRequest> request = null;
+        Response<StartCompositionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartCompositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startCompositionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartComposition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartCompositionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCompositionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops and deletes a Composition resource. Any broadcast from the Composition resource is stopped.
+     * </p>
+     * 
+     * @param stopCompositionRequest
+     * @return Result of the StopComposition operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @sample AmazonIVSRealTime.StopComposition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StopCompositionResult stopComposition(StopCompositionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopComposition(request);
+    }
+
+    @SdkInternalApi
+    final StopCompositionResult executeStopComposition(StopCompositionRequest stopCompositionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopCompositionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopCompositionRequest> request = null;
+        Response<StopCompositionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopCompositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopCompositionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IVS RealTime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopComposition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopCompositionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopCompositionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

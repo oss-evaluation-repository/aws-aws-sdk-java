@@ -82,6 +82,39 @@ public class AWSSSMIncidentsAsyncClient extends AWSSSMIncidentsClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetIncidentFindingsResult> batchGetIncidentFindingsAsync(BatchGetIncidentFindingsRequest request) {
+
+        return batchGetIncidentFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetIncidentFindingsResult> batchGetIncidentFindingsAsync(final BatchGetIncidentFindingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetIncidentFindingsRequest, BatchGetIncidentFindingsResult> asyncHandler) {
+        final BatchGetIncidentFindingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetIncidentFindingsResult>() {
+            @Override
+            public BatchGetIncidentFindingsResult call() throws Exception {
+                BatchGetIncidentFindingsResult result = null;
+
+                try {
+                    result = executeBatchGetIncidentFindings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationSetResult> createReplicationSetAsync(CreateReplicationSetRequest request) {
 
         return createReplicationSetAsync(request, null);
@@ -495,6 +528,39 @@ public class AWSSSMIncidentsAsyncClient extends AWSSSMIncidentsClient implements
 
                 try {
                     result = executeGetTimelineEvent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIncidentFindingsResult> listIncidentFindingsAsync(ListIncidentFindingsRequest request) {
+
+        return listIncidentFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIncidentFindingsResult> listIncidentFindingsAsync(final ListIncidentFindingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListIncidentFindingsRequest, ListIncidentFindingsResult> asyncHandler) {
+        final ListIncidentFindingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListIncidentFindingsResult>() {
+            @Override
+            public ListIncidentFindingsResult call() throws Exception {
+                ListIncidentFindingsResult result = null;
+
+                try {
+                    result = executeListIncidentFindings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

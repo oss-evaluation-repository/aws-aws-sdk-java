@@ -101,6 +101,14 @@ public class ImageSummaryJsonUnmarshaller implements Unmarshaller<ImageSummary, 
                     context.nextToken();
                     imageSummary.setImageSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("deprecationTime", targetDepth)) {
+                    context.nextToken();
+                    imageSummary.setDeprecationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lifecycleExecutionId", targetDepth)) {
+                    context.nextToken();
+                    imageSummary.setLifecycleExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

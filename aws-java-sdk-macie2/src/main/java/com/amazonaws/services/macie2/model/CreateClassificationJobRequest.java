@@ -133,8 +133,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
-     * identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses
-     * all the managed data identifiers that are in the recommended set when the run starts.
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
      * </p>
      * <p>
      * For information about individual managed data identifiers or to determine which ones are in the recommended set,
@@ -820,8 +821,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
-     * identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses
-     * all the managed data identifiers that are in the recommended set when the run starts.
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
      * </p>
      * <p>
      * For information about individual managed data identifiers or to determine which ones are in the recommended set,
@@ -872,8 +874,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed
-     *        data identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run
-     *        automatically uses all the managed data identifiers that are in the recommended set when the run starts.
+     *        data identifiers that are released. If you don't specify a value for this property or you specify
+     *        RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are
+     *        in the recommended set when the run starts.
      *        </p>
      *        <p>
      *        For information about individual managed data identifiers or to determine which ones are in the
@@ -929,8 +932,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
-     * identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses
-     * all the managed data identifiers that are in the recommended set when the run starts.
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
      * </p>
      * <p>
      * For information about individual managed data identifiers or to determine which ones are in the recommended set,
@@ -980,8 +984,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *         </p>
      *         <p>
      *         If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed
-     *         data identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run
-     *         automatically uses all the managed data identifiers that are in the recommended set when the run starts.
+     *         data identifiers that are released. If you don't specify a value for this property or you specify
+     *         RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that
+     *         are in the recommended set when the run starts.
      *         </p>
      *         <p>
      *         For information about individual managed data identifiers or to determine which ones are in the
@@ -1037,8 +1042,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
-     * identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses
-     * all the managed data identifiers that are in the recommended set when the run starts.
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
      * </p>
      * <p>
      * For information about individual managed data identifiers or to determine which ones are in the recommended set,
@@ -1089,8 +1095,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed
-     *        data identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run
-     *        automatically uses all the managed data identifiers that are in the recommended set when the run starts.
+     *        data identifiers that are released. If you don't specify a value for this property or you specify
+     *        RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are
+     *        in the recommended set when the run starts.
      *        </p>
      *        <p>
      *        For information about individual managed data identifiers or to determine which ones are in the
@@ -1148,8 +1155,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed data
-     * identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run automatically uses
-     * all the managed data identifiers that are in the recommended set when the run starts.
+     * identifiers that are released. If you don't specify a value for this property or you specify RECOMMENDED for a
+     * recurring job, each job run automatically uses all the managed data identifiers that are in the recommended set
+     * when the run starts.
      * </p>
      * <p>
      * For information about individual managed data identifiers or to determine which ones are in the recommended set,
@@ -1200,8 +1208,9 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </p>
      *        <p>
      *        If the job is a recurring job and you specify ALL or EXCLUDE, each job run automatically uses new managed
-     *        data identifiers that are released. If you specify RECOMMENDED for a recurring job, each job run
-     *        automatically uses all the managed data identifiers that are in the recommended set when the run starts.
+     *        data identifiers that are released. If you don't specify a value for this property or you specify
+     *        RECOMMENDED for a recurring job, each job run automatically uses all the managed data identifiers that are
+     *        in the recommended set when the run starts.
      *        </p>
      *        <p>
      *        For information about individual managed data identifiers or to determine which ones are in the

@@ -46,8 +46,6 @@ public class TemplateVersionMarshaller {
             .marshallLocationName("ThemeArn").build();
     private static final MarshallingInfo<List> SHEETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Sheets").build();
-    private static final MarshallingInfo<StructuredPojo> OPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Options").build();
 
     private static final TemplateVersionMarshaller instance = new TemplateVersionMarshaller();
 
@@ -74,7 +72,6 @@ public class TemplateVersionMarshaller {
             protocolMarshaller.marshall(templateVersion.getSourceEntityArn(), SOURCEENTITYARN_BINDING);
             protocolMarshaller.marshall(templateVersion.getThemeArn(), THEMEARN_BINDING);
             protocolMarshaller.marshall(templateVersion.getSheets(), SHEETS_BINDING);
-            protocolMarshaller.marshall(templateVersion.getOptions(), OPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

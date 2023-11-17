@@ -94,10 +94,6 @@ public class DashboardVersionJsonUnmarshaller implements Unmarshaller<DashboardV
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("Options", targetDepth)) {
-                    context.nextToken();
-                    dashboardVersion.setOptions(AssetOptionsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

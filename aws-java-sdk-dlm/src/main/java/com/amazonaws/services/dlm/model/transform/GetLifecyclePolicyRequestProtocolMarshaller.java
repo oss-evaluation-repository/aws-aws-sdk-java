@@ -32,7 +32,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetLifecyclePolicyRequestProtocolMarshaller implements Marshaller<Request<GetLifecyclePolicyRequest>, GetLifecyclePolicyRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/policies/{policyId}/")
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/policies/{policyId}")
             .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AmazonDLM").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

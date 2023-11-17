@@ -22,7 +22,8 @@ public enum RequestableNumberType {
 
     LONG_CODE("LONG_CODE"),
     TOLL_FREE("TOLL_FREE"),
-    TEN_DLC("TEN_DLC");
+    TEN_DLC("TEN_DLC"),
+    SIMULATOR("SIMULATOR");
 
     private String value;
 

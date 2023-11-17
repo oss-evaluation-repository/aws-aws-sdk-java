@@ -75,6 +75,8 @@ public class StepExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocation").build();
     private static final MarshallingInfo<List> TRIGGEREDALARMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggeredAlarms").build();
+    private static final MarshallingInfo<StructuredPojo> PARENTSTEPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParentStepDetails").build();
 
     private static final StepExecutionMarshaller instance = new StepExecutionMarshaller();
 
@@ -115,6 +117,7 @@ public class StepExecutionMarshaller {
             protocolMarshaller.marshall(stepExecution.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(stepExecution.getTargetLocation(), TARGETLOCATION_BINDING);
             protocolMarshaller.marshall(stepExecution.getTriggeredAlarms(), TRIGGEREDALARMS_BINDING);
+            protocolMarshaller.marshall(stepExecution.getParentStepDetails(), PARENTSTEPDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

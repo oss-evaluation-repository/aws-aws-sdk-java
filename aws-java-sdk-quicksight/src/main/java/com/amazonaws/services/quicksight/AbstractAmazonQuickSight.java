@@ -103,6 +103,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public CreateRoleMembershipResult createRoleMembership(CreateRoleMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTemplateResult createTemplate(CreateTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +209,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DeleteRefreshScheduleResult deleteRefreshSchedule(DeleteRefreshScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRoleCustomPermissionResult deleteRoleCustomPermission(DeleteRoleCustomPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRoleMembershipResult deleteRoleMembership(DeleteRoleMembershipRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -393,6 +408,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public DescribeRoleCustomPermissionResult describeRoleCustomPermission(DescribeRoleCustomPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTemplateResult describeTemplate(DescribeTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -554,6 +574,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public ListRefreshSchedulesResult listRefreshSchedules(ListRefreshSchedulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRoleMembershipsResult listRoleMemberships(ListRoleMembershipsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -774,6 +799,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public UpdateRefreshScheduleResult updateRefreshSchedule(UpdateRefreshScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoleCustomPermissionResult updateRoleCustomPermission(UpdateRoleCustomPermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

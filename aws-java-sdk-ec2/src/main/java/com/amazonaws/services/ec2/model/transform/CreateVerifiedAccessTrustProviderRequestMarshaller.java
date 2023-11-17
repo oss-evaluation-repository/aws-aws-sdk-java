@@ -93,6 +93,10 @@ public class CreateVerifiedAccessTrustProviderRequestMarshaller implements
             if (deviceOptions.getTenantId() != null) {
                 request.addParameter("DeviceOptions.TenantId", StringUtils.fromString(deviceOptions.getTenantId()));
             }
+
+            if (deviceOptions.getPublicSigningKeyUrl() != null) {
+                request.addParameter("DeviceOptions.PublicSigningKeyUrl", StringUtils.fromString(deviceOptions.getPublicSigningKeyUrl()));
+            }
         }
 
         if (createVerifiedAccessTrustProviderRequest.getPolicyReferenceName() != null) {

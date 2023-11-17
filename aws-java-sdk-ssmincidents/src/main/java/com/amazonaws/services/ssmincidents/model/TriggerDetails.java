@@ -45,7 +45,7 @@ public class TriggerDetails implements Serializable, Cloneable, StructuredPojo {
     private String source;
     /**
      * <p>
-     * The time that the incident was detected.
+     * The timestamp for when the incident was detected.
      * </p>
      */
     private java.util.Date timestamp;
@@ -159,11 +159,11 @@ public class TriggerDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the incident was detected.
+     * The timestamp for when the incident was detected.
      * </p>
      * 
      * @param timestamp
-     *        The time that the incident was detected.
+     *        The timestamp for when the incident was detected.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -172,10 +172,10 @@ public class TriggerDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the incident was detected.
+     * The timestamp for when the incident was detected.
      * </p>
      * 
-     * @return The time that the incident was detected.
+     * @return The timestamp for when the incident was detected.
      */
 
     public java.util.Date getTimestamp() {
@@ -184,11 +184,11 @@ public class TriggerDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the incident was detected.
+     * The timestamp for when the incident was detected.
      * </p>
      * 
      * @param timestamp
-     *        The time that the incident was detected.
+     *        The timestamp for when the incident was detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

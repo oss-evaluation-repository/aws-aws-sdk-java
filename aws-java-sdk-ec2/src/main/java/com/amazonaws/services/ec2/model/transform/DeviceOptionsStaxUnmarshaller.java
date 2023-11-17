@@ -47,6 +47,11 @@ public class DeviceOptionsStaxUnmarshaller implements Unmarshaller<DeviceOptions
                     deviceOptions.setTenantId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("publicSigningKeyUrl", targetDepth)) {
+                    deviceOptions.setPublicSigningKeyUrl(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return deviceOptions;

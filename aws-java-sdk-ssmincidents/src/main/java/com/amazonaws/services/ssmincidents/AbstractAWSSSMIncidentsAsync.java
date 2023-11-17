@@ -28,6 +28,19 @@ public class AbstractAWSSSMIncidentsAsync extends AbstractAWSSSMIncidents implem
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetIncidentFindingsResult> batchGetIncidentFindingsAsync(BatchGetIncidentFindingsRequest request) {
+
+        return batchGetIncidentFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetIncidentFindingsResult> batchGetIncidentFindingsAsync(BatchGetIncidentFindingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetIncidentFindingsRequest, BatchGetIncidentFindingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationSetResult> createReplicationSetAsync(CreateReplicationSetRequest request) {
 
         return createReplicationSetAsync(request, null);
@@ -192,6 +205,19 @@ public class AbstractAWSSSMIncidentsAsync extends AbstractAWSSSMIncidents implem
     @Override
     public java.util.concurrent.Future<GetTimelineEventResult> getTimelineEventAsync(GetTimelineEventRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTimelineEventRequest, GetTimelineEventResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIncidentFindingsResult> listIncidentFindingsAsync(ListIncidentFindingsRequest request) {
+
+        return listIncidentFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIncidentFindingsResult> listIncidentFindingsAsync(ListIncidentFindingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListIncidentFindingsRequest, ListIncidentFindingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

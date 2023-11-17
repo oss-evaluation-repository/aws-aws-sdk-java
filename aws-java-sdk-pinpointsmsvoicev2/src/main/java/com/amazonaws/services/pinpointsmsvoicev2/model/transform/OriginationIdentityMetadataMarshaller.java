@@ -36,6 +36,8 @@ public class OriginationIdentityMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsoCountryCode").build();
     private static final MarshallingInfo<List> NUMBERCAPABILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberCapabilities").build();
+    private static final MarshallingInfo<String> PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumber").build();
 
     private static final OriginationIdentityMetadataMarshaller instance = new OriginationIdentityMetadataMarshaller();
 
@@ -57,6 +59,7 @@ public class OriginationIdentityMetadataMarshaller {
             protocolMarshaller.marshall(originationIdentityMetadata.getOriginationIdentity(), ORIGINATIONIDENTITY_BINDING);
             protocolMarshaller.marshall(originationIdentityMetadata.getIsoCountryCode(), ISOCOUNTRYCODE_BINDING);
             protocolMarshaller.marshall(originationIdentityMetadata.getNumberCapabilities(), NUMBERCAPABILITIES_BINDING);
+            protocolMarshaller.marshall(originationIdentityMetadata.getPhoneNumber(), PHONENUMBER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

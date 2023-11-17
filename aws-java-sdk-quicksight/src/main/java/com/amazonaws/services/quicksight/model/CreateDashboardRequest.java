@@ -156,6 +156,12 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.List<String> folderArns;
+    /**
+     * <p>
+     * A structure that contains the permissions of a shareable link to the dashboard.
+     * </p>
+     */
+    private LinkSharingConfiguration linkSharingConfiguration;
 
     /**
      * <p>
@@ -1084,6 +1090,46 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A structure that contains the permissions of a shareable link to the dashboard.
+     * </p>
+     * 
+     * @param linkSharingConfiguration
+     *        A structure that contains the permissions of a shareable link to the dashboard.
+     */
+
+    public void setLinkSharingConfiguration(LinkSharingConfiguration linkSharingConfiguration) {
+        this.linkSharingConfiguration = linkSharingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the permissions of a shareable link to the dashboard.
+     * </p>
+     * 
+     * @return A structure that contains the permissions of a shareable link to the dashboard.
+     */
+
+    public LinkSharingConfiguration getLinkSharingConfiguration() {
+        return this.linkSharingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the permissions of a shareable link to the dashboard.
+     * </p>
+     * 
+     * @param linkSharingConfiguration
+     *        A structure that contains the permissions of a shareable link to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withLinkSharingConfiguration(LinkSharingConfiguration linkSharingConfiguration) {
+        setLinkSharingConfiguration(linkSharingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1120,7 +1166,9 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         if (getValidationStrategy() != null)
             sb.append("ValidationStrategy: ").append(getValidationStrategy()).append(",");
         if (getFolderArns() != null)
-            sb.append("FolderArns: ").append(getFolderArns());
+            sb.append("FolderArns: ").append(getFolderArns()).append(",");
+        if (getLinkSharingConfiguration() != null)
+            sb.append("LinkSharingConfiguration: ").append(getLinkSharingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1187,6 +1235,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getFolderArns() != null && other.getFolderArns().equals(this.getFolderArns()) == false)
             return false;
+        if (other.getLinkSharingConfiguration() == null ^ this.getLinkSharingConfiguration() == null)
+            return false;
+        if (other.getLinkSharingConfiguration() != null && other.getLinkSharingConfiguration().equals(this.getLinkSharingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1208,6 +1260,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         hashCode = prime * hashCode + ((getValidationStrategy() == null) ? 0 : getValidationStrategy().hashCode());
         hashCode = prime * hashCode + ((getFolderArns() == null) ? 0 : getFolderArns().hashCode());
+        hashCode = prime * hashCode + ((getLinkSharingConfiguration() == null) ? 0 : getLinkSharingConfiguration().hashCode());
         return hashCode;
     }
 

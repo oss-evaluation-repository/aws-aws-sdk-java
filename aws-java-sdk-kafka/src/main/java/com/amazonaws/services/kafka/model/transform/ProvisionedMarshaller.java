@@ -49,6 +49,8 @@ public class ProvisionedMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("zookeeperConnectStringTls").build();
     private static final MarshallingInfo<String> STORAGEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageMode").build();
+    private static final MarshallingInfo<String> CUSTOMERACTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerActionStatus").build();
 
     private static final ProvisionedMarshaller instance = new ProvisionedMarshaller();
 
@@ -77,6 +79,7 @@ public class ProvisionedMarshaller {
             protocolMarshaller.marshall(provisioned.getZookeeperConnectString(), ZOOKEEPERCONNECTSTRING_BINDING);
             protocolMarshaller.marshall(provisioned.getZookeeperConnectStringTls(), ZOOKEEPERCONNECTSTRINGTLS_BINDING);
             protocolMarshaller.marshall(provisioned.getStorageMode(), STORAGEMODE_BINDING);
+            protocolMarshaller.marshall(provisioned.getCustomerActionStatus(), CUSTOMERACTIONSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

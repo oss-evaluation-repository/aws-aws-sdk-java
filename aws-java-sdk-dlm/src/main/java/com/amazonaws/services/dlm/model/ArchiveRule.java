@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot policies only]</b> Specifies a snapshot archiving rule for a schedule.
+ * <b>[Custom snapshot policies only]</b> Specifies a snapshot archiving rule for a schedule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ArchiveRule" target="_top">AWS API

@@ -28,6 +28,19 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEncoderConfigurationResult> createEncoderConfigurationAsync(CreateEncoderConfigurationRequest request) {
+
+        return createEncoderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEncoderConfigurationResult> createEncoderConfigurationAsync(CreateEncoderConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEncoderConfigurationRequest, CreateEncoderConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateParticipantTokenResult> createParticipantTokenAsync(CreateParticipantTokenRequest request) {
 
         return createParticipantTokenAsync(request, null);
@@ -54,6 +67,32 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStorageConfigurationResult> createStorageConfigurationAsync(CreateStorageConfigurationRequest request) {
+
+        return createStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStorageConfigurationResult> createStorageConfigurationAsync(CreateStorageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStorageConfigurationRequest, CreateStorageConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEncoderConfigurationResult> deleteEncoderConfigurationAsync(DeleteEncoderConfigurationRequest request) {
+
+        return deleteEncoderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEncoderConfigurationResult> deleteEncoderConfigurationAsync(DeleteEncoderConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEncoderConfigurationRequest, DeleteEncoderConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteStageResult> deleteStageAsync(DeleteStageRequest request) {
 
         return deleteStageAsync(request, null);
@@ -67,6 +106,19 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteStorageConfigurationResult> deleteStorageConfigurationAsync(DeleteStorageConfigurationRequest request) {
+
+        return deleteStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStorageConfigurationResult> deleteStorageConfigurationAsync(DeleteStorageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteStorageConfigurationRequest, DeleteStorageConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisconnectParticipantResult> disconnectParticipantAsync(DisconnectParticipantRequest request) {
 
         return disconnectParticipantAsync(request, null);
@@ -75,6 +127,32 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     @Override
     public java.util.concurrent.Future<DisconnectParticipantResult> disconnectParticipantAsync(DisconnectParticipantRequest request,
             com.amazonaws.handlers.AsyncHandler<DisconnectParticipantRequest, DisconnectParticipantResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCompositionResult> getCompositionAsync(GetCompositionRequest request) {
+
+        return getCompositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCompositionResult> getCompositionAsync(GetCompositionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCompositionRequest, GetCompositionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncoderConfigurationResult> getEncoderConfigurationAsync(GetEncoderConfigurationRequest request) {
+
+        return getEncoderConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncoderConfigurationResult> getEncoderConfigurationAsync(GetEncoderConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEncoderConfigurationRequest, GetEncoderConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +192,45 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     @Override
     public java.util.concurrent.Future<GetStageSessionResult> getStageSessionAsync(GetStageSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetStageSessionRequest, GetStageSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStorageConfigurationResult> getStorageConfigurationAsync(GetStorageConfigurationRequest request) {
+
+        return getStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStorageConfigurationResult> getStorageConfigurationAsync(GetStorageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetStorageConfigurationRequest, GetStorageConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompositionsResult> listCompositionsAsync(ListCompositionsRequest request) {
+
+        return listCompositionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCompositionsResult> listCompositionsAsync(ListCompositionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCompositionsRequest, ListCompositionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEncoderConfigurationsResult> listEncoderConfigurationsAsync(ListEncoderConfigurationsRequest request) {
+
+        return listEncoderConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEncoderConfigurationsResult> listEncoderConfigurationsAsync(ListEncoderConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEncoderConfigurationsRequest, ListEncoderConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -171,6 +288,19 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     }
 
     @Override
+    public java.util.concurrent.Future<ListStorageConfigurationsResult> listStorageConfigurationsAsync(ListStorageConfigurationsRequest request) {
+
+        return listStorageConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStorageConfigurationsResult> listStorageConfigurationsAsync(ListStorageConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStorageConfigurationsRequest, ListStorageConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -179,6 +309,32 @@ public class AbstractAmazonIVSRealTimeAsync extends AbstractAmazonIVSRealTime im
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCompositionResult> startCompositionAsync(StartCompositionRequest request) {
+
+        return startCompositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCompositionResult> startCompositionAsync(StartCompositionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartCompositionRequest, StartCompositionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCompositionResult> stopCompositionAsync(StopCompositionRequest request) {
+
+        return stopCompositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCompositionResult> stopCompositionAsync(StopCompositionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopCompositionRequest, StopCompositionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

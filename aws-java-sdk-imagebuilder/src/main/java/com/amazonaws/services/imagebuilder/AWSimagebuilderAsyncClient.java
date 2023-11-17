@@ -109,6 +109,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CancelLifecycleExecutionResult> cancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest request) {
+
+        return cancelLifecycleExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelLifecycleExecutionResult> cancelLifecycleExecutionAsync(final CancelLifecycleExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelLifecycleExecutionRequest, CancelLifecycleExecutionResult> asyncHandler) {
+        final CancelLifecycleExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelLifecycleExecutionResult>() {
+            @Override
+            public CancelLifecycleExecutionResult call() throws Exception {
+                CancelLifecycleExecutionResult result = null;
+
+                try {
+                    result = executeCancelLifecycleExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateComponentResult> createComponentAsync(CreateComponentRequest request) {
 
         return createComponentAsync(request, null);
@@ -344,6 +377,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest request) {
+
+        return createLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(final CreateLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLifecyclePolicyRequest, CreateLifecyclePolicyResult> asyncHandler) {
+        final CreateLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLifecyclePolicyResult>() {
+            @Override
+            public CreateLifecyclePolicyResult call() throws Exception {
+                CreateLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeCreateLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest request) {
 
         return deleteComponentAsync(request, null);
@@ -563,6 +629,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeDeleteInfrastructureConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request) {
+
+        return deleteLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(final DeleteLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
+        final DeleteLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLifecyclePolicyResult>() {
+            @Override
+            public DeleteLifecyclePolicyResult call() throws Exception {
+                DeleteLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeDeleteLifecyclePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -927,6 +1026,72 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeGetInfrastructureConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecycleExecutionResult> getLifecycleExecutionAsync(GetLifecycleExecutionRequest request) {
+
+        return getLifecycleExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecycleExecutionResult> getLifecycleExecutionAsync(final GetLifecycleExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLifecycleExecutionRequest, GetLifecycleExecutionResult> asyncHandler) {
+        final GetLifecycleExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLifecycleExecutionResult>() {
+            @Override
+            public GetLifecycleExecutionResult call() throws Exception {
+                GetLifecycleExecutionResult result = null;
+
+                try {
+                    result = executeGetLifecycleExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request) {
+
+        return getLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(final GetLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler) {
+        final GetLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLifecyclePolicyResult>() {
+            @Override
+            public GetLifecyclePolicyResult call() throws Exception {
+                GetLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeGetLifecyclePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1509,6 +1674,107 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListLifecycleExecutionResourcesResult> listLifecycleExecutionResourcesAsync(
+            ListLifecycleExecutionResourcesRequest request) {
+
+        return listLifecycleExecutionResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleExecutionResourcesResult> listLifecycleExecutionResourcesAsync(
+            final ListLifecycleExecutionResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLifecycleExecutionResourcesRequest, ListLifecycleExecutionResourcesResult> asyncHandler) {
+        final ListLifecycleExecutionResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLifecycleExecutionResourcesResult>() {
+            @Override
+            public ListLifecycleExecutionResourcesResult call() throws Exception {
+                ListLifecycleExecutionResourcesResult result = null;
+
+                try {
+                    result = executeListLifecycleExecutionResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleExecutionsResult> listLifecycleExecutionsAsync(ListLifecycleExecutionsRequest request) {
+
+        return listLifecycleExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleExecutionsResult> listLifecycleExecutionsAsync(final ListLifecycleExecutionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLifecycleExecutionsRequest, ListLifecycleExecutionsResult> asyncHandler) {
+        final ListLifecycleExecutionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLifecycleExecutionsResult>() {
+            @Override
+            public ListLifecycleExecutionsResult call() throws Exception {
+                ListLifecycleExecutionsResult result = null;
+
+                try {
+                    result = executeListLifecycleExecutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request) {
+
+        return listLifecyclePoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(final ListLifecyclePoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLifecyclePoliciesRequest, ListLifecyclePoliciesResult> asyncHandler) {
+        final ListLifecyclePoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLifecyclePoliciesResult>() {
+            @Override
+            public ListLifecyclePoliciesResult call() throws Exception {
+                ListLifecyclePoliciesResult result = null;
+
+                try {
+                    result = executeListLifecyclePolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1773,6 +2039,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<StartResourceStateUpdateResult> startResourceStateUpdateAsync(StartResourceStateUpdateRequest request) {
+
+        return startResourceStateUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartResourceStateUpdateResult> startResourceStateUpdateAsync(final StartResourceStateUpdateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartResourceStateUpdateRequest, StartResourceStateUpdateResult> asyncHandler) {
+        final StartResourceStateUpdateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartResourceStateUpdateResult>() {
+            @Override
+            public StartResourceStateUpdateResult call() throws Exception {
+                StartResourceStateUpdateResult result = null;
+
+                try {
+                    result = executeStartResourceStateUpdate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1926,6 +2225,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeUpdateInfrastructureConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request) {
+
+        return updateLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(final UpdateLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLifecyclePolicyRequest, UpdateLifecyclePolicyResult> asyncHandler) {
+        final UpdateLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLifecyclePolicyResult>() {
+            @Override
+            public UpdateLifecyclePolicyResult call() throws Exception {
+                UpdateLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeUpdateLifecyclePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

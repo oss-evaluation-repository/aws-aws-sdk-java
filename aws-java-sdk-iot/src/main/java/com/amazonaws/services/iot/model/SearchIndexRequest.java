@@ -41,8 +41,8 @@ public class SearchIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return at one time. The response might contain fewer results but will never
-     * contain more.
+     * The maximum number of results to return per page at one time. The response might contain fewer results but will
+     * never contain more.
      * </p>
      */
     private Integer maxResults;
@@ -181,13 +181,13 @@ public class SearchIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results to return at one time. The response might contain fewer results but will never
-     * contain more.
+     * The maximum number of results to return per page at one time. The response might contain fewer results but will
+     * never contain more.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return at one time. The response might contain fewer results but will
-     *        never contain more.
+     *        The maximum number of results to return per page at one time. The response might contain fewer results but
+     *        will never contain more.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -196,12 +196,12 @@ public class SearchIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results to return at one time. The response might contain fewer results but will never
-     * contain more.
+     * The maximum number of results to return per page at one time. The response might contain fewer results but will
+     * never contain more.
      * </p>
      * 
-     * @return The maximum number of results to return at one time. The response might contain fewer results but will
-     *         never contain more.
+     * @return The maximum number of results to return per page at one time. The response might contain fewer results
+     *         but will never contain more.
      */
 
     public Integer getMaxResults() {
@@ -210,13 +210,13 @@ public class SearchIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results to return at one time. The response might contain fewer results but will never
-     * contain more.
+     * The maximum number of results to return per page at one time. The response might contain fewer results but will
+     * never contain more.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return at one time. The response might contain fewer results but will
-     *        never contain more.
+     *        The maximum number of results to return per page at one time. The response might contain fewer results but
+     *        will never contain more.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

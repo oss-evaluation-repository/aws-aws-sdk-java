@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Engine {
 
     Standard("standard"),
-    Neural("neural");
+    Neural("neural"),
+    LongForm("long-form");
 
     private String value;
 

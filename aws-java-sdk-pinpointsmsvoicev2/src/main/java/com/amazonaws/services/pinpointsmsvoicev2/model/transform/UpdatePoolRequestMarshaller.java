@@ -33,6 +33,8 @@ public class UpdatePoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayEnabled").build();
     private static final MarshallingInfo<String> TWOWAYCHANNELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayChannelArn").build();
+    private static final MarshallingInfo<String> TWOWAYCHANNELROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayChannelRole").build();
     private static final MarshallingInfo<Boolean> SELFMANAGEDOPTOUTSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedOptOutsEnabled").build();
     private static final MarshallingInfo<String> OPTOUTLISTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +63,7 @@ public class UpdatePoolRequestMarshaller {
             protocolMarshaller.marshall(updatePoolRequest.getPoolId(), POOLID_BINDING);
             protocolMarshaller.marshall(updatePoolRequest.getTwoWayEnabled(), TWOWAYENABLED_BINDING);
             protocolMarshaller.marshall(updatePoolRequest.getTwoWayChannelArn(), TWOWAYCHANNELARN_BINDING);
+            protocolMarshaller.marshall(updatePoolRequest.getTwoWayChannelRole(), TWOWAYCHANNELROLE_BINDING);
             protocolMarshaller.marshall(updatePoolRequest.getSelfManagedOptOutsEnabled(), SELFMANAGEDOPTOUTSENABLED_BINDING);
             protocolMarshaller.marshall(updatePoolRequest.getOptOutListName(), OPTOUTLISTNAME_BINDING);
             protocolMarshaller.marshall(updatePoolRequest.getSharedRoutesEnabled(), SHAREDROUTESENABLED_BINDING);

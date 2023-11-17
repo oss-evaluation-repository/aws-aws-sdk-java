@@ -79,6 +79,12 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Integer maxWaitTimeInSeconds;
+    /**
+     * <p>
+     * The maximum pending time in seconds.
+     * </p>
+     */
+    private Integer maxPendingTimeInSeconds;
 
     /**
      * <p>
@@ -281,6 +287,46 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The maximum pending time in seconds.
+     * </p>
+     * 
+     * @param maxPendingTimeInSeconds
+     *        The maximum pending time in seconds.
+     */
+
+    public void setMaxPendingTimeInSeconds(Integer maxPendingTimeInSeconds) {
+        this.maxPendingTimeInSeconds = maxPendingTimeInSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum pending time in seconds.
+     * </p>
+     * 
+     * @return The maximum pending time in seconds.
+     */
+
+    public Integer getMaxPendingTimeInSeconds() {
+        return this.maxPendingTimeInSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum pending time in seconds.
+     * </p>
+     * 
+     * @param maxPendingTimeInSeconds
+     *        The maximum pending time in seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StoppingCondition withMaxPendingTimeInSeconds(Integer maxPendingTimeInSeconds) {
+        setMaxPendingTimeInSeconds(maxPendingTimeInSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -295,7 +341,9 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
         if (getMaxRuntimeInSeconds() != null)
             sb.append("MaxRuntimeInSeconds: ").append(getMaxRuntimeInSeconds()).append(",");
         if (getMaxWaitTimeInSeconds() != null)
-            sb.append("MaxWaitTimeInSeconds: ").append(getMaxWaitTimeInSeconds());
+            sb.append("MaxWaitTimeInSeconds: ").append(getMaxWaitTimeInSeconds()).append(",");
+        if (getMaxPendingTimeInSeconds() != null)
+            sb.append("MaxPendingTimeInSeconds: ").append(getMaxPendingTimeInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -318,6 +366,10 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMaxWaitTimeInSeconds() != null && other.getMaxWaitTimeInSeconds().equals(this.getMaxWaitTimeInSeconds()) == false)
             return false;
+        if (other.getMaxPendingTimeInSeconds() == null ^ this.getMaxPendingTimeInSeconds() == null)
+            return false;
+        if (other.getMaxPendingTimeInSeconds() != null && other.getMaxPendingTimeInSeconds().equals(this.getMaxPendingTimeInSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getMaxRuntimeInSeconds() == null) ? 0 : getMaxRuntimeInSeconds().hashCode());
         hashCode = prime * hashCode + ((getMaxWaitTimeInSeconds() == null) ? 0 : getMaxWaitTimeInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getMaxPendingTimeInSeconds() == null) ? 0 : getMaxPendingTimeInSeconds().hashCode());
         return hashCode;
     }
 

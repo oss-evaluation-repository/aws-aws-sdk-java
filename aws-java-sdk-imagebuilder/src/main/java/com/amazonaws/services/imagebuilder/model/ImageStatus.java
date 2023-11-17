@@ -30,7 +30,8 @@ public enum ImageStatus {
     CANCELLED("CANCELLED"),
     FAILED("FAILED"),
     DEPRECATED("DEPRECATED"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    DISABLED("DISABLED");
 
     private String value;
 

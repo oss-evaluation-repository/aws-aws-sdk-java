@@ -692,6 +692,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to an existing role.
+     * </p>
+     * 
+     * @param createRoleMembershipRequest
+     * @return A Java Future containing the result of the CreateRoleMembership operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRoleMembershipResult> createRoleMembershipAsync(CreateRoleMembershipRequest createRoleMembershipRequest);
+
+    /**
+     * <p>
+     * Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to an existing role.
+     * </p>
+     * 
+     * @param createRoleMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRoleMembership operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRoleMembershipResult> createRoleMembershipAsync(CreateRoleMembershipRequest createRoleMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRoleMembershipRequest, CreateRoleMembershipResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis
      * or template. You can use the resulting template to create additional dashboards, templates, or analyses.
      * </p>
@@ -1418,6 +1449,70 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DeleteRefreshScheduleResult> deleteRefreshScheduleAsync(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRefreshScheduleRequest, DeleteRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes custom permissions from the role.
+     * </p>
+     * 
+     * @param deleteRoleCustomPermissionRequest
+     * @return A Java Future containing the result of the DeleteRoleCustomPermission operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoleCustomPermissionResult> deleteRoleCustomPermissionAsync(
+            DeleteRoleCustomPermissionRequest deleteRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Removes custom permissions from the role.
+     * </p>
+     * 
+     * @param deleteRoleCustomPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRoleCustomPermission operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoleCustomPermissionResult> deleteRoleCustomPermissionAsync(
+            DeleteRoleCustomPermissionRequest deleteRoleCustomPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleCustomPermissionRequest, DeleteRoleCustomPermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a group from a role.
+     * </p>
+     * 
+     * @param deleteRoleMembershipRequest
+     * @return A Java Future containing the result of the DeleteRoleMembership operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoleMembershipResult> deleteRoleMembershipAsync(DeleteRoleMembershipRequest deleteRoleMembershipRequest);
+
+    /**
+     * <p>
+     * Removes a group from a role.
+     * </p>
+     * 
+     * @param deleteRoleMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRoleMembership operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRoleMembershipResult> deleteRoleMembershipAsync(DeleteRoleMembershipRequest deleteRoleMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleMembershipRequest, DeleteRoleMembershipResult> asyncHandler);
 
     /**
      * <p>
@@ -2858,6 +2953,41 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Describes all custom permissions that are mapped to a role.
+     * </p>
+     * 
+     * @param describeRoleCustomPermissionRequest
+     * @return A Java Future containing the result of the DescribeRoleCustomPermission operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRoleCustomPermissionResult> describeRoleCustomPermissionAsync(
+            DescribeRoleCustomPermissionRequest describeRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Describes all custom permissions that are mapped to a role.
+     * </p>
+     * 
+     * @param describeRoleCustomPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRoleCustomPermission operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRoleCustomPermissionResult> describeRoleCustomPermissionAsync(
+            DescribeRoleCustomPermissionRequest describeRoleCustomPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRoleCustomPermissionRequest, DescribeRoleCustomPermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes a template's metadata.
      * </p>
      * 
@@ -4226,6 +4356,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<ListRefreshSchedulesResult> listRefreshSchedulesAsync(ListRefreshSchedulesRequest listRefreshSchedulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListRefreshSchedulesRequest, ListRefreshSchedulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all groups that are associated with a role.
+     * </p>
+     * 
+     * @param listRoleMembershipsRequest
+     * @return A Java Future containing the result of the ListRoleMemberships operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListRoleMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRoleMembershipsResult> listRoleMembershipsAsync(ListRoleMembershipsRequest listRoleMembershipsRequest);
+
+    /**
+     * <p>
+     * Lists all groups that are associated with a role.
+     * </p>
+     * 
+     * @param listRoleMembershipsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRoleMemberships operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListRoleMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRoleMembershipsResult> listRoleMembershipsAsync(ListRoleMembershipsRequest listRoleMembershipsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRoleMembershipsRequest, ListRoleMembershipsResult> asyncHandler);
 
     /**
      * <p>
@@ -5868,6 +6029,39 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<UpdateRefreshScheduleResult> updateRefreshScheduleAsync(UpdateRefreshScheduleRequest updateRefreshScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRefreshScheduleRequest, UpdateRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the custom permissions that are associated with a role.
+     * </p>
+     * 
+     * @param updateRoleCustomPermissionRequest
+     * @return A Java Future containing the result of the UpdateRoleCustomPermission operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRoleCustomPermissionResult> updateRoleCustomPermissionAsync(
+            UpdateRoleCustomPermissionRequest updateRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Updates the custom permissions that are associated with a role.
+     * </p>
+     * 
+     * @param updateRoleCustomPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRoleCustomPermission operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRoleCustomPermissionResult> updateRoleCustomPermissionAsync(
+            UpdateRoleCustomPermissionRequest updateRoleCustomPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoleCustomPermissionRequest, UpdateRoleCustomPermissionResult> asyncHandler);
 
     /**
      * <p>

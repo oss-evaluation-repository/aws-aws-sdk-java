@@ -31,7 +31,7 @@ public class ValidationStrategy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>,
+     * The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>,
      * strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is
      * skipped for specific UI errors.
      * </p>
@@ -40,13 +40,13 @@ public class ValidationStrategy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>,
+     * The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>,
      * strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is
      * skipped for specific UI errors.
      * </p>
      * 
      * @param mode
-     *        The mode of validation for the asset to be creaed or updated. When you set this value to
+     *        The mode of validation for the asset to be created or updated. When you set this value to
      *        <code>STRICT</code>, strict validation for every error is enforced. When you set this value to
      *        <code>LENIENT</code>, validation is skipped for specific UI errors.
      * @see ValidationStrategyMode
@@ -58,12 +58,12 @@ public class ValidationStrategy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>,
+     * The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>,
      * strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is
      * skipped for specific UI errors.
      * </p>
      * 
-     * @return The mode of validation for the asset to be creaed or updated. When you set this value to
+     * @return The mode of validation for the asset to be created or updated. When you set this value to
      *         <code>STRICT</code>, strict validation for every error is enforced. When you set this value to
      *         <code>LENIENT</code>, validation is skipped for specific UI errors.
      * @see ValidationStrategyMode
@@ -75,13 +75,13 @@ public class ValidationStrategy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>,
+     * The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>,
      * strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is
      * skipped for specific UI errors.
      * </p>
      * 
      * @param mode
-     *        The mode of validation for the asset to be creaed or updated. When you set this value to
+     *        The mode of validation for the asset to be created or updated. When you set this value to
      *        <code>STRICT</code>, strict validation for every error is enforced. When you set this value to
      *        <code>LENIENT</code>, validation is skipped for specific UI errors.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -95,13 +95,13 @@ public class ValidationStrategy implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The mode of validation for the asset to be creaed or updated. When you set this value to <code>STRICT</code>,
+     * The mode of validation for the asset to be created or updated. When you set this value to <code>STRICT</code>,
      * strict validation for every error is enforced. When you set this value to <code>LENIENT</code>, validation is
      * skipped for specific UI errors.
      * </p>
      * 
      * @param mode
-     *        The mode of validation for the asset to be creaed or updated. When you set this value to
+     *        The mode of validation for the asset to be created or updated. When you set this value to
      *        <code>STRICT</code>, strict validation for every error is enforced. When you set this value to
      *        <code>LENIENT</code>, validation is skipped for specific UI errors.
      * @return Returns a reference to this object so that method calls can be chained together.

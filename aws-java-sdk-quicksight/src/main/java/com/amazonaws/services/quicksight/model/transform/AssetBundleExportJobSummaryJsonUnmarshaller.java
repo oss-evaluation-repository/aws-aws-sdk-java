@@ -72,6 +72,14 @@ public class AssetBundleExportJobSummaryJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     assetBundleExportJobSummary.setExportFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IncludePermissions", targetDepth)) {
+                    context.nextToken();
+                    assetBundleExportJobSummary.setIncludePermissions(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeTags", targetDepth)) {
+                    context.nextToken();
+                    assetBundleExportJobSummary.setIncludeTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

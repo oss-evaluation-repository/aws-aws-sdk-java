@@ -68,6 +68,10 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeDomainResult.setSingleSignOnManagedApplicationInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SingleSignOnApplicationArn", targetDepth)) {
+                    context.nextToken();
+                    describeDomainResult.setSingleSignOnApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     describeDomainResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

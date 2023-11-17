@@ -160,6 +160,75 @@ public class AWSSSMIncidentsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves details about all specified findings for an incident, including descriptive details about each finding.
+     * A finding represents a recent application environment change made by an CodeDeploy deployment or an
+     * CloudFormation stack creation or update that can be investigated as a potential cause of the incident.
+     * </p>
+     * 
+     * @param batchGetIncidentFindingsRequest
+     * @return Result of the BatchGetIncidentFindings operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which doesn't exist.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AWSSSMIncidents.BatchGetIncidentFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/BatchGetIncidentFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetIncidentFindingsResult batchGetIncidentFindings(BatchGetIncidentFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetIncidentFindings(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetIncidentFindingsResult executeBatchGetIncidentFindings(BatchGetIncidentFindingsRequest batchGetIncidentFindingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetIncidentFindingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetIncidentFindingsRequest> request = null;
+        Response<BatchGetIncidentFindingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetIncidentFindingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetIncidentFindingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Incidents");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetIncidentFindings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetIncidentFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetIncidentFindingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * A replication set replicates and encrypts your data to the provided Regions with the provided KMS key.
      * </p>
      * 
@@ -1009,6 +1078,73 @@ public class AWSSSMIncidentsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves a list of the IDs of findings, plus their last modified times, that have been identified for a
+     * specified incident. A finding represents a recent application environment change made by an CloudFormation stack
+     * creation or update or an CodeDeploy deployment that can be investigated as a potential cause of the incident.
+     * </p>
+     * 
+     * @param listIncidentFindingsRequest
+     * @return Result of the ListIncidentFindings operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which doesn't exist.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AWSSSMIncidents.ListIncidentFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/ListIncidentFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListIncidentFindingsResult listIncidentFindings(ListIncidentFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIncidentFindings(request);
+    }
+
+    @SdkInternalApi
+    final ListIncidentFindingsResult executeListIncidentFindings(ListIncidentFindingsRequest listIncidentFindingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listIncidentFindingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListIncidentFindingsRequest> request = null;
+        Response<ListIncidentFindingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListIncidentFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIncidentFindingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM Incidents");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIncidentFindings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListIncidentFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIncidentFindingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all incident records in your account. Use this command to retrieve the Amazon Resource Name (ARN) of the
      * incident record you want to update.
      * </p>
@@ -1262,7 +1398,7 @@ public class AWSSSMIncidentsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Lists the tags that are attached to the specified response plan.
+     * Lists the tags that are attached to the specified response plan or incident.
      * </p>
      * 
      * @param listTagsForResourceRequest

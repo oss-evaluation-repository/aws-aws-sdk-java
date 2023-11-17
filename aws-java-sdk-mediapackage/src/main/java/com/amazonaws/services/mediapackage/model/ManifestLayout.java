@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ManifestLayout {
 
     FULL("FULL"),
-    COMPACT("COMPACT");
+    COMPACT("COMPACT"),
+    DRM_TOP_LEVEL_COMPACT("DRM_TOP_LEVEL_COMPACT");
 
     private String value;
 
