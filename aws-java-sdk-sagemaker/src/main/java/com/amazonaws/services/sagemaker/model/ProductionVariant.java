@@ -116,6 +116,19 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Boolean enableSSMAccess;
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     */
+    private ProductionVariantManagedInstanceScaling managedInstanceScaling;
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     */
+    private ProductionVariantRoutingConfig routingConfig;
 
     /**
      * <p>
@@ -743,6 +756,92 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @param managedInstanceScaling
+     *        Settings that control the range in the number of instances that the endpoint provisions as it scales up or
+     *        down to accommodate traffic.
+     */
+
+    public void setManagedInstanceScaling(ProductionVariantManagedInstanceScaling managedInstanceScaling) {
+        this.managedInstanceScaling = managedInstanceScaling;
+    }
+
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @return Settings that control the range in the number of instances that the endpoint provisions as it scales up
+     *         or down to accommodate traffic.
+     */
+
+    public ProductionVariantManagedInstanceScaling getManagedInstanceScaling() {
+        return this.managedInstanceScaling;
+    }
+
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @param managedInstanceScaling
+     *        Settings that control the range in the number of instances that the endpoint provisions as it scales up or
+     *        down to accommodate traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withManagedInstanceScaling(ProductionVariantManagedInstanceScaling managedInstanceScaling) {
+        setManagedInstanceScaling(managedInstanceScaling);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     */
+
+    public void setRoutingConfig(ProductionVariantRoutingConfig routingConfig) {
+        this.routingConfig = routingConfig;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @return Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     */
+
+    public ProductionVariantRoutingConfig getRoutingConfig() {
+        return this.routingConfig;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withRoutingConfig(ProductionVariantRoutingConfig routingConfig) {
+        setRoutingConfig(routingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -777,7 +876,11 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         if (getContainerStartupHealthCheckTimeoutInSeconds() != null)
             sb.append("ContainerStartupHealthCheckTimeoutInSeconds: ").append(getContainerStartupHealthCheckTimeoutInSeconds()).append(",");
         if (getEnableSSMAccess() != null)
-            sb.append("EnableSSMAccess: ").append(getEnableSSMAccess());
+            sb.append("EnableSSMAccess: ").append(getEnableSSMAccess()).append(",");
+        if (getManagedInstanceScaling() != null)
+            sb.append("ManagedInstanceScaling: ").append(getManagedInstanceScaling()).append(",");
+        if (getRoutingConfig() != null)
+            sb.append("RoutingConfig: ").append(getRoutingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -842,6 +945,14 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEnableSSMAccess() != null && other.getEnableSSMAccess().equals(this.getEnableSSMAccess()) == false)
             return false;
+        if (other.getManagedInstanceScaling() == null ^ this.getManagedInstanceScaling() == null)
+            return false;
+        if (other.getManagedInstanceScaling() != null && other.getManagedInstanceScaling().equals(this.getManagedInstanceScaling()) == false)
+            return false;
+        if (other.getRoutingConfig() == null ^ this.getRoutingConfig() == null)
+            return false;
+        if (other.getRoutingConfig() != null && other.getRoutingConfig().equals(this.getRoutingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -863,6 +974,8 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode
                 + ((getContainerStartupHealthCheckTimeoutInSeconds() == null) ? 0 : getContainerStartupHealthCheckTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getEnableSSMAccess() == null) ? 0 : getEnableSSMAccess().hashCode());
+        hashCode = prime * hashCode + ((getManagedInstanceScaling() == null) ? 0 : getManagedInstanceScaling().hashCode());
+        hashCode = prime * hashCode + ((getRoutingConfig() == null) ? 0 : getRoutingConfig().hashCode());
         return hashCode;
     }
 

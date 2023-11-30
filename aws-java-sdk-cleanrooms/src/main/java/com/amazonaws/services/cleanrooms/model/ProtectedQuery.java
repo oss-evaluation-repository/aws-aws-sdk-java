@@ -88,6 +88,12 @@ public class ProtectedQuery implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ProtectedQueryError error;
+    /**
+     * <p>
+     * The sensitivity parameters of the differential privacy results of the protected query.
+     * </p>
+     */
+    private DifferentialPrivacyParameters differentialPrivacy;
 
     /**
      * <p>
@@ -509,6 +515,46 @@ public class ProtectedQuery implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The sensitivity parameters of the differential privacy results of the protected query.
+     * </p>
+     * 
+     * @param differentialPrivacy
+     *        The sensitivity parameters of the differential privacy results of the protected query.
+     */
+
+    public void setDifferentialPrivacy(DifferentialPrivacyParameters differentialPrivacy) {
+        this.differentialPrivacy = differentialPrivacy;
+    }
+
+    /**
+     * <p>
+     * The sensitivity parameters of the differential privacy results of the protected query.
+     * </p>
+     * 
+     * @return The sensitivity parameters of the differential privacy results of the protected query.
+     */
+
+    public DifferentialPrivacyParameters getDifferentialPrivacy() {
+        return this.differentialPrivacy;
+    }
+
+    /**
+     * <p>
+     * The sensitivity parameters of the differential privacy results of the protected query.
+     * </p>
+     * 
+     * @param differentialPrivacy
+     *        The sensitivity parameters of the differential privacy results of the protected query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProtectedQuery withDifferentialPrivacy(DifferentialPrivacyParameters differentialPrivacy) {
+        setDifferentialPrivacy(differentialPrivacy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -539,7 +585,9 @@ public class ProtectedQuery implements Serializable, Cloneable, StructuredPojo {
         if (getResult() != null)
             sb.append("Result: ").append(getResult()).append(",");
         if (getError() != null)
-            sb.append("Error: ").append(getError());
+            sb.append("Error: ").append(getError()).append(",");
+        if (getDifferentialPrivacy() != null)
+            sb.append("DifferentialPrivacy: ").append(getDifferentialPrivacy());
         sb.append("}");
         return sb.toString();
     }
@@ -594,6 +642,10 @@ public class ProtectedQuery implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getError() != null && other.getError().equals(this.getError()) == false)
             return false;
+        if (other.getDifferentialPrivacy() == null ^ this.getDifferentialPrivacy() == null)
+            return false;
+        if (other.getDifferentialPrivacy() != null && other.getDifferentialPrivacy().equals(this.getDifferentialPrivacy()) == false)
+            return false;
         return true;
     }
 
@@ -612,6 +664,7 @@ public class ProtectedQuery implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getResult() == null) ? 0 : getResult().hashCode());
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getDifferentialPrivacy() == null) ? 0 : getDifferentialPrivacy().hashCode());
         return hashCode;
     }
 

@@ -131,6 +131,29 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.List<ProductionVariant> shadowProductionVariants;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
+     * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this action must have the
+     * <code>iam:PassRole</code> permission.
+     * </p>
+     * </note>
+     */
+    private String executionRoleArn;
+
+    private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     */
+    private Boolean enableNetworkIsolation;
 
     /**
      * <p>
@@ -919,6 +942,177 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
+     * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this action must have the
+     * <code>iam:PassRole</code> permission.
+     * </p>
+     * </note>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your
+     *        behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *        <note>
+     *        <p>
+     *        To be able to pass this role to Amazon SageMaker, the caller of this action must have the
+     *        <code>iam:PassRole</code> permission.
+     *        </p>
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
+     * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this action must have the
+     * <code>iam:PassRole</code> permission.
+     * </p>
+     * </note>
+     * 
+     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your
+     *         behalf. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *         <note>
+     *         <p>
+     *         To be able to pass this role to Amazon SageMaker, the caller of this action must have the
+     *         <code>iam:PassRole</code> permission.
+     *         </p>
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your behalf.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>.
+     * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this action must have the
+     * <code>iam:PassRole</code> permission.
+     * </p>
+     * </note>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform actions on your
+     *        behalf. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p>
+     *        <note>
+     *        <p>
+     *        To be able to pass this role to Amazon SageMaker, the caller of this action must have the
+     *        <code>iam:PassRole</code> permission.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointConfigRequest withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
+        return this;
+    }
+
+    /**
+     * @param vpcConfig
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * @param vpcConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointConfigRequest withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     * 
+     * @param enableNetworkIsolation
+     *        Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or
+     *        outbound network calls can be made to or from the model containers.
+     */
+
+    public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        this.enableNetworkIsolation = enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     * 
+     * @return Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or
+     *         outbound network calls can be made to or from the model containers.
+     */
+
+    public Boolean getEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     * 
+     * @param enableNetworkIsolation
+     *        Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or
+     *        outbound network calls can be made to or from the model containers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointConfigRequest withEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        setEnableNetworkIsolation(enableNetworkIsolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     * 
+     * @return Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or
+     *         outbound network calls can be made to or from the model containers.
+     */
+
+    public Boolean isEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -945,7 +1139,13 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
         if (getExplainerConfig() != null)
             sb.append("ExplainerConfig: ").append(getExplainerConfig()).append(",");
         if (getShadowProductionVariants() != null)
-            sb.append("ShadowProductionVariants: ").append(getShadowProductionVariants());
+            sb.append("ShadowProductionVariants: ").append(getShadowProductionVariants()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getEnableNetworkIsolation() != null)
+            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation());
         sb.append("}");
         return sb.toString();
     }
@@ -992,6 +1192,18 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getShadowProductionVariants() != null && other.getShadowProductionVariants().equals(this.getShadowProductionVariants()) == false)
             return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
+            return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
+        if (other.getEnableNetworkIsolation() == null ^ this.getEnableNetworkIsolation() == null)
+            return false;
+        if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
+            return false;
         return true;
     }
 
@@ -1008,6 +1220,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAsyncInferenceConfig() == null) ? 0 : getAsyncInferenceConfig().hashCode());
         hashCode = prime * hashCode + ((getExplainerConfig() == null) ? 0 : getExplainerConfig().hashCode());
         hashCode = prime * hashCode + ((getShadowProductionVariants() == null) ? 0 : getShadowProductionVariants().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         return hashCode;
     }
 

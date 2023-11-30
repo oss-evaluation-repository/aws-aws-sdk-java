@@ -72,6 +72,12 @@ public class CreateCollectionDetail implements Serializable, Cloneable, Structur
     private String name;
     /**
      * <p>
+     * Creates details about an OpenSearch Serverless collection.
+     * </p>
+     */
+    private String standbyReplicas;
+    /**
+     * <p>
      * The current status of the collection.
      * </p>
      */
@@ -365,6 +371,65 @@ public class CreateCollectionDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * Creates details about an OpenSearch Serverless collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Creates details about an OpenSearch Serverless collection.
+     * @see StandbyReplicas
+     */
+
+    public void setStandbyReplicas(String standbyReplicas) {
+        this.standbyReplicas = standbyReplicas;
+    }
+
+    /**
+     * <p>
+     * Creates details about an OpenSearch Serverless collection.
+     * </p>
+     * 
+     * @return Creates details about an OpenSearch Serverless collection.
+     * @see StandbyReplicas
+     */
+
+    public String getStandbyReplicas() {
+        return this.standbyReplicas;
+    }
+
+    /**
+     * <p>
+     * Creates details about an OpenSearch Serverless collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Creates details about an OpenSearch Serverless collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StandbyReplicas
+     */
+
+    public CreateCollectionDetail withStandbyReplicas(String standbyReplicas) {
+        setStandbyReplicas(standbyReplicas);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Creates details about an OpenSearch Serverless collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Creates details about an OpenSearch Serverless collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StandbyReplicas
+     */
+
+    public CreateCollectionDetail withStandbyReplicas(StandbyReplicas standbyReplicas) {
+        this.standbyReplicas = standbyReplicas.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The current status of the collection.
      * </p>
      * 
@@ -507,6 +572,8 @@ public class CreateCollectionDetail implements Serializable, Cloneable, Structur
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getStandbyReplicas() != null)
+            sb.append("StandbyReplicas: ").append(getStandbyReplicas()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getType() != null)
@@ -553,6 +620,10 @@ public class CreateCollectionDetail implements Serializable, Cloneable, Structur
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getStandbyReplicas() == null ^ this.getStandbyReplicas() == null)
+            return false;
+        if (other.getStandbyReplicas() != null && other.getStandbyReplicas().equals(this.getStandbyReplicas()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -576,6 +647,7 @@ public class CreateCollectionDetail implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStandbyReplicas() == null) ? 0 : getStandbyReplicas().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

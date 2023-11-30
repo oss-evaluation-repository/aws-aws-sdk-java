@@ -55,6 +55,42 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String spaceName;
+    /**
+     * <p>
+     * The landing page that the user is directed to when accessing the presigned URL. Using this value, users can
+     * access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::relative/path</code>: Directs users to the relative path in Studio.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic
+     * application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String landingUri;
 
     /**
      * <p>
@@ -257,6 +293,229 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The landing page that the user is directed to when accessing the presigned URL. Using this value, users can
+     * access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::relative/path</code>: Directs users to the relative path in Studio.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic
+     * application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param landingUri
+     *        The landing page that the user is directed to when accessing the presigned URL. Using this value, users
+     *        can access Studio or Studio Classic, even if it is not the default experience for the domain. The
+     *        supported values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>studio::relative/path</code>: Directs users to the relative path in Studio.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic
+     *        application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab
+     *        application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio
+     *        application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
+     *        </p>
+     *        </li>
+     */
+
+    public void setLandingUri(String landingUri) {
+        this.landingUri = landingUri;
+    }
+
+    /**
+     * <p>
+     * The landing page that the user is directed to when accessing the presigned URL. Using this value, users can
+     * access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::relative/path</code>: Directs users to the relative path in Studio.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic
+     * application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The landing page that the user is directed to when accessing the presigned URL. Using this value, users
+     *         can access Studio or Studio Classic, even if it is not the default experience for the domain. The
+     *         supported values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>studio::relative/path</code>: Directs users to the relative path in Studio.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic
+     *         application.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab
+     *         application.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio
+     *         application.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
+     *         </p>
+     *         </li>
+     */
+
+    public String getLandingUri() {
+        return this.landingUri;
+    }
+
+    /**
+     * <p>
+     * The landing page that the user is directed to when accessing the presigned URL. Using this value, users can
+     * access Studio or Studio Classic, even if it is not the default experience for the domain. The supported values
+     * are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::relative/path</code>: Directs users to the relative path in Studio.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic
+     * application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param landingUri
+     *        The landing page that the user is directed to when accessing the presigned URL. Using this value, users
+     *        can access Studio or Studio Classic, even if it is not the default experience for the domain. The
+     *        supported values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>studio::relative/path</code>: Directs users to the relative path in Studio.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:JupyterServer:relative/path</code>: Directs users to the relative path in the Studio Classic
+     *        application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab
+     *        application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio
+     *        application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePresignedDomainUrlRequest withLandingUri(String landingUri) {
+        setLandingUri(landingUri);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -277,7 +536,9 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
         if (getExpiresInSeconds() != null)
             sb.append("ExpiresInSeconds: ").append(getExpiresInSeconds()).append(",");
         if (getSpaceName() != null)
-            sb.append("SpaceName: ").append(getSpaceName());
+            sb.append("SpaceName: ").append(getSpaceName()).append(",");
+        if (getLandingUri() != null)
+            sb.append("LandingUri: ").append(getLandingUri());
         sb.append("}");
         return sb.toString();
     }
@@ -313,6 +574,10 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
             return false;
+        if (other.getLandingUri() == null ^ this.getLandingUri() == null)
+            return false;
+        if (other.getLandingUri() != null && other.getLandingUri().equals(this.getLandingUri()) == false)
+            return false;
         return true;
     }
 
@@ -326,6 +591,7 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getSessionExpirationDurationInSeconds() == null) ? 0 : getSessionExpirationDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getExpiresInSeconds() == null) ? 0 : getExpiresInSeconds().hashCode());
         hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
+        hashCode = prime * hashCode + ((getLandingUri() == null) ? 0 : getLandingUri().hashCode());
         return hashCode;
     }
 

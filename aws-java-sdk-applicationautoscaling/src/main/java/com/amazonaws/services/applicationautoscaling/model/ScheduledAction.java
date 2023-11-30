@@ -209,6 +209,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -331,6 +337,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
      * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
      * </p>
      * </li>
      * </ul>
@@ -932,6 +944,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -1044,6 +1062,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
      *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *        </p>
      *        </li>
      */
@@ -1164,6 +1188,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -1276,6 +1306,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is
      *         the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *         identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *         </p>
      *         </li>
      */
@@ -1396,6 +1432,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -1508,6 +1550,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
      *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1639,6 +1687,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * Serverless endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1762,6 +1816,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
      *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1892,6 +1952,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * Serverless endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -2014,6 +2080,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a
      *         SageMaker Serverless endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *         a SageMaker inference component.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -2144,6 +2216,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * Serverless endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2267,6 +2345,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
      *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2399,6 +2483,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * Serverless endpoint.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2522,6 +2612,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
      *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

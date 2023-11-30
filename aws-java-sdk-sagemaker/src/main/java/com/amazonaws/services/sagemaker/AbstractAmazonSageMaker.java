@@ -84,6 +84,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateClusterResult createCluster(CreateClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCodeRepositoryResult createCodeRepository(CreateCodeRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -175,6 +180,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public CreateImageVersionResult createImageVersion(CreateImageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateInferenceComponentResult createInferenceComponent(CreateInferenceComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -349,6 +359,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCodeRepositoryResult deleteCodeRepository(DeleteCodeRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -430,6 +445,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public DeleteImageVersionResult deleteImageVersion(DeleteImageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteInferenceComponentResult deleteInferenceComponent(DeleteInferenceComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -584,6 +604,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeClusterNodeResult describeClusterNode(DescribeClusterNodeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeCodeRepositoryResult describeCodeRepository(DescribeCodeRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -685,6 +715,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public DescribeImageVersionResult describeImageVersion(DescribeImageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInferenceComponentResult describeInferenceComponent(DescribeInferenceComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -934,6 +969,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListClusterNodesResult listClusterNodes(ListClusterNodesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListClustersResult listClusters(ListClustersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCodeRepositoriesResult listCodeRepositories(ListCodeRepositoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1035,6 +1080,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public ListImagesResult listImages(ListImagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListInferenceComponentsResult listInferenceComponents(ListInferenceComponentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1399,6 +1449,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateCodeRepositoryResult updateCodeRepository(UpdateCodeRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1460,6 +1515,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public UpdateImageVersionResult updateImageVersion(UpdateImageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateInferenceComponentResult updateInferenceComponent(UpdateInferenceComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateInferenceComponentRuntimeConfigResult updateInferenceComponentRuntimeConfig(UpdateInferenceComponentRuntimeConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

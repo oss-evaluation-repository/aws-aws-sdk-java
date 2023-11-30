@@ -119,6 +119,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(AddDataSourceRequest request) {
+
+        return addDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(final AddDataSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddDataSourceRequest, AddDataSourceResult> asyncHandler) {
+        final AddDataSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddDataSourceResult>() {
+            @Override
+            public AddDataSourceResult call() throws Exception {
+                AddDataSourceResult result = null;
+
+                try {
+                    result = executeAddDataSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request) {
 
         return addTagsAsync(request, null);
@@ -367,6 +400,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeCreateVpcEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request) {
+
+        return deleteDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(final DeleteDataSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler) {
+        final DeleteDataSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDataSourceResult>() {
+            @Override
+            public DeleteDataSourceResult call() throws Exception {
+                DeleteDataSourceResult result = null;
+
+                try {
+                    result = executeDeleteDataSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1111,6 +1177,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest request) {
+
+        return getDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(final GetDataSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler) {
+        final GetDataSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDataSourceResult>() {
+            @Override
+            public GetDataSourceResult call() throws Exception {
+                GetDataSourceResult result = null;
+
+                try {
+                    result = executeGetDataSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request) {
 
         return getDomainMaintenanceStatusAsync(request, null);
@@ -1227,6 +1326,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeGetUpgradeStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest request) {
+
+        return listDataSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(final ListDataSourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResult> asyncHandler) {
+        final ListDataSourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDataSourcesResult>() {
+            @Override
+            public ListDataSourcesResult call() throws Exception {
+                ListDataSourcesResult result = null;
+
+                try {
+                    result = executeListDataSources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1790,6 +1922,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeStartServiceSoftwareUpdate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request) {
+
+        return updateDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(final UpdateDataSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler) {
+        final UpdateDataSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDataSourceResult>() {
+            @Override
+            public UpdateDataSourceResult call() throws Exception {
+                UpdateDataSourceResult result = null;
+
+                try {
+                    result = executeUpdateDataSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

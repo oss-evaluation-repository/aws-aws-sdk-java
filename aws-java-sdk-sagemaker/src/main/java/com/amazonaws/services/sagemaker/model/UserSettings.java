@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the
+ * A collection of settings that apply to users in a domain. These settings are specified when the
  * <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code> when the
  * <code>CreateDomain</code> API is called.
  * </p>
@@ -43,7 +43,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     private String executionRole;
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
@@ -54,14 +54,14 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      */
     private java.util.List<String> securityGroups;
     /**
      * <p>
-     * Specifies options for sharing SageMaker Studio notebooks.
+     * Specifies options for sharing Amazon SageMaker Studio notebooks.
      * </p>
      */
     private SharingSettings sharingSettings;
@@ -101,6 +101,32 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private CanvasAppSettings canvasAppSettings;
+    /**
+     * <p>
+     * The default experience that the user is directed to when accessing the domain. The supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     * <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String defaultLandingUri;
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     */
+    private String studioWebPortal;
 
     /**
      * <p>
@@ -144,7 +170,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
@@ -155,11 +181,12 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      * 
-     * @return The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     * @return The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for
+     *         communication.</p>
      *         <p>
      *         Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      *         <code>PublicInternetOnly</code>.
@@ -169,8 +196,8 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      *         , unless specified as part of the <code>DefaultUserSettings</code> for the domain.
      *         </p>
      *         <p>
-     *         Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     *         of security groups that you can specify is one less than the maximum number shown.
+     *         Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     *         number of security groups that you can specify is one less than the maximum number shown.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -179,7 +206,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
@@ -190,12 +217,12 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      * 
      * @param securityGroups
-     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
      *        <p>
      *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      *        <code>PublicInternetOnly</code>.
@@ -205,8 +232,8 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      *        unless specified as part of the <code>DefaultUserSettings</code> for the domain.
      *        </p>
      *        <p>
-     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     *        of security groups that you can specify is one less than the maximum number shown.
+     *        Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     *        number of security groups that you can specify is one less than the maximum number shown.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -220,7 +247,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
@@ -231,8 +258,8 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,7 +268,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroups
-     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
      *        <p>
      *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      *        <code>PublicInternetOnly</code>.
@@ -251,8 +278,8 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      *        unless specified as part of the <code>DefaultUserSettings</code> for the domain.
      *        </p>
      *        <p>
-     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     *        of security groups that you can specify is one less than the maximum number shown.
+     *        Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     *        number of security groups that you can specify is one less than the maximum number shown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,7 +295,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
@@ -279,12 +306,12 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      * 
      * @param securityGroups
-     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
      *        <p>
      *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      *        <code>PublicInternetOnly</code>.
@@ -294,8 +321,8 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      *        unless specified as part of the <code>DefaultUserSettings</code> for the domain.
      *        </p>
      *        <p>
-     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     *        of security groups that you can specify is one less than the maximum number shown.
+     *        Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     *        number of security groups that you can specify is one less than the maximum number shown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +333,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies options for sharing SageMaker Studio notebooks.
+     * Specifies options for sharing Amazon SageMaker Studio notebooks.
      * </p>
      * 
      * @param sharingSettings
-     *        Specifies options for sharing SageMaker Studio notebooks.
+     *        Specifies options for sharing Amazon SageMaker Studio notebooks.
      */
 
     public void setSharingSettings(SharingSettings sharingSettings) {
@@ -319,10 +346,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies options for sharing SageMaker Studio notebooks.
+     * Specifies options for sharing Amazon SageMaker Studio notebooks.
      * </p>
      * 
-     * @return Specifies options for sharing SageMaker Studio notebooks.
+     * @return Specifies options for sharing Amazon SageMaker Studio notebooks.
      */
 
     public SharingSettings getSharingSettings() {
@@ -331,11 +358,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies options for sharing SageMaker Studio notebooks.
+     * Specifies options for sharing Amazon SageMaker Studio notebooks.
      * </p>
      * 
      * @param sharingSettings
-     *        Specifies options for sharing SageMaker Studio notebooks.
+     *        Specifies options for sharing Amazon SageMaker Studio notebooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -585,6 +612,191 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The default experience that the user is directed to when accessing the domain. The supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     * <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param defaultLandingUri
+     *        The default experience that the user is directed to when accessing the domain. The supported values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     *        <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     *        </p>
+     *        </li>
+     */
+
+    public void setDefaultLandingUri(String defaultLandingUri) {
+        this.defaultLandingUri = defaultLandingUri;
+    }
+
+    /**
+     * <p>
+     * The default experience that the user is directed to when accessing the domain. The supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     * <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The default experience that the user is directed to when accessing the domain. The supported values
+     *         are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     *         <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     *         </p>
+     *         </li>
+     */
+
+    public String getDefaultLandingUri() {
+        return this.defaultLandingUri;
+    }
+
+    /**
+     * <p>
+     * The default experience that the user is directed to when accessing the domain. The supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     * <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param defaultLandingUri
+     *        The default experience that the user is directed to when accessing the domain. The supported values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     *        <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withDefaultLandingUri(String defaultLandingUri) {
+        setDefaultLandingUri(defaultLandingUri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     * 
+     * @param studioWebPortal
+     *        Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access
+     *        Studio, even if that is the default experience for the domain.
+     * @see StudioWebPortal
+     */
+
+    public void setStudioWebPortal(String studioWebPortal) {
+        this.studioWebPortal = studioWebPortal;
+    }
+
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     * 
+     * @return Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access
+     *         Studio, even if that is the default experience for the domain.
+     * @see StudioWebPortal
+     */
+
+    public String getStudioWebPortal() {
+        return this.studioWebPortal;
+    }
+
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     * 
+     * @param studioWebPortal
+     *        Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access
+     *        Studio, even if that is the default experience for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StudioWebPortal
+     */
+
+    public UserSettings withStudioWebPortal(String studioWebPortal) {
+        setStudioWebPortal(studioWebPortal);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     * 
+     * @param studioWebPortal
+     *        Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access
+     *        Studio, even if that is the default experience for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StudioWebPortal
+     */
+
+    public UserSettings withStudioWebPortal(StudioWebPortal studioWebPortal) {
+        this.studioWebPortal = studioWebPortal.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -613,7 +825,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         if (getRSessionAppSettings() != null)
             sb.append("RSessionAppSettings: ").append(getRSessionAppSettings()).append(",");
         if (getCanvasAppSettings() != null)
-            sb.append("CanvasAppSettings: ").append(getCanvasAppSettings());
+            sb.append("CanvasAppSettings: ").append(getCanvasAppSettings()).append(",");
+        if (getDefaultLandingUri() != null)
+            sb.append("DefaultLandingUri: ").append(getDefaultLandingUri()).append(",");
+        if (getStudioWebPortal() != null)
+            sb.append("StudioWebPortal: ").append(getStudioWebPortal());
         sb.append("}");
         return sb.toString();
     }
@@ -664,6 +880,14 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCanvasAppSettings() != null && other.getCanvasAppSettings().equals(this.getCanvasAppSettings()) == false)
             return false;
+        if (other.getDefaultLandingUri() == null ^ this.getDefaultLandingUri() == null)
+            return false;
+        if (other.getDefaultLandingUri() != null && other.getDefaultLandingUri().equals(this.getDefaultLandingUri()) == false)
+            return false;
+        if (other.getStudioWebPortal() == null ^ this.getStudioWebPortal() == null)
+            return false;
+        if (other.getStudioWebPortal() != null && other.getStudioWebPortal().equals(this.getStudioWebPortal()) == false)
+            return false;
         return true;
     }
 
@@ -681,6 +905,8 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRStudioServerProAppSettings() == null) ? 0 : getRStudioServerProAppSettings().hashCode());
         hashCode = prime * hashCode + ((getRSessionAppSettings() == null) ? 0 : getRSessionAppSettings().hashCode());
         hashCode = prime * hashCode + ((getCanvasAppSettings() == null) ? 0 : getCanvasAppSettings().hashCode());
+        hashCode = prime * hashCode + ((getDefaultLandingUri() == null) ? 0 : getDefaultLandingUri().hashCode());
+        hashCode = prime * hashCode + ((getStudioWebPortal() == null) ? 0 : getStudioWebPortal().hashCode());
         return hashCode;
     }
 

@@ -244,11 +244,11 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * </note> <note>
      * <p>
-     * Tags that you add to a SageMaker Studio Domain or User Profile by calling this API are also added to any Apps
-     * that the Domain or User Profile launches after you call this API, but not to Apps that the Domain or User Profile
-     * launched before you called this API. To make sure that the tags associated with a Domain or User Profile are also
-     * added to all Apps that the Domain or User Profile launches, add the tags when you first create the Domain or User
-     * Profile by specifying them in the <code>Tags</code> parameter of <a
+     * Tags that you add to a SageMaker Domain or User Profile by calling this API are also added to any Apps that the
+     * Domain or User Profile launches after you call this API, but not to Apps that the Domain or User Profile launched
+     * before you called this API. To make sure that the tags associated with a Domain or User Profile are also added to
+     * all Apps that the Domain or User Profile launches, add the tags when you first create the Domain or User Profile
+     * by specifying them in the <code>Tags</code> parameter of <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or <a
      * href
      * ="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.
@@ -547,8 +547,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker
-     * Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user
-     * may have multiple Apps active simultaneously.
+     * upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may
+     * have multiple Apps active simultaneously.
      * </p>
      * 
      * @param createAppRequest
@@ -892,6 +892,70 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateAutoMLJobV2Result>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAutoMLJobV2ResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker for creating and managing
+     * persistent clusters for developing large machine learning models, such as large language models (LLMs) and
+     * diffusion models. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon SageMaker HyperPod</a> in
+     * the <i>Amazon SageMaker Developer Guide</i>.
+     * </p>
+     * 
+     * @param createClusterRequest
+     * @return Result of the CreateCluster operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateClusterResult createCluster(CreateClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCluster(request);
+    }
+
+    @SdkInternalApi
+    final CreateClusterResult executeCreateCluster(CreateClusterRequest createClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateClusterRequest> request = null;
+        Response<CreateClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1256,10 +1320,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic
-     * File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon
-     * Virtual Private Cloud (VPC) configurations. Users within a domain can share notebook files and other artifacts
-     * with each other.
+     * Creates a <code>Domain</code>. A domain consists of an associated Amazon Elastic File System (EFS) volume, a list
+     * of authorized users, and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
+     * configurations. Users within a domain can share notebook files and other artifacts with each other.
      * </p>
      * <p>
      * <b>EFS storage</b>
@@ -1279,10 +1342,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <b>VPC configuration</b>
      * </p>
      * <p>
-     * All SageMaker Studio traffic between the domain and the EFS volume is through the specified VPC and subnets. For
-     * other Studio traffic, you can specify the <code>AppNetworkAccessType</code> parameter.
-     * <code>AppNetworkAccessType</code> corresponds to the network access type that you choose when you onboard to
-     * Studio. The following options are available:
+     * All traffic between the domain and the EFS volume is through the specified VPC and subnets. For other traffic,
+     * you can specify the <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code> corresponds to
+     * the network access type that you choose when you onboard to the domain. The following options are available:
      * </p>
      * <ul>
      * <li>
@@ -1293,25 +1355,25 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets. Internet access is disabled
-     * by default. To allow internet access, you must specify a NAT gateway.
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet access is disabled by
+     * default. To allow internet access, you must specify a NAT gateway.
      * </p>
      * <p>
-     * When internet access is disabled, you won't be able to run a Studio notebook or to train or host models unless
-     * your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups
-     * allow outbound connections.
+     * When internet access is disabled, you won't be able to run a Amazon SageMaker Studio notebook or to train or host
+     * models unless your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your
+     * security groups allow outbound connections.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
      * NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound rules in order to launch a
-     * SageMaker Studio app successfully.
+     * Amazon SageMaker Studio app successfully.
      * </p>
      * </important>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect Amazon
      * SageMaker Studio Notebooks to Resources in a VPC</a>.
      * </p>
      * 
@@ -2355,6 +2417,72 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateImageVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an inference component, which is a SageMaker hosting object that you can use to deploy a model to an
+     * endpoint. In the inference component settings, you specify the model, the endpoint, and how the model utilizes
+     * the resources that the endpoint hosts. You can optimize resource utilization by tailoring how the required CPU
+     * cores, accelerators, and memory are allocated. You can deploy multiple inference components to an endpoint, where
+     * each inference component contains one model and the resource utilization needs for that individual model. After
+     * you deploy an inference component, you can directly invoke the associated model when you use the InvokeEndpoint
+     * API action.
+     * </p>
+     * 
+     * @param createInferenceComponentRequest
+     * @return Result of the CreateInferenceComponent operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateInferenceComponentResult createInferenceComponent(CreateInferenceComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInferenceComponent(request);
+    }
+
+    @SdkInternalApi
+    final CreateInferenceComponentResult executeCreateInferenceComponent(CreateInferenceComponentRequest createInferenceComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createInferenceComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateInferenceComponentRequest> request = null;
+        Response<CreateInferenceComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateInferenceComponentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createInferenceComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInferenceComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateInferenceComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateInferenceComponentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3480,9 +3608,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be
-     * automatically signed in to Amazon SageMaker Studio, and granted access to all of the Apps and files associated
-     * with the Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the
-     * authentication mode equals IAM.
+     * automatically signed in to the domain, and granted access to all of the Apps and files associated with the
+     * Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the authentication mode
+     * equals IAM.
      * </p>
      * <p>
      * The IAM role or user passed to this API defines the permissions to access the app. Once the presigned URL is
@@ -3492,8 +3620,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * You can restrict access to this API and to the URL that it returns to a list of IP addresses, Amazon VPCs or
      * Amazon VPC Endpoints that you specify. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to SageMaker Studio
-     * Through an Interface VPC Endpoint</a> .
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to Amazon SageMaker
+     * Studio Through an Interface VPC Endpoint</a> .
      * </p>
      * <note>
      * <p>
@@ -3822,7 +3950,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a new Studio Lifecycle Configuration.
+     * Creates a new Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param createStudioLifecycleConfigRequest
@@ -4288,9 +4416,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Creates a user profile. A user profile represents a single user within a domain, and is the main way to reference
      * a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when
-     * a user onboards to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from
-     * IAM Identity Center, a user profile is automatically created. A user profile is the primary holder of settings
-     * for an individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
+     * a user onboards to a domain. If an administrator invites a person by email or imports them from IAM Identity
+     * Center, a user profile is automatically created. A user profile is the primary holder of settings for an
+     * individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
      * </p>
      * 
      * @param createUserProfileRequest
@@ -4821,6 +4949,66 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param deleteClusterRequest
+     * @return Result of the DeleteCluster operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.DeleteCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCluster(request);
+    }
+
+    @SdkInternalApi
+    final DeleteClusterResult executeDeleteCluster(DeleteClusterRequest deleteClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteClusterRequest> request = null;
+        Response<DeleteClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5863,6 +6051,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes an inference component.
+     * </p>
+     * 
+     * @param deleteInferenceComponentRequest
+     * @return Result of the DeleteInferenceComponent operation returned by the service.
+     * @sample AmazonSageMaker.DeleteInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteInferenceComponentResult deleteInferenceComponent(DeleteInferenceComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInferenceComponent(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInferenceComponentResult executeDeleteInferenceComponent(DeleteInferenceComponentRequest deleteInferenceComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteInferenceComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteInferenceComponentRequest> request = null;
+        Response<DeleteInferenceComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInferenceComponentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteInferenceComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInferenceComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteInferenceComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteInferenceComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an inference experiment.
      * </p>
      * <note>
@@ -6763,9 +7008,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no
-     * running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from
-     * UserSettings in all Domains and UserProfiles.
+     * Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration,
+     * there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration
+     * from UserSettings in all Domains and UserProfiles.
      * </p>
      * 
      * @param deleteStudioLifecycleConfigRequest
@@ -6838,8 +7083,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * </note> <note>
      * <p>
-     * When you call this API to delete tags from a SageMaker Studio Domain or User Profile, the deleted tags are not
-     * removed from Apps that the SageMaker Studio Domain or User Profile launched before you called this API.
+     * When you call this API to delete tags from a SageMaker Domain or User Profile, the deleted tags are not removed
+     * from Apps that the SageMaker Domain or User Profile launched before you called this API.
      * </p>
      * </note>
      * 
@@ -7653,6 +7898,120 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAutoMLJobV2Result>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAutoMLJobV2ResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information of a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param describeClusterRequest
+     * @return Result of the DescribeCluster operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCluster(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClusterResult executeDescribeCluster(DescribeClusterRequest describeClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClusterRequest> request = null;
+        Response<DescribeClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information of an instance (also called a <i>node</i> interchangeably) of a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param describeClusterNodeRequest
+     * @return Result of the DescribeClusterNode operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeClusterNode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeClusterNodeResult describeClusterNode(DescribeClusterNodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClusterNode(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClusterNodeResult executeDescribeClusterNode(DescribeClusterNodeRequest describeClusterNodeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClusterNodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClusterNodeRequest> request = null;
+        Response<DescribeClusterNodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClusterNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClusterNodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterNode");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeClusterNodeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeClusterNodeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8879,6 +9238,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeImageVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about an inference component.
+     * </p>
+     * 
+     * @param describeInferenceComponentRequest
+     * @return Result of the DescribeInferenceComponent operation returned by the service.
+     * @sample AmazonSageMaker.DescribeInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInferenceComponentResult describeInferenceComponent(DescribeInferenceComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInferenceComponent(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInferenceComponentResult executeDescribeInferenceComponent(DescribeInferenceComponentRequest describeInferenceComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInferenceComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInferenceComponentRequest> request = null;
+        Response<DescribeInferenceComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInferenceComponentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInferenceComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInferenceComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInferenceComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeInferenceComponentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10119,7 +10535,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Describes the Studio Lifecycle Configuration.
+     * Describes the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param describeStudioLifecycleConfigRequest
@@ -11758,6 +12174,118 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Retrieves the list of instances (also called <i>nodes</i> interchangeably) in a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param listClusterNodesRequest
+     * @return Result of the ListClusterNodes operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListClusterNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterNodes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListClusterNodesResult listClusterNodes(ListClusterNodesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClusterNodes(request);
+    }
+
+    @SdkInternalApi
+    final ListClusterNodesResult executeListClusterNodes(ListClusterNodesRequest listClusterNodesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listClusterNodesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListClusterNodesRequest> request = null;
+        Response<ListClusterNodesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListClusterNodesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClusterNodesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusterNodes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListClusterNodesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListClusterNodesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the list of SageMaker HyperPod clusters.
+     * </p>
+     * 
+     * @param listClustersRequest
+     * @return Result of the ListClusters operation returned by the service.
+     * @sample AmazonSageMaker.ListClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListClustersResult listClusters(ListClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClusters(request);
+    }
+
+    @SdkInternalApi
+    final ListClustersResult executeListClusters(ListClustersRequest listClustersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listClustersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListClustersRequest> request = null;
+        Response<ListClustersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListClustersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListClustersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of the Git repositories in your account.
      * </p>
      * 
@@ -12945,6 +13473,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListImagesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListImagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the inference components in your account and their properties.
+     * </p>
+     * 
+     * @param listInferenceComponentsRequest
+     * @return Result of the ListInferenceComponents operation returned by the service.
+     * @sample AmazonSageMaker.ListInferenceComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceComponents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInferenceComponentsResult listInferenceComponents(ListInferenceComponentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInferenceComponents(request);
+    }
+
+    @SdkInternalApi
+    final ListInferenceComponentsResult executeListInferenceComponents(ListInferenceComponentsRequest listInferenceComponentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInferenceComponentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInferenceComponentsRequest> request = null;
+        Response<ListInferenceComponentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInferenceComponentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listInferenceComponentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInferenceComponents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInferenceComponentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListInferenceComponentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14723,7 +15308,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.
+     * Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web Services Account.
      * </p>
      * 
      * @param listStudioLifecycleConfigsRequest
@@ -17239,6 +17824,69 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Update a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @return Result of the UpdateCluster operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCluster(request);
+    }
+
+    @SdkInternalApi
+    final UpdateClusterResult executeUpdateCluster(UpdateClusterRequest updateClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateClusterRequest> request = null;
+        Response<UpdateClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the specified Git repository with the specified values.
      * </p>
      * 
@@ -18029,6 +18677,127 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateImageVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an inference component.
+     * </p>
+     * 
+     * @param updateInferenceComponentRequest
+     * @return Result of the UpdateInferenceComponent operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.UpdateInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInferenceComponentResult updateInferenceComponent(UpdateInferenceComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInferenceComponent(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInferenceComponentResult executeUpdateInferenceComponent(UpdateInferenceComponentRequest updateInferenceComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInferenceComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInferenceComponentRequest> request = null;
+        Response<UpdateInferenceComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInferenceComponentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInferenceComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInferenceComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInferenceComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateInferenceComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Runtime settings for a model that is deployed with an inference component.
+     * </p>
+     * 
+     * @param updateInferenceComponentRuntimeConfigRequest
+     * @return Result of the UpdateInferenceComponentRuntimeConfig operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.UpdateInferenceComponentRuntimeConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponentRuntimeConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInferenceComponentRuntimeConfigResult updateInferenceComponentRuntimeConfig(UpdateInferenceComponentRuntimeConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInferenceComponentRuntimeConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInferenceComponentRuntimeConfigResult executeUpdateInferenceComponentRuntimeConfig(
+            UpdateInferenceComponentRuntimeConfigRequest updateInferenceComponentRuntimeConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInferenceComponentRuntimeConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInferenceComponentRuntimeConfigRequest> request = null;
+        Response<UpdateInferenceComponentRuntimeConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInferenceComponentRuntimeConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInferenceComponentRuntimeConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInferenceComponentRuntimeConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInferenceComponentRuntimeConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateInferenceComponentRuntimeConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

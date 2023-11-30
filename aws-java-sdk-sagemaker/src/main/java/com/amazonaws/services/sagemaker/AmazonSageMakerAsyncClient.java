@@ -453,6 +453,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
+
+        return createClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(final CreateClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler) {
+        final CreateClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateClusterResult>() {
+            @Override
+            public CreateClusterResult call() throws Exception {
+                CreateClusterResult result = null;
+
+                try {
+                    result = executeCreateCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCodeRepositoryResult> createCodeRepositoryAsync(CreateCodeRepositoryRequest request) {
 
         return createCodeRepositoryAsync(request, null);
@@ -1066,6 +1099,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeCreateImageVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInferenceComponentResult> createInferenceComponentAsync(CreateInferenceComponentRequest request) {
+
+        return createInferenceComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInferenceComponentResult> createInferenceComponentAsync(final CreateInferenceComponentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateInferenceComponentRequest, CreateInferenceComponentResult> asyncHandler) {
+        final CreateInferenceComponentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateInferenceComponentResult>() {
+            @Override
+            public CreateInferenceComponentResult call() throws Exception {
+                CreateInferenceComponentResult result = null;
+
+                try {
+                    result = executeCreateInferenceComponent(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2214,6 +2280,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request) {
+
+        return deleteClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(final DeleteClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler) {
+        final DeleteClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteClusterResult>() {
+            @Override
+            public DeleteClusterResult call() throws Exception {
+                DeleteClusterResult result = null;
+
+                try {
+                    result = executeDeleteCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCodeRepositoryResult> deleteCodeRepositoryAsync(DeleteCodeRepositoryRequest request) {
 
         return deleteCodeRepositoryAsync(request, null);
@@ -2760,6 +2859,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDeleteImageVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInferenceComponentResult> deleteInferenceComponentAsync(DeleteInferenceComponentRequest request) {
+
+        return deleteInferenceComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInferenceComponentResult> deleteInferenceComponentAsync(final DeleteInferenceComponentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteInferenceComponentRequest, DeleteInferenceComponentResult> asyncHandler) {
+        final DeleteInferenceComponentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteInferenceComponentResult>() {
+            @Override
+            public DeleteInferenceComponentResult call() throws Exception {
+                DeleteInferenceComponentResult result = null;
+
+                try {
+                    result = executeDeleteInferenceComponent(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3773,6 +3905,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request) {
+
+        return describeClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(final DescribeClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler) {
+        final DescribeClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClusterResult>() {
+            @Override
+            public DescribeClusterResult call() throws Exception {
+                DescribeClusterResult result = null;
+
+                try {
+                    result = executeDescribeCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterNodeResult> describeClusterNodeAsync(DescribeClusterNodeRequest request) {
+
+        return describeClusterNodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClusterNodeResult> describeClusterNodeAsync(final DescribeClusterNodeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClusterNodeRequest, DescribeClusterNodeResult> asyncHandler) {
+        final DescribeClusterNodeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClusterNodeResult>() {
+            @Override
+            public DescribeClusterNodeResult call() throws Exception {
+                DescribeClusterNodeResult result = null;
+
+                try {
+                    result = executeDescribeClusterNode(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCodeRepositoryResult> describeCodeRepositoryAsync(DescribeCodeRepositoryRequest request) {
 
         return describeCodeRepositoryAsync(request, null);
@@ -4454,6 +4652,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDescribeImageVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInferenceComponentResult> describeInferenceComponentAsync(DescribeInferenceComponentRequest request) {
+
+        return describeInferenceComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInferenceComponentResult> describeInferenceComponentAsync(final DescribeInferenceComponentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInferenceComponentRequest, DescribeInferenceComponentResult> asyncHandler) {
+        final DescribeInferenceComponentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInferenceComponentResult>() {
+            @Override
+            public DescribeInferenceComponentResult call() throws Exception {
+                DescribeInferenceComponentResult result = null;
+
+                try {
+                    result = executeDescribeInferenceComponent(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -6107,6 +6338,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListClusterNodesResult> listClusterNodesAsync(ListClusterNodesRequest request) {
+
+        return listClusterNodesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClusterNodesResult> listClusterNodesAsync(final ListClusterNodesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListClusterNodesRequest, ListClusterNodesResult> asyncHandler) {
+        final ListClusterNodesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListClusterNodesResult>() {
+            @Override
+            public ListClusterNodesResult call() throws Exception {
+                ListClusterNodesResult result = null;
+
+                try {
+                    result = executeListClusterNodes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request) {
+
+        return listClustersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClustersResult> listClustersAsync(final ListClustersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
+        final ListClustersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListClustersResult>() {
+            @Override
+            public ListClustersResult call() throws Exception {
+                ListClustersResult result = null;
+
+                try {
+                    result = executeListClusters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCodeRepositoriesResult> listCodeRepositoriesAsync(ListCodeRepositoriesRequest request) {
 
         return listCodeRepositoriesAsync(request, null);
@@ -6785,6 +7082,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListImages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceComponentsResult> listInferenceComponentsAsync(ListInferenceComponentsRequest request) {
+
+        return listInferenceComponentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceComponentsResult> listInferenceComponentsAsync(final ListInferenceComponentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInferenceComponentsRequest, ListInferenceComponentsResult> asyncHandler) {
+        final ListInferenceComponentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInferenceComponentsResult>() {
+            @Override
+            public ListInferenceComponentsResult call() throws Exception {
+                ListInferenceComponentsResult result = null;
+
+                try {
+                    result = executeListInferenceComponents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -9196,6 +9526,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest request) {
+
+        return updateClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(final UpdateClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateClusterRequest, UpdateClusterResult> asyncHandler) {
+        final UpdateClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateClusterResult>() {
+            @Override
+            public UpdateClusterResult call() throws Exception {
+                UpdateClusterResult result = null;
+
+                try {
+                    result = executeUpdateCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateCodeRepositoryResult> updateCodeRepositoryAsync(UpdateCodeRepositoryRequest request) {
 
         return updateCodeRepositoryAsync(request, null);
@@ -9611,6 +9974,74 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeUpdateImageVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInferenceComponentResult> updateInferenceComponentAsync(UpdateInferenceComponentRequest request) {
+
+        return updateInferenceComponentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInferenceComponentResult> updateInferenceComponentAsync(final UpdateInferenceComponentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInferenceComponentRequest, UpdateInferenceComponentResult> asyncHandler) {
+        final UpdateInferenceComponentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInferenceComponentResult>() {
+            @Override
+            public UpdateInferenceComponentResult call() throws Exception {
+                UpdateInferenceComponentResult result = null;
+
+                try {
+                    result = executeUpdateInferenceComponent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInferenceComponentRuntimeConfigResult> updateInferenceComponentRuntimeConfigAsync(
+            UpdateInferenceComponentRuntimeConfigRequest request) {
+
+        return updateInferenceComponentRuntimeConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInferenceComponentRuntimeConfigResult> updateInferenceComponentRuntimeConfigAsync(
+            final UpdateInferenceComponentRuntimeConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInferenceComponentRuntimeConfigRequest, UpdateInferenceComponentRuntimeConfigResult> asyncHandler) {
+        final UpdateInferenceComponentRuntimeConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInferenceComponentRuntimeConfigResult>() {
+            @Override
+            public UpdateInferenceComponentRuntimeConfigResult call() throws Exception {
+                UpdateInferenceComponentRuntimeConfigResult result = null;
+
+                try {
+                    result = executeUpdateInferenceComponentRuntimeConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

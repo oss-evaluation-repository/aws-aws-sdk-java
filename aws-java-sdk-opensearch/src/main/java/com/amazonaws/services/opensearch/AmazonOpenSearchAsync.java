@@ -79,6 +79,35 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
+     * Adds the data source on the domain.
+     * </p>
+     * 
+     * @param addDataSourceRequest
+     *        Container for the parameters to the <code>AddDataSource</code> operation.
+     * @return A Java Future containing the result of the AddDataSource operation returned by the service.
+     * @sample AmazonOpenSearchAsync.AddDataSource
+     */
+    java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(AddDataSourceRequest addDataSourceRequest);
+
+    /**
+     * <p>
+     * Adds the data source on the domain.
+     * </p>
+     * 
+     * @param addDataSourceRequest
+     *        Container for the parameters to the <code>AddDataSource</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddDataSource operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.AddDataSource
+     */
+    java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(AddDataSourceRequest addDataSourceRequest,
+            com.amazonaws.handlers.AsyncHandler<AddDataSourceRequest, AddDataSourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs.
      * A domain can have up to 10 tags. For more information, see <a href=
      * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html"
@@ -340,6 +369,35 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
      */
     java.util.concurrent.Future<CreateVpcEndpointResult> createVpcEndpointAsync(CreateVpcEndpointRequest createVpcEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<CreateVpcEndpointRequest, CreateVpcEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the data source.
+     * </p>
+     * 
+     * @param deleteDataSourceRequest
+     *        Container for the parameters to the <code>DeleteDataSource</code> operation.
+     * @return A Java Future containing the result of the DeleteDataSource operation returned by the service.
+     * @sample AmazonOpenSearchAsync.DeleteDataSource
+     */
+    java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest deleteDataSourceRequest);
+
+    /**
+     * <p>
+     * Deletes the data source.
+     * </p>
+     * 
+     * @param deleteDataSourceRequest
+     *        Container for the parameters to the <code>DeleteDataSource</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDataSource operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.DeleteDataSource
+     */
+    java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest deleteDataSourceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1067,6 +1125,35 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
+     * Describes the data source details.
+     * </p>
+     * 
+     * @param getDataSourceRequest
+     *        Container for the parameters to the <code>GetDataSource</code> operation.
+     * @return A Java Future containing the result of the GetDataSource operation returned by the service.
+     * @sample AmazonOpenSearchAsync.GetDataSource
+     */
+    java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest getDataSourceRequest);
+
+    /**
+     * <p>
+     * Describes the data source details.
+     * </p>
+     * 
+     * @param getDataSourceRequest
+     *        Container for the parameters to the <code>GetDataSource</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataSource operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.GetDataSource
+     */
+    java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest getDataSourceRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler);
+
+    /**
+     * <p>
      * The status of the maintenance action.
      * </p>
      * 
@@ -1190,6 +1277,35 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
      */
     java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest getUpgradeStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of the data source details of the domain.
+     * </p>
+     * 
+     * @param listDataSourcesRequest
+     *        Container for the parameters to the <code>ListDataSources</code> operation.
+     * @return A Java Future containing the result of the ListDataSources operation returned by the service.
+     * @sample AmazonOpenSearchAsync.ListDataSources
+     */
+    java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest listDataSourcesRequest);
+
+    /**
+     * <p>
+     * A list of the data source details of the domain.
+     * </p>
+     * 
+     * @param listDataSourcesRequest
+     *        Container for the parameters to the <code>ListDataSources</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDataSources operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.ListDataSources
+     */
+    java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest listDataSourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResult> asyncHandler);
 
     /**
      * <p>
@@ -1713,6 +1829,35 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
     java.util.concurrent.Future<StartServiceSoftwareUpdateResult> startServiceSoftwareUpdateAsync(
             StartServiceSoftwareUpdateRequest startServiceSoftwareUpdateRequest,
             com.amazonaws.handlers.AsyncHandler<StartServiceSoftwareUpdateRequest, StartServiceSoftwareUpdateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the data source on the domain.
+     * </p>
+     * 
+     * @param updateDataSourceRequest
+     *        Container for the parameters to the <code>UpdateDataSource</code> operation.
+     * @return A Java Future containing the result of the UpdateDataSource operation returned by the service.
+     * @sample AmazonOpenSearchAsync.UpdateDataSource
+     */
+    java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest updateDataSourceRequest);
+
+    /**
+     * <p>
+     * Updates the data source on the domain.
+     * </p>
+     * 
+     * @param updateDataSourceRequest
+     *        Container for the parameters to the <code>UpdateDataSource</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDataSource operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.UpdateDataSource
+     */
+    java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest updateDataSourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler);
 
     /**
      * <p>

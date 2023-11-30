@@ -37,6 +37,8 @@ public class CreatePresignedDomainUrlRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpiresInSeconds").build();
     private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SpaceName").build();
+    private static final MarshallingInfo<String> LANDINGURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LandingUri").build();
 
     private static final CreatePresignedDomainUrlRequestMarshaller instance = new CreatePresignedDomainUrlRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class CreatePresignedDomainUrlRequestMarshaller {
             protocolMarshaller.marshall(createPresignedDomainUrlRequest.getSessionExpirationDurationInSeconds(), SESSIONEXPIRATIONDURATIONINSECONDS_BINDING);
             protocolMarshaller.marshall(createPresignedDomainUrlRequest.getExpiresInSeconds(), EXPIRESINSECONDS_BINDING);
             protocolMarshaller.marshall(createPresignedDomainUrlRequest.getSpaceName(), SPACENAME_BINDING);
+            protocolMarshaller.marshall(createPresignedDomainUrlRequest.getLandingUri(), LANDINGURI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

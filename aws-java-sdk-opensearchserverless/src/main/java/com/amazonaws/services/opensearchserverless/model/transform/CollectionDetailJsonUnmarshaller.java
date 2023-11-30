@@ -84,6 +84,10 @@ public class CollectionDetailJsonUnmarshaller implements Unmarshaller<Collection
                     context.nextToken();
                     collectionDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("standbyReplicas", targetDepth)) {
+                    context.nextToken();
+                    collectionDetail.setStandbyReplicas(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     collectionDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

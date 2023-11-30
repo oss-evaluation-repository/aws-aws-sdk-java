@@ -275,7 +275,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * assertion and the ARN of the context provider from which the trusted context assertion was generated.
      * </p>
      * <p>
-     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      * </p>
      */
     private java.util.List<ProvidedContext> providedContexts;
@@ -2004,7 +2004,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * assertion and the ARN of the context provider from which the trusted context assertion was generated.
      * </p>
      * <p>
-     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      * </p>
      * 
      * @return A list of previously acquired trusted context assertions in the format of a JSON array. The trusted
@@ -2015,7 +2015,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         generated.
      *         </p>
      *         <p>
-     *         <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     *         <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      */
 
     public java.util.List<ProvidedContext> getProvidedContexts() {
@@ -2032,7 +2032,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * assertion and the ARN of the context provider from which the trusted context assertion was generated.
      * </p>
      * <p>
-     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      * </p>
      * 
      * @param providedContexts
@@ -2043,7 +2043,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        assertion and the ARN of the context provider from which the trusted context assertion was generated.
      *        </p>
      *        <p>
-     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      */
 
     public void setProvidedContexts(java.util.Collection<ProvidedContext> providedContexts) {
@@ -2065,7 +2065,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * assertion and the ARN of the context provider from which the trusted context assertion was generated.
      * </p>
      * <p>
-     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2081,7 +2081,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        assertion and the ARN of the context provider from which the trusted context assertion was generated.
      *        </p>
      *        <p>
-     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2105,7 +2105,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * assertion and the ARN of the context provider from which the trusted context assertion was generated.
      * </p>
      * <p>
-     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      * </p>
      * 
      * @param providedContexts
@@ -2116,7 +2116,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        assertion and the ARN of the context provider from which the trusted context assertion was generated.
      *        </p>
      *        <p>
-     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/identitycenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     *        <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

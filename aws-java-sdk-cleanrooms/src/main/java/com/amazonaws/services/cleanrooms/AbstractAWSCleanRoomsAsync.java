@@ -82,6 +82,21 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConfiguredAudienceModelAssociationResult> createConfiguredAudienceModelAssociationAsync(
+            CreateConfiguredAudienceModelAssociationRequest request) {
+
+        return createConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConfiguredAudienceModelAssociationResult> createConfiguredAudienceModelAssociationAsync(
+            CreateConfiguredAudienceModelAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateConfiguredAudienceModelAssociationRequest, CreateConfiguredAudienceModelAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConfiguredTableResult> createConfiguredTableAsync(CreateConfiguredTableRequest request) {
 
         return createConfiguredTableAsync(request, null);
@@ -138,6 +153,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePrivacyBudgetTemplateResult> createPrivacyBudgetTemplateAsync(CreatePrivacyBudgetTemplateRequest request) {
+
+        return createPrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePrivacyBudgetTemplateResult> createPrivacyBudgetTemplateAsync(CreatePrivacyBudgetTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePrivacyBudgetTemplateRequest, CreatePrivacyBudgetTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAnalysisTemplateResult> deleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest request) {
 
         return deleteAnalysisTemplateAsync(request, null);
@@ -159,6 +187,21 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<DeleteCollaborationResult> deleteCollaborationAsync(DeleteCollaborationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCollaborationRequest, DeleteCollaborationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfiguredAudienceModelAssociationResult> deleteConfiguredAudienceModelAssociationAsync(
+            DeleteConfiguredAudienceModelAssociationRequest request) {
+
+        return deleteConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfiguredAudienceModelAssociationResult> deleteConfiguredAudienceModelAssociationAsync(
+            DeleteConfiguredAudienceModelAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfiguredAudienceModelAssociationRequest, DeleteConfiguredAudienceModelAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -233,6 +276,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePrivacyBudgetTemplateResult> deletePrivacyBudgetTemplateAsync(DeletePrivacyBudgetTemplateRequest request) {
+
+        return deletePrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePrivacyBudgetTemplateResult> deletePrivacyBudgetTemplateAsync(DeletePrivacyBudgetTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePrivacyBudgetTemplateRequest, DeletePrivacyBudgetTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAnalysisTemplateResult> getAnalysisTemplateAsync(GetAnalysisTemplateRequest request) {
 
         return getAnalysisTemplateAsync(request, null);
@@ -269,6 +325,51 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     public java.util.concurrent.Future<GetCollaborationAnalysisTemplateResult> getCollaborationAnalysisTemplateAsync(
             GetCollaborationAnalysisTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCollaborationAnalysisTemplateRequest, GetCollaborationAnalysisTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationConfiguredAudienceModelAssociationResult> getCollaborationConfiguredAudienceModelAssociationAsync(
+            GetCollaborationConfiguredAudienceModelAssociationRequest request) {
+
+        return getCollaborationConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationConfiguredAudienceModelAssociationResult> getCollaborationConfiguredAudienceModelAssociationAsync(
+            GetCollaborationConfiguredAudienceModelAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCollaborationConfiguredAudienceModelAssociationRequest, GetCollaborationConfiguredAudienceModelAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationPrivacyBudgetTemplateResult> getCollaborationPrivacyBudgetTemplateAsync(
+            GetCollaborationPrivacyBudgetTemplateRequest request) {
+
+        return getCollaborationPrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationPrivacyBudgetTemplateResult> getCollaborationPrivacyBudgetTemplateAsync(
+            GetCollaborationPrivacyBudgetTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCollaborationPrivacyBudgetTemplateRequest, GetCollaborationPrivacyBudgetTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConfiguredAudienceModelAssociationResult> getConfiguredAudienceModelAssociationAsync(
+            GetConfiguredAudienceModelAssociationRequest request) {
+
+        return getConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConfiguredAudienceModelAssociationResult> getConfiguredAudienceModelAssociationAsync(
+            GetConfiguredAudienceModelAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConfiguredAudienceModelAssociationRequest, GetConfiguredAudienceModelAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -321,6 +422,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<GetMembershipResult> getMembershipAsync(GetMembershipRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMembershipRequest, GetMembershipResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrivacyBudgetTemplateResult> getPrivacyBudgetTemplateAsync(GetPrivacyBudgetTemplateRequest request) {
+
+        return getPrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrivacyBudgetTemplateResult> getPrivacyBudgetTemplateAsync(GetPrivacyBudgetTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPrivacyBudgetTemplateRequest, GetPrivacyBudgetTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -393,6 +507,51 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListCollaborationConfiguredAudienceModelAssociationsResult> listCollaborationConfiguredAudienceModelAssociationsAsync(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest request) {
+
+        return listCollaborationConfiguredAudienceModelAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationConfiguredAudienceModelAssociationsResult> listCollaborationConfiguredAudienceModelAssociationsAsync(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCollaborationConfiguredAudienceModelAssociationsRequest, ListCollaborationConfiguredAudienceModelAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationPrivacyBudgetTemplatesResult> listCollaborationPrivacyBudgetTemplatesAsync(
+            ListCollaborationPrivacyBudgetTemplatesRequest request) {
+
+        return listCollaborationPrivacyBudgetTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationPrivacyBudgetTemplatesResult> listCollaborationPrivacyBudgetTemplatesAsync(
+            ListCollaborationPrivacyBudgetTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCollaborationPrivacyBudgetTemplatesRequest, ListCollaborationPrivacyBudgetTemplatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationPrivacyBudgetsResult> listCollaborationPrivacyBudgetsAsync(
+            ListCollaborationPrivacyBudgetsRequest request) {
+
+        return listCollaborationPrivacyBudgetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationPrivacyBudgetsResult> listCollaborationPrivacyBudgetsAsync(
+            ListCollaborationPrivacyBudgetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCollaborationPrivacyBudgetsRequest, ListCollaborationPrivacyBudgetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCollaborationsResult> listCollaborationsAsync(ListCollaborationsRequest request) {
 
         return listCollaborationsAsync(request, null);
@@ -401,6 +560,21 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<ListCollaborationsResult> listCollaborationsAsync(ListCollaborationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCollaborationsRequest, ListCollaborationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfiguredAudienceModelAssociationsResult> listConfiguredAudienceModelAssociationsAsync(
+            ListConfiguredAudienceModelAssociationsRequest request) {
+
+        return listConfiguredAudienceModelAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfiguredAudienceModelAssociationsResult> listConfiguredAudienceModelAssociationsAsync(
+            ListConfiguredAudienceModelAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListConfiguredAudienceModelAssociationsRequest, ListConfiguredAudienceModelAssociationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -460,6 +634,32 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListPrivacyBudgetTemplatesResult> listPrivacyBudgetTemplatesAsync(ListPrivacyBudgetTemplatesRequest request) {
+
+        return listPrivacyBudgetTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrivacyBudgetTemplatesResult> listPrivacyBudgetTemplatesAsync(ListPrivacyBudgetTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPrivacyBudgetTemplatesRequest, ListPrivacyBudgetTemplatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrivacyBudgetsResult> listPrivacyBudgetsAsync(ListPrivacyBudgetsRequest request) {
+
+        return listPrivacyBudgetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrivacyBudgetsResult> listPrivacyBudgetsAsync(ListPrivacyBudgetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPrivacyBudgetsRequest, ListPrivacyBudgetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProtectedQueriesResult> listProtectedQueriesAsync(ListProtectedQueriesRequest request) {
 
         return listProtectedQueriesAsync(request, null);
@@ -494,6 +694,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PreviewPrivacyImpactResult> previewPrivacyImpactAsync(PreviewPrivacyImpactRequest request) {
+
+        return previewPrivacyImpactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PreviewPrivacyImpactResult> previewPrivacyImpactAsync(PreviewPrivacyImpactRequest request,
+            com.amazonaws.handlers.AsyncHandler<PreviewPrivacyImpactRequest, PreviewPrivacyImpactResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -564,6 +777,21 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateConfiguredAudienceModelAssociationResult> updateConfiguredAudienceModelAssociationAsync(
+            UpdateConfiguredAudienceModelAssociationRequest request) {
+
+        return updateConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfiguredAudienceModelAssociationResult> updateConfiguredAudienceModelAssociationAsync(
+            UpdateConfiguredAudienceModelAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfiguredAudienceModelAssociationRequest, UpdateConfiguredAudienceModelAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConfiguredTableResult> updateConfiguredTableAsync(UpdateConfiguredTableRequest request) {
 
         return updateConfiguredTableAsync(request, null);
@@ -615,6 +843,19 @@ public class AbstractAWSCleanRoomsAsync extends AbstractAWSCleanRooms implements
     @Override
     public java.util.concurrent.Future<UpdateMembershipResult> updateMembershipAsync(UpdateMembershipRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateMembershipRequest, UpdateMembershipResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivacyBudgetTemplateResult> updatePrivacyBudgetTemplateAsync(UpdatePrivacyBudgetTemplateRequest request) {
+
+        return updatePrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivacyBudgetTemplateResult> updatePrivacyBudgetTemplateAsync(UpdatePrivacyBudgetTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePrivacyBudgetTemplateRequest, UpdatePrivacyBudgetTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

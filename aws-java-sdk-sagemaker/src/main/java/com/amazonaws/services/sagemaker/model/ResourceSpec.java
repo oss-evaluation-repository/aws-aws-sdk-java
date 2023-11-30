@@ -42,6 +42,12 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
     private String sageMakerImageVersionArn;
     /**
      * <p>
+     * The SageMakerImageVersionAlias.
+     * </p>
+     */
+    private String sageMakerImageVersionAlias;
+    /**
+     * <p>
      * The instance type that the image version runs on.
      * </p>
      * <note>
@@ -139,6 +145,46 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     public ResourceSpec withSageMakerImageVersionArn(String sageMakerImageVersionArn) {
         setSageMakerImageVersionArn(sageMakerImageVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SageMakerImageVersionAlias.
+     * </p>
+     * 
+     * @param sageMakerImageVersionAlias
+     *        The SageMakerImageVersionAlias.
+     */
+
+    public void setSageMakerImageVersionAlias(String sageMakerImageVersionAlias) {
+        this.sageMakerImageVersionAlias = sageMakerImageVersionAlias;
+    }
+
+    /**
+     * <p>
+     * The SageMakerImageVersionAlias.
+     * </p>
+     * 
+     * @return The SageMakerImageVersionAlias.
+     */
+
+    public String getSageMakerImageVersionAlias() {
+        return this.sageMakerImageVersionAlias;
+    }
+
+    /**
+     * <p>
+     * The SageMakerImageVersionAlias.
+     * </p>
+     * 
+     * @param sageMakerImageVersionAlias
+     *        The SageMakerImageVersionAlias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceSpec withSageMakerImageVersionAlias(String sageMakerImageVersionAlias) {
+        setSageMakerImageVersionAlias(sageMakerImageVersionAlias);
         return this;
     }
 
@@ -321,6 +367,8 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
             sb.append("SageMakerImageArn: ").append(getSageMakerImageArn()).append(",");
         if (getSageMakerImageVersionArn() != null)
             sb.append("SageMakerImageVersionArn: ").append(getSageMakerImageVersionArn()).append(",");
+        if (getSageMakerImageVersionAlias() != null)
+            sb.append("SageMakerImageVersionAlias: ").append(getSageMakerImageVersionAlias()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getLifecycleConfigArn() != null)
@@ -347,6 +395,10 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSageMakerImageVersionArn() != null && other.getSageMakerImageVersionArn().equals(this.getSageMakerImageVersionArn()) == false)
             return false;
+        if (other.getSageMakerImageVersionAlias() == null ^ this.getSageMakerImageVersionAlias() == null)
+            return false;
+        if (other.getSageMakerImageVersionAlias() != null && other.getSageMakerImageVersionAlias().equals(this.getSageMakerImageVersionAlias()) == false)
+            return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
@@ -365,6 +417,7 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getSageMakerImageArn() == null) ? 0 : getSageMakerImageArn().hashCode());
         hashCode = prime * hashCode + ((getSageMakerImageVersionArn() == null) ? 0 : getSageMakerImageVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getSageMakerImageVersionAlias() == null) ? 0 : getSageMakerImageVersionAlias().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getLifecycleConfigArn() == null) ? 0 : getLifecycleConfigArn().hashCode());
         return hashCode;

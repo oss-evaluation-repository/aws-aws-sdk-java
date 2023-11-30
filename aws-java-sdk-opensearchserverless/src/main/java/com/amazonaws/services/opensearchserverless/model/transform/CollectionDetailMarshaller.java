@@ -45,6 +45,8 @@ public class CollectionDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedDate").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> STANDBYREPLICAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("standbyReplicas").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class CollectionDetailMarshaller {
             protocolMarshaller.marshall(collectionDetail.getKmsKeyArn(), KMSKEYARN_BINDING);
             protocolMarshaller.marshall(collectionDetail.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(collectionDetail.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(collectionDetail.getStandbyReplicas(), STANDBYREPLICAS_BINDING);
             protocolMarshaller.marshall(collectionDetail.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(collectionDetail.getType(), TYPE_BINDING);
         } catch (Exception e) {

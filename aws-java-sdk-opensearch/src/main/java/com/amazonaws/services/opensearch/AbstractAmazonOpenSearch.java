@@ -33,6 +33,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public AddDataSourceResult addDataSource(AddDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddTagsResult addTags(AddTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public CreateVpcEndpointResult createVpcEndpoint(CreateVpcEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,6 +193,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public GetDataSourceResult getDataSource(GetDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDomainMaintenanceStatusResult getDomainMaintenanceStatus(GetDomainMaintenanceStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -199,6 +214,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public GetUpgradeStatusResult getUpgradeStatus(GetUpgradeStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataSourcesResult listDataSources(ListDataSourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -284,6 +304,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public StartServiceSoftwareUpdateResult startServiceSoftwareUpdate(StartServiceSoftwareUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDataSourceResult updateDataSource(UpdateDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

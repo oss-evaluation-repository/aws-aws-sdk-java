@@ -65,7 +65,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information
      * and for default values, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      */
@@ -74,7 +74,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
      * For more information and for default values, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      */
@@ -264,14 +264,14 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information
      * and for default values, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param scaleOutCooldown
      *        The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more
      *        information and for default values, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      *        >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
@@ -283,13 +283,13 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information
      * and for default values, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more
      *         information and for default values, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      *         >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
@@ -301,14 +301,14 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information
      * and for default values, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param scaleOutCooldown
      *        The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more
      *        information and for default values, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      *        >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -322,14 +322,14 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
      * For more information and for default values, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param scaleInCooldown
      *        The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
      *        start. For more information and for default values, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      *        >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
@@ -341,13 +341,13 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
      * For more information and for default values, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
      *         start. For more information and for default values, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      *         >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
@@ -359,14 +359,14 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
      * For more information and for default values, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param scaleInCooldown
      *        The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
      *        start. For more information and for default values, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown"
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
      *        >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

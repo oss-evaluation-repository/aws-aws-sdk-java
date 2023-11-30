@@ -58,6 +58,42 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String appSecurityGroupManagement;
+    /**
+     * <p>
+     * The VPC subnets that Studio uses for communication.
+     * </p>
+     * <p>
+     * If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state.
+     * </p>
+     */
+    private java.util.List<String> subnetIds;
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>,
+     * or <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same
+     * request.
+     * </p>
+     */
+    private String appNetworkAccessType;
 
     /**
      * <p>
@@ -307,6 +343,319 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The VPC subnets that Studio uses for communication.
+     * </p>
+     * <p>
+     * If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state.
+     * </p>
+     * 
+     * @return The VPC subnets that Studio uses for communication.</p>
+     *         <p>
+     *         If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     *         <code>Deleting</code> state.
+     */
+
+    public java.util.List<String> getSubnetIds() {
+        return subnetIds;
+    }
+
+    /**
+     * <p>
+     * The VPC subnets that Studio uses for communication.
+     * </p>
+     * <p>
+     * If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state.
+     * </p>
+     * 
+     * @param subnetIds
+     *        The VPC subnets that Studio uses for communication.</p>
+     *        <p>
+     *        If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     *        <code>Deleting</code> state.
+     */
+
+    public void setSubnetIds(java.util.Collection<String> subnetIds) {
+        if (subnetIds == null) {
+            this.subnetIds = null;
+            return;
+        }
+
+        this.subnetIds = new java.util.ArrayList<String>(subnetIds);
+    }
+
+    /**
+     * <p>
+     * The VPC subnets that Studio uses for communication.
+     * </p>
+     * <p>
+     * If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param subnetIds
+     *        The VPC subnets that Studio uses for communication.</p>
+     *        <p>
+     *        If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     *        <code>Deleting</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainRequest withSubnetIds(String... subnetIds) {
+        if (this.subnetIds == null) {
+            setSubnetIds(new java.util.ArrayList<String>(subnetIds.length));
+        }
+        for (String ele : subnetIds) {
+            this.subnetIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The VPC subnets that Studio uses for communication.
+     * </p>
+     * <p>
+     * If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     * <code>Deleting</code> state.
+     * </p>
+     * 
+     * @param subnetIds
+     *        The VPC subnets that Studio uses for communication.</p>
+     *        <p>
+     *        If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or
+     *        <code>Deleting</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainRequest withSubnetIds(java.util.Collection<String> subnetIds) {
+        setSubnetIds(subnetIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>,
+     * or <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same
+     * request.
+     * </p>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This configuration can only be modified if there are no apps in the <code>InService</code>,
+     *        <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if
+     *        <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     *        <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of
+     *        the same request.
+     * @see AppNetworkAccessType
+     */
+
+    public void setAppNetworkAccessType(String appNetworkAccessType) {
+        this.appNetworkAccessType = appNetworkAccessType;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>,
+     * or <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same
+     * request.
+     * </p>
+     * 
+     * @return Specifies the VPC used for non-EFS traffic.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *         allows direct internet access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         This configuration can only be modified if there are no apps in the <code>InService</code>,
+     *         <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if
+     *         <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     *         <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of
+     *         the same request.
+     * @see AppNetworkAccessType
+     */
+
+    public String getAppNetworkAccessType() {
+        return this.appNetworkAccessType;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>,
+     * or <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same
+     * request.
+     * </p>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This configuration can only be modified if there are no apps in the <code>InService</code>,
+     *        <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if
+     *        <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     *        <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of
+     *        the same request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppNetworkAccessType
+     */
+
+    public UpdateDomainRequest withAppNetworkAccessType(String appNetworkAccessType) {
+        setAppNetworkAccessType(appNetworkAccessType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This configuration can only be modified if there are no apps in the <code>InService</code>, <code>Pending</code>,
+     * or <code>Deleting</code> state. The configuration cannot be updated if
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of the same
+     * request.
+     * </p>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This configuration can only be modified if there are no apps in the <code>InService</code>,
+     *        <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be updated if
+     *        <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is already set or
+     *        <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided as part of
+     *        the same request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppNetworkAccessType
+     */
+
+    public UpdateDomainRequest withAppNetworkAccessType(AppNetworkAccessType appNetworkAccessType) {
+        this.appNetworkAccessType = appNetworkAccessType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -327,7 +676,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getDefaultSpaceSettings() != null)
             sb.append("DefaultSpaceSettings: ").append(getDefaultSpaceSettings()).append(",");
         if (getAppSecurityGroupManagement() != null)
-            sb.append("AppSecurityGroupManagement: ").append(getAppSecurityGroupManagement());
+            sb.append("AppSecurityGroupManagement: ").append(getAppSecurityGroupManagement()).append(",");
+        if (getSubnetIds() != null)
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
+        if (getAppNetworkAccessType() != null)
+            sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType());
         sb.append("}");
         return sb.toString();
     }
@@ -362,6 +715,14 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getAppSecurityGroupManagement() != null && other.getAppSecurityGroupManagement().equals(this.getAppSecurityGroupManagement()) == false)
             return false;
+        if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
+            return false;
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+            return false;
+        if (other.getAppNetworkAccessType() == null ^ this.getAppNetworkAccessType() == null)
+            return false;
+        if (other.getAppNetworkAccessType() != null && other.getAppNetworkAccessType().equals(this.getAppNetworkAccessType()) == false)
+            return false;
         return true;
     }
 
@@ -375,6 +736,8 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getDomainSettingsForUpdate() == null) ? 0 : getDomainSettingsForUpdate().hashCode());
         hashCode = prime * hashCode + ((getDefaultSpaceSettings() == null) ? 0 : getDefaultSpaceSettings().hashCode());
         hashCode = prime * hashCode + ((getAppSecurityGroupManagement() == null) ? 0 : getAppSecurityGroupManagement().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
         return hashCode;
     }
 

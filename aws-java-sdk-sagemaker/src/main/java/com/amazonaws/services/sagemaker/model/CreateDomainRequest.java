@@ -51,13 +51,13 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private UserSettings defaultUserSettings;
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * The VPC subnets that the domain uses for communication.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      */
     private String vpcId;
@@ -84,7 +84,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -300,10 +300,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * The VPC subnets that the domain uses for communication.
      * </p>
      * 
-     * @return The VPC subnets that Studio uses for communication.
+     * @return The VPC subnets that the domain uses for communication.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -312,11 +312,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * The VPC subnets that the domain uses for communication.
      * </p>
      * 
      * @param subnetIds
-     *        The VPC subnets that Studio uses for communication.
+     *        The VPC subnets that the domain uses for communication.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -330,7 +330,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * The VPC subnets that the domain uses for communication.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -339,7 +339,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param subnetIds
-     *        The VPC subnets that Studio uses for communication.
+     *        The VPC subnets that the domain uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +355,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The VPC subnets that Studio uses for communication.
+     * The VPC subnets that the domain uses for communication.
      * </p>
      * 
      * @param subnetIds
-     *        The VPC subnets that Studio uses for communication.
+     *        The VPC subnets that the domain uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,11 +370,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      */
 
     public void setVpcId(String vpcId) {
@@ -383,10 +383,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * 
-     * @return The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * @return The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      */
 
     public String getVpcId() {
@@ -395,11 +395,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,7 +519,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -535,7 +535,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      *        </p>
      *        </li>
      * @see AppNetworkAccessType
@@ -558,7 +558,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -573,7 +573,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *         <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      *         </p>
      *         </li>
      * @see AppNetworkAccessType
@@ -596,7 +596,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -612,7 +612,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -637,7 +637,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      * </p>
      * </li>
      * </ul>
@@ -653,7 +653,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

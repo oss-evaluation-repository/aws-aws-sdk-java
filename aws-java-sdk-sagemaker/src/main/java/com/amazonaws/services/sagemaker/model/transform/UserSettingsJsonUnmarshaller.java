@@ -86,6 +86,14 @@ public class UserSettingsJsonUnmarshaller implements Unmarshaller<UserSettings, 
                     context.nextToken();
                     userSettings.setCanvasAppSettings(CanvasAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DefaultLandingUri", targetDepth)) {
+                    context.nextToken();
+                    userSettings.setDefaultLandingUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StudioWebPortal", targetDepth)) {
+                    context.nextToken();
+                    userSettings.setStudioWebPortal(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

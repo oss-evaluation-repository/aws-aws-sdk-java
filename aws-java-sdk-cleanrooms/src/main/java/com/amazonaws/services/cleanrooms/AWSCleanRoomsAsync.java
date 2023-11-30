@@ -175,6 +175,43 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
+     * Provides the details necessary to create a configured audience model association.
+     * </p>
+     * 
+     * @param createConfiguredAudienceModelAssociationRequest
+     * @return A Java Future containing the result of the CreateConfiguredAudienceModelAssociation operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsync.CreateConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConfiguredAudienceModelAssociationResult> createConfiguredAudienceModelAssociationAsync(
+            CreateConfiguredAudienceModelAssociationRequest createConfiguredAudienceModelAssociationRequest);
+
+    /**
+     * <p>
+     * Provides the details necessary to create a configured audience model association.
+     * </p>
+     * 
+     * @param createConfiguredAudienceModelAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConfiguredAudienceModelAssociation operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsyncHandler.CreateConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConfiguredAudienceModelAssociationResult> createConfiguredAudienceModelAssociationAsync(
+            CreateConfiguredAudienceModelAssociationRequest createConfiguredAudienceModelAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConfiguredAudienceModelAssociationRequest, CreateConfiguredAudienceModelAssociationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new configured table resource.
      * </p>
      * 
@@ -311,6 +348,43 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
+     * Creates a privacy budget template for a specified membership. Each membership can have only one privacy budget
+     * template, but it can be deleted and recreated. If you need to change the privacy budget template for a
+     * membership, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
+     * </p>
+     * 
+     * @param createPrivacyBudgetTemplateRequest
+     * @return A Java Future containing the result of the CreatePrivacyBudgetTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsync.CreatePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreatePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePrivacyBudgetTemplateResult> createPrivacyBudgetTemplateAsync(
+            CreatePrivacyBudgetTemplateRequest createPrivacyBudgetTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a privacy budget template for a specified membership. Each membership can have only one privacy budget
+     * template, but it can be deleted and recreated. If you need to change the privacy budget template for a
+     * membership, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
+     * </p>
+     * 
+     * @param createPrivacyBudgetTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePrivacyBudgetTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.CreatePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreatePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePrivacyBudgetTemplateResult> createPrivacyBudgetTemplateAsync(
+            CreatePrivacyBudgetTemplateRequest createPrivacyBudgetTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePrivacyBudgetTemplateRequest, CreatePrivacyBudgetTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an analysis template.
      * </p>
      * 
@@ -370,6 +444,43 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<DeleteCollaborationResult> deleteCollaborationAsync(DeleteCollaborationRequest deleteCollaborationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCollaborationRequest, DeleteCollaborationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides the information necessary to delete a configured audience model association.
+     * </p>
+     * 
+     * @param deleteConfiguredAudienceModelAssociationRequest
+     * @return A Java Future containing the result of the DeleteConfiguredAudienceModelAssociation operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsync.DeleteConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConfiguredAudienceModelAssociationResult> deleteConfiguredAudienceModelAssociationAsync(
+            DeleteConfiguredAudienceModelAssociationRequest deleteConfiguredAudienceModelAssociationRequest);
+
+    /**
+     * <p>
+     * Provides the information necessary to delete a configured audience model association.
+     * </p>
+     * 
+     * @param deleteConfiguredAudienceModelAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConfiguredAudienceModelAssociation operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsyncHandler.DeleteConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConfiguredAudienceModelAssociationResult> deleteConfiguredAudienceModelAssociationAsync(
+            DeleteConfiguredAudienceModelAssociationRequest deleteConfiguredAudienceModelAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfiguredAudienceModelAssociationRequest, DeleteConfiguredAudienceModelAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -540,6 +651,39 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
+     * Deletes a privacy budget template for a specified membership.
+     * </p>
+     * 
+     * @param deletePrivacyBudgetTemplateRequest
+     * @return A Java Future containing the result of the DeletePrivacyBudgetTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsync.DeletePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeletePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePrivacyBudgetTemplateResult> deletePrivacyBudgetTemplateAsync(
+            DeletePrivacyBudgetTemplateRequest deletePrivacyBudgetTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a privacy budget template for a specified membership.
+     * </p>
+     * 
+     * @param deletePrivacyBudgetTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePrivacyBudgetTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.DeletePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeletePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePrivacyBudgetTemplateResult> deletePrivacyBudgetTemplateAsync(
+            DeletePrivacyBudgetTemplateRequest deletePrivacyBudgetTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePrivacyBudgetTemplateRequest, DeletePrivacyBudgetTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves an analysis template.
      * </p>
      * 
@@ -634,6 +778,113 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
     java.util.concurrent.Future<GetCollaborationAnalysisTemplateResult> getCollaborationAnalysisTemplateAsync(
             GetCollaborationAnalysisTemplateRequest getCollaborationAnalysisTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<GetCollaborationAnalysisTemplateRequest, GetCollaborationAnalysisTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a configured audience model association within a collaboration.
+     * </p>
+     * 
+     * @param getCollaborationConfiguredAudienceModelAssociationRequest
+     * @return A Java Future containing the result of the GetCollaborationConfiguredAudienceModelAssociation operation
+     *         returned by the service.
+     * @sample AWSCleanRoomsAsync.GetCollaborationConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCollaborationConfiguredAudienceModelAssociationResult> getCollaborationConfiguredAudienceModelAssociationAsync(
+            GetCollaborationConfiguredAudienceModelAssociationRequest getCollaborationConfiguredAudienceModelAssociationRequest);
+
+    /**
+     * <p>
+     * Retrieves a configured audience model association within a collaboration.
+     * </p>
+     * 
+     * @param getCollaborationConfiguredAudienceModelAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCollaborationConfiguredAudienceModelAssociation operation
+     *         returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.GetCollaborationConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCollaborationConfiguredAudienceModelAssociationResult> getCollaborationConfiguredAudienceModelAssociationAsync(
+            GetCollaborationConfiguredAudienceModelAssociationRequest getCollaborationConfiguredAudienceModelAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCollaborationConfiguredAudienceModelAssociationRequest, GetCollaborationConfiguredAudienceModelAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns details about a specified privacy budget template.
+     * </p>
+     * 
+     * @param getCollaborationPrivacyBudgetTemplateRequest
+     * @return A Java Future containing the result of the GetCollaborationPrivacyBudgetTemplate operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsync.GetCollaborationPrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationPrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCollaborationPrivacyBudgetTemplateResult> getCollaborationPrivacyBudgetTemplateAsync(
+            GetCollaborationPrivacyBudgetTemplateRequest getCollaborationPrivacyBudgetTemplateRequest);
+
+    /**
+     * <p>
+     * Returns details about a specified privacy budget template.
+     * </p>
+     * 
+     * @param getCollaborationPrivacyBudgetTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCollaborationPrivacyBudgetTemplate operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsyncHandler.GetCollaborationPrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationPrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCollaborationPrivacyBudgetTemplateResult> getCollaborationPrivacyBudgetTemplateAsync(
+            GetCollaborationPrivacyBudgetTemplateRequest getCollaborationPrivacyBudgetTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCollaborationPrivacyBudgetTemplateRequest, GetCollaborationPrivacyBudgetTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a configured audience model association.
+     * </p>
+     * 
+     * @param getConfiguredAudienceModelAssociationRequest
+     * @return A Java Future containing the result of the GetConfiguredAudienceModelAssociation operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsync.GetConfiguredAudienceModelAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConfiguredAudienceModelAssociationResult> getConfiguredAudienceModelAssociationAsync(
+            GetConfiguredAudienceModelAssociationRequest getConfiguredAudienceModelAssociationRequest);
+
+    /**
+     * <p>
+     * Returns information about a configured audience model association.
+     * </p>
+     * 
+     * @param getConfiguredAudienceModelAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConfiguredAudienceModelAssociation operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsyncHandler.GetConfiguredAudienceModelAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConfiguredAudienceModelAssociationResult> getConfiguredAudienceModelAssociationAsync(
+            GetConfiguredAudienceModelAssociationRequest getConfiguredAudienceModelAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConfiguredAudienceModelAssociationRequest, GetConfiguredAudienceModelAssociationResult> asyncHandler);
 
     /**
      * <p>
@@ -766,6 +1017,37 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<GetMembershipResult> getMembershipAsync(GetMembershipRequest getMembershipRequest,
             com.amazonaws.handlers.AsyncHandler<GetMembershipRequest, GetMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns details for a specified privacy budget template.
+     * </p>
+     * 
+     * @param getPrivacyBudgetTemplateRequest
+     * @return A Java Future containing the result of the GetPrivacyBudgetTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsync.GetPrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetPrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPrivacyBudgetTemplateResult> getPrivacyBudgetTemplateAsync(GetPrivacyBudgetTemplateRequest getPrivacyBudgetTemplateRequest);
+
+    /**
+     * <p>
+     * Returns details for a specified privacy budget template.
+     * </p>
+     * 
+     * @param getPrivacyBudgetTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPrivacyBudgetTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.GetPrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetPrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPrivacyBudgetTemplateResult> getPrivacyBudgetTemplateAsync(GetPrivacyBudgetTemplateRequest getPrivacyBudgetTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPrivacyBudgetTemplateRequest, GetPrivacyBudgetTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -928,6 +1210,117 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
+     * Lists configured audience model associations within a collaboration.
+     * </p>
+     * 
+     * @param listCollaborationConfiguredAudienceModelAssociationsRequest
+     * @return A Java Future containing the result of the ListCollaborationConfiguredAudienceModelAssociations operation
+     *         returned by the service.
+     * @sample AWSCleanRoomsAsync.ListCollaborationConfiguredAudienceModelAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationConfiguredAudienceModelAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCollaborationConfiguredAudienceModelAssociationsResult> listCollaborationConfiguredAudienceModelAssociationsAsync(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest listCollaborationConfiguredAudienceModelAssociationsRequest);
+
+    /**
+     * <p>
+     * Lists configured audience model associations within a collaboration.
+     * </p>
+     * 
+     * @param listCollaborationConfiguredAudienceModelAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCollaborationConfiguredAudienceModelAssociations operation
+     *         returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.ListCollaborationConfiguredAudienceModelAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationConfiguredAudienceModelAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCollaborationConfiguredAudienceModelAssociationsResult> listCollaborationConfiguredAudienceModelAssociationsAsync(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest listCollaborationConfiguredAudienceModelAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCollaborationConfiguredAudienceModelAssociationsRequest, ListCollaborationConfiguredAudienceModelAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array that summarizes each privacy budget template in a specified collaboration.
+     * </p>
+     * 
+     * @param listCollaborationPrivacyBudgetTemplatesRequest
+     * @return A Java Future containing the result of the ListCollaborationPrivacyBudgetTemplates operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsync.ListCollaborationPrivacyBudgetTemplates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgetTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCollaborationPrivacyBudgetTemplatesResult> listCollaborationPrivacyBudgetTemplatesAsync(
+            ListCollaborationPrivacyBudgetTemplatesRequest listCollaborationPrivacyBudgetTemplatesRequest);
+
+    /**
+     * <p>
+     * Returns an array that summarizes each privacy budget template in a specified collaboration.
+     * </p>
+     * 
+     * @param listCollaborationPrivacyBudgetTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCollaborationPrivacyBudgetTemplates operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsyncHandler.ListCollaborationPrivacyBudgetTemplates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgetTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCollaborationPrivacyBudgetTemplatesResult> listCollaborationPrivacyBudgetTemplatesAsync(
+            ListCollaborationPrivacyBudgetTemplatesRequest listCollaborationPrivacyBudgetTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCollaborationPrivacyBudgetTemplatesRequest, ListCollaborationPrivacyBudgetTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array that summarizes each privacy budget in a specified collaboration. The summary includes the
+     * collaboration ARN, creation time, creating account, and privacy budget details.
+     * </p>
+     * 
+     * @param listCollaborationPrivacyBudgetsRequest
+     * @return A Java Future containing the result of the ListCollaborationPrivacyBudgets operation returned by the
+     *         service.
+     * @sample AWSCleanRoomsAsync.ListCollaborationPrivacyBudgets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCollaborationPrivacyBudgetsResult> listCollaborationPrivacyBudgetsAsync(
+            ListCollaborationPrivacyBudgetsRequest listCollaborationPrivacyBudgetsRequest);
+
+    /**
+     * <p>
+     * Returns an array that summarizes each privacy budget in a specified collaboration. The summary includes the
+     * collaboration ARN, creation time, creating account, and privacy budget details.
+     * </p>
+     * 
+     * @param listCollaborationPrivacyBudgetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCollaborationPrivacyBudgets operation returned by the
+     *         service.
+     * @sample AWSCleanRoomsAsyncHandler.ListCollaborationPrivacyBudgets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCollaborationPrivacyBudgetsResult> listCollaborationPrivacyBudgetsAsync(
+            ListCollaborationPrivacyBudgetsRequest listCollaborationPrivacyBudgetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCollaborationPrivacyBudgetsRequest, ListCollaborationPrivacyBudgetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists collaborations the caller owns, is active in, or has been invited to.
      * </p>
      * 
@@ -956,6 +1349,43 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<ListCollaborationsResult> listCollaborationsAsync(ListCollaborationsRequest listCollaborationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListCollaborationsRequest, ListCollaborationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists information about requested configured audience model associations.
+     * </p>
+     * 
+     * @param listConfiguredAudienceModelAssociationsRequest
+     * @return A Java Future containing the result of the ListConfiguredAudienceModelAssociations operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsync.ListConfiguredAudienceModelAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredAudienceModelAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConfiguredAudienceModelAssociationsResult> listConfiguredAudienceModelAssociationsAsync(
+            ListConfiguredAudienceModelAssociationsRequest listConfiguredAudienceModelAssociationsRequest);
+
+    /**
+     * <p>
+     * Lists information about requested configured audience model associations.
+     * </p>
+     * 
+     * @param listConfiguredAudienceModelAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConfiguredAudienceModelAssociations operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsyncHandler.ListConfiguredAudienceModelAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredAudienceModelAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConfiguredAudienceModelAssociationsResult> listConfiguredAudienceModelAssociationsAsync(
+            ListConfiguredAudienceModelAssociationsRequest listConfiguredAudienceModelAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConfiguredAudienceModelAssociationsRequest, ListConfiguredAudienceModelAssociationsResult> asyncHandler);
 
     /**
      * <p>
@@ -1087,6 +1517,70 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
+     * Returns detailed information about the privacy budget templates in a specified membership.
+     * </p>
+     * 
+     * @param listPrivacyBudgetTemplatesRequest
+     * @return A Java Future containing the result of the ListPrivacyBudgetTemplates operation returned by the service.
+     * @sample AWSCleanRoomsAsync.ListPrivacyBudgetTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgetTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPrivacyBudgetTemplatesResult> listPrivacyBudgetTemplatesAsync(
+            ListPrivacyBudgetTemplatesRequest listPrivacyBudgetTemplatesRequest);
+
+    /**
+     * <p>
+     * Returns detailed information about the privacy budget templates in a specified membership.
+     * </p>
+     * 
+     * @param listPrivacyBudgetTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPrivacyBudgetTemplates operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.ListPrivacyBudgetTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgetTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPrivacyBudgetTemplatesResult> listPrivacyBudgetTemplatesAsync(
+            ListPrivacyBudgetTemplatesRequest listPrivacyBudgetTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPrivacyBudgetTemplatesRequest, ListPrivacyBudgetTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns detailed information about the privacy budgets in a specified membership.
+     * </p>
+     * 
+     * @param listPrivacyBudgetsRequest
+     * @return A Java Future containing the result of the ListPrivacyBudgets operation returned by the service.
+     * @sample AWSCleanRoomsAsync.ListPrivacyBudgets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPrivacyBudgetsResult> listPrivacyBudgetsAsync(ListPrivacyBudgetsRequest listPrivacyBudgetsRequest);
+
+    /**
+     * <p>
+     * Returns detailed information about the privacy budgets in a specified membership.
+     * </p>
+     * 
+     * @param listPrivacyBudgetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPrivacyBudgets operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.ListPrivacyBudgets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPrivacyBudgetsResult> listPrivacyBudgetsAsync(ListPrivacyBudgetsRequest listPrivacyBudgetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPrivacyBudgetsRequest, ListPrivacyBudgetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists protected queries, sorted by the most recent query.
      * </p>
      * 
@@ -1177,6 +1671,39 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * An estimate of the number of aggregation functions that the member who can query can run given epsilon and noise
+     * parameters.
+     * </p>
+     * 
+     * @param previewPrivacyImpactRequest
+     * @return A Java Future containing the result of the PreviewPrivacyImpact operation returned by the service.
+     * @sample AWSCleanRoomsAsync.PreviewPrivacyImpact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PreviewPrivacyImpact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PreviewPrivacyImpactResult> previewPrivacyImpactAsync(PreviewPrivacyImpactRequest previewPrivacyImpactRequest);
+
+    /**
+     * <p>
+     * An estimate of the number of aggregation functions that the member who can query can run given epsilon and noise
+     * parameters.
+     * </p>
+     * 
+     * @param previewPrivacyImpactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PreviewPrivacyImpact operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.PreviewPrivacyImpact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PreviewPrivacyImpact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PreviewPrivacyImpactResult> previewPrivacyImpactAsync(PreviewPrivacyImpactRequest previewPrivacyImpactRequest,
+            com.amazonaws.handlers.AsyncHandler<PreviewPrivacyImpactRequest, PreviewPrivacyImpactResult> asyncHandler);
 
     /**
      * <p>
@@ -1335,6 +1862,43 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
 
     /**
      * <p>
+     * Provides the details necessary to update a configured audience model association.
+     * </p>
+     * 
+     * @param updateConfiguredAudienceModelAssociationRequest
+     * @return A Java Future containing the result of the UpdateConfiguredAudienceModelAssociation operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsync.UpdateConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfiguredAudienceModelAssociationResult> updateConfiguredAudienceModelAssociationAsync(
+            UpdateConfiguredAudienceModelAssociationRequest updateConfiguredAudienceModelAssociationRequest);
+
+    /**
+     * <p>
+     * Provides the details necessary to update a configured audience model association.
+     * </p>
+     * 
+     * @param updateConfiguredAudienceModelAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConfiguredAudienceModelAssociation operation returned by
+     *         the service.
+     * @sample AWSCleanRoomsAsyncHandler.UpdateConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConfiguredAudienceModelAssociationResult> updateConfiguredAudienceModelAssociationAsync(
+            UpdateConfiguredAudienceModelAssociationRequest updateConfiguredAudienceModelAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfiguredAudienceModelAssociationRequest, UpdateConfiguredAudienceModelAssociationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a configured table.
      * </p>
      * 
@@ -1464,6 +2028,39 @@ public interface AWSCleanRoomsAsync extends AWSCleanRooms {
      */
     java.util.concurrent.Future<UpdateMembershipResult> updateMembershipAsync(UpdateMembershipRequest updateMembershipRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMembershipRequest, UpdateMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the privacy budget template for the specified membership.
+     * </p>
+     * 
+     * @param updatePrivacyBudgetTemplateRequest
+     * @return A Java Future containing the result of the UpdatePrivacyBudgetTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsync.UpdatePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdatePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePrivacyBudgetTemplateResult> updatePrivacyBudgetTemplateAsync(
+            UpdatePrivacyBudgetTemplateRequest updatePrivacyBudgetTemplateRequest);
+
+    /**
+     * <p>
+     * Updates the privacy budget template for the specified membership.
+     * </p>
+     * 
+     * @param updatePrivacyBudgetTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePrivacyBudgetTemplate operation returned by the service.
+     * @sample AWSCleanRoomsAsyncHandler.UpdatePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdatePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePrivacyBudgetTemplateResult> updatePrivacyBudgetTemplateAsync(
+            UpdatePrivacyBudgetTemplateRequest updatePrivacyBudgetTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePrivacyBudgetTemplateRequest, UpdatePrivacyBudgetTemplateResult> asyncHandler);
 
     /**
      * <p>

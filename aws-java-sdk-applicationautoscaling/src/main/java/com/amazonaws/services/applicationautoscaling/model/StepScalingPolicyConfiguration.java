@@ -69,7 +69,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <p>
      * The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified, the
      * default value is 300. For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#step-scaling-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
      * >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      */
@@ -369,14 +369,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <p>
      * The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified, the
      * default value is 300. For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#step-scaling-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
      * >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param cooldown
      *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified,
      *        the default value is 300. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#step-scaling-cooldown"
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
      *        >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
@@ -388,13 +388,13 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <p>
      * The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified, the
      * default value is 300. For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#step-scaling-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
      * >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified,
      *         the default value is 300. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#step-scaling-cooldown"
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
      *         >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
@@ -406,14 +406,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <p>
      * The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified, the
      * default value is 300. For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#step-scaling-cooldown"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
      * >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param cooldown
      *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified,
      *        the default value is 300. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#step-scaling-cooldown"
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
      *        >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

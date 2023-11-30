@@ -92,26 +92,26 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.cleanrooms.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cleanrooms.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cleanrooms.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.cleanrooms.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.cleanrooms.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cleanrooms.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cleanrooms.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cleanrooms.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cleanrooms.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cleanrooms.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.cleanrooms.model.AWSCleanRoomsException.class));
 
     public static AWSCleanRoomsClientBuilder builder() {
@@ -430,6 +430,79 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Provides the details necessary to create a configured audience model association.
+     * </p>
+     * 
+     * @param createConfiguredAudienceModelAssociationRequest
+     * @return Result of the CreateConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ServiceQuotaExceededException
+     *         Request denied because service quota has been exceeded.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.CreateConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateConfiguredAudienceModelAssociationResult createConfiguredAudienceModelAssociation(CreateConfiguredAudienceModelAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConfiguredAudienceModelAssociation(request);
+    }
+
+    @SdkInternalApi
+    final CreateConfiguredAudienceModelAssociationResult executeCreateConfiguredAudienceModelAssociation(
+            CreateConfiguredAudienceModelAssociationRequest createConfiguredAudienceModelAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createConfiguredAudienceModelAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConfiguredAudienceModelAssociationRequest> request = null;
+        Response<CreateConfiguredAudienceModelAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConfiguredAudienceModelAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createConfiguredAudienceModelAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfiguredAudienceModelAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConfiguredAudienceModelAssociationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateConfiguredAudienceModelAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new configured table resource.
      * </p>
      * 
@@ -713,6 +786,77 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Creates a privacy budget template for a specified membership. Each membership can have only one privacy budget
+     * template, but it can be deleted and recreated. If you need to change the privacy budget template for a
+     * membership, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
+     * </p>
+     * 
+     * @param createPrivacyBudgetTemplateRequest
+     * @return Result of the CreatePrivacyBudgetTemplate operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.CreatePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreatePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePrivacyBudgetTemplateResult createPrivacyBudgetTemplate(CreatePrivacyBudgetTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePrivacyBudgetTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreatePrivacyBudgetTemplateResult executeCreatePrivacyBudgetTemplate(CreatePrivacyBudgetTemplateRequest createPrivacyBudgetTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPrivacyBudgetTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePrivacyBudgetTemplateRequest> request = null;
+        Response<CreatePrivacyBudgetTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePrivacyBudgetTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createPrivacyBudgetTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePrivacyBudgetTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePrivacyBudgetTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreatePrivacyBudgetTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an analysis template.
      * </p>
      * 
@@ -830,6 +974,75 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCollaborationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCollaborationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides the information necessary to delete a configured audience model association.
+     * </p>
+     * 
+     * @param deleteConfiguredAudienceModelAssociationRequest
+     * @return Result of the DeleteConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.DeleteConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteConfiguredAudienceModelAssociationResult deleteConfiguredAudienceModelAssociation(DeleteConfiguredAudienceModelAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConfiguredAudienceModelAssociation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConfiguredAudienceModelAssociationResult executeDeleteConfiguredAudienceModelAssociation(
+            DeleteConfiguredAudienceModelAssociationRequest deleteConfiguredAudienceModelAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteConfiguredAudienceModelAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConfiguredAudienceModelAssociationRequest> request = null;
+        Response<DeleteConfiguredAudienceModelAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConfiguredAudienceModelAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteConfiguredAudienceModelAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfiguredAudienceModelAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConfiguredAudienceModelAssociationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteConfiguredAudienceModelAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1186,6 +1399,73 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Deletes a privacy budget template for a specified membership.
+     * </p>
+     * 
+     * @param deletePrivacyBudgetTemplateRequest
+     * @return Result of the DeletePrivacyBudgetTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.DeletePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeletePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeletePrivacyBudgetTemplateResult deletePrivacyBudgetTemplate(DeletePrivacyBudgetTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePrivacyBudgetTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeletePrivacyBudgetTemplateResult executeDeletePrivacyBudgetTemplate(DeletePrivacyBudgetTemplateRequest deletePrivacyBudgetTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePrivacyBudgetTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePrivacyBudgetTemplateRequest> request = null;
+        Response<DeletePrivacyBudgetTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePrivacyBudgetTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deletePrivacyBudgetTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePrivacyBudgetTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePrivacyBudgetTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeletePrivacyBudgetTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves an analysis template.
      * </p>
      * 
@@ -1370,6 +1650,212 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
             HttpResponseHandler<AmazonWebServiceResponse<GetCollaborationAnalysisTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetCollaborationAnalysisTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a configured audience model association within a collaboration.
+     * </p>
+     * 
+     * @param getCollaborationConfiguredAudienceModelAssociationRequest
+     * @return Result of the GetCollaborationConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetCollaborationConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCollaborationConfiguredAudienceModelAssociationResult getCollaborationConfiguredAudienceModelAssociation(
+            GetCollaborationConfiguredAudienceModelAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCollaborationConfiguredAudienceModelAssociation(request);
+    }
+
+    @SdkInternalApi
+    final GetCollaborationConfiguredAudienceModelAssociationResult executeGetCollaborationConfiguredAudienceModelAssociation(
+            GetCollaborationConfiguredAudienceModelAssociationRequest getCollaborationConfiguredAudienceModelAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCollaborationConfiguredAudienceModelAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCollaborationConfiguredAudienceModelAssociationRequest> request = null;
+        Response<GetCollaborationConfiguredAudienceModelAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCollaborationConfiguredAudienceModelAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCollaborationConfiguredAudienceModelAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCollaborationConfiguredAudienceModelAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCollaborationConfiguredAudienceModelAssociationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetCollaborationConfiguredAudienceModelAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns details about a specified privacy budget template.
+     * </p>
+     * 
+     * @param getCollaborationPrivacyBudgetTemplateRequest
+     * @return Result of the GetCollaborationPrivacyBudgetTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetCollaborationPrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationPrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCollaborationPrivacyBudgetTemplateResult getCollaborationPrivacyBudgetTemplate(GetCollaborationPrivacyBudgetTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCollaborationPrivacyBudgetTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetCollaborationPrivacyBudgetTemplateResult executeGetCollaborationPrivacyBudgetTemplate(
+            GetCollaborationPrivacyBudgetTemplateRequest getCollaborationPrivacyBudgetTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCollaborationPrivacyBudgetTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCollaborationPrivacyBudgetTemplateRequest> request = null;
+        Response<GetCollaborationPrivacyBudgetTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCollaborationPrivacyBudgetTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCollaborationPrivacyBudgetTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCollaborationPrivacyBudgetTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCollaborationPrivacyBudgetTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCollaborationPrivacyBudgetTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a configured audience model association.
+     * </p>
+     * 
+     * @param getConfiguredAudienceModelAssociationRequest
+     * @return Result of the GetConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetConfiguredAudienceModelAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConfiguredAudienceModelAssociationResult getConfiguredAudienceModelAssociation(GetConfiguredAudienceModelAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConfiguredAudienceModelAssociation(request);
+    }
+
+    @SdkInternalApi
+    final GetConfiguredAudienceModelAssociationResult executeGetConfiguredAudienceModelAssociation(
+            GetConfiguredAudienceModelAssociationRequest getConfiguredAudienceModelAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConfiguredAudienceModelAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConfiguredAudienceModelAssociationRequest> request = null;
+        Response<GetConfiguredAudienceModelAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConfiguredAudienceModelAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getConfiguredAudienceModelAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfiguredAudienceModelAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConfiguredAudienceModelAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetConfiguredAudienceModelAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1634,6 +2120,73 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns details for a specified privacy budget template.
+     * </p>
+     * 
+     * @param getPrivacyBudgetTemplateRequest
+     * @return Result of the GetPrivacyBudgetTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetPrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetPrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetPrivacyBudgetTemplateResult getPrivacyBudgetTemplate(GetPrivacyBudgetTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPrivacyBudgetTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetPrivacyBudgetTemplateResult executeGetPrivacyBudgetTemplate(GetPrivacyBudgetTemplateRequest getPrivacyBudgetTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPrivacyBudgetTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPrivacyBudgetTemplateRequest> request = null;
+        Response<GetPrivacyBudgetTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPrivacyBudgetTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getPrivacyBudgetTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPrivacyBudgetTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPrivacyBudgetTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetPrivacyBudgetTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1976,6 +2529,214 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Lists configured audience model associations within a collaboration.
+     * </p>
+     * 
+     * @param listCollaborationConfiguredAudienceModelAssociationsRequest
+     * @return Result of the ListCollaborationConfiguredAudienceModelAssociations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListCollaborationConfiguredAudienceModelAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationConfiguredAudienceModelAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCollaborationConfiguredAudienceModelAssociationsResult listCollaborationConfiguredAudienceModelAssociations(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCollaborationConfiguredAudienceModelAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListCollaborationConfiguredAudienceModelAssociationsResult executeListCollaborationConfiguredAudienceModelAssociations(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest listCollaborationConfiguredAudienceModelAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCollaborationConfiguredAudienceModelAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCollaborationConfiguredAudienceModelAssociationsRequest> request = null;
+        Response<ListCollaborationConfiguredAudienceModelAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCollaborationConfiguredAudienceModelAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCollaborationConfiguredAudienceModelAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCollaborationConfiguredAudienceModelAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCollaborationConfiguredAudienceModelAssociationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListCollaborationConfiguredAudienceModelAssociationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array that summarizes each privacy budget template in a specified collaboration.
+     * </p>
+     * 
+     * @param listCollaborationPrivacyBudgetTemplatesRequest
+     * @return Result of the ListCollaborationPrivacyBudgetTemplates operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListCollaborationPrivacyBudgetTemplates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgetTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCollaborationPrivacyBudgetTemplatesResult listCollaborationPrivacyBudgetTemplates(ListCollaborationPrivacyBudgetTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCollaborationPrivacyBudgetTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListCollaborationPrivacyBudgetTemplatesResult executeListCollaborationPrivacyBudgetTemplates(
+            ListCollaborationPrivacyBudgetTemplatesRequest listCollaborationPrivacyBudgetTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCollaborationPrivacyBudgetTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCollaborationPrivacyBudgetTemplatesRequest> request = null;
+        Response<ListCollaborationPrivacyBudgetTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCollaborationPrivacyBudgetTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCollaborationPrivacyBudgetTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCollaborationPrivacyBudgetTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCollaborationPrivacyBudgetTemplatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListCollaborationPrivacyBudgetTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array that summarizes each privacy budget in a specified collaboration. The summary includes the
+     * collaboration ARN, creation time, creating account, and privacy budget details.
+     * </p>
+     * 
+     * @param listCollaborationPrivacyBudgetsRequest
+     * @return Result of the ListCollaborationPrivacyBudgets operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListCollaborationPrivacyBudgets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCollaborationPrivacyBudgetsResult listCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCollaborationPrivacyBudgets(request);
+    }
+
+    @SdkInternalApi
+    final ListCollaborationPrivacyBudgetsResult executeListCollaborationPrivacyBudgets(
+            ListCollaborationPrivacyBudgetsRequest listCollaborationPrivacyBudgetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCollaborationPrivacyBudgetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCollaborationPrivacyBudgetsRequest> request = null;
+        Response<ListCollaborationPrivacyBudgetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCollaborationPrivacyBudgetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCollaborationPrivacyBudgetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCollaborationPrivacyBudgets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCollaborationPrivacyBudgetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCollaborationPrivacyBudgetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists collaborations the caller owns, is active in, or has been invited to.
      * </p>
      * 
@@ -2027,6 +2788,75 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<ListCollaborationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCollaborationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists information about requested configured audience model associations.
+     * </p>
+     * 
+     * @param listConfiguredAudienceModelAssociationsRequest
+     * @return Result of the ListConfiguredAudienceModelAssociations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListConfiguredAudienceModelAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredAudienceModelAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListConfiguredAudienceModelAssociationsResult listConfiguredAudienceModelAssociations(ListConfiguredAudienceModelAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConfiguredAudienceModelAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListConfiguredAudienceModelAssociationsResult executeListConfiguredAudienceModelAssociations(
+            ListConfiguredAudienceModelAssociationsRequest listConfiguredAudienceModelAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listConfiguredAudienceModelAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConfiguredAudienceModelAssociationsRequest> request = null;
+        Response<ListConfiguredAudienceModelAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConfiguredAudienceModelAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listConfiguredAudienceModelAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfiguredAudienceModelAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListConfiguredAudienceModelAssociationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListConfiguredAudienceModelAssociationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2298,6 +3128,138 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Returns detailed information about the privacy budget templates in a specified membership.
+     * </p>
+     * 
+     * @param listPrivacyBudgetTemplatesRequest
+     * @return Result of the ListPrivacyBudgetTemplates operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListPrivacyBudgetTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgetTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPrivacyBudgetTemplatesResult listPrivacyBudgetTemplates(ListPrivacyBudgetTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPrivacyBudgetTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListPrivacyBudgetTemplatesResult executeListPrivacyBudgetTemplates(ListPrivacyBudgetTemplatesRequest listPrivacyBudgetTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPrivacyBudgetTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPrivacyBudgetTemplatesRequest> request = null;
+        Response<ListPrivacyBudgetTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPrivacyBudgetTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPrivacyBudgetTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrivacyBudgetTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPrivacyBudgetTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPrivacyBudgetTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns detailed information about the privacy budgets in a specified membership.
+     * </p>
+     * 
+     * @param listPrivacyBudgetsRequest
+     * @return Result of the ListPrivacyBudgets operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListPrivacyBudgets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListPrivacyBudgetsResult listPrivacyBudgets(ListPrivacyBudgetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPrivacyBudgets(request);
+    }
+
+    @SdkInternalApi
+    final ListPrivacyBudgetsResult executeListPrivacyBudgets(ListPrivacyBudgetsRequest listPrivacyBudgetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPrivacyBudgetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPrivacyBudgetsRequest> request = null;
+        Response<ListPrivacyBudgetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPrivacyBudgetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPrivacyBudgetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrivacyBudgets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPrivacyBudgetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPrivacyBudgetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists protected queries, sorted by the most recent query.
      * </p>
      * 
@@ -2475,6 +3437,72 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * An estimate of the number of aggregation functions that the member who can query can run given epsilon and noise
+     * parameters.
+     * </p>
+     * 
+     * @param previewPrivacyImpactRequest
+     * @return Result of the PreviewPrivacyImpact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.PreviewPrivacyImpact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PreviewPrivacyImpact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PreviewPrivacyImpactResult previewPrivacyImpact(PreviewPrivacyImpactRequest request) {
+        request = beforeClientExecution(request);
+        return executePreviewPrivacyImpact(request);
+    }
+
+    @SdkInternalApi
+    final PreviewPrivacyImpactResult executePreviewPrivacyImpact(PreviewPrivacyImpactRequest previewPrivacyImpactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(previewPrivacyImpactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PreviewPrivacyImpactRequest> request = null;
+        Response<PreviewPrivacyImpactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PreviewPrivacyImpactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(previewPrivacyImpactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PreviewPrivacyImpact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PreviewPrivacyImpactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PreviewPrivacyImpactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2801,6 +3829,75 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Provides the details necessary to update a configured audience model association.
+     * </p>
+     * 
+     * @param updateConfiguredAudienceModelAssociationRequest
+     * @return Result of the UpdateConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.UpdateConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateConfiguredAudienceModelAssociationResult updateConfiguredAudienceModelAssociation(UpdateConfiguredAudienceModelAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfiguredAudienceModelAssociation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfiguredAudienceModelAssociationResult executeUpdateConfiguredAudienceModelAssociation(
+            UpdateConfiguredAudienceModelAssociationRequest updateConfiguredAudienceModelAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConfiguredAudienceModelAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConfiguredAudienceModelAssociationRequest> request = null;
+        Response<UpdateConfiguredAudienceModelAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConfiguredAudienceModelAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateConfiguredAudienceModelAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfiguredAudienceModelAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateConfiguredAudienceModelAssociationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateConfiguredAudienceModelAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a configured table.
      * </p>
      * 
@@ -3064,6 +4161,75 @@ public class AWSCleanRoomsClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the privacy budget template for the specified membership.
+     * </p>
+     * 
+     * @param updatePrivacyBudgetTemplateRequest
+     * @return Result of the UpdatePrivacyBudgetTemplate operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.UpdatePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdatePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdatePrivacyBudgetTemplateResult updatePrivacyBudgetTemplate(UpdatePrivacyBudgetTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePrivacyBudgetTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePrivacyBudgetTemplateResult executeUpdatePrivacyBudgetTemplate(UpdatePrivacyBudgetTemplateRequest updatePrivacyBudgetTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePrivacyBudgetTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePrivacyBudgetTemplateRequest> request = null;
+        Response<UpdatePrivacyBudgetTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePrivacyBudgetTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updatePrivacyBudgetTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CleanRooms");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePrivacyBudgetTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePrivacyBudgetTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdatePrivacyBudgetTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

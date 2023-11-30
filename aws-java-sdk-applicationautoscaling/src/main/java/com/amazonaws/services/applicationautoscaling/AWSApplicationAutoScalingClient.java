@@ -122,6 +122,11 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * Amazon SageMaker inference components
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Spot Fleets (Amazon EC2)
  * </p>
  * </li>
@@ -429,9 +434,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/create-step-scaling-policy-cli.html#delete-step-scaling-policy"
      * >Delete a step scaling policy</a> and <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy"
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/create-target-tracking-policy-cli.html#delete-target-tracking-policy"
      * >Delete a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 

@@ -37,6 +37,8 @@ public class CreateCollectionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> STANDBYREPLICAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("standbyReplicas").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +63,7 @@ public class CreateCollectionRequestMarshaller {
             protocolMarshaller.marshall(createCollectionRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createCollectionRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createCollectionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createCollectionRequest.getStandbyReplicas(), STANDBYREPLICAS_BINDING);
             protocolMarshaller.marshall(createCollectionRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createCollectionRequest.getType(), TYPE_BINDING);
         } catch (Exception e) {

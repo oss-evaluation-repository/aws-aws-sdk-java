@@ -41,6 +41,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(AddDataSourceRequest request) {
+
+        return addDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(AddDataSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddDataSourceRequest, AddDataSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request) {
 
         return addTagsAsync(request, null);
@@ -140,6 +153,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<CreateVpcEndpointResult> createVpcEndpointAsync(CreateVpcEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateVpcEndpointRequest, CreateVpcEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request) {
+
+        return deleteDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -433,6 +459,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest request) {
+
+        return getDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request) {
 
         return getDomainMaintenanceStatusAsync(request, null);
@@ -480,6 +519,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest request) {
+
+        return listDataSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -703,6 +755,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<StartServiceSoftwareUpdateResult> startServiceSoftwareUpdateAsync(StartServiceSoftwareUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<StartServiceSoftwareUpdateRequest, StartServiceSoftwareUpdateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request) {
+
+        return updateDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

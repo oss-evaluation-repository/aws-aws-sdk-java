@@ -111,11 +111,11 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * </note> <note>
      * <p>
-     * Tags that you add to a SageMaker Studio Domain or User Profile by calling this API are also added to any Apps
-     * that the Domain or User Profile launches after you call this API, but not to Apps that the Domain or User Profile
-     * launched before you called this API. To make sure that the tags associated with a Domain or User Profile are also
-     * added to all Apps that the Domain or User Profile launches, add the tags when you first create the Domain or User
-     * Profile by specifying them in the <code>Tags</code> parameter of <a
+     * Tags that you add to a SageMaker Domain or User Profile by calling this API are also added to any Apps that the
+     * Domain or User Profile launches after you call this API, but not to Apps that the Domain or User Profile launched
+     * before you called this API. To make sure that the tags associated with a Domain or User Profile are also added to
+     * all Apps that the Domain or User Profile launches, add the tags when you first create the Domain or User Profile
+     * by specifying them in the <code>Tags</code> parameter of <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or <a
      * href
      * ="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.
@@ -154,11 +154,11 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * </note> <note>
      * <p>
-     * Tags that you add to a SageMaker Studio Domain or User Profile by calling this API are also added to any Apps
-     * that the Domain or User Profile launches after you call this API, but not to Apps that the Domain or User Profile
-     * launched before you called this API. To make sure that the tags associated with a Domain or User Profile are also
-     * added to all Apps that the Domain or User Profile launches, add the tags when you first create the Domain or User
-     * Profile by specifying them in the <code>Tags</code> parameter of <a
+     * Tags that you add to a SageMaker Domain or User Profile by calling this API are also added to any Apps that the
+     * Domain or User Profile launches after you call this API, but not to Apps that the Domain or User Profile launched
+     * before you called this API. To make sure that the tags associated with a Domain or User Profile are also added to
+     * all Apps that the Domain or User Profile launches, add the tags when you first create the Domain or User Profile
+     * by specifying them in the <code>Tags</code> parameter of <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or <a
      * href
      * ="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.
@@ -321,8 +321,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker
-     * Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user
-     * may have multiple Apps active simultaneously.
+     * upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may
+     * have multiple Apps active simultaneously.
      * </p>
      * 
      * @param createAppRequest
@@ -336,8 +336,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker
-     * Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user
-     * may have multiple Apps active simultaneously.
+     * upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may
+     * have multiple Apps active simultaneously.
      * </p>
      * 
      * @param createAppRequest
@@ -598,6 +598,45 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<CreateAutoMLJobV2Result> createAutoMLJobV2Async(CreateAutoMLJobV2Request createAutoMLJobV2Request,
             com.amazonaws.handlers.AsyncHandler<CreateAutoMLJobV2Request, CreateAutoMLJobV2Result> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker for creating and managing
+     * persistent clusters for developing large machine learning models, such as large language models (LLMs) and
+     * diffusion models. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon SageMaker HyperPod</a> in
+     * the <i>Amazon SageMaker Developer Guide</i>.
+     * </p>
+     * 
+     * @param createClusterRequest
+     * @return A Java Future containing the result of the CreateCluster operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest createClusterRequest);
+
+    /**
+     * <p>
+     * Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker for creating and managing
+     * persistent clusters for developing large machine learning models, such as large language models (LLMs) and
+     * diffusion models. To learn more, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon SageMaker HyperPod</a> in
+     * the <i>Amazon SageMaker Developer Guide</i>.
+     * </p>
+     * 
+     * @param createClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCluster operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest createClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler);
 
     /**
      * <p>
@@ -874,10 +913,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic
-     * File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon
-     * Virtual Private Cloud (VPC) configurations. Users within a domain can share notebook files and other artifacts
-     * with each other.
+     * Creates a <code>Domain</code>. A domain consists of an associated Amazon Elastic File System (EFS) volume, a list
+     * of authorized users, and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
+     * configurations. Users within a domain can share notebook files and other artifacts with each other.
      * </p>
      * <p>
      * <b>EFS storage</b>
@@ -897,10 +935,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <b>VPC configuration</b>
      * </p>
      * <p>
-     * All SageMaker Studio traffic between the domain and the EFS volume is through the specified VPC and subnets. For
-     * other Studio traffic, you can specify the <code>AppNetworkAccessType</code> parameter.
-     * <code>AppNetworkAccessType</code> corresponds to the network access type that you choose when you onboard to
-     * Studio. The following options are available:
+     * All traffic between the domain and the EFS volume is through the specified VPC and subnets. For other traffic,
+     * you can specify the <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code> corresponds to
+     * the network access type that you choose when you onboard to the domain. The following options are available:
      * </p>
      * <ul>
      * <li>
@@ -911,25 +948,25 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets. Internet access is disabled
-     * by default. To allow internet access, you must specify a NAT gateway.
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet access is disabled by
+     * default. To allow internet access, you must specify a NAT gateway.
      * </p>
      * <p>
-     * When internet access is disabled, you won't be able to run a Studio notebook or to train or host models unless
-     * your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups
-     * allow outbound connections.
+     * When internet access is disabled, you won't be able to run a Amazon SageMaker Studio notebook or to train or host
+     * models unless your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your
+     * security groups allow outbound connections.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
      * NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound rules in order to launch a
-     * SageMaker Studio app successfully.
+     * Amazon SageMaker Studio app successfully.
      * </p>
      * </important>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect Amazon
      * SageMaker Studio Notebooks to Resources in a VPC</a>.
      * </p>
      * 
@@ -943,10 +980,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic
-     * File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon
-     * Virtual Private Cloud (VPC) configurations. Users within a domain can share notebook files and other artifacts
-     * with each other.
+     * Creates a <code>Domain</code>. A domain consists of an associated Amazon Elastic File System (EFS) volume, a list
+     * of authorized users, and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC)
+     * configurations. Users within a domain can share notebook files and other artifacts with each other.
      * </p>
      * <p>
      * <b>EFS storage</b>
@@ -966,10 +1002,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <b>VPC configuration</b>
      * </p>
      * <p>
-     * All SageMaker Studio traffic between the domain and the EFS volume is through the specified VPC and subnets. For
-     * other Studio traffic, you can specify the <code>AppNetworkAccessType</code> parameter.
-     * <code>AppNetworkAccessType</code> corresponds to the network access type that you choose when you onboard to
-     * Studio. The following options are available:
+     * All traffic between the domain and the EFS volume is through the specified VPC and subnets. For other traffic,
+     * you can specify the <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code> corresponds to
+     * the network access type that you choose when you onboard to the domain. The following options are available:
      * </p>
      * <ul>
      * <li>
@@ -980,25 +1015,25 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets. Internet access is disabled
-     * by default. To allow internet access, you must specify a NAT gateway.
+     * <code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet access is disabled by
+     * default. To allow internet access, you must specify a NAT gateway.
      * </p>
      * <p>
-     * When internet access is disabled, you won't be able to run a Studio notebook or to train or host models unless
-     * your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups
-     * allow outbound connections.
+     * When internet access is disabled, you won't be able to run a Amazon SageMaker Studio notebook or to train or host
+     * models unless your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your
+     * security groups allow outbound connections.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
      * NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound rules in order to launch a
-     * SageMaker Studio app successfully.
+     * Amazon SageMaker Studio app successfully.
      * </p>
      * </important>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect Amazon
      * SageMaker Studio Notebooks to Resources in a VPC</a>.
      * </p>
      * 
@@ -1859,6 +1894,49 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<CreateImageVersionResult> createImageVersionAsync(CreateImageVersionRequest createImageVersionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateImageVersionRequest, CreateImageVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an inference component, which is a SageMaker hosting object that you can use to deploy a model to an
+     * endpoint. In the inference component settings, you specify the model, the endpoint, and how the model utilizes
+     * the resources that the endpoint hosts. You can optimize resource utilization by tailoring how the required CPU
+     * cores, accelerators, and memory are allocated. You can deploy multiple inference components to an endpoint, where
+     * each inference component contains one model and the resource utilization needs for that individual model. After
+     * you deploy an inference component, you can directly invoke the associated model when you use the InvokeEndpoint
+     * API action.
+     * </p>
+     * 
+     * @param createInferenceComponentRequest
+     * @return A Java Future containing the result of the CreateInferenceComponent operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInferenceComponentResult> createInferenceComponentAsync(CreateInferenceComponentRequest createInferenceComponentRequest);
+
+    /**
+     * <p>
+     * Creates an inference component, which is a SageMaker hosting object that you can use to deploy a model to an
+     * endpoint. In the inference component settings, you specify the model, the endpoint, and how the model utilizes
+     * the resources that the endpoint hosts. You can optimize resource utilization by tailoring how the required CPU
+     * cores, accelerators, and memory are allocated. You can deploy multiple inference components to an endpoint, where
+     * each inference component contains one model and the resource utilization needs for that individual model. After
+     * you deploy an inference component, you can directly invoke the associated model when you use the InvokeEndpoint
+     * API action.
+     * </p>
+     * 
+     * @param createInferenceComponentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateInferenceComponent operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInferenceComponentResult> createInferenceComponentAsync(CreateInferenceComponentRequest createInferenceComponentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateInferenceComponentRequest, CreateInferenceComponentResult> asyncHandler);
 
     /**
      * <p>
@@ -2734,9 +2812,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be
-     * automatically signed in to Amazon SageMaker Studio, and granted access to all of the Apps and files associated
-     * with the Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the
-     * authentication mode equals IAM.
+     * automatically signed in to the domain, and granted access to all of the Apps and files associated with the
+     * Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the authentication mode
+     * equals IAM.
      * </p>
      * <p>
      * The IAM role or user passed to this API defines the permissions to access the app. Once the presigned URL is
@@ -2746,8 +2824,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * You can restrict access to this API and to the URL that it returns to a list of IP addresses, Amazon VPCs or
      * Amazon VPC Endpoints that you specify. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to SageMaker Studio
-     * Through an Interface VPC Endpoint</a> .
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to Amazon SageMaker
+     * Studio Through an Interface VPC Endpoint</a> .
      * </p>
      * <note>
      * <p>
@@ -2768,9 +2846,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be
-     * automatically signed in to Amazon SageMaker Studio, and granted access to all of the Apps and files associated
-     * with the Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the
-     * authentication mode equals IAM.
+     * automatically signed in to the domain, and granted access to all of the Apps and files associated with the
+     * Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the authentication mode
+     * equals IAM.
      * </p>
      * <p>
      * The IAM role or user passed to this API defines the permissions to access the app. Once the presigned URL is
@@ -2780,8 +2858,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * You can restrict access to this API and to the URL that it returns to a list of IP addresses, Amazon VPCs or
      * Amazon VPC Endpoints that you specify. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to SageMaker Studio
-     * Through an Interface VPC Endpoint</a> .
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to Amazon SageMaker
+     * Studio Through an Interface VPC Endpoint</a> .
      * </p>
      * <note>
      * <p>
@@ -2984,7 +3062,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a new Studio Lifecycle Configuration.
+     * Creates a new Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param createStudioLifecycleConfigRequest
@@ -2998,7 +3076,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a new Studio Lifecycle Configuration.
+     * Creates a new Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param createStudioLifecycleConfigRequest
@@ -3469,9 +3547,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * Creates a user profile. A user profile represents a single user within a domain, and is the main way to reference
      * a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when
-     * a user onboards to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from
-     * IAM Identity Center, a user profile is automatically created. A user profile is the primary holder of settings
-     * for an individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
+     * a user onboards to a domain. If an administrator invites a person by email or imports them from IAM Identity
+     * Center, a user profile is automatically created. A user profile is the primary holder of settings for an
+     * individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
      * </p>
      * 
      * @param createUserProfileRequest
@@ -3486,9 +3564,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * Creates a user profile. A user profile represents a single user within a domain, and is the main way to reference
      * a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when
-     * a user onboards to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from
-     * IAM Identity Center, a user profile is automatically created. A user profile is the primary holder of settings
-     * for an individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
+     * a user onboards to a domain. If an administrator invites a person by email or imports them from IAM Identity
+     * Center, a user profile is automatically created. A user profile is the primary holder of settings for an
+     * individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
      * </p>
      * 
      * @param createUserProfileRequest
@@ -3803,6 +3881,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(DeleteAssociationRequest deleteAssociationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAssociationRequest, DeleteAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param deleteClusterRequest
+     * @return A Java Future containing the result of the DeleteCluster operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest);
+
+    /**
+     * <p>
+     * Delete a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param deleteClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCluster operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest deleteClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler);
 
     /**
      * <p>
@@ -4437,6 +4546,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an inference component.
+     * </p>
+     * 
+     * @param deleteInferenceComponentRequest
+     * @return A Java Future containing the result of the DeleteInferenceComponent operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInferenceComponentResult> deleteInferenceComponentAsync(DeleteInferenceComponentRequest deleteInferenceComponentRequest);
+
+    /**
+     * <p>
+     * Deletes an inference component.
+     * </p>
+     * 
+     * @param deleteInferenceComponentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInferenceComponent operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInferenceComponentResult> deleteInferenceComponentAsync(DeleteInferenceComponentRequest deleteInferenceComponentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInferenceComponentRequest, DeleteInferenceComponentResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an inference experiment.
      * </p>
      * <note>
@@ -4968,9 +5108,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no
-     * running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from
-     * UserSettings in all Domains and UserProfiles.
+     * Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration,
+     * there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration
+     * from UserSettings in all Domains and UserProfiles.
      * </p>
      * 
      * @param deleteStudioLifecycleConfigRequest
@@ -4984,9 +5124,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no
-     * running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from
-     * UserSettings in all Domains and UserProfiles.
+     * Deletes the Amazon SageMaker Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration,
+     * there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration
+     * from UserSettings in all Domains and UserProfiles.
      * </p>
      * 
      * @param deleteStudioLifecycleConfigRequest
@@ -5017,8 +5157,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * </note> <note>
      * <p>
-     * When you call this API to delete tags from a SageMaker Studio Domain or User Profile, the deleted tags are not
-     * removed from Apps that the SageMaker Studio Domain or User Profile launched before you called this API.
+     * When you call this API to delete tags from a SageMaker Domain or User Profile, the deleted tags are not removed
+     * from Apps that the SageMaker Domain or User Profile launched before you called this API.
      * </p>
      * </note>
      * 
@@ -5044,8 +5184,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * </note> <note>
      * <p>
-     * When you call this API to delete tags from a SageMaker Studio Domain or User Profile, the deleted tags are not
-     * removed from Apps that the SageMaker Studio Domain or User Profile launched before you called this API.
+     * When you call this API to delete tags from a SageMaker Domain or User Profile, the deleted tags are not removed
+     * from Apps that the SageMaker Domain or User Profile launched before you called this API.
      * </p>
      * </note>
      * 
@@ -5526,6 +5666,68 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DescribeAutoMLJobV2Result> describeAutoMLJobV2Async(DescribeAutoMLJobV2Request describeAutoMLJobV2Request,
             com.amazonaws.handlers.AsyncHandler<DescribeAutoMLJobV2Request, DescribeAutoMLJobV2Result> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information of a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param describeClusterRequest
+     * @return A Java Future containing the result of the DescribeCluster operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest describeClusterRequest);
+
+    /**
+     * <p>
+     * Retrieves information of a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param describeClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCluster operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest describeClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information of an instance (also called a <i>node</i> interchangeably) of a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param describeClusterNodeRequest
+     * @return A Java Future containing the result of the DescribeClusterNode operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeClusterNode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClusterNodeResult> describeClusterNodeAsync(DescribeClusterNodeRequest describeClusterNodeRequest);
+
+    /**
+     * <p>
+     * Retrieves information of an instance (also called a <i>node</i> interchangeably) of a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param describeClusterNodeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeClusterNode operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeClusterNode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterNode" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClusterNodeResult> describeClusterNodeAsync(DescribeClusterNodeRequest describeClusterNodeRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeClusterNodeRequest, DescribeClusterNodeResult> asyncHandler);
 
     /**
      * <p>
@@ -6225,6 +6427,39 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DescribeImageVersionResult> describeImageVersionAsync(DescribeImageVersionRequest describeImageVersionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeImageVersionRequest, DescribeImageVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about an inference component.
+     * </p>
+     * 
+     * @param describeInferenceComponentRequest
+     * @return A Java Future containing the result of the DescribeInferenceComponent operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInferenceComponentResult> describeInferenceComponentAsync(
+            DescribeInferenceComponentRequest describeInferenceComponentRequest);
+
+    /**
+     * <p>
+     * Returns information about an inference component.
+     * </p>
+     * 
+     * @param describeInferenceComponentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInferenceComponent operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInferenceComponentResult> describeInferenceComponentAsync(
+            DescribeInferenceComponentRequest describeInferenceComponentRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInferenceComponentRequest, DescribeInferenceComponentResult> asyncHandler);
 
     /**
      * <p>
@@ -6939,7 +7174,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Describes the Studio Lifecycle Configuration.
+     * Describes the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param describeStudioLifecycleConfigRequest
@@ -6954,7 +7189,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Describes the Studio Lifecycle Configuration.
+     * Describes the Amazon SageMaker Studio Lifecycle Configuration.
      * </p>
      * 
      * @param describeStudioLifecycleConfigRequest
@@ -7915,6 +8150,68 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Retrieves the list of instances (also called <i>nodes</i> interchangeably) in a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param listClusterNodesRequest
+     * @return A Java Future containing the result of the ListClusterNodes operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListClusterNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterNodes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListClusterNodesResult> listClusterNodesAsync(ListClusterNodesRequest listClusterNodesRequest);
+
+    /**
+     * <p>
+     * Retrieves the list of instances (also called <i>nodes</i> interchangeably) in a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param listClusterNodesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListClusterNodes operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListClusterNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterNodes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListClusterNodesResult> listClusterNodesAsync(ListClusterNodesRequest listClusterNodesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListClusterNodesRequest, ListClusterNodesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the list of SageMaker HyperPod clusters.
+     * </p>
+     * 
+     * @param listClustersRequest
+     * @return A Java Future containing the result of the ListClusters operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest);
+
+    /**
+     * <p>
+     * Retrieves the list of SageMaker HyperPod clusters.
+     * </p>
+     * 
+     * @param listClustersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListClusters operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest listClustersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of the Git repositories in your account.
      * </p>
      * 
@@ -8627,6 +8924,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListImagesResult> listImagesAsync(ListImagesRequest listImagesRequest,
             com.amazonaws.handlers.AsyncHandler<ListImagesRequest, ListImagesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the inference components in your account and their properties.
+     * </p>
+     * 
+     * @param listInferenceComponentsRequest
+     * @return A Java Future containing the result of the ListInferenceComponents operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListInferenceComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceComponents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceComponentsResult> listInferenceComponentsAsync(ListInferenceComponentsRequest listInferenceComponentsRequest);
+
+    /**
+     * <p>
+     * Lists the inference components in your account and their properties.
+     * </p>
+     * 
+     * @param listInferenceComponentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInferenceComponents operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListInferenceComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceComponents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceComponentsResult> listInferenceComponentsAsync(ListInferenceComponentsRequest listInferenceComponentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceComponentsRequest, ListInferenceComponentsResult> asyncHandler);
 
     /**
      * <p>
@@ -9639,7 +9967,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.
+     * Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web Services Account.
      * </p>
      * 
      * @param listStudioLifecycleConfigsRequest
@@ -9653,7 +9981,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.
+     * Lists the Amazon SageMaker Studio Lifecycle Configurations in your Amazon Web Services Account.
      * </p>
      * 
      * @param listStudioLifecycleConfigsRequest
@@ -11214,6 +11542,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Update a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @return A Java Future containing the result of the UpdateCluster operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest updateClusterRequest);
+
+    /**
+     * <p>
+     * Update a SageMaker HyperPod cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCluster operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest updateClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterRequest, UpdateClusterResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the specified Git repository with the specified values.
      * </p>
      * 
@@ -11706,6 +12065,72 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<UpdateImageVersionResult> updateImageVersionAsync(UpdateImageVersionRequest updateImageVersionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateImageVersionRequest, UpdateImageVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an inference component.
+     * </p>
+     * 
+     * @param updateInferenceComponentRequest
+     * @return A Java Future containing the result of the UpdateInferenceComponent operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInferenceComponentResult> updateInferenceComponentAsync(UpdateInferenceComponentRequest updateInferenceComponentRequest);
+
+    /**
+     * <p>
+     * Updates an inference component.
+     * </p>
+     * 
+     * @param updateInferenceComponentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInferenceComponent operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateInferenceComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInferenceComponentResult> updateInferenceComponentAsync(UpdateInferenceComponentRequest updateInferenceComponentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInferenceComponentRequest, UpdateInferenceComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Runtime settings for a model that is deployed with an inference component.
+     * </p>
+     * 
+     * @param updateInferenceComponentRuntimeConfigRequest
+     * @return A Java Future containing the result of the UpdateInferenceComponentRuntimeConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.UpdateInferenceComponentRuntimeConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponentRuntimeConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInferenceComponentRuntimeConfigResult> updateInferenceComponentRuntimeConfigAsync(
+            UpdateInferenceComponentRuntimeConfigRequest updateInferenceComponentRuntimeConfigRequest);
+
+    /**
+     * <p>
+     * Runtime settings for a model that is deployed with an inference component.
+     * </p>
+     * 
+     * @param updateInferenceComponentRuntimeConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInferenceComponentRuntimeConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateInferenceComponentRuntimeConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceComponentRuntimeConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInferenceComponentRuntimeConfigResult> updateInferenceComponentRuntimeConfigAsync(
+            UpdateInferenceComponentRuntimeConfigRequest updateInferenceComponentRuntimeConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInferenceComponentRuntimeConfigRequest, UpdateInferenceComponentRuntimeConfigResult> asyncHandler);
 
     /**
      * <p>

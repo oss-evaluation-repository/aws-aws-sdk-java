@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A type of analysis rule that enables the table owner to approve custom SQL queries on their configured tables.
+ * A type of analysis rule that enables the table owner to approve custom SQL queries on their configured tables. It
+ * supports differential privacy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/AnalysisRuleCustom" target="_top">AWS API
@@ -41,6 +42,12 @@ public class AnalysisRuleCustom implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<String> allowedAnalysisProviders;
+    /**
+     * <p>
+     * The differential privacy configuration.
+     * </p>
+     */
+    private DifferentialPrivacyConfiguration differentialPrivacy;
 
     /**
      * <p>
@@ -191,6 +198,46 @@ public class AnalysisRuleCustom implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The differential privacy configuration.
+     * </p>
+     * 
+     * @param differentialPrivacy
+     *        The differential privacy configuration.
+     */
+
+    public void setDifferentialPrivacy(DifferentialPrivacyConfiguration differentialPrivacy) {
+        this.differentialPrivacy = differentialPrivacy;
+    }
+
+    /**
+     * <p>
+     * The differential privacy configuration.
+     * </p>
+     * 
+     * @return The differential privacy configuration.
+     */
+
+    public DifferentialPrivacyConfiguration getDifferentialPrivacy() {
+        return this.differentialPrivacy;
+    }
+
+    /**
+     * <p>
+     * The differential privacy configuration.
+     * </p>
+     * 
+     * @param differentialPrivacy
+     *        The differential privacy configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalysisRuleCustom withDifferentialPrivacy(DifferentialPrivacyConfiguration differentialPrivacy) {
+        setDifferentialPrivacy(differentialPrivacy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -205,7 +252,9 @@ public class AnalysisRuleCustom implements Serializable, Cloneable, StructuredPo
         if (getAllowedAnalyses() != null)
             sb.append("AllowedAnalyses: ").append(getAllowedAnalyses()).append(",");
         if (getAllowedAnalysisProviders() != null)
-            sb.append("AllowedAnalysisProviders: ").append(getAllowedAnalysisProviders());
+            sb.append("AllowedAnalysisProviders: ").append(getAllowedAnalysisProviders()).append(",");
+        if (getDifferentialPrivacy() != null)
+            sb.append("DifferentialPrivacy: ").append(getDifferentialPrivacy());
         sb.append("}");
         return sb.toString();
     }
@@ -228,6 +277,10 @@ public class AnalysisRuleCustom implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAllowedAnalysisProviders() != null && other.getAllowedAnalysisProviders().equals(this.getAllowedAnalysisProviders()) == false)
             return false;
+        if (other.getDifferentialPrivacy() == null ^ this.getDifferentialPrivacy() == null)
+            return false;
+        if (other.getDifferentialPrivacy() != null && other.getDifferentialPrivacy().equals(this.getDifferentialPrivacy()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +291,7 @@ public class AnalysisRuleCustom implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getAllowedAnalyses() == null) ? 0 : getAllowedAnalyses().hashCode());
         hashCode = prime * hashCode + ((getAllowedAnalysisProviders() == null) ? 0 : getAllowedAnalysisProviders().hashCode());
+        hashCode = prime * hashCode + ((getDifferentialPrivacy() == null) ? 0 : getDifferentialPrivacy().hashCode());
         return hashCode;
     }
 

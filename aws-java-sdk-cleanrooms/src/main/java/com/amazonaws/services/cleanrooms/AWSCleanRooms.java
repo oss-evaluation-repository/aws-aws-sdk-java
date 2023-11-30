@@ -153,6 +153,35 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Provides the details necessary to create a configured audience model association.
+     * </p>
+     * 
+     * @param createConfiguredAudienceModelAssociationRequest
+     * @return Result of the CreateConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ServiceQuotaExceededException
+     *         Request denied because service quota has been exceeded.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.CreateConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateConfiguredAudienceModelAssociationResult createConfiguredAudienceModelAssociation(
+            CreateConfiguredAudienceModelAssociationRequest createConfiguredAudienceModelAssociationRequest);
+
+    /**
+     * <p>
      * Creates a new configured table resource.
      * </p>
      * 
@@ -261,6 +290,33 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Creates a privacy budget template for a specified membership. Each membership can have only one privacy budget
+     * template, but it can be deleted and recreated. If you need to change the privacy budget template for a
+     * membership, use the <a>UpdatePrivacyBudgetTemplate</a> operation.
+     * </p>
+     * 
+     * @param createPrivacyBudgetTemplateRequest
+     * @return Result of the CreatePrivacyBudgetTemplate operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.CreatePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreatePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreatePrivacyBudgetTemplateResult createPrivacyBudgetTemplate(CreatePrivacyBudgetTemplateRequest createPrivacyBudgetTemplateRequest);
+
+    /**
+     * <p>
      * Deletes an analysis template.
      * </p>
      * 
@@ -302,6 +358,31 @@ public interface AWSCleanRooms {
      *      API Documentation</a>
      */
     DeleteCollaborationResult deleteCollaboration(DeleteCollaborationRequest deleteCollaborationRequest);
+
+    /**
+     * <p>
+     * Provides the information necessary to delete a configured audience model association.
+     * </p>
+     * 
+     * @param deleteConfiguredAudienceModelAssociationRequest
+     * @return Result of the DeleteConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.DeleteConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteConfiguredAudienceModelAssociationResult deleteConfiguredAudienceModelAssociation(
+            DeleteConfiguredAudienceModelAssociationRequest deleteConfiguredAudienceModelAssociationRequest);
 
     /**
      * <p>
@@ -432,6 +513,29 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Deletes a privacy budget template for a specified membership.
+     * </p>
+     * 
+     * @param deletePrivacyBudgetTemplateRequest
+     * @return Result of the DeletePrivacyBudgetTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.DeletePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeletePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeletePrivacyBudgetTemplateResult deletePrivacyBudgetTemplate(DeletePrivacyBudgetTemplateRequest deletePrivacyBudgetTemplateRequest);
+
+    /**
+     * <p>
      * Retrieves an analysis template.
      * </p>
      * 
@@ -496,6 +600,79 @@ public interface AWSCleanRooms {
      *      target="_top">AWS API Documentation</a>
      */
     GetCollaborationAnalysisTemplateResult getCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest getCollaborationAnalysisTemplateRequest);
+
+    /**
+     * <p>
+     * Retrieves a configured audience model association within a collaboration.
+     * </p>
+     * 
+     * @param getCollaborationConfiguredAudienceModelAssociationRequest
+     * @return Result of the GetCollaborationConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetCollaborationConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCollaborationConfiguredAudienceModelAssociationResult getCollaborationConfiguredAudienceModelAssociation(
+            GetCollaborationConfiguredAudienceModelAssociationRequest getCollaborationConfiguredAudienceModelAssociationRequest);
+
+    /**
+     * <p>
+     * Returns details about a specified privacy budget template.
+     * </p>
+     * 
+     * @param getCollaborationPrivacyBudgetTemplateRequest
+     * @return Result of the GetCollaborationPrivacyBudgetTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetCollaborationPrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationPrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCollaborationPrivacyBudgetTemplateResult getCollaborationPrivacyBudgetTemplate(
+            GetCollaborationPrivacyBudgetTemplateRequest getCollaborationPrivacyBudgetTemplateRequest);
+
+    /**
+     * <p>
+     * Returns information about a configured audience model association.
+     * </p>
+     * 
+     * @param getConfiguredAudienceModelAssociationRequest
+     * @return Result of the GetConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetConfiguredAudienceModelAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetConfiguredAudienceModelAssociationResult getConfiguredAudienceModelAssociation(
+            GetConfiguredAudienceModelAssociationRequest getConfiguredAudienceModelAssociationRequest);
 
     /**
      * <p>
@@ -588,6 +765,29 @@ public interface AWSCleanRooms {
      *      Documentation</a>
      */
     GetMembershipResult getMembership(GetMembershipRequest getMembershipRequest);
+
+    /**
+     * <p>
+     * Returns details for a specified privacy budget template.
+     * </p>
+     * 
+     * @param getPrivacyBudgetTemplateRequest
+     * @return Result of the GetPrivacyBudgetTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetPrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetPrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPrivacyBudgetTemplateResult getPrivacyBudgetTemplate(GetPrivacyBudgetTemplateRequest getPrivacyBudgetTemplateRequest);
 
     /**
      * <p>
@@ -707,6 +907,80 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Lists configured audience model associations within a collaboration.
+     * </p>
+     * 
+     * @param listCollaborationConfiguredAudienceModelAssociationsRequest
+     * @return Result of the ListCollaborationConfiguredAudienceModelAssociations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListCollaborationConfiguredAudienceModelAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationConfiguredAudienceModelAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCollaborationConfiguredAudienceModelAssociationsResult listCollaborationConfiguredAudienceModelAssociations(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest listCollaborationConfiguredAudienceModelAssociationsRequest);
+
+    /**
+     * <p>
+     * Returns an array that summarizes each privacy budget template in a specified collaboration.
+     * </p>
+     * 
+     * @param listCollaborationPrivacyBudgetTemplatesRequest
+     * @return Result of the ListCollaborationPrivacyBudgetTemplates operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListCollaborationPrivacyBudgetTemplates
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgetTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCollaborationPrivacyBudgetTemplatesResult listCollaborationPrivacyBudgetTemplates(
+            ListCollaborationPrivacyBudgetTemplatesRequest listCollaborationPrivacyBudgetTemplatesRequest);
+
+    /**
+     * <p>
+     * Returns an array that summarizes each privacy budget in a specified collaboration. The summary includes the
+     * collaboration ARN, creation time, creating account, and privacy budget details.
+     * </p>
+     * 
+     * @param listCollaborationPrivacyBudgetsRequest
+     * @return Result of the ListCollaborationPrivacyBudgets operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListCollaborationPrivacyBudgets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationPrivacyBudgets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCollaborationPrivacyBudgetsResult listCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest listCollaborationPrivacyBudgetsRequest);
+
+    /**
+     * <p>
      * Lists collaborations the caller owns, is active in, or has been invited to.
      * </p>
      * 
@@ -725,6 +999,31 @@ public interface AWSCleanRooms {
      *      API Documentation</a>
      */
     ListCollaborationsResult listCollaborations(ListCollaborationsRequest listCollaborationsRequest);
+
+    /**
+     * <p>
+     * Lists information about requested configured audience model associations.
+     * </p>
+     * 
+     * @param listConfiguredAudienceModelAssociationsRequest
+     * @return Result of the ListConfiguredAudienceModelAssociations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListConfiguredAudienceModelAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListConfiguredAudienceModelAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListConfiguredAudienceModelAssociationsResult listConfiguredAudienceModelAssociations(
+            ListConfiguredAudienceModelAssociationsRequest listConfiguredAudienceModelAssociationsRequest);
 
     /**
      * <p>
@@ -816,6 +1115,52 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Returns detailed information about the privacy budget templates in a specified membership.
+     * </p>
+     * 
+     * @param listPrivacyBudgetTemplatesRequest
+     * @return Result of the ListPrivacyBudgetTemplates operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListPrivacyBudgetTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgetTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPrivacyBudgetTemplatesResult listPrivacyBudgetTemplates(ListPrivacyBudgetTemplatesRequest listPrivacyBudgetTemplatesRequest);
+
+    /**
+     * <p>
+     * Returns detailed information about the privacy budgets in a specified membership.
+     * </p>
+     * 
+     * @param listPrivacyBudgetsRequest
+     * @return Result of the ListPrivacyBudgets operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListPrivacyBudgets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListPrivacyBudgets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListPrivacyBudgetsResult listPrivacyBudgets(ListPrivacyBudgetsRequest listPrivacyBudgetsRequest);
+
+    /**
+     * <p>
      * Lists protected queries, sorted by the most recent query.
      * </p>
      * 
@@ -876,6 +1221,30 @@ public interface AWSCleanRooms {
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * An estimate of the number of aggregation functions that the member who can query can run given epsilon and noise
+     * parameters.
+     * </p>
+     * 
+     * @param previewPrivacyImpactRequest
+     * @return Result of the PreviewPrivacyImpact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.PreviewPrivacyImpact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/PreviewPrivacyImpact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PreviewPrivacyImpactResult previewPrivacyImpact(PreviewPrivacyImpactRequest previewPrivacyImpactRequest);
 
     /**
      * <p>
@@ -982,6 +1351,31 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Provides the details necessary to update a configured audience model association.
+     * </p>
+     * 
+     * @param updateConfiguredAudienceModelAssociationRequest
+     * @return Result of the UpdateConfiguredAudienceModelAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.UpdateConfiguredAudienceModelAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredAudienceModelAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateConfiguredAudienceModelAssociationResult updateConfiguredAudienceModelAssociation(
+            UpdateConfiguredAudienceModelAssociationRequest updateConfiguredAudienceModelAssociationRequest);
+
+    /**
+     * <p>
      * Updates a configured table.
      * </p>
      * 
@@ -1079,6 +1473,31 @@ public interface AWSCleanRooms {
      *      API Documentation</a>
      */
     UpdateMembershipResult updateMembership(UpdateMembershipRequest updateMembershipRequest);
+
+    /**
+     * <p>
+     * Updates the privacy budget template for the specified membership.
+     * </p>
+     * 
+     * @param updatePrivacyBudgetTemplateRequest
+     * @return Result of the UpdatePrivacyBudgetTemplate operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.UpdatePrivacyBudgetTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdatePrivacyBudgetTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePrivacyBudgetTemplateResult updatePrivacyBudgetTemplate(UpdatePrivacyBudgetTemplateRequest updatePrivacyBudgetTemplateRequest);
 
     /**
      * <p>

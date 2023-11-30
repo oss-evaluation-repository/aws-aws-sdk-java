@@ -47,6 +47,8 @@ public class ProtectedQueryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("result").build();
     private static final MarshallingInfo<StructuredPojo> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("error").build();
+    private static final MarshallingInfo<StructuredPojo> DIFFERENTIALPRIVACY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("differentialPrivacy").build();
 
     private static final ProtectedQueryMarshaller instance = new ProtectedQueryMarshaller();
 
@@ -74,6 +76,7 @@ public class ProtectedQueryMarshaller {
             protocolMarshaller.marshall(protectedQuery.getStatistics(), STATISTICS_BINDING);
             protocolMarshaller.marshall(protectedQuery.getResult(), RESULT_BINDING);
             protocolMarshaller.marshall(protectedQuery.getError(), ERROR_BINDING);
+            protocolMarshaller.marshall(protectedQuery.getDifferentialPrivacy(), DIFFERENTIALPRIVACY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

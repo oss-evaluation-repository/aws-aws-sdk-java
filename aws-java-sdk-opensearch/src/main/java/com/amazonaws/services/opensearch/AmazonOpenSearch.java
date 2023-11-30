@@ -74,6 +74,33 @@ public interface AmazonOpenSearch {
 
     /**
      * <p>
+     * Adds the data source on the domain.
+     * </p>
+     * 
+     * @param addDataSourceRequest
+     *        Container for the parameters to the <code>AddDataSource</code> operation.
+     * @return Result of the AddDataSource operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than the allowed number of resources or sub-resources.
+     * @sample AmazonOpenSearch.AddDataSource
+     */
+    AddDataSourceResult addDataSource(AddDataSourceRequest addDataSourceRequest);
+
+    /**
+     * <p>
      * Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs.
      * A domain can have up to 10 tags. For more information, see <a href=
      * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html"
@@ -269,6 +296,31 @@ public interface AmazonOpenSearch {
      * @sample AmazonOpenSearch.CreateVpcEndpoint
      */
     CreateVpcEndpointResult createVpcEndpoint(CreateVpcEndpointRequest createVpcEndpointRequest);
+
+    /**
+     * <p>
+     * Deletes the data source.
+     * </p>
+     * 
+     * @param deleteDataSourceRequest
+     *        Container for the parameters to the <code>DeleteDataSource</code> operation.
+     * @return Result of the DeleteDataSource operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.DeleteDataSource
+     */
+    DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest deleteDataSourceRequest);
 
     /**
      * <p>
@@ -754,6 +806,31 @@ public interface AmazonOpenSearch {
 
     /**
      * <p>
+     * Describes the data source details.
+     * </p>
+     * 
+     * @param getDataSourceRequest
+     *        Container for the parameters to the <code>GetDataSource</code> operation.
+     * @return Result of the GetDataSource operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.GetDataSource
+     */
+    GetDataSourceResult getDataSource(GetDataSourceRequest getDataSourceRequest);
+
+    /**
+     * <p>
      * The status of the maintenance action.
      * </p>
      * 
@@ -843,6 +920,31 @@ public interface AmazonOpenSearch {
      * @sample AmazonOpenSearch.GetUpgradeStatus
      */
     GetUpgradeStatusResult getUpgradeStatus(GetUpgradeStatusRequest getUpgradeStatusRequest);
+
+    /**
+     * <p>
+     * A list of the data source details of the domain.
+     * </p>
+     * 
+     * @param listDataSourcesRequest
+     *        Container for the parameters to the <code>ListDataSources</code> operation.
+     * @return Result of the ListDataSources operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.ListDataSources
+     */
+    ListDataSourcesResult listDataSources(ListDataSourcesRequest listDataSourcesRequest);
 
     /**
      * <p>
@@ -1198,6 +1300,31 @@ public interface AmazonOpenSearch {
      * @sample AmazonOpenSearch.StartServiceSoftwareUpdate
      */
     StartServiceSoftwareUpdateResult startServiceSoftwareUpdate(StartServiceSoftwareUpdateRequest startServiceSoftwareUpdateRequest);
+
+    /**
+     * <p>
+     * Updates the data source on the domain.
+     * </p>
+     * 
+     * @param updateDataSourceRequest
+     *        Container for the parameters to the <code>UpdateDataSource</code> operation.
+     * @return Result of the UpdateDataSource operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.UpdateDataSource
+     */
+    UpdateDataSourceResult updateDataSource(UpdateDataSourceRequest updateDataSourceRequest);
 
     /**
      * <p>

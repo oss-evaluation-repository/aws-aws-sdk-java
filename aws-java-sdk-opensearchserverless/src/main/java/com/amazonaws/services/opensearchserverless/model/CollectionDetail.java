@@ -86,6 +86,12 @@ public class CollectionDetail implements Serializable, Cloneable, StructuredPojo
     private String name;
     /**
      * <p>
+     * Details about an OpenSearch Serverless collection.
+     * </p>
+     */
+    private String standbyReplicas;
+    /**
+     * <p>
      * The current status of the collection.
      * </p>
      */
@@ -465,6 +471,65 @@ public class CollectionDetail implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Details about an OpenSearch Serverless collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Details about an OpenSearch Serverless collection.
+     * @see StandbyReplicas
+     */
+
+    public void setStandbyReplicas(String standbyReplicas) {
+        this.standbyReplicas = standbyReplicas;
+    }
+
+    /**
+     * <p>
+     * Details about an OpenSearch Serverless collection.
+     * </p>
+     * 
+     * @return Details about an OpenSearch Serverless collection.
+     * @see StandbyReplicas
+     */
+
+    public String getStandbyReplicas() {
+        return this.standbyReplicas;
+    }
+
+    /**
+     * <p>
+     * Details about an OpenSearch Serverless collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Details about an OpenSearch Serverless collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StandbyReplicas
+     */
+
+    public CollectionDetail withStandbyReplicas(String standbyReplicas) {
+        setStandbyReplicas(standbyReplicas);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an OpenSearch Serverless collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Details about an OpenSearch Serverless collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StandbyReplicas
+     */
+
+    public CollectionDetail withStandbyReplicas(StandbyReplicas standbyReplicas) {
+        this.standbyReplicas = standbyReplicas.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The current status of the collection.
      * </p>
      * 
@@ -611,6 +676,8 @@ public class CollectionDetail implements Serializable, Cloneable, StructuredPojo
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getStandbyReplicas() != null)
+            sb.append("StandbyReplicas: ").append(getStandbyReplicas()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getType() != null)
@@ -665,6 +732,10 @@ public class CollectionDetail implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getStandbyReplicas() == null ^ this.getStandbyReplicas() == null)
+            return false;
+        if (other.getStandbyReplicas() != null && other.getStandbyReplicas().equals(this.getStandbyReplicas()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -690,6 +761,7 @@ public class CollectionDetail implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStandbyReplicas() == null) ? 0 : getStandbyReplicas().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

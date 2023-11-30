@@ -48,6 +48,11 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
     }
 
     @Override
+    public CreateConfiguredAudienceModelAssociationResult createConfiguredAudienceModelAssociation(CreateConfiguredAudienceModelAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateConfiguredTableResult createConfiguredTable(CreateConfiguredTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -68,12 +73,22 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
     }
 
     @Override
+    public CreatePrivacyBudgetTemplateResult createPrivacyBudgetTemplate(CreatePrivacyBudgetTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAnalysisTemplateResult deleteAnalysisTemplate(DeleteAnalysisTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteCollaborationResult deleteCollaboration(DeleteCollaborationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConfiguredAudienceModelAssociationResult deleteConfiguredAudienceModelAssociation(DeleteConfiguredAudienceModelAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,6 +118,11 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
     }
 
     @Override
+    public DeletePrivacyBudgetTemplateResult deletePrivacyBudgetTemplate(DeletePrivacyBudgetTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAnalysisTemplateResult getAnalysisTemplate(GetAnalysisTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +134,22 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
 
     @Override
     public GetCollaborationAnalysisTemplateResult getCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCollaborationConfiguredAudienceModelAssociationResult getCollaborationConfiguredAudienceModelAssociation(
+            GetCollaborationConfiguredAudienceModelAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCollaborationPrivacyBudgetTemplateResult getCollaborationPrivacyBudgetTemplate(GetCollaborationPrivacyBudgetTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConfiguredAudienceModelAssociationResult getConfiguredAudienceModelAssociation(GetConfiguredAudienceModelAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,6 +170,11 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
 
     @Override
     public GetMembershipResult getMembership(GetMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPrivacyBudgetTemplateResult getPrivacyBudgetTemplate(GetPrivacyBudgetTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,7 +204,28 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
     }
 
     @Override
+    public ListCollaborationConfiguredAudienceModelAssociationsResult listCollaborationConfiguredAudienceModelAssociations(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCollaborationPrivacyBudgetTemplatesResult listCollaborationPrivacyBudgetTemplates(ListCollaborationPrivacyBudgetTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCollaborationPrivacyBudgetsResult listCollaborationPrivacyBudgets(ListCollaborationPrivacyBudgetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCollaborationsResult listCollaborations(ListCollaborationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListConfiguredAudienceModelAssociationsResult listConfiguredAudienceModelAssociations(ListConfiguredAudienceModelAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,6 +250,16 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
     }
 
     @Override
+    public ListPrivacyBudgetTemplatesResult listPrivacyBudgetTemplates(ListPrivacyBudgetTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPrivacyBudgetsResult listPrivacyBudgets(ListPrivacyBudgetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListProtectedQueriesResult listProtectedQueries(ListProtectedQueriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -199,6 +271,11 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PreviewPrivacyImpactResult previewPrivacyImpact(PreviewPrivacyImpactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -228,6 +305,11 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
     }
 
     @Override
+    public UpdateConfiguredAudienceModelAssociationResult updateConfiguredAudienceModelAssociation(UpdateConfiguredAudienceModelAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateConfiguredTableResult updateConfiguredTable(UpdateConfiguredTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -244,6 +326,11 @@ public class AbstractAWSCleanRooms implements AWSCleanRooms {
 
     @Override
     public UpdateMembershipResult updateMembership(UpdateMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePrivacyBudgetTemplateResult updatePrivacyBudgetTemplate(UpdatePrivacyBudgetTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

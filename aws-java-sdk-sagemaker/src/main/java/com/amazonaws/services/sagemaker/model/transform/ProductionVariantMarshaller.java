@@ -51,6 +51,10 @@ public class ProductionVariantMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerStartupHealthCheckTimeoutInSeconds").build();
     private static final MarshallingInfo<Boolean> ENABLESSMACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableSSMAccess").build();
+    private static final MarshallingInfo<StructuredPojo> MANAGEDINSTANCESCALING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedInstanceScaling").build();
+    private static final MarshallingInfo<StructuredPojo> ROUTINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingConfig").build();
 
     private static final ProductionVariantMarshaller instance = new ProductionVariantMarshaller();
 
@@ -81,6 +85,8 @@ public class ProductionVariantMarshaller {
             protocolMarshaller
                     .marshall(productionVariant.getContainerStartupHealthCheckTimeoutInSeconds(), CONTAINERSTARTUPHEALTHCHECKTIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(productionVariant.getEnableSSMAccess(), ENABLESSMACCESS_BINDING);
+            protocolMarshaller.marshall(productionVariant.getManagedInstanceScaling(), MANAGEDINSTANCESCALING_BINDING);
+            protocolMarshaller.marshall(productionVariant.getRoutingConfig(), ROUTINGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

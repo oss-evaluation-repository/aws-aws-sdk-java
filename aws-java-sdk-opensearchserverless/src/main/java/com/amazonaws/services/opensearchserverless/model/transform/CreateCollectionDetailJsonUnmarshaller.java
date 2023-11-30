@@ -76,6 +76,10 @@ public class CreateCollectionDetailJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createCollectionDetail.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("standbyReplicas", targetDepth)) {
+                    context.nextToken();
+                    createCollectionDetail.setStandbyReplicas(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     createCollectionDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

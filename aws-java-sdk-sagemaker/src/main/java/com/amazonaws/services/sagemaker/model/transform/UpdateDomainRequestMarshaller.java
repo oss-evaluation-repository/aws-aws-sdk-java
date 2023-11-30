@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,10 @@ public class UpdateDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSpaceSettings").build();
     private static final MarshallingInfo<String> APPSECURITYGROUPMANAGEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppSecurityGroupManagement").build();
+    private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetIds").build();
+    private static final MarshallingInfo<String> APPNETWORKACCESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppNetworkAccessType").build();
 
     private static final UpdateDomainRequestMarshaller instance = new UpdateDomainRequestMarshaller();
 
@@ -59,6 +64,8 @@ public class UpdateDomainRequestMarshaller {
             protocolMarshaller.marshall(updateDomainRequest.getDomainSettingsForUpdate(), DOMAINSETTINGSFORUPDATE_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getDefaultSpaceSettings(), DEFAULTSPACESETTINGS_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getAppSecurityGroupManagement(), APPSECURITYGROUPMANAGEMENT_BINDING);
+            protocolMarshaller.marshall(updateDomainRequest.getSubnetIds(), SUBNETIDS_BINDING);
+            protocolMarshaller.marshall(updateDomainRequest.getAppNetworkAccessType(), APPNETWORKACCESSTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

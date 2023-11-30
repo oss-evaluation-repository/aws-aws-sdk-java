@@ -31,6 +31,8 @@ public class ResourceSpecMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageArn").build();
     private static final MarshallingInfo<String> SAGEMAKERIMAGEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageVersionArn").build();
+    private static final MarshallingInfo<String> SAGEMAKERIMAGEVERSIONALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageVersionAlias").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<String> LIFECYCLECONFIGARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class ResourceSpecMarshaller {
         try {
             protocolMarshaller.marshall(resourceSpec.getSageMakerImageArn(), SAGEMAKERIMAGEARN_BINDING);
             protocolMarshaller.marshall(resourceSpec.getSageMakerImageVersionArn(), SAGEMAKERIMAGEVERSIONARN_BINDING);
+            protocolMarshaller.marshall(resourceSpec.getSageMakerImageVersionAlias(), SAGEMAKERIMAGEVERSIONALIAS_BINDING);
             protocolMarshaller.marshall(resourceSpec.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(resourceSpec.getLifecycleConfigArn(), LIFECYCLECONFIGARN_BINDING);
         } catch (Exception e) {

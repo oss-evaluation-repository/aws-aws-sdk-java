@@ -117,6 +117,13 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String enableExplanations;
+    /**
+     * <p>
+     * If the endpoint hosts one or more inference components, this parameter specifies the name of inference component
+     * to invoke.
+     * </p>
+     */
+    private String inferenceComponentName;
 
     /**
      * <p>
@@ -737,6 +744,52 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * If the endpoint hosts one or more inference components, this parameter specifies the name of inference component
+     * to invoke.
+     * </p>
+     * 
+     * @param inferenceComponentName
+     *        If the endpoint hosts one or more inference components, this parameter specifies the name of inference
+     *        component to invoke.
+     */
+
+    public void setInferenceComponentName(String inferenceComponentName) {
+        this.inferenceComponentName = inferenceComponentName;
+    }
+
+    /**
+     * <p>
+     * If the endpoint hosts one or more inference components, this parameter specifies the name of inference component
+     * to invoke.
+     * </p>
+     * 
+     * @return If the endpoint hosts one or more inference components, this parameter specifies the name of inference
+     *         component to invoke.
+     */
+
+    public String getInferenceComponentName() {
+        return this.inferenceComponentName;
+    }
+
+    /**
+     * <p>
+     * If the endpoint hosts one or more inference components, this parameter specifies the name of inference component
+     * to invoke.
+     * </p>
+     * 
+     * @param inferenceComponentName
+     *        If the endpoint hosts one or more inference components, this parameter specifies the name of inference
+     *        component to invoke.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointRequest withInferenceComponentName(String inferenceComponentName) {
+        setInferenceComponentName(inferenceComponentName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -767,7 +820,9 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getInferenceId() != null)
             sb.append("InferenceId: ").append(getInferenceId()).append(",");
         if (getEnableExplanations() != null)
-            sb.append("EnableExplanations: ").append(getEnableExplanations());
+            sb.append("EnableExplanations: ").append(getEnableExplanations()).append(",");
+        if (getInferenceComponentName() != null)
+            sb.append("InferenceComponentName: ").append(getInferenceComponentName());
         sb.append("}");
         return sb.toString();
     }
@@ -822,6 +877,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEnableExplanations() != null && other.getEnableExplanations().equals(this.getEnableExplanations()) == false)
             return false;
+        if (other.getInferenceComponentName() == null ^ this.getInferenceComponentName() == null)
+            return false;
+        if (other.getInferenceComponentName() != null && other.getInferenceComponentName().equals(this.getInferenceComponentName()) == false)
+            return false;
         return true;
     }
 
@@ -840,6 +899,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTargetContainerHostname() == null) ? 0 : getTargetContainerHostname().hashCode());
         hashCode = prime * hashCode + ((getInferenceId() == null) ? 0 : getInferenceId().hashCode());
         hashCode = prime * hashCode + ((getEnableExplanations() == null) ? 0 : getEnableExplanations().hashCode());
+        hashCode = prime * hashCode + ((getInferenceComponentName() == null) ? 0 : getInferenceComponentName().hashCode());
         return hashCode;
     }
 

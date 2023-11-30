@@ -242,6 +242,75 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Adds the data source on the domain.
+     * </p>
+     * 
+     * @param addDataSourceRequest
+     *        Container for the parameters to the <code>AddDataSource</code> operation.
+     * @return Result of the AddDataSource operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than the allowed number of resources or sub-resources.
+     * @sample AmazonOpenSearch.AddDataSource
+     */
+    @Override
+    public AddDataSourceResult addDataSource(AddDataSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddDataSource(request);
+    }
+
+    @SdkInternalApi
+    final AddDataSourceResult executeAddDataSource(AddDataSourceRequest addDataSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addDataSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddDataSourceRequest> request = null;
+        Response<AddDataSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addDataSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddDataSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs.
      * A domain can have up to 10 tags. For more information, see <a href=
      * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html"
@@ -770,6 +839,73 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateVpcEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVpcEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the data source.
+     * </p>
+     * 
+     * @param deleteDataSourceRequest
+     *        Container for the parameters to the <code>DeleteDataSource</code> operation.
+     * @return Result of the DeleteDataSource operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.DeleteDataSource
+     */
+    @Override
+    public DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDataSource(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDataSourceResult executeDeleteDataSource(DeleteDataSourceRequest deleteDataSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDataSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDataSourceRequest> request = null;
+        Response<DeleteDataSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDataSourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2209,6 +2345,73 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Describes the data source details.
+     * </p>
+     * 
+     * @param getDataSourceRequest
+     *        Container for the parameters to the <code>GetDataSource</code> operation.
+     * @return Result of the GetDataSource operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.GetDataSource
+     */
+    @Override
+    public GetDataSourceResult getDataSource(GetDataSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataSource(request);
+    }
+
+    @SdkInternalApi
+    final GetDataSourceResult executeGetDataSource(GetDataSourceRequest getDataSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataSourceRequest> request = null;
+        Response<GetDataSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The status of the maintenance action.
      * </p>
      * 
@@ -2461,6 +2664,73 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<GetUpgradeStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUpgradeStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A list of the data source details of the domain.
+     * </p>
+     * 
+     * @param listDataSourcesRequest
+     *        Container for the parameters to the <code>ListDataSources</code> operation.
+     * @return Result of the ListDataSources operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.ListDataSources
+     */
+    @Override
+    public ListDataSourcesResult listDataSources(ListDataSourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDataSources(request);
+    }
+
+    @SdkInternalApi
+    final ListDataSourcesResult executeListDataSources(ListDataSourcesRequest listDataSourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDataSourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDataSourcesRequest> request = null;
+        Response<ListDataSourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDataSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataSourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataSourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDataSourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3548,6 +3818,73 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<StartServiceSoftwareUpdateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartServiceSoftwareUpdateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the data source on the domain.
+     * </p>
+     * 
+     * @param updateDataSourceRequest
+     *        Container for the parameters to the <code>UpdateDataSource</code> operation.
+     * @return Result of the UpdateDataSource operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.UpdateDataSource
+     */
+    @Override
+    public UpdateDataSourceResult updateDataSource(UpdateDataSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDataSource(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDataSourceResult executeUpdateDataSource(UpdateDataSourceRequest updateDataSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDataSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDataSourceRequest> request = null;
+        Response<UpdateDataSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDataSourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

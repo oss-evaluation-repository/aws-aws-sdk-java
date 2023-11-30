@@ -45,6 +45,12 @@ public class CreateCollectionRequest extends com.amazonaws.AmazonWebServiceReque
     private String name;
     /**
      * <p>
+     * Indicates whether standby replicas should be used for a collection.
+     * </p>
+     */
+    private String standbyReplicas;
+    /**
+     * <p>
      * An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.
      * </p>
      */
@@ -173,6 +179,65 @@ public class CreateCollectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     public CreateCollectionRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether standby replicas should be used for a collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Indicates whether standby replicas should be used for a collection.
+     * @see StandbyReplicas
+     */
+
+    public void setStandbyReplicas(String standbyReplicas) {
+        this.standbyReplicas = standbyReplicas;
+    }
+
+    /**
+     * <p>
+     * Indicates whether standby replicas should be used for a collection.
+     * </p>
+     * 
+     * @return Indicates whether standby replicas should be used for a collection.
+     * @see StandbyReplicas
+     */
+
+    public String getStandbyReplicas() {
+        return this.standbyReplicas;
+    }
+
+    /**
+     * <p>
+     * Indicates whether standby replicas should be used for a collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Indicates whether standby replicas should be used for a collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StandbyReplicas
+     */
+
+    public CreateCollectionRequest withStandbyReplicas(String standbyReplicas) {
+        setStandbyReplicas(standbyReplicas);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether standby replicas should be used for a collection.
+     * </p>
+     * 
+     * @param standbyReplicas
+     *        Indicates whether standby replicas should be used for a collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StandbyReplicas
+     */
+
+    public CreateCollectionRequest withStandbyReplicas(StandbyReplicas standbyReplicas) {
+        this.standbyReplicas = standbyReplicas.toString();
         return this;
     }
 
@@ -323,6 +388,8 @@ public class CreateCollectionRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Description: ").append(getDescription()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getStandbyReplicas() != null)
+            sb.append("StandbyReplicas: ").append(getStandbyReplicas()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getType() != null)
@@ -353,6 +420,10 @@ public class CreateCollectionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getStandbyReplicas() == null ^ this.getStandbyReplicas() == null)
+            return false;
+        if (other.getStandbyReplicas() != null && other.getStandbyReplicas().equals(this.getStandbyReplicas()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -372,6 +443,7 @@ public class CreateCollectionRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStandbyReplicas() == null) ? 0 : getStandbyReplicas().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

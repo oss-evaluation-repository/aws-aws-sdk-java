@@ -222,6 +222,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     */
+    private InfraCheckConfig infraCheckConfig;
 
     /**
      * <p>
@@ -1808,6 +1814,46 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @param infraCheckConfig
+     *        Contains information about the infrastructure health check configuration for the training job.
+     */
+
+    public void setInfraCheckConfig(InfraCheckConfig infraCheckConfig) {
+        this.infraCheckConfig = infraCheckConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @return Contains information about the infrastructure health check configuration for the training job.
+     */
+
+    public InfraCheckConfig getInfraCheckConfig() {
+        return this.infraCheckConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @param infraCheckConfig
+     *        Contains information about the infrastructure health check configuration for the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withInfraCheckConfig(InfraCheckConfig infraCheckConfig) {
+        setInfraCheckConfig(infraCheckConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1862,7 +1908,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getRetryStrategy() != null)
-            sb.append("RetryStrategy: ").append(getRetryStrategy());
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getInfraCheckConfig() != null)
+            sb.append("InfraCheckConfig: ").append(getInfraCheckConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1966,6 +2014,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
+        if (other.getInfraCheckConfig() == null ^ this.getInfraCheckConfig() == null)
+            return false;
+        if (other.getInfraCheckConfig() != null && other.getInfraCheckConfig().equals(this.getInfraCheckConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1996,6 +2048,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getInfraCheckConfig() == null) ? 0 : getInfraCheckConfig().hashCode());
         return hashCode;
     }
 

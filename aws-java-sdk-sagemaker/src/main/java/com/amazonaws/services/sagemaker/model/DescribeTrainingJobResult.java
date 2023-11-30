@@ -433,6 +433,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private WarmPoolStatus warmPoolStatus;
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     */
+    private InfraCheckConfig infraCheckConfig;
 
     /**
      * <p>
@@ -3780,6 +3786,46 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @param infraCheckConfig
+     *        Contains information about the infrastructure health check configuration for the training job.
+     */
+
+    public void setInfraCheckConfig(InfraCheckConfig infraCheckConfig) {
+        this.infraCheckConfig = infraCheckConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @return Contains information about the infrastructure health check configuration for the training job.
+     */
+
+    public InfraCheckConfig getInfraCheckConfig() {
+        return this.infraCheckConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @param infraCheckConfig
+     *        Contains information about the infrastructure health check configuration for the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withInfraCheckConfig(InfraCheckConfig infraCheckConfig) {
+        setInfraCheckConfig(infraCheckConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3872,7 +3918,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getWarmPoolStatus() != null)
-            sb.append("WarmPoolStatus: ").append(getWarmPoolStatus());
+            sb.append("WarmPoolStatus: ").append(getWarmPoolStatus()).append(",");
+        if (getInfraCheckConfig() != null)
+            sb.append("InfraCheckConfig: ").append(getInfraCheckConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -4053,6 +4101,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getWarmPoolStatus() != null && other.getWarmPoolStatus().equals(this.getWarmPoolStatus()) == false)
             return false;
+        if (other.getInfraCheckConfig() == null ^ this.getInfraCheckConfig() == null)
+            return false;
+        if (other.getInfraCheckConfig() != null && other.getInfraCheckConfig().equals(this.getInfraCheckConfig()) == false)
+            return false;
         return true;
     }
 
@@ -4102,6 +4154,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getWarmPoolStatus() == null) ? 0 : getWarmPoolStatus().hashCode());
+        hashCode = prime * hashCode + ((getInfraCheckConfig() == null) ? 0 : getInfraCheckConfig().hashCode());
         return hashCode;
     }
 

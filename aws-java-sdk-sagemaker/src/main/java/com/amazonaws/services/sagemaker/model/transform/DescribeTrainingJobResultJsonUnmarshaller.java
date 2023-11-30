@@ -233,6 +233,10 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setWarmPoolStatus(WarmPoolStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InfraCheckConfig", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setInfraCheckConfig(InfraCheckConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

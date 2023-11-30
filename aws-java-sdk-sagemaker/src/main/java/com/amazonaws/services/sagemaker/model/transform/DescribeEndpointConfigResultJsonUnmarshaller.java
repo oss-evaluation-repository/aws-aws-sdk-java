@@ -89,6 +89,18 @@ public class DescribeEndpointConfigResultJsonUnmarshaller implements Unmarshalle
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ExecutionRoleArn", targetDepth)) {
+                    context.nextToken();
+                    describeEndpointConfigResult.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    describeEndpointConfigResult.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EnableNetworkIsolation", targetDepth)) {
+                    context.nextToken();
+                    describeEndpointConfigResult.setEnableNetworkIsolation(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

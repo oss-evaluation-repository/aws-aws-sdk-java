@@ -51,6 +51,10 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.
      * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">
+     * TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
+     * </p>
      */
     private Integer maxRuntimePerTrainingJobInSeconds;
     /**
@@ -140,6 +144,10 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.
      * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">
+     * TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
+     * </p>
      * 
      * @param maxRuntimePerTrainingJobInSeconds
      *        The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
@@ -151,6 +159,11 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *        <p>
      *        For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
      *        the job candidate.
+     *        </p>
+     *        <p>
+     *        For <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html"
+     *        >TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      */
 
     public void setMaxRuntimePerTrainingJobInSeconds(Integer maxRuntimePerTrainingJobInSeconds) {
@@ -170,6 +183,10 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.
      * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">
+     * TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
+     * </p>
      * 
      * @return The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
      *         run as part of a hyperparameter tuning job. For more information, see the <a
@@ -180,6 +197,11 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *         <p>
      *         For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
      *         the job candidate.
+     *         </p>
+     *         <p>
+     *         For <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html"
+     *         >TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      */
 
     public Integer getMaxRuntimePerTrainingJobInSeconds() {
@@ -199,6 +221,10 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.
      * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html">
+     * TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
+     * </p>
      * 
      * @param maxRuntimePerTrainingJobInSeconds
      *        The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to
@@ -210,6 +236,11 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *        <p>
      *        For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
      *        the job candidate.
+     *        </p>
+     *        <p>
+     *        For <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TextClassificationJobConfig.html"
+     *        >TextGenerationJobConfig</a> problem types, the maximum time defaults to 72 hours (259200 seconds).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

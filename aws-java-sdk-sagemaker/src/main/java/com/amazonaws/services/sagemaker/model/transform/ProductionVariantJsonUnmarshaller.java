@@ -96,6 +96,14 @@ public class ProductionVariantJsonUnmarshaller implements Unmarshaller<Productio
                     context.nextToken();
                     productionVariant.setEnableSSMAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ManagedInstanceScaling", targetDepth)) {
+                    context.nextToken();
+                    productionVariant.setManagedInstanceScaling(ProductionVariantManagedInstanceScalingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RoutingConfig", targetDepth)) {
+                    context.nextToken();
+                    productionVariant.setRoutingConfig(ProductionVariantRoutingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

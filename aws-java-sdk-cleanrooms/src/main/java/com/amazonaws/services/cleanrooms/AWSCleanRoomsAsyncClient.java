@@ -223,6 +223,41 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateConfiguredAudienceModelAssociationResult> createConfiguredAudienceModelAssociationAsync(
+            CreateConfiguredAudienceModelAssociationRequest request) {
+
+        return createConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConfiguredAudienceModelAssociationResult> createConfiguredAudienceModelAssociationAsync(
+            final CreateConfiguredAudienceModelAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConfiguredAudienceModelAssociationRequest, CreateConfiguredAudienceModelAssociationResult> asyncHandler) {
+        final CreateConfiguredAudienceModelAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConfiguredAudienceModelAssociationResult>() {
+            @Override
+            public CreateConfiguredAudienceModelAssociationResult call() throws Exception {
+                CreateConfiguredAudienceModelAssociationResult result = null;
+
+                try {
+                    result = executeCreateConfiguredAudienceModelAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConfiguredTableResult> createConfiguredTableAsync(CreateConfiguredTableRequest request) {
 
         return createConfiguredTableAsync(request, null);
@@ -359,6 +394,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePrivacyBudgetTemplateResult> createPrivacyBudgetTemplateAsync(CreatePrivacyBudgetTemplateRequest request) {
+
+        return createPrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePrivacyBudgetTemplateResult> createPrivacyBudgetTemplateAsync(final CreatePrivacyBudgetTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePrivacyBudgetTemplateRequest, CreatePrivacyBudgetTemplateResult> asyncHandler) {
+        final CreatePrivacyBudgetTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePrivacyBudgetTemplateResult>() {
+            @Override
+            public CreatePrivacyBudgetTemplateResult call() throws Exception {
+                CreatePrivacyBudgetTemplateResult result = null;
+
+                try {
+                    result = executeCreatePrivacyBudgetTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAnalysisTemplateResult> deleteAnalysisTemplateAsync(DeleteAnalysisTemplateRequest request) {
 
         return deleteAnalysisTemplateAsync(request, null);
@@ -409,6 +477,41 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeDeleteCollaboration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfiguredAudienceModelAssociationResult> deleteConfiguredAudienceModelAssociationAsync(
+            DeleteConfiguredAudienceModelAssociationRequest request) {
+
+        return deleteConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfiguredAudienceModelAssociationResult> deleteConfiguredAudienceModelAssociationAsync(
+            final DeleteConfiguredAudienceModelAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConfiguredAudienceModelAssociationRequest, DeleteConfiguredAudienceModelAssociationResult> asyncHandler) {
+        final DeleteConfiguredAudienceModelAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConfiguredAudienceModelAssociationResult>() {
+            @Override
+            public DeleteConfiguredAudienceModelAssociationResult call() throws Exception {
+                DeleteConfiguredAudienceModelAssociationResult result = null;
+
+                try {
+                    result = executeDeleteConfiguredAudienceModelAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -594,6 +697,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePrivacyBudgetTemplateResult> deletePrivacyBudgetTemplateAsync(DeletePrivacyBudgetTemplateRequest request) {
+
+        return deletePrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePrivacyBudgetTemplateResult> deletePrivacyBudgetTemplateAsync(final DeletePrivacyBudgetTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePrivacyBudgetTemplateRequest, DeletePrivacyBudgetTemplateResult> asyncHandler) {
+        final DeletePrivacyBudgetTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePrivacyBudgetTemplateResult>() {
+            @Override
+            public DeletePrivacyBudgetTemplateResult call() throws Exception {
+                DeletePrivacyBudgetTemplateResult result = null;
+
+                try {
+                    result = executeDeletePrivacyBudgetTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAnalysisTemplateResult> getAnalysisTemplateAsync(GetAnalysisTemplateRequest request) {
 
         return getAnalysisTemplateAsync(request, null);
@@ -679,6 +815,111 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeGetCollaborationAnalysisTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationConfiguredAudienceModelAssociationResult> getCollaborationConfiguredAudienceModelAssociationAsync(
+            GetCollaborationConfiguredAudienceModelAssociationRequest request) {
+
+        return getCollaborationConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationConfiguredAudienceModelAssociationResult> getCollaborationConfiguredAudienceModelAssociationAsync(
+            final GetCollaborationConfiguredAudienceModelAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCollaborationConfiguredAudienceModelAssociationRequest, GetCollaborationConfiguredAudienceModelAssociationResult> asyncHandler) {
+        final GetCollaborationConfiguredAudienceModelAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCollaborationConfiguredAudienceModelAssociationResult>() {
+            @Override
+            public GetCollaborationConfiguredAudienceModelAssociationResult call() throws Exception {
+                GetCollaborationConfiguredAudienceModelAssociationResult result = null;
+
+                try {
+                    result = executeGetCollaborationConfiguredAudienceModelAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationPrivacyBudgetTemplateResult> getCollaborationPrivacyBudgetTemplateAsync(
+            GetCollaborationPrivacyBudgetTemplateRequest request) {
+
+        return getCollaborationPrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCollaborationPrivacyBudgetTemplateResult> getCollaborationPrivacyBudgetTemplateAsync(
+            final GetCollaborationPrivacyBudgetTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCollaborationPrivacyBudgetTemplateRequest, GetCollaborationPrivacyBudgetTemplateResult> asyncHandler) {
+        final GetCollaborationPrivacyBudgetTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCollaborationPrivacyBudgetTemplateResult>() {
+            @Override
+            public GetCollaborationPrivacyBudgetTemplateResult call() throws Exception {
+                GetCollaborationPrivacyBudgetTemplateResult result = null;
+
+                try {
+                    result = executeGetCollaborationPrivacyBudgetTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConfiguredAudienceModelAssociationResult> getConfiguredAudienceModelAssociationAsync(
+            GetConfiguredAudienceModelAssociationRequest request) {
+
+        return getConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConfiguredAudienceModelAssociationResult> getConfiguredAudienceModelAssociationAsync(
+            final GetConfiguredAudienceModelAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConfiguredAudienceModelAssociationRequest, GetConfiguredAudienceModelAssociationResult> asyncHandler) {
+        final GetConfiguredAudienceModelAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConfiguredAudienceModelAssociationResult>() {
+            @Override
+            public GetConfiguredAudienceModelAssociationResult call() throws Exception {
+                GetConfiguredAudienceModelAssociationResult result = null;
+
+                try {
+                    result = executeGetConfiguredAudienceModelAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -813,6 +1054,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeGetMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrivacyBudgetTemplateResult> getPrivacyBudgetTemplateAsync(GetPrivacyBudgetTemplateRequest request) {
+
+        return getPrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrivacyBudgetTemplateResult> getPrivacyBudgetTemplateAsync(final GetPrivacyBudgetTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPrivacyBudgetTemplateRequest, GetPrivacyBudgetTemplateResult> asyncHandler) {
+        final GetPrivacyBudgetTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPrivacyBudgetTemplateResult>() {
+            @Override
+            public GetPrivacyBudgetTemplateResult call() throws Exception {
+                GetPrivacyBudgetTemplateResult result = null;
+
+                try {
+                    result = executeGetPrivacyBudgetTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -996,6 +1270,111 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListCollaborationConfiguredAudienceModelAssociationsResult> listCollaborationConfiguredAudienceModelAssociationsAsync(
+            ListCollaborationConfiguredAudienceModelAssociationsRequest request) {
+
+        return listCollaborationConfiguredAudienceModelAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationConfiguredAudienceModelAssociationsResult> listCollaborationConfiguredAudienceModelAssociationsAsync(
+            final ListCollaborationConfiguredAudienceModelAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCollaborationConfiguredAudienceModelAssociationsRequest, ListCollaborationConfiguredAudienceModelAssociationsResult> asyncHandler) {
+        final ListCollaborationConfiguredAudienceModelAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCollaborationConfiguredAudienceModelAssociationsResult>() {
+            @Override
+            public ListCollaborationConfiguredAudienceModelAssociationsResult call() throws Exception {
+                ListCollaborationConfiguredAudienceModelAssociationsResult result = null;
+
+                try {
+                    result = executeListCollaborationConfiguredAudienceModelAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationPrivacyBudgetTemplatesResult> listCollaborationPrivacyBudgetTemplatesAsync(
+            ListCollaborationPrivacyBudgetTemplatesRequest request) {
+
+        return listCollaborationPrivacyBudgetTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationPrivacyBudgetTemplatesResult> listCollaborationPrivacyBudgetTemplatesAsync(
+            final ListCollaborationPrivacyBudgetTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCollaborationPrivacyBudgetTemplatesRequest, ListCollaborationPrivacyBudgetTemplatesResult> asyncHandler) {
+        final ListCollaborationPrivacyBudgetTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCollaborationPrivacyBudgetTemplatesResult>() {
+            @Override
+            public ListCollaborationPrivacyBudgetTemplatesResult call() throws Exception {
+                ListCollaborationPrivacyBudgetTemplatesResult result = null;
+
+                try {
+                    result = executeListCollaborationPrivacyBudgetTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationPrivacyBudgetsResult> listCollaborationPrivacyBudgetsAsync(
+            ListCollaborationPrivacyBudgetsRequest request) {
+
+        return listCollaborationPrivacyBudgetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCollaborationPrivacyBudgetsResult> listCollaborationPrivacyBudgetsAsync(
+            final ListCollaborationPrivacyBudgetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCollaborationPrivacyBudgetsRequest, ListCollaborationPrivacyBudgetsResult> asyncHandler) {
+        final ListCollaborationPrivacyBudgetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCollaborationPrivacyBudgetsResult>() {
+            @Override
+            public ListCollaborationPrivacyBudgetsResult call() throws Exception {
+                ListCollaborationPrivacyBudgetsResult result = null;
+
+                try {
+                    result = executeListCollaborationPrivacyBudgets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCollaborationsResult> listCollaborationsAsync(ListCollaborationsRequest request) {
 
         return listCollaborationsAsync(request, null);
@@ -1013,6 +1392,41 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeListCollaborations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfiguredAudienceModelAssociationsResult> listConfiguredAudienceModelAssociationsAsync(
+            ListConfiguredAudienceModelAssociationsRequest request) {
+
+        return listConfiguredAudienceModelAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfiguredAudienceModelAssociationsResult> listConfiguredAudienceModelAssociationsAsync(
+            final ListConfiguredAudienceModelAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConfiguredAudienceModelAssociationsRequest, ListConfiguredAudienceModelAssociationsResult> asyncHandler) {
+        final ListConfiguredAudienceModelAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConfiguredAudienceModelAssociationsResult>() {
+            @Override
+            public ListConfiguredAudienceModelAssociationsResult call() throws Exception {
+                ListConfiguredAudienceModelAssociationsResult result = null;
+
+                try {
+                    result = executeListConfiguredAudienceModelAssociations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1163,6 +1577,72 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListPrivacyBudgetTemplatesResult> listPrivacyBudgetTemplatesAsync(ListPrivacyBudgetTemplatesRequest request) {
+
+        return listPrivacyBudgetTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrivacyBudgetTemplatesResult> listPrivacyBudgetTemplatesAsync(final ListPrivacyBudgetTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPrivacyBudgetTemplatesRequest, ListPrivacyBudgetTemplatesResult> asyncHandler) {
+        final ListPrivacyBudgetTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPrivacyBudgetTemplatesResult>() {
+            @Override
+            public ListPrivacyBudgetTemplatesResult call() throws Exception {
+                ListPrivacyBudgetTemplatesResult result = null;
+
+                try {
+                    result = executeListPrivacyBudgetTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrivacyBudgetsResult> listPrivacyBudgetsAsync(ListPrivacyBudgetsRequest request) {
+
+        return listPrivacyBudgetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrivacyBudgetsResult> listPrivacyBudgetsAsync(final ListPrivacyBudgetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPrivacyBudgetsRequest, ListPrivacyBudgetsResult> asyncHandler) {
+        final ListPrivacyBudgetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPrivacyBudgetsResult>() {
+            @Override
+            public ListPrivacyBudgetsResult call() throws Exception {
+                ListPrivacyBudgetsResult result = null;
+
+                try {
+                    result = executeListPrivacyBudgets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProtectedQueriesResult> listProtectedQueriesAsync(ListProtectedQueriesRequest request) {
 
         return listProtectedQueriesAsync(request, null);
@@ -1246,6 +1726,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PreviewPrivacyImpactResult> previewPrivacyImpactAsync(PreviewPrivacyImpactRequest request) {
+
+        return previewPrivacyImpactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PreviewPrivacyImpactResult> previewPrivacyImpactAsync(final PreviewPrivacyImpactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PreviewPrivacyImpactRequest, PreviewPrivacyImpactResult> asyncHandler) {
+        final PreviewPrivacyImpactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PreviewPrivacyImpactResult>() {
+            @Override
+            public PreviewPrivacyImpactResult call() throws Exception {
+                PreviewPrivacyImpactResult result = null;
+
+                try {
+                    result = executePreviewPrivacyImpact(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1427,6 +1940,41 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateConfiguredAudienceModelAssociationResult> updateConfiguredAudienceModelAssociationAsync(
+            UpdateConfiguredAudienceModelAssociationRequest request) {
+
+        return updateConfiguredAudienceModelAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfiguredAudienceModelAssociationResult> updateConfiguredAudienceModelAssociationAsync(
+            final UpdateConfiguredAudienceModelAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConfiguredAudienceModelAssociationRequest, UpdateConfiguredAudienceModelAssociationResult> asyncHandler) {
+        final UpdateConfiguredAudienceModelAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConfiguredAudienceModelAssociationResult>() {
+            @Override
+            public UpdateConfiguredAudienceModelAssociationResult call() throws Exception {
+                UpdateConfiguredAudienceModelAssociationResult result = null;
+
+                try {
+                    result = executeUpdateConfiguredAudienceModelAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConfiguredTableResult> updateConfiguredTableAsync(UpdateConfiguredTableRequest request) {
 
         return updateConfiguredTableAsync(request, null);
@@ -1547,6 +2095,39 @@ public class AWSCleanRoomsAsyncClient extends AWSCleanRoomsClient implements AWS
 
                 try {
                     result = executeUpdateMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivacyBudgetTemplateResult> updatePrivacyBudgetTemplateAsync(UpdatePrivacyBudgetTemplateRequest request) {
+
+        return updatePrivacyBudgetTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivacyBudgetTemplateResult> updatePrivacyBudgetTemplateAsync(final UpdatePrivacyBudgetTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePrivacyBudgetTemplateRequest, UpdatePrivacyBudgetTemplateResult> asyncHandler) {
+        final UpdatePrivacyBudgetTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePrivacyBudgetTemplateResult>() {
+            @Override
+            public UpdatePrivacyBudgetTemplateResult call() throws Exception {
+                UpdatePrivacyBudgetTemplateResult result = null;
+
+                try {
+                    result = executeUpdatePrivacyBudgetTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

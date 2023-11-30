@@ -84,6 +84,10 @@ public class DescribeSpaceResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeSpaceResult.setSpaceSettings(SpaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Url", targetDepth)) {
+                    context.nextToken();
+                    describeSpaceResult.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
