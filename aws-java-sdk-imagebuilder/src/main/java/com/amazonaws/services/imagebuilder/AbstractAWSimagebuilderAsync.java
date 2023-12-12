@@ -162,6 +162,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest request) {
+
+        return createWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkflowRequest, CreateWorkflowResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest request) {
 
         return deleteComponentAsync(request, null);
@@ -265,6 +278,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest request) {
+
+        return deleteWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkflowRequest, DeleteWorkflowResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -434,6 +460,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request) {
+
+        return getWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowRequest, GetWorkflowResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -718,6 +757,32 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListWaitingWorkflowStepsResult> listWaitingWorkflowStepsAsync(ListWaitingWorkflowStepsRequest request) {
+
+        return listWaitingWorkflowStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWaitingWorkflowStepsResult> listWaitingWorkflowStepsAsync(ListWaitingWorkflowStepsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWaitingWorkflowStepsRequest, ListWaitingWorkflowStepsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowBuildVersionsResult> listWorkflowBuildVersionsAsync(ListWorkflowBuildVersionsRequest request) {
+
+        return listWorkflowBuildVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowBuildVersionsResult> listWorkflowBuildVersionsAsync(ListWorkflowBuildVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowBuildVersionsRequest, ListWorkflowBuildVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkflowExecutionsResult> listWorkflowExecutionsAsync(ListWorkflowExecutionsRequest request) {
 
         return listWorkflowExecutionsAsync(request, null);
@@ -739,6 +804,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<ListWorkflowStepExecutionsResult> listWorkflowStepExecutionsAsync(ListWorkflowStepExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListWorkflowStepExecutionsRequest, ListWorkflowStepExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest request) {
+
+        return listWorkflowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowsRequest, ListWorkflowsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -791,6 +869,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<PutImageRecipePolicyResult> putImageRecipePolicyAsync(PutImageRecipePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutImageRecipePolicyRequest, PutImageRecipePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendWorkflowStepActionResult> sendWorkflowStepActionAsync(SendWorkflowStepActionRequest request) {
+
+        return sendWorkflowStepActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendWorkflowStepActionResult> sendWorkflowStepActionAsync(SendWorkflowStepActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendWorkflowStepActionRequest, SendWorkflowStepActionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -36,19 +36,19 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
     private Boolean isPublic;
     /**
      * <p>
-     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      * </p>
      */
     private java.util.List<String> regions;
     /**
      * <p>
-     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
+     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      * </p>
      */
     private java.util.List<String> sharedAccounts;
     /**
      * <p>
-     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
+     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
      * </p>
      */
     private LifecyclePolicyDetailExclusionRulesAmisLastLaunched lastLaunched;
@@ -113,10 +113,10 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      * </p>
      * 
-     * @return Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     * @return Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      */
 
     public java.util.List<String> getRegions() {
@@ -125,11 +125,11 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      * </p>
      * 
      * @param regions
-     *        Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     *        Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      */
 
     public void setRegions(java.util.Collection<String> regions) {
@@ -143,7 +143,7 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,7 +152,7 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
      * </p>
      * 
      * @param regions
-     *        Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     *        Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +168,11 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      * </p>
      * 
      * @param regions
-     *        Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
+     *        Configures Amazon Web Services Regions that are excluded from the lifecycle action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +183,10 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
+     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      * </p>
      * 
-     * @return Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle
-     *         actions.
+     * @return Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      */
 
     public java.util.List<String> getSharedAccounts() {
@@ -196,12 +195,11 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
+     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      * </p>
      * 
      * @param sharedAccounts
-     *        Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle
-     *        actions.
+     *        Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      */
 
     public void setSharedAccounts(java.util.Collection<String> sharedAccounts) {
@@ -215,7 +213,7 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
+     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -224,8 +222,7 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
      * </p>
      * 
      * @param sharedAccounts
-     *        Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle
-     *        actions.
+     *        Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,12 +238,11 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
+     * Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      * </p>
      * 
      * @param sharedAccounts
-     *        Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle
-     *        actions.
+     *        Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +253,12 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
+     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
      * </p>
      * 
      * @param lastLaunched
-     *        Configures Amazon Web Services Regions that are excluded from the lifecycle action.
+     *        Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle
+     *        actions.
      */
 
     public void setLastLaunched(LifecyclePolicyDetailExclusionRulesAmisLastLaunched lastLaunched) {
@@ -270,10 +267,11 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
+     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
      * </p>
      * 
-     * @return Configures Amazon Web Services Regions that are excluded from the lifecycle action.
+     * @return Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle
+     *         actions.
      */
 
     public LifecyclePolicyDetailExclusionRulesAmisLastLaunched getLastLaunched() {
@@ -282,11 +280,12 @@ public class LifecyclePolicyDetailExclusionRulesAmis implements Serializable, Cl
 
     /**
      * <p>
-     * Configures Amazon Web Services Regions that are excluded from the lifecycle action.
+     * Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.
      * </p>
      * 
      * @param lastLaunched
-     *        Configures Amazon Web Services Regions that are excluded from the lifecycle action.
+     *        Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle
+     *        actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

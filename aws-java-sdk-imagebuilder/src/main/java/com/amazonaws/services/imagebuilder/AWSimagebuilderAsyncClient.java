@@ -410,6 +410,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest request) {
+
+        return createWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(final CreateWorkflowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateWorkflowRequest, CreateWorkflowResult> asyncHandler) {
+        final CreateWorkflowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateWorkflowResult>() {
+            @Override
+            public CreateWorkflowResult call() throws Exception {
+                CreateWorkflowResult result = null;
+
+                try {
+                    result = executeCreateWorkflow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest request) {
 
         return deleteComponentAsync(request, null);
@@ -662,6 +695,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeDeleteLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest request) {
+
+        return deleteWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(final DeleteWorkflowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWorkflowRequest, DeleteWorkflowResult> asyncHandler) {
+        final DeleteWorkflowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWorkflowResult>() {
+            @Override
+            public DeleteWorkflowResult call() throws Exception {
+                DeleteWorkflowResult result = null;
+
+                try {
+                    result = executeDeleteWorkflow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1092,6 +1158,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeGetLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request) {
+
+        return getWorkflowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(final GetWorkflowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetWorkflowRequest, GetWorkflowResult> asyncHandler) {
+        final GetWorkflowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetWorkflowResult>() {
+            @Override
+            public GetWorkflowResult call() throws Exception {
+                GetWorkflowResult result = null;
+
+                try {
+                    result = executeGetWorkflow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1808,6 +1907,72 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListWaitingWorkflowStepsResult> listWaitingWorkflowStepsAsync(ListWaitingWorkflowStepsRequest request) {
+
+        return listWaitingWorkflowStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWaitingWorkflowStepsResult> listWaitingWorkflowStepsAsync(final ListWaitingWorkflowStepsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWaitingWorkflowStepsRequest, ListWaitingWorkflowStepsResult> asyncHandler) {
+        final ListWaitingWorkflowStepsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWaitingWorkflowStepsResult>() {
+            @Override
+            public ListWaitingWorkflowStepsResult call() throws Exception {
+                ListWaitingWorkflowStepsResult result = null;
+
+                try {
+                    result = executeListWaitingWorkflowSteps(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowBuildVersionsResult> listWorkflowBuildVersionsAsync(ListWorkflowBuildVersionsRequest request) {
+
+        return listWorkflowBuildVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowBuildVersionsResult> listWorkflowBuildVersionsAsync(final ListWorkflowBuildVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWorkflowBuildVersionsRequest, ListWorkflowBuildVersionsResult> asyncHandler) {
+        final ListWorkflowBuildVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWorkflowBuildVersionsResult>() {
+            @Override
+            public ListWorkflowBuildVersionsResult call() throws Exception {
+                ListWorkflowBuildVersionsResult result = null;
+
+                try {
+                    result = executeListWorkflowBuildVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkflowExecutionsResult> listWorkflowExecutionsAsync(ListWorkflowExecutionsRequest request) {
 
         return listWorkflowExecutionsAsync(request, null);
@@ -1858,6 +2023,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executeListWorkflowStepExecutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest request) {
+
+        return listWorkflowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(final ListWorkflowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWorkflowsRequest, ListWorkflowsResult> asyncHandler) {
+        final ListWorkflowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWorkflowsResult>() {
+            @Override
+            public ListWorkflowsResult call() throws Exception {
+                ListWorkflowsResult result = null;
+
+                try {
+                    result = executeListWorkflows(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1990,6 +2188,39 @@ public class AWSimagebuilderAsyncClient extends AWSimagebuilderClient implements
 
                 try {
                     result = executePutImageRecipePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendWorkflowStepActionResult> sendWorkflowStepActionAsync(SendWorkflowStepActionRequest request) {
+
+        return sendWorkflowStepActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendWorkflowStepActionResult> sendWorkflowStepActionAsync(final SendWorkflowStepActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendWorkflowStepActionRequest, SendWorkflowStepActionResult> asyncHandler) {
+        final SendWorkflowStepActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendWorkflowStepActionResult>() {
+            @Override
+            public SendWorkflowStepActionResult call() throws Exception {
+                SendWorkflowStepActionResult result = null;
+
+                try {
+                    result = executeSendWorkflowStepAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

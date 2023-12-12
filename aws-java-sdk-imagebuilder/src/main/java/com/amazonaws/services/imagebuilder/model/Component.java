@@ -54,7 +54,8 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The change description of the component.
+     * Describes what change has been made in this version of the component, or what makes this version different from
+     * other versions of the component.
      * </p>
      */
     private String changeDescription;
@@ -301,11 +302,13 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The change description of the component.
+     * Describes what change has been made in this version of the component, or what makes this version different from
+     * other versions of the component.
      * </p>
      * 
      * @param changeDescription
-     *        The change description of the component.
+     *        Describes what change has been made in this version of the component, or what makes this version different
+     *        from other versions of the component.
      */
 
     public void setChangeDescription(String changeDescription) {
@@ -314,10 +317,12 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The change description of the component.
+     * Describes what change has been made in this version of the component, or what makes this version different from
+     * other versions of the component.
      * </p>
      * 
-     * @return The change description of the component.
+     * @return Describes what change has been made in this version of the component, or what makes this version
+     *         different from other versions of the component.
      */
 
     public String getChangeDescription() {
@@ -326,11 +331,13 @@ public class Component implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The change description of the component.
+     * Describes what change has been made in this version of the component, or what makes this version different from
+     * other versions of the component.
      * </p>
      * 
      * @param changeDescription
-     *        The change description of the component.
+     *        Describes what change has been made in this version of the component, or what makes this version different
+     *        from other versions of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

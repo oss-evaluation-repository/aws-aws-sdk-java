@@ -13,7 +13,7 @@
 package com.amazonaws.services.imagebuilder.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -77,6 +77,10 @@ public class ImageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LIFECYCLEEXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifecycleExecutionId").build();
+    private static final MarshallingInfo<String> EXECUTIONROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRole").build();
+    private static final MarshallingInfo<List> WORKFLOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("workflows").build();
 
     private static final ImageMarshaller instance = new ImageMarshaller();
 
@@ -118,6 +122,8 @@ public class ImageMarshaller {
             protocolMarshaller.marshall(image.getImageScanningConfiguration(), IMAGESCANNINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(image.getDeprecationTime(), DEPRECATIONTIME_BINDING);
             protocolMarshaller.marshall(image.getLifecycleExecutionId(), LIFECYCLEEXECUTIONID_BINDING);
+            protocolMarshaller.marshall(image.getExecutionRole(), EXECUTIONROLE_BINDING);
+            protocolMarshaller.marshall(image.getWorkflows(), WORKFLOWS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

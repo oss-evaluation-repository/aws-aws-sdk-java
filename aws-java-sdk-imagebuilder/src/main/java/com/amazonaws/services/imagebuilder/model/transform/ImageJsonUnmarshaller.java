@@ -145,6 +145,16 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                     context.nextToken();
                     image.setLifecycleExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("executionRole", targetDepth)) {
+                    context.nextToken();
+                    image.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workflows", targetDepth)) {
+                    context.nextToken();
+                    image.setWorkflows(new ListUnmarshaller<WorkflowConfiguration>(WorkflowConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

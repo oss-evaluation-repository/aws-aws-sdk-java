@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A schedule configures how often and when a pipeline will automatically create a new image.
+ * A schedule configures when and how often a pipeline will automatically create a new image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Schedule" target="_top">AWS API

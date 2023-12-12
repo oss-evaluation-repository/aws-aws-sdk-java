@@ -57,7 +57,7 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The change description of the component. This description indicates the change that has been made in this
-     * version, or what makes this version different from other versions of this component.
+     * version, or what makes this version different from other versions of the component.
      * </p>
      */
     private String changeDescription;
@@ -298,12 +298,12 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The change description of the component. This description indicates the change that has been made in this
-     * version, or what makes this version different from other versions of this component.
+     * version, or what makes this version different from other versions of the component.
      * </p>
      * 
      * @param changeDescription
      *        The change description of the component. This description indicates the change that has been made in this
-     *        version, or what makes this version different from other versions of this component.
+     *        version, or what makes this version different from other versions of the component.
      */
 
     public void setChangeDescription(String changeDescription) {
@@ -313,11 +313,11 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The change description of the component. This description indicates the change that has been made in this
-     * version, or what makes this version different from other versions of this component.
+     * version, or what makes this version different from other versions of the component.
      * </p>
      * 
      * @return The change description of the component. This description indicates the change that has been made in this
-     *         version, or what makes this version different from other versions of this component.
+     *         version, or what makes this version different from other versions of the component.
      */
 
     public String getChangeDescription() {
@@ -327,12 +327,12 @@ public class ImportComponentRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The change description of the component. This description indicates the change that has been made in this
-     * version, or what makes this version different from other versions of this component.
+     * version, or what makes this version different from other versions of the component.
      * </p>
      * 
      * @param changeDescription
      *        The change description of the component. This description indicates the change that has been made in this
-     *        version, or what makes this version different from other versions of this component.
+     *        version, or what makes this version different from other versions of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -54,8 +54,8 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
     private String status;
     /**
      * <p>
-     * The name of the IAM role that Image Builder uses to run the lifecycle policy. This is a custom role that you
-     * create.
+     * The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy. This
+     * is a custom role that you create.
      * </p>
      */
     private String executionRole;
@@ -284,13 +284,13 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the IAM role that Image Builder uses to run the lifecycle policy. This is a custom role that you
-     * create.
+     * The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy. This
+     * is a custom role that you create.
      * </p>
      * 
      * @param executionRole
-     *        The name of the IAM role that Image Builder uses to run the lifecycle policy. This is a custom role that
-     *        you create.
+     *        The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle
+     *        policy. This is a custom role that you create.
      */
 
     public void setExecutionRole(String executionRole) {
@@ -299,12 +299,12 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the IAM role that Image Builder uses to run the lifecycle policy. This is a custom role that you
-     * create.
+     * The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy. This
+     * is a custom role that you create.
      * </p>
      * 
-     * @return The name of the IAM role that Image Builder uses to run the lifecycle policy. This is a custom role that
-     *         you create.
+     * @return The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle
+     *         policy. This is a custom role that you create.
      */
 
     public String getExecutionRole() {
@@ -313,13 +313,13 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the IAM role that Image Builder uses to run the lifecycle policy. This is a custom role that you
-     * create.
+     * The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle policy. This
+     * is a custom role that you create.
      * </p>
      * 
      * @param executionRole
-     *        The name of the IAM role that Image Builder uses to run the lifecycle policy. This is a custom role that
-     *        you create.
+     *        The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to run the lifecycle
+     *        policy. This is a custom role that you create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

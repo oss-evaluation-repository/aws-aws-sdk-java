@@ -95,6 +95,12 @@ public class WorkflowExecutionMetadata implements Serializable, Cloneable, Struc
      * </p>
      */
     private String endTime;
+    /**
+     * <p>
+     * The name of the test group that included the test workflow resource at runtime.
+     * </p>
+     */
+    private String parallelGroup;
 
     /**
      * <p>
@@ -584,6 +590,46 @@ public class WorkflowExecutionMetadata implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The name of the test group that included the test workflow resource at runtime.
+     * </p>
+     * 
+     * @param parallelGroup
+     *        The name of the test group that included the test workflow resource at runtime.
+     */
+
+    public void setParallelGroup(String parallelGroup) {
+        this.parallelGroup = parallelGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the test group that included the test workflow resource at runtime.
+     * </p>
+     * 
+     * @return The name of the test group that included the test workflow resource at runtime.
+     */
+
+    public String getParallelGroup() {
+        return this.parallelGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the test group that included the test workflow resource at runtime.
+     * </p>
+     * 
+     * @param parallelGroup
+     *        The name of the test group that included the test workflow resource at runtime.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowExecutionMetadata withParallelGroup(String parallelGroup) {
+        setParallelGroup(parallelGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -616,7 +662,9 @@ public class WorkflowExecutionMetadata implements Serializable, Cloneable, Struc
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime());
+            sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getParallelGroup() != null)
+            sb.append("ParallelGroup: ").append(getParallelGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -675,6 +723,10 @@ public class WorkflowExecutionMetadata implements Serializable, Cloneable, Struc
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getParallelGroup() == null ^ this.getParallelGroup() == null)
+            return false;
+        if (other.getParallelGroup() != null && other.getParallelGroup().equals(this.getParallelGroup()) == false)
+            return false;
         return true;
     }
 
@@ -694,6 +746,7 @@ public class WorkflowExecutionMetadata implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getTotalStepsSkipped() == null) ? 0 : getTotalStepsSkipped().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getParallelGroup() == null) ? 0 : getParallelGroup().hashCode());
         return hashCode;
     }
 

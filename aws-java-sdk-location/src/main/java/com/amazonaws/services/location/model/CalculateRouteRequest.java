@@ -27,6 +27,18 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of
+     * day to travel with the best traffic conditions is used to calculate the route.
+     * </p>
+     * <note>
+     * <p>
+     * ArrivalTime is not supported Esri.
+     * </p>
+     * </note>
+     */
+    private java.util.Date arrivalTime;
+    /**
+     * <p>
      * The name of the route calculator resource that you want to use to calculate the route.
      * </p>
      */
@@ -85,11 +97,6 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of
      * day to travel with the best traffic conditions is used to calculate the route.
      * </p>
-     * <note>
-     * <p>
-     * Setting a departure time in the past returns a <code>400 ValidationException</code> error.
-     * </p>
-     * </note>
      * <ul>
      * <li>
      * <p>
@@ -153,6 +160,12 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String key;
+    /**
+     * <p>
+     * Specifies the distance to optimize for when calculating a route.
+     * </p>
+     */
+    private String optimizeFor;
     /**
      * <p>
      * Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road
@@ -235,6 +248,76 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<java.util.List<Double>> waypointPositions;
+
+    /**
+     * <p>
+     * Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of
+     * day to travel with the best traffic conditions is used to calculate the route.
+     * </p>
+     * <note>
+     * <p>
+     * ArrivalTime is not supported Esri.
+     * </p>
+     * </note>
+     * 
+     * @param arrivalTime
+     *        Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best
+     *        time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+     *        <p>
+     *        ArrivalTime is not supported Esri.
+     *        </p>
+     */
+
+    public void setArrivalTime(java.util.Date arrivalTime) {
+        this.arrivalTime = arrivalTime;
+    }
+
+    /**
+     * <p>
+     * Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of
+     * day to travel with the best traffic conditions is used to calculate the route.
+     * </p>
+     * <note>
+     * <p>
+     * ArrivalTime is not supported Esri.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best
+     *         time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+     *         <p>
+     *         ArrivalTime is not supported Esri.
+     *         </p>
+     */
+
+    public java.util.Date getArrivalTime() {
+        return this.arrivalTime;
+    }
+
+    /**
+     * <p>
+     * Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of
+     * day to travel with the best traffic conditions is used to calculate the route.
+     * </p>
+     * <note>
+     * <p>
+     * ArrivalTime is not supported Esri.
+     * </p>
+     * </note>
+     * 
+     * @param arrivalTime
+     *        Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best
+     *        time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+     *        <p>
+     *        ArrivalTime is not supported Esri.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CalculateRouteRequest withArrivalTime(java.util.Date arrivalTime) {
+        setArrivalTime(arrivalTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -672,11 +755,6 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of
      * day to travel with the best traffic conditions is used to calculate the route.
      * </p>
-     * <note>
-     * <p>
-     * Setting a departure time in the past returns a <code>400 ValidationException</code> error.
-     * </p>
-     * </note>
      * <ul>
      * <li>
      * <p>
@@ -688,11 +766,7 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param departureTime
      *        Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best
-     *        time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
-     *        <p>
-     *        Setting a departure time in the past returns a <code>400 ValidationException</code> error.
-     *        </p>
-     *        </note>
+     *        time of day to travel with the best traffic conditions is used to calculate the route.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -711,11 +785,6 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of
      * day to travel with the best traffic conditions is used to calculate the route.
      * </p>
-     * <note>
-     * <p>
-     * Setting a departure time in the past returns a <code>400 ValidationException</code> error.
-     * </p>
-     * </note>
      * <ul>
      * <li>
      * <p>
@@ -726,11 +795,7 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @return Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best
-     *         time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
-     *         <p>
-     *         Setting a departure time in the past returns a <code>400 ValidationException</code> error.
-     *         </p>
-     *         </note>
+     *         time of day to travel with the best traffic conditions is used to calculate the route.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -749,11 +814,6 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of
      * day to travel with the best traffic conditions is used to calculate the route.
      * </p>
-     * <note>
-     * <p>
-     * Setting a departure time in the past returns a <code>400 ValidationException</code> error.
-     * </p>
-     * </note>
      * <ul>
      * <li>
      * <p>
@@ -765,11 +825,7 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param departureTime
      *        Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best
-     *        time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
-     *        <p>
-     *        Setting a departure time in the past returns a <code>400 ValidationException</code> error.
-     *        </p>
-     *        </note>
+     *        time of day to travel with the best traffic conditions is used to calculate the route.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1221,6 +1277,65 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CalculateRouteRequest withKey(String key) {
         setKey(key);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the distance to optimize for when calculating a route.
+     * </p>
+     * 
+     * @param optimizeFor
+     *        Specifies the distance to optimize for when calculating a route.
+     * @see OptimizationMode
+     */
+
+    public void setOptimizeFor(String optimizeFor) {
+        this.optimizeFor = optimizeFor;
+    }
+
+    /**
+     * <p>
+     * Specifies the distance to optimize for when calculating a route.
+     * </p>
+     * 
+     * @return Specifies the distance to optimize for when calculating a route.
+     * @see OptimizationMode
+     */
+
+    public String getOptimizeFor() {
+        return this.optimizeFor;
+    }
+
+    /**
+     * <p>
+     * Specifies the distance to optimize for when calculating a route.
+     * </p>
+     * 
+     * @param optimizeFor
+     *        Specifies the distance to optimize for when calculating a route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OptimizationMode
+     */
+
+    public CalculateRouteRequest withOptimizeFor(String optimizeFor) {
+        setOptimizeFor(optimizeFor);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the distance to optimize for when calculating a route.
+     * </p>
+     * 
+     * @param optimizeFor
+     *        Specifies the distance to optimize for when calculating a route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OptimizationMode
+     */
+
+    public CalculateRouteRequest withOptimizeFor(OptimizationMode optimizeFor) {
+        this.optimizeFor = optimizeFor.toString();
         return this;
     }
 
@@ -1894,6 +2009,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArrivalTime() != null)
+            sb.append("ArrivalTime: ").append(getArrivalTime()).append(",");
         if (getCalculatorName() != null)
             sb.append("CalculatorName: ").append(getCalculatorName()).append(",");
         if (getCarModeOptions() != null)
@@ -1912,6 +2029,8 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("IncludeLegGeometry: ").append(getIncludeLegGeometry()).append(",");
         if (getKey() != null)
             sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
+        if (getOptimizeFor() != null)
+            sb.append("OptimizeFor: ").append(getOptimizeFor()).append(",");
         if (getTravelMode() != null)
             sb.append("TravelMode: ").append(getTravelMode()).append(",");
         if (getTruckModeOptions() != null)
@@ -1932,6 +2051,10 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof CalculateRouteRequest == false)
             return false;
         CalculateRouteRequest other = (CalculateRouteRequest) obj;
+        if (other.getArrivalTime() == null ^ this.getArrivalTime() == null)
+            return false;
+        if (other.getArrivalTime() != null && other.getArrivalTime().equals(this.getArrivalTime()) == false)
+            return false;
         if (other.getCalculatorName() == null ^ this.getCalculatorName() == null)
             return false;
         if (other.getCalculatorName() != null && other.getCalculatorName().equals(this.getCalculatorName()) == false)
@@ -1968,6 +2091,10 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
+        if (other.getOptimizeFor() == null ^ this.getOptimizeFor() == null)
+            return false;
+        if (other.getOptimizeFor() != null && other.getOptimizeFor().equals(this.getOptimizeFor()) == false)
+            return false;
         if (other.getTravelMode() == null ^ this.getTravelMode() == null)
             return false;
         if (other.getTravelMode() != null && other.getTravelMode().equals(this.getTravelMode()) == false)
@@ -1988,6 +2115,7 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArrivalTime() == null) ? 0 : getArrivalTime().hashCode());
         hashCode = prime * hashCode + ((getCalculatorName() == null) ? 0 : getCalculatorName().hashCode());
         hashCode = prime * hashCode + ((getCarModeOptions() == null) ? 0 : getCarModeOptions().hashCode());
         hashCode = prime * hashCode + ((getDepartNow() == null) ? 0 : getDepartNow().hashCode());
@@ -1997,6 +2125,7 @@ public class CalculateRouteRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDistanceUnit() == null) ? 0 : getDistanceUnit().hashCode());
         hashCode = prime * hashCode + ((getIncludeLegGeometry() == null) ? 0 : getIncludeLegGeometry().hashCode());
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
+        hashCode = prime * hashCode + ((getOptimizeFor() == null) ? 0 : getOptimizeFor().hashCode());
         hashCode = prime * hashCode + ((getTravelMode() == null) ? 0 : getTravelMode().hashCode());
         hashCode = prime * hashCode + ((getTruckModeOptions() == null) ? 0 : getTruckModeOptions().hashCode());
         hashCode = prime * hashCode + ((getWaypointPositions() == null) ? 0 : getWaypointPositions().hashCode());

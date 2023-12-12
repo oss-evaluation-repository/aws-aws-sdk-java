@@ -272,7 +272,7 @@ public interface AWSLogs {
      * <li>
      * <p>
      * If you are delivering logs cross-account, you must use <a href=
-     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html"
+     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html"
      * >PutDeliveryDestinationPolicy</a> in the destination account to assign an IAM policy to the destination. This
      * policy allows delivery to that destination.
      * </p>
@@ -1143,7 +1143,9 @@ public interface AWSLogs {
 
     /**
      * <p>
-     * This operation returns a paginated list of your saved CloudWatch Logs Insights query definitions.
+     * This operation returns a paginated list of your saved CloudWatch Logs Insights query definitions. You can
+     * retrieve query definitions from the current account or from a source account that is linked to the current
+     * account.
      * </p>
      * <p>
      * You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results to only the query
@@ -1806,7 +1808,7 @@ public interface AWSLogs {
      * <li>
      * <p>
      * If you are delivering logs cross-account, you must use <a href=
-     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html"
+     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html"
      * >PutDeliveryDestinationPolicy</a> in the destination account to assign an IAM policy to the destination. This
      * policy allows delivery to that destination.
      * </p>
@@ -1949,7 +1951,7 @@ public interface AWSLogs {
      * <li>
      * <p>
      * If you are delivering logs cross-account, you must use <a href=
-     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html"
+     * "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html"
      * >PutDeliveryDestinationPolicy</a> in the destination account to assign an IAM policy to the destination. This
      * policy allows delivery to that destination.
      * </p>

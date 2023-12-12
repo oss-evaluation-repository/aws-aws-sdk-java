@@ -49,6 +49,8 @@ public class WorkflowExecutionMetadataMarshaller {
             .marshallLocationName("startTime").build();
     private static final MarshallingInfo<String> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("endTime").build();
+    private static final MarshallingInfo<String> PARALLELGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parallelGroup").build();
 
     private static final WorkflowExecutionMetadataMarshaller instance = new WorkflowExecutionMetadataMarshaller();
 
@@ -77,6 +79,7 @@ public class WorkflowExecutionMetadataMarshaller {
             protocolMarshaller.marshall(workflowExecutionMetadata.getTotalStepsSkipped(), TOTALSTEPSSKIPPED_BINDING);
             protocolMarshaller.marshall(workflowExecutionMetadata.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(workflowExecutionMetadata.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(workflowExecutionMetadata.getParallelGroup(), PARALLELGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

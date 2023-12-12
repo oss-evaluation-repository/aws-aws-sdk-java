@@ -27,8 +27,8 @@ public class CreateLogAnomalyDetectorRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at least
-     * one ARN.
+     * An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log
+     * group ARN.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> logGroupArnList;
@@ -92,12 +92,12 @@ public class CreateLogAnomalyDetectorRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at least
-     * one ARN.
+     * An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log
+     * group ARN.
      * </p>
      * 
-     * @return An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at
-     *         least one ARN.
+     * @return An array containing the ARN of the log group that this anomaly detector will watch. You can specify only
+     *         one log group ARN.
      */
 
     public java.util.List<String> getLogGroupArnList() {
@@ -109,13 +109,13 @@ public class CreateLogAnomalyDetectorRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at least
-     * one ARN.
+     * An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log
+     * group ARN.
      * </p>
      * 
      * @param logGroupArnList
-     *        An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at
-     *        least one ARN.
+     *        An array containing the ARN of the log group that this anomaly detector will watch. You can specify only
+     *        one log group ARN.
      */
 
     public void setLogGroupArnList(java.util.Collection<String> logGroupArnList) {
@@ -129,8 +129,8 @@ public class CreateLogAnomalyDetectorRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at least
-     * one ARN.
+     * An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log
+     * group ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -139,8 +139,8 @@ public class CreateLogAnomalyDetectorRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param logGroupArnList
-     *        An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at
-     *        least one ARN.
+     *        An array containing the ARN of the log group that this anomaly detector will watch. You can specify only
+     *        one log group ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,13 +156,13 @@ public class CreateLogAnomalyDetectorRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at least
-     * one ARN.
+     * An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log
+     * group ARN.
      * </p>
      * 
      * @param logGroupArnList
-     *        An array containing the ARNs of the log groups that this anomaly detector will watch. You must specify at
-     *        least one ARN.
+     *        An array containing the ARN of the log group that this anomaly detector will watch. You can specify only
+     *        one log group ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

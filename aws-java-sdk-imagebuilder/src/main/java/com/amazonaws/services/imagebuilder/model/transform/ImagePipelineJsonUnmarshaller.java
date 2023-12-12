@@ -121,6 +121,16 @@ public class ImagePipelineJsonUnmarshaller implements Unmarshaller<ImagePipeline
                     context.nextToken();
                     imagePipeline.setImageScanningConfiguration(ImageScanningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("executionRole", targetDepth)) {
+                    context.nextToken();
+                    imagePipeline.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workflows", targetDepth)) {
+                    context.nextToken();
+                    imagePipeline.setWorkflows(new ListUnmarshaller<WorkflowConfiguration>(WorkflowConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

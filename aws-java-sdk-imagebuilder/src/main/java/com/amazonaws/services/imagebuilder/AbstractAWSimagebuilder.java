@@ -78,6 +78,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public CreateWorkflowResult createWorkflow(CreateWorkflowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteComponentResult deleteComponent(DeleteComponentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +119,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorkflowResult deleteWorkflow(DeleteWorkflowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +189,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetWorkflowResult getWorkflow(GetWorkflowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -288,12 +303,27 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public ListWaitingWorkflowStepsResult listWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorkflowBuildVersionsResult listWorkflowBuildVersions(ListWorkflowBuildVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWorkflowExecutionsResult listWorkflowExecutions(ListWorkflowExecutionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListWorkflowStepExecutionsResult listWorkflowStepExecutions(ListWorkflowStepExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorkflowsResult listWorkflows(ListWorkflowsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -314,6 +344,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public PutImageRecipePolicyResult putImageRecipePolicy(PutImageRecipePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendWorkflowStepActionResult sendWorkflowStepAction(SendWorkflowStepActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

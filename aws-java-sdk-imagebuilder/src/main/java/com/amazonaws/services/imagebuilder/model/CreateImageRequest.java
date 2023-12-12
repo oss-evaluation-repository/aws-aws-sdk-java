@@ -85,6 +85,19 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private ImageScanningConfiguration imageScanningConfiguration;
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     */
+    private java.util.List<WorkflowConfiguration> workflows;
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     */
+    private String executionRole;
 
     /**
      * <p>
@@ -533,6 +546,122 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     * 
+     * @return Contains an array of workflow configuration objects.
+     */
+
+    public java.util.List<WorkflowConfiguration> getWorkflows() {
+        return workflows;
+    }
+
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains an array of workflow configuration objects.
+     */
+
+    public void setWorkflows(java.util.Collection<WorkflowConfiguration> workflows) {
+        if (workflows == null) {
+            this.workflows = null;
+            return;
+        }
+
+        this.workflows = new java.util.ArrayList<WorkflowConfiguration>(workflows);
+    }
+
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorkflows(java.util.Collection)} or {@link #withWorkflows(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains an array of workflow configuration objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withWorkflows(WorkflowConfiguration... workflows) {
+        if (this.workflows == null) {
+            setWorkflows(new java.util.ArrayList<WorkflowConfiguration>(workflows.length));
+        }
+        for (WorkflowConfiguration ele : workflows) {
+            this.workflows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains an array of workflow configuration objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withWorkflows(java.util.Collection<WorkflowConfiguration> workflows) {
+        setWorkflows(workflows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @param executionRole
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *        perform workflow actions.
+     */
+
+    public void setExecutionRole(String executionRole) {
+        this.executionRole = executionRole;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @return The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *         perform workflow actions.
+     */
+
+    public String getExecutionRole() {
+        return this.executionRole;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @param executionRole
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *        perform workflow actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withExecutionRole(String executionRole) {
+        setExecutionRole(executionRole);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -561,7 +690,11 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getImageScanningConfiguration() != null)
-            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration());
+            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration()).append(",");
+        if (getWorkflows() != null)
+            sb.append("Workflows: ").append(getWorkflows()).append(",");
+        if (getExecutionRole() != null)
+            sb.append("ExecutionRole: ").append(getExecutionRole());
         sb.append("}");
         return sb.toString();
     }
@@ -613,6 +746,14 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getImageScanningConfiguration() != null && other.getImageScanningConfiguration().equals(this.getImageScanningConfiguration()) == false)
             return false;
+        if (other.getWorkflows() == null ^ this.getWorkflows() == null)
+            return false;
+        if (other.getWorkflows() != null && other.getWorkflows().equals(this.getWorkflows()) == false)
+            return false;
+        if (other.getExecutionRole() == null ^ this.getExecutionRole() == null)
+            return false;
+        if (other.getExecutionRole() != null && other.getExecutionRole().equals(this.getExecutionRole()) == false)
+            return false;
         return true;
     }
 
@@ -630,6 +771,8 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getImageScanningConfiguration() == null) ? 0 : getImageScanningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkflows() == null) ? 0 : getWorkflows().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRole() == null) ? 0 : getExecutionRole().hashCode());
         return hashCode;
     }
 

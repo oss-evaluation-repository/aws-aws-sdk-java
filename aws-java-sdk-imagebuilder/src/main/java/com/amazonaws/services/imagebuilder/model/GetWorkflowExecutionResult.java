@@ -104,6 +104,13 @@ public class GetWorkflowExecutionResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String endTime;
+    /**
+     * <p>
+     * Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or
+     * more test workflows.
+     * </p>
+     */
+    private String parallelGroup;
 
     /**
      * <p>
@@ -691,6 +698,52 @@ public class GetWorkflowExecutionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or
+     * more test workflows.
+     * </p>
+     * 
+     * @param parallelGroup
+     *        Test workflows are defined within named runtime groups. The parallel group is a named group that contains
+     *        one or more test workflows.
+     */
+
+    public void setParallelGroup(String parallelGroup) {
+        this.parallelGroup = parallelGroup;
+    }
+
+    /**
+     * <p>
+     * Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or
+     * more test workflows.
+     * </p>
+     * 
+     * @return Test workflows are defined within named runtime groups. The parallel group is a named group that contains
+     *         one or more test workflows.
+     */
+
+    public String getParallelGroup() {
+        return this.parallelGroup;
+    }
+
+    /**
+     * <p>
+     * Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or
+     * more test workflows.
+     * </p>
+     * 
+     * @param parallelGroup
+     *        Test workflows are defined within named runtime groups. The parallel group is a named group that contains
+     *        one or more test workflows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetWorkflowExecutionResult withParallelGroup(String parallelGroup) {
+        setParallelGroup(parallelGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -727,7 +780,9 @@ public class GetWorkflowExecutionResult extends com.amazonaws.AmazonWebServiceRe
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime());
+            sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getParallelGroup() != null)
+            sb.append("ParallelGroup: ").append(getParallelGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -794,6 +849,10 @@ public class GetWorkflowExecutionResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getParallelGroup() == null ^ this.getParallelGroup() == null)
+            return false;
+        if (other.getParallelGroup() != null && other.getParallelGroup().equals(this.getParallelGroup()) == false)
+            return false;
         return true;
     }
 
@@ -815,6 +874,7 @@ public class GetWorkflowExecutionResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getTotalStepsSkipped() == null) ? 0 : getTotalStepsSkipped().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getParallelGroup() == null) ? 0 : getParallelGroup().hashCode());
         return hashCode;
     }
 

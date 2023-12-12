@@ -24,7 +24,8 @@ public enum WorkflowStepExecutionStatus {
     SKIPPED("SKIPPED"),
     RUNNING("RUNNING"),
     COMPLETED("COMPLETED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    CANCELLED("CANCELLED");
 
     private String value;
 

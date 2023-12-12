@@ -45,8 +45,8 @@ public class CreateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
     private String status;
     /**
      * <p>
-     * The role name or Amazon Resource Name (ARN) for the IAM role that grants Image Builder access to run lifecycle
-     * actions.
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run
+     * lifecycle actions.
      * </p>
      */
     private String executionRole;
@@ -224,12 +224,12 @@ public class CreateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The role name or Amazon Resource Name (ARN) for the IAM role that grants Image Builder access to run lifecycle
-     * actions.
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run
+     * lifecycle actions.
      * </p>
      * 
      * @param executionRole
-     *        The role name or Amazon Resource Name (ARN) for the IAM role that grants Image Builder access to run
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run
      *        lifecycle actions.
      */
 
@@ -239,12 +239,12 @@ public class CreateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The role name or Amazon Resource Name (ARN) for the IAM role that grants Image Builder access to run lifecycle
-     * actions.
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run
+     * lifecycle actions.
      * </p>
      * 
-     * @return The role name or Amazon Resource Name (ARN) for the IAM role that grants Image Builder access to run
-     *         lifecycle actions.
+     * @return The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *         run lifecycle actions.
      */
 
     public String getExecutionRole() {
@@ -253,12 +253,12 @@ public class CreateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The role name or Amazon Resource Name (ARN) for the IAM role that grants Image Builder access to run lifecycle
-     * actions.
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run
+     * lifecycle actions.
      * </p>
      * 
      * @param executionRole
-     *        The role name or Amazon Resource Name (ARN) for the IAM role that grants Image Builder access to run
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run
      *        lifecycle actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

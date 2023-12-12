@@ -115,6 +115,19 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
     private String street;
     /**
      * <p>
+     * An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the
+     * Queen County in New York.
+     * </p>
+     * <note>
+     * <p>
+     * This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
+     * property is <code>borough</code>.
+     * </p>
+     * </note>
+     */
+    private String subMunicipality;
+    /**
+     * <p>
      * A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.
      * </p>
      */
@@ -771,6 +784,82 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the
+     * Queen County in New York.
+     * </p>
+     * <note>
+     * <p>
+     * This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
+     * property is <code>borough</code>.
+     * </p>
+     * </note>
+     * 
+     * @param subMunicipality
+     *        An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality
+     *        in the Queen County in New York.</p> <note>
+     *        <p>
+     *        This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
+     *        property is <code>borough</code>.
+     *        </p>
+     */
+
+    public void setSubMunicipality(String subMunicipality) {
+        this.subMunicipality = subMunicipality;
+    }
+
+    /**
+     * <p>
+     * An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the
+     * Queen County in New York.
+     * </p>
+     * <note>
+     * <p>
+     * This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
+     * property is <code>borough</code>.
+     * </p>
+     * </note>
+     * 
+     * @return An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality
+     *         in the Queen County in New York.</p> <note>
+     *         <p>
+     *         This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the
+     *         OpenData property is <code>borough</code>.
+     *         </p>
+     */
+
+    public String getSubMunicipality() {
+        return this.subMunicipality;
+    }
+
+    /**
+     * <p>
+     * An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the
+     * Queen County in New York.
+     * </p>
+     * <note>
+     * <p>
+     * This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
+     * property is <code>borough</code>.
+     * </p>
+     * </note>
+     * 
+     * @param subMunicipality
+     *        An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality
+     *        in the Queen County in New York.</p> <note>
+     *        <p>
+     *        This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
+     *        property is <code>borough</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Place withSubMunicipality(String subMunicipality) {
+        setSubMunicipality(subMunicipality);
+        return this;
+    }
+
+    /**
+     * <p>
      * A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.
      * </p>
      * 
@@ -1106,6 +1195,8 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
             sb.append("Region: ").append(getRegion()).append(",");
         if (getStreet() != null)
             sb.append("Street: ").append(getStreet()).append(",");
+        if (getSubMunicipality() != null)
+            sb.append("SubMunicipality: ").append(getSubMunicipality()).append(",");
         if (getSubRegion() != null)
             sb.append("SubRegion: ").append(getSubRegion()).append(",");
         if (getSupplementalCategories() != null)
@@ -1174,6 +1265,10 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStreet() != null && other.getStreet().equals(this.getStreet()) == false)
             return false;
+        if (other.getSubMunicipality() == null ^ this.getSubMunicipality() == null)
+            return false;
+        if (other.getSubMunicipality() != null && other.getSubMunicipality().equals(this.getSubMunicipality()) == false)
+            return false;
         if (other.getSubRegion() == null ^ this.getSubRegion() == null)
             return false;
         if (other.getSubRegion() != null && other.getSubRegion().equals(this.getSubRegion()) == false)
@@ -1213,6 +1308,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPostalCode() == null) ? 0 : getPostalCode().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getStreet() == null) ? 0 : getStreet().hashCode());
+        hashCode = prime * hashCode + ((getSubMunicipality() == null) ? 0 : getSubMunicipality().hashCode());
         hashCode = prime * hashCode + ((getSubRegion() == null) ? 0 : getSubRegion().hashCode());
         hashCode = prime * hashCode + ((getSupplementalCategories() == null) ? 0 : getSupplementalCategories().hashCode());
         hashCode = prime * hashCode + ((getTimeZone() == null) ? 0 : getTimeZone().hashCode());

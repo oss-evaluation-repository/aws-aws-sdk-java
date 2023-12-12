@@ -74,6 +74,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you omit this parameter, the default of <code>STANDARD</code> is used.
      * </p>
+     * <important>
+     * <p>
+     * After a log group is created, its class can't be changed.
+     * </p>
+     * </important>
      * <p>
      * For details about the features supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
@@ -337,6 +342,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you omit this parameter, the default of <code>STANDARD</code> is used.
      * </p>
+     * <important>
+     * <p>
+     * After a log group is created, its class can't be changed.
+     * </p>
+     * </important>
      * <p>
      * For details about the features supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
@@ -360,6 +370,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If you omit this parameter, the default of <code>STANDARD</code> is used.
      *        </p>
+     *        <important>
+     *        <p>
+     *        After a log group is created, its class can't be changed.
+     *        </p>
+     *        </important>
      *        <p>
      *        For details about the features supported by each class, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
@@ -391,6 +406,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you omit this parameter, the default of <code>STANDARD</code> is used.
      * </p>
+     * <important>
+     * <p>
+     * After a log group is created, its class can't be changed.
+     * </p>
+     * </important>
      * <p>
      * For details about the features supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
@@ -413,6 +433,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         If you omit this parameter, the default of <code>STANDARD</code> is used.
      *         </p>
+     *         <important>
+     *         <p>
+     *         After a log group is created, its class can't be changed.
+     *         </p>
+     *         </important>
      *         <p>
      *         For details about the features supported by each class, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
@@ -444,6 +469,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you omit this parameter, the default of <code>STANDARD</code> is used.
      * </p>
+     * <important>
+     * <p>
+     * After a log group is created, its class can't be changed.
+     * </p>
+     * </important>
      * <p>
      * For details about the features supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
@@ -467,6 +497,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If you omit this parameter, the default of <code>STANDARD</code> is used.
      *        </p>
+     *        <important>
+     *        <p>
+     *        After a log group is created, its class can't be changed.
+     *        </p>
+     *        </important>
      *        <p>
      *        For details about the features supported by each class, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
@@ -500,6 +535,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you omit this parameter, the default of <code>STANDARD</code> is used.
      * </p>
+     * <important>
+     * <p>
+     * After a log group is created, its class can't be changed.
+     * </p>
+     * </important>
      * <p>
      * For details about the features supported by each class, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
@@ -523,6 +563,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If you omit this parameter, the default of <code>STANDARD</code> is used.
      *        </p>
+     *        <important>
+     *        <p>
+     *        After a log group is created, its class can't be changed.
+     *        </p>
+     *        </important>
      *        <p>
      *        For details about the features supported by each class, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log

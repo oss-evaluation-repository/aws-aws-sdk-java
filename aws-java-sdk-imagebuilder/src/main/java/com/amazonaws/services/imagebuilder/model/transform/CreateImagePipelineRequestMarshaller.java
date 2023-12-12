@@ -13,7 +13,7 @@
 package com.amazonaws.services.imagebuilder.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -58,6 +58,10 @@ public class CreateImagePipelineRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<StructuredPojo> IMAGESCANNINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageScanningConfiguration").build();
+    private static final MarshallingInfo<List> WORKFLOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("workflows").build();
+    private static final MarshallingInfo<String> EXECUTIONROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRole").build();
 
     private static final CreateImagePipelineRequestMarshaller instance = new CreateImagePipelineRequestMarshaller();
 
@@ -88,6 +92,8 @@ public class CreateImagePipelineRequestMarshaller {
             protocolMarshaller.marshall(createImagePipelineRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createImagePipelineRequest.getImageScanningConfiguration(), IMAGESCANNINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createImagePipelineRequest.getWorkflows(), WORKFLOWS_BINDING);
+            protocolMarshaller.marshall(createImagePipelineRequest.getExecutionRole(), EXECUTIONROLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

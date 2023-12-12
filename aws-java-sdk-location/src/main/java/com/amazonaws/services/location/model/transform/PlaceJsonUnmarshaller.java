@@ -94,6 +94,10 @@ public class PlaceJsonUnmarshaller implements Unmarshaller<Place, JsonUnmarshall
                     context.nextToken();
                     place.setStreet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SubMunicipality", targetDepth)) {
+                    context.nextToken();
+                    place.setSubMunicipality(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SubRegion", targetDepth)) {
                     context.nextToken();
                     place.setSubRegion(context.getUnmarshaller(String.class).unmarshall(context));

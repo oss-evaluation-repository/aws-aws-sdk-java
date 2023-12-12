@@ -45,7 +45,7 @@ public class UpdateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
     private String status;
     /**
      * <p>
-     * The name of the IAM role that Image Builder should use to update the lifecycle policy.
+     * The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.
      * </p>
      */
     private String executionRole;
@@ -217,11 +217,12 @@ public class UpdateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the IAM role that Image Builder should use to update the lifecycle policy.
+     * The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.
      * </p>
      * 
      * @param executionRole
-     *        The name of the IAM role that Image Builder should use to update the lifecycle policy.
+     *        The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle
+     *        policy.
      */
 
     public void setExecutionRole(String executionRole) {
@@ -230,10 +231,11 @@ public class UpdateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the IAM role that Image Builder should use to update the lifecycle policy.
+     * The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.
      * </p>
      * 
-     * @return The name of the IAM role that Image Builder should use to update the lifecycle policy.
+     * @return The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle
+     *         policy.
      */
 
     public String getExecutionRole() {
@@ -242,11 +244,12 @@ public class UpdateLifecyclePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the IAM role that Image Builder should use to update the lifecycle policy.
+     * The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.
      * </p>
      * 
      * @param executionRole
-     *        The name of the IAM role that Image Builder should use to update the lifecycle policy.
+     *        The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle
+     *        policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

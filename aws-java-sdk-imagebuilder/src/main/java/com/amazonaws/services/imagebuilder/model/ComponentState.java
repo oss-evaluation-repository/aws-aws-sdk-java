@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A group of fields that describe the current status of components that are no longer active.
+ * A group of fields that describe the current status of components.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentState" target="_top">AWS API

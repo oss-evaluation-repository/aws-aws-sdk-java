@@ -50,6 +50,8 @@ public class PlaceMarshaller {
             .marshallLocationName("Region").build();
     private static final MarshallingInfo<String> STREET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Street").build();
+    private static final MarshallingInfo<String> SUBMUNICIPALITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubMunicipality").build();
     private static final MarshallingInfo<String> SUBREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubRegion").build();
     private static final MarshallingInfo<List> SUPPLEMENTALCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -88,6 +90,7 @@ public class PlaceMarshaller {
             protocolMarshaller.marshall(place.getPostalCode(), POSTALCODE_BINDING);
             protocolMarshaller.marshall(place.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(place.getStreet(), STREET_BINDING);
+            protocolMarshaller.marshall(place.getSubMunicipality(), SUBMUNICIPALITY_BINDING);
             protocolMarshaller.marshall(place.getSubRegion(), SUBREGION_BINDING);
             protocolMarshaller.marshall(place.getSupplementalCategories(), SUPPLEMENTALCATEGORIES_BINDING);
             protocolMarshaller.marshall(place.getTimeZone(), TIMEZONE_BINDING);

@@ -1014,6 +1014,89 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Create a new workflow or a new version of an existing workflow.
+     * </p>
+     * 
+     * @param createWorkflowRequest
+     * @return Result of the CreateWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws InvalidVersionNumberException
+     *         Your version number is out of bounds or does not follow the required syntax.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws InvalidParameterCombinationException
+     *         You have specified two or more mutually exclusive parameters. Review the error message for details.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
+     * @sample AWSimagebuilder.CreateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateWorkflowResult createWorkflow(CreateWorkflowRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkflow(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkflowResult executeCreateWorkflow(CreateWorkflowRequest createWorkflowRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWorkflowRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWorkflowRequest> request = null;
+        Response<CreateWorkflowResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWorkflowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkflowRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkflow");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWorkflowResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWorkflowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a component build version.
      * </p>
      * 
@@ -1611,6 +1694,78 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLifecyclePolicyResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeleteLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a specific workflow resource.
+     * </p>
+     * 
+     * @param deleteWorkflowRequest
+     * @return Result of the DeleteWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceDependencyException
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
+     * @sample AWSimagebuilder.DeleteWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteWorkflowResult deleteWorkflow(DeleteWorkflowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkflow(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkflowResult executeDeleteWorkflow(DeleteWorkflowRequest deleteWorkflowRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWorkflowRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWorkflowRequest> request = null;
+        Response<DeleteWorkflowResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWorkflowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkflowRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkflow");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkflowResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWorkflowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2508,6 +2663,75 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<GetLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get a workflow resource object.
+     * </p>
+     * 
+     * @param getWorkflowRequest
+     * @return Result of the GetWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetWorkflowResult getWorkflow(GetWorkflowRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetWorkflow(request);
+    }
+
+    @SdkInternalApi
+    final GetWorkflowResult executeGetWorkflow(GetWorkflowRequest getWorkflowRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getWorkflowRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetWorkflowRequest> request = null;
+        Response<GetWorkflowResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetWorkflowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWorkflowRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWorkflow");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetWorkflowResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetWorkflowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4085,6 +4309,152 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Get a list of workflow steps that are waiting for action for workflows in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listWaitingWorkflowStepsRequest
+     * @return Result of the ListWaitingWorkflowSteps operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWaitingWorkflowSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWaitingWorkflowStepsResult listWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWaitingWorkflowSteps(request);
+    }
+
+    @SdkInternalApi
+    final ListWaitingWorkflowStepsResult executeListWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest listWaitingWorkflowStepsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWaitingWorkflowStepsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWaitingWorkflowStepsRequest> request = null;
+        Response<ListWaitingWorkflowStepsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWaitingWorkflowStepsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWaitingWorkflowStepsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWaitingWorkflowSteps");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWaitingWorkflowStepsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWaitingWorkflowStepsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of build versions for a specific workflow resource.
+     * </p>
+     * 
+     * @param listWorkflowBuildVersionsRequest
+     * @return Result of the ListWorkflowBuildVersions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflowBuildVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowBuildVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWorkflowBuildVersionsResult listWorkflowBuildVersions(ListWorkflowBuildVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkflowBuildVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkflowBuildVersionsResult executeListWorkflowBuildVersions(ListWorkflowBuildVersionsRequest listWorkflowBuildVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkflowBuildVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkflowBuildVersionsRequest> request = null;
+        Response<ListWorkflowBuildVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkflowBuildVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWorkflowBuildVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkflowBuildVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkflowBuildVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWorkflowBuildVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of workflow runtime instance metadata objects for a specific image build version.
      * </p>
      * 
@@ -4157,7 +4527,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Shows runtime data for each step in a runtime instance of the workflow that you specify in the request.
+     * Returns runtime data for each step in a runtime instance of the workflow that you specify in the request.
      * </p>
      * 
      * @param listWorkflowStepExecutionsRequest
@@ -4218,6 +4588,77 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<ListWorkflowStepExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListWorkflowStepExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists workflow build versions based on filtering parameters.
+     * </p>
+     * 
+     * @param listWorkflowsRequest
+     * @return Result of the ListWorkflows operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListWorkflowsResult listWorkflows(ListWorkflowsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkflows(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkflowsResult executeListWorkflows(ListWorkflowsRequest listWorkflowsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkflowsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkflowsRequest> request = null;
+        Response<ListWorkflowsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkflowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkflowsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkflows");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkflowsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWorkflowsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4533,6 +4974,86 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<PutImageRecipePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutImageRecipePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Pauses or resumes image creation when the associated workflow runs a <code>WaitForAction</code> step.
+     * </p>
+     * 
+     * @param sendWorkflowStepActionRequest
+     * @return Result of the SendWorkflowStepAction operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ResourceNotFoundException
+     *         At least one of the resources referenced by your request does not exist.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidParameterValueException
+     *         The value that you provided for the specified parameter is invalid.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.SendWorkflowStepAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SendWorkflowStepAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendWorkflowStepActionResult sendWorkflowStepAction(SendWorkflowStepActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendWorkflowStepAction(request);
+    }
+
+    @SdkInternalApi
+    final SendWorkflowStepActionResult executeSendWorkflowStepAction(SendWorkflowStepActionRequest sendWorkflowStepActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendWorkflowStepActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendWorkflowStepActionRequest> request = null;
+        Response<SendWorkflowStepActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendWorkflowStepActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendWorkflowStepActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendWorkflowStepAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendWorkflowStepActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendWorkflowStepActionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4906,7 +5427,9 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.
+     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You
+     * must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an
+     * <code>imageRecipeArn</code>.
      * </p>
      * <note>
      * <p>

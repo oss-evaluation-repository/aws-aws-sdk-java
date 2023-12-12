@@ -27,7 +27,7 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The geomerty used to filter device positions.
+     * The geometry used to filter device positions.
      * </p>
      */
     private TrackingFilterGeometry filterGeometry;
@@ -59,11 +59,11 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The geomerty used to filter device positions.
+     * The geometry used to filter device positions.
      * </p>
      * 
      * @param filterGeometry
-     *        The geomerty used to filter device positions.
+     *        The geometry used to filter device positions.
      */
 
     public void setFilterGeometry(TrackingFilterGeometry filterGeometry) {
@@ -72,10 +72,10 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The geomerty used to filter device positions.
+     * The geometry used to filter device positions.
      * </p>
      * 
-     * @return The geomerty used to filter device positions.
+     * @return The geometry used to filter device positions.
      */
 
     public TrackingFilterGeometry getFilterGeometry() {
@@ -84,11 +84,11 @@ public class ListDevicePositionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The geomerty used to filter device positions.
+     * The geometry used to filter device positions.
      * </p>
      * 
      * @param filterGeometry
-     *        The geomerty used to filter device positions.
+     *        The geometry used to filter device positions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
