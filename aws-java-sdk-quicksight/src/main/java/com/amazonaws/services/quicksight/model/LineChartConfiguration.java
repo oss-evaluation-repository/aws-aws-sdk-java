@@ -94,6 +94,8 @@ public class LineChartConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private ChartAxisLabelOptions secondaryYAxisLabelOptions;
+
+    private SingleAxisOptions singleAxisOptions;
     /**
      * <p>
      * The options that determine the default presentation of all line series in <code>LineChartVisual</code>.
@@ -633,6 +635,32 @@ public class LineChartConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * @param singleAxisOptions
+     */
+
+    public void setSingleAxisOptions(SingleAxisOptions singleAxisOptions) {
+        this.singleAxisOptions = singleAxisOptions;
+    }
+
+    /**
+     * @return
+     */
+
+    public SingleAxisOptions getSingleAxisOptions() {
+        return this.singleAxisOptions;
+    }
+
+    /**
+     * @param singleAxisOptions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LineChartConfiguration withSingleAxisOptions(SingleAxisOptions singleAxisOptions) {
+        setSingleAxisOptions(singleAxisOptions);
+        return this;
+    }
+
+    /**
      * <p>
      * The options that determine the default presentation of all line series in <code>LineChartVisual</code>.
      * </p>
@@ -1076,6 +1104,8 @@ public class LineChartConfiguration implements Serializable, Cloneable, Structur
             sb.append("SecondaryYAxisDisplayOptions: ").append(getSecondaryYAxisDisplayOptions()).append(",");
         if (getSecondaryYAxisLabelOptions() != null)
             sb.append("SecondaryYAxisLabelOptions: ").append(getSecondaryYAxisLabelOptions()).append(",");
+        if (getSingleAxisOptions() != null)
+            sb.append("SingleAxisOptions: ").append(getSingleAxisOptions()).append(",");
         if (getDefaultSeriesSettings() != null)
             sb.append("DefaultSeriesSettings: ").append(getDefaultSeriesSettings()).append(",");
         if (getSeries() != null)
@@ -1150,6 +1180,10 @@ public class LineChartConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getSecondaryYAxisLabelOptions() != null && other.getSecondaryYAxisLabelOptions().equals(this.getSecondaryYAxisLabelOptions()) == false)
             return false;
+        if (other.getSingleAxisOptions() == null ^ this.getSingleAxisOptions() == null)
+            return false;
+        if (other.getSingleAxisOptions() != null && other.getSingleAxisOptions().equals(this.getSingleAxisOptions()) == false)
+            return false;
         if (other.getDefaultSeriesSettings() == null ^ this.getDefaultSeriesSettings() == null)
             return false;
         if (other.getDefaultSeriesSettings() != null && other.getDefaultSeriesSettings().equals(this.getDefaultSeriesSettings()) == false)
@@ -1201,6 +1235,7 @@ public class LineChartConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getPrimaryYAxisLabelOptions() == null) ? 0 : getPrimaryYAxisLabelOptions().hashCode());
         hashCode = prime * hashCode + ((getSecondaryYAxisDisplayOptions() == null) ? 0 : getSecondaryYAxisDisplayOptions().hashCode());
         hashCode = prime * hashCode + ((getSecondaryYAxisLabelOptions() == null) ? 0 : getSecondaryYAxisLabelOptions().hashCode());
+        hashCode = prime * hashCode + ((getSingleAxisOptions() == null) ? 0 : getSingleAxisOptions().hashCode());
         hashCode = prime * hashCode + ((getDefaultSeriesSettings() == null) ? 0 : getDefaultSeriesSettings().hashCode());
         hashCode = prime * hashCode + ((getSeries() == null) ? 0 : getSeries().hashCode());
         hashCode = prime * hashCode + ((getLegend() == null) ? 0 : getLegend().hashCode());

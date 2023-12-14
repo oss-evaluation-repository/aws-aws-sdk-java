@@ -6098,6 +6098,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<TagContactResult> tagContactAsync(TagContactRequest request) {
+
+        return tagContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagContactResult> tagContactAsync(final TagContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagContactRequest, TagContactResult> asyncHandler) {
+        final TagContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagContactResult>() {
+            @Override
+            public TagContactResult call() throws Exception {
+                TagContactResult result = null;
+
+                try {
+                    result = executeTagContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -6148,6 +6181,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeTransferContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagContactResult> untagContactAsync(UntagContactRequest request) {
+
+        return untagContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagContactResult> untagContactAsync(final UntagContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagContactRequest, UntagContactResult> asyncHandler) {
+        final UntagContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagContactResult>() {
+            @Override
+            public UntagContactResult call() throws Exception {
+                UntagContactResult result = null;
+
+                try {
+                    result = executeUntagContact(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

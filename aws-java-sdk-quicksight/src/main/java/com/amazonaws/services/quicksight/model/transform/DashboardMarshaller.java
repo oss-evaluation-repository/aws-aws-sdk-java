@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,8 @@ public class DashboardMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastPublishedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> LINKENTITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LinkEntities").build();
 
     private static final DashboardMarshaller instance = new DashboardMarshaller();
 
@@ -65,6 +68,7 @@ public class DashboardMarshaller {
             protocolMarshaller.marshall(dashboard.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(dashboard.getLastPublishedTime(), LASTPUBLISHEDTIME_BINDING);
             protocolMarshaller.marshall(dashboard.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(dashboard.getLinkEntities(), LINKENTITIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

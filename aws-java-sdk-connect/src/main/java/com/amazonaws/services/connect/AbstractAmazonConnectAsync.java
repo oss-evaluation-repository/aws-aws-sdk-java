@@ -2405,6 +2405,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<TagContactResult> tagContactAsync(TagContactRequest request) {
+
+        return tagContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagContactResult> tagContactAsync(TagContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagContactRequest, TagContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -2426,6 +2439,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<TransferContactResult> transferContactAsync(TransferContactRequest request,
             com.amazonaws.handlers.AsyncHandler<TransferContactRequest, TransferContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagContactResult> untagContactAsync(UntagContactRequest request) {
+
+        return untagContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagContactResult> untagContactAsync(UntagContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagContactRequest, UntagContactResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

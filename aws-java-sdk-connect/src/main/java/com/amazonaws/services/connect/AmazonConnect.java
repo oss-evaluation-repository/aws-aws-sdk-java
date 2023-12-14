@@ -5195,6 +5195,31 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Adds the specified tags to the contact resource. For more information about this API is used, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set up granular billing for a
+     * detailed view of your Amazon Connect usage</a>.
+     * </p>
+     * 
+     * @param tagContactRequest
+     * @return Result of the TagContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.TagContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagContactResult tagContact(TagContactRequest tagContactRequest);
+
+    /**
+     * <p>
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
@@ -5286,6 +5311,31 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     TransferContactResult transferContact(TransferContactRequest transferContactRequest);
+
+    /**
+     * <p>
+     * Removes the specified tags from the contact resource. For more information about this API is used, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set up granular billing for a
+     * detailed view of your Amazon Connect usage</a>.
+     * </p>
+     * 
+     * @param untagContactRequest
+     * @return Result of the UntagContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.UntagContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagContactResult untagContact(UntagContactRequest untagContactRequest);
 
     /**
      * <p>

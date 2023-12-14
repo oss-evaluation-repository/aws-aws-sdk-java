@@ -92,6 +92,12 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
+    /**
+     * <p>
+     * The buffering options. If no value is specified, the default values for Splunk are used.
+     * </p>
+     */
+    private SplunkBufferingHints bufferingHints;
 
     /**
      * <p>
@@ -562,6 +568,46 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The buffering options. If no value is specified, the default values for Splunk are used.
+     * </p>
+     * 
+     * @param bufferingHints
+     *        The buffering options. If no value is specified, the default values for Splunk are used.
+     */
+
+    public void setBufferingHints(SplunkBufferingHints bufferingHints) {
+        this.bufferingHints = bufferingHints;
+    }
+
+    /**
+     * <p>
+     * The buffering options. If no value is specified, the default values for Splunk are used.
+     * </p>
+     * 
+     * @return The buffering options. If no value is specified, the default values for Splunk are used.
+     */
+
+    public SplunkBufferingHints getBufferingHints() {
+        return this.bufferingHints;
+    }
+
+    /**
+     * <p>
+     * The buffering options. If no value is specified, the default values for Splunk are used.
+     * </p>
+     * 
+     * @param bufferingHints
+     *        The buffering options. If no value is specified, the default values for Splunk are used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SplunkDestinationConfiguration withBufferingHints(SplunkBufferingHints bufferingHints) {
+        setBufferingHints(bufferingHints);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -590,7 +636,9 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
         if (getProcessingConfiguration() != null)
             sb.append("ProcessingConfiguration: ").append(getProcessingConfiguration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
+        if (getBufferingHints() != null)
+            sb.append("BufferingHints: ").append(getBufferingHints());
         sb.append("}");
         return sb.toString();
     }
@@ -642,6 +690,10 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
             return false;
+        if (other.getBufferingHints() == null ^ this.getBufferingHints() == null)
+            return false;
+        if (other.getBufferingHints() != null && other.getBufferingHints().equals(this.getBufferingHints()) == false)
+            return false;
         return true;
     }
 
@@ -659,6 +711,7 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getS3Configuration() == null) ? 0 : getS3Configuration().hashCode());
         hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
+        hashCode = prime * hashCode + ((getBufferingHints() == null) ? 0 : getBufferingHints().hashCode());
         return hashCode;
     }
 

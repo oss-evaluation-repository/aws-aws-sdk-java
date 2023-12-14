@@ -293,6 +293,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCertificateProviderResult> createCertificateProviderAsync(CreateCertificateProviderRequest request) {
+
+        return createCertificateProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCertificateProviderResult> createCertificateProviderAsync(CreateCertificateProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCertificateProviderRequest, CreateCertificateProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCustomMetricResult> createCustomMetricAsync(CreateCustomMetricRequest request) {
 
         return createCustomMetricAsync(request, null);
@@ -708,6 +721,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateProviderResult> deleteCertificateProviderAsync(DeleteCertificateProviderRequest request) {
+
+        return deleteCertificateProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateProviderResult> deleteCertificateProviderAsync(DeleteCertificateProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateProviderRequest, DeleteCertificateProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1195,6 +1221,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<DescribeCertificateResult> describeCertificateAsync(DescribeCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCertificateRequest, DescribeCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificateProviderResult> describeCertificateProviderAsync(DescribeCertificateProviderRequest request) {
+
+        return describeCertificateProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificateProviderResult> describeCertificateProviderAsync(DescribeCertificateProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCertificateProviderRequest, DescribeCertificateProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1974,6 +2013,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(ListCACertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCACertificatesRequest, ListCACertificatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificateProvidersResult> listCertificateProvidersAsync(ListCertificateProvidersRequest request) {
+
+        return listCertificateProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificateProvidersResult> listCertificateProvidersAsync(ListCertificateProvidersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCertificateProvidersRequest, ListCertificateProvidersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3036,6 +3088,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(UpdateCertificateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateProviderResult> updateCertificateProviderAsync(UpdateCertificateProviderRequest request) {
+
+        return updateCertificateProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateProviderResult> updateCertificateProviderAsync(UpdateCertificateProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCertificateProviderRequest, UpdateCertificateProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

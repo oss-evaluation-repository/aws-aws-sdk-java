@@ -70,6 +70,12 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     */
+    private java.util.List<String> linkEntities;
 
     /**
      * <p>
@@ -352,6 +358,76 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @return A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     */
+
+    public java.util.List<String> getLinkEntities() {
+        return linkEntities;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     */
+
+    public void setLinkEntities(java.util.Collection<String> linkEntities) {
+        if (linkEntities == null) {
+            this.linkEntities = null;
+            return;
+        }
+
+        this.linkEntities = new java.util.ArrayList<String>(linkEntities);
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLinkEntities(java.util.Collection)} or {@link #withLinkEntities(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dashboard withLinkEntities(String... linkEntities) {
+        if (this.linkEntities == null) {
+            setLinkEntities(new java.util.ArrayList<String>(linkEntities.length));
+        }
+        for (String ele : linkEntities) {
+            this.linkEntities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dashboard withLinkEntities(java.util.Collection<String> linkEntities) {
+        setLinkEntities(linkEntities);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +452,9 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
         if (getLastPublishedTime() != null)
             sb.append("LastPublishedTime: ").append(getLastPublishedTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getLinkEntities() != null)
+            sb.append("LinkEntities: ").append(getLinkEntities());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +497,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getLinkEntities() == null ^ this.getLinkEntities() == null)
+            return false;
+        if (other.getLinkEntities() != null && other.getLinkEntities().equals(this.getLinkEntities()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +516,7 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getLastPublishedTime() == null) ? 0 : getLastPublishedTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getLinkEntities() == null) ? 0 : getLinkEntities().hashCode());
         return hashCode;
     }
 

@@ -50,6 +50,8 @@ public class LineChartConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecondaryYAxisDisplayOptions").build();
     private static final MarshallingInfo<StructuredPojo> SECONDARYYAXISLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecondaryYAxisLabelOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SINGLEAXISOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SingleAxisOptions").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTSERIESSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSeriesSettings").build();
     private static final MarshallingInfo<List> SERIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -94,6 +96,7 @@ public class LineChartConfigurationMarshaller {
             protocolMarshaller.marshall(lineChartConfiguration.getPrimaryYAxisLabelOptions(), PRIMARYYAXISLABELOPTIONS_BINDING);
             protocolMarshaller.marshall(lineChartConfiguration.getSecondaryYAxisDisplayOptions(), SECONDARYYAXISDISPLAYOPTIONS_BINDING);
             protocolMarshaller.marshall(lineChartConfiguration.getSecondaryYAxisLabelOptions(), SECONDARYYAXISLABELOPTIONS_BINDING);
+            protocolMarshaller.marshall(lineChartConfiguration.getSingleAxisOptions(), SINGLEAXISOPTIONS_BINDING);
             protocolMarshaller.marshall(lineChartConfiguration.getDefaultSeriesSettings(), DEFAULTSERIESSETTINGS_BINDING);
             protocolMarshaller.marshall(lineChartConfiguration.getSeries(), SERIES_BINDING);
             protocolMarshaller.marshall(lineChartConfiguration.getLegend(), LEGEND_BINDING);

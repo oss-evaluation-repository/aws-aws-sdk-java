@@ -53,10 +53,10 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
@@ -297,16 +297,16 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      * 
-     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *         to a game server process with a request to start a new game session (see <a href=
-     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>).
+     * @return A set of key-value pairs that can store custom data in a game session. For example:
+     *         <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     *         >Create a game session with custom properties</a>.
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -315,17 +315,17 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     *        >Create a game session with custom properties</a>.
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -339,10 +339,10 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -351,10 +351,10 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     *        >Create a game session with custom properties</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,17 +370,17 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     *        >Create a game session with custom properties</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

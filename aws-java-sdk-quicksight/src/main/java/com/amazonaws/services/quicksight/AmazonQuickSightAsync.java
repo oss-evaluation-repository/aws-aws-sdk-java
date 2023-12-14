@@ -146,9 +146,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
      * </p>
      * <p>
-     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
-     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
-     * (Singapore) Region.
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK.
      * </p>
      * <p>
      * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
@@ -192,9 +190,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
      * </p>
      * <p>
-     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
-     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
-     * (Singapore) Region.
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK.
      * </p>
      * <p>
      * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
@@ -5664,6 +5660,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<UpdateDashboardResult> updateDashboardAsync(UpdateDashboardRequest updateDashboardRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDashboardRequest, UpdateDashboardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the linked analyses on a dashboard.
+     * </p>
+     * 
+     * @param updateDashboardLinksRequest
+     * @return A Java Future containing the result of the UpdateDashboardLinks operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateDashboardLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDashboardLinksResult> updateDashboardLinksAsync(UpdateDashboardLinksRequest updateDashboardLinksRequest);
+
+    /**
+     * <p>
+     * Updates the linked analyses on a dashboard.
+     * </p>
+     * 
+     * @param updateDashboardLinksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDashboardLinks operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateDashboardLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDashboardLinksResult> updateDashboardLinksAsync(UpdateDashboardLinksRequest updateDashboardLinksRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDashboardLinksRequest, UpdateDashboardLinksResult> asyncHandler);
 
     /**
      * <p>

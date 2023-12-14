@@ -27,7 +27,8 @@ public class TestMappingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specify the EDI (electronic data interchange) file that is used as input for the transform.
+     * Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the
+     * transform.
      * </p>
      */
     private String inputFileContent;
@@ -48,11 +49,13 @@ public class TestMappingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specify the EDI (electronic data interchange) file that is used as input for the transform.
+     * Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the
+     * transform.
      * </p>
      * 
      * @param inputFileContent
-     *        Specify the EDI (electronic data interchange) file that is used as input for the transform.
+     *        Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for
+     *        the transform.
      */
 
     public void setInputFileContent(String inputFileContent) {
@@ -61,10 +64,12 @@ public class TestMappingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specify the EDI (electronic data interchange) file that is used as input for the transform.
+     * Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the
+     * transform.
      * </p>
      * 
-     * @return Specify the EDI (electronic data interchange) file that is used as input for the transform.
+     * @return Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for
+     *         the transform.
      */
 
     public String getInputFileContent() {
@@ -73,11 +78,13 @@ public class TestMappingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specify the EDI (electronic data interchange) file that is used as input for the transform.
+     * Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the
+     * transform.
      * </p>
      * 
      * @param inputFileContent
-     *        Specify the EDI (electronic data interchange) file that is used as input for the transform.
+     *        Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for
+     *        the transform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

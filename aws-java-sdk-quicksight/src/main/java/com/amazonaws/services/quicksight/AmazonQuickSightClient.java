@@ -358,9 +358,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
      * </p>
      * <p>
-     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
-     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
-     * (Singapore) Region.
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK.
      * </p>
      * <p>
      * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
@@ -11197,6 +11195,76 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDashboardResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDashboardResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the linked analyses on a dashboard.
+     * </p>
+     * 
+     * @param updateDashboardLinksRequest
+     * @return Result of the UpdateDashboardLinks operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateDashboardLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateDashboardLinksResult updateDashboardLinks(UpdateDashboardLinksRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDashboardLinks(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDashboardLinksResult executeUpdateDashboardLinks(UpdateDashboardLinksRequest updateDashboardLinksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDashboardLinksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDashboardLinksRequest> request = null;
+        Response<UpdateDashboardLinksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDashboardLinksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDashboardLinksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDashboardLinks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDashboardLinksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDashboardLinksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

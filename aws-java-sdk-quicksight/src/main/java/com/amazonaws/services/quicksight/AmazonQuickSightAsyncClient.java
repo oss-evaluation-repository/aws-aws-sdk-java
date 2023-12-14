@@ -4848,6 +4848,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateDashboardLinksResult> updateDashboardLinksAsync(UpdateDashboardLinksRequest request) {
+
+        return updateDashboardLinksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDashboardLinksResult> updateDashboardLinksAsync(final UpdateDashboardLinksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDashboardLinksRequest, UpdateDashboardLinksResult> asyncHandler) {
+        final UpdateDashboardLinksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDashboardLinksResult>() {
+            @Override
+            public UpdateDashboardLinksResult call() throws Exception {
+                UpdateDashboardLinksResult result = null;
+
+                try {
+                    result = executeUpdateDashboardLinks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDashboardPermissionsResult> updateDashboardPermissionsAsync(UpdateDashboardPermissionsRequest request) {
 
         return updateDashboardPermissionsAsync(request, null);

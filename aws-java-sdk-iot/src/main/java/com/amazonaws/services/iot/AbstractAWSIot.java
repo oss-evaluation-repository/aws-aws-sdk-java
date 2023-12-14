@@ -139,6 +139,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateCertificateProviderResult createCertificateProvider(CreateCertificateProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCustomMetricResult createCustomMetric(CreateCustomMetricRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -295,6 +300,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCertificateProviderResult deleteCertificateProvider(DeleteCertificateProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -480,6 +490,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DescribeCertificateResult describeCertificate(DescribeCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCertificateProviderResult describeCertificateProvider(DescribeCertificateProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -776,6 +791,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListCACertificatesResult listCACertificates(ListCACertificatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCertificateProvidersResult listCertificateProviders(ListCertificateProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1178,6 +1198,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public UpdateCertificateResult updateCertificate(UpdateCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCertificateProviderResult updateCertificateProvider(UpdateCertificateProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

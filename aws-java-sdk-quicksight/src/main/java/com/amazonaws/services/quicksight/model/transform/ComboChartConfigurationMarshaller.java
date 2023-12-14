@@ -46,6 +46,8 @@ public class ComboChartConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecondaryYAxisDisplayOptions").build();
     private static final MarshallingInfo<StructuredPojo> SECONDARYYAXISLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecondaryYAxisLabelOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SINGLEAXISOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SingleAxisOptions").build();
     private static final MarshallingInfo<StructuredPojo> COLORLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColorLabelOptions").build();
     private static final MarshallingInfo<StructuredPojo> LEGEND_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -86,6 +88,7 @@ public class ComboChartConfigurationMarshaller {
             protocolMarshaller.marshall(comboChartConfiguration.getPrimaryYAxisLabelOptions(), PRIMARYYAXISLABELOPTIONS_BINDING);
             protocolMarshaller.marshall(comboChartConfiguration.getSecondaryYAxisDisplayOptions(), SECONDARYYAXISDISPLAYOPTIONS_BINDING);
             protocolMarshaller.marshall(comboChartConfiguration.getSecondaryYAxisLabelOptions(), SECONDARYYAXISLABELOPTIONS_BINDING);
+            protocolMarshaller.marshall(comboChartConfiguration.getSingleAxisOptions(), SINGLEAXISOPTIONS_BINDING);
             protocolMarshaller.marshall(comboChartConfiguration.getColorLabelOptions(), COLORLABELOPTIONS_BINDING);
             protocolMarshaller.marshall(comboChartConfiguration.getLegend(), LEGEND_BINDING);
             protocolMarshaller.marshall(comboChartConfiguration.getBarDataLabels(), BARDATALABELS_BINDING);

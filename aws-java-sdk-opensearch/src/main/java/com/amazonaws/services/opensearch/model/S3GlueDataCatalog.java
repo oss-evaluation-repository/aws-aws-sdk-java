@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the AWS S3 Glue Data Catalog.
+ * Information about the Amazon S3 Glue Data Catalog.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class S3GlueDataCatalog implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The role ARN for the AWS S3 Glue Data Catalog.
+     * &gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.
      * </p>
      */
     private String roleArn;
 
     /**
      * <p>
-     * The role ARN for the AWS S3 Glue Data Catalog.
+     * &gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.
      * </p>
      * 
      * @param roleArn
-     *        The role ARN for the AWS S3 Glue Data Catalog.
+     *        &gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.
      */
 
     public void setRoleArn(String roleArn) {
@@ -47,10 +47,10 @@ public class S3GlueDataCatalog implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The role ARN for the AWS S3 Glue Data Catalog.
+     * &gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.
      * </p>
      * 
-     * @return The role ARN for the AWS S3 Glue Data Catalog.
+     * @return &gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.
      */
 
     public String getRoleArn() {
@@ -59,11 +59,11 @@ public class S3GlueDataCatalog implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The role ARN for the AWS S3 Glue Data Catalog.
+     * &gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.
      * </p>
      * 
      * @param roleArn
-     *        The role ARN for the AWS S3 Glue Data Catalog.
+     *        &gt;The Amazon Resource Name (ARN) for the S3 Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

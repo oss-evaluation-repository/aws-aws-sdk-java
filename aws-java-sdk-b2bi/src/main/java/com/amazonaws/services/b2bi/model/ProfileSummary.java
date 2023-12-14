@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the details for a profile. Profiles contain basic information about you and your business.
+ * Contains the details for a profile. A profile is the mechanism used to create the concept of a private network.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/ProfileSummary" target="_top">AWS API

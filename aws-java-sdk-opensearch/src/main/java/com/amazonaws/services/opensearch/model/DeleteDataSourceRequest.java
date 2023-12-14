@@ -33,7 +33,7 @@ public class DeleteDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String domainName;
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to delete.
      * </p>
      */
     private String name;
@@ -80,11 +80,11 @@ public class DeleteDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to delete.
      * </p>
      * 
      * @param name
-     *        The name of the data source.
+     *        The name of the data source to delete.
      */
 
     public void setName(String name) {
@@ -93,10 +93,10 @@ public class DeleteDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to delete.
      * </p>
      * 
-     * @return The name of the data source.
+     * @return The name of the data source to delete.
      */
 
     public String getName() {
@@ -105,11 +105,11 @@ public class DeleteDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to delete.
      * </p>
      * 
      * @param name
-     *        The name of the data source.
+     *        The name of the data source to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

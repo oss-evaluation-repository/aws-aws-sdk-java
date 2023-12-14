@@ -752,6 +752,50 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Creates an Amazon Web Services IoT Core certificate provider. You can use Amazon Web Services IoT Core
+     * certificate provider to customize how to sign a certificate signing request (CSR) in IoT fleet provisioning. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html">Customizing
+     * certificate signing using Amazon Web Services IoT Core certificate provider</a> from <i>Amazon Web Services IoT
+     * Core Developer Guide</i>.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreateCertificateProvider</a> action.
+     * </p>
+     * <important>
+     * <p>
+     * After you create a certificate provider, the behavior of <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
+     * <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change and all API calls to
+     * <code>CreateCertificateFromCsr</code> will invoke the certificate provider to create the certificates. It can
+     * take up to a few minutes for this behavior to change after a certificate provider is created.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateProviderRequest
+     * @return Result of the CreateCertificateProvider operation returned by the service.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateCertificateProvider
+     */
+    CreateCertificateProviderResult createCertificateProvider(CreateCertificateProviderRequest createCertificateProviderRequest);
+
+    /**
+     * <p>
      * Use this API to define a Custom Metric published by your devices to Device Defender.
      * </p>
      * <p>
@@ -1722,6 +1766,40 @@ public interface AWSIot {
      * @sample AWSIot.DeleteCertificate
      */
     DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
+
+    /**
+     * <p>
+     * Deletes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeleteCertificateProvider</a> action.
+     * </p>
+     * <p>
+     * If you delete the certificate provider resource, the behavior of <code>CreateCertificateFromCsr</code> will
+     * resume, and IoT will create certificates signed by IoT from a certificate signing request (CSR).
+     * </p>
+     * 
+     * @param deleteCertificateProviderRequest
+     * @return Result of the DeleteCertificateProvider operation returned by the service.
+     * @throws DeleteConflictException
+     *         You can't delete the resource because it is attached to one or more resources.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteCertificateProvider
+     */
+    DeleteCertificateProviderResult deleteCertificateProvider(DeleteCertificateProviderRequest deleteCertificateProviderRequest);
 
     /**
      * <p>
@@ -2735,6 +2813,34 @@ public interface AWSIot {
      * @sample AWSIot.DescribeCertificate
      */
     DescribeCertificateResult describeCertificate(DescribeCertificateRequest describeCertificateRequest);
+
+    /**
+     * <p>
+     * Describes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param describeCertificateProviderRequest
+     * @return Result of the DescribeCertificateProvider operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeCertificateProvider
+     */
+    DescribeCertificateProviderResult describeCertificateProvider(DescribeCertificateProviderRequest describeCertificateProviderRequest);
 
     /**
      * <p>
@@ -4297,6 +4403,32 @@ public interface AWSIot {
      * @sample AWSIot.ListCACertificates
      */
     ListCACertificatesResult listCACertificates(ListCACertificatesRequest listCACertificatesRequest);
+
+    /**
+     * <p>
+     * Lists all your certificate providers in your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListCertificateProviders</a> action.
+     * </p>
+     * 
+     * @param listCertificateProvidersRequest
+     * @return Result of the ListCertificateProviders operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCertificateProviders
+     */
+    ListCertificateProvidersResult listCertificateProviders(ListCertificateProvidersRequest listCertificateProvidersRequest);
 
     /**
      * <p>
@@ -6505,6 +6637,34 @@ public interface AWSIot {
      * @sample AWSIot.UpdateCertificate
      */
     UpdateCertificateResult updateCertificate(UpdateCertificateRequest updateCertificateRequest);
+
+    /**
+     * <p>
+     * Updates a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdateCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param updateCertificateProviderRequest
+     * @return Result of the UpdateCertificateProvider operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCertificateProvider
+     */
+    UpdateCertificateProviderResult updateCertificateProvider(UpdateCertificateProviderRequest updateCertificateProviderRequest);
 
     /**
      * <p>

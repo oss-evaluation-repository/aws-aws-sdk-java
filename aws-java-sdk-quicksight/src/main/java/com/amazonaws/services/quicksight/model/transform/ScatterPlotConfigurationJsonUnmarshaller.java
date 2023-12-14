@@ -52,6 +52,10 @@ public class ScatterPlotConfigurationJsonUnmarshaller implements Unmarshaller<Sc
                     context.nextToken();
                     scatterPlotConfiguration.setFieldWells(ScatterPlotFieldWellsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SortConfiguration", targetDepth)) {
+                    context.nextToken();
+                    scatterPlotConfiguration.setSortConfiguration(ScatterPlotSortConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("XAxisLabelOptions", targetDepth)) {
                     context.nextToken();
                     scatterPlotConfiguration.setXAxisLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));

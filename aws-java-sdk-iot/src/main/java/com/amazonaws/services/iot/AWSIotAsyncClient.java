@@ -945,6 +945,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCertificateProviderResult> createCertificateProviderAsync(CreateCertificateProviderRequest request) {
+
+        return createCertificateProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCertificateProviderResult> createCertificateProviderAsync(final CreateCertificateProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCertificateProviderRequest, CreateCertificateProviderResult> asyncHandler) {
+        final CreateCertificateProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCertificateProviderResult>() {
+            @Override
+            public CreateCertificateProviderResult call() throws Exception {
+                CreateCertificateProviderResult result = null;
+
+                try {
+                    result = executeCreateCertificateProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCustomMetricResult> createCustomMetricAsync(CreateCustomMetricRequest request) {
 
         return createCustomMetricAsync(request, null);
@@ -1989,6 +2022,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDeleteCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateProviderResult> deleteCertificateProviderAsync(DeleteCertificateProviderRequest request) {
+
+        return deleteCertificateProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateProviderResult> deleteCertificateProviderAsync(final DeleteCertificateProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCertificateProviderRequest, DeleteCertificateProviderResult> asyncHandler) {
+        final DeleteCertificateProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCertificateProviderResult>() {
+            @Override
+            public DeleteCertificateProviderResult call() throws Exception {
+                DeleteCertificateProviderResult result = null;
+
+                try {
+                    result = executeDeleteCertificateProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3216,6 +3282,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDescribeCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificateProviderResult> describeCertificateProviderAsync(DescribeCertificateProviderRequest request) {
+
+        return describeCertificateProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCertificateProviderResult> describeCertificateProviderAsync(final DescribeCertificateProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCertificateProviderRequest, DescribeCertificateProviderResult> asyncHandler) {
+        final DescribeCertificateProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCertificateProviderResult>() {
+            @Override
+            public DescribeCertificateProviderResult call() throws Exception {
+                DescribeCertificateProviderResult result = null;
+
+                try {
+                    result = executeDescribeCertificateProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -5176,6 +5275,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeListCACertificates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificateProvidersResult> listCertificateProvidersAsync(ListCertificateProvidersRequest request) {
+
+        return listCertificateProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificateProvidersResult> listCertificateProvidersAsync(final ListCertificateProvidersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCertificateProvidersRequest, ListCertificateProvidersResult> asyncHandler) {
+        final ListCertificateProvidersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCertificateProvidersResult>() {
+            @Override
+            public ListCertificateProvidersResult call() throws Exception {
+                ListCertificateProvidersResult result = null;
+
+                try {
+                    result = executeListCertificateProviders(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -7840,6 +7972,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeUpdateCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateProviderResult> updateCertificateProviderAsync(UpdateCertificateProviderRequest request) {
+
+        return updateCertificateProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateProviderResult> updateCertificateProviderAsync(final UpdateCertificateProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCertificateProviderRequest, UpdateCertificateProviderResult> asyncHandler) {
+        final UpdateCertificateProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCertificateProviderResult>() {
+            @Override
+            public UpdateCertificateProviderResult call() throws Exception {
+                UpdateCertificateProviderResult result = null;
+
+                try {
+                    result = executeUpdateCertificateProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

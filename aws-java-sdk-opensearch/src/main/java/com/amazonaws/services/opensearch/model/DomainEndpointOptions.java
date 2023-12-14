@@ -39,23 +39,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with
-     * perfect forward secrecy cipher suites
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      * </p>
      * </li>
      * </ul>
@@ -140,23 +129,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with
-     * perfect forward secrecy cipher suites
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      * </p>
      * </li>
      * </ul>
@@ -167,23 +145,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     *        <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3
-     *        with perfect forward secrecy cipher suites
+     *        <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      *        </p>
      *        </li>
      * @see TLSSecurityPolicy
@@ -201,23 +168,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with
-     * perfect forward secrecy cipher suites
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      * </p>
      * </li>
      * </ul>
@@ -227,23 +183,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     *         <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3
-     *         with perfect forward secrecy cipher suites
+     *         <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      *         </p>
      *         </li>
      * @see TLSSecurityPolicy
@@ -261,23 +206,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with
-     * perfect forward secrecy cipher suites
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      * </p>
      * </li>
      * </ul>
@@ -288,23 +222,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     *        <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3
-     *        with perfect forward secrecy cipher suites
+     *        <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -324,23 +247,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      * <ul>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     * <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3 with
-     * perfect forward secrecy cipher suites
+     * <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      * </p>
      * </li>
      * </ul>
@@ -351,23 +263,12 @@ public class DomainEndpointOptions implements Serializable, Cloneable, Structure
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.2
+     *        <b>Policy-Min-TLS-1-0-2019-07:</b> TLS security policy that supports TLS version 1.0 to TLS version 1.2
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy which supports only TLS version 1.2
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Policy-Min-TLS-1-0-2023-10:</b> TLS security policy which supports TLS version 1.0 to TLS version 1.3
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Policy-Min-TLS-1-2-2023-10:</b> TLS security policy which supports TLS version 1.2 to TLS version 1.3
-     *        with perfect forward secrecy cipher suites
+     *        <b>Policy-Min-TLS-1-2-2019-07:</b> TLS security policy that supports only TLS version 1.2
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

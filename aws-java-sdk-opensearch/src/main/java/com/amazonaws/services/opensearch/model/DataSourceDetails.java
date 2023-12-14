@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the data sources.
+ * Details about a direct-query data source.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -130,9 +130,7 @@ public interface AmazonQuickSight {
      * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
      * </p>
      * <p>
-     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
-     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
-     * (Singapore) Region.
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK.
      * </p>
      * <p>
      * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
@@ -4897,6 +4895,34 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     UpdateDashboardResult updateDashboard(UpdateDashboardRequest updateDashboardRequest);
+
+    /**
+     * <p>
+     * Updates the linked analyses on a dashboard.
+     * </p>
+     * 
+     * @param updateDashboardLinksRequest
+     * @return Result of the UpdateDashboardLinks operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateDashboardLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateDashboardLinksResult updateDashboardLinks(UpdateDashboardLinksRequest updateDashboardLinksRequest);
 
     /**
      * <p>

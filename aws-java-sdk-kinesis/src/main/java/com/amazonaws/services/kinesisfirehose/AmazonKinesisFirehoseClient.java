@@ -87,6 +87,9 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisfirehose.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisfirehose.model.transform.InvalidSourceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisfirehose.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -774,6 +777,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         stream encryption fails. This happens when the KMS service throws one of the following exception types:
      *         <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>,
      *         or <code>NotFoundException</code>.
+     * @throws InvalidSourceException
+     *         Only requests from CloudWatch Logs are supported when CloudWatch Logs decompression is enabled.
      * @throws ServiceUnavailableException
      *         The service is unavailable. Back off and retry the operation. If you continue to see the exception,
      *         throughput limits for the delivery stream may have been exceeded. For more information about limits and
@@ -915,6 +920,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      *         stream encryption fails. This happens when the KMS service throws one of the following exception types:
      *         <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>,
      *         or <code>NotFoundException</code>.
+     * @throws InvalidSourceException
+     *         Only requests from CloudWatch Logs are supported when CloudWatch Logs decompression is enabled.
      * @throws ServiceUnavailableException
      *         The service is unavailable. Back off and retry the operation. If you continue to see the exception,
      *         throughput limits for the delivery stream may have been exceeded. For more information about limits and

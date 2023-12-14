@@ -25,17 +25,17 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of the data sources.
+     * A list of data sources associated with specified domain.
      * </p>
      */
     private java.util.List<DataSourceDetails> dataSources;
 
     /**
      * <p>
-     * A list of the data sources.
+     * A list of data sources associated with specified domain.
      * </p>
      * 
-     * @return A list of the data sources.
+     * @return A list of data sources associated with specified domain.
      */
 
     public java.util.List<DataSourceDetails> getDataSources() {
@@ -44,11 +44,11 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of the data sources.
+     * A list of data sources associated with specified domain.
      * </p>
      * 
      * @param dataSources
-     *        A list of the data sources.
+     *        A list of data sources associated with specified domain.
      */
 
     public void setDataSources(java.util.Collection<DataSourceDetails> dataSources) {
@@ -62,7 +62,7 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of the data sources.
+     * A list of data sources associated with specified domain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param dataSources
-     *        A list of the data sources.
+     *        A list of data sources associated with specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ListDataSourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A list of the data sources.
+     * A list of data sources associated with specified domain.
      * </p>
      * 
      * @param dataSources
-     *        A list of the data sources.
+     *        A list of data sources associated with specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

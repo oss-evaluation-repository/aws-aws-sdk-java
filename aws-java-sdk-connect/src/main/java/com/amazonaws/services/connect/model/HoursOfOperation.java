@@ -66,7 +66,7 @@ public class HoursOfOperation implements Serializable, Cloneable, StructuredPojo
     private java.util.List<HoursOfOperationConfig> config;
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      */
@@ -356,11 +356,11 @@ public class HoursOfOperation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
-     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     * @return The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *         {"key1":"value1", "key2":"value2"} }.
      */
 
@@ -370,12 +370,12 @@ public class HoursOfOperation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *        {"key1":"value1", "key2":"value2"} }.
      */
 
@@ -385,12 +385,12 @@ public class HoursOfOperation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

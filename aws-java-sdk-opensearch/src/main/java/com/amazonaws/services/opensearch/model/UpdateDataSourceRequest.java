@@ -33,7 +33,7 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String domainName;
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to modify.
      * </p>
      */
     private String name;
@@ -45,7 +45,7 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private DataSourceType dataSourceType;
     /**
      * <p>
-     * A description of the data source.
+     * A new description of the data source.
      * </p>
      */
     private String description;
@@ -92,11 +92,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to modify.
      * </p>
      * 
      * @param name
-     *        The name of the data source.
+     *        The name of the data source to modify.
      */
 
     public void setName(String name) {
@@ -105,10 +105,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to modify.
      * </p>
      * 
-     * @return The name of the data source.
+     * @return The name of the data source to modify.
      */
 
     public String getName() {
@@ -117,11 +117,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to modify.
      * </p>
      * 
      * @param name
-     *        The name of the data source.
+     *        The name of the data source to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description of the data source.
+     * A new description of the data source.
      * </p>
      * 
      * @param description
-     *        A description of the data source.
+     *        A new description of the data source.
      */
 
     public void setDescription(String description) {
@@ -185,10 +185,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description of the data source.
+     * A new description of the data source.
      * </p>
      * 
-     * @return A description of the data source.
+     * @return A new description of the data source.
      */
 
     public String getDescription() {
@@ -197,11 +197,11 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A description of the data source.
+     * A new description of the data source.
      * </p>
      * 
      * @param description
-     *        A description of the data source.
+     *        A new description of the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -112,6 +112,11 @@ public class ContactJsonUnmarshaller implements Unmarshaller<Contact, JsonUnmars
                     context.nextToken();
                     contact.setWisdomInfo(WisdomInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    contact.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

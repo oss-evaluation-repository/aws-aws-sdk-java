@@ -933,12 +933,22 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public TagContactResult tagContact(TagContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public TransferContactResult transferContact(TransferContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagContactResult untagContact(UntagContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

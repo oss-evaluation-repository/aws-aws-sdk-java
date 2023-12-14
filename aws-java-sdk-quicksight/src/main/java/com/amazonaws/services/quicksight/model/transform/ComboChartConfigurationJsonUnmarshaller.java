@@ -84,6 +84,10 @@ public class ComboChartConfigurationJsonUnmarshaller implements Unmarshaller<Com
                     context.nextToken();
                     comboChartConfiguration.setSecondaryYAxisLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SingleAxisOptions", targetDepth)) {
+                    context.nextToken();
+                    comboChartConfiguration.setSingleAxisOptions(SingleAxisOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ColorLabelOptions", targetDepth)) {
                     context.nextToken();
                     comboChartConfiguration.setColorLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));

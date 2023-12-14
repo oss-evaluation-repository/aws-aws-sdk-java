@@ -84,6 +84,10 @@ public class SplunkDestinationConfigurationJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     splunkDestinationConfiguration.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BufferingHints", targetDepth)) {
+                    context.nextToken();
+                    splunkDestinationConfiguration.setBufferingHints(SplunkBufferingHintsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

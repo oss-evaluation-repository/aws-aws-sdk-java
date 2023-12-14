@@ -104,6 +104,8 @@ public class ComboChartConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private ChartAxisLabelOptions secondaryYAxisLabelOptions;
+
+    private SingleAxisOptions singleAxisOptions;
     /**
      * <p>
      * The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.
@@ -696,6 +698,32 @@ public class ComboChartConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * @param singleAxisOptions
+     */
+
+    public void setSingleAxisOptions(SingleAxisOptions singleAxisOptions) {
+        this.singleAxisOptions = singleAxisOptions;
+    }
+
+    /**
+     * @return
+     */
+
+    public SingleAxisOptions getSingleAxisOptions() {
+        return this.singleAxisOptions;
+    }
+
+    /**
+     * @param singleAxisOptions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComboChartConfiguration withSingleAxisOptions(SingleAxisOptions singleAxisOptions) {
+        setSingleAxisOptions(singleAxisOptions);
+        return this;
+    }
+
+    /**
      * <p>
      * The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.
      * </p>
@@ -1068,6 +1096,8 @@ public class ComboChartConfiguration implements Serializable, Cloneable, Structu
             sb.append("SecondaryYAxisDisplayOptions: ").append(getSecondaryYAxisDisplayOptions()).append(",");
         if (getSecondaryYAxisLabelOptions() != null)
             sb.append("SecondaryYAxisLabelOptions: ").append(getSecondaryYAxisLabelOptions()).append(",");
+        if (getSingleAxisOptions() != null)
+            sb.append("SingleAxisOptions: ").append(getSingleAxisOptions()).append(",");
         if (getColorLabelOptions() != null)
             sb.append("ColorLabelOptions: ").append(getColorLabelOptions()).append(",");
         if (getLegend() != null)
@@ -1132,6 +1162,10 @@ public class ComboChartConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getSecondaryYAxisLabelOptions() != null && other.getSecondaryYAxisLabelOptions().equals(this.getSecondaryYAxisLabelOptions()) == false)
             return false;
+        if (other.getSingleAxisOptions() == null ^ this.getSingleAxisOptions() == null)
+            return false;
+        if (other.getSingleAxisOptions() != null && other.getSingleAxisOptions().equals(this.getSingleAxisOptions()) == false)
+            return false;
         if (other.getColorLabelOptions() == null ^ this.getColorLabelOptions() == null)
             return false;
         if (other.getColorLabelOptions() != null && other.getColorLabelOptions().equals(this.getColorLabelOptions()) == false)
@@ -1177,6 +1211,7 @@ public class ComboChartConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getPrimaryYAxisLabelOptions() == null) ? 0 : getPrimaryYAxisLabelOptions().hashCode());
         hashCode = prime * hashCode + ((getSecondaryYAxisDisplayOptions() == null) ? 0 : getSecondaryYAxisDisplayOptions().hashCode());
         hashCode = prime * hashCode + ((getSecondaryYAxisLabelOptions() == null) ? 0 : getSecondaryYAxisLabelOptions().hashCode());
+        hashCode = prime * hashCode + ((getSingleAxisOptions() == null) ? 0 : getSingleAxisOptions().hashCode());
         hashCode = prime * hashCode + ((getColorLabelOptions() == null) ? 0 : getColorLabelOptions().hashCode());
         hashCode = prime * hashCode + ((getLegend() == null) ? 0 : getLegend().hashCode());
         hashCode = prime * hashCode + ((getBarDataLabels() == null) ? 0 : getBarDataLabels().hashCode());

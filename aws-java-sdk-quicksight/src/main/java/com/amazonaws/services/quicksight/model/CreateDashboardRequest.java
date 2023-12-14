@@ -162,6 +162,12 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private LinkSharingConfiguration linkSharingConfiguration;
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     */
+    private java.util.List<String> linkEntities;
 
     /**
      * <p>
@@ -1130,6 +1136,76 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @return A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     */
+
+    public java.util.List<String> getLinkEntities() {
+        return linkEntities;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     */
+
+    public void setLinkEntities(java.util.Collection<String> linkEntities) {
+        if (linkEntities == null) {
+            this.linkEntities = null;
+            return;
+        }
+
+        this.linkEntities = new java.util.ArrayList<String>(linkEntities);
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLinkEntities(java.util.Collection)} or {@link #withLinkEntities(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withLinkEntities(String... linkEntities) {
+        if (this.linkEntities == null) {
+            setLinkEntities(new java.util.ArrayList<String>(linkEntities.length));
+        }
+        for (String ele : linkEntities) {
+            this.linkEntities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withLinkEntities(java.util.Collection<String> linkEntities) {
+        setLinkEntities(linkEntities);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1168,7 +1244,9 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         if (getFolderArns() != null)
             sb.append("FolderArns: ").append(getFolderArns()).append(",");
         if (getLinkSharingConfiguration() != null)
-            sb.append("LinkSharingConfiguration: ").append(getLinkSharingConfiguration());
+            sb.append("LinkSharingConfiguration: ").append(getLinkSharingConfiguration()).append(",");
+        if (getLinkEntities() != null)
+            sb.append("LinkEntities: ").append(getLinkEntities());
         sb.append("}");
         return sb.toString();
     }
@@ -1239,6 +1317,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getLinkSharingConfiguration() != null && other.getLinkSharingConfiguration().equals(this.getLinkSharingConfiguration()) == false)
             return false;
+        if (other.getLinkEntities() == null ^ this.getLinkEntities() == null)
+            return false;
+        if (other.getLinkEntities() != null && other.getLinkEntities().equals(this.getLinkEntities()) == false)
+            return false;
         return true;
     }
 
@@ -1261,6 +1343,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getValidationStrategy() == null) ? 0 : getValidationStrategy().hashCode());
         hashCode = prime * hashCode + ((getFolderArns() == null) ? 0 : getFolderArns().hashCode());
         hashCode = prime * hashCode + ((getLinkSharingConfiguration() == null) ? 0 : getLinkSharingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLinkEntities() == null) ? 0 : getLinkEntities().hashCode());
         return hashCode;
     }
 

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A capability object. Currently, only EDI (electronic data interchange) capabilities are supported. Capabilities
- * contain the information necessary to process incoming EDI (electronic data interchange) documents.
+ * A capability object. Currently, only EDI (electronic data interchange) capabilities are supported. A trading
+ * capability contains the information required to transform incoming EDI documents into JSON or XML outputs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CapabilityConfiguration" target="_top">AWS API

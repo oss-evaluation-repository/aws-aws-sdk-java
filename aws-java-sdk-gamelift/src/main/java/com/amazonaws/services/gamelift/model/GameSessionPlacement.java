@@ -88,10 +88,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private String status;
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
@@ -678,16 +676,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      * 
-     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *         to a game server process with a request to start a new game session (see <a href=
-     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>).
+     * @return A set of key-value pairs that can store custom data in a game session. For example:
+     *         <code>{"Key": "difficulty", "Value": "novice"}</code>.
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -696,17 +690,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>.
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -720,10 +710,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -732,10 +720,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,17 +737,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

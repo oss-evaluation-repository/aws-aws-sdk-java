@@ -214,6 +214,19 @@ public class AbstractAWSBillingConductorAsync extends AbstractAWSBillingConducto
     }
 
     @Override
+    public java.util.concurrent.Future<GetBillingGroupCostReportResult> getBillingGroupCostReportAsync(GetBillingGroupCostReportRequest request) {
+
+        return getBillingGroupCostReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBillingGroupCostReportResult> getBillingGroupCostReportAsync(GetBillingGroupCostReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetBillingGroupCostReportRequest, GetBillingGroupCostReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccountAssociationsResult> listAccountAssociationsAsync(ListAccountAssociationsRequest request) {
 
         return listAccountAssociationsAsync(request, null);

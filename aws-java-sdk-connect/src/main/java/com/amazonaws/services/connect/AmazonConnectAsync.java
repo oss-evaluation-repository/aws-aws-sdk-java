@@ -7457,6 +7457,41 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Adds the specified tags to the contact resource. For more information about this API is used, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set up granular billing for a
+     * detailed view of your Amazon Connect usage</a>.
+     * </p>
+     * 
+     * @param tagContactRequest
+     * @return A Java Future containing the result of the TagContact operation returned by the service.
+     * @sample AmazonConnectAsync.TagContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagContactResult> tagContactAsync(TagContactRequest tagContactRequest);
+
+    /**
+     * <p>
+     * Adds the specified tags to the contact resource. For more information about this API is used, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set up granular billing for a
+     * detailed view of your Amazon Connect usage</a>.
+     * </p>
+     * 
+     * @param tagContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagContact operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.TagContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagContactResult> tagContactAsync(TagContactRequest tagContactRequest,
+            com.amazonaws.handlers.AsyncHandler<TagContactRequest, TagContactResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds the specified tags to the specified resource.
      * </p>
      * <p>
@@ -7604,6 +7639,41 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<TransferContactResult> transferContactAsync(TransferContactRequest transferContactRequest,
             com.amazonaws.handlers.AsyncHandler<TransferContactRequest, TransferContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified tags from the contact resource. For more information about this API is used, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set up granular billing for a
+     * detailed view of your Amazon Connect usage</a>.
+     * </p>
+     * 
+     * @param untagContactRequest
+     * @return A Java Future containing the result of the UntagContact operation returned by the service.
+     * @sample AmazonConnectAsync.UntagContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagContactResult> untagContactAsync(UntagContactRequest untagContactRequest);
+
+    /**
+     * <p>
+     * Removes the specified tags from the contact resource. For more information about this API is used, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set up granular billing for a
+     * detailed view of your Amazon Connect usage</a>.
+     * </p>
+     * 
+     * @param untagContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagContact operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UntagContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UntagContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagContactResult> untagContactAsync(UntagContactRequest untagContactRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagContactRequest, UntagContactResult> asyncHandler);
 
     /**
      * <p>

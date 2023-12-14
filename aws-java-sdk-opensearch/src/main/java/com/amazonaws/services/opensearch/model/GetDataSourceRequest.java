@@ -33,7 +33,7 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String domainName;
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to get information about.
      * </p>
      */
     private String name;
@@ -80,11 +80,11 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to get information about.
      * </p>
      * 
      * @param name
-     *        The name of the data source.
+     *        The name of the data source to get information about.
      */
 
     public void setName(String name) {
@@ -93,10 +93,10 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to get information about.
      * </p>
      * 
-     * @return The name of the data source.
+     * @return The name of the data source to get information about.
      */
 
     public String getName() {
@@ -105,11 +105,11 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data source.
+     * The name of the data source to get information about.
      * </p>
      * 
      * @param name
-     *        The name of the data source.
+     *        The name of the data source to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

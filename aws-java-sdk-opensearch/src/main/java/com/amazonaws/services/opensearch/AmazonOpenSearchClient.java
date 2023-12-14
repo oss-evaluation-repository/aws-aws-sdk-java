@@ -242,7 +242,9 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Adds the data source on the domain.
+     * Creates a new direct-query data source to the specified domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html"
+     * >Creating Amazon OpenSearch Service data source integrations with Amazon S3</a>.
      * </p>
      * 
      * @param addDataSourceRequest
@@ -851,7 +853,9 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes the data source.
+     * Deletes a direct-query data source. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-delete.html">Deleting
+     * an Amazon OpenSearch Service data source with Amazon S3</a>.
      * </p>
      * 
      * @param deleteDataSourceRequest
@@ -2345,7 +2349,7 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Describes the data source details.
+     * Retrieves information about a direct query data source.
      * </p>
      * 
      * @param getDataSourceRequest
@@ -2676,7 +2680,9 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * A list of the data source details of the domain.
+     * Lists direct-query data sources for a specific domain. For more information, see For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3.html">Working with
+     * Amazon OpenSearch Service direct queries with Amazon S3</a>.
      * </p>
      * 
      * @param listDataSourcesRequest
@@ -3830,7 +3836,9 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Updates the data source on the domain.
+     * Updates a direct-query data source. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Working
+     * with Amazon OpenSearch Service data source integrations with Amazon S3</a>.
      * </p>
      * 
      * @param updateDataSourceRequest

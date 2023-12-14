@@ -103,12 +103,10 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     private String customEventData;
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
-     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
@@ -732,20 +730,16 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
-     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * 
-     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *         to a game server process with a request to start a new game session (see <a href=
-     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
-     *         created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     *         <code>STANDALONE</code>.
+     * @return A set of key-value pairs that can store custom data in a game session. For example:
+     *         <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     *         <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     *         <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -754,21 +748,17 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
-     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
-     *        created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     *        <code>STANDALONE</code>.
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     *        <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -782,12 +772,10 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
-     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -796,12 +784,10 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
-     *        created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     *        <code>STANDALONE</code>.
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     *        <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -817,21 +803,17 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
-     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     * <code>STANDALONE</code>.
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     * <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
-     *        created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
-     *        <code>STANDALONE</code>.
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. This information is added to the new
+     *        <code>GameSession</code> object that is created for a successful match. This parameter is not used if
+     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

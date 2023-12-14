@@ -99,6 +99,11 @@ public class AbstractAWSBillingConductor implements AWSBillingConductor {
     }
 
     @Override
+    public GetBillingGroupCostReportResult getBillingGroupCostReport(GetBillingGroupCostReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAccountAssociationsResult listAccountAssociations(ListAccountAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

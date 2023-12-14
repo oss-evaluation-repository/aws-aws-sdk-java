@@ -76,6 +76,12 @@ public class DashboardJsonUnmarshaller implements Unmarshaller<Dashboard, JsonUn
                     context.nextToken();
                     dashboard.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LinkEntities", targetDepth)) {
+                    context.nextToken();
+                    dashboard.setLinkEntities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

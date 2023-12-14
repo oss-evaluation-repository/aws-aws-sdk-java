@@ -95,6 +95,10 @@ public class LineChartConfigurationJsonUnmarshaller implements Unmarshaller<Line
                     context.nextToken();
                     lineChartConfiguration.setSecondaryYAxisLabelOptions(ChartAxisLabelOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SingleAxisOptions", targetDepth)) {
+                    context.nextToken();
+                    lineChartConfiguration.setSingleAxisOptions(SingleAxisOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DefaultSeriesSettings", targetDepth)) {
                     context.nextToken();
                     lineChartConfiguration.setDefaultSeriesSettings(LineChartDefaultSeriesSettingsJsonUnmarshaller.getInstance().unmarshall(context));

@@ -27,13 +27,13 @@ public class AddDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the domain.
+     * The name of the domain to add the data source to.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The name of the data source.
+     * A name for the data source.
      * </p>
      */
     private String name;
@@ -52,11 +52,11 @@ public class AddDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the domain.
+     * The name of the domain to add the data source to.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain.
+     *        The name of the domain to add the data source to.
      */
 
     public void setDomainName(String domainName) {
@@ -65,10 +65,10 @@ public class AddDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the domain.
+     * The name of the domain to add the data source to.
      * </p>
      * 
-     * @return The name of the domain.
+     * @return The name of the domain to add the data source to.
      */
 
     public String getDomainName() {
@@ -77,11 +77,11 @@ public class AddDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the domain.
+     * The name of the domain to add the data source to.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain.
+     *        The name of the domain to add the data source to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class AddDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data source.
+     * A name for the data source.
      * </p>
      * 
      * @param name
-     *        The name of the data source.
+     *        A name for the data source.
      */
 
     public void setName(String name) {
@@ -105,10 +105,10 @@ public class AddDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data source.
+     * A name for the data source.
      * </p>
      * 
-     * @return The name of the data source.
+     * @return A name for the data source.
      */
 
     public String getName() {
@@ -117,11 +117,11 @@ public class AddDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the data source.
+     * A name for the data source.
      * </p>
      * 
      * @param name
-     *        The name of the data source.
+     *        A name for the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

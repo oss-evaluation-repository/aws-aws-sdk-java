@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -93,7 +93,7 @@
       "asyncReturnType" : "CreateCapabilityResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Instantiates a capability based on the specified parameters. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>",
+      "documentation" : "<p>Instantiates a capability based on the specified parameters. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -154,7 +154,7 @@
       "asyncReturnType" : "CreatePartnershipResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a partnership between a customer and a trading partner, based on the supplied parameters. Partnerships link trading partners with your profile and a specific transformer, so that the EDI (electronic data interchange) documents that they upload to Amazon S3 can be processed according to their specifications.</p>",
+      "documentation" : "<p>Creates a partnership between a customer and a trading partner, based on the supplied parameters. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -215,7 +215,7 @@
       "asyncReturnType" : "CreateProfileResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a customer profile. You can have up to five customer profiles, each representing a distinct private network. Profiles contain basic information about you and your business.</p>",
+      "documentation" : "<p>Creates a customer profile. You can have up to five customer profiles, each representing a distinct private network. A profile is the mechanism used to create the concept of a private network.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -276,7 +276,7 @@
       "asyncReturnType" : "CreateTransformerResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a transformer. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>",
+      "documentation" : "<p>Creates a transformer. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -337,7 +337,7 @@
       "asyncReturnType" : "DeleteCapabilityResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes the specified capability. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>",
+      "documentation" : "<p>Deletes the specified capability. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -394,7 +394,7 @@
       "asyncReturnType" : "DeletePartnershipResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes the specified partnership. Partnerships link trading partners with your profile and a specific transformer, so that the EDI (electronic data interchange) documents that they upload to Amazon S3 can be processed according to their specifications.</p>",
+      "documentation" : "<p>Deletes the specified partnership. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -451,7 +451,7 @@
       "asyncReturnType" : "DeleteProfileResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes the specified profile. Profiles contain basic information about you and your business.</p>",
+      "documentation" : "<p>Deletes the specified profile. A profile is the mechanism used to create the concept of a private network.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -508,7 +508,7 @@
       "asyncReturnType" : "DeleteTransformerResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes the specified transformer. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>",
+      "documentation" : "<p>Deletes the specified transformer. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -565,7 +565,7 @@
       "asyncReturnType" : "GetCapabilityResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the details for the specified capability. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>",
+      "documentation" : "<p>Retrieves the details for the specified capability. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -618,7 +618,7 @@
       "asyncReturnType" : "GetPartnershipResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the details for a partnership, based on the partner and profile IDs specified. Partnerships link trading partners with your profile and a specific transformer, so that the EDI (electronic data interchange) documents that they upload to Amazon S3 can be processed according to their specifications.</p>",
+      "documentation" : "<p>Retrieves the details for a partnership, based on the partner and profile IDs specified. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -671,7 +671,7 @@
       "asyncReturnType" : "GetProfileResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the details for the profile specified by the profile ID. Profiles contain basic information about you and your business.</p>",
+      "documentation" : "<p>Retrieves the details for the profile specified by the profile ID. A profile is the mechanism used to create the concept of a private network.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -724,7 +724,7 @@
       "asyncReturnType" : "GetTransformerResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the details for the transformer specified by the transformer ID. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>",
+      "documentation" : "<p>Retrieves the details for the transformer specified by the transformer ID. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -830,7 +830,7 @@
       "asyncReturnType" : "ListCapabilitiesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the capabilities associated with your Amazon Web Services account for your current or specified region. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>",
+      "documentation" : "<p>Lists the capabilities associated with your Amazon Web Services account for your current or specified region. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -863,7 +863,7 @@
       "asyncReturnType" : "ListPartnershipsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the partnerships associated with your Amazon Web Services account for your current or specified region. Partnerships link trading partners with your profile and a specific transformer, so that the EDI (electronic data interchange) documents that they upload to Amazon S3 can be processed according to their specifications.</p>",
+      "documentation" : "<p>Lists the partnerships associated with your Amazon Web Services account for your current or specified region. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -916,7 +916,7 @@
       "asyncReturnType" : "ListProfilesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the profiles associated with your Amazon Web Services account for your current or specified region. Profiles contain basic information about you and your business.</p>",
+      "documentation" : "<p>Lists the profiles associated with your Amazon Web Services account for your current or specified region. A profile is the mechanism used to create the concept of a private network.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -990,7 +990,7 @@
       "asyncReturnType" : "ListTransformersResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the available transformers. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>",
+      "documentation" : "<p>Lists the available transformers. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1023,7 +1023,7 @@
       "asyncReturnType" : "StartTransformerJobResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Runs a job, using a transformer, to parse input EDI (electronic data interchange) file into the output structures used by Amazon Web Services B2BI Data Interchange.</p>",
+      "documentation" : "<p>Runs a job, using a transformer, to parse input EDI (electronic data interchange) file into the output structures used by Amazon Web Services B2BI Data Interchange.</p> <p>If you only want to transform EDI (electronic data interchange) documents, you don't need to create profiles, partnerships or capabilities. Just create and configure a transformer, and then run the <code>StartTransformerJob</code> API to process your files.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1121,7 +1121,7 @@
       "asyncReturnType" : "TestMappingResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Maps the input file according to the provided template file.</p>",
+      "documentation" : "<p>Maps the input file according to the provided template file. The API call downloads the file contents from the Amazon S3 location, and passes the contents in as a string, to the <code>inputFileContent</code> parameter.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1268,7 +1268,7 @@
       "asyncReturnType" : "UpdateCapabilityResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates some of the parameters for a capability, based on the specified parameters. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>",
+      "documentation" : "<p>Updates some of the parameters for a capability, based on the specified parameters. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1329,7 +1329,7 @@
       "asyncReturnType" : "UpdatePartnershipResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates some of the parameters for a partnership between a customer and trading partner. Partnerships link trading partners with your profile and a specific transformer, so that the EDI (electronic data interchange) documents that they upload to Amazon S3 can be processed according to their specifications.</p>",
+      "documentation" : "<p>Updates some of the parameters for a partnership between a customer and trading partner. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1390,7 +1390,7 @@
       "asyncReturnType" : "UpdateProfileResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates the specified parameters for a profile. Profiles contain basic information about you and your business.</p>",
+      "documentation" : "<p>Updates the specified parameters for a profile. A profile is the mechanism used to create the concept of a private network.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1451,7 +1451,7 @@
       "asyncReturnType" : "UpdateTransformerResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates the specified parameters for a transformer. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>",
+      "documentation" : "<p>Updates the specified parameters for a transformer. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1557,7 +1557,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>A capability object. Currently, only EDI (electronic data interchange) capabilities are supported. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>",
+      "documentation" : "<p>A capability object. Currently, only EDI (electronic data interchange) capabilities are supported. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -1741,7 +1741,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Returns the capability summary details. Capabilities contain the information necessary to process incoming EDI (electronic data interchange) documents.</p>",
+      "documentation" : "<p>Returns the capability summary details. A trading capability contains the information required to transform incoming EDI documents into JSON or XML outputs.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -26220,7 +26220,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>A structure that contains the details for a partnership. Partnerships link trading partners with your profile and a specific transformer, so that the EDI (electronic data interchange) documents that they upload to Amazon S3 can be processed according to their specifications.</p>",
+      "documentation" : "<p>A structure that contains the details for a partnership. A partnership represents the connection between you and your trading partner. It ties together a profile and one or more trading capabilities.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -27406,7 +27406,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the details for a profile. Profiles contain basic information about you and your business.</p>",
+      "documentation" : "<p>Contains the details for a profile. A profile is the mechanism used to create the concept of a private network.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -31059,12 +31059,12 @@
         "c2jName" : "inputFileContent",
         "c2jShape" : "TestMappingInputFileContent",
         "deprecated" : false,
-        "documentation" : "<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>",
+        "documentation" : "<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>\n@param inputFileContent Specify the EDI (electronic data interchange) file that is used as input for the transform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>\n@param inputFileContent Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withInputFileContent",
-        "getterDocumentation" : "/**<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>\n@return Specify the EDI (electronic data interchange) file that is used as input for the transform.*/",
+        "getterDocumentation" : "/**<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>\n@return Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.*/",
         "getterMethodName" : "getInputFileContent",
         "getterModel" : {
           "returnType" : "String",
@@ -31098,7 +31098,7 @@
         "marshallingType" : "STRING",
         "name" : "InputFileContent",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>\n@param inputFileContent Specify the EDI (electronic data interchange) file that is used as input for the transform.*/",
+        "setterDocumentation" : "/**<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>\n@param inputFileContent Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.*/",
         "setterMethodName" : "setInputFileContent",
         "setterModel" : {
           "timestampFormat" : null,
@@ -31113,13 +31113,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>\n@param inputFileContent Specify the EDI (electronic data interchange) file that is used as input for the transform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>\n@param inputFileContent Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "inputFileContent",
           "variableType" : "String",
-          "documentation" : "<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>",
+          "documentation" : "<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -31338,12 +31338,12 @@
           "c2jName" : "inputFileContent",
           "c2jShape" : "TestMappingInputFileContent",
           "deprecated" : false,
-          "documentation" : "<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>",
+          "documentation" : "<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>\n@param inputFileContent Specify the EDI (electronic data interchange) file that is used as input for the transform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>\n@param inputFileContent Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withInputFileContent",
-          "getterDocumentation" : "/**<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>\n@return Specify the EDI (electronic data interchange) file that is used as input for the transform.*/",
+          "getterDocumentation" : "/**<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>\n@return Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.*/",
           "getterMethodName" : "getInputFileContent",
           "getterModel" : {
             "returnType" : "String",
@@ -31377,7 +31377,7 @@
           "marshallingType" : "STRING",
           "name" : "InputFileContent",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>\n@param inputFileContent Specify the EDI (electronic data interchange) file that is used as input for the transform.*/",
+          "setterDocumentation" : "/**<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>\n@param inputFileContent Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.*/",
           "setterMethodName" : "setInputFileContent",
           "setterModel" : {
             "timestampFormat" : null,
@@ -31392,13 +31392,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>\n@param inputFileContent Specify the EDI (electronic data interchange) file that is used as input for the transform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>\n@param inputFileContent Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "inputFileContent",
             "variableType" : "String",
-            "documentation" : "<p>Specify the EDI (electronic data interchange) file that is used as input for the transform.</p>",
+            "documentation" : "<p>Specify the contents of the EDI (electronic data interchange) XML or JSON file that is used as input for the transform.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -32621,7 +32621,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the details for a transformer object. Transformers describe how to process the incoming EDI (electronic data interchange) documents, and extract the necessary information.</p>",
+      "documentation" : "<p>Contains the details for a transformer object. A transformer describes how to process the incoming EDI documents and extract the necessary information to the output file.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -43468,7 +43468,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>A structure that contains the X12 transaction set and version. The X12 structure is used when the system transforms an EDI (electronic data interchange) file.</p>",
+      "documentation" : "<p>A structure that contains the X12 transaction set and version. The X12 structure is used when the system transforms an EDI (electronic data interchange) file.</p> <note> <p>If an EDI input file contains more than one transaction, each transaction must have the same transaction set and version, for example 214/4010. If not, the transformer cannot parse the file.</p> </note>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -43957,677 +43957,7 @@
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
   "examples" : {
-    "examples" : {
-      "CreateCapability" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "name" : "b2biexample",
-          "type" : "edi",
-          "configuration" : {
-            "edi" : {
-              "type" : {
-                "x12Details" : {
-                  "transactionSet" : "X12_110",
-                  "version" : "VERSION_4010"
-                }
-              },
-              "inputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "input/"
-              },
-              "outputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "output/"
-              },
-              "transformerId" : "tr-9a893cf536df4658b"
-            }
-          },
-          "instructionsDocuments" : [ {
-            "bucketName" : "test-bucket",
-            "key" : "instructiondoc.txt"
-          } ],
-          "clientToken" : "foo",
-          "tags" : [ {
-            "Key" : "capabilityKey1",
-            "Value" : "capabilityValue1"
-          } ]
-        },
-        "output" : {
-          "capabilityId" : "ca-963a8121e4fc4e348",
-          "capabilityArn" : "arn:aws:b2bi:us-west-2:123456789012:capability/ca-963a8121e4fc4e348",
-          "name" : "b2biexample",
-          "type" : "edi",
-          "configuration" : {
-            "edi" : {
-              "type" : {
-                "x12Details" : {
-                  "transactionSet" : "X12_110",
-                  "version" : "VERSION_4010"
-                }
-              },
-              "inputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "input/"
-              },
-              "outputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "output/"
-              },
-              "transformerId" : "tr-9a893cf536df4658b"
-            }
-          },
-          "instructionsDocuments" : [ {
-            "bucketName" : "test-bucket",
-            "key" : "instructiondoc.txt"
-          } ],
-          "createdAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample CreateCapability call"
-      } ],
-      "CreatePartnership" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "name" : "b2bipartner",
-          "email" : "john@example.com",
-          "phone" : "5555555555",
-          "capabilities" : [ "ca-963a8121e4fc4e348" ],
-          "clientToken" : "foo",
-          "tags" : [ {
-            "Key" : "sampleKey1",
-            "Value" : "sampleValue1"
-          } ]
-        },
-        "output" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "partnershipId" : "ps-219fa02f5b4242af8",
-          "partnershipArn" : "arn:aws:b2bi:us-west-2:123456789012:partnership/ps-60fbc37c87f04fce9",
-          "name" : "b2bipartner",
-          "email" : "john@example.com",
-          "phone" : "5555555555",
-          "capabilities" : [ "ca-963a8121e4fc4e348" ],
-          "tradingPartnerId" : "tp-2a17ca447f6f4a8a8",
-          "createdAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample CreatePartnership call"
-      } ],
-      "CreateProfile" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "name" : "Shipping Profile",
-          "email" : "john@example.com",
-          "phone" : "5555555555",
-          "businessName" : "John's Shipping",
-          "logging" : "ENABLED",
-          "clientToken" : "foo",
-          "tags" : [ {
-            "Key" : "sampleKey",
-            "Value" : "sampleValue"
-          } ]
-        },
-        "output" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "profileArn" : "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9",
-          "name" : "Shipping Profile",
-          "businessName" : "John's Trucking",
-          "phone" : "5555555555",
-          "email" : "john@example.com",
-          "logging" : "ENABLED",
-          "logGroupName" : "b2bi/p-60fbc37c87f04fce9-Logs",
-          "createdAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample CreateProfile call"
-      } ],
-      "CreateTransformer" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "name" : "transformJSON",
-          "fileFormat" : "JSON",
-          "mappingTemplate" : "{}",
-          "ediType" : {
-            "x12Details" : {
-              "transactionSet" : "X12_110",
-              "version" : "VERSION_4010"
-            }
-          },
-          "sampleDocument" : "s3://test-bucket/sampleDoc.txt",
-          "clientToken" : "foo",
-          "tags" : [ {
-            "Key" : "sampleKey",
-            "Value" : "sampleValue"
-          } ]
-        },
-        "output" : {
-          "transformerId" : "tr-974c129999f84d8c9",
-          "transformerArn" : "arn:aws:b2bi:us-west-2:123456789012:transformer/tr-974c129999f84d8c9",
-          "name" : "transformJSON",
-          "fileFormat" : "JSON",
-          "mappingTemplate" : "$",
-          "status" : "inactive",
-          "ediType" : {
-            "x12Details" : {
-              "transactionSet" : "X12_110",
-              "version" : "VERSION_4010"
-            }
-          },
-          "sampleDocument" : "s3://test-bucket/sampleDoc.txt",
-          "createdAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample CreateTransformer call"
-      } ],
-      "DeleteCapability" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "capabilityId" : "ca-963a8121e4fc4e348"
-        },
-        "output" : null,
-        "title" : "Sample DeleteCapabilty call"
-      } ],
-      "DeletePartnership" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "partnershipId" : "ps-219fa02f5b4242af8"
-        },
-        "output" : null,
-        "title" : "Sample DeletePartnership call"
-      } ],
-      "DeleteProfile" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "profileId" : "p-60fbc37c87f04fce9"
-        },
-        "output" : null,
-        "title" : "Sample DeleteProfile call"
-      } ],
-      "DeleteTransformer" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "transformerId" : "tr-974c129999f84d8c9"
-        },
-        "output" : null,
-        "title" : "Sample DeleteTransformer call"
-      } ],
-      "GetCapability" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "capabilityId" : "ca-963a8121e4fc4e348"
-        },
-        "output" : {
-          "capabilityId" : "ca-963a8121e4fc4e348",
-          "capabilityArn" : "arn:aws:b2bi:us-west-2:123456789012:capability/ca-963a8121e4fc4e348",
-          "name" : "b2biexample",
-          "type" : "edi",
-          "configuration" : {
-            "edi" : {
-              "type" : {
-                "x12Details" : {
-                  "transactionSet" : "X12_110",
-                  "version" : "VERSION_4010"
-                }
-              },
-              "inputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "input/"
-              },
-              "outputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "output/"
-              },
-              "transformerId" : "tr-9a893cf536df4658b"
-            }
-          },
-          "instructionsDocuments" : [ {
-            "bucketName" : "test-bucket",
-            "key" : "instructiondoc.txt"
-          } ],
-          "createdAt" : "2023-11-01T21:51:05.504Z",
-          "modifiedAt" : "2023-11-02T21:51:05.504Z"
-        },
-        "title" : "Sample GetCapabilty call"
-      } ],
-      "GetPartnership" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "partnershipId" : "ps-219fa02f5b4242af8"
-        },
-        "output" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "partnershipId" : "ps-219fa02f5b4242af8",
-          "partnershipArn" : "arn:aws:b2bi:us-west-2:123456789012:partnership/ps-219fa02f5b4242af8",
-          "name" : "b2bipartner",
-          "email" : "john@example.com",
-          "phone" : "5555555555",
-          "capabilities" : [ "ca-963a8121e4fc4e348" ],
-          "tradingPartnerId" : "tp-2a17ca447f6f4a8a8",
-          "createdAt" : "2023-11-01T21:51:05.504Z",
-          "modifiedAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample GetPartnership call"
-      } ],
-      "GetProfile" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "profileId" : "p-60fbc37c87f04fce9"
-        },
-        "output" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "profileArn" : "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9",
-          "name" : "Shipping Profile",
-          "email" : "john@example.com",
-          "phone" : "5555555555",
-          "businessName" : "John's Trucking",
-          "logging" : "ENABLED",
-          "logGroupName" : "b2bi/p-60fbc37c87f04fce9-Logs",
-          "createdAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample GetProfile call"
-      } ],
-      "GetTransformer" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "transformerId" : "tr-974c129999f84d8c9"
-        },
-        "output" : {
-          "transformerId" : "tr-974c129999f84d8c9",
-          "transformerArn" : "arn:aws:b2bi:us-west-2:123456789012:transformer/tr-974c129999f84d8c9",
-          "name" : "transformJSON",
-          "fileFormat" : "JSON",
-          "mappingTemplate" : "$",
-          "status" : "inactive",
-          "ediType" : {
-            "x12Details" : {
-              "transactionSet" : "X12_110",
-              "version" : "VERSION_4010"
-            }
-          },
-          "sampleDocument" : "s3://test-bucket/sampleDoc.txt",
-          "createdAt" : "2023-11-01T21:51:05.504Z",
-          "modifiedAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample GetTransformer call"
-      } ],
-      "GetTransformerJob" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "transformerJobId" : "tj-vpYxfV7yQOqjMSYllEslLw",
-          "transformerId" : "tr-974c129999f84d8c9"
-        },
-        "output" : {
-          "status" : "succeeded",
-          "outputFiles" : [ {
-            "bucketName" : "gt-edi-test",
-            "key" : "output/sample-214.edi.2023-11-01T10:44:03.353Z.json"
-          } ],
-          "message" : "Transformed, writing output"
-        },
-        "title" : "Sample GetTransformerJob call"
-      } ],
-      "ListCapabilities" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "nextToken" : "foo",
-          "maxResults" : 50
-        },
-        "output" : {
-          "capabilities" : [ {
-            "capabilityId" : "ca-963a8121e4fc4e348",
-            "name" : "b2biexample",
-            "type" : "edi",
-            "createdAt" : "2023-11-01T21:51:05.504Z",
-            "modifiedAt" : "2023-11-01T21:51:05.504Z"
-          } ],
-          "nextToken" : "foo"
-        },
-        "title" : "Sample ListCapabilities call"
-      } ],
-      "ListPartnerships" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "nextToken" : "foo",
-          "maxResults" : 50
-        },
-        "output" : {
-          "partnerships" : [ {
-            "profileId" : "p-60fbc37c87f04fce9",
-            "partnershipId" : "ps-219fa02f5b4242af8",
-            "name" : "b2bipartner",
-            "capabilities" : [ "ca-963a8121e4fc4e348" ],
-            "tradingPartnerId" : "tp-2a17ca447f6f4a8a8",
-            "createdAt" : "2023-11-01T21:51:05.504Z",
-            "modifiedAt" : "2023-11-01T21:51:05.504Z"
-          } ],
-          "nextToken" : "string"
-        },
-        "title" : "Sample ListPartnerships call"
-      } ],
-      "ListProfiles" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "nextToken" : "foo",
-          "maxResults" : 50
-        },
-        "output" : {
-          "profiles" : [ {
-            "profileId" : "p-60fbc37c87f04fce9",
-            "name" : "Shipping Profile",
-            "businessName" : "John's Trucking",
-            "logging" : "ENABLED",
-            "logGroupName" : "b2bi/p-60fbc37c87f04fce9-Logs",
-            "createdAt" : "2023-11-01T21:51:05.504Z"
-          } ],
-          "nextToken" : "foo"
-        },
-        "title" : "Sample ListProfiles call"
-      } ],
-      "ListTagsForResource" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "ResourceARN" : "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9"
-        },
-        "output" : {
-          "Tags" : [ {
-            "Key" : "sampleKey",
-            "Value" : "SampleValue"
-          } ]
-        },
-        "title" : "Sample ListTagsForResources call"
-      } ],
-      "ListTransformers" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "nextToken" : "foo",
-          "maxResults" : 50
-        },
-        "output" : {
-          "transformers" : [ {
-            "transformerId" : "tr-974c129999f84d8c9",
-            "name" : "transformJSON",
-            "fileFormat" : "JSON",
-            "mappingTemplate" : "$",
-            "status" : "inactive",
-            "ediType" : {
-              "x12Details" : {
-                "transactionSet" : "X12_110",
-                "version" : "VERSION_4010"
-              }
-            },
-            "sampleDocument" : "s3://test-bucket/sampleDoc.txt",
-            "createdAt" : "2023-11-01T21:51:05.504Z",
-            "modifiedAt" : "2023-11-01T21:51:05.504Z"
-          } ],
-          "nextToken" : "foo"
-        },
-        "title" : "Sample ListTransformers call"
-      } ],
-      "StartTransformerJob" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "inputFile" : {
-            "bucketName" : "test-bucket",
-            "key" : "input/inputFile.txt"
-          },
-          "outputLocation" : {
-            "bucketName" : "test-bucket",
-            "key" : "output/"
-          },
-          "transformerId" : "tr-974c129999f84d8c9",
-          "clientToken" : "foo"
-        },
-        "output" : {
-          "transformerJobId" : "tj-vpYxfV7yQOqjMSYllEslLw"
-        },
-        "title" : "Sample StartTransformerJob call"
-      } ],
-      "TagResource" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "ResourceARN" : "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9",
-          "Tags" : [ {
-            "Key" : "sampleKey",
-            "Value" : "SampleValue"
-          } ]
-        },
-        "output" : null,
-        "title" : "Sample TagResource call"
-      } ],
-      "TestMapping" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "inputFileContent" : "Sample file content",
-          "mappingTemplate" : "$",
-          "fileFormat" : "JSON"
-        },
-        "output" : {
-          "mappedFileContent" : "Sample file content"
-        },
-        "title" : "Sample TestMapping call"
-      } ],
-      "TestParsing" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "inputFile" : {
-            "bucketName" : "test-bucket",
-            "key" : "sampleFile.txt"
-          },
-          "fileFormat" : "JSON",
-          "ediType" : {
-            "x12Details" : {
-              "transactionSet" : "X12_110",
-              "version" : "VERSION_4010"
-            }
-          }
-        },
-        "output" : {
-          "parsedFileContent" : "Sample parsed file content"
-        },
-        "title" : "Sample TestParsing call"
-      } ],
-      "UntagResource" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "ResourceARN" : "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9",
-          "TagKeys" : [ "sampleKey" ]
-        },
-        "output" : null,
-        "title" : "Sample UntagResource call"
-      } ],
-      "UpdateCapability" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "capabilityId" : "ca-963a8121e4fc4e348",
-          "name" : "b2biexample",
-          "configuration" : {
-            "edi" : {
-              "type" : {
-                "x12Details" : {
-                  "transactionSet" : "X12_110",
-                  "version" : "VERSION_4010"
-                }
-              },
-              "inputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "input/"
-              },
-              "outputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "output/"
-              },
-              "transformerId" : "tr-9a893cf536df4658b"
-            }
-          },
-          "instructionsDocuments" : [ {
-            "bucketName" : "test-bucket",
-            "key" : "instructiondoc.txt"
-          } ]
-        },
-        "output" : {
-          "capabilityId" : "ca-963a8121e4fc4e348",
-          "capabilityArn" : "arn:aws:b2bi:us-west-2:123456789012:capability/ca-963a8121e4fc4e348",
-          "name" : "b2biexample",
-          "type" : "edi",
-          "configuration" : {
-            "edi" : {
-              "type" : {
-                "x12Details" : {
-                  "transactionSet" : "X12_110",
-                  "version" : "VERSION_4010"
-                }
-              },
-              "inputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "input/"
-              },
-              "outputLocation" : {
-                "bucketName" : "test-bucket",
-                "key" : "output/"
-              },
-              "transformerId" : "tr-9a893cf536df4658b"
-            }
-          },
-          "instructionsDocuments" : [ {
-            "bucketName" : "test-bucket",
-            "key" : "instructiondoc.txt"
-          } ],
-          "createdAt" : "2023-11-01T21:51:05.504Z",
-          "modifiedAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample UpdateCapability call"
-      } ],
-      "UpdatePartnership" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "partnershipId" : "ps-219fa02f5b4242af8",
-          "name" : "b2bipartner",
-          "capabilities" : [ "ca-963a8121e4fc4e348" ]
-        },
-        "output" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "partnershipId" : "ps-219fa02f5b4242af8",
-          "partnershipArn" : "arn:aws:b2bi:us-west-2:123456789012:partnership/ps-60fbc37c87f04fce9",
-          "name" : "b2bipartner",
-          "email" : "john@example.com",
-          "phone" : "5555555555",
-          "capabilities" : [ "ca-963a8121e4fc4e348" ],
-          "tradingPartnerId" : "tp-2a17ca447f6f4a8a8",
-          "createdAt" : "2023-11-01T21:51:05.504Z",
-          "modifiedAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample UpdatePartnership call"
-      } ],
-      "UpdateProfile" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "name" : "Shipping Profile",
-          "email" : "john@example.com",
-          "phone" : "5555555555",
-          "businessName" : "John's Shipping"
-        },
-        "output" : {
-          "profileId" : "p-60fbc37c87f04fce9",
-          "profileArn" : "arn:aws:b2bi:us-west-2:123456789012:profile/p-60fbc37c87f04fce9",
-          "name" : "Shipping Profile",
-          "email" : "john@example.com",
-          "phone" : "5555555555",
-          "businessName" : "John's Trucking",
-          "logging" : "ENABLED",
-          "logGroupName" : "b2bi/p-60fbc37c87f04fce9-Logs",
-          "createdAt" : "2023-11-01T21:51:05.504Z",
-          "modifiedAt" : "2023-11-02T21:51:05.504Z"
-        },
-        "title" : "Sample UpdateProfile call"
-      } ],
-      "UpdateTransformer" : [ {
-        "comments" : null,
-        "description" : null,
-        "id" : "example-1",
-        "input" : {
-          "transformerId" : "tr-974c129999f84d8c9",
-          "name" : "transformJSON",
-          "fileFormat" : "JSON",
-          "mappingTemplate" : "{}",
-          "status" : "inactive",
-          "ediType" : {
-            "x12Details" : {
-              "transactionSet" : "X12_110",
-              "version" : "VERSION_4010"
-            }
-          },
-          "sampleDocument" : "s3://test-bucket/sampleDoc.txt"
-        },
-        "output" : {
-          "transformerId" : "tr-974c129999f84d8c9",
-          "transformerArn" : "arn:aws:b2bi:us-west-2:607686414464:transformer/tr-974c129999f84d8c9",
-          "name" : "transformJSON",
-          "fileFormat" : "JSON",
-          "mappingTemplate" : "$",
-          "status" : "inactive",
-          "ediType" : {
-            "x12Details" : {
-              "transactionSet" : "X12_110",
-              "version" : "VERSION_4010"
-            }
-          },
-          "sampleDocument" : "s3://test-bucket/sampleDoc.txt",
-          "createdAt" : "2023-11-01T21:51:05.504Z",
-          "modifiedAt" : "2023-11-01T21:51:05.504Z"
-        },
-        "title" : "Sample UpdateTransformer call"
-      } ]
-    },
+    "examples" : { },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,

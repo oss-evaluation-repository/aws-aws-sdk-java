@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Returns the capability summary details. Capabilities contain the information necessary to process incoming EDI
- * (electronic data interchange) documents.
+ * Returns the capability summary details. A trading capability contains the information required to transform incoming
+ * EDI documents into JSON or XML outputs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CapabilitySummary" target="_top">AWS API

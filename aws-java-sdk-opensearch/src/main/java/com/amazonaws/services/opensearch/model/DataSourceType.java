@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the data source.
+ * The type of data source.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class DataSourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source for the AWS S3 Glue Data Catalog.
+     * An Amazon S3 data source.
      * </p>
      */
     private S3GlueDataCatalog s3GlueDataCatalog;
 
     /**
      * <p>
-     * The data source for the AWS S3 Glue Data Catalog.
+     * An Amazon S3 data source.
      * </p>
      * 
      * @param s3GlueDataCatalog
-     *        The data source for the AWS S3 Glue Data Catalog.
+     *        An Amazon S3 data source.
      */
 
     public void setS3GlueDataCatalog(S3GlueDataCatalog s3GlueDataCatalog) {
@@ -47,10 +47,10 @@ public class DataSourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source for the AWS S3 Glue Data Catalog.
+     * An Amazon S3 data source.
      * </p>
      * 
-     * @return The data source for the AWS S3 Glue Data Catalog.
+     * @return An Amazon S3 data source.
      */
 
     public S3GlueDataCatalog getS3GlueDataCatalog() {
@@ -59,11 +59,11 @@ public class DataSourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source for the AWS S3 Glue Data Catalog.
+     * An Amazon S3 data source.
      * </p>
      * 
      * @param s3GlueDataCatalog
-     *        The data source for the AWS S3 Glue Data Catalog.
+     *        An Amazon S3 data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -39,8 +39,7 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
     private MetricDimension metricDimension;
     /**
      * <p>
-     * Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export
-     * the corresponding metrics.
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      * </p>
      */
     private Boolean exportMetric;
@@ -127,13 +126,11 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export
-     * the corresponding metrics.
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      * </p>
      * 
      * @param exportMetric
-     *        Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should
-     *        export the corresponding metrics.
+     *        The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      */
 
     public void setExportMetric(Boolean exportMetric) {
@@ -142,12 +139,10 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export
-     * the corresponding metrics.
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      * </p>
      * 
-     * @return Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should
-     *         export the corresponding metrics.
+     * @return The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      */
 
     public Boolean getExportMetric() {
@@ -156,13 +151,11 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export
-     * the corresponding metrics.
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      * </p>
      * 
      * @param exportMetric
-     *        Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should
-     *        export the corresponding metrics.
+     *        The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,12 +166,10 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should export
-     * the corresponding metrics.
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      * </p>
      * 
-     * @return Value added in both Behavior and AdditionalMetricsToRetainV2 to indicate if Device Defender Detect should
-     *         export the corresponding metrics.
+     * @return The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
      */
 
     public Boolean isExportMetric() {

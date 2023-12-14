@@ -25,18 +25,18 @@ public class DeleteDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A message associated with the initiated request.
+     * A message associated with deletion of the data source.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * A message associated with the initiated request.
+     * A message associated with deletion of the data source.
      * </p>
      * 
      * @param message
-     *        A message associated with the initiated request.
+     *        A message associated with deletion of the data source.
      */
 
     public void setMessage(String message) {
@@ -45,10 +45,10 @@ public class DeleteDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A message associated with the initiated request.
+     * A message associated with deletion of the data source.
      * </p>
      * 
-     * @return A message associated with the initiated request.
+     * @return A message associated with deletion of the data source.
      */
 
     public String getMessage() {
@@ -57,11 +57,11 @@ public class DeleteDataSourceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A message associated with the initiated request.
+     * A message associated with deletion of the data source.
      * </p>
      * 
      * @param message
-     *        A message associated with the initiated request.
+     *        A message associated with deletion of the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

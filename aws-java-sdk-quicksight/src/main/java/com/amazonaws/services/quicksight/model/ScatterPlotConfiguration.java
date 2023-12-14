@@ -36,6 +36,12 @@ public class ScatterPlotConfiguration implements Serializable, Cloneable, Struct
     private ScatterPlotFieldWells fieldWells;
     /**
      * <p>
+     * The sort configuration of a scatter plot.
+     * </p>
+     */
+    private ScatterPlotSortConfiguration sortConfiguration;
+    /**
+     * <p>
      * The label options (label text, label visibility, and sort icon visibility) of the scatter plot's x-axis.
      * </p>
      */
@@ -120,6 +126,46 @@ public class ScatterPlotConfiguration implements Serializable, Cloneable, Struct
 
     public ScatterPlotConfiguration withFieldWells(ScatterPlotFieldWells fieldWells) {
         setFieldWells(fieldWells);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sort configuration of a scatter plot.
+     * </p>
+     * 
+     * @param sortConfiguration
+     *        The sort configuration of a scatter plot.
+     */
+
+    public void setSortConfiguration(ScatterPlotSortConfiguration sortConfiguration) {
+        this.sortConfiguration = sortConfiguration;
+    }
+
+    /**
+     * <p>
+     * The sort configuration of a scatter plot.
+     * </p>
+     * 
+     * @return The sort configuration of a scatter plot.
+     */
+
+    public ScatterPlotSortConfiguration getSortConfiguration() {
+        return this.sortConfiguration;
+    }
+
+    /**
+     * <p>
+     * The sort configuration of a scatter plot.
+     * </p>
+     * 
+     * @param sortConfiguration
+     *        The sort configuration of a scatter plot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScatterPlotConfiguration withSortConfiguration(ScatterPlotSortConfiguration sortConfiguration) {
+        setSortConfiguration(sortConfiguration);
         return this;
     }
 
@@ -457,6 +503,8 @@ public class ScatterPlotConfiguration implements Serializable, Cloneable, Struct
         sb.append("{");
         if (getFieldWells() != null)
             sb.append("FieldWells: ").append(getFieldWells()).append(",");
+        if (getSortConfiguration() != null)
+            sb.append("SortConfiguration: ").append(getSortConfiguration()).append(",");
         if (getXAxisLabelOptions() != null)
             sb.append("XAxisLabelOptions: ").append(getXAxisLabelOptions()).append(",");
         if (getXAxisDisplayOptions() != null)
@@ -490,6 +538,10 @@ public class ScatterPlotConfiguration implements Serializable, Cloneable, Struct
         if (other.getFieldWells() == null ^ this.getFieldWells() == null)
             return false;
         if (other.getFieldWells() != null && other.getFieldWells().equals(this.getFieldWells()) == false)
+            return false;
+        if (other.getSortConfiguration() == null ^ this.getSortConfiguration() == null)
+            return false;
+        if (other.getSortConfiguration() != null && other.getSortConfiguration().equals(this.getSortConfiguration()) == false)
             return false;
         if (other.getXAxisLabelOptions() == null ^ this.getXAxisLabelOptions() == null)
             return false;
@@ -532,6 +584,7 @@ public class ScatterPlotConfiguration implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFieldWells() == null) ? 0 : getFieldWells().hashCode());
+        hashCode = prime * hashCode + ((getSortConfiguration() == null) ? 0 : getSortConfiguration().hashCode());
         hashCode = prime * hashCode + ((getXAxisLabelOptions() == null) ? 0 : getXAxisLabelOptions().hashCode());
         hashCode = prime * hashCode + ((getXAxisDisplayOptions() == null) ? 0 : getXAxisDisplayOptions().hashCode());
         hashCode = prime * hashCode + ((getYAxisLabelOptions() == null) ? 0 : getYAxisLabelOptions().hashCode());

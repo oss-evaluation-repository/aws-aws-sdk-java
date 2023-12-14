@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the details for a transformer object. Transformers describe how to process the incoming EDI (electronic data
- * interchange) documents, and extract the necessary information.
+ * Contains the details for a transformer object. A transformer describes how to process the incoming EDI documents and
+ * extract the necessary information to the output file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TransformerSummary" target="_top">AWS API

@@ -1914,6 +1914,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateDashboardLinksResult> updateDashboardLinksAsync(UpdateDashboardLinksRequest request) {
+
+        return updateDashboardLinksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDashboardLinksResult> updateDashboardLinksAsync(UpdateDashboardLinksRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDashboardLinksRequest, UpdateDashboardLinksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDashboardPermissionsResult> updateDashboardPermissionsAsync(UpdateDashboardPermissionsRequest request) {
 
         return updateDashboardPermissionsAsync(request, null);

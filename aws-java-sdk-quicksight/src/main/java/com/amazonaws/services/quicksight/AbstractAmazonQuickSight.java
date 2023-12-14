@@ -748,6 +748,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public UpdateDashboardLinksResult updateDashboardLinks(UpdateDashboardLinksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateDashboardPermissionsResult updateDashboardPermissions(UpdateDashboardPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

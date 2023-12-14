@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.connect.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -59,6 +61,8 @@ public class ContactMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedContactId").build();
     private static final MarshallingInfo<StructuredPojo> WISDOMINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WisdomInfo").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final ContactMarshaller instance = new ContactMarshaller();
 
@@ -92,6 +96,7 @@ public class ContactMarshaller {
             protocolMarshaller.marshall(contact.getScheduledTimestamp(), SCHEDULEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(contact.getRelatedContactId(), RELATEDCONTACTID_BINDING);
             protocolMarshaller.marshall(contact.getWisdomInfo(), WISDOMINFO_BINDING);
+            protocolMarshaller.marshall(contact.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

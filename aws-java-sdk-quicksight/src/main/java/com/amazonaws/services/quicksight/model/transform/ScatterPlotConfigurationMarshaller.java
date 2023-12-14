@@ -29,6 +29,8 @@ public class ScatterPlotConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> FIELDWELLS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FieldWells").build();
+    private static final MarshallingInfo<StructuredPojo> SORTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> XAXISLABELOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XAxisLabelOptions").build();
     private static final MarshallingInfo<StructuredPojo> XAXISDISPLAYOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -63,6 +65,7 @@ public class ScatterPlotConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(scatterPlotConfiguration.getFieldWells(), FIELDWELLS_BINDING);
+            protocolMarshaller.marshall(scatterPlotConfiguration.getSortConfiguration(), SORTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(scatterPlotConfiguration.getXAxisLabelOptions(), XAXISLABELOPTIONS_BINDING);
             protocolMarshaller.marshall(scatterPlotConfiguration.getXAxisDisplayOptions(), XAXISDISPLAYOPTIONS_BINDING);
             protocolMarshaller.marshall(scatterPlotConfiguration.getYAxisLabelOptions(), YAXISLABELOPTIONS_BINDING);

@@ -1,3 +1,52 @@
+# __1.12.619__ __2023-12-14__
+## __AWS B2B Data Interchange__
+  - ### Features
+    - Documentation updates for AWS B2B Data Interchange
+
+## __AWS Control Tower__
+  - ### Features
+    - Documentation updates for AWS Control Tower.
+
+## __AWS IoT__
+  - ### Features
+    - This release adds the ability to self-manage certificate signing in AWS IoT Core fleet provisioning using the new certificate provider resource.
+
+## __AWSBillingConductor__
+  - ### Features
+    - Billing Conductor is releasing a new API, GetBillingGroupCostReport, which provides the ability to retrieve/view the Billing Group Cost Report broken down by attributes for a specific billing group.
+
+## __Amazon AppStream__
+  - ### Features
+    - This release includes support for images of Windows Server 2022 platform.
+
+## __Amazon Connect Service__
+  - ### Features
+    - This release adds support for more granular billing using tags (key:value pairs)
+
+## __Amazon GameLift__
+  - ### Features
+    - Amazon GameLift adds the ability to add and update the game properties of active game sessions.
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - This release, 1) adds configurable buffering hints for the Splunk destination, and 2) reduces the minimum configurable buffering interval for supported destinations
+
+## __Amazon Neptune Graph__
+  - ### Features
+    - This is the initial SDK release for Amazon Neptune Analytics
+
+## __Amazon OpenSearch Service__
+  - ### Features
+    - Updating documentation for Amazon OpenSearch Service support for new zero-ETL integration with Amazon S3.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Update Dashboard Links support; SingleAxisOptions support; Scatterplot Query limit support.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Updated note to ensure customers understand running modes.
+
 # __1.12.618__ __2023-12-13__
 ## __Amazon CloudWatch Logs__
   - ### Features

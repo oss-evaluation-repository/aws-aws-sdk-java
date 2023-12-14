@@ -22,6 +22,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A structure that contains the X12 transaction set and version. The X12 structure is used when the system transforms
  * an EDI (electronic data interchange) file.
  * </p>
+ * <note>
+ * <p>
+ * If an EDI input file contains more than one transaction, each transaction must have the same transaction set and
+ * version, for example 214/4010. If not, the transformer cannot parse the file.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/X12Details" target="_top">AWS API
  *      Documentation</a>

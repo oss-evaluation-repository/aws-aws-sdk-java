@@ -1897,6 +1897,94 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Creates an Amazon Web Services IoT Core certificate provider. You can use Amazon Web Services IoT Core
+     * certificate provider to customize how to sign a certificate signing request (CSR) in IoT fleet provisioning. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provisioning-cert-provider.html">Customizing
+     * certificate signing using Amazon Web Services IoT Core certificate provider</a> from <i>Amazon Web Services IoT
+     * Core Developer Guide</i>.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >CreateCertificateProvider</a> action.
+     * </p>
+     * <important>
+     * <p>
+     * After you create a certificate provider, the behavior of <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
+     * <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change and all API calls to
+     * <code>CreateCertificateFromCsr</code> will invoke the certificate provider to create the certificates. It can
+     * take up to a few minutes for this behavior to change after a certificate provider is created.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateProviderRequest
+     * @return Result of the CreateCertificateProvider operation returned by the service.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateCertificateProvider
+     */
+    @Override
+    public CreateCertificateProviderResult createCertificateProvider(CreateCertificateProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCertificateProvider(request);
+    }
+
+    @SdkInternalApi
+    final CreateCertificateProviderResult executeCreateCertificateProvider(CreateCertificateProviderRequest createCertificateProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCertificateProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCertificateProviderRequest> request = null;
+        Response<CreateCertificateProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCertificateProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCertificateProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCertificateProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCertificateProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCertificateProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Use this API to define a Custom Metric published by your devices to Device Defender.
      * </p>
      * <p>
@@ -4223,6 +4311,84 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DeleteCertificateProvider</a> action.
+     * </p>
+     * <p>
+     * If you delete the certificate provider resource, the behavior of <code>CreateCertificateFromCsr</code> will
+     * resume, and IoT will create certificates signed by IoT from a certificate signing request (CSR).
+     * </p>
+     * 
+     * @param deleteCertificateProviderRequest
+     * @return Result of the DeleteCertificateProvider operation returned by the service.
+     * @throws DeleteConflictException
+     *         You can't delete the resource because it is attached to one or more resources.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteCertificateProvider
+     */
+    @Override
+    public DeleteCertificateProviderResult deleteCertificateProvider(DeleteCertificateProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCertificateProvider(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCertificateProviderResult executeDeleteCertificateProvider(DeleteCertificateProviderRequest deleteCertificateProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCertificateProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCertificateProviderRequest> request = null;
+        Response<DeleteCertificateProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCertificateProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCertificateProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCertificateProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCertificateProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCertificateProviderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6812,6 +6978,78 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >DescribeCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param describeCertificateProviderRequest
+     * @return Result of the DescribeCertificateProvider operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeCertificateProvider
+     */
+    @Override
+    public DescribeCertificateProviderResult describeCertificateProvider(DescribeCertificateProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCertificateProvider(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCertificateProviderResult executeDescribeCertificateProvider(DescribeCertificateProviderRequest describeCertificateProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCertificateProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCertificateProviderRequest> request = null;
+        Response<DescribeCertificateProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCertificateProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeCertificateProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificateProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCertificateProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeCertificateProviderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10891,6 +11129,76 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListCACertificatesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCACertificatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all your certificate providers in your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >ListCertificateProviders</a> action.
+     * </p>
+     * 
+     * @param listCertificateProvidersRequest
+     * @return Result of the ListCertificateProviders operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCertificateProviders
+     */
+    @Override
+    public ListCertificateProvidersResult listCertificateProviders(ListCertificateProvidersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCertificateProviders(request);
+    }
+
+    @SdkInternalApi
+    final ListCertificateProvidersResult executeListCertificateProviders(ListCertificateProvidersRequest listCertificateProvidersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCertificateProvidersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCertificateProvidersRequest> request = null;
+        Response<ListCertificateProvidersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCertificateProvidersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCertificateProvidersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCertificateProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCertificateProvidersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCertificateProvidersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16528,6 +16836,78 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a certificate provider.
+     * </p>
+     * <p>
+     * Requires permission to access the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions"
+     * >UpdateCertificateProvider</a> action.
+     * </p>
+     * 
+     * @param updateCertificateProviderRequest
+     * @return Result of the UpdateCertificateProvider operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCertificateProvider
+     */
+    @Override
+    public UpdateCertificateProviderResult updateCertificateProvider(UpdateCertificateProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCertificateProvider(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCertificateProviderResult executeUpdateCertificateProvider(UpdateCertificateProviderRequest updateCertificateProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCertificateProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCertificateProviderRequest> request = null;
+        Response<UpdateCertificateProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCertificateProviderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCertificateProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCertificateProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCertificateProviderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCertificateProviderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
