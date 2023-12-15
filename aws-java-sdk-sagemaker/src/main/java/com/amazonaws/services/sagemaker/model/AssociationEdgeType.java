@@ -23,7 +23,8 @@ public enum AssociationEdgeType {
     ContributedTo("ContributedTo"),
     AssociatedWith("AssociatedWith"),
     DerivedFrom("DerivedFrom"),
-    Produced("Produced");
+    Produced("Produced"),
+    SameAs("SameAs");
 
     private String value;
 

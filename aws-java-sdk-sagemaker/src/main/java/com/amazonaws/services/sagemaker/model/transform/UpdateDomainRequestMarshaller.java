@@ -34,10 +34,10 @@ public class UpdateDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultUserSettings").build();
     private static final MarshallingInfo<StructuredPojo> DOMAINSETTINGSFORUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainSettingsForUpdate").build();
-    private static final MarshallingInfo<StructuredPojo> DEFAULTSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSpaceSettings").build();
     private static final MarshallingInfo<String> APPSECURITYGROUPMANAGEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppSecurityGroupManagement").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSpaceSettings").build();
     private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubnetIds").build();
     private static final MarshallingInfo<String> APPNETWORKACCESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,8 +62,8 @@ public class UpdateDomainRequestMarshaller {
             protocolMarshaller.marshall(updateDomainRequest.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getDefaultUserSettings(), DEFAULTUSERSETTINGS_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getDomainSettingsForUpdate(), DOMAINSETTINGSFORUPDATE_BINDING);
-            protocolMarshaller.marshall(updateDomainRequest.getDefaultSpaceSettings(), DEFAULTSPACESETTINGS_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getAppSecurityGroupManagement(), APPSECURITYGROUPMANAGEMENT_BINDING);
+            protocolMarshaller.marshall(updateDomainRequest.getDefaultSpaceSettings(), DEFAULTSPACESETTINGS_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getAppNetworkAccessType(), APPNETWORKACCESSTYPE_BINDING);
         } catch (Exception e) {

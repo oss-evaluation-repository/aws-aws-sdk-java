@@ -33,28 +33,28 @@ public class SpaceSettings implements Serializable, Cloneable, StructuredPojo {
     private KernelGatewayAppSettings kernelGatewayAppSettings;
     /**
      * <p>
-     * The settings for the JupyterLab application.
-     * </p>
-     */
-    private SpaceJupyterLabAppSettings jupyterLabAppSettings;
-    /**
-     * <p>
      * The Code Editor application settings.
      * </p>
      */
     private SpaceCodeEditorAppSettings codeEditorAppSettings;
     /**
      * <p>
-     * The storage settings for a private space.
+     * The settings for the JupyterLab application.
      * </p>
      */
-    private SpaceStorageSettings spaceStorageSettings;
+    private SpaceJupyterLabAppSettings jupyterLabAppSettings;
     /**
      * <p>
      * The type of app created within the space.
      * </p>
      */
     private String appType;
+    /**
+     * <p>
+     * The storage settings for a private space.
+     * </p>
+     */
+    private SpaceStorageSettings spaceStorageSettings;
     /**
      * <p>
      * A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can
@@ -117,46 +117,6 @@ public class SpaceSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the JupyterLab application.
-     * </p>
-     * 
-     * @param jupyterLabAppSettings
-     *        The settings for the JupyterLab application.
-     */
-
-    public void setJupyterLabAppSettings(SpaceJupyterLabAppSettings jupyterLabAppSettings) {
-        this.jupyterLabAppSettings = jupyterLabAppSettings;
-    }
-
-    /**
-     * <p>
-     * The settings for the JupyterLab application.
-     * </p>
-     * 
-     * @return The settings for the JupyterLab application.
-     */
-
-    public SpaceJupyterLabAppSettings getJupyterLabAppSettings() {
-        return this.jupyterLabAppSettings;
-    }
-
-    /**
-     * <p>
-     * The settings for the JupyterLab application.
-     * </p>
-     * 
-     * @param jupyterLabAppSettings
-     *        The settings for the JupyterLab application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpaceSettings withJupyterLabAppSettings(SpaceJupyterLabAppSettings jupyterLabAppSettings) {
-        setJupyterLabAppSettings(jupyterLabAppSettings);
-        return this;
-    }
-
-    /**
-     * <p>
      * The Code Editor application settings.
      * </p>
      * 
@@ -197,41 +157,41 @@ public class SpaceSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage settings for a private space.
+     * The settings for the JupyterLab application.
      * </p>
      * 
-     * @param spaceStorageSettings
-     *        The storage settings for a private space.
+     * @param jupyterLabAppSettings
+     *        The settings for the JupyterLab application.
      */
 
-    public void setSpaceStorageSettings(SpaceStorageSettings spaceStorageSettings) {
-        this.spaceStorageSettings = spaceStorageSettings;
+    public void setJupyterLabAppSettings(SpaceJupyterLabAppSettings jupyterLabAppSettings) {
+        this.jupyterLabAppSettings = jupyterLabAppSettings;
     }
 
     /**
      * <p>
-     * The storage settings for a private space.
+     * The settings for the JupyterLab application.
      * </p>
      * 
-     * @return The storage settings for a private space.
+     * @return The settings for the JupyterLab application.
      */
 
-    public SpaceStorageSettings getSpaceStorageSettings() {
-        return this.spaceStorageSettings;
+    public SpaceJupyterLabAppSettings getJupyterLabAppSettings() {
+        return this.jupyterLabAppSettings;
     }
 
     /**
      * <p>
-     * The storage settings for a private space.
+     * The settings for the JupyterLab application.
      * </p>
      * 
-     * @param spaceStorageSettings
-     *        The storage settings for a private space.
+     * @param jupyterLabAppSettings
+     *        The settings for the JupyterLab application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SpaceSettings withSpaceStorageSettings(SpaceStorageSettings spaceStorageSettings) {
-        setSpaceStorageSettings(spaceStorageSettings);
+    public SpaceSettings withJupyterLabAppSettings(SpaceJupyterLabAppSettings jupyterLabAppSettings) {
+        setJupyterLabAppSettings(jupyterLabAppSettings);
         return this;
     }
 
@@ -291,6 +251,46 @@ public class SpaceSettings implements Serializable, Cloneable, StructuredPojo {
 
     public SpaceSettings withAppType(AppType appType) {
         this.appType = appType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage settings for a private space.
+     * </p>
+     * 
+     * @param spaceStorageSettings
+     *        The storage settings for a private space.
+     */
+
+    public void setSpaceStorageSettings(SpaceStorageSettings spaceStorageSettings) {
+        this.spaceStorageSettings = spaceStorageSettings;
+    }
+
+    /**
+     * <p>
+     * The storage settings for a private space.
+     * </p>
+     * 
+     * @return The storage settings for a private space.
+     */
+
+    public SpaceStorageSettings getSpaceStorageSettings() {
+        return this.spaceStorageSettings;
+    }
+
+    /**
+     * <p>
+     * The storage settings for a private space.
+     * </p>
+     * 
+     * @param spaceStorageSettings
+     *        The storage settings for a private space.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpaceSettings withSpaceStorageSettings(SpaceStorageSettings spaceStorageSettings) {
+        setSpaceStorageSettings(spaceStorageSettings);
         return this;
     }
 
@@ -388,14 +388,14 @@ public class SpaceSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("JupyterServerAppSettings: ").append(getJupyterServerAppSettings()).append(",");
         if (getKernelGatewayAppSettings() != null)
             sb.append("KernelGatewayAppSettings: ").append(getKernelGatewayAppSettings()).append(",");
-        if (getJupyterLabAppSettings() != null)
-            sb.append("JupyterLabAppSettings: ").append(getJupyterLabAppSettings()).append(",");
         if (getCodeEditorAppSettings() != null)
             sb.append("CodeEditorAppSettings: ").append(getCodeEditorAppSettings()).append(",");
-        if (getSpaceStorageSettings() != null)
-            sb.append("SpaceStorageSettings: ").append(getSpaceStorageSettings()).append(",");
+        if (getJupyterLabAppSettings() != null)
+            sb.append("JupyterLabAppSettings: ").append(getJupyterLabAppSettings()).append(",");
         if (getAppType() != null)
             sb.append("AppType: ").append(getAppType()).append(",");
+        if (getSpaceStorageSettings() != null)
+            sb.append("SpaceStorageSettings: ").append(getSpaceStorageSettings()).append(",");
         if (getCustomFileSystems() != null)
             sb.append("CustomFileSystems: ").append(getCustomFileSystems());
         sb.append("}");
@@ -420,21 +420,21 @@ public class SpaceSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKernelGatewayAppSettings() != null && other.getKernelGatewayAppSettings().equals(this.getKernelGatewayAppSettings()) == false)
             return false;
-        if (other.getJupyterLabAppSettings() == null ^ this.getJupyterLabAppSettings() == null)
-            return false;
-        if (other.getJupyterLabAppSettings() != null && other.getJupyterLabAppSettings().equals(this.getJupyterLabAppSettings()) == false)
-            return false;
         if (other.getCodeEditorAppSettings() == null ^ this.getCodeEditorAppSettings() == null)
             return false;
         if (other.getCodeEditorAppSettings() != null && other.getCodeEditorAppSettings().equals(this.getCodeEditorAppSettings()) == false)
             return false;
-        if (other.getSpaceStorageSettings() == null ^ this.getSpaceStorageSettings() == null)
+        if (other.getJupyterLabAppSettings() == null ^ this.getJupyterLabAppSettings() == null)
             return false;
-        if (other.getSpaceStorageSettings() != null && other.getSpaceStorageSettings().equals(this.getSpaceStorageSettings()) == false)
+        if (other.getJupyterLabAppSettings() != null && other.getJupyterLabAppSettings().equals(this.getJupyterLabAppSettings()) == false)
             return false;
         if (other.getAppType() == null ^ this.getAppType() == null)
             return false;
         if (other.getAppType() != null && other.getAppType().equals(this.getAppType()) == false)
+            return false;
+        if (other.getSpaceStorageSettings() == null ^ this.getSpaceStorageSettings() == null)
+            return false;
+        if (other.getSpaceStorageSettings() != null && other.getSpaceStorageSettings().equals(this.getSpaceStorageSettings()) == false)
             return false;
         if (other.getCustomFileSystems() == null ^ this.getCustomFileSystems() == null)
             return false;
@@ -450,10 +450,10 @@ public class SpaceSettings implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getJupyterServerAppSettings() == null) ? 0 : getJupyterServerAppSettings().hashCode());
         hashCode = prime * hashCode + ((getKernelGatewayAppSettings() == null) ? 0 : getKernelGatewayAppSettings().hashCode());
-        hashCode = prime * hashCode + ((getJupyterLabAppSettings() == null) ? 0 : getJupyterLabAppSettings().hashCode());
         hashCode = prime * hashCode + ((getCodeEditorAppSettings() == null) ? 0 : getCodeEditorAppSettings().hashCode());
-        hashCode = prime * hashCode + ((getSpaceStorageSettings() == null) ? 0 : getSpaceStorageSettings().hashCode());
+        hashCode = prime * hashCode + ((getJupyterLabAppSettings() == null) ? 0 : getJupyterLabAppSettings().hashCode());
         hashCode = prime * hashCode + ((getAppType() == null) ? 0 : getAppType().hashCode());
+        hashCode = prime * hashCode + ((getSpaceStorageSettings() == null) ? 0 : getSpaceStorageSettings().hashCode());
         hashCode = prime * hashCode + ((getCustomFileSystems() == null) ? 0 : getCustomFileSystems().hashCode());
         return hashCode;
     }

@@ -60,12 +60,6 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The name of the space that appears in the Studio UI.
-     * </p>
-     */
-    private String spaceDisplayName;
-    /**
-     * <p>
      * Specifies summary information about the space settings.
      * </p>
      */
@@ -82,6 +76,12 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private OwnershipSettingsSummary ownershipSettingsSummary;
+    /**
+     * <p>
+     * The name of the space that appears in the Studio UI.
+     * </p>
+     */
+    private String spaceDisplayName;
 
     /**
      * <p>
@@ -304,46 +304,6 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the space that appears in the Studio UI.
-     * </p>
-     * 
-     * @param spaceDisplayName
-     *        The name of the space that appears in the Studio UI.
-     */
-
-    public void setSpaceDisplayName(String spaceDisplayName) {
-        this.spaceDisplayName = spaceDisplayName;
-    }
-
-    /**
-     * <p>
-     * The name of the space that appears in the Studio UI.
-     * </p>
-     * 
-     * @return The name of the space that appears in the Studio UI.
-     */
-
-    public String getSpaceDisplayName() {
-        return this.spaceDisplayName;
-    }
-
-    /**
-     * <p>
-     * The name of the space that appears in the Studio UI.
-     * </p>
-     * 
-     * @param spaceDisplayName
-     *        The name of the space that appears in the Studio UI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpaceDetails withSpaceDisplayName(String spaceDisplayName) {
-        setSpaceDisplayName(spaceDisplayName);
-        return this;
-    }
-
-    /**
-     * <p>
      * Specifies summary information about the space settings.
      * </p>
      * 
@@ -463,6 +423,46 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the space that appears in the Studio UI.
+     * </p>
+     * 
+     * @param spaceDisplayName
+     *        The name of the space that appears in the Studio UI.
+     */
+
+    public void setSpaceDisplayName(String spaceDisplayName) {
+        this.spaceDisplayName = spaceDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of the space that appears in the Studio UI.
+     * </p>
+     * 
+     * @return The name of the space that appears in the Studio UI.
+     */
+
+    public String getSpaceDisplayName() {
+        return this.spaceDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of the space that appears in the Studio UI.
+     * </p>
+     * 
+     * @param spaceDisplayName
+     *        The name of the space that appears in the Studio UI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpaceDetails withSpaceDisplayName(String spaceDisplayName) {
+        setSpaceDisplayName(spaceDisplayName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -484,14 +484,14 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
-        if (getSpaceDisplayName() != null)
-            sb.append("SpaceDisplayName: ").append(getSpaceDisplayName()).append(",");
         if (getSpaceSettingsSummary() != null)
             sb.append("SpaceSettingsSummary: ").append(getSpaceSettingsSummary()).append(",");
         if (getSpaceSharingSettingsSummary() != null)
             sb.append("SpaceSharingSettingsSummary: ").append(getSpaceSharingSettingsSummary()).append(",");
         if (getOwnershipSettingsSummary() != null)
-            sb.append("OwnershipSettingsSummary: ").append(getOwnershipSettingsSummary());
+            sb.append("OwnershipSettingsSummary: ").append(getOwnershipSettingsSummary()).append(",");
+        if (getSpaceDisplayName() != null)
+            sb.append("SpaceDisplayName: ").append(getSpaceDisplayName());
         sb.append("}");
         return sb.toString();
     }
@@ -526,10 +526,6 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
-        if (other.getSpaceDisplayName() == null ^ this.getSpaceDisplayName() == null)
-            return false;
-        if (other.getSpaceDisplayName() != null && other.getSpaceDisplayName().equals(this.getSpaceDisplayName()) == false)
-            return false;
         if (other.getSpaceSettingsSummary() == null ^ this.getSpaceSettingsSummary() == null)
             return false;
         if (other.getSpaceSettingsSummary() != null && other.getSpaceSettingsSummary().equals(this.getSpaceSettingsSummary()) == false)
@@ -541,6 +537,10 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
         if (other.getOwnershipSettingsSummary() == null ^ this.getOwnershipSettingsSummary() == null)
             return false;
         if (other.getOwnershipSettingsSummary() != null && other.getOwnershipSettingsSummary().equals(this.getOwnershipSettingsSummary()) == false)
+            return false;
+        if (other.getSpaceDisplayName() == null ^ this.getSpaceDisplayName() == null)
+            return false;
+        if (other.getSpaceDisplayName() != null && other.getSpaceDisplayName().equals(this.getSpaceDisplayName()) == false)
             return false;
         return true;
     }
@@ -555,10 +555,10 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
-        hashCode = prime * hashCode + ((getSpaceDisplayName() == null) ? 0 : getSpaceDisplayName().hashCode());
         hashCode = prime * hashCode + ((getSpaceSettingsSummary() == null) ? 0 : getSpaceSettingsSummary().hashCode());
         hashCode = prime * hashCode + ((getSpaceSharingSettingsSummary() == null) ? 0 : getSpaceSharingSettingsSummary().hashCode());
         hashCode = prime * hashCode + ((getOwnershipSettingsSummary() == null) ? 0 : getOwnershipSettingsSummary().hashCode());
+        hashCode = prime * hashCode + ((getSpaceDisplayName() == null) ? 0 : getSpaceDisplayName().hashCode());
         return hashCode;
     }
 

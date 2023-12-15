@@ -130,6 +130,12 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
     private HyperParameterTuningJobWarmStartConfig warmStartConfig;
     /**
      * <p>
+     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * </p>
+     */
+    private Autotune autotune;
+    /**
+     * <p>
      * If the tuning job failed, the reason it failed.
      * </p>
      */
@@ -144,12 +150,6 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
     private HyperParameterTuningJobCompletionDetails tuningJobCompletionDetails;
 
     private HyperParameterTuningJobConsumedResources consumedResources;
-    /**
-     * <p>
-     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
-     * </p>
-     */
-    private Autotune autotune;
 
     /**
      * <p>
@@ -892,6 +892,46 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
+     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * </p>
+     * 
+     * @param autotune
+     *        A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     */
+
+    public void setAutotune(Autotune autotune) {
+        this.autotune = autotune;
+    }
+
+    /**
+     * <p>
+     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * </p>
+     * 
+     * @return A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     */
+
+    public Autotune getAutotune() {
+        return this.autotune;
+    }
+
+    /**
+     * <p>
+     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * </p>
+     * 
+     * @param autotune
+     *        A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHyperParameterTuningJobResult withAutotune(Autotune autotune) {
+        setAutotune(autotune);
+        return this;
+    }
+
+    /**
+     * <p>
      * If the tuning job failed, the reason it failed.
      * </p>
      * 
@@ -1009,46 +1049,6 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * <p>
-     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
-     * </p>
-     * 
-     * @param autotune
-     *        A flag to indicate if autotune is enabled for the hyperparameter tuning job.
-     */
-
-    public void setAutotune(Autotune autotune) {
-        this.autotune = autotune;
-    }
-
-    /**
-     * <p>
-     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
-     * </p>
-     * 
-     * @return A flag to indicate if autotune is enabled for the hyperparameter tuning job.
-     */
-
-    public Autotune getAutotune() {
-        return this.autotune;
-    }
-
-    /**
-     * <p>
-     * A flag to indicate if autotune is enabled for the hyperparameter tuning job.
-     * </p>
-     * 
-     * @param autotune
-     *        A flag to indicate if autotune is enabled for the hyperparameter tuning job.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHyperParameterTuningJobResult withAutotune(Autotune autotune) {
-        setAutotune(autotune);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1088,14 +1088,14 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
             sb.append("OverallBestTrainingJob: ").append(getOverallBestTrainingJob()).append(",");
         if (getWarmStartConfig() != null)
             sb.append("WarmStartConfig: ").append(getWarmStartConfig()).append(",");
+        if (getAutotune() != null)
+            sb.append("Autotune: ").append(getAutotune()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getTuningJobCompletionDetails() != null)
             sb.append("TuningJobCompletionDetails: ").append(getTuningJobCompletionDetails()).append(",");
         if (getConsumedResources() != null)
-            sb.append("ConsumedResources: ").append(getConsumedResources()).append(",");
-        if (getAutotune() != null)
-            sb.append("Autotune: ").append(getAutotune());
+            sb.append("ConsumedResources: ").append(getConsumedResources());
         sb.append("}");
         return sb.toString();
     }
@@ -1168,6 +1168,10 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
             return false;
         if (other.getWarmStartConfig() != null && other.getWarmStartConfig().equals(this.getWarmStartConfig()) == false)
             return false;
+        if (other.getAutotune() == null ^ this.getAutotune() == null)
+            return false;
+        if (other.getAutotune() != null && other.getAutotune().equals(this.getAutotune()) == false)
+            return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
@@ -1179,10 +1183,6 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
         if (other.getConsumedResources() == null ^ this.getConsumedResources() == null)
             return false;
         if (other.getConsumedResources() != null && other.getConsumedResources().equals(this.getConsumedResources()) == false)
-            return false;
-        if (other.getAutotune() == null ^ this.getAutotune() == null)
-            return false;
-        if (other.getAutotune() != null && other.getAutotune().equals(this.getAutotune()) == false)
             return false;
         return true;
     }
@@ -1206,10 +1206,10 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getBestTrainingJob() == null) ? 0 : getBestTrainingJob().hashCode());
         hashCode = prime * hashCode + ((getOverallBestTrainingJob() == null) ? 0 : getOverallBestTrainingJob().hashCode());
         hashCode = prime * hashCode + ((getWarmStartConfig() == null) ? 0 : getWarmStartConfig().hashCode());
+        hashCode = prime * hashCode + ((getAutotune() == null) ? 0 : getAutotune().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getTuningJobCompletionDetails() == null) ? 0 : getTuningJobCompletionDetails().hashCode());
         hashCode = prime * hashCode + ((getConsumedResources() == null) ? 0 : getConsumedResources().hashCode());
-        hashCode = prime * hashCode + ((getAutotune() == null) ? 0 : getAutotune().hashCode());
         return hashCode;
     }
 

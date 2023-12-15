@@ -103,16 +103,16 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     private CanvasAppSettings canvasAppSettings;
     /**
      * <p>
-     * The settings for the JupyterLab application.
-     * </p>
-     */
-    private JupyterLabAppSettings jupyterLabAppSettings;
-    /**
-     * <p>
      * The Code Editor application settings.
      * </p>
      */
     private CodeEditorAppSettings codeEditorAppSettings;
+    /**
+     * <p>
+     * The settings for the JupyterLab application.
+     * </p>
+     */
+    private JupyterLabAppSettings jupyterLabAppSettings;
     /**
      * <p>
      * The storage settings for a private space.
@@ -644,46 +644,6 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the JupyterLab application.
-     * </p>
-     * 
-     * @param jupyterLabAppSettings
-     *        The settings for the JupyterLab application.
-     */
-
-    public void setJupyterLabAppSettings(JupyterLabAppSettings jupyterLabAppSettings) {
-        this.jupyterLabAppSettings = jupyterLabAppSettings;
-    }
-
-    /**
-     * <p>
-     * The settings for the JupyterLab application.
-     * </p>
-     * 
-     * @return The settings for the JupyterLab application.
-     */
-
-    public JupyterLabAppSettings getJupyterLabAppSettings() {
-        return this.jupyterLabAppSettings;
-    }
-
-    /**
-     * <p>
-     * The settings for the JupyterLab application.
-     * </p>
-     * 
-     * @param jupyterLabAppSettings
-     *        The settings for the JupyterLab application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UserSettings withJupyterLabAppSettings(JupyterLabAppSettings jupyterLabAppSettings) {
-        setJupyterLabAppSettings(jupyterLabAppSettings);
-        return this;
-    }
-
-    /**
-     * <p>
      * The Code Editor application settings.
      * </p>
      * 
@@ -719,6 +679,46 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     public UserSettings withCodeEditorAppSettings(CodeEditorAppSettings codeEditorAppSettings) {
         setCodeEditorAppSettings(codeEditorAppSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the JupyterLab application.
+     * </p>
+     * 
+     * @param jupyterLabAppSettings
+     *        The settings for the JupyterLab application.
+     */
+
+    public void setJupyterLabAppSettings(JupyterLabAppSettings jupyterLabAppSettings) {
+        this.jupyterLabAppSettings = jupyterLabAppSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the JupyterLab application.
+     * </p>
+     * 
+     * @return The settings for the JupyterLab application.
+     */
+
+    public JupyterLabAppSettings getJupyterLabAppSettings() {
+        return this.jupyterLabAppSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the JupyterLab application.
+     * </p>
+     * 
+     * @param jupyterLabAppSettings
+     *        The settings for the JupyterLab application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withJupyterLabAppSettings(JupyterLabAppSettings jupyterLabAppSettings) {
+        setJupyterLabAppSettings(jupyterLabAppSettings);
         return this;
     }
 
@@ -1095,10 +1095,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("RSessionAppSettings: ").append(getRSessionAppSettings()).append(",");
         if (getCanvasAppSettings() != null)
             sb.append("CanvasAppSettings: ").append(getCanvasAppSettings()).append(",");
-        if (getJupyterLabAppSettings() != null)
-            sb.append("JupyterLabAppSettings: ").append(getJupyterLabAppSettings()).append(",");
         if (getCodeEditorAppSettings() != null)
             sb.append("CodeEditorAppSettings: ").append(getCodeEditorAppSettings()).append(",");
+        if (getJupyterLabAppSettings() != null)
+            sb.append("JupyterLabAppSettings: ").append(getJupyterLabAppSettings()).append(",");
         if (getSpaceStorageSettings() != null)
             sb.append("SpaceStorageSettings: ").append(getSpaceStorageSettings()).append(",");
         if (getDefaultLandingUri() != null)
@@ -1159,13 +1159,13 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCanvasAppSettings() != null && other.getCanvasAppSettings().equals(this.getCanvasAppSettings()) == false)
             return false;
-        if (other.getJupyterLabAppSettings() == null ^ this.getJupyterLabAppSettings() == null)
-            return false;
-        if (other.getJupyterLabAppSettings() != null && other.getJupyterLabAppSettings().equals(this.getJupyterLabAppSettings()) == false)
-            return false;
         if (other.getCodeEditorAppSettings() == null ^ this.getCodeEditorAppSettings() == null)
             return false;
         if (other.getCodeEditorAppSettings() != null && other.getCodeEditorAppSettings().equals(this.getCodeEditorAppSettings()) == false)
+            return false;
+        if (other.getJupyterLabAppSettings() == null ^ this.getJupyterLabAppSettings() == null)
+            return false;
+        if (other.getJupyterLabAppSettings() != null && other.getJupyterLabAppSettings().equals(this.getJupyterLabAppSettings()) == false)
             return false;
         if (other.getSpaceStorageSettings() == null ^ this.getSpaceStorageSettings() == null)
             return false;
@@ -1204,8 +1204,8 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRStudioServerProAppSettings() == null) ? 0 : getRStudioServerProAppSettings().hashCode());
         hashCode = prime * hashCode + ((getRSessionAppSettings() == null) ? 0 : getRSessionAppSettings().hashCode());
         hashCode = prime * hashCode + ((getCanvasAppSettings() == null) ? 0 : getCanvasAppSettings().hashCode());
-        hashCode = prime * hashCode + ((getJupyterLabAppSettings() == null) ? 0 : getJupyterLabAppSettings().hashCode());
         hashCode = prime * hashCode + ((getCodeEditorAppSettings() == null) ? 0 : getCodeEditorAppSettings().hashCode());
+        hashCode = prime * hashCode + ((getJupyterLabAppSettings() == null) ? 0 : getJupyterLabAppSettings().hashCode());
         hashCode = prime * hashCode + ((getSpaceStorageSettings() == null) ? 0 : getSpaceStorageSettings().hashCode());
         hashCode = prime * hashCode + ((getDefaultLandingUri() == null) ? 0 : getDefaultLandingUri().hashCode());
         hashCode = prime * hashCode + ((getStudioWebPortal() == null) ? 0 : getStudioWebPortal().hashCode());

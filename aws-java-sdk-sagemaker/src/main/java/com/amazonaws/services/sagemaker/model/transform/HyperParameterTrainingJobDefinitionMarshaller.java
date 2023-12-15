@@ -49,6 +49,8 @@ public class HyperParameterTrainingJobDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputDataConfig").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceConfig").build();
+    private static final MarshallingInfo<StructuredPojo> HYPERPARAMETERTUNINGRESOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HyperParameterTuningResourceConfig").build();
     private static final MarshallingInfo<StructuredPojo> STOPPINGCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StoppingCondition").build();
     private static final MarshallingInfo<Boolean> ENABLENETWORKISOLATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -61,8 +63,6 @@ public class HyperParameterTrainingJobDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CheckpointConfig").build();
     private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetryStrategy").build();
-    private static final MarshallingInfo<StructuredPojo> HYPERPARAMETERTUNINGRESOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HyperParameterTuningResourceConfig").build();
     private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Environment").build();
 
@@ -92,6 +92,8 @@ public class HyperParameterTrainingJobDefinitionMarshaller {
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getOutputDataConfig(), OUTPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getResourceConfig(), RESOURCECONFIG_BINDING);
+            protocolMarshaller
+                    .marshall(hyperParameterTrainingJobDefinition.getHyperParameterTuningResourceConfig(), HYPERPARAMETERTUNINGRESOURCECONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getStoppingCondition(), STOPPINGCONDITION_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getEnableNetworkIsolation(), ENABLENETWORKISOLATION_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getEnableInterContainerTrafficEncryption(),
@@ -99,8 +101,6 @@ public class HyperParameterTrainingJobDefinitionMarshaller {
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getEnableManagedSpotTraining(), ENABLEMANAGEDSPOTTRAINING_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getCheckpointConfig(), CHECKPOINTCONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getRetryStrategy(), RETRYSTRATEGY_BINDING);
-            protocolMarshaller
-                    .marshall(hyperParameterTrainingJobDefinition.getHyperParameterTuningResourceConfig(), HYPERPARAMETERTUNINGRESOURCECONFIG_BINDING);
             protocolMarshaller.marshall(hyperParameterTrainingJobDefinition.getEnvironment(), ENVIRONMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

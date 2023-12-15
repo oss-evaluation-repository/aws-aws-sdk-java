@@ -85,6 +85,12 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
      * </p>
      * </li>
@@ -322,6 +328,12 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
      * </p>
      * </li>
@@ -353,6 +365,12 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio
      *        application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on
+     *        Code-OSS, Visual Studio Code - Open Source application.
      *        </p>
      *        </li>
      *        <li>
@@ -396,6 +414,12 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
      * </p>
      * </li>
@@ -426,6 +450,12 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      *         <p>
      *         <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio
      *         application.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based
+     *         on Code-OSS, Visual Studio Code - Open Source application.
      *         </p>
      *         </li>
      *         <li>
@@ -469,6 +499,12 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
+     * <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on
+     * Code-OSS, Visual Studio Code - Open Source application.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.
      * </p>
      * </li>
@@ -500,6 +536,12 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        <code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio
      *        application.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on
+     *        Code-OSS, Visual Studio Code - Open Source application.
      *        </p>
      *        </li>
      *        <li>

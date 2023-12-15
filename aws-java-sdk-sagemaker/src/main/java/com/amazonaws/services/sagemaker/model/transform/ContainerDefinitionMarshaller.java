@@ -39,6 +39,8 @@ public class ContainerDefinitionMarshaller {
             .marshallLocationName("Mode").build();
     private static final MarshallingInfo<String> MODELDATAURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataUrl").build();
+    private static final MarshallingInfo<StructuredPojo> MODELDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataSource").build();
     private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Environment").build();
     private static final MarshallingInfo<String> MODELPACKAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -47,8 +49,6 @@ public class ContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InferenceSpecificationName").build();
     private static final MarshallingInfo<StructuredPojo> MULTIMODELCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MultiModelConfig").build();
-    private static final MarshallingInfo<StructuredPojo> MODELDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataSource").build();
 
     private static final ContainerDefinitionMarshaller instance = new ContainerDefinitionMarshaller();
 
@@ -71,11 +71,11 @@ public class ContainerDefinitionMarshaller {
             protocolMarshaller.marshall(containerDefinition.getImageConfig(), IMAGECONFIG_BINDING);
             protocolMarshaller.marshall(containerDefinition.getMode(), MODE_BINDING);
             protocolMarshaller.marshall(containerDefinition.getModelDataUrl(), MODELDATAURL_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getModelDataSource(), MODELDATASOURCE_BINDING);
             protocolMarshaller.marshall(containerDefinition.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(containerDefinition.getModelPackageName(), MODELPACKAGENAME_BINDING);
             protocolMarshaller.marshall(containerDefinition.getInferenceSpecificationName(), INFERENCESPECIFICATIONNAME_BINDING);
             protocolMarshaller.marshall(containerDefinition.getMultiModelConfig(), MULTIMODELCONFIG_BINDING);
-            protocolMarshaller.marshall(containerDefinition.getModelDataSource(), MODELDATASOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

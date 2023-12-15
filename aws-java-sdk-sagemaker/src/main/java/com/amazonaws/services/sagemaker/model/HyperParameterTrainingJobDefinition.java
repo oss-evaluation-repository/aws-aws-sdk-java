@@ -104,6 +104,16 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     private ResourceConfig resourceConfig;
     /**
      * <p>
+     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
+     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
+     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     * (optional).
+     * </p>
+     */
+    private HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig;
+    /**
+     * <p>
      * Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed
      * spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this
      * API to cap model training costs.
@@ -142,16 +152,6 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * </p>
      */
     private RetryStrategy retryStrategy;
-    /**
-     * <p>
-     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
-     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
-     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
-     * (optional).
-     * </p>
-     */
-    private HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig;
     /**
      * <p>
      * An environment variable that you can pass into the SageMaker <a
@@ -743,6 +743,70 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
+     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
+     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
+     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     * (optional).
+     * </p>
+     * 
+     * @param hyperParameterTuningResourceConfig
+     *        The configuration for the hyperparameter tuning resources, including the compute instances and storage
+     *        volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
+     *        artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     *        <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     *        (optional).
+     */
+
+    public void setHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig) {
+        this.hyperParameterTuningResourceConfig = hyperParameterTuningResourceConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
+     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
+     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     * (optional).
+     * </p>
+     * 
+     * @return The configuration for the hyperparameter tuning resources, including the compute instances and storage
+     *         volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
+     *         artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     *         <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     *         (optional).
+     */
+
+    public HyperParameterTuningResourceConfig getHyperParameterTuningResourceConfig() {
+        return this.hyperParameterTuningResourceConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
+     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
+     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     * (optional).
+     * </p>
+     * 
+     * @param hyperParameterTuningResourceConfig
+     *        The configuration for the hyperparameter tuning resources, including the compute instances and storage
+     *        volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
+     *        artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     *        <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
+     *        (optional).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTrainingJobDefinition withHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig) {
+        setHyperParameterTuningResourceConfig(hyperParameterTuningResourceConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed
      * spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this
      * API to cap model training costs.
@@ -1069,70 +1133,6 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
-     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
-     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
-     * (optional).
-     * </p>
-     * 
-     * @param hyperParameterTuningResourceConfig
-     *        The configuration for the hyperparameter tuning resources, including the compute instances and storage
-     *        volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
-     *        artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     *        <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
-     *        (optional).
-     */
-
-    public void setHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig) {
-        this.hyperParameterTuningResourceConfig = hyperParameterTuningResourceConfig;
-    }
-
-    /**
-     * <p>
-     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
-     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
-     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
-     * (optional).
-     * </p>
-     * 
-     * @return The configuration for the hyperparameter tuning resources, including the compute instances and storage
-     *         volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
-     *         artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     *         <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
-     *         (optional).
-     */
-
-    public HyperParameterTuningResourceConfig getHyperParameterTuningResourceConfig() {
-        return this.hyperParameterTuningResourceConfig;
-    }
-
-    /**
-     * <p>
-     * The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes,
-     * used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and
-     * incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
-     * (optional).
-     * </p>
-     * 
-     * @param hyperParameterTuningResourceConfig
-     *        The configuration for the hyperparameter tuning resources, including the compute instances and storage
-     *        volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model
-     *        artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     *        <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume
-     *        (optional).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public HyperParameterTrainingJobDefinition withHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig hyperParameterTuningResourceConfig) {
-        setHyperParameterTuningResourceConfig(hyperParameterTuningResourceConfig);
-        return this;
-    }
-
-    /**
-     * <p>
      * An environment variable that you can pass into the SageMaker <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
      * API. You can use an existing <a href=
@@ -1309,6 +1309,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
             sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
         if (getResourceConfig() != null)
             sb.append("ResourceConfig: ").append(getResourceConfig()).append(",");
+        if (getHyperParameterTuningResourceConfig() != null)
+            sb.append("HyperParameterTuningResourceConfig: ").append(getHyperParameterTuningResourceConfig()).append(",");
         if (getStoppingCondition() != null)
             sb.append("StoppingCondition: ").append(getStoppingCondition()).append(",");
         if (getEnableNetworkIsolation() != null)
@@ -1321,8 +1323,6 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
             sb.append("CheckpointConfig: ").append(getCheckpointConfig()).append(",");
         if (getRetryStrategy() != null)
             sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
-        if (getHyperParameterTuningResourceConfig() != null)
-            sb.append("HyperParameterTuningResourceConfig: ").append(getHyperParameterTuningResourceConfig()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment());
         sb.append("}");
@@ -1379,6 +1379,11 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
             return false;
         if (other.getResourceConfig() != null && other.getResourceConfig().equals(this.getResourceConfig()) == false)
             return false;
+        if (other.getHyperParameterTuningResourceConfig() == null ^ this.getHyperParameterTuningResourceConfig() == null)
+            return false;
+        if (other.getHyperParameterTuningResourceConfig() != null
+                && other.getHyperParameterTuningResourceConfig().equals(this.getHyperParameterTuningResourceConfig()) == false)
+            return false;
         if (other.getStoppingCondition() == null ^ this.getStoppingCondition() == null)
             return false;
         if (other.getStoppingCondition() != null && other.getStoppingCondition().equals(this.getStoppingCondition()) == false)
@@ -1404,11 +1409,6 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
-        if (other.getHyperParameterTuningResourceConfig() == null ^ this.getHyperParameterTuningResourceConfig() == null)
-            return false;
-        if (other.getHyperParameterTuningResourceConfig() != null
-                && other.getHyperParameterTuningResourceConfig().equals(this.getHyperParameterTuningResourceConfig()) == false)
-            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
@@ -1431,13 +1431,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getResourceConfig() == null) ? 0 : getResourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getHyperParameterTuningResourceConfig() == null) ? 0 : getHyperParameterTuningResourceConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
         hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         hashCode = prime * hashCode + ((getEnableInterContainerTrafficEncryption() == null) ? 0 : getEnableInterContainerTrafficEncryption().hashCode());
         hashCode = prime * hashCode + ((getEnableManagedSpotTraining() == null) ? 0 : getEnableManagedSpotTraining().hashCode());
         hashCode = prime * hashCode + ((getCheckpointConfig() == null) ? 0 : getCheckpointConfig().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
-        hashCode = prime * hashCode + ((getHyperParameterTuningResourceConfig() == null) ? 0 : getHyperParameterTuningResourceConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         return hashCode;
     }

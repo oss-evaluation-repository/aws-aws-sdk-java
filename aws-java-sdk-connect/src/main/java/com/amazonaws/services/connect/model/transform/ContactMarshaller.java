@@ -55,6 +55,14 @@ public class ContactMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisconnectTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTPAUSEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastPausedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTRESUMEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastResumedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Integer> TOTALPAUSECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalPauseCount").build();
+    private static final MarshallingInfo<Integer> TOTALPAUSEDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalPauseDurationInSeconds").build();
     private static final MarshallingInfo<java.util.Date> SCHEDULEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduledTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> RELATEDCONTACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -93,6 +101,10 @@ public class ContactMarshaller {
             protocolMarshaller.marshall(contact.getInitiationTimestamp(), INITIATIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(contact.getDisconnectTimestamp(), DISCONNECTTIMESTAMP_BINDING);
             protocolMarshaller.marshall(contact.getLastUpdateTimestamp(), LASTUPDATETIMESTAMP_BINDING);
+            protocolMarshaller.marshall(contact.getLastPausedTimestamp(), LASTPAUSEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(contact.getLastResumedTimestamp(), LASTRESUMEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(contact.getTotalPauseCount(), TOTALPAUSECOUNT_BINDING);
+            protocolMarshaller.marshall(contact.getTotalPauseDurationInSeconds(), TOTALPAUSEDURATIONINSECONDS_BINDING);
             protocolMarshaller.marshall(contact.getScheduledTimestamp(), SCHEDULEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(contact.getRelatedContactId(), RELATEDCONTACTID_BINDING);
             protocolMarshaller.marshall(contact.getWisdomInfo(), WISDOMINFO_BINDING);

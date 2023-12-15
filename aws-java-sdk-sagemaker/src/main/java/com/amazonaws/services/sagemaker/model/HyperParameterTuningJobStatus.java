@@ -24,7 +24,9 @@ public enum HyperParameterTuningJobStatus {
     InProgress("InProgress"),
     Failed("Failed"),
     Stopped("Stopped"),
-    Stopping("Stopping");
+    Stopping("Stopping"),
+    Deleting("Deleting"),
+    DeleteFailed("DeleteFailed");
 
     private String value;
 

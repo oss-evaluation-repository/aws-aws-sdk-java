@@ -56,7 +56,7 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains
-     * created after September 19, 2023.
+     * created after October 1, 2023.
      * </p>
      */
     private String singleSignOnApplicationArn;
@@ -86,6 +86,13 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String failureReason;
     /**
      * <p>
+     * The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
+     * <code>RStudioServerPro</code> app.
+     * </p>
+     */
+    private String securityGroupIdForDomainBoundary;
+    /**
+     * <p>
      * The domain's authentication mode.
      * </p>
      */
@@ -97,6 +104,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private UserSettings defaultUserSettings;
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     */
+    private DomainSettings domainSettings;
     /**
      * <p>
      * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
@@ -149,25 +162,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String kmsKeyId;
     /**
      * <p>
-     * A collection of <code>Domain</code> settings.
-     * </p>
-     */
-    private DomainSettings domainSettings;
-    /**
-     * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
      * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
      * </p>
      */
     private String appSecurityGroupManagement;
-    /**
-     * <p>
-     * The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
-     * <code>RStudioServerPro</code> app.
-     * </p>
-     */
-    private String securityGroupIdForDomainBoundary;
     /**
      * <p>
      * The default settings used to create a space.
@@ -378,12 +378,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains
-     * created after September 19, 2023.
+     * created after October 1, 2023.
      * </p>
      * 
      * @param singleSignOnApplicationArn
      *        The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for
-     *        domains created after September 19, 2023.
+     *        domains created after October 1, 2023.
      */
 
     public void setSingleSignOnApplicationArn(String singleSignOnApplicationArn) {
@@ -393,11 +393,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains
-     * created after September 19, 2023.
+     * created after October 1, 2023.
      * </p>
      * 
      * @return The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for
-     *         domains created after September 19, 2023.
+     *         domains created after October 1, 2023.
      */
 
     public String getSingleSignOnApplicationArn() {
@@ -407,12 +407,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains
-     * created after September 19, 2023.
+     * created after October 1, 2023.
      * </p>
      * 
      * @param singleSignOnApplicationArn
      *        The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for
-     *        domains created after September 19, 2023.
+     *        domains created after October 1, 2023.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,6 +602,52 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
+     * <code>RStudioServerPro</code> app.
+     * </p>
+     * 
+     * @param securityGroupIdForDomainBoundary
+     *        The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
+     *        <code>RStudioServerPro</code> app.
+     */
+
+    public void setSecurityGroupIdForDomainBoundary(String securityGroupIdForDomainBoundary) {
+        this.securityGroupIdForDomainBoundary = securityGroupIdForDomainBoundary;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
+     * <code>RStudioServerPro</code> app.
+     * </p>
+     * 
+     * @return The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and
+     *         the <code>RStudioServerPro</code> app.
+     */
+
+    public String getSecurityGroupIdForDomainBoundary() {
+        return this.securityGroupIdForDomainBoundary;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
+     * <code>RStudioServerPro</code> app.
+     * </p>
+     * 
+     * @param securityGroupIdForDomainBoundary
+     *        The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
+     *        <code>RStudioServerPro</code> app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainResult withSecurityGroupIdForDomainBoundary(String securityGroupIdForDomainBoundary) {
+        setSecurityGroupIdForDomainBoundary(securityGroupIdForDomainBoundary);
+        return this;
+    }
+
+    /**
+     * <p>
      * The domain's authentication mode.
      * </p>
      * 
@@ -702,6 +748,46 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public DescribeDomainResult withDefaultUserSettings(UserSettings defaultUserSettings) {
         setDefaultUserSettings(defaultUserSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     * 
+     * @param domainSettings
+     *        A collection of <code>Domain</code> settings.
+     */
+
+    public void setDomainSettings(DomainSettings domainSettings) {
+        this.domainSettings = domainSettings;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     * 
+     * @return A collection of <code>Domain</code> settings.
+     */
+
+    public DomainSettings getDomainSettings() {
+        return this.domainSettings;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     * 
+     * @param domainSettings
+     *        A collection of <code>Domain</code> settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainResult withDomainSettings(DomainSettings domainSettings) {
+        setDomainSettings(domainSettings);
         return this;
     }
 
@@ -1096,46 +1182,6 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A collection of <code>Domain</code> settings.
-     * </p>
-     * 
-     * @param domainSettings
-     *        A collection of <code>Domain</code> settings.
-     */
-
-    public void setDomainSettings(DomainSettings domainSettings) {
-        this.domainSettings = domainSettings;
-    }
-
-    /**
-     * <p>
-     * A collection of <code>Domain</code> settings.
-     * </p>
-     * 
-     * @return A collection of <code>Domain</code> settings.
-     */
-
-    public DomainSettings getDomainSettings() {
-        return this.domainSettings;
-    }
-
-    /**
-     * <p>
-     * A collection of <code>Domain</code> settings.
-     * </p>
-     * 
-     * @param domainSettings
-     *        A collection of <code>Domain</code> settings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeDomainResult withDomainSettings(DomainSettings domainSettings) {
-        setDomainSettings(domainSettings);
-        return this;
-    }
-
-    /**
-     * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
      * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
@@ -1215,52 +1261,6 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
-     * <code>RStudioServerPro</code> app.
-     * </p>
-     * 
-     * @param securityGroupIdForDomainBoundary
-     *        The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
-     *        <code>RStudioServerPro</code> app.
-     */
-
-    public void setSecurityGroupIdForDomainBoundary(String securityGroupIdForDomainBoundary) {
-        this.securityGroupIdForDomainBoundary = securityGroupIdForDomainBoundary;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
-     * <code>RStudioServerPro</code> app.
-     * </p>
-     * 
-     * @return The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and
-     *         the <code>RStudioServerPro</code> app.
-     */
-
-    public String getSecurityGroupIdForDomainBoundary() {
-        return this.securityGroupIdForDomainBoundary;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
-     * <code>RStudioServerPro</code> app.
-     * </p>
-     * 
-     * @param securityGroupIdForDomainBoundary
-     *        The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the
-     *        <code>RStudioServerPro</code> app.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeDomainResult withSecurityGroupIdForDomainBoundary(String securityGroupIdForDomainBoundary) {
-        setSecurityGroupIdForDomainBoundary(securityGroupIdForDomainBoundary);
-        return this;
-    }
-
-    /**
-     * <p>
      * The default settings used to create a space.
      * </p>
      * 
@@ -1331,10 +1331,14 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getSecurityGroupIdForDomainBoundary() != null)
+            sb.append("SecurityGroupIdForDomainBoundary: ").append(getSecurityGroupIdForDomainBoundary()).append(",");
         if (getAuthMode() != null)
             sb.append("AuthMode: ").append(getAuthMode()).append(",");
         if (getDefaultUserSettings() != null)
             sb.append("DefaultUserSettings: ").append(getDefaultUserSettings()).append(",");
+        if (getDomainSettings() != null)
+            sb.append("DomainSettings: ").append(getDomainSettings()).append(",");
         if (getAppNetworkAccessType() != null)
             sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType()).append(",");
         if (getHomeEfsFileSystemKmsKeyId() != null)
@@ -1347,12 +1351,8 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
-        if (getDomainSettings() != null)
-            sb.append("DomainSettings: ").append(getDomainSettings()).append(",");
         if (getAppSecurityGroupManagement() != null)
             sb.append("AppSecurityGroupManagement: ").append(getAppSecurityGroupManagement()).append(",");
-        if (getSecurityGroupIdForDomainBoundary() != null)
-            sb.append("SecurityGroupIdForDomainBoundary: ").append(getSecurityGroupIdForDomainBoundary()).append(",");
         if (getDefaultSpaceSettings() != null)
             sb.append("DefaultSpaceSettings: ").append(getDefaultSpaceSettings());
         sb.append("}");
@@ -1410,6 +1410,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getSecurityGroupIdForDomainBoundary() == null ^ this.getSecurityGroupIdForDomainBoundary() == null)
+            return false;
+        if (other.getSecurityGroupIdForDomainBoundary() != null
+                && other.getSecurityGroupIdForDomainBoundary().equals(this.getSecurityGroupIdForDomainBoundary()) == false)
+            return false;
         if (other.getAuthMode() == null ^ this.getAuthMode() == null)
             return false;
         if (other.getAuthMode() != null && other.getAuthMode().equals(this.getAuthMode()) == false)
@@ -1417,6 +1422,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         if (other.getDefaultUserSettings() == null ^ this.getDefaultUserSettings() == null)
             return false;
         if (other.getDefaultUserSettings() != null && other.getDefaultUserSettings().equals(this.getDefaultUserSettings()) == false)
+            return false;
+        if (other.getDomainSettings() == null ^ this.getDomainSettings() == null)
+            return false;
+        if (other.getDomainSettings() != null && other.getDomainSettings().equals(this.getDomainSettings()) == false)
             return false;
         if (other.getAppNetworkAccessType() == null ^ this.getAppNetworkAccessType() == null)
             return false;
@@ -1442,18 +1451,9 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
-        if (other.getDomainSettings() == null ^ this.getDomainSettings() == null)
-            return false;
-        if (other.getDomainSettings() != null && other.getDomainSettings().equals(this.getDomainSettings()) == false)
-            return false;
         if (other.getAppSecurityGroupManagement() == null ^ this.getAppSecurityGroupManagement() == null)
             return false;
         if (other.getAppSecurityGroupManagement() != null && other.getAppSecurityGroupManagement().equals(this.getAppSecurityGroupManagement()) == false)
-            return false;
-        if (other.getSecurityGroupIdForDomainBoundary() == null ^ this.getSecurityGroupIdForDomainBoundary() == null)
-            return false;
-        if (other.getSecurityGroupIdForDomainBoundary() != null
-                && other.getSecurityGroupIdForDomainBoundary().equals(this.getSecurityGroupIdForDomainBoundary()) == false)
             return false;
         if (other.getDefaultSpaceSettings() == null ^ this.getDefaultSpaceSettings() == null)
             return false;
@@ -1477,17 +1477,17 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIdForDomainBoundary() == null) ? 0 : getSecurityGroupIdForDomainBoundary().hashCode());
         hashCode = prime * hashCode + ((getAuthMode() == null) ? 0 : getAuthMode().hashCode());
         hashCode = prime * hashCode + ((getDefaultUserSettings() == null) ? 0 : getDefaultUserSettings().hashCode());
+        hashCode = prime * hashCode + ((getDomainSettings() == null) ? 0 : getDomainSettings().hashCode());
         hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
         hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
-        hashCode = prime * hashCode + ((getDomainSettings() == null) ? 0 : getDomainSettings().hashCode());
         hashCode = prime * hashCode + ((getAppSecurityGroupManagement() == null) ? 0 : getAppSecurityGroupManagement().hashCode());
-        hashCode = prime * hashCode + ((getSecurityGroupIdForDomainBoundary() == null) ? 0 : getSecurityGroupIdForDomainBoundary().hashCode());
         hashCode = prime * hashCode + ((getDefaultSpaceSettings() == null) ? 0 : getDefaultSpaceSettings().hashCode());
         return hashCode;
     }

@@ -39,6 +39,12 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String userProfileName;
     /**
      * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     */
+    private String spaceName;
+    /**
+     * <p>
      * The type of app.
      * </p>
      */
@@ -70,12 +76,6 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </note>
      */
     private ResourceSpec resourceSpec;
-    /**
-     * <p>
-     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * </p>
-     */
-    private String spaceName;
 
     /**
      * <p>
@@ -154,6 +154,46 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public CreateAppRequest withUserProfileName(String userProfileName) {
         setUserProfileName(userProfileName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     */
+
+    public void setSpaceName(String spaceName) {
+        this.spaceName = spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @return The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     */
+
+    public String getSpaceName() {
+        return this.spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppRequest withSpaceName(String spaceName) {
+        setSpaceName(spaceName);
         return this;
     }
 
@@ -418,46 +458,6 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * <p>
-     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * </p>
-     * 
-     * @param spaceName
-     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     */
-
-    public void setSpaceName(String spaceName) {
-        this.spaceName = spaceName;
-    }
-
-    /**
-     * <p>
-     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * </p>
-     * 
-     * @return The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     */
-
-    public String getSpaceName() {
-        return this.spaceName;
-    }
-
-    /**
-     * <p>
-     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * </p>
-     * 
-     * @param spaceName
-     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateAppRequest withSpaceName(String spaceName) {
-        setSpaceName(spaceName);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -473,6 +473,8 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getUserProfileName() != null)
             sb.append("UserProfileName: ").append(getUserProfileName()).append(",");
+        if (getSpaceName() != null)
+            sb.append("SpaceName: ").append(getSpaceName()).append(",");
         if (getAppType() != null)
             sb.append("AppType: ").append(getAppType()).append(",");
         if (getAppName() != null)
@@ -480,9 +482,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getResourceSpec() != null)
-            sb.append("ResourceSpec: ").append(getResourceSpec()).append(",");
-        if (getSpaceName() != null)
-            sb.append("SpaceName: ").append(getSpaceName());
+            sb.append("ResourceSpec: ").append(getResourceSpec());
         sb.append("}");
         return sb.toString();
     }
@@ -505,6 +505,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getUserProfileName() != null && other.getUserProfileName().equals(this.getUserProfileName()) == false)
             return false;
+        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
+            return false;
+        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
+            return false;
         if (other.getAppType() == null ^ this.getAppType() == null)
             return false;
         if (other.getAppType() != null && other.getAppType().equals(this.getAppType()) == false)
@@ -521,10 +525,6 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getResourceSpec() != null && other.getResourceSpec().equals(this.getResourceSpec()) == false)
             return false;
-        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
-            return false;
-        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
-            return false;
         return true;
     }
 
@@ -535,11 +535,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getUserProfileName() == null) ? 0 : getUserProfileName().hashCode());
+        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         hashCode = prime * hashCode + ((getAppType() == null) ? 0 : getAppType().hashCode());
         hashCode = prime * hashCode + ((getAppName() == null) ? 0 : getAppName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getResourceSpec() == null) ? 0 : getResourceSpec().hashCode());
-        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         return hashCode;
     }
 

@@ -35,6 +35,8 @@ public class TextGenerationJobConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaseModelName").build();
     private static final MarshallingInfo<Map> TEXTGENERATIONHYPERPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TextGenerationHyperParameters").build();
+    private static final MarshallingInfo<StructuredPojo> MODELACCESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelAccessConfig").build();
 
     private static final TextGenerationJobConfigMarshaller instance = new TextGenerationJobConfigMarshaller();
 
@@ -55,6 +57,7 @@ public class TextGenerationJobConfigMarshaller {
             protocolMarshaller.marshall(textGenerationJobConfig.getCompletionCriteria(), COMPLETIONCRITERIA_BINDING);
             protocolMarshaller.marshall(textGenerationJobConfig.getBaseModelName(), BASEMODELNAME_BINDING);
             protocolMarshaller.marshall(textGenerationJobConfig.getTextGenerationHyperParameters(), TEXTGENERATIONHYPERPARAMETERS_BINDING);
+            protocolMarshaller.marshall(textGenerationJobConfig.getModelAccessConfig(), MODELACCESSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

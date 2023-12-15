@@ -6060,6 +6060,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Allows pausing an ongoing task contact.
+     * </p>
+     * 
+     * @param pauseContactRequest
+     * @return A Java Future containing the result of the PauseContact operation returned by the service.
+     * @sample AmazonConnectAsync.PauseContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PauseContactResult> pauseContactAsync(PauseContactRequest pauseContactRequest);
+
+    /**
+     * <p>
+     * Allows pausing an ongoing task contact.
+     * </p>
+     * 
+     * @param pauseContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PauseContact operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.PauseContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PauseContactResult> pauseContactAsync(PauseContactRequest pauseContactRequest,
+            com.amazonaws.handlers.AsyncHandler<PauseContactRequest, PauseContactResult> asyncHandler);
+
+    /**
+     * <p>
      * Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact,
      * this sets the agent's next status.
      * </p>
@@ -6232,6 +6263,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<ReplicateInstanceResult> replicateInstanceAsync(ReplicateInstanceRequest replicateInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<ReplicateInstanceRequest, ReplicateInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows resuming a task contact in a paused state.
+     * </p>
+     * 
+     * @param resumeContactRequest
+     * @return A Java Future containing the result of the ResumeContact operation returned by the service.
+     * @sample AmazonConnectAsync.ResumeContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResumeContactResult> resumeContactAsync(ResumeContactRequest resumeContactRequest);
+
+    /**
+     * <p>
+     * Allows resuming a task contact in a paused state.
+     * </p>
+     * 
+     * @param resumeContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResumeContact operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ResumeContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResumeContactResult> resumeContactAsync(ResumeContactRequest resumeContactRequest,
+            com.amazonaws.handlers.AsyncHandler<ResumeContactRequest, ResumeContactResult> asyncHandler);
 
     /**
      * <p>

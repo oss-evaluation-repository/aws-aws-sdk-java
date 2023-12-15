@@ -78,6 +78,34 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SendNotificationActionDefinition sendNotificationAction;
+    /**
+     * <p>
+     * Information about the create case action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code>.
+     * </p>
+     */
+    private CreateCaseActionDefinition createCaseAction;
+    /**
+     * <p>
+     * Information about the update case action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.
+     * </p>
+     */
+    private UpdateCaseActionDefinition updateCaseAction;
+    /**
+     * <p>
+     * Information about the end associated tasks action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+     * </p>
+     */
+    private EndAssociatedTasksActionDefinition endAssociatedTasksAction;
 
     /**
      * <p>
@@ -410,6 +438,180 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the create case action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code>.
+     * </p>
+     * 
+     * @param createCaseAction
+     *        Information about the create case action.</p>
+     *        <p>
+     *        Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> |
+     *        <code>OnPostChatAnalysisAvailable</code>.
+     */
+
+    public void setCreateCaseAction(CreateCaseActionDefinition createCaseAction) {
+        this.createCaseAction = createCaseAction;
+    }
+
+    /**
+     * <p>
+     * Information about the create case action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code>.
+     * </p>
+     * 
+     * @return Information about the create case action.</p>
+     *         <p>
+     *         Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> |
+     *         <code>OnPostChatAnalysisAvailable</code>.
+     */
+
+    public CreateCaseActionDefinition getCreateCaseAction() {
+        return this.createCaseAction;
+    }
+
+    /**
+     * <p>
+     * Information about the create case action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> |
+     * <code>OnPostChatAnalysisAvailable</code>.
+     * </p>
+     * 
+     * @param createCaseAction
+     *        Information about the create case action.</p>
+     *        <p>
+     *        Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> |
+     *        <code>OnPostChatAnalysisAvailable</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleAction withCreateCaseAction(CreateCaseActionDefinition createCaseAction) {
+        setCreateCaseAction(createCaseAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the update case action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.
+     * </p>
+     * 
+     * @param updateCaseAction
+     *        Information about the update case action.</p>
+     *        <p>
+     *        Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     *        <code>OnCaseUpdate</code>.
+     */
+
+    public void setUpdateCaseAction(UpdateCaseActionDefinition updateCaseAction) {
+        this.updateCaseAction = updateCaseAction;
+    }
+
+    /**
+     * <p>
+     * Information about the update case action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.
+     * </p>
+     * 
+     * @return Information about the update case action.</p>
+     *         <p>
+     *         Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     *         <code>OnCaseUpdate</code>.
+     */
+
+    public UpdateCaseActionDefinition getUpdateCaseAction() {
+        return this.updateCaseAction;
+    }
+
+    /**
+     * <p>
+     * Information about the update case action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.
+     * </p>
+     * 
+     * @param updateCaseAction
+     *        Information about the update case action.</p>
+     *        <p>
+     *        Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> |
+     *        <code>OnCaseUpdate</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleAction withUpdateCaseAction(UpdateCaseActionDefinition updateCaseAction) {
+        setUpdateCaseAction(updateCaseAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the end associated tasks action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+     * </p>
+     * 
+     * @param endAssociatedTasksAction
+     *        Information about the end associated tasks action.</p>
+     *        <p>
+     *        Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+     */
+
+    public void setEndAssociatedTasksAction(EndAssociatedTasksActionDefinition endAssociatedTasksAction) {
+        this.endAssociatedTasksAction = endAssociatedTasksAction;
+    }
+
+    /**
+     * <p>
+     * Information about the end associated tasks action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+     * </p>
+     * 
+     * @return Information about the end associated tasks action.</p>
+     *         <p>
+     *         Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+     */
+
+    public EndAssociatedTasksActionDefinition getEndAssociatedTasksAction() {
+        return this.endAssociatedTasksAction;
+    }
+
+    /**
+     * <p>
+     * Information about the end associated tasks action.
+     * </p>
+     * <p>
+     * Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+     * </p>
+     * 
+     * @param endAssociatedTasksAction
+     *        Information about the end associated tasks action.</p>
+     *        <p>
+     *        Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleAction withEndAssociatedTasksAction(EndAssociatedTasksActionDefinition endAssociatedTasksAction) {
+        setEndAssociatedTasksAction(endAssociatedTasksAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -430,7 +632,13 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
         if (getAssignContactCategoryAction() != null)
             sb.append("AssignContactCategoryAction: ").append(getAssignContactCategoryAction()).append(",");
         if (getSendNotificationAction() != null)
-            sb.append("SendNotificationAction: ").append(getSendNotificationAction());
+            sb.append("SendNotificationAction: ").append(getSendNotificationAction()).append(",");
+        if (getCreateCaseAction() != null)
+            sb.append("CreateCaseAction: ").append(getCreateCaseAction()).append(",");
+        if (getUpdateCaseAction() != null)
+            sb.append("UpdateCaseAction: ").append(getUpdateCaseAction()).append(",");
+        if (getEndAssociatedTasksAction() != null)
+            sb.append("EndAssociatedTasksAction: ").append(getEndAssociatedTasksAction());
         sb.append("}");
         return sb.toString();
     }
@@ -465,6 +673,18 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSendNotificationAction() != null && other.getSendNotificationAction().equals(this.getSendNotificationAction()) == false)
             return false;
+        if (other.getCreateCaseAction() == null ^ this.getCreateCaseAction() == null)
+            return false;
+        if (other.getCreateCaseAction() != null && other.getCreateCaseAction().equals(this.getCreateCaseAction()) == false)
+            return false;
+        if (other.getUpdateCaseAction() == null ^ this.getUpdateCaseAction() == null)
+            return false;
+        if (other.getUpdateCaseAction() != null && other.getUpdateCaseAction().equals(this.getUpdateCaseAction()) == false)
+            return false;
+        if (other.getEndAssociatedTasksAction() == null ^ this.getEndAssociatedTasksAction() == null)
+            return false;
+        if (other.getEndAssociatedTasksAction() != null && other.getEndAssociatedTasksAction().equals(this.getEndAssociatedTasksAction()) == false)
+            return false;
         return true;
     }
 
@@ -478,6 +698,9 @@ public class RuleAction implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEventBridgeAction() == null) ? 0 : getEventBridgeAction().hashCode());
         hashCode = prime * hashCode + ((getAssignContactCategoryAction() == null) ? 0 : getAssignContactCategoryAction().hashCode());
         hashCode = prime * hashCode + ((getSendNotificationAction() == null) ? 0 : getSendNotificationAction().hashCode());
+        hashCode = prime * hashCode + ((getCreateCaseAction() == null) ? 0 : getCreateCaseAction().hashCode());
+        hashCode = prime * hashCode + ((getUpdateCaseAction() == null) ? 0 : getUpdateCaseAction().hashCode());
+        hashCode = prime * hashCode + ((getEndAssociatedTasksAction() == null) ? 0 : getEndAssociatedTasksAction().hashCode());
         return hashCode;
     }
 

@@ -78,13 +78,13 @@ public class RecommendationJobContainerConfigJsonUnmarshaller implements Unmarsh
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("DataInputConfig", targetDepth)) {
-                    context.nextToken();
-                    recommendationJobContainerConfig.setDataInputConfig(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("SupportedEndpointType", targetDepth)) {
                     context.nextToken();
                     recommendationJobContainerConfig.setSupportedEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataInputConfig", targetDepth)) {
+                    context.nextToken();
+                    recommendationJobContainerConfig.setDataInputConfig(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SupportedResponseMIMETypes", targetDepth)) {
                     context.nextToken();

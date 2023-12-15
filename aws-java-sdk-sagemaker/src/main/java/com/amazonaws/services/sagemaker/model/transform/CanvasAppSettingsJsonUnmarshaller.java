@@ -67,13 +67,13 @@ public class CanvasAppSettingsJsonUnmarshaller implements Unmarshaller<CanvasApp
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("KendraSettings", targetDepth)) {
-                    context.nextToken();
-                    canvasAppSettings.setKendraSettings(KendraSettingsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("DirectDeploySettings", targetDepth)) {
                     context.nextToken();
                     canvasAppSettings.setDirectDeploySettings(DirectDeploySettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("KendraSettings", targetDepth)) {
+                    context.nextToken();
+                    canvasAppSettings.setKendraSettings(KendraSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

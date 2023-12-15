@@ -104,8 +104,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy
-     * mode).
+     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.
      * </p>
      * </li>
      * </ul>
@@ -366,8 +366,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy
-     * mode).
+     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.
      * </p>
      * </li>
      * </ul>
@@ -418,8 +418,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in
-     *        legacy mode).
+     *        <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5
+     *        wrapping algorithm.
      *        </p>
      *        </li>
      * @see AlgorithmSpec
@@ -476,8 +476,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy
-     * mode).
+     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.
      * </p>
      * </li>
      * </ul>
@@ -527,8 +527,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in
-     *         legacy mode).
+     *         <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5
+     *         wrapping algorithm.
      *         </p>
      *         </li>
      * @see AlgorithmSpec
@@ -585,8 +585,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy
-     * mode).
+     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.
      * </p>
      * </li>
      * </ul>
@@ -637,8 +637,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in
-     *        legacy mode).
+     *        <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5
+     *        wrapping algorithm.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -697,8 +697,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy
-     * mode).
+     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.
      * </p>
      * </li>
      * </ul>
@@ -749,8 +749,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in
-     *        legacy mode).
+     *        <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5
+     *        wrapping algorithm.
      *        </p>
      *        </li>
      * @see AlgorithmSpec
@@ -807,8 +807,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy
-     * mode).
+     * <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping
+     * algorithm.
      * </p>
      * </li>
      * </ul>
@@ -859,8 +859,8 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in
-     *        legacy mode).
+     *        <b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5
+     *        wrapping algorithm.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

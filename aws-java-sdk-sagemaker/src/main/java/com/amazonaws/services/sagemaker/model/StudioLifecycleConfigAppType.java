@@ -22,8 +22,10 @@ public enum StudioLifecycleConfigAppType {
 
     JupyterServer("JupyterServer"),
     KernelGateway("KernelGateway"),
-    JupyterLab("JupyterLab"),
-    CodeEditor("CodeEditor");
+    VSCode("VSCode"),
+    Savitur("Savitur"),
+    CodeEditor("CodeEditor"),
+    JupyterLab("JupyterLab");
 
     private String value;
 

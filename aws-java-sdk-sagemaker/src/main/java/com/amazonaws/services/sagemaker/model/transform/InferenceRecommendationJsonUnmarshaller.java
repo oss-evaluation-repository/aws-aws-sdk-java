@@ -48,6 +48,10 @@ public class InferenceRecommendationJsonUnmarshaller implements Unmarshaller<Inf
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("RecommendationId", targetDepth)) {
+                    context.nextToken();
+                    inferenceRecommendation.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Metrics", targetDepth)) {
                     context.nextToken();
                     inferenceRecommendation.setMetrics(RecommendationMetricsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -59,10 +63,6 @@ public class InferenceRecommendationJsonUnmarshaller implements Unmarshaller<Inf
                 if (context.testExpression("ModelConfiguration", targetDepth)) {
                     context.nextToken();
                     inferenceRecommendation.setModelConfiguration(ModelConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("RecommendationId", targetDepth)) {
-                    context.nextToken();
-                    inferenceRecommendation.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InvocationEndTime", targetDepth)) {
                     context.nextToken();

@@ -21,7 +21,10 @@ import javax.annotation.Generated;
 public enum AwsManagedHumanLoopRequestSource {
 
     AWSRekognitionDetectModerationLabelsImageV3("AWS/Rekognition/DetectModerationLabels/Image/V3"),
-    AWSTextractAnalyzeDocumentFormsV1("AWS/Textract/AnalyzeDocument/Forms/V1");
+    AWSTextractAnalyzeDocumentFormsV1("AWS/Textract/AnalyzeDocument/Forms/V1"),
+    AWSTextractAnalyzeExpense("AWS/Textract/AnalyzeExpense"),
+    AWSHandshakeVerifyIdentity("AWS/Handshake/VerifyIdentity"),
+    AWSBedrockModelEvaluation("AWS/Bedrock/ModelEvaluation");
 
     private String value;
 

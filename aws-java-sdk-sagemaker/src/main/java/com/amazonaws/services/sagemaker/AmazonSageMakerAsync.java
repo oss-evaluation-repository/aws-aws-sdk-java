@@ -441,7 +441,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2"
      * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
      * </p>
      * </note>
@@ -479,7 +479,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2"
      * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
      * </p>
      * </note>
@@ -526,7 +526,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2"
      * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
      * </p>
      * </note>
@@ -571,7 +571,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <p>
      * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2"
      * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
      * </p>
      * </note>
@@ -3943,6 +3943,51 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DeleteCodeRepositoryResult> deleteCodeRepositoryAsync(DeleteCodeRepositoryRequest deleteCodeRepositoryRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCodeRepositoryRequest, DeleteCodeRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified compilation job. This action deletes only the compilation job resource in Amazon SageMaker.
+     * It doesn't delete other resources that are related to that job, such as the model artifacts that the job creates,
+     * the compilation logs in CloudWatch, the compiled model, or the IAM role.
+     * </p>
+     * <p>
+     * You can delete a compilation job only if its current status is <code>COMPLETED</code>, <code>FAILED</code>, or
+     * <code>STOPPED</code>. If the job status is <code>STARTING</code> or <code>INPROGRESS</code>, stop the job, and
+     * then delete it after its status becomes <code>STOPPED</code>.
+     * </p>
+     * 
+     * @param deleteCompilationJobRequest
+     * @return A Java Future containing the result of the DeleteCompilationJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteCompilationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCompilationJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCompilationJobResult> deleteCompilationJobAsync(DeleteCompilationJobRequest deleteCompilationJobRequest);
+
+    /**
+     * <p>
+     * Deletes the specified compilation job. This action deletes only the compilation job resource in Amazon SageMaker.
+     * It doesn't delete other resources that are related to that job, such as the model artifacts that the job creates,
+     * the compilation logs in CloudWatch, the compiled model, or the IAM role.
+     * </p>
+     * <p>
+     * You can delete a compilation job only if its current status is <code>COMPLETED</code>, <code>FAILED</code>, or
+     * <code>STOPPED</code>. If the job status is <code>STARTING</code> or <code>INPROGRESS</code>, stop the job, and
+     * then delete it after its status becomes <code>STOPPED</code>.
+     * </p>
+     * 
+     * @param deleteCompilationJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCompilationJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteCompilationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCompilationJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCompilationJobResult> deleteCompilationJobAsync(DeleteCompilationJobRequest deleteCompilationJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCompilationJobRequest, DeleteCompilationJobResult> asyncHandler);
 
     /**
      * <p>

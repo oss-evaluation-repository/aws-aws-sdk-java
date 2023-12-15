@@ -32,6 +32,8 @@ public class CreateAppRequestMarshaller {
             .marshallLocationName("DomainId").build();
     private static final MarshallingInfo<String> USERPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserProfileName").build();
+    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SpaceName").build();
     private static final MarshallingInfo<String> APPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AppType").build();
     private static final MarshallingInfo<String> APPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -40,8 +42,6 @@ public class CreateAppRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCESPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceSpec").build();
-    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("SpaceName").build();
 
     private static final CreateAppRequestMarshaller instance = new CreateAppRequestMarshaller();
 
@@ -61,11 +61,11 @@ public class CreateAppRequestMarshaller {
         try {
             protocolMarshaller.marshall(createAppRequest.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(createAppRequest.getUserProfileName(), USERPROFILENAME_BINDING);
+            protocolMarshaller.marshall(createAppRequest.getSpaceName(), SPACENAME_BINDING);
             protocolMarshaller.marshall(createAppRequest.getAppType(), APPTYPE_BINDING);
             protocolMarshaller.marshall(createAppRequest.getAppName(), APPNAME_BINDING);
             protocolMarshaller.marshall(createAppRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getResourceSpec(), RESOURCESPEC_BINDING);
-            protocolMarshaller.marshall(createAppRequest.getSpaceName(), SPACENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

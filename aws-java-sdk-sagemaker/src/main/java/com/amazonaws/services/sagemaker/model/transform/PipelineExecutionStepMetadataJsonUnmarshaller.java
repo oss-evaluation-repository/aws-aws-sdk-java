@@ -84,6 +84,10 @@ public class PipelineExecutionStepMetadataJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     pipelineExecutionStepMetadata.setLambda(LambdaStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EMR", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionStepMetadata.setEMR(EMRStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("QualityCheck", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionStepMetadata.setQualityCheck(QualityCheckStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
@@ -91,10 +95,6 @@ public class PipelineExecutionStepMetadataJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("ClarifyCheck", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionStepMetadata.setClarifyCheck(ClarifyCheckStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("EMR", targetDepth)) {
-                    context.nextToken();
-                    pipelineExecutionStepMetadata.setEMR(EMRStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Fail", targetDepth)) {
                     context.nextToken();

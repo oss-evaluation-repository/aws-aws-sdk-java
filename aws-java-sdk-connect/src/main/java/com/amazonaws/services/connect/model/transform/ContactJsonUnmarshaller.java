@@ -100,6 +100,22 @@ public class ContactJsonUnmarshaller implements Unmarshaller<Contact, JsonUnmars
                     context.nextToken();
                     contact.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LastPausedTimestamp", targetDepth)) {
+                    context.nextToken();
+                    contact.setLastPausedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("LastResumedTimestamp", targetDepth)) {
+                    context.nextToken();
+                    contact.setLastResumedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("TotalPauseCount", targetDepth)) {
+                    context.nextToken();
+                    contact.setTotalPauseCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TotalPauseDurationInSeconds", targetDepth)) {
+                    context.nextToken();
+                    contact.setTotalPauseDurationInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ScheduledTimestamp", targetDepth)) {
                     context.nextToken();
                     contact.setScheduledTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

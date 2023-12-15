@@ -31,12 +31,12 @@ public class DeleteAppRequestMarshaller {
             .marshallLocationName("DomainId").build();
     private static final MarshallingInfo<String> USERPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserProfileName").build();
+    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SpaceName").build();
     private static final MarshallingInfo<String> APPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AppType").build();
     private static final MarshallingInfo<String> APPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AppName").build();
-    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("SpaceName").build();
 
     private static final DeleteAppRequestMarshaller instance = new DeleteAppRequestMarshaller();
 
@@ -56,9 +56,9 @@ public class DeleteAppRequestMarshaller {
         try {
             protocolMarshaller.marshall(deleteAppRequest.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(deleteAppRequest.getUserProfileName(), USERPROFILENAME_BINDING);
+            protocolMarshaller.marshall(deleteAppRequest.getSpaceName(), SPACENAME_BINDING);
             protocolMarshaller.marshall(deleteAppRequest.getAppType(), APPTYPE_BINDING);
             protocolMarshaller.marshall(deleteAppRequest.getAppName(), APPNAME_BINDING);
-            protocolMarshaller.marshall(deleteAppRequest.getSpaceName(), SPACENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

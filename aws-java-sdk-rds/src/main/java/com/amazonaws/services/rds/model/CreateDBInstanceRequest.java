@@ -322,7 +322,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+     * General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
      * </p>
      * </li>
      * <li>
@@ -2047,7 +2047,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+     *        General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
      *        </p>
      *        </li>
      *        <li>
@@ -3985,7 +3985,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+     * General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
      * </p>
      * </li>
      * <li>
@@ -4184,7 +4184,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+     *        General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
      *        </p>
      *        </li>
      *        <li>
@@ -4389,7 +4389,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+     * General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
      * </p>
      * </li>
      * <li>
@@ -4587,7 +4587,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+     *         General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
      *         </p>
      *         </li>
      *         <li>
@@ -4792,7 +4792,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+     * General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
      * </p>
      * </li>
      * <li>
@@ -4991,7 +4991,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to 64000.
+     *        General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.
      *        </p>
      *        </li>
      *        <li>

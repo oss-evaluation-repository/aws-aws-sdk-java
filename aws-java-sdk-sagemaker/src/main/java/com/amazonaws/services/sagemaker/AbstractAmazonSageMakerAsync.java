@@ -922,6 +922,19 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCompilationJobResult> deleteCompilationJobAsync(DeleteCompilationJobRequest request) {
+
+        return deleteCompilationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCompilationJobResult> deleteCompilationJobAsync(DeleteCompilationJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCompilationJobRequest, DeleteCompilationJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteContextResult> deleteContextAsync(DeleteContextRequest request) {
 
         return deleteContextAsync(request, null);

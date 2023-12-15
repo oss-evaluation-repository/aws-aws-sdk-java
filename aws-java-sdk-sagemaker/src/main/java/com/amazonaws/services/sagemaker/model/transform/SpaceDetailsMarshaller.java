@@ -37,14 +37,14 @@ public class SpaceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> SPACEDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceDisplayName").build();
     private static final MarshallingInfo<StructuredPojo> SPACESETTINGSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceSettingsSummary").build();
     private static final MarshallingInfo<StructuredPojo> SPACESHARINGSETTINGSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceSharingSettingsSummary").build();
     private static final MarshallingInfo<StructuredPojo> OWNERSHIPSETTINGSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnershipSettingsSummary").build();
+    private static final MarshallingInfo<String> SPACEDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceDisplayName").build();
 
     private static final SpaceDetailsMarshaller instance = new SpaceDetailsMarshaller();
 
@@ -67,10 +67,10 @@ public class SpaceDetailsMarshaller {
             protocolMarshaller.marshall(spaceDetails.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(spaceDetails.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(spaceDetails.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
-            protocolMarshaller.marshall(spaceDetails.getSpaceDisplayName(), SPACEDISPLAYNAME_BINDING);
             protocolMarshaller.marshall(spaceDetails.getSpaceSettingsSummary(), SPACESETTINGSSUMMARY_BINDING);
             protocolMarshaller.marshall(spaceDetails.getSpaceSharingSettingsSummary(), SPACESHARINGSETTINGSSUMMARY_BINDING);
             protocolMarshaller.marshall(spaceDetails.getOwnershipSettingsSummary(), OWNERSHIPSETTINGSSUMMARY_BINDING);
+            protocolMarshaller.marshall(spaceDetails.getSpaceDisplayName(), SPACEDISPLAYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

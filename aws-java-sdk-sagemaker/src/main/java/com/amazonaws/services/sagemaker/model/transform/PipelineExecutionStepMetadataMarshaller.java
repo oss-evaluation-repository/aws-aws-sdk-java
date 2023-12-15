@@ -45,12 +45,12 @@ public class PipelineExecutionStepMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Callback").build();
     private static final MarshallingInfo<StructuredPojo> LAMBDA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Lambda").build();
+    private static final MarshallingInfo<StructuredPojo> EMR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EMR").build();
     private static final MarshallingInfo<StructuredPojo> QUALITYCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QualityCheck").build();
     private static final MarshallingInfo<StructuredPojo> CLARIFYCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClarifyCheck").build();
-    private static final MarshallingInfo<StructuredPojo> EMR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EMR").build();
     private static final MarshallingInfo<StructuredPojo> FAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Fail").build();
     private static final MarshallingInfo<StructuredPojo> AUTOMLJOB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -81,9 +81,9 @@ public class PipelineExecutionStepMetadataMarshaller {
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getCondition(), CONDITION_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getCallback(), CALLBACK_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getLambda(), LAMBDA_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionStepMetadata.getEMR(), EMR_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getQualityCheck(), QUALITYCHECK_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getClarifyCheck(), CLARIFYCHECK_BINDING);
-            protocolMarshaller.marshall(pipelineExecutionStepMetadata.getEMR(), EMR_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getFail(), FAIL_BINDING);
             protocolMarshaller.marshall(pipelineExecutionStepMetadata.getAutoMLJob(), AUTOMLJOB_BINDING);
         } catch (Exception e) {

@@ -21,22 +21,22 @@ import javax.annotation.Generated;
 public enum AutoMLJobSecondaryStatus {
 
     Starting("Starting"),
-    AnalyzingData("AnalyzingData"),
-    FeatureEngineering("FeatureEngineering"),
-    ModelTuning("ModelTuning"),
     MaxCandidatesReached("MaxCandidatesReached"),
     Failed("Failed"),
     Stopped("Stopped"),
     MaxAutoMLJobRuntimeReached("MaxAutoMLJobRuntimeReached"),
     Stopping("Stopping"),
     CandidateDefinitionsGenerated("CandidateDefinitionsGenerated"),
-    GeneratingExplainabilityReport("GeneratingExplainabilityReport"),
     Completed("Completed"),
     ExplainabilityError("ExplainabilityError"),
     DeployingModel("DeployingModel"),
     ModelDeploymentError("ModelDeploymentError"),
     GeneratingModelInsightsReport("GeneratingModelInsightsReport"),
     ModelInsightsError("ModelInsightsError"),
+    AnalyzingData("AnalyzingData"),
+    FeatureEngineering("FeatureEngineering"),
+    ModelTuning("ModelTuning"),
+    GeneratingExplainabilityReport("GeneratingExplainabilityReport"),
     TrainingModels("TrainingModels"),
     PreTraining("PreTraining");
 

@@ -743,7 +743,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2"
      * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
      * </p>
      * </note>
@@ -832,7 +832,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code> in <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2"
      * >Migrate a CreateAutoMLJob to CreateAutoMLJobV2</a>.
      * </p>
      * </note>
@@ -3557,6 +3557,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceLimitExceededException
      *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.CreatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline" target="_top">AWS API
      *      Documentation</a>
@@ -4681,6 +4684,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param deleteAlgorithmRequest
      * @return Result of the DeleteAlgorithm operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.DeleteAlgorithm
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAlgorithm" target="_top">AWS API
      *      Documentation</a>
@@ -5064,6 +5070,70 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCodeRepositoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCodeRepositoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified compilation job. This action deletes only the compilation job resource in Amazon SageMaker.
+     * It doesn't delete other resources that are related to that job, such as the model artifacts that the job creates,
+     * the compilation logs in CloudWatch, the compiled model, or the IAM role.
+     * </p>
+     * <p>
+     * You can delete a compilation job only if its current status is <code>COMPLETED</code>, <code>FAILED</code>, or
+     * <code>STOPPED</code>. If the job status is <code>STARTING</code> or <code>INPROGRESS</code>, stop the job, and
+     * then delete it after its status becomes <code>STOPPED</code>.
+     * </p>
+     * 
+     * @param deleteCompilationJobRequest
+     * @return Result of the DeleteCompilationJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteCompilationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCompilationJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteCompilationJobResult deleteCompilationJob(DeleteCompilationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCompilationJob(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCompilationJobResult executeDeleteCompilationJob(DeleteCompilationJobRequest deleteCompilationJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCompilationJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCompilationJobRequest> request = null;
+        Response<DeleteCompilationJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCompilationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCompilationJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCompilationJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCompilationJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCompilationJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6841,6 +6911,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @return Result of the DeletePipeline operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.DeletePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline" target="_top">AWS API
      *      Documentation</a>
@@ -10894,6 +10967,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @return Result of the DescribeUserProfile operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
      * @sample AmazonSageMaker.DescribeUserProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile" target="_top">AWS
      *      API Documentation</a>
@@ -15988,6 +16064,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param putModelPackageGroupPolicyRequest
      * @return Result of the PutModelPackageGroupPolicy operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.PutModelPackageGroupPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -16357,6 +16436,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceLimitExceededException
      *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.SendPipelineExecutionStepFailure
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure"
      *      target="_top">AWS API Documentation</a>
@@ -16422,6 +16504,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceLimitExceededException
      *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.SendPipelineExecutionStepSuccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess"
      *      target="_top">AWS API Documentation</a>
@@ -16730,6 +16815,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceLimitExceededException
      *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
      *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.StartPipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartPipelineExecution"
      *      target="_top">AWS API Documentation</a>
@@ -17414,6 +17502,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @return Result of the StopPipelineExecution operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.StopPipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution"
      *      target="_top">AWS API Documentation</a>
@@ -17892,6 +17983,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param updateCodeRepositoryRequest
      * @return Result of the UpdateCodeRepository operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.UpdateCodeRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository" target="_top">AWS
      *      API Documentation</a>
@@ -18399,6 +18493,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @return Result of the UpdateFeatureGroup operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
      * @sample AmazonSageMaker.UpdateFeatureGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup" target="_top">AWS
      *      API Documentation</a>
@@ -18948,6 +19045,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param updateModelPackageRequest
      * @return Result of the UpdateModelPackage operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.UpdateModelPackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelPackage" target="_top">AWS
      *      API Documentation</a>
@@ -19251,6 +19351,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @return Result of the UpdatePipeline operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.UpdatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipeline" target="_top">AWS API
      *      Documentation</a>
@@ -19308,6 +19411,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @return Result of the UpdatePipelineExecution operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.UpdatePipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution"
      *      target="_top">AWS API Documentation</a>
@@ -19373,6 +19479,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param updateProjectRequest
      * @return Result of the UpdateProject operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.UpdateProject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateProject" target="_top">AWS API
      *      Documentation</a>
@@ -19493,6 +19602,9 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * @return Result of the UpdateTrainingJob operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
      * @sample AmazonSageMaker.UpdateTrainingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob" target="_top">AWS
      *      API Documentation</a>

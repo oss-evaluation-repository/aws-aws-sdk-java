@@ -132,6 +132,8 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
 
     private TransformOutput transformOutput;
 
+    private BatchDataCaptureConfig dataCaptureConfig;
+
     private TransformResources transformResources;
     /**
      * <p>
@@ -175,8 +177,6 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Tag> tags;
-
-    private BatchDataCaptureConfig dataCaptureConfig;
 
     /**
      * <p>
@@ -1002,6 +1002,32 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param dataCaptureConfig
+     */
+
+    public void setDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        this.dataCaptureConfig = dataCaptureConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public BatchDataCaptureConfig getDataCaptureConfig() {
+        return this.dataCaptureConfig;
+    }
+
+    /**
+     * @param dataCaptureConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransformJob withDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
+        setDataCaptureConfig(dataCaptureConfig);
+        return this;
+    }
+
+    /**
      * @param transformResources
      */
 
@@ -1362,32 +1388,6 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @param dataCaptureConfig
-     */
-
-    public void setDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
-        this.dataCaptureConfig = dataCaptureConfig;
-    }
-
-    /**
-     * @return
-     */
-
-    public BatchDataCaptureConfig getDataCaptureConfig() {
-        return this.dataCaptureConfig;
-    }
-
-    /**
-     * @param dataCaptureConfig
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TransformJob withDataCaptureConfig(BatchDataCaptureConfig dataCaptureConfig) {
-        setDataCaptureConfig(dataCaptureConfig);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1423,6 +1423,8 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
             sb.append("TransformInput: ").append(getTransformInput()).append(",");
         if (getTransformOutput() != null)
             sb.append("TransformOutput: ").append(getTransformOutput()).append(",");
+        if (getDataCaptureConfig() != null)
+            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig()).append(",");
         if (getTransformResources() != null)
             sb.append("TransformResources: ").append(getTransformResources()).append(",");
         if (getCreationTime() != null)
@@ -1440,9 +1442,7 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
         if (getExperimentConfig() != null)
             sb.append("ExperimentConfig: ").append(getExperimentConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getDataCaptureConfig() != null)
-            sb.append("DataCaptureConfig: ").append(getDataCaptureConfig());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1505,6 +1505,10 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTransformOutput() != null && other.getTransformOutput().equals(this.getTransformOutput()) == false)
             return false;
+        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
+            return false;
+        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
+            return false;
         if (other.getTransformResources() == null ^ this.getTransformResources() == null)
             return false;
         if (other.getTransformResources() != null && other.getTransformResources().equals(this.getTransformResources()) == false)
@@ -1541,10 +1545,6 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getDataCaptureConfig() == null ^ this.getDataCaptureConfig() == null)
-            return false;
-        if (other.getDataCaptureConfig() != null && other.getDataCaptureConfig().equals(this.getDataCaptureConfig()) == false)
-            return false;
         return true;
     }
 
@@ -1565,6 +1565,7 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getTransformInput() == null) ? 0 : getTransformInput().hashCode());
         hashCode = prime * hashCode + ((getTransformOutput() == null) ? 0 : getTransformOutput().hashCode());
+        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         hashCode = prime * hashCode + ((getTransformResources() == null) ? 0 : getTransformResources().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTransformStartTime() == null) ? 0 : getTransformStartTime().hashCode());
@@ -1574,7 +1575,6 @@ public class TransformJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDataProcessing() == null) ? 0 : getDataProcessing().hashCode());
         hashCode = prime * hashCode + ((getExperimentConfig() == null) ? 0 : getExperimentConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getDataCaptureConfig() == null) ? 0 : getDataCaptureConfig().hashCode());
         return hashCode;
     }
 

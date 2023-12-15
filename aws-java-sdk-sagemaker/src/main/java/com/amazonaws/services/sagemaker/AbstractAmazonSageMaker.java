@@ -369,6 +369,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteCompilationJobResult deleteCompilationJob(DeleteCompilationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteContextResult deleteContext(DeleteContextRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -52,6 +52,10 @@ public class RecommendationJobInferenceBenchmarkJsonUnmarshaller implements Unma
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setMetrics(RecommendationMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EndpointMetrics", targetDepth)) {
+                    context.nextToken();
+                    recommendationJobInferenceBenchmark.setEndpointMetrics(InferenceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("EndpointConfiguration", targetDepth)) {
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setEndpointConfiguration(EndpointOutputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
@@ -63,10 +67,6 @@ public class RecommendationJobInferenceBenchmarkJsonUnmarshaller implements Unma
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     recommendationJobInferenceBenchmark.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("EndpointMetrics", targetDepth)) {
-                    context.nextToken();
-                    recommendationJobInferenceBenchmark.setEndpointMetrics(InferenceMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InvocationEndTime", targetDepth)) {
                     context.nextToken();

@@ -25,7 +25,9 @@ public enum RecommendationJobStatus {
     COMPLETED("COMPLETED"),
     FAILED("FAILED"),
     STOPPING("STOPPING"),
-    STOPPED("STOPPED");
+    STOPPED("STOPPED"),
+    DELETING("DELETING"),
+    DELETED("DELETED");
 
     private String value;
 

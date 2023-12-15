@@ -2054,6 +2054,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<PauseContactResult> pauseContactAsync(PauseContactRequest request) {
+
+        return pauseContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PauseContactResult> pauseContactAsync(PauseContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<PauseContactRequest, PauseContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutUserStatusResult> putUserStatusAsync(PutUserStatusRequest request) {
 
         return putUserStatusAsync(request, null);
@@ -2088,6 +2101,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<ReplicateInstanceResult> replicateInstanceAsync(ReplicateInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<ReplicateInstanceRequest, ReplicateInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResumeContactResult> resumeContactAsync(ResumeContactRequest request) {
+
+        return resumeContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResumeContactResult> resumeContactAsync(ResumeContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResumeContactRequest, ResumeContactResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -88,25 +88,25 @@ public class SearchRecordJsonUnmarshaller implements Unmarshaller<SearchRecord, 
                     context.nextToken();
                     searchRecord.setFeatureGroup(FeatureGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Project", targetDepth)) {
-                    context.nextToken();
-                    searchRecord.setProject(ProjectJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("FeatureMetadata", targetDepth)) {
                     context.nextToken();
                     searchRecord.setFeatureMetadata(FeatureMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Project", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setProject(ProjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("HyperParameterTuningJob", targetDepth)) {
                     context.nextToken();
                     searchRecord.setHyperParameterTuningJob(HyperParameterTuningJobSearchEntityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("Model", targetDepth)) {
-                    context.nextToken();
-                    searchRecord.setModel(ModelDashboardModelJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("ModelCard", targetDepth)) {
                     context.nextToken();
                     searchRecord.setModelCard(ModelCardJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Model", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setModel(ModelDashboardModelJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SourceType {
 
     SALESFORCE("SALESFORCE"),
-    ZENDESK("ZENDESK");
+    ZENDESK("ZENDESK"),
+    CASES("CASES");
 
     private String value;
 

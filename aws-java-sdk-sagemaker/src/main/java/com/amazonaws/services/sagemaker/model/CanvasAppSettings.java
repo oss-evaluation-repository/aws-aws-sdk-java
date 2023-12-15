@@ -54,16 +54,16 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
     private java.util.List<IdentityProviderOAuthSetting> identityProviderOAuthSettings;
     /**
      * <p>
-     * The settings for document querying.
-     * </p>
-     */
-    private KendraSettings kendraSettings;
-    /**
-     * <p>
      * The model deployment settings for the SageMaker Canvas application.
      * </p>
      */
     private DirectDeploySettings directDeploySettings;
+    /**
+     * <p>
+     * The settings for document querying.
+     * </p>
+     */
+    private KendraSettings kendraSettings;
 
     /**
      * <p>
@@ -257,46 +257,6 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The settings for document querying.
-     * </p>
-     * 
-     * @param kendraSettings
-     *        The settings for document querying.
-     */
-
-    public void setKendraSettings(KendraSettings kendraSettings) {
-        this.kendraSettings = kendraSettings;
-    }
-
-    /**
-     * <p>
-     * The settings for document querying.
-     * </p>
-     * 
-     * @return The settings for document querying.
-     */
-
-    public KendraSettings getKendraSettings() {
-        return this.kendraSettings;
-    }
-
-    /**
-     * <p>
-     * The settings for document querying.
-     * </p>
-     * 
-     * @param kendraSettings
-     *        The settings for document querying.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CanvasAppSettings withKendraSettings(KendraSettings kendraSettings) {
-        setKendraSettings(kendraSettings);
-        return this;
-    }
-
-    /**
-     * <p>
      * The model deployment settings for the SageMaker Canvas application.
      * </p>
      * 
@@ -336,6 +296,46 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The settings for document querying.
+     * </p>
+     * 
+     * @param kendraSettings
+     *        The settings for document querying.
+     */
+
+    public void setKendraSettings(KendraSettings kendraSettings) {
+        this.kendraSettings = kendraSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for document querying.
+     * </p>
+     * 
+     * @return The settings for document querying.
+     */
+
+    public KendraSettings getKendraSettings() {
+        return this.kendraSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for document querying.
+     * </p>
+     * 
+     * @param kendraSettings
+     *        The settings for document querying.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CanvasAppSettings withKendraSettings(KendraSettings kendraSettings) {
+        setKendraSettings(kendraSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,10 +355,10 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
             sb.append("WorkspaceSettings: ").append(getWorkspaceSettings()).append(",");
         if (getIdentityProviderOAuthSettings() != null)
             sb.append("IdentityProviderOAuthSettings: ").append(getIdentityProviderOAuthSettings()).append(",");
-        if (getKendraSettings() != null)
-            sb.append("KendraSettings: ").append(getKendraSettings()).append(",");
         if (getDirectDeploySettings() != null)
-            sb.append("DirectDeploySettings: ").append(getDirectDeploySettings());
+            sb.append("DirectDeploySettings: ").append(getDirectDeploySettings()).append(",");
+        if (getKendraSettings() != null)
+            sb.append("KendraSettings: ").append(getKendraSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -391,13 +391,13 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
         if (other.getIdentityProviderOAuthSettings() != null
                 && other.getIdentityProviderOAuthSettings().equals(this.getIdentityProviderOAuthSettings()) == false)
             return false;
-        if (other.getKendraSettings() == null ^ this.getKendraSettings() == null)
-            return false;
-        if (other.getKendraSettings() != null && other.getKendraSettings().equals(this.getKendraSettings()) == false)
-            return false;
         if (other.getDirectDeploySettings() == null ^ this.getDirectDeploySettings() == null)
             return false;
         if (other.getDirectDeploySettings() != null && other.getDirectDeploySettings().equals(this.getDirectDeploySettings()) == false)
+            return false;
+        if (other.getKendraSettings() == null ^ this.getKendraSettings() == null)
+            return false;
+        if (other.getKendraSettings() != null && other.getKendraSettings().equals(this.getKendraSettings()) == false)
             return false;
         return true;
     }
@@ -411,8 +411,8 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getModelRegisterSettings() == null) ? 0 : getModelRegisterSettings().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceSettings() == null) ? 0 : getWorkspaceSettings().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderOAuthSettings() == null) ? 0 : getIdentityProviderOAuthSettings().hashCode());
-        hashCode = prime * hashCode + ((getKendraSettings() == null) ? 0 : getKendraSettings().hashCode());
         hashCode = prime * hashCode + ((getDirectDeploySettings() == null) ? 0 : getDirectDeploySettings().hashCode());
+        hashCode = prime * hashCode + ((getKendraSettings() == null) ? 0 : getKendraSettings().hashCode());
         return hashCode;
     }
 

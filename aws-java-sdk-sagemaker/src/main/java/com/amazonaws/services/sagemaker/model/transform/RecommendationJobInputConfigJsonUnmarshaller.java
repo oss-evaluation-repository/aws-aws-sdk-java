@@ -52,6 +52,10 @@ public class RecommendationJobInputConfigJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     recommendationJobInputConfig.setModelPackageVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelName", targetDepth)) {
+                    context.nextToken();
+                    recommendationJobInputConfig.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("JobDurationInSeconds", targetDepth)) {
                     context.nextToken();
                     recommendationJobInputConfig.setJobDurationInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -88,10 +92,6 @@ public class RecommendationJobInputConfigJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("VpcConfig", targetDepth)) {
                     context.nextToken();
                     recommendationJobInputConfig.setVpcConfig(RecommendationJobVpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("ModelName", targetDepth)) {
-                    context.nextToken();
-                    recommendationJobInputConfig.setModelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

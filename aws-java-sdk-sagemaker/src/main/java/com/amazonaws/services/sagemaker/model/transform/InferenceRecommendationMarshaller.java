@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InferenceRecommendationMarshaller {
 
+    private static final MarshallingInfo<String> RECOMMENDATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationId").build();
     private static final MarshallingInfo<StructuredPojo> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Metrics").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> MODELCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelConfiguration").build();
-    private static final MarshallingInfo<String> RECOMMENDATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationId").build();
     private static final MarshallingInfo<java.util.Date> INVOCATIONENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvocationEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> INVOCATIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -56,10 +56,10 @@ public class InferenceRecommendationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(inferenceRecommendation.getRecommendationId(), RECOMMENDATIONID_BINDING);
             protocolMarshaller.marshall(inferenceRecommendation.getMetrics(), METRICS_BINDING);
             protocolMarshaller.marshall(inferenceRecommendation.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(inferenceRecommendation.getModelConfiguration(), MODELCONFIGURATION_BINDING);
-            protocolMarshaller.marshall(inferenceRecommendation.getRecommendationId(), RECOMMENDATIONID_BINDING);
             protocolMarshaller.marshall(inferenceRecommendation.getInvocationEndTime(), INVOCATIONENDTIME_BINDING);
             protocolMarshaller.marshall(inferenceRecommendation.getInvocationStartTime(), INVOCATIONSTARTTIME_BINDING);
         } catch (Exception e) {

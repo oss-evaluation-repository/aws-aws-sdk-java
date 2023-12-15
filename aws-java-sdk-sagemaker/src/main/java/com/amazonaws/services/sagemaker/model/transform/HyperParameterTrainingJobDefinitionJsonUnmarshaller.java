@@ -92,6 +92,11 @@ public class HyperParameterTrainingJobDefinitionJsonUnmarshaller implements Unma
                     context.nextToken();
                     hyperParameterTrainingJobDefinition.setResourceConfig(ResourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("HyperParameterTuningResourceConfig", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobDefinition.setHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfigJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
                 if (context.testExpression("StoppingCondition", targetDepth)) {
                     context.nextToken();
                     hyperParameterTrainingJobDefinition.setStoppingCondition(StoppingConditionJsonUnmarshaller.getInstance().unmarshall(context));
@@ -115,11 +120,6 @@ public class HyperParameterTrainingJobDefinitionJsonUnmarshaller implements Unma
                 if (context.testExpression("RetryStrategy", targetDepth)) {
                     context.nextToken();
                     hyperParameterTrainingJobDefinition.setRetryStrategy(RetryStrategyJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("HyperParameterTuningResourceConfig", targetDepth)) {
-                    context.nextToken();
-                    hyperParameterTrainingJobDefinition.setHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfigJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
                 }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();

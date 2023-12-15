@@ -114,6 +114,10 @@ public class DescribeHyperParameterTuningJobResultJsonUnmarshaller implements Un
                     describeHyperParameterTuningJobResult.setWarmStartConfig(HyperParameterTuningJobWarmStartConfigJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("Autotune", targetDepth)) {
+                    context.nextToken();
+                    describeHyperParameterTuningJobResult.setAutotune(AutotuneJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     describeHyperParameterTuningJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
@@ -127,10 +131,6 @@ public class DescribeHyperParameterTuningJobResultJsonUnmarshaller implements Un
                     context.nextToken();
                     describeHyperParameterTuningJobResult.setConsumedResources(HyperParameterTuningJobConsumedResourcesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
-                }
-                if (context.testExpression("Autotune", targetDepth)) {
-                    context.nextToken();
-                    describeHyperParameterTuningJobResult.setAutotune(AutotuneJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

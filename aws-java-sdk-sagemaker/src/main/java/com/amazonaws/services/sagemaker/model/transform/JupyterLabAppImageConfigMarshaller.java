@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class JupyterLabAppImageConfigMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> FILESYSTEMCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemConfig").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerConfig").build();
 
@@ -46,6 +48,7 @@ public class JupyterLabAppImageConfigMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(jupyterLabAppImageConfig.getFileSystemConfig(), FILESYSTEMCONFIG_BINDING);
             protocolMarshaller.marshall(jupyterLabAppImageConfig.getContainerConfig(), CONTAINERCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

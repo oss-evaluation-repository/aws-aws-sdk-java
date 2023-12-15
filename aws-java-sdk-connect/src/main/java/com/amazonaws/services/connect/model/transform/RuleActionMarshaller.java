@@ -37,6 +37,12 @@ public class RuleActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssignContactCategoryAction").build();
     private static final MarshallingInfo<StructuredPojo> SENDNOTIFICATIONACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SendNotificationAction").build();
+    private static final MarshallingInfo<StructuredPojo> CREATECASEACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateCaseAction").build();
+    private static final MarshallingInfo<StructuredPojo> UPDATECASEACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateCaseAction").build();
+    private static final MarshallingInfo<StructuredPojo> ENDASSOCIATEDTASKSACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndAssociatedTasksAction").build();
 
     private static final RuleActionMarshaller instance = new RuleActionMarshaller();
 
@@ -59,6 +65,9 @@ public class RuleActionMarshaller {
             protocolMarshaller.marshall(ruleAction.getEventBridgeAction(), EVENTBRIDGEACTION_BINDING);
             protocolMarshaller.marshall(ruleAction.getAssignContactCategoryAction(), ASSIGNCONTACTCATEGORYACTION_BINDING);
             protocolMarshaller.marshall(ruleAction.getSendNotificationAction(), SENDNOTIFICATIONACTION_BINDING);
+            protocolMarshaller.marshall(ruleAction.getCreateCaseAction(), CREATECASEACTION_BINDING);
+            protocolMarshaller.marshall(ruleAction.getUpdateCaseAction(), UPDATECASEACTION_BINDING);
+            protocolMarshaller.marshall(ruleAction.getEndAssociatedTasksAction(), ENDASSOCIATEDTASKSACTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

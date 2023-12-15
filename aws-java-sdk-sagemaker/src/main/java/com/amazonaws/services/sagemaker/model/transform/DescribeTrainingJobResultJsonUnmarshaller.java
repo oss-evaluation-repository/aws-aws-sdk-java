@@ -111,6 +111,10 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setResourceConfig(ResourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("WarmPoolStatus", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setWarmPoolStatus(WarmPoolStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("VpcConfig", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
@@ -220,18 +224,14 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setProfilingStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("RetryStrategy", targetDepth)) {
-                    context.nextToken();
-                    describeTrainingJobResult.setRetryStrategy(RetryStrategyJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
-                if (context.testExpression("WarmPoolStatus", targetDepth)) {
+                if (context.testExpression("RetryStrategy", targetDepth)) {
                     context.nextToken();
-                    describeTrainingJobResult.setWarmPoolStatus(WarmPoolStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                    describeTrainingJobResult.setRetryStrategy(RetryStrategyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("InfraCheckConfig", targetDepth)) {
                     context.nextToken();

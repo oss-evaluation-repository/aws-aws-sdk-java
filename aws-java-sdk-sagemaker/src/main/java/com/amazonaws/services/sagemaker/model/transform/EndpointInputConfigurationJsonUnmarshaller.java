@@ -52,6 +52,10 @@ public class EndpointInputConfigurationJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     endpointInputConfiguration.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ServerlessConfig", targetDepth)) {
+                    context.nextToken();
+                    endpointInputConfiguration.setServerlessConfig(ProductionVariantServerlessConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("InferenceSpecificationName", targetDepth)) {
                     context.nextToken();
                     endpointInputConfiguration.setInferenceSpecificationName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,10 +63,6 @@ public class EndpointInputConfigurationJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("EnvironmentParameterRanges", targetDepth)) {
                     context.nextToken();
                     endpointInputConfiguration.setEnvironmentParameterRanges(EnvironmentParameterRangesJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("ServerlessConfig", targetDepth)) {
-                    context.nextToken();
-                    endpointInputConfiguration.setServerlessConfig(ProductionVariantServerlessConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

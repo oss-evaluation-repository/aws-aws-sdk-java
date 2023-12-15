@@ -68,6 +68,18 @@ public class RuleActionJsonUnmarshaller implements Unmarshaller<RuleAction, Json
                     context.nextToken();
                     ruleAction.setSendNotificationAction(SendNotificationActionDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CreateCaseAction", targetDepth)) {
+                    context.nextToken();
+                    ruleAction.setCreateCaseAction(CreateCaseActionDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("UpdateCaseAction", targetDepth)) {
+                    context.nextToken();
+                    ruleAction.setUpdateCaseAction(UpdateCaseActionDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EndAssociatedTasksAction", targetDepth)) {
+                    context.nextToken();
+                    ruleAction.setEndAssociatedTasksAction(EndAssociatedTasksActionDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

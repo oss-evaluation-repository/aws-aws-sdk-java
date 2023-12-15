@@ -43,16 +43,16 @@ public class AutoMLProblemTypeConfig implements Serializable, Cloneable, Structu
     private TextClassificationJobConfig textClassificationJobConfig;
     /**
      * <p>
-     * Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
-     * </p>
-     */
-    private TabularJobConfig tabularJobConfig;
-    /**
-     * <p>
      * Settings used to configure an AutoML job V2 for the time-series forecasting problem type.
      * </p>
      */
     private TimeSeriesForecastingJobConfig timeSeriesForecastingJobConfig;
+    /**
+     * <p>
+     * Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
+     * </p>
+     */
+    private TabularJobConfig tabularJobConfig;
     /**
      * <p>
      * Settings used to configure an AutoML job V2 for the text generation (LLMs fine-tuning) problem type.
@@ -149,46 +149,6 @@ public class AutoMLProblemTypeConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
-     * </p>
-     * 
-     * @param tabularJobConfig
-     *        Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
-     */
-
-    public void setTabularJobConfig(TabularJobConfig tabularJobConfig) {
-        this.tabularJobConfig = tabularJobConfig;
-    }
-
-    /**
-     * <p>
-     * Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
-     * </p>
-     * 
-     * @return Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
-     */
-
-    public TabularJobConfig getTabularJobConfig() {
-        return this.tabularJobConfig;
-    }
-
-    /**
-     * <p>
-     * Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
-     * </p>
-     * 
-     * @param tabularJobConfig
-     *        Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AutoMLProblemTypeConfig withTabularJobConfig(TabularJobConfig tabularJobConfig) {
-        setTabularJobConfig(tabularJobConfig);
-        return this;
-    }
-
-    /**
-     * <p>
      * Settings used to configure an AutoML job V2 for the time-series forecasting problem type.
      * </p>
      * 
@@ -224,6 +184,46 @@ public class AutoMLProblemTypeConfig implements Serializable, Cloneable, Structu
 
     public AutoMLProblemTypeConfig withTimeSeriesForecastingJobConfig(TimeSeriesForecastingJobConfig timeSeriesForecastingJobConfig) {
         setTimeSeriesForecastingJobConfig(timeSeriesForecastingJobConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
+     * </p>
+     * 
+     * @param tabularJobConfig
+     *        Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
+     */
+
+    public void setTabularJobConfig(TabularJobConfig tabularJobConfig) {
+        this.tabularJobConfig = tabularJobConfig;
+    }
+
+    /**
+     * <p>
+     * Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
+     * </p>
+     * 
+     * @return Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
+     */
+
+    public TabularJobConfig getTabularJobConfig() {
+        return this.tabularJobConfig;
+    }
+
+    /**
+     * <p>
+     * Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
+     * </p>
+     * 
+     * @param tabularJobConfig
+     *        Settings used to configure an AutoML job V2 for the tabular problem type (regression, classification).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLProblemTypeConfig withTabularJobConfig(TabularJobConfig tabularJobConfig) {
+        setTabularJobConfig(tabularJobConfig);
         return this;
     }
 
@@ -323,10 +323,10 @@ public class AutoMLProblemTypeConfig implements Serializable, Cloneable, Structu
             sb.append("ImageClassificationJobConfig: ").append(getImageClassificationJobConfig()).append(",");
         if (getTextClassificationJobConfig() != null)
             sb.append("TextClassificationJobConfig: ").append(getTextClassificationJobConfig()).append(",");
-        if (getTabularJobConfig() != null)
-            sb.append("TabularJobConfig: ").append(getTabularJobConfig()).append(",");
         if (getTimeSeriesForecastingJobConfig() != null)
             sb.append("TimeSeriesForecastingJobConfig: ").append(getTimeSeriesForecastingJobConfig()).append(",");
+        if (getTabularJobConfig() != null)
+            sb.append("TabularJobConfig: ").append(getTabularJobConfig()).append(",");
         if (getTextGenerationJobConfig() != null)
             sb.append("TextGenerationJobConfig: ").append(getTextGenerationJobConfig());
         sb.append("}");
@@ -351,14 +351,14 @@ public class AutoMLProblemTypeConfig implements Serializable, Cloneable, Structu
             return false;
         if (other.getTextClassificationJobConfig() != null && other.getTextClassificationJobConfig().equals(this.getTextClassificationJobConfig()) == false)
             return false;
-        if (other.getTabularJobConfig() == null ^ this.getTabularJobConfig() == null)
-            return false;
-        if (other.getTabularJobConfig() != null && other.getTabularJobConfig().equals(this.getTabularJobConfig()) == false)
-            return false;
         if (other.getTimeSeriesForecastingJobConfig() == null ^ this.getTimeSeriesForecastingJobConfig() == null)
             return false;
         if (other.getTimeSeriesForecastingJobConfig() != null
                 && other.getTimeSeriesForecastingJobConfig().equals(this.getTimeSeriesForecastingJobConfig()) == false)
+            return false;
+        if (other.getTabularJobConfig() == null ^ this.getTabularJobConfig() == null)
+            return false;
+        if (other.getTabularJobConfig() != null && other.getTabularJobConfig().equals(this.getTabularJobConfig()) == false)
             return false;
         if (other.getTextGenerationJobConfig() == null ^ this.getTextGenerationJobConfig() == null)
             return false;
@@ -374,8 +374,8 @@ public class AutoMLProblemTypeConfig implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getImageClassificationJobConfig() == null) ? 0 : getImageClassificationJobConfig().hashCode());
         hashCode = prime * hashCode + ((getTextClassificationJobConfig() == null) ? 0 : getTextClassificationJobConfig().hashCode());
-        hashCode = prime * hashCode + ((getTabularJobConfig() == null) ? 0 : getTabularJobConfig().hashCode());
         hashCode = prime * hashCode + ((getTimeSeriesForecastingJobConfig() == null) ? 0 : getTimeSeriesForecastingJobConfig().hashCode());
+        hashCode = prime * hashCode + ((getTabularJobConfig() == null) ? 0 : getTabularJobConfig().hashCode());
         hashCode = prime * hashCode + ((getTextGenerationJobConfig() == null) ? 0 : getTextGenerationJobConfig().hashCode());
         return hashCode;
     }

@@ -52,13 +52,13 @@ public class DeploymentConfigJsonUnmarshaller implements Unmarshaller<Deployment
                     context.nextToken();
                     deploymentConfig.setBlueGreenUpdatePolicy(BlueGreenUpdatePolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("AutoRollbackConfiguration", targetDepth)) {
-                    context.nextToken();
-                    deploymentConfig.setAutoRollbackConfiguration(AutoRollbackConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("RollingUpdatePolicy", targetDepth)) {
                     context.nextToken();
                     deploymentConfig.setRollingUpdatePolicy(RollingUpdatePolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AutoRollbackConfiguration", targetDepth)) {
+                    context.nextToken();
+                    deploymentConfig.setAutoRollbackConfiguration(AutoRollbackConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

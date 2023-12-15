@@ -86,13 +86,13 @@ public class UserSettingsJsonUnmarshaller implements Unmarshaller<UserSettings, 
                     context.nextToken();
                     userSettings.setCanvasAppSettings(CanvasAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("JupyterLabAppSettings", targetDepth)) {
-                    context.nextToken();
-                    userSettings.setJupyterLabAppSettings(JupyterLabAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("CodeEditorAppSettings", targetDepth)) {
                     context.nextToken();
                     userSettings.setCodeEditorAppSettings(CodeEditorAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JupyterLabAppSettings", targetDepth)) {
+                    context.nextToken();
+                    userSettings.setJupyterLabAppSettings(JupyterLabAppSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SpaceStorageSettings", targetDepth)) {
                     context.nextToken();

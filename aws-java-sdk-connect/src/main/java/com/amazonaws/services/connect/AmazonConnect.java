@@ -4292,6 +4292,36 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Allows pausing an ongoing task contact.
+     * </p>
+     * 
+     * @param pauseContactRequest
+     * @return Result of the PauseContact operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ConflictException
+     *         Operation cannot be performed at this time as there is a conflict with another operation or contact
+     *         state.
+     * @sample AmazonConnect.PauseContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PauseContactResult pauseContact(PauseContactRequest pauseContactRequest);
+
+    /**
+     * <p>
      * Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact,
      * this sets the agent's next status.
      * </p>
@@ -4411,6 +4441,34 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     ReplicateInstanceResult replicateInstance(ReplicateInstanceRequest replicateInstanceRequest);
+
+    /**
+     * <p>
+     * Allows resuming a task contact in a paused state.
+     * </p>
+     * 
+     * @param resumeContactRequest
+     * @return Result of the ResumeContact operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ConflictException
+     *         Operation cannot be performed at this time as there is a conflict with another operation or contact
+     *         state.
+     * @sample AmazonConnect.ResumeContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ResumeContactResult resumeContact(ResumeContactRequest resumeContactRequest);
 
     /**
      * <p>

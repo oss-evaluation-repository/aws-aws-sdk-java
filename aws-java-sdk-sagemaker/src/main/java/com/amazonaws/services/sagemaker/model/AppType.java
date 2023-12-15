@@ -22,11 +22,19 @@ public enum AppType {
 
     JupyterServer("JupyterServer"),
     KernelGateway("KernelGateway"),
+    DetailedProfiler("DetailedProfiler"),
     TensorBoard("TensorBoard"),
-    RStudioServerPro("RStudioServerPro"),
-    RSessionGateway("RSessionGateway"),
+    VSCode("VSCode"),
+    Savitur("Savitur"),
+    CodeEditor("CodeEditor"),
     JupyterLab("JupyterLab"),
-    CodeEditor("CodeEditor");
+    RStudioServerPro("RStudioServerPro"),
+    RSession("RSession"),
+    RSessionGateway("RSessionGateway"),
+    Canvas("Canvas"),
+    DatasetManager("DatasetManager"),
+    SageMakerLite("SageMakerLite"),
+    Local("Local");
 
     private String value;
 

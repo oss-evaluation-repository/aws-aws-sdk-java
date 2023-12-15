@@ -76,10 +76,6 @@ public class PipelineExecutionStepJsonUnmarshaller implements Unmarshaller<Pipel
                     context.nextToken();
                     pipelineExecutionStep.setCacheHitResult(CacheHitResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("AttemptCount", targetDepth)) {
-                    context.nextToken();
-                    pipelineExecutionStep.setAttemptCount(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionStep.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +83,10 @@ public class PipelineExecutionStepJsonUnmarshaller implements Unmarshaller<Pipel
                 if (context.testExpression("Metadata", targetDepth)) {
                     context.nextToken();
                     pipelineExecutionStep.setMetadata(PipelineExecutionStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AttemptCount", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionStep.setAttemptCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectiveExecutionResult", targetDepth)) {
                     context.nextToken();

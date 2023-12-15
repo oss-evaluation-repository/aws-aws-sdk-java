@@ -798,6 +798,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public PauseContactResult pauseContact(PauseContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutUserStatusResult putUserStatus(PutUserStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -809,6 +814,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public ReplicateInstanceResult replicateInstance(ReplicateInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResumeContactResult resumeContact(ResumeContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

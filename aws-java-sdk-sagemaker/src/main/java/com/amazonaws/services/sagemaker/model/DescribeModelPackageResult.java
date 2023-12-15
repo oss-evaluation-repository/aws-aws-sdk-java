@@ -127,22 +127,6 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
     private String approvalDescription;
     /**
      * <p>
-     * The metadata properties associated with the model package versions.
-     * </p>
-     */
-    private java.util.Map<String, String> customerMetadataProperties;
-    /**
-     * <p>
-     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
-     * more information, see the topic on <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
-     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
-     * Guide</i>.
-     * </p>
-     */
-    private DriftCheckBaselines driftCheckBaselines;
-    /**
-     * <p>
      * The machine learning domain of the model package you specified. Common machine learning domains include computer
      * vision and natural language processing.
      * </p>
@@ -162,6 +146,22 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String samplePayloadUrl;
+    /**
+     * <p>
+     * The metadata properties associated with the model package versions.
+     * </p>
+     */
+    private java.util.Map<String, String> customerMetadataProperties;
+    /**
+     * <p>
+     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
+     * more information, see the topic on <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
+     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
+     * Guide</i>.
+     * </p>
+     */
+    private DriftCheckBaselines driftCheckBaselines;
     /**
      * <p>
      * An array of additional Inference Specification objects. Each additional Inference Specification specifies
@@ -947,138 +947,6 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The metadata properties associated with the model package versions.
-     * </p>
-     * 
-     * @return The metadata properties associated with the model package versions.
-     */
-
-    public java.util.Map<String, String> getCustomerMetadataProperties() {
-        return customerMetadataProperties;
-    }
-
-    /**
-     * <p>
-     * The metadata properties associated with the model package versions.
-     * </p>
-     * 
-     * @param customerMetadataProperties
-     *        The metadata properties associated with the model package versions.
-     */
-
-    public void setCustomerMetadataProperties(java.util.Map<String, String> customerMetadataProperties) {
-        this.customerMetadataProperties = customerMetadataProperties;
-    }
-
-    /**
-     * <p>
-     * The metadata properties associated with the model package versions.
-     * </p>
-     * 
-     * @param customerMetadataProperties
-     *        The metadata properties associated with the model package versions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeModelPackageResult withCustomerMetadataProperties(java.util.Map<String, String> customerMetadataProperties) {
-        setCustomerMetadataProperties(customerMetadataProperties);
-        return this;
-    }
-
-    /**
-     * Add a single CustomerMetadataProperties entry
-     *
-     * @see DescribeModelPackageResult#withCustomerMetadataProperties
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeModelPackageResult addCustomerMetadataPropertiesEntry(String key, String value) {
-        if (null == this.customerMetadataProperties) {
-            this.customerMetadataProperties = new java.util.HashMap<String, String>();
-        }
-        if (this.customerMetadataProperties.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.customerMetadataProperties.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into CustomerMetadataProperties.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeModelPackageResult clearCustomerMetadataPropertiesEntries() {
-        this.customerMetadataProperties = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
-     * more information, see the topic on <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
-     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
-     * Guide</i>.
-     * </p>
-     * 
-     * @param driftCheckBaselines
-     *        Represents the drift check baselines that can be used when the model monitor is set using the model
-     *        package. For more information, see the topic on <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
-     *        >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker
-     *        Developer Guide</i>.
-     */
-
-    public void setDriftCheckBaselines(DriftCheckBaselines driftCheckBaselines) {
-        this.driftCheckBaselines = driftCheckBaselines;
-    }
-
-    /**
-     * <p>
-     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
-     * more information, see the topic on <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
-     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
-     * Guide</i>.
-     * </p>
-     * 
-     * @return Represents the drift check baselines that can be used when the model monitor is set using the model
-     *         package. For more information, see the topic on <a href=
-     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
-     *         >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker
-     *         Developer Guide</i>.
-     */
-
-    public DriftCheckBaselines getDriftCheckBaselines() {
-        return this.driftCheckBaselines;
-    }
-
-    /**
-     * <p>
-     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
-     * more information, see the topic on <a href=
-     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
-     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
-     * Guide</i>.
-     * </p>
-     * 
-     * @param driftCheckBaselines
-     *        Represents the drift check baselines that can be used when the model monitor is set using the model
-     *        package. For more information, see the topic on <a href=
-     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
-     *        >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker
-     *        Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeModelPackageResult withDriftCheckBaselines(DriftCheckBaselines driftCheckBaselines) {
-        setDriftCheckBaselines(driftCheckBaselines);
-        return this;
-    }
-
-    /**
-     * <p>
      * The machine learning domain of the model package you specified. Common machine learning domains include computer
      * vision and natural language processing.
      * </p>
@@ -1212,6 +1080,138 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     public DescribeModelPackageResult withSamplePayloadUrl(String samplePayloadUrl) {
         setSamplePayloadUrl(samplePayloadUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata properties associated with the model package versions.
+     * </p>
+     * 
+     * @return The metadata properties associated with the model package versions.
+     */
+
+    public java.util.Map<String, String> getCustomerMetadataProperties() {
+        return customerMetadataProperties;
+    }
+
+    /**
+     * <p>
+     * The metadata properties associated with the model package versions.
+     * </p>
+     * 
+     * @param customerMetadataProperties
+     *        The metadata properties associated with the model package versions.
+     */
+
+    public void setCustomerMetadataProperties(java.util.Map<String, String> customerMetadataProperties) {
+        this.customerMetadataProperties = customerMetadataProperties;
+    }
+
+    /**
+     * <p>
+     * The metadata properties associated with the model package versions.
+     * </p>
+     * 
+     * @param customerMetadataProperties
+     *        The metadata properties associated with the model package versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withCustomerMetadataProperties(java.util.Map<String, String> customerMetadataProperties) {
+        setCustomerMetadataProperties(customerMetadataProperties);
+        return this;
+    }
+
+    /**
+     * Add a single CustomerMetadataProperties entry
+     *
+     * @see DescribeModelPackageResult#withCustomerMetadataProperties
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult addCustomerMetadataPropertiesEntry(String key, String value) {
+        if (null == this.customerMetadataProperties) {
+            this.customerMetadataProperties = new java.util.HashMap<String, String>();
+        }
+        if (this.customerMetadataProperties.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.customerMetadataProperties.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CustomerMetadataProperties.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult clearCustomerMetadataPropertiesEntries() {
+        this.customerMetadataProperties = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
+     * more information, see the topic on <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
+     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param driftCheckBaselines
+     *        Represents the drift check baselines that can be used when the model monitor is set using the model
+     *        package. For more information, see the topic on <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
+     *        >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker
+     *        Developer Guide</i>.
+     */
+
+    public void setDriftCheckBaselines(DriftCheckBaselines driftCheckBaselines) {
+        this.driftCheckBaselines = driftCheckBaselines;
+    }
+
+    /**
+     * <p>
+     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
+     * more information, see the topic on <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
+     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @return Represents the drift check baselines that can be used when the model monitor is set using the model
+     *         package. For more information, see the topic on <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
+     *         >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker
+     *         Developer Guide</i>.
+     */
+
+    public DriftCheckBaselines getDriftCheckBaselines() {
+        return this.driftCheckBaselines;
+    }
+
+    /**
+     * <p>
+     * Represents the drift check baselines that can be used when the model monitor is set using the model package. For
+     * more information, see the topic on <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
+     * >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param driftCheckBaselines
+     *        Represents the drift check baselines that can be used when the model monitor is set using the model
+     *        package. For more information, see the topic on <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection"
+     *        >Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker
+     *        Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelPackageResult withDriftCheckBaselines(DriftCheckBaselines driftCheckBaselines) {
+        setDriftCheckBaselines(driftCheckBaselines);
         return this;
     }
 
@@ -1411,16 +1411,16 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
         if (getApprovalDescription() != null)
             sb.append("ApprovalDescription: ").append(getApprovalDescription()).append(",");
-        if (getCustomerMetadataProperties() != null)
-            sb.append("CustomerMetadataProperties: ").append(getCustomerMetadataProperties()).append(",");
-        if (getDriftCheckBaselines() != null)
-            sb.append("DriftCheckBaselines: ").append(getDriftCheckBaselines()).append(",");
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getTask() != null)
             sb.append("Task: ").append(getTask()).append(",");
         if (getSamplePayloadUrl() != null)
             sb.append("SamplePayloadUrl: ").append(getSamplePayloadUrl()).append(",");
+        if (getCustomerMetadataProperties() != null)
+            sb.append("CustomerMetadataProperties: ").append(getCustomerMetadataProperties()).append(",");
+        if (getDriftCheckBaselines() != null)
+            sb.append("DriftCheckBaselines: ").append(getDriftCheckBaselines()).append(",");
         if (getAdditionalInferenceSpecifications() != null)
             sb.append("AdditionalInferenceSpecifications: ").append(getAdditionalInferenceSpecifications()).append(",");
         if (getSkipModelValidation() != null)
@@ -1515,14 +1515,6 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getApprovalDescription() != null && other.getApprovalDescription().equals(this.getApprovalDescription()) == false)
             return false;
-        if (other.getCustomerMetadataProperties() == null ^ this.getCustomerMetadataProperties() == null)
-            return false;
-        if (other.getCustomerMetadataProperties() != null && other.getCustomerMetadataProperties().equals(this.getCustomerMetadataProperties()) == false)
-            return false;
-        if (other.getDriftCheckBaselines() == null ^ this.getDriftCheckBaselines() == null)
-            return false;
-        if (other.getDriftCheckBaselines() != null && other.getDriftCheckBaselines().equals(this.getDriftCheckBaselines()) == false)
-            return false;
         if (other.getDomain() == null ^ this.getDomain() == null)
             return false;
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
@@ -1534,6 +1526,14 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getSamplePayloadUrl() == null ^ this.getSamplePayloadUrl() == null)
             return false;
         if (other.getSamplePayloadUrl() != null && other.getSamplePayloadUrl().equals(this.getSamplePayloadUrl()) == false)
+            return false;
+        if (other.getCustomerMetadataProperties() == null ^ this.getCustomerMetadataProperties() == null)
+            return false;
+        if (other.getCustomerMetadataProperties() != null && other.getCustomerMetadataProperties().equals(this.getCustomerMetadataProperties()) == false)
+            return false;
+        if (other.getDriftCheckBaselines() == null ^ this.getDriftCheckBaselines() == null)
+            return false;
+        if (other.getDriftCheckBaselines() != null && other.getDriftCheckBaselines().equals(this.getDriftCheckBaselines()) == false)
             return false;
         if (other.getAdditionalInferenceSpecifications() == null ^ this.getAdditionalInferenceSpecifications() == null)
             return false;
@@ -1571,11 +1571,11 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
         hashCode = prime * hashCode + ((getApprovalDescription() == null) ? 0 : getApprovalDescription().hashCode());
-        hashCode = prime * hashCode + ((getCustomerMetadataProperties() == null) ? 0 : getCustomerMetadataProperties().hashCode());
-        hashCode = prime * hashCode + ((getDriftCheckBaselines() == null) ? 0 : getDriftCheckBaselines().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getSamplePayloadUrl() == null) ? 0 : getSamplePayloadUrl().hashCode());
+        hashCode = prime * hashCode + ((getCustomerMetadataProperties() == null) ? 0 : getCustomerMetadataProperties().hashCode());
+        hashCode = prime * hashCode + ((getDriftCheckBaselines() == null) ? 0 : getDriftCheckBaselines().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInferenceSpecifications() == null) ? 0 : getAdditionalInferenceSpecifications().hashCode());
         hashCode = prime * hashCode + ((getSkipModelValidation() == null) ? 0 : getSkipModelValidation().hashCode());
         return hashCode;

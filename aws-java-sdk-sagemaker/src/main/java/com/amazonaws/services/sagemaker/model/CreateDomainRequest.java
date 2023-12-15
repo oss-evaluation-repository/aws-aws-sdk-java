@@ -51,6 +51,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private UserSettings defaultUserSettings;
     /**
      * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     */
+    private DomainSettings domainSettings;
+    /**
+     * <p>
      * The VPC subnets that the domain uses for communication.
      * </p>
      */
@@ -113,12 +119,6 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String appSecurityGroupManagement;
-    /**
-     * <p>
-     * A collection of <code>Domain</code> settings.
-     * </p>
-     */
-    private DomainSettings domainSettings;
     /**
      * <p>
      * The default settings used to create a space.
@@ -295,6 +295,46 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public CreateDomainRequest withDefaultUserSettings(UserSettings defaultUserSettings) {
         setDefaultUserSettings(defaultUserSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     * 
+     * @param domainSettings
+     *        A collection of <code>Domain</code> settings.
+     */
+
+    public void setDomainSettings(DomainSettings domainSettings) {
+        this.domainSettings = domainSettings;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     * 
+     * @return A collection of <code>Domain</code> settings.
+     */
+
+    public DomainSettings getDomainSettings() {
+        return this.domainSettings;
+    }
+
+    /**
+     * <p>
+     * A collection of <code>Domain</code> settings.
+     * </p>
+     * 
+     * @param domainSettings
+     *        A collection of <code>Domain</code> settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withDomainSettings(DomainSettings domainSettings) {
+        setDomainSettings(domainSettings);
         return this;
     }
 
@@ -840,46 +880,6 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A collection of <code>Domain</code> settings.
-     * </p>
-     * 
-     * @param domainSettings
-     *        A collection of <code>Domain</code> settings.
-     */
-
-    public void setDomainSettings(DomainSettings domainSettings) {
-        this.domainSettings = domainSettings;
-    }
-
-    /**
-     * <p>
-     * A collection of <code>Domain</code> settings.
-     * </p>
-     * 
-     * @return A collection of <code>Domain</code> settings.
-     */
-
-    public DomainSettings getDomainSettings() {
-        return this.domainSettings;
-    }
-
-    /**
-     * <p>
-     * A collection of <code>Domain</code> settings.
-     * </p>
-     * 
-     * @param domainSettings
-     *        A collection of <code>Domain</code> settings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateDomainRequest withDomainSettings(DomainSettings domainSettings) {
-        setDomainSettings(domainSettings);
-        return this;
-    }
-
-    /**
-     * <p>
      * The default settings used to create a space.
      * </p>
      * 
@@ -936,6 +936,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("AuthMode: ").append(getAuthMode()).append(",");
         if (getDefaultUserSettings() != null)
             sb.append("DefaultUserSettings: ").append(getDefaultUserSettings()).append(",");
+        if (getDomainSettings() != null)
+            sb.append("DomainSettings: ").append(getDomainSettings()).append(",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getVpcId() != null)
@@ -950,8 +952,6 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getAppSecurityGroupManagement() != null)
             sb.append("AppSecurityGroupManagement: ").append(getAppSecurityGroupManagement()).append(",");
-        if (getDomainSettings() != null)
-            sb.append("DomainSettings: ").append(getDomainSettings()).append(",");
         if (getDefaultSpaceSettings() != null)
             sb.append("DefaultSpaceSettings: ").append(getDefaultSpaceSettings());
         sb.append("}");
@@ -979,6 +979,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getDefaultUserSettings() == null ^ this.getDefaultUserSettings() == null)
             return false;
         if (other.getDefaultUserSettings() != null && other.getDefaultUserSettings().equals(this.getDefaultUserSettings()) == false)
+            return false;
+        if (other.getDomainSettings() == null ^ this.getDomainSettings() == null)
+            return false;
+        if (other.getDomainSettings() != null && other.getDomainSettings().equals(this.getDomainSettings()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
@@ -1008,10 +1012,6 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getAppSecurityGroupManagement() != null && other.getAppSecurityGroupManagement().equals(this.getAppSecurityGroupManagement()) == false)
             return false;
-        if (other.getDomainSettings() == null ^ this.getDomainSettings() == null)
-            return false;
-        if (other.getDomainSettings() != null && other.getDomainSettings().equals(this.getDomainSettings()) == false)
-            return false;
         if (other.getDefaultSpaceSettings() == null ^ this.getDefaultSpaceSettings() == null)
             return false;
         if (other.getDefaultSpaceSettings() != null && other.getDefaultSpaceSettings().equals(this.getDefaultSpaceSettings()) == false)
@@ -1027,6 +1027,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getAuthMode() == null) ? 0 : getAuthMode().hashCode());
         hashCode = prime * hashCode + ((getDefaultUserSettings() == null) ? 0 : getDefaultUserSettings().hashCode());
+        hashCode = prime * hashCode + ((getDomainSettings() == null) ? 0 : getDomainSettings().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
@@ -1034,7 +1035,6 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAppSecurityGroupManagement() == null) ? 0 : getAppSecurityGroupManagement().hashCode());
-        hashCode = prime * hashCode + ((getDomainSettings() == null) ? 0 : getDomainSettings().hashCode());
         hashCode = prime * hashCode + ((getDefaultSpaceSettings() == null) ? 0 : getDefaultSpaceSettings().hashCode());
         return hashCode;
     }

@@ -36,12 +36,12 @@ public class CreateSpaceRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> SPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceSettings").build();
-    private static final MarshallingInfo<String> SPACEDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceDisplayName").build();
     private static final MarshallingInfo<StructuredPojo> OWNERSHIPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnershipSettings").build();
     private static final MarshallingInfo<StructuredPojo> SPACESHARINGSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceSharingSettings").build();
+    private static final MarshallingInfo<String> SPACEDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceDisplayName").build();
 
     private static final CreateSpaceRequestMarshaller instance = new CreateSpaceRequestMarshaller();
 
@@ -63,9 +63,9 @@ public class CreateSpaceRequestMarshaller {
             protocolMarshaller.marshall(createSpaceRequest.getSpaceName(), SPACENAME_BINDING);
             protocolMarshaller.marshall(createSpaceRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createSpaceRequest.getSpaceSettings(), SPACESETTINGS_BINDING);
-            protocolMarshaller.marshall(createSpaceRequest.getSpaceDisplayName(), SPACEDISPLAYNAME_BINDING);
             protocolMarshaller.marshall(createSpaceRequest.getOwnershipSettings(), OWNERSHIPSETTINGS_BINDING);
             protocolMarshaller.marshall(createSpaceRequest.getSpaceSharingSettings(), SPACESHARINGSETTINGS_BINDING);
+            protocolMarshaller.marshall(createSpaceRequest.getSpaceDisplayName(), SPACEDISPLAYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

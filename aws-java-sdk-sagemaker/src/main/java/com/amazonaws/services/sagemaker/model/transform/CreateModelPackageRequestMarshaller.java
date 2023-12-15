@@ -56,16 +56,16 @@ public class CreateModelPackageRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<Map> CUSTOMERMETADATAPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerMetadataProperties").build();
-    private static final MarshallingInfo<StructuredPojo> DRIFTCHECKBASELINES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DriftCheckBaselines").build();
     private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Domain").build();
     private static final MarshallingInfo<String> TASK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Task").build();
     private static final MarshallingInfo<String> SAMPLEPAYLOADURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamplePayloadUrl").build();
+    private static final MarshallingInfo<Map> CUSTOMERMETADATAPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerMetadataProperties").build();
+    private static final MarshallingInfo<StructuredPojo> DRIFTCHECKBASELINES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DriftCheckBaselines").build();
     private static final MarshallingInfo<List> ADDITIONALINFERENCESPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalInferenceSpecifications").build();
     private static final MarshallingInfo<String> SKIPMODELVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -99,11 +99,11 @@ public class CreateModelPackageRequestMarshaller {
             protocolMarshaller.marshall(createModelPackageRequest.getMetadataProperties(), METADATAPROPERTIES_BINDING);
             protocolMarshaller.marshall(createModelPackageRequest.getModelMetrics(), MODELMETRICS_BINDING);
             protocolMarshaller.marshall(createModelPackageRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createModelPackageRequest.getCustomerMetadataProperties(), CUSTOMERMETADATAPROPERTIES_BINDING);
-            protocolMarshaller.marshall(createModelPackageRequest.getDriftCheckBaselines(), DRIFTCHECKBASELINES_BINDING);
             protocolMarshaller.marshall(createModelPackageRequest.getDomain(), DOMAIN_BINDING);
             protocolMarshaller.marshall(createModelPackageRequest.getTask(), TASK_BINDING);
             protocolMarshaller.marshall(createModelPackageRequest.getSamplePayloadUrl(), SAMPLEPAYLOADURL_BINDING);
+            protocolMarshaller.marshall(createModelPackageRequest.getCustomerMetadataProperties(), CUSTOMERMETADATAPROPERTIES_BINDING);
+            protocolMarshaller.marshall(createModelPackageRequest.getDriftCheckBaselines(), DRIFTCHECKBASELINES_BINDING);
             protocolMarshaller.marshall(createModelPackageRequest.getAdditionalInferenceSpecifications(), ADDITIONALINFERENCESPECIFICATIONS_BINDING);
             protocolMarshaller.marshall(createModelPackageRequest.getSkipModelValidation(), SKIPMODELVALIDATION_BINDING);
         } catch (Exception e) {

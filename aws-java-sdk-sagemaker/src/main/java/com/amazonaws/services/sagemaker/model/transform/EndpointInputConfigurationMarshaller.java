@@ -29,12 +29,12 @@ public class EndpointInputConfigurationMarshaller {
 
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERLESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerlessConfig").build();
     private static final MarshallingInfo<String> INFERENCESPECIFICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InferenceSpecificationName").build();
     private static final MarshallingInfo<StructuredPojo> ENVIRONMENTPARAMETERRANGES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnvironmentParameterRanges").build();
-    private static final MarshallingInfo<StructuredPojo> SERVERLESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerlessConfig").build();
 
     private static final EndpointInputConfigurationMarshaller instance = new EndpointInputConfigurationMarshaller();
 
@@ -53,9 +53,9 @@ public class EndpointInputConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(endpointInputConfiguration.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(endpointInputConfiguration.getServerlessConfig(), SERVERLESSCONFIG_BINDING);
             protocolMarshaller.marshall(endpointInputConfiguration.getInferenceSpecificationName(), INFERENCESPECIFICATIONNAME_BINDING);
             protocolMarshaller.marshall(endpointInputConfiguration.getEnvironmentParameterRanges(), ENVIRONMENTPARAMETERRANGES_BINDING);
-            protocolMarshaller.marshall(endpointInputConfiguration.getServerlessConfig(), SERVERLESSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

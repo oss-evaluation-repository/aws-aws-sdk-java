@@ -2346,6 +2346,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCompilationJobResult> deleteCompilationJobAsync(DeleteCompilationJobRequest request) {
+
+        return deleteCompilationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCompilationJobResult> deleteCompilationJobAsync(final DeleteCompilationJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCompilationJobRequest, DeleteCompilationJobResult> asyncHandler) {
+        final DeleteCompilationJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCompilationJobResult>() {
+            @Override
+            public DeleteCompilationJobResult call() throws Exception {
+                DeleteCompilationJobResult result = null;
+
+                try {
+                    result = executeDeleteCompilationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteContextResult> deleteContextAsync(DeleteContextRequest request) {
 
         return deleteContextAsync(request, null);

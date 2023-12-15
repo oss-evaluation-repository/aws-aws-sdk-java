@@ -30,6 +30,12 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The recommendation ID which uniquely identifies each recommendation.
+     * </p>
+     */
+    private String recommendationId;
+    /**
+     * <p>
      * The metrics used to decide what recommendation to make.
      * </p>
      */
@@ -48,12 +54,6 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
     private ModelConfiguration modelConfiguration;
     /**
      * <p>
-     * The recommendation ID which uniquely identifies each recommendation.
-     * </p>
-     */
-    private String recommendationId;
-    /**
-     * <p>
      * A timestamp that shows when the benchmark completed.
      * </p>
      */
@@ -64,6 +64,46 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
      * </p>
      */
     private java.util.Date invocationStartTime;
+
+    /**
+     * <p>
+     * The recommendation ID which uniquely identifies each recommendation.
+     * </p>
+     * 
+     * @param recommendationId
+     *        The recommendation ID which uniquely identifies each recommendation.
+     */
+
+    public void setRecommendationId(String recommendationId) {
+        this.recommendationId = recommendationId;
+    }
+
+    /**
+     * <p>
+     * The recommendation ID which uniquely identifies each recommendation.
+     * </p>
+     * 
+     * @return The recommendation ID which uniquely identifies each recommendation.
+     */
+
+    public String getRecommendationId() {
+        return this.recommendationId;
+    }
+
+    /**
+     * <p>
+     * The recommendation ID which uniquely identifies each recommendation.
+     * </p>
+     * 
+     * @param recommendationId
+     *        The recommendation ID which uniquely identifies each recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceRecommendation withRecommendationId(String recommendationId) {
+        setRecommendationId(recommendationId);
+        return this;
+    }
 
     /**
      * <p>
@@ -187,46 +227,6 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The recommendation ID which uniquely identifies each recommendation.
-     * </p>
-     * 
-     * @param recommendationId
-     *        The recommendation ID which uniquely identifies each recommendation.
-     */
-
-    public void setRecommendationId(String recommendationId) {
-        this.recommendationId = recommendationId;
-    }
-
-    /**
-     * <p>
-     * The recommendation ID which uniquely identifies each recommendation.
-     * </p>
-     * 
-     * @return The recommendation ID which uniquely identifies each recommendation.
-     */
-
-    public String getRecommendationId() {
-        return this.recommendationId;
-    }
-
-    /**
-     * <p>
-     * The recommendation ID which uniquely identifies each recommendation.
-     * </p>
-     * 
-     * @param recommendationId
-     *        The recommendation ID which uniquely identifies each recommendation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InferenceRecommendation withRecommendationId(String recommendationId) {
-        setRecommendationId(recommendationId);
-        return this;
-    }
-
-    /**
-     * <p>
      * A timestamp that shows when the benchmark completed.
      * </p>
      * 
@@ -317,14 +317,14 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRecommendationId() != null)
+            sb.append("RecommendationId: ").append(getRecommendationId()).append(",");
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
         if (getModelConfiguration() != null)
             sb.append("ModelConfiguration: ").append(getModelConfiguration()).append(",");
-        if (getRecommendationId() != null)
-            sb.append("RecommendationId: ").append(getRecommendationId()).append(",");
         if (getInvocationEndTime() != null)
             sb.append("InvocationEndTime: ").append(getInvocationEndTime()).append(",");
         if (getInvocationStartTime() != null)
@@ -343,6 +343,10 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
         if (obj instanceof InferenceRecommendation == false)
             return false;
         InferenceRecommendation other = (InferenceRecommendation) obj;
+        if (other.getRecommendationId() == null ^ this.getRecommendationId() == null)
+            return false;
+        if (other.getRecommendationId() != null && other.getRecommendationId().equals(this.getRecommendationId()) == false)
+            return false;
         if (other.getMetrics() == null ^ this.getMetrics() == null)
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
@@ -354,10 +358,6 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
         if (other.getModelConfiguration() == null ^ this.getModelConfiguration() == null)
             return false;
         if (other.getModelConfiguration() != null && other.getModelConfiguration().equals(this.getModelConfiguration()) == false)
-            return false;
-        if (other.getRecommendationId() == null ^ this.getRecommendationId() == null)
-            return false;
-        if (other.getRecommendationId() != null && other.getRecommendationId().equals(this.getRecommendationId()) == false)
             return false;
         if (other.getInvocationEndTime() == null ^ this.getInvocationEndTime() == null)
             return false;
@@ -375,10 +375,10 @@ public class InferenceRecommendation implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getModelConfiguration() == null) ? 0 : getModelConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         hashCode = prime * hashCode + ((getInvocationEndTime() == null) ? 0 : getInvocationEndTime().hashCode());
         hashCode = prime * hashCode + ((getInvocationStartTime() == null) ? 0 : getInvocationStartTime().hashCode());
         return hashCode;

@@ -79,6 +79,24 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
     private SpaceSettings spaceSettings;
     /**
      * <p>
+     * The collection of ownership settings for a space.
+     * </p>
+     */
+    private OwnershipSettings ownershipSettings;
+    /**
+     * <p>
+     * The collection of space sharing settings for a space.
+     * </p>
+     */
+    private SpaceSharingSettings spaceSharingSettings;
+    /**
+     * <p>
+     * The name of the space that appears in the Amazon SageMaker Studio UI.
+     * </p>
+     */
+    private String spaceDisplayName;
+    /**
+     * <p>
      * Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to
      * Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective
      * redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.
@@ -97,27 +115,14 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
      * JupyterLab: <code>&amp;redirect=JupyterLab</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String url;
-    /**
-     * <p>
-     * The name of the space that appears in the Amazon SageMaker Studio UI.
-     * </p>
-     */
-    private String spaceDisplayName;
-    /**
-     * <p>
-     * The collection of ownership settings for a space.
-     * </p>
-     */
-    private OwnershipSettings ownershipSettings;
-    /**
-     * <p>
-     * The collection of space sharing settings for a space.
-     * </p>
-     */
-    private SpaceSharingSettings spaceSharingSettings;
 
     /**
      * <p>
@@ -500,188 +505,6 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to
-     * Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.
-     * </p>
-     * <p>
-     * The following application types are supported:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Studio Classic: <code>&amp;redirect=JupyterServer</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * JupyterLab: <code>&amp;redirect=JupyterLab</code>
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param url
-     *        Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center
-     *        (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after
-     *        appending the respective redirect parameter for the application type to be federated through Amazon Web
-     *        Services IAM Identity Center.</p>
-     *        <p>
-     *        The following application types are supported:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Studio Classic: <code>&amp;redirect=JupyterServer</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        JupyterLab: <code>&amp;redirect=JupyterLab</code>
-     *        </p>
-     *        </li>
-     */
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    /**
-     * <p>
-     * Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to
-     * Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.
-     * </p>
-     * <p>
-     * The following application types are supported:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Studio Classic: <code>&amp;redirect=JupyterServer</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * JupyterLab: <code>&amp;redirect=JupyterLab</code>
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @return Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center
-     *         (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after
-     *         appending the respective redirect parameter for the application type to be federated through Amazon Web
-     *         Services IAM Identity Center.</p>
-     *         <p>
-     *         The following application types are supported:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Studio Classic: <code>&amp;redirect=JupyterServer</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         JupyterLab: <code>&amp;redirect=JupyterLab</code>
-     *         </p>
-     *         </li>
-     */
-
-    public String getUrl() {
-        return this.url;
-    }
-
-    /**
-     * <p>
-     * Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to
-     * Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective
-     * redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.
-     * </p>
-     * <p>
-     * The following application types are supported:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Studio Classic: <code>&amp;redirect=JupyterServer</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * JupyterLab: <code>&amp;redirect=JupyterLab</code>
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param url
-     *        Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center
-     *        (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after
-     *        appending the respective redirect parameter for the application type to be federated through Amazon Web
-     *        Services IAM Identity Center.</p>
-     *        <p>
-     *        The following application types are supported:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Studio Classic: <code>&amp;redirect=JupyterServer</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        JupyterLab: <code>&amp;redirect=JupyterLab</code>
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpaceResult withUrl(String url) {
-        setUrl(url);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the space that appears in the Amazon SageMaker Studio UI.
-     * </p>
-     * 
-     * @param spaceDisplayName
-     *        The name of the space that appears in the Amazon SageMaker Studio UI.
-     */
-
-    public void setSpaceDisplayName(String spaceDisplayName) {
-        this.spaceDisplayName = spaceDisplayName;
-    }
-
-    /**
-     * <p>
-     * The name of the space that appears in the Amazon SageMaker Studio UI.
-     * </p>
-     * 
-     * @return The name of the space that appears in the Amazon SageMaker Studio UI.
-     */
-
-    public String getSpaceDisplayName() {
-        return this.spaceDisplayName;
-    }
-
-    /**
-     * <p>
-     * The name of the space that appears in the Amazon SageMaker Studio UI.
-     * </p>
-     * 
-     * @param spaceDisplayName
-     *        The name of the space that appears in the Amazon SageMaker Studio UI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpaceResult withSpaceDisplayName(String spaceDisplayName) {
-        setSpaceDisplayName(spaceDisplayName);
-        return this;
-    }
-
-    /**
-     * <p>
      * The collection of ownership settings for a space.
      * </p>
      * 
@@ -761,6 +584,218 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The name of the space that appears in the Amazon SageMaker Studio UI.
+     * </p>
+     * 
+     * @param spaceDisplayName
+     *        The name of the space that appears in the Amazon SageMaker Studio UI.
+     */
+
+    public void setSpaceDisplayName(String spaceDisplayName) {
+        this.spaceDisplayName = spaceDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of the space that appears in the Amazon SageMaker Studio UI.
+     * </p>
+     * 
+     * @return The name of the space that appears in the Amazon SageMaker Studio UI.
+     */
+
+    public String getSpaceDisplayName() {
+        return this.spaceDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of the space that appears in the Amazon SageMaker Studio UI.
+     * </p>
+     * 
+     * @param spaceDisplayName
+     *        The name of the space that appears in the Amazon SageMaker Studio UI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpaceResult withSpaceDisplayName(String spaceDisplayName) {
+        setSpaceDisplayName(spaceDisplayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to
+     * Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.
+     * </p>
+     * <p>
+     * The following application types are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Studio Classic: <code>&amp;redirect=JupyterServer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JupyterLab: <code>&amp;redirect=JupyterLab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param url
+     *        Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center
+     *        (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after
+     *        appending the respective redirect parameter for the application type to be federated through Amazon Web
+     *        Services IAM Identity Center.</p>
+     *        <p>
+     *        The following application types are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Studio Classic: <code>&amp;redirect=JupyterServer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        JupyterLab: <code>&amp;redirect=JupyterLab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    /**
+     * <p>
+     * Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to
+     * Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.
+     * </p>
+     * <p>
+     * The following application types are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Studio Classic: <code>&amp;redirect=JupyterServer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JupyterLab: <code>&amp;redirect=JupyterLab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center
+     *         (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after
+     *         appending the respective redirect parameter for the application type to be federated through Amazon Web
+     *         Services IAM Identity Center.</p>
+     *         <p>
+     *         The following application types are supported:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Studio Classic: <code>&amp;redirect=JupyterServer</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         JupyterLab: <code>&amp;redirect=JupyterLab</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    /**
+     * <p>
+     * Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to
+     * Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective
+     * redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.
+     * </p>
+     * <p>
+     * The following application types are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Studio Classic: <code>&amp;redirect=JupyterServer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * JupyterLab: <code>&amp;redirect=JupyterLab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param url
+     *        Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center
+     *        (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after
+     *        appending the respective redirect parameter for the application type to be federated through Amazon Web
+     *        Services IAM Identity Center.</p>
+     *        <p>
+     *        The following application types are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Studio Classic: <code>&amp;redirect=JupyterServer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        JupyterLab: <code>&amp;redirect=JupyterLab</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpaceResult withUrl(String url) {
+        setUrl(url);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -790,14 +825,14 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getSpaceSettings() != null)
             sb.append("SpaceSettings: ").append(getSpaceSettings()).append(",");
-        if (getUrl() != null)
-            sb.append("Url: ").append(getUrl()).append(",");
-        if (getSpaceDisplayName() != null)
-            sb.append("SpaceDisplayName: ").append(getSpaceDisplayName()).append(",");
         if (getOwnershipSettings() != null)
             sb.append("OwnershipSettings: ").append(getOwnershipSettings()).append(",");
         if (getSpaceSharingSettings() != null)
-            sb.append("SpaceSharingSettings: ").append(getSpaceSharingSettings());
+            sb.append("SpaceSharingSettings: ").append(getSpaceSharingSettings()).append(",");
+        if (getSpaceDisplayName() != null)
+            sb.append("SpaceDisplayName: ").append(getSpaceDisplayName()).append(",");
+        if (getUrl() != null)
+            sb.append("Url: ").append(getUrl());
         sb.append("}");
         return sb.toString();
     }
@@ -848,14 +883,6 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getSpaceSettings() != null && other.getSpaceSettings().equals(this.getSpaceSettings()) == false)
             return false;
-        if (other.getUrl() == null ^ this.getUrl() == null)
-            return false;
-        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
-            return false;
-        if (other.getSpaceDisplayName() == null ^ this.getSpaceDisplayName() == null)
-            return false;
-        if (other.getSpaceDisplayName() != null && other.getSpaceDisplayName().equals(this.getSpaceDisplayName()) == false)
-            return false;
         if (other.getOwnershipSettings() == null ^ this.getOwnershipSettings() == null)
             return false;
         if (other.getOwnershipSettings() != null && other.getOwnershipSettings().equals(this.getOwnershipSettings()) == false)
@@ -863,6 +890,14 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
         if (other.getSpaceSharingSettings() == null ^ this.getSpaceSharingSettings() == null)
             return false;
         if (other.getSpaceSharingSettings() != null && other.getSpaceSharingSettings().equals(this.getSpaceSharingSettings()) == false)
+            return false;
+        if (other.getSpaceDisplayName() == null ^ this.getSpaceDisplayName() == null)
+            return false;
+        if (other.getSpaceDisplayName() != null && other.getSpaceDisplayName().equals(this.getSpaceDisplayName()) == false)
+            return false;
+        if (other.getUrl() == null ^ this.getUrl() == null)
+            return false;
+        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
             return false;
         return true;
     }
@@ -881,10 +916,10 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSpaceSettings() == null) ? 0 : getSpaceSettings().hashCode());
-        hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
-        hashCode = prime * hashCode + ((getSpaceDisplayName() == null) ? 0 : getSpaceDisplayName().hashCode());
         hashCode = prime * hashCode + ((getOwnershipSettings() == null) ? 0 : getOwnershipSettings().hashCode());
         hashCode = prime * hashCode + ((getSpaceSharingSettings() == null) ? 0 : getSpaceSharingSettings().hashCode());
+        hashCode = prime * hashCode + ((getSpaceDisplayName() == null) ? 0 : getSpaceDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         return hashCode;
     }
 

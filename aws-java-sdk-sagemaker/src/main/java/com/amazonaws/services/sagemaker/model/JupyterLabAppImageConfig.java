@@ -28,7 +28,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JupyterLabAppImageConfig implements Serializable, Cloneable, StructuredPojo {
 
+    private FileSystemConfig fileSystemConfig;
+
     private ContainerConfig containerConfig;
+
+    /**
+     * @param fileSystemConfig
+     */
+
+    public void setFileSystemConfig(FileSystemConfig fileSystemConfig) {
+        this.fileSystemConfig = fileSystemConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public FileSystemConfig getFileSystemConfig() {
+        return this.fileSystemConfig;
+    }
+
+    /**
+     * @param fileSystemConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JupyterLabAppImageConfig withFileSystemConfig(FileSystemConfig fileSystemConfig) {
+        setFileSystemConfig(fileSystemConfig);
+        return this;
+    }
 
     /**
      * @param containerConfig
@@ -68,6 +96,8 @@ public class JupyterLabAppImageConfig implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFileSystemConfig() != null)
+            sb.append("FileSystemConfig: ").append(getFileSystemConfig()).append(",");
         if (getContainerConfig() != null)
             sb.append("ContainerConfig: ").append(getContainerConfig());
         sb.append("}");
@@ -84,6 +114,10 @@ public class JupyterLabAppImageConfig implements Serializable, Cloneable, Struct
         if (obj instanceof JupyterLabAppImageConfig == false)
             return false;
         JupyterLabAppImageConfig other = (JupyterLabAppImageConfig) obj;
+        if (other.getFileSystemConfig() == null ^ this.getFileSystemConfig() == null)
+            return false;
+        if (other.getFileSystemConfig() != null && other.getFileSystemConfig().equals(this.getFileSystemConfig()) == false)
+            return false;
         if (other.getContainerConfig() == null ^ this.getContainerConfig() == null)
             return false;
         if (other.getContainerConfig() != null && other.getContainerConfig().equals(this.getContainerConfig()) == false)
@@ -96,6 +130,7 @@ public class JupyterLabAppImageConfig implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFileSystemConfig() == null) ? 0 : getFileSystemConfig().hashCode());
         hashCode = prime * hashCode + ((getContainerConfig() == null) ? 0 : getContainerConfig().hashCode());
         return hashCode;
     }

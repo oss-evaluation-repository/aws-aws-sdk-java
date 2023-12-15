@@ -68,6 +68,12 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
     private AutoMLProblemTypeConfig autoMLProblemTypeConfig;
     /**
      * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     */
+    private String autoMLProblemTypeConfigName;
+    /**
+     * <p>
      * Returns the creation time of the AutoML job V2.
      * </p>
      */
@@ -115,6 +121,14 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String autoMLJobSecondaryStatus;
+
+    private AutoMLJobArtifacts autoMLJobArtifacts;
+    /**
+     * <p>
+     * Returns the resolved attributes used by the AutoML job V2.
+     * </p>
+     */
+    private AutoMLResolvedAttributes resolvedAttributes;
     /**
      * <p>
      * Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed
@@ -140,20 +154,6 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private AutoMLSecurityConfig securityConfig;
-
-    private AutoMLJobArtifacts autoMLJobArtifacts;
-    /**
-     * <p>
-     * Returns the resolved attributes used by the AutoML job V2.
-     * </p>
-     */
-    private AutoMLResolvedAttributes resolvedAttributes;
-    /**
-     * <p>
-     * Returns the name of the problem type configuration set for the AutoML job V2.
-     * </p>
-     */
-    private String autoMLProblemTypeConfigName;
 
     /**
      * <p>
@@ -468,6 +468,65 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
 
     public DescribeAutoMLJobV2Result withAutoMLProblemTypeConfig(AutoMLProblemTypeConfig autoMLProblemTypeConfig) {
         setAutoMLProblemTypeConfig(autoMLProblemTypeConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     * 
+     * @param autoMLProblemTypeConfigName
+     *        Returns the name of the problem type configuration set for the AutoML job V2.
+     * @see AutoMLProblemTypeConfigName
+     */
+
+    public void setAutoMLProblemTypeConfigName(String autoMLProblemTypeConfigName) {
+        this.autoMLProblemTypeConfigName = autoMLProblemTypeConfigName;
+    }
+
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     * 
+     * @return Returns the name of the problem type configuration set for the AutoML job V2.
+     * @see AutoMLProblemTypeConfigName
+     */
+
+    public String getAutoMLProblemTypeConfigName() {
+        return this.autoMLProblemTypeConfigName;
+    }
+
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     * 
+     * @param autoMLProblemTypeConfigName
+     *        Returns the name of the problem type configuration set for the AutoML job V2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLProblemTypeConfigName
+     */
+
+    public DescribeAutoMLJobV2Result withAutoMLProblemTypeConfigName(String autoMLProblemTypeConfigName) {
+        setAutoMLProblemTypeConfigName(autoMLProblemTypeConfigName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the name of the problem type configuration set for the AutoML job V2.
+     * </p>
+     * 
+     * @param autoMLProblemTypeConfigName
+     *        Returns the name of the problem type configuration set for the AutoML job V2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLProblemTypeConfigName
+     */
+
+    public DescribeAutoMLJobV2Result withAutoMLProblemTypeConfigName(AutoMLProblemTypeConfigName autoMLProblemTypeConfigName) {
+        this.autoMLProblemTypeConfigName = autoMLProblemTypeConfigName.toString();
         return this;
     }
 
@@ -866,6 +925,72 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * @param autoMLJobArtifacts
+     */
+
+    public void setAutoMLJobArtifacts(AutoMLJobArtifacts autoMLJobArtifacts) {
+        this.autoMLJobArtifacts = autoMLJobArtifacts;
+    }
+
+    /**
+     * @return
+     */
+
+    public AutoMLJobArtifacts getAutoMLJobArtifacts() {
+        return this.autoMLJobArtifacts;
+    }
+
+    /**
+     * @param autoMLJobArtifacts
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAutoMLJobV2Result withAutoMLJobArtifacts(AutoMLJobArtifacts autoMLJobArtifacts) {
+        setAutoMLJobArtifacts(autoMLJobArtifacts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the resolved attributes used by the AutoML job V2.
+     * </p>
+     * 
+     * @param resolvedAttributes
+     *        Returns the resolved attributes used by the AutoML job V2.
+     */
+
+    public void setResolvedAttributes(AutoMLResolvedAttributes resolvedAttributes) {
+        this.resolvedAttributes = resolvedAttributes;
+    }
+
+    /**
+     * <p>
+     * Returns the resolved attributes used by the AutoML job V2.
+     * </p>
+     * 
+     * @return Returns the resolved attributes used by the AutoML job V2.
+     */
+
+    public AutoMLResolvedAttributes getResolvedAttributes() {
+        return this.resolvedAttributes;
+    }
+
+    /**
+     * <p>
+     * Returns the resolved attributes used by the AutoML job V2.
+     * </p>
+     * 
+     * @param resolvedAttributes
+     *        Returns the resolved attributes used by the AutoML job V2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAutoMLJobV2Result withResolvedAttributes(AutoMLResolvedAttributes resolvedAttributes) {
+        setResolvedAttributes(resolvedAttributes);
+        return this;
+    }
+
+    /**
      * <p>
      * Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed
      * automatically.
@@ -1032,131 +1157,6 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @param autoMLJobArtifacts
-     */
-
-    public void setAutoMLJobArtifacts(AutoMLJobArtifacts autoMLJobArtifacts) {
-        this.autoMLJobArtifacts = autoMLJobArtifacts;
-    }
-
-    /**
-     * @return
-     */
-
-    public AutoMLJobArtifacts getAutoMLJobArtifacts() {
-        return this.autoMLJobArtifacts;
-    }
-
-    /**
-     * @param autoMLJobArtifacts
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeAutoMLJobV2Result withAutoMLJobArtifacts(AutoMLJobArtifacts autoMLJobArtifacts) {
-        setAutoMLJobArtifacts(autoMLJobArtifacts);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Returns the resolved attributes used by the AutoML job V2.
-     * </p>
-     * 
-     * @param resolvedAttributes
-     *        Returns the resolved attributes used by the AutoML job V2.
-     */
-
-    public void setResolvedAttributes(AutoMLResolvedAttributes resolvedAttributes) {
-        this.resolvedAttributes = resolvedAttributes;
-    }
-
-    /**
-     * <p>
-     * Returns the resolved attributes used by the AutoML job V2.
-     * </p>
-     * 
-     * @return Returns the resolved attributes used by the AutoML job V2.
-     */
-
-    public AutoMLResolvedAttributes getResolvedAttributes() {
-        return this.resolvedAttributes;
-    }
-
-    /**
-     * <p>
-     * Returns the resolved attributes used by the AutoML job V2.
-     * </p>
-     * 
-     * @param resolvedAttributes
-     *        Returns the resolved attributes used by the AutoML job V2.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeAutoMLJobV2Result withResolvedAttributes(AutoMLResolvedAttributes resolvedAttributes) {
-        setResolvedAttributes(resolvedAttributes);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Returns the name of the problem type configuration set for the AutoML job V2.
-     * </p>
-     * 
-     * @param autoMLProblemTypeConfigName
-     *        Returns the name of the problem type configuration set for the AutoML job V2.
-     * @see AutoMLProblemTypeConfigName
-     */
-
-    public void setAutoMLProblemTypeConfigName(String autoMLProblemTypeConfigName) {
-        this.autoMLProblemTypeConfigName = autoMLProblemTypeConfigName;
-    }
-
-    /**
-     * <p>
-     * Returns the name of the problem type configuration set for the AutoML job V2.
-     * </p>
-     * 
-     * @return Returns the name of the problem type configuration set for the AutoML job V2.
-     * @see AutoMLProblemTypeConfigName
-     */
-
-    public String getAutoMLProblemTypeConfigName() {
-        return this.autoMLProblemTypeConfigName;
-    }
-
-    /**
-     * <p>
-     * Returns the name of the problem type configuration set for the AutoML job V2.
-     * </p>
-     * 
-     * @param autoMLProblemTypeConfigName
-     *        Returns the name of the problem type configuration set for the AutoML job V2.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AutoMLProblemTypeConfigName
-     */
-
-    public DescribeAutoMLJobV2Result withAutoMLProblemTypeConfigName(String autoMLProblemTypeConfigName) {
-        setAutoMLProblemTypeConfigName(autoMLProblemTypeConfigName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Returns the name of the problem type configuration set for the AutoML job V2.
-     * </p>
-     * 
-     * @param autoMLProblemTypeConfigName
-     *        Returns the name of the problem type configuration set for the AutoML job V2.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AutoMLProblemTypeConfigName
-     */
-
-    public DescribeAutoMLJobV2Result withAutoMLProblemTypeConfigName(AutoMLProblemTypeConfigName autoMLProblemTypeConfigName) {
-        this.autoMLProblemTypeConfigName = autoMLProblemTypeConfigName.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1182,6 +1182,8 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
             sb.append("AutoMLJobObjective: ").append(getAutoMLJobObjective()).append(",");
         if (getAutoMLProblemTypeConfig() != null)
             sb.append("AutoMLProblemTypeConfig: ").append(getAutoMLProblemTypeConfig()).append(",");
+        if (getAutoMLProblemTypeConfigName() != null)
+            sb.append("AutoMLProblemTypeConfigName: ").append(getAutoMLProblemTypeConfigName()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getEndTime() != null)
@@ -1198,6 +1200,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
             sb.append("AutoMLJobStatus: ").append(getAutoMLJobStatus()).append(",");
         if (getAutoMLJobSecondaryStatus() != null)
             sb.append("AutoMLJobSecondaryStatus: ").append(getAutoMLJobSecondaryStatus()).append(",");
+        if (getAutoMLJobArtifacts() != null)
+            sb.append("AutoMLJobArtifacts: ").append(getAutoMLJobArtifacts()).append(",");
+        if (getResolvedAttributes() != null)
+            sb.append("ResolvedAttributes: ").append(getResolvedAttributes()).append(",");
         if (getModelDeployConfig() != null)
             sb.append("ModelDeployConfig: ").append(getModelDeployConfig()).append(",");
         if (getModelDeployResult() != null)
@@ -1205,13 +1211,7 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
         if (getDataSplitConfig() != null)
             sb.append("DataSplitConfig: ").append(getDataSplitConfig()).append(",");
         if (getSecurityConfig() != null)
-            sb.append("SecurityConfig: ").append(getSecurityConfig()).append(",");
-        if (getAutoMLJobArtifacts() != null)
-            sb.append("AutoMLJobArtifacts: ").append(getAutoMLJobArtifacts()).append(",");
-        if (getResolvedAttributes() != null)
-            sb.append("ResolvedAttributes: ").append(getResolvedAttributes()).append(",");
-        if (getAutoMLProblemTypeConfigName() != null)
-            sb.append("AutoMLProblemTypeConfigName: ").append(getAutoMLProblemTypeConfigName());
+            sb.append("SecurityConfig: ").append(getSecurityConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1254,6 +1254,10 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getAutoMLProblemTypeConfig() != null && other.getAutoMLProblemTypeConfig().equals(this.getAutoMLProblemTypeConfig()) == false)
             return false;
+        if (other.getAutoMLProblemTypeConfigName() == null ^ this.getAutoMLProblemTypeConfigName() == null)
+            return false;
+        if (other.getAutoMLProblemTypeConfigName() != null && other.getAutoMLProblemTypeConfigName().equals(this.getAutoMLProblemTypeConfigName()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -1286,6 +1290,14 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getAutoMLJobSecondaryStatus() != null && other.getAutoMLJobSecondaryStatus().equals(this.getAutoMLJobSecondaryStatus()) == false)
             return false;
+        if (other.getAutoMLJobArtifacts() == null ^ this.getAutoMLJobArtifacts() == null)
+            return false;
+        if (other.getAutoMLJobArtifacts() != null && other.getAutoMLJobArtifacts().equals(this.getAutoMLJobArtifacts()) == false)
+            return false;
+        if (other.getResolvedAttributes() == null ^ this.getResolvedAttributes() == null)
+            return false;
+        if (other.getResolvedAttributes() != null && other.getResolvedAttributes().equals(this.getResolvedAttributes()) == false)
+            return false;
         if (other.getModelDeployConfig() == null ^ this.getModelDeployConfig() == null)
             return false;
         if (other.getModelDeployConfig() != null && other.getModelDeployConfig().equals(this.getModelDeployConfig()) == false)
@@ -1302,18 +1314,6 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getSecurityConfig() != null && other.getSecurityConfig().equals(this.getSecurityConfig()) == false)
             return false;
-        if (other.getAutoMLJobArtifacts() == null ^ this.getAutoMLJobArtifacts() == null)
-            return false;
-        if (other.getAutoMLJobArtifacts() != null && other.getAutoMLJobArtifacts().equals(this.getAutoMLJobArtifacts()) == false)
-            return false;
-        if (other.getResolvedAttributes() == null ^ this.getResolvedAttributes() == null)
-            return false;
-        if (other.getResolvedAttributes() != null && other.getResolvedAttributes().equals(this.getResolvedAttributes()) == false)
-            return false;
-        if (other.getAutoMLProblemTypeConfigName() == null ^ this.getAutoMLProblemTypeConfigName() == null)
-            return false;
-        if (other.getAutoMLProblemTypeConfigName() != null && other.getAutoMLProblemTypeConfigName().equals(this.getAutoMLProblemTypeConfigName()) == false)
-            return false;
         return true;
     }
 
@@ -1329,6 +1329,7 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getAutoMLJobObjective() == null) ? 0 : getAutoMLJobObjective().hashCode());
         hashCode = prime * hashCode + ((getAutoMLProblemTypeConfig() == null) ? 0 : getAutoMLProblemTypeConfig().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLProblemTypeConfigName() == null) ? 0 : getAutoMLProblemTypeConfigName().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
@@ -1337,13 +1338,12 @@ public class DescribeAutoMLJobV2Result extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getBestCandidate() == null) ? 0 : getBestCandidate().hashCode());
         hashCode = prime * hashCode + ((getAutoMLJobStatus() == null) ? 0 : getAutoMLJobStatus().hashCode());
         hashCode = prime * hashCode + ((getAutoMLJobSecondaryStatus() == null) ? 0 : getAutoMLJobSecondaryStatus().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLJobArtifacts() == null) ? 0 : getAutoMLJobArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getResolvedAttributes() == null) ? 0 : getResolvedAttributes().hashCode());
         hashCode = prime * hashCode + ((getModelDeployConfig() == null) ? 0 : getModelDeployConfig().hashCode());
         hashCode = prime * hashCode + ((getModelDeployResult() == null) ? 0 : getModelDeployResult().hashCode());
         hashCode = prime * hashCode + ((getDataSplitConfig() == null) ? 0 : getDataSplitConfig().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfig() == null) ? 0 : getSecurityConfig().hashCode());
-        hashCode = prime * hashCode + ((getAutoMLJobArtifacts() == null) ? 0 : getAutoMLJobArtifacts().hashCode());
-        hashCode = prime * hashCode + ((getResolvedAttributes() == null) ? 0 : getResolvedAttributes().hashCode());
-        hashCode = prime * hashCode + ((getAutoMLProblemTypeConfigName() == null) ? 0 : getAutoMLProblemTypeConfigName().hashCode());
         return hashCode;
     }
 

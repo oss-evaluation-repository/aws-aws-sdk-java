@@ -56,6 +56,10 @@ public class AppDetailsJsonUnmarshaller implements Unmarshaller<AppDetails, Json
                     context.nextToken();
                     appDetails.setUserProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SpaceName", targetDepth)) {
+                    context.nextToken();
+                    appDetails.setSpaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AppType", targetDepth)) {
                     context.nextToken();
                     appDetails.setAppType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,10 +75,6 @@ public class AppDetailsJsonUnmarshaller implements Unmarshaller<AppDetails, Json
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     appDetails.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("SpaceName", targetDepth)) {
-                    context.nextToken();
-                    appDetails.setSpaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceSpec", targetDepth)) {
                     context.nextToken();

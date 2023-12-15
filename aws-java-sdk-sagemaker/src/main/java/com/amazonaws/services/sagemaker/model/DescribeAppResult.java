@@ -55,6 +55,12 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String userProfileName;
     /**
      * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     */
+    private String spaceName;
+    /**
+     * <p>
      * The status.
      * </p>
      */
@@ -91,12 +97,6 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private ResourceSpec resourceSpec;
-    /**
-     * <p>
-     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * </p>
-     */
-    private String spaceName;
 
     /**
      * <p>
@@ -314,6 +314,46 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public DescribeAppResult withUserProfileName(String userProfileName) {
         setUserProfileName(userProfileName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     */
+
+    public void setSpaceName(String spaceName) {
+        this.spaceName = spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @return The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     */
+
+    public String getSpaceName() {
+        return this.spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAppResult withSpaceName(String spaceName) {
+        setSpaceName(spaceName);
         return this;
     }
 
@@ -589,46 +629,6 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * <p>
-     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * </p>
-     * 
-     * @param spaceName
-     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     */
-
-    public void setSpaceName(String spaceName) {
-        this.spaceName = spaceName;
-    }
-
-    /**
-     * <p>
-     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * </p>
-     * 
-     * @return The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     */
-
-    public String getSpaceName() {
-        return this.spaceName;
-    }
-
-    /**
-     * <p>
-     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * </p>
-     * 
-     * @param spaceName
-     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeAppResult withSpaceName(String spaceName) {
-        setSpaceName(spaceName);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -650,6 +650,8 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getUserProfileName() != null)
             sb.append("UserProfileName: ").append(getUserProfileName()).append(",");
+        if (getSpaceName() != null)
+            sb.append("SpaceName: ").append(getSpaceName()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getLastHealthCheckTimestamp() != null)
@@ -661,9 +663,7 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getResourceSpec() != null)
-            sb.append("ResourceSpec: ").append(getResourceSpec()).append(",");
-        if (getSpaceName() != null)
-            sb.append("SpaceName: ").append(getSpaceName());
+            sb.append("ResourceSpec: ").append(getResourceSpec());
         sb.append("}");
         return sb.toString();
     }
@@ -698,6 +698,10 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getUserProfileName() != null && other.getUserProfileName().equals(this.getUserProfileName()) == false)
             return false;
+        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
+            return false;
+        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -722,10 +726,6 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getResourceSpec() != null && other.getResourceSpec().equals(this.getResourceSpec()) == false)
             return false;
-        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
-            return false;
-        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
-            return false;
         return true;
     }
 
@@ -739,13 +739,13 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getAppName() == null) ? 0 : getAppName().hashCode());
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getUserProfileName() == null) ? 0 : getUserProfileName().hashCode());
+        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getLastHealthCheckTimestamp() == null) ? 0 : getLastHealthCheckTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLastUserActivityTimestamp() == null) ? 0 : getLastUserActivityTimestamp().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getResourceSpec() == null) ? 0 : getResourceSpec().hashCode());
-        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         return hashCode;
     }
 

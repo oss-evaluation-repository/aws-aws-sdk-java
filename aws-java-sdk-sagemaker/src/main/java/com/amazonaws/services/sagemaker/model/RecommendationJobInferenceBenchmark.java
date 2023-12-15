@@ -30,6 +30,8 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
 
     private RecommendationMetrics metrics;
 
+    private InferenceMetrics endpointMetrics;
+
     private EndpointOutputConfiguration endpointConfiguration;
 
     private ModelConfiguration modelConfiguration;
@@ -39,8 +41,6 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
      * </p>
      */
     private String failureReason;
-
-    private InferenceMetrics endpointMetrics;
     /**
      * <p>
      * A timestamp that shows when the benchmark completed.
@@ -77,6 +77,32 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
 
     public RecommendationJobInferenceBenchmark withMetrics(RecommendationMetrics metrics) {
         setMetrics(metrics);
+        return this;
+    }
+
+    /**
+     * @param endpointMetrics
+     */
+
+    public void setEndpointMetrics(InferenceMetrics endpointMetrics) {
+        this.endpointMetrics = endpointMetrics;
+    }
+
+    /**
+     * @return
+     */
+
+    public InferenceMetrics getEndpointMetrics() {
+        return this.endpointMetrics;
+    }
+
+    /**
+     * @param endpointMetrics
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecommendationJobInferenceBenchmark withEndpointMetrics(InferenceMetrics endpointMetrics) {
+        setEndpointMetrics(endpointMetrics);
         return this;
     }
 
@@ -169,32 +195,6 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
 
     public RecommendationJobInferenceBenchmark withFailureReason(String failureReason) {
         setFailureReason(failureReason);
-        return this;
-    }
-
-    /**
-     * @param endpointMetrics
-     */
-
-    public void setEndpointMetrics(InferenceMetrics endpointMetrics) {
-        this.endpointMetrics = endpointMetrics;
-    }
-
-    /**
-     * @return
-     */
-
-    public InferenceMetrics getEndpointMetrics() {
-        return this.endpointMetrics;
-    }
-
-    /**
-     * @param endpointMetrics
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RecommendationJobInferenceBenchmark withEndpointMetrics(InferenceMetrics endpointMetrics) {
-        setEndpointMetrics(endpointMetrics);
         return this;
     }
 
@@ -292,14 +292,14 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
         sb.append("{");
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
+        if (getEndpointMetrics() != null)
+            sb.append("EndpointMetrics: ").append(getEndpointMetrics()).append(",");
         if (getEndpointConfiguration() != null)
             sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
         if (getModelConfiguration() != null)
             sb.append("ModelConfiguration: ").append(getModelConfiguration()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
-        if (getEndpointMetrics() != null)
-            sb.append("EndpointMetrics: ").append(getEndpointMetrics()).append(",");
         if (getInvocationEndTime() != null)
             sb.append("InvocationEndTime: ").append(getInvocationEndTime()).append(",");
         if (getInvocationStartTime() != null)
@@ -322,6 +322,10 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
+        if (other.getEndpointMetrics() == null ^ this.getEndpointMetrics() == null)
+            return false;
+        if (other.getEndpointMetrics() != null && other.getEndpointMetrics().equals(this.getEndpointMetrics()) == false)
+            return false;
         if (other.getEndpointConfiguration() == null ^ this.getEndpointConfiguration() == null)
             return false;
         if (other.getEndpointConfiguration() != null && other.getEndpointConfiguration().equals(this.getEndpointConfiguration()) == false)
@@ -333,10 +337,6 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
-            return false;
-        if (other.getEndpointMetrics() == null ^ this.getEndpointMetrics() == null)
-            return false;
-        if (other.getEndpointMetrics() != null && other.getEndpointMetrics().equals(this.getEndpointMetrics()) == false)
             return false;
         if (other.getInvocationEndTime() == null ^ this.getInvocationEndTime() == null)
             return false;
@@ -355,10 +355,10 @@ public class RecommendationJobInferenceBenchmark implements Serializable, Clonea
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getEndpointMetrics() == null) ? 0 : getEndpointMetrics().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getModelConfiguration() == null) ? 0 : getModelConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
-        hashCode = prime * hashCode + ((getEndpointMetrics() == null) ? 0 : getEndpointMetrics().hashCode());
         hashCode = prime * hashCode + ((getInvocationEndTime() == null) ? 0 : getInvocationEndTime().hashCode());
         hashCode = prime * hashCode + ((getInvocationStartTime() == null) ? 0 : getInvocationStartTime().hashCode());
         return hashCode;

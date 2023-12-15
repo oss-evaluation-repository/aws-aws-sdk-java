@@ -129,7 +129,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * A signed <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc">attestation
      * document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's
      * public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
      * </p>
@@ -925,7 +925,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * A signed <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc">attestation
      * document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's
      * public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
      * </p>
@@ -949,7 +949,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param recipient
      *        A signed <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc"
+     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc"
      *        >attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use
      *        with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
      *        </p>
@@ -978,7 +978,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * A signed <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc">attestation
      * document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's
      * public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
      * </p>
@@ -1001,7 +1001,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @return A signed <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc"
+     *         href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc"
      *         >attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use
      *         with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
      *         </p>
@@ -1030,7 +1030,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * A signed <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc">attestation
      * document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's
      * public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
      * </p>
@@ -1054,7 +1054,7 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * 
      * @param recipient
      *        A signed <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc"
+     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-concepts.html#term-attestdoc"
      *        >attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use
      *        with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
      *        </p>

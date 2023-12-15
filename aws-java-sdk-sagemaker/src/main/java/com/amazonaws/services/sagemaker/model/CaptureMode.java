@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum CaptureMode {
 
     Input("Input"),
-    Output("Output");
+    Output("Output"),
+    InputAndOutput("InputAndOutput");
 
     private String value;
 

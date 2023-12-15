@@ -56,13 +56,13 @@ public class AutoMLJobConfigJsonUnmarshaller implements Unmarshaller<AutoMLJobCo
                     context.nextToken();
                     autoMLJobConfig.setSecurityConfig(AutoMLSecurityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("DataSplitConfig", targetDepth)) {
-                    context.nextToken();
-                    autoMLJobConfig.setDataSplitConfig(AutoMLDataSplitConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("CandidateGenerationConfig", targetDepth)) {
                     context.nextToken();
                     autoMLJobConfig.setCandidateGenerationConfig(AutoMLCandidateGenerationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DataSplitConfig", targetDepth)) {
+                    context.nextToken();
+                    autoMLJobConfig.setDataSplitConfig(AutoMLDataSplitConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Mode", targetDepth)) {
                     context.nextToken();

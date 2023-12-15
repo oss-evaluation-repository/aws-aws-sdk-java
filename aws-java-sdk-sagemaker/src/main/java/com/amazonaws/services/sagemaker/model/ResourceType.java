@@ -25,16 +25,18 @@ public enum ResourceType {
     ExperimentTrial("ExperimentTrial"),
     ExperimentTrialComponent("ExperimentTrialComponent"),
     Endpoint("Endpoint"),
+    Model("Model"),
     ModelPackage("ModelPackage"),
     ModelPackageGroup("ModelPackageGroup"),
     Pipeline("Pipeline"),
     PipelineExecution("PipelineExecution"),
     FeatureGroup("FeatureGroup"),
-    Project("Project"),
     FeatureMetadata("FeatureMetadata"),
+    Image("Image"),
+    ImageVersion("ImageVersion"),
+    Project("Project"),
     HyperParameterTuningJob("HyperParameterTuningJob"),
-    ModelCard("ModelCard"),
-    Model("Model");
+    ModelCard("ModelCard");
 
     private String value;
 

@@ -113,6 +113,30 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdateTimestamp;
     /**
      * <p>
+     * The timestamp when the contact was last paused.
+     * </p>
+     */
+    private java.util.Date lastPausedTimestamp;
+    /**
+     * <p>
+     * The timestamp when the contact was last resumed.
+     * </p>
+     */
+    private java.util.Date lastResumedTimestamp;
+    /**
+     * <p>
+     * Total pause count for a contact.
+     * </p>
+     */
+    private Integer totalPauseCount;
+    /**
+     * <p>
+     * Total pause duration for a contact in seconds.
+     * </p>
+     */
+    private Integer totalPauseDurationInSeconds;
+    /**
+     * <p>
      * The timestamp, in Unix epoch time format, at which to start running the inbound flow.
      * </p>
      */
@@ -731,6 +755,166 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The timestamp when the contact was last paused.
+     * </p>
+     * 
+     * @param lastPausedTimestamp
+     *        The timestamp when the contact was last paused.
+     */
+
+    public void setLastPausedTimestamp(java.util.Date lastPausedTimestamp) {
+        this.lastPausedTimestamp = lastPausedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last paused.
+     * </p>
+     * 
+     * @return The timestamp when the contact was last paused.
+     */
+
+    public java.util.Date getLastPausedTimestamp() {
+        return this.lastPausedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last paused.
+     * </p>
+     * 
+     * @param lastPausedTimestamp
+     *        The timestamp when the contact was last paused.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withLastPausedTimestamp(java.util.Date lastPausedTimestamp) {
+        setLastPausedTimestamp(lastPausedTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last resumed.
+     * </p>
+     * 
+     * @param lastResumedTimestamp
+     *        The timestamp when the contact was last resumed.
+     */
+
+    public void setLastResumedTimestamp(java.util.Date lastResumedTimestamp) {
+        this.lastResumedTimestamp = lastResumedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last resumed.
+     * </p>
+     * 
+     * @return The timestamp when the contact was last resumed.
+     */
+
+    public java.util.Date getLastResumedTimestamp() {
+        return this.lastResumedTimestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the contact was last resumed.
+     * </p>
+     * 
+     * @param lastResumedTimestamp
+     *        The timestamp when the contact was last resumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withLastResumedTimestamp(java.util.Date lastResumedTimestamp) {
+        setLastResumedTimestamp(lastResumedTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Total pause count for a contact.
+     * </p>
+     * 
+     * @param totalPauseCount
+     *        Total pause count for a contact.
+     */
+
+    public void setTotalPauseCount(Integer totalPauseCount) {
+        this.totalPauseCount = totalPauseCount;
+    }
+
+    /**
+     * <p>
+     * Total pause count for a contact.
+     * </p>
+     * 
+     * @return Total pause count for a contact.
+     */
+
+    public Integer getTotalPauseCount() {
+        return this.totalPauseCount;
+    }
+
+    /**
+     * <p>
+     * Total pause count for a contact.
+     * </p>
+     * 
+     * @param totalPauseCount
+     *        Total pause count for a contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withTotalPauseCount(Integer totalPauseCount) {
+        setTotalPauseCount(totalPauseCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Total pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @param totalPauseDurationInSeconds
+     *        Total pause duration for a contact in seconds.
+     */
+
+    public void setTotalPauseDurationInSeconds(Integer totalPauseDurationInSeconds) {
+        this.totalPauseDurationInSeconds = totalPauseDurationInSeconds;
+    }
+
+    /**
+     * <p>
+     * Total pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @return Total pause duration for a contact in seconds.
+     */
+
+    public Integer getTotalPauseDurationInSeconds() {
+        return this.totalPauseDurationInSeconds;
+    }
+
+    /**
+     * <p>
+     * Total pause duration for a contact in seconds.
+     * </p>
+     * 
+     * @param totalPauseDurationInSeconds
+     *        Total pause duration for a contact in seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Contact withTotalPauseDurationInSeconds(Integer totalPauseDurationInSeconds) {
+        setTotalPauseDurationInSeconds(totalPauseDurationInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp, in Unix epoch time format, at which to start running the inbound flow.
      * </p>
      * 
@@ -967,6 +1151,14 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
             sb.append("DisconnectTimestamp: ").append(getDisconnectTimestamp()).append(",");
         if (getLastUpdateTimestamp() != null)
             sb.append("LastUpdateTimestamp: ").append(getLastUpdateTimestamp()).append(",");
+        if (getLastPausedTimestamp() != null)
+            sb.append("LastPausedTimestamp: ").append(getLastPausedTimestamp()).append(",");
+        if (getLastResumedTimestamp() != null)
+            sb.append("LastResumedTimestamp: ").append(getLastResumedTimestamp()).append(",");
+        if (getTotalPauseCount() != null)
+            sb.append("TotalPauseCount: ").append(getTotalPauseCount()).append(",");
+        if (getTotalPauseDurationInSeconds() != null)
+            sb.append("TotalPauseDurationInSeconds: ").append(getTotalPauseDurationInSeconds()).append(",");
         if (getScheduledTimestamp() != null)
             sb.append("ScheduledTimestamp: ").append(getScheduledTimestamp()).append(",");
         if (getRelatedContactId() != null)
@@ -1041,6 +1233,22 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdateTimestamp() != null && other.getLastUpdateTimestamp().equals(this.getLastUpdateTimestamp()) == false)
             return false;
+        if (other.getLastPausedTimestamp() == null ^ this.getLastPausedTimestamp() == null)
+            return false;
+        if (other.getLastPausedTimestamp() != null && other.getLastPausedTimestamp().equals(this.getLastPausedTimestamp()) == false)
+            return false;
+        if (other.getLastResumedTimestamp() == null ^ this.getLastResumedTimestamp() == null)
+            return false;
+        if (other.getLastResumedTimestamp() != null && other.getLastResumedTimestamp().equals(this.getLastResumedTimestamp()) == false)
+            return false;
+        if (other.getTotalPauseCount() == null ^ this.getTotalPauseCount() == null)
+            return false;
+        if (other.getTotalPauseCount() != null && other.getTotalPauseCount().equals(this.getTotalPauseCount()) == false)
+            return false;
+        if (other.getTotalPauseDurationInSeconds() == null ^ this.getTotalPauseDurationInSeconds() == null)
+            return false;
+        if (other.getTotalPauseDurationInSeconds() != null && other.getTotalPauseDurationInSeconds().equals(this.getTotalPauseDurationInSeconds()) == false)
+            return false;
         if (other.getScheduledTimestamp() == null ^ this.getScheduledTimestamp() == null)
             return false;
         if (other.getScheduledTimestamp() != null && other.getScheduledTimestamp().equals(this.getScheduledTimestamp()) == false)
@@ -1078,6 +1286,10 @@ public class Contact implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInitiationTimestamp() == null) ? 0 : getInitiationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDisconnectTimestamp() == null) ? 0 : getDisconnectTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTimestamp() == null) ? 0 : getLastUpdateTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastPausedTimestamp() == null) ? 0 : getLastPausedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getLastResumedTimestamp() == null) ? 0 : getLastResumedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getTotalPauseCount() == null) ? 0 : getTotalPauseCount().hashCode());
+        hashCode = prime * hashCode + ((getTotalPauseDurationInSeconds() == null) ? 0 : getTotalPauseDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getScheduledTimestamp() == null) ? 0 : getScheduledTimestamp().hashCode());
         hashCode = prime * hashCode + ((getRelatedContactId() == null) ? 0 : getRelatedContactId().hashCode());
         hashCode = prime * hashCode + ((getWisdomInfo() == null) ? 0 : getWisdomInfo().hashCode());

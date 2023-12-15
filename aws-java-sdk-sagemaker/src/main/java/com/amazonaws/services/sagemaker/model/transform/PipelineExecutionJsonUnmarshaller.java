@@ -96,15 +96,15 @@ public class PipelineExecutionJsonUnmarshaller implements Unmarshaller<PipelineE
                     context.nextToken();
                     pipelineExecution.setParallelismConfiguration(ParallelismConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SelectiveExecutionConfig", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setSelectiveExecutionConfig(SelectiveExecutionConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("PipelineParameters", targetDepth)) {
                     context.nextToken();
                     pipelineExecution.setPipelineParameters(new ListUnmarshaller<Parameter>(ParameterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("SelectiveExecutionConfig", targetDepth)) {
-                    context.nextToken();
-                    pipelineExecution.setSelectiveExecutionConfig(SelectiveExecutionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

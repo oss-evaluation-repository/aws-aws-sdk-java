@@ -30,6 +30,8 @@ public class RecommendationJobInputConfigMarshaller {
 
     private static final MarshallingInfo<String> MODELPACKAGEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageVersionArn").build();
+    private static final MarshallingInfo<String> MODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ModelName").build();
     private static final MarshallingInfo<Integer> JOBDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobDurationInSeconds").build();
     private static final MarshallingInfo<StructuredPojo> TRAFFICPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -46,8 +48,6 @@ public class RecommendationJobInputConfigMarshaller {
             .marshallLocationName("Endpoints").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
-    private static final MarshallingInfo<String> MODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("ModelName").build();
 
     private static final RecommendationJobInputConfigMarshaller instance = new RecommendationJobInputConfigMarshaller();
 
@@ -66,6 +66,7 @@ public class RecommendationJobInputConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(recommendationJobInputConfig.getModelPackageVersionArn(), MODELPACKAGEVERSIONARN_BINDING);
+            protocolMarshaller.marshall(recommendationJobInputConfig.getModelName(), MODELNAME_BINDING);
             protocolMarshaller.marshall(recommendationJobInputConfig.getJobDurationInSeconds(), JOBDURATIONINSECONDS_BINDING);
             protocolMarshaller.marshall(recommendationJobInputConfig.getTrafficPattern(), TRAFFICPATTERN_BINDING);
             protocolMarshaller.marshall(recommendationJobInputConfig.getResourceLimit(), RESOURCELIMIT_BINDING);
@@ -74,7 +75,6 @@ public class RecommendationJobInputConfigMarshaller {
             protocolMarshaller.marshall(recommendationJobInputConfig.getContainerConfig(), CONTAINERCONFIG_BINDING);
             protocolMarshaller.marshall(recommendationJobInputConfig.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(recommendationJobInputConfig.getVpcConfig(), VPCCONFIG_BINDING);
-            protocolMarshaller.marshall(recommendationJobInputConfig.getModelName(), MODELNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

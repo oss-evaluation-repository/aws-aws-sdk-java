@@ -86,6 +86,12 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
     private LambdaStepMetadata lambda;
     /**
      * <p>
+     * The configurations and outcomes of an Amazon EMR step execution.
+     * </p>
+     */
+    private EMRStepMetadata eMR;
+    /**
+     * <p>
      * The configurations and outcomes of the check step execution. This includes:
      * </p>
      * <ul>
@@ -181,12 +187,6 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      * </ul>
      */
     private ClarifyCheckStepMetadata clarifyCheck;
-    /**
-     * <p>
-     * The configurations and outcomes of an Amazon EMR step execution.
-     * </p>
-     */
-    private EMRStepMetadata eMR;
     /**
      * <p>
      * The configurations and outcomes of a Fail step execution.
@@ -572,6 +572,46 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
 
     public PipelineExecutionStepMetadata withLambda(LambdaStepMetadata lambda) {
         setLambda(lambda);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configurations and outcomes of an Amazon EMR step execution.
+     * </p>
+     * 
+     * @param eMR
+     *        The configurations and outcomes of an Amazon EMR step execution.
+     */
+
+    public void setEMR(EMRStepMetadata eMR) {
+        this.eMR = eMR;
+    }
+
+    /**
+     * <p>
+     * The configurations and outcomes of an Amazon EMR step execution.
+     * </p>
+     * 
+     * @return The configurations and outcomes of an Amazon EMR step execution.
+     */
+
+    public EMRStepMetadata getEMR() {
+        return this.eMR;
+    }
+
+    /**
+     * <p>
+     * The configurations and outcomes of an Amazon EMR step execution.
+     * </p>
+     * 
+     * @param eMR
+     *        The configurations and outcomes of an Amazon EMR step execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStepMetadata withEMR(EMRStepMetadata eMR) {
+        setEMR(eMR);
         return this;
     }
 
@@ -1167,46 +1207,6 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The configurations and outcomes of an Amazon EMR step execution.
-     * </p>
-     * 
-     * @param eMR
-     *        The configurations and outcomes of an Amazon EMR step execution.
-     */
-
-    public void setEMR(EMRStepMetadata eMR) {
-        this.eMR = eMR;
-    }
-
-    /**
-     * <p>
-     * The configurations and outcomes of an Amazon EMR step execution.
-     * </p>
-     * 
-     * @return The configurations and outcomes of an Amazon EMR step execution.
-     */
-
-    public EMRStepMetadata getEMR() {
-        return this.eMR;
-    }
-
-    /**
-     * <p>
-     * The configurations and outcomes of an Amazon EMR step execution.
-     * </p>
-     * 
-     * @param eMR
-     *        The configurations and outcomes of an Amazon EMR step execution.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PipelineExecutionStepMetadata withEMR(EMRStepMetadata eMR) {
-        setEMR(eMR);
-        return this;
-    }
-
-    /**
-     * <p>
      * The configurations and outcomes of a Fail step execution.
      * </p>
      * 
@@ -1315,12 +1315,12 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
             sb.append("Callback: ").append(getCallback()).append(",");
         if (getLambda() != null)
             sb.append("Lambda: ").append(getLambda()).append(",");
+        if (getEMR() != null)
+            sb.append("EMR: ").append(getEMR()).append(",");
         if (getQualityCheck() != null)
             sb.append("QualityCheck: ").append(getQualityCheck()).append(",");
         if (getClarifyCheck() != null)
             sb.append("ClarifyCheck: ").append(getClarifyCheck()).append(",");
-        if (getEMR() != null)
-            sb.append("EMR: ").append(getEMR()).append(",");
         if (getFail() != null)
             sb.append("Fail: ").append(getFail()).append(",");
         if (getAutoMLJob() != null)
@@ -1375,6 +1375,10 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
             return false;
         if (other.getLambda() != null && other.getLambda().equals(this.getLambda()) == false)
             return false;
+        if (other.getEMR() == null ^ this.getEMR() == null)
+            return false;
+        if (other.getEMR() != null && other.getEMR().equals(this.getEMR()) == false)
+            return false;
         if (other.getQualityCheck() == null ^ this.getQualityCheck() == null)
             return false;
         if (other.getQualityCheck() != null && other.getQualityCheck().equals(this.getQualityCheck()) == false)
@@ -1382,10 +1386,6 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
         if (other.getClarifyCheck() == null ^ this.getClarifyCheck() == null)
             return false;
         if (other.getClarifyCheck() != null && other.getClarifyCheck().equals(this.getClarifyCheck()) == false)
-            return false;
-        if (other.getEMR() == null ^ this.getEMR() == null)
-            return false;
-        if (other.getEMR() != null && other.getEMR().equals(this.getEMR()) == false)
             return false;
         if (other.getFail() == null ^ this.getFail() == null)
             return false;
@@ -1412,9 +1412,9 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
         hashCode = prime * hashCode + ((getCallback() == null) ? 0 : getCallback().hashCode());
         hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
+        hashCode = prime * hashCode + ((getEMR() == null) ? 0 : getEMR().hashCode());
         hashCode = prime * hashCode + ((getQualityCheck() == null) ? 0 : getQualityCheck().hashCode());
         hashCode = prime * hashCode + ((getClarifyCheck() == null) ? 0 : getClarifyCheck().hashCode());
-        hashCode = prime * hashCode + ((getEMR() == null) ? 0 : getEMR().hashCode());
         hashCode = prime * hashCode + ((getFail() == null) ? 0 : getFail().hashCode());
         hashCode = prime * hashCode + ((getAutoMLJob() == null) ? 0 : getAutoMLJob().hashCode());
         return hashCode;

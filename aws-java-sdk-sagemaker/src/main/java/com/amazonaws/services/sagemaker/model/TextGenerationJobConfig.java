@@ -97,6 +97,8 @@ public class TextGenerationJobConfig implements Serializable, Cloneable, Structu
      */
     private java.util.Map<String, String> textGenerationHyperParameters;
 
+    private ModelAccessConfig modelAccessConfig;
+
     /**
      * <p>
      * How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code> problem types, the
@@ -501,6 +503,32 @@ public class TextGenerationJobConfig implements Serializable, Cloneable, Structu
     }
 
     /**
+     * @param modelAccessConfig
+     */
+
+    public void setModelAccessConfig(ModelAccessConfig modelAccessConfig) {
+        this.modelAccessConfig = modelAccessConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ModelAccessConfig getModelAccessConfig() {
+        return this.modelAccessConfig;
+    }
+
+    /**
+     * @param modelAccessConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TextGenerationJobConfig withModelAccessConfig(ModelAccessConfig modelAccessConfig) {
+        setModelAccessConfig(modelAccessConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -517,7 +545,9 @@ public class TextGenerationJobConfig implements Serializable, Cloneable, Structu
         if (getBaseModelName() != null)
             sb.append("BaseModelName: ").append(getBaseModelName()).append(",");
         if (getTextGenerationHyperParameters() != null)
-            sb.append("TextGenerationHyperParameters: ").append(getTextGenerationHyperParameters());
+            sb.append("TextGenerationHyperParameters: ").append(getTextGenerationHyperParameters()).append(",");
+        if (getModelAccessConfig() != null)
+            sb.append("ModelAccessConfig: ").append(getModelAccessConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -545,6 +575,10 @@ public class TextGenerationJobConfig implements Serializable, Cloneable, Structu
         if (other.getTextGenerationHyperParameters() != null
                 && other.getTextGenerationHyperParameters().equals(this.getTextGenerationHyperParameters()) == false)
             return false;
+        if (other.getModelAccessConfig() == null ^ this.getModelAccessConfig() == null)
+            return false;
+        if (other.getModelAccessConfig() != null && other.getModelAccessConfig().equals(this.getModelAccessConfig()) == false)
+            return false;
         return true;
     }
 
@@ -556,6 +590,7 @@ public class TextGenerationJobConfig implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getCompletionCriteria() == null) ? 0 : getCompletionCriteria().hashCode());
         hashCode = prime * hashCode + ((getBaseModelName() == null) ? 0 : getBaseModelName().hashCode());
         hashCode = prime * hashCode + ((getTextGenerationHyperParameters() == null) ? 0 : getTextGenerationHyperParameters().hashCode());
+        hashCode = prime * hashCode + ((getModelAccessConfig() == null) ? 0 : getModelAccessConfig().hashCode());
         return hashCode;
     }
 

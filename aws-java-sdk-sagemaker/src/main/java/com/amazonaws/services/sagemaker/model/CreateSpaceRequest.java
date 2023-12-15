@@ -52,12 +52,6 @@ public class CreateSpaceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private SpaceSettings spaceSettings;
     /**
      * <p>
-     * The name of the space that appears in the SageMaker Studio UI.
-     * </p>
-     */
-    private String spaceDisplayName;
-    /**
-     * <p>
      * A collection of ownership settings.
      * </p>
      */
@@ -68,6 +62,12 @@ public class CreateSpaceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private SpaceSharingSettings spaceSharingSettings;
+    /**
+     * <p>
+     * The name of the space that appears in the SageMaker Studio UI.
+     * </p>
+     */
+    private String spaceDisplayName;
 
     /**
      * <p>
@@ -269,46 +269,6 @@ public class CreateSpaceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the space that appears in the SageMaker Studio UI.
-     * </p>
-     * 
-     * @param spaceDisplayName
-     *        The name of the space that appears in the SageMaker Studio UI.
-     */
-
-    public void setSpaceDisplayName(String spaceDisplayName) {
-        this.spaceDisplayName = spaceDisplayName;
-    }
-
-    /**
-     * <p>
-     * The name of the space that appears in the SageMaker Studio UI.
-     * </p>
-     * 
-     * @return The name of the space that appears in the SageMaker Studio UI.
-     */
-
-    public String getSpaceDisplayName() {
-        return this.spaceDisplayName;
-    }
-
-    /**
-     * <p>
-     * The name of the space that appears in the SageMaker Studio UI.
-     * </p>
-     * 
-     * @param spaceDisplayName
-     *        The name of the space that appears in the SageMaker Studio UI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateSpaceRequest withSpaceDisplayName(String spaceDisplayName) {
-        setSpaceDisplayName(spaceDisplayName);
-        return this;
-    }
-
-    /**
-     * <p>
      * A collection of ownership settings.
      * </p>
      * 
@@ -388,6 +348,46 @@ public class CreateSpaceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The name of the space that appears in the SageMaker Studio UI.
+     * </p>
+     * 
+     * @param spaceDisplayName
+     *        The name of the space that appears in the SageMaker Studio UI.
+     */
+
+    public void setSpaceDisplayName(String spaceDisplayName) {
+        this.spaceDisplayName = spaceDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of the space that appears in the SageMaker Studio UI.
+     * </p>
+     * 
+     * @return The name of the space that appears in the SageMaker Studio UI.
+     */
+
+    public String getSpaceDisplayName() {
+        return this.spaceDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of the space that appears in the SageMaker Studio UI.
+     * </p>
+     * 
+     * @param spaceDisplayName
+     *        The name of the space that appears in the SageMaker Studio UI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSpaceRequest withSpaceDisplayName(String spaceDisplayName) {
+        setSpaceDisplayName(spaceDisplayName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -407,12 +407,12 @@ public class CreateSpaceRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSpaceSettings() != null)
             sb.append("SpaceSettings: ").append(getSpaceSettings()).append(",");
-        if (getSpaceDisplayName() != null)
-            sb.append("SpaceDisplayName: ").append(getSpaceDisplayName()).append(",");
         if (getOwnershipSettings() != null)
             sb.append("OwnershipSettings: ").append(getOwnershipSettings()).append(",");
         if (getSpaceSharingSettings() != null)
-            sb.append("SpaceSharingSettings: ").append(getSpaceSharingSettings());
+            sb.append("SpaceSharingSettings: ").append(getSpaceSharingSettings()).append(",");
+        if (getSpaceDisplayName() != null)
+            sb.append("SpaceDisplayName: ").append(getSpaceDisplayName());
         sb.append("}");
         return sb.toString();
     }
@@ -443,10 +443,6 @@ public class CreateSpaceRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getSpaceSettings() != null && other.getSpaceSettings().equals(this.getSpaceSettings()) == false)
             return false;
-        if (other.getSpaceDisplayName() == null ^ this.getSpaceDisplayName() == null)
-            return false;
-        if (other.getSpaceDisplayName() != null && other.getSpaceDisplayName().equals(this.getSpaceDisplayName()) == false)
-            return false;
         if (other.getOwnershipSettings() == null ^ this.getOwnershipSettings() == null)
             return false;
         if (other.getOwnershipSettings() != null && other.getOwnershipSettings().equals(this.getOwnershipSettings()) == false)
@@ -454,6 +450,10 @@ public class CreateSpaceRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getSpaceSharingSettings() == null ^ this.getSpaceSharingSettings() == null)
             return false;
         if (other.getSpaceSharingSettings() != null && other.getSpaceSharingSettings().equals(this.getSpaceSharingSettings()) == false)
+            return false;
+        if (other.getSpaceDisplayName() == null ^ this.getSpaceDisplayName() == null)
+            return false;
+        if (other.getSpaceDisplayName() != null && other.getSpaceDisplayName().equals(this.getSpaceDisplayName()) == false)
             return false;
         return true;
     }
@@ -467,9 +467,9 @@ public class CreateSpaceRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSpaceSettings() == null) ? 0 : getSpaceSettings().hashCode());
-        hashCode = prime * hashCode + ((getSpaceDisplayName() == null) ? 0 : getSpaceDisplayName().hashCode());
         hashCode = prime * hashCode + ((getOwnershipSettings() == null) ? 0 : getOwnershipSettings().hashCode());
         hashCode = prime * hashCode + ((getSpaceSharingSettings() == null) ? 0 : getSpaceSharingSettings().hashCode());
+        hashCode = prime * hashCode + ((getSpaceDisplayName() == null) ? 0 : getSpaceDisplayName().hashCode());
         return hashCode;
     }
 

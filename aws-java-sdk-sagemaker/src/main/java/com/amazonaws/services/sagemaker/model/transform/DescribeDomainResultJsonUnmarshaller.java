@@ -88,6 +88,10 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeDomainResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecurityGroupIdForDomainBoundary", targetDepth)) {
+                    context.nextToken();
+                    describeDomainResult.setSecurityGroupIdForDomainBoundary(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AuthMode", targetDepth)) {
                     context.nextToken();
                     describeDomainResult.setAuthMode(context.getUnmarshaller(String.class).unmarshall(context));
@@ -95,6 +99,10 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("DefaultUserSettings", targetDepth)) {
                     context.nextToken();
                     describeDomainResult.setDefaultUserSettings(UserSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DomainSettings", targetDepth)) {
+                    context.nextToken();
+                    describeDomainResult.setDomainSettings(DomainSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AppNetworkAccessType", targetDepth)) {
                     context.nextToken();
@@ -122,17 +130,9 @@ public class DescribeDomainResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeDomainResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("DomainSettings", targetDepth)) {
-                    context.nextToken();
-                    describeDomainResult.setDomainSettings(DomainSettingsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("AppSecurityGroupManagement", targetDepth)) {
                     context.nextToken();
                     describeDomainResult.setAppSecurityGroupManagement(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("SecurityGroupIdForDomainBoundary", targetDepth)) {
-                    context.nextToken();
-                    describeDomainResult.setSecurityGroupIdForDomainBoundary(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultSpaceSettings", targetDepth)) {
                     context.nextToken();

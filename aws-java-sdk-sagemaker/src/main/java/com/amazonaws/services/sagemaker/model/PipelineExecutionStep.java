@@ -72,14 +72,6 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
     private CacheHitResult cacheHitResult;
     /**
      * <p>
-     * The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
-     * Pipelines steps</a>.
-     * </p>
-     */
-    private Integer attemptCount;
-    /**
-     * <p>
      * The reason why the step failed execution. This is only returned if the step failed its execution.
      * </p>
      */
@@ -90,6 +82,14 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
      * </p>
      */
     private PipelineExecutionStepMetadata metadata;
+    /**
+     * <p>
+     * The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
+     * Pipelines steps</a>.
+     * </p>
+     */
+    private Integer attemptCount;
     /**
      * <p>
      * The ARN from an execution of the current pipeline from which results are reused for this step.
@@ -398,58 +398,6 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
-     * Pipelines steps</a>.
-     * </p>
-     * 
-     * @param attemptCount
-     *        The current attempt of the execution step. For more information, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for
-     *        SageMaker Pipelines steps</a>.
-     */
-
-    public void setAttemptCount(Integer attemptCount) {
-        this.attemptCount = attemptCount;
-    }
-
-    /**
-     * <p>
-     * The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
-     * Pipelines steps</a>.
-     * </p>
-     * 
-     * @return The current attempt of the execution step. For more information, see <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for
-     *         SageMaker Pipelines steps</a>.
-     */
-
-    public Integer getAttemptCount() {
-        return this.attemptCount;
-    }
-
-    /**
-     * <p>
-     * The current attempt of the execution step. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
-     * Pipelines steps</a>.
-     * </p>
-     * 
-     * @param attemptCount
-     *        The current attempt of the execution step. For more information, see <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for
-     *        SageMaker Pipelines steps</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PipelineExecutionStep withAttemptCount(Integer attemptCount) {
-        setAttemptCount(attemptCount);
-        return this;
-    }
-
-    /**
-     * <p>
      * The reason why the step failed execution. This is only returned if the step failed its execution.
      * </p>
      * 
@@ -530,6 +478,58 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
+     * Pipelines steps</a>.
+     * </p>
+     * 
+     * @param attemptCount
+     *        The current attempt of the execution step. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for
+     *        SageMaker Pipelines steps</a>.
+     */
+
+    public void setAttemptCount(Integer attemptCount) {
+        this.attemptCount = attemptCount;
+    }
+
+    /**
+     * <p>
+     * The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
+     * Pipelines steps</a>.
+     * </p>
+     * 
+     * @return The current attempt of the execution step. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for
+     *         SageMaker Pipelines steps</a>.
+     */
+
+    public Integer getAttemptCount() {
+        return this.attemptCount;
+    }
+
+    /**
+     * <p>
+     * The current attempt of the execution step. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for SageMaker
+     * Pipelines steps</a>.
+     * </p>
+     * 
+     * @param attemptCount
+     *        The current attempt of the execution step. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-retry-policy.html">Retry Policy for
+     *        SageMaker Pipelines steps</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStep withAttemptCount(Integer attemptCount) {
+        setAttemptCount(attemptCount);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ARN from an execution of the current pipeline from which results are reused for this step.
      * </p>
      * 
@@ -594,12 +594,12 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
             sb.append("StepStatus: ").append(getStepStatus()).append(",");
         if (getCacheHitResult() != null)
             sb.append("CacheHitResult: ").append(getCacheHitResult()).append(",");
-        if (getAttemptCount() != null)
-            sb.append("AttemptCount: ").append(getAttemptCount()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getMetadata() != null)
             sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getAttemptCount() != null)
+            sb.append("AttemptCount: ").append(getAttemptCount()).append(",");
         if (getSelectiveExecutionResult() != null)
             sb.append("SelectiveExecutionResult: ").append(getSelectiveExecutionResult());
         sb.append("}");
@@ -644,10 +644,6 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
             return false;
         if (other.getCacheHitResult() != null && other.getCacheHitResult().equals(this.getCacheHitResult()) == false)
             return false;
-        if (other.getAttemptCount() == null ^ this.getAttemptCount() == null)
-            return false;
-        if (other.getAttemptCount() != null && other.getAttemptCount().equals(this.getAttemptCount()) == false)
-            return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
@@ -655,6 +651,10 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
         if (other.getMetadata() == null ^ this.getMetadata() == null)
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
+            return false;
+        if (other.getAttemptCount() == null ^ this.getAttemptCount() == null)
+            return false;
+        if (other.getAttemptCount() != null && other.getAttemptCount().equals(this.getAttemptCount()) == false)
             return false;
         if (other.getSelectiveExecutionResult() == null ^ this.getSelectiveExecutionResult() == null)
             return false;
@@ -675,9 +675,9 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getStepStatus() == null) ? 0 : getStepStatus().hashCode());
         hashCode = prime * hashCode + ((getCacheHitResult() == null) ? 0 : getCacheHitResult().hashCode());
-        hashCode = prime * hashCode + ((getAttemptCount() == null) ? 0 : getAttemptCount().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getAttemptCount() == null) ? 0 : getAttemptCount().hashCode());
         hashCode = prime * hashCode + ((getSelectiveExecutionResult() == null) ? 0 : getSelectiveExecutionResult().hashCode());
         return hashCode;
     }

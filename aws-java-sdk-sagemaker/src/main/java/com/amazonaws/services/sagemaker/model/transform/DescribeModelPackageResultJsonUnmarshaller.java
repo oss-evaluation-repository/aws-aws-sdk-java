@@ -125,15 +125,6 @@ public class DescribeModelPackageResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeModelPackageResult.setApprovalDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CustomerMetadataProperties", targetDepth)) {
-                    context.nextToken();
-                    describeModelPackageResult.setCustomerMetadataProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
-                            .getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("DriftCheckBaselines", targetDepth)) {
-                    context.nextToken();
-                    describeModelPackageResult.setDriftCheckBaselines(DriftCheckBaselinesJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("Domain", targetDepth)) {
                     context.nextToken();
                     describeModelPackageResult.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
@@ -145,6 +136,15 @@ public class DescribeModelPackageResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("SamplePayloadUrl", targetDepth)) {
                     context.nextToken();
                     describeModelPackageResult.setSamplePayloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CustomerMetadataProperties", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setCustomerMetadataProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("DriftCheckBaselines", targetDepth)) {
+                    context.nextToken();
+                    describeModelPackageResult.setDriftCheckBaselines(DriftCheckBaselinesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AdditionalInferenceSpecifications", targetDepth)) {
                     context.nextToken();

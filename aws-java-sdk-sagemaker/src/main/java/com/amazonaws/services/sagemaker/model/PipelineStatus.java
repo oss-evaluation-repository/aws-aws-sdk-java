@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PipelineStatus {
 
-    Active("Active");
+    Active("Active"),
+    Deleting("Deleting");
 
     private String value;
 

@@ -45,12 +45,6 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private DomainSettingsForUpdate domainSettingsForUpdate;
     /**
      * <p>
-     * The default settings used to create a space within the Domain.
-     * </p>
-     */
-    private DefaultSpaceSettings defaultSpaceSettings;
-    /**
-     * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
      * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
@@ -58,6 +52,12 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String appSecurityGroupManagement;
+    /**
+     * <p>
+     * The default settings used to create a space within the Domain.
+     * </p>
+     */
+    private DefaultSpaceSettings defaultSpaceSettings;
     /**
      * <p>
      * The VPC subnets that Studio uses for communication.
@@ -217,46 +217,6 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default settings used to create a space within the Domain.
-     * </p>
-     * 
-     * @param defaultSpaceSettings
-     *        The default settings used to create a space within the Domain.
-     */
-
-    public void setDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
-        this.defaultSpaceSettings = defaultSpaceSettings;
-    }
-
-    /**
-     * <p>
-     * The default settings used to create a space within the Domain.
-     * </p>
-     * 
-     * @return The default settings used to create a space within the Domain.
-     */
-
-    public DefaultSpaceSettings getDefaultSpaceSettings() {
-        return this.defaultSpaceSettings;
-    }
-
-    /**
-     * <p>
-     * The default settings used to create a space within the Domain.
-     * </p>
-     * 
-     * @param defaultSpaceSettings
-     *        The default settings used to create a space within the Domain.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateDomainRequest withDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
-        setDefaultSpaceSettings(defaultSpaceSettings);
-        return this;
-    }
-
-    /**
-     * <p>
      * The entity that creates and manages the required security groups for inter-app communication in
      * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
      * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up
@@ -339,6 +299,46 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public UpdateDomainRequest withAppSecurityGroupManagement(AppSecurityGroupManagement appSecurityGroupManagement) {
         this.appSecurityGroupManagement = appSecurityGroupManagement.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default settings used to create a space within the Domain.
+     * </p>
+     * 
+     * @param defaultSpaceSettings
+     *        The default settings used to create a space within the Domain.
+     */
+
+    public void setDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
+        this.defaultSpaceSettings = defaultSpaceSettings;
+    }
+
+    /**
+     * <p>
+     * The default settings used to create a space within the Domain.
+     * </p>
+     * 
+     * @return The default settings used to create a space within the Domain.
+     */
+
+    public DefaultSpaceSettings getDefaultSpaceSettings() {
+        return this.defaultSpaceSettings;
+    }
+
+    /**
+     * <p>
+     * The default settings used to create a space within the Domain.
+     * </p>
+     * 
+     * @param defaultSpaceSettings
+     *        The default settings used to create a space within the Domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainRequest withDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
+        setDefaultSpaceSettings(defaultSpaceSettings);
         return this;
     }
 
@@ -673,10 +673,10 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("DefaultUserSettings: ").append(getDefaultUserSettings()).append(",");
         if (getDomainSettingsForUpdate() != null)
             sb.append("DomainSettingsForUpdate: ").append(getDomainSettingsForUpdate()).append(",");
-        if (getDefaultSpaceSettings() != null)
-            sb.append("DefaultSpaceSettings: ").append(getDefaultSpaceSettings()).append(",");
         if (getAppSecurityGroupManagement() != null)
             sb.append("AppSecurityGroupManagement: ").append(getAppSecurityGroupManagement()).append(",");
+        if (getDefaultSpaceSettings() != null)
+            sb.append("DefaultSpaceSettings: ").append(getDefaultSpaceSettings()).append(",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getAppNetworkAccessType() != null)
@@ -707,13 +707,13 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDomainSettingsForUpdate() != null && other.getDomainSettingsForUpdate().equals(this.getDomainSettingsForUpdate()) == false)
             return false;
-        if (other.getDefaultSpaceSettings() == null ^ this.getDefaultSpaceSettings() == null)
-            return false;
-        if (other.getDefaultSpaceSettings() != null && other.getDefaultSpaceSettings().equals(this.getDefaultSpaceSettings()) == false)
-            return false;
         if (other.getAppSecurityGroupManagement() == null ^ this.getAppSecurityGroupManagement() == null)
             return false;
         if (other.getAppSecurityGroupManagement() != null && other.getAppSecurityGroupManagement().equals(this.getAppSecurityGroupManagement()) == false)
+            return false;
+        if (other.getDefaultSpaceSettings() == null ^ this.getDefaultSpaceSettings() == null)
+            return false;
+        if (other.getDefaultSpaceSettings() != null && other.getDefaultSpaceSettings().equals(this.getDefaultSpaceSettings()) == false)
             return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
@@ -734,8 +734,8 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getDefaultUserSettings() == null) ? 0 : getDefaultUserSettings().hashCode());
         hashCode = prime * hashCode + ((getDomainSettingsForUpdate() == null) ? 0 : getDomainSettingsForUpdate().hashCode());
-        hashCode = prime * hashCode + ((getDefaultSpaceSettings() == null) ? 0 : getDefaultSpaceSettings().hashCode());
         hashCode = prime * hashCode + ((getAppSecurityGroupManagement() == null) ? 0 : getAppSecurityGroupManagement().hashCode());
+        hashCode = prime * hashCode + ((getDefaultSpaceSettings() == null) ? 0 : getDefaultSpaceSettings().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
         return hashCode;

@@ -68,6 +68,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setModelDataUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelDataSource", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setModelDataSource(ModelDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
@@ -84,10 +88,6 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                 if (context.testExpression("MultiModelConfig", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setMultiModelConfig(MultiModelConfigJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("ModelDataSource", targetDepth)) {
-                    context.nextToken();
-                    containerDefinition.setModelDataSource(ModelDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

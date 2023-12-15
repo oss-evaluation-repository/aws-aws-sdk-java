@@ -267,6 +267,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ResourceConfig resourceConfig;
     /**
      * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     */
+    private WarmPoolStatus warmPoolStatus;
+    /**
+     * <p>
      * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
      * that specifies the VPC that this training job has access to. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
@@ -417,22 +423,16 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private String profilingStatus;
     /**
      * <p>
-     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * </p>
-     */
-    private RetryStrategy retryStrategy;
-    /**
-     * <p>
      * The environment variables to set in the Docker container.
      * </p>
      */
     private java.util.Map<String, String> environment;
     /**
      * <p>
-     * The status of the warm pool associated with the training job.
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * </p>
      */
-    private WarmPoolStatus warmPoolStatus;
+    private RetryStrategy retryStrategy;
     /**
      * <p>
      * Contains information about the infrastructure health check configuration for the training job.
@@ -2344,6 +2344,46 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @param warmPoolStatus
+     *        The status of the warm pool associated with the training job.
+     */
+
+    public void setWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
+        this.warmPoolStatus = warmPoolStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @return The status of the warm pool associated with the training job.
+     */
+
+    public WarmPoolStatus getWarmPoolStatus() {
+        return this.warmPoolStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @param warmPoolStatus
+     *        The status of the warm pool associated with the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
+        setWarmPoolStatus(warmPoolStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
      * that specifies the VPC that this training job has access to. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
@@ -3639,46 +3679,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * </p>
-     * 
-     * @param retryStrategy
-     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     */
-
-    public void setRetryStrategy(RetryStrategy retryStrategy) {
-        this.retryStrategy = retryStrategy;
-    }
-
-    /**
-     * <p>
-     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * </p>
-     * 
-     * @return The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     */
-
-    public RetryStrategy getRetryStrategy() {
-        return this.retryStrategy;
-    }
-
-    /**
-     * <p>
-     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * </p>
-     * 
-     * @param retryStrategy
-     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeTrainingJobResult withRetryStrategy(RetryStrategy retryStrategy) {
-        setRetryStrategy(retryStrategy);
-        return this;
-    }
-
-    /**
-     * <p>
      * The environment variables to set in the Docker container.
      * </p>
      * 
@@ -3747,41 +3747,41 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the warm pool associated with the training job.
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * </p>
      * 
-     * @param warmPoolStatus
-     *        The status of the warm pool associated with the training job.
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      */
 
-    public void setWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
-        this.warmPoolStatus = warmPoolStatus;
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
     }
 
     /**
      * <p>
-     * The status of the warm pool associated with the training job.
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * </p>
      * 
-     * @return The status of the warm pool associated with the training job.
+     * @return The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      */
 
-    public WarmPoolStatus getWarmPoolStatus() {
-        return this.warmPoolStatus;
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
     }
 
     /**
      * <p>
-     * The status of the warm pool associated with the training job.
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * </p>
      * 
-     * @param warmPoolStatus
-     *        The status of the warm pool associated with the training job.
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTrainingJobResult withWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
-        setWarmPoolStatus(warmPoolStatus);
+    public DescribeTrainingJobResult withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
         return this;
     }
 
@@ -3867,6 +3867,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
         if (getResourceConfig() != null)
             sb.append("ResourceConfig: ").append(getResourceConfig()).append(",");
+        if (getWarmPoolStatus() != null)
+            sb.append("WarmPoolStatus: ").append(getWarmPoolStatus()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getStoppingCondition() != null)
@@ -3913,12 +3915,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("ProfilerRuleEvaluationStatuses: ").append(getProfilerRuleEvaluationStatuses()).append(",");
         if (getProfilingStatus() != null)
             sb.append("ProfilingStatus: ").append(getProfilingStatus()).append(",");
-        if (getRetryStrategy() != null)
-            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
-        if (getWarmPoolStatus() != null)
-            sb.append("WarmPoolStatus: ").append(getWarmPoolStatus()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getInfraCheckConfig() != null)
             sb.append("InfraCheckConfig: ").append(getInfraCheckConfig());
         sb.append("}");
@@ -3994,6 +3994,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getResourceConfig() == null ^ this.getResourceConfig() == null)
             return false;
         if (other.getResourceConfig() != null && other.getResourceConfig().equals(this.getResourceConfig()) == false)
+            return false;
+        if (other.getWarmPoolStatus() == null ^ this.getWarmPoolStatus() == null)
+            return false;
+        if (other.getWarmPoolStatus() != null && other.getWarmPoolStatus().equals(this.getWarmPoolStatus()) == false)
             return false;
         if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
             return false;
@@ -4089,17 +4093,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getProfilingStatus() != null && other.getProfilingStatus().equals(this.getProfilingStatus()) == false)
             return false;
-        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
-            return false;
-        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
-            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
-        if (other.getWarmPoolStatus() == null ^ this.getWarmPoolStatus() == null)
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
             return false;
-        if (other.getWarmPoolStatus() != null && other.getWarmPoolStatus().equals(this.getWarmPoolStatus()) == false)
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
         if (other.getInfraCheckConfig() == null ^ this.getInfraCheckConfig() == null)
             return false;
@@ -4128,6 +4128,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getResourceConfig() == null) ? 0 : getResourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolStatus() == null) ? 0 : getWarmPoolStatus().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
@@ -4151,9 +4152,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getProfilerRuleEvaluationStatuses() == null) ? 0 : getProfilerRuleEvaluationStatuses().hashCode());
         hashCode = prime * hashCode + ((getProfilingStatus() == null) ? 0 : getProfilingStatus().hashCode());
-        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
-        hashCode = prime * hashCode + ((getWarmPoolStatus() == null) ? 0 : getWarmPoolStatus().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getInfraCheckConfig() == null) ? 0 : getInfraCheckConfig().hashCode());
         return hashCode;
     }

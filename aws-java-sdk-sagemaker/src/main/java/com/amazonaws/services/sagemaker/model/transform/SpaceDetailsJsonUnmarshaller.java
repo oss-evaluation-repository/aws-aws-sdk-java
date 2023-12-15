@@ -68,10 +68,6 @@ public class SpaceDetailsJsonUnmarshaller implements Unmarshaller<SpaceDetails, 
                     context.nextToken();
                     spaceDetails.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
-                if (context.testExpression("SpaceDisplayName", targetDepth)) {
-                    context.nextToken();
-                    spaceDetails.setSpaceDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("SpaceSettingsSummary", targetDepth)) {
                     context.nextToken();
                     spaceDetails.setSpaceSettingsSummary(SpaceSettingsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
@@ -83,6 +79,10 @@ public class SpaceDetailsJsonUnmarshaller implements Unmarshaller<SpaceDetails, 
                 if (context.testExpression("OwnershipSettingsSummary", targetDepth)) {
                     context.nextToken();
                     spaceDetails.setOwnershipSettingsSummary(OwnershipSettingsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SpaceDisplayName", targetDepth)) {
+                    context.nextToken();
+                    spaceDetails.setSpaceDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

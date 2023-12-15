@@ -46,10 +46,10 @@ public class UserSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RSessionAppSettings").build();
     private static final MarshallingInfo<StructuredPojo> CANVASAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CanvasAppSettings").build();
-    private static final MarshallingInfo<StructuredPojo> JUPYTERLABAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JupyterLabAppSettings").build();
     private static final MarshallingInfo<StructuredPojo> CODEEDITORAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeEditorAppSettings").build();
+    private static final MarshallingInfo<StructuredPojo> JUPYTERLABAPPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JupyterLabAppSettings").build();
     private static final MarshallingInfo<StructuredPojo> SPACESTORAGESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpaceStorageSettings").build();
     private static final MarshallingInfo<String> DEFAULTLANDINGURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -86,8 +86,8 @@ public class UserSettingsMarshaller {
             protocolMarshaller.marshall(userSettings.getRStudioServerProAppSettings(), RSTUDIOSERVERPROAPPSETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getRSessionAppSettings(), RSESSIONAPPSETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getCanvasAppSettings(), CANVASAPPSETTINGS_BINDING);
-            protocolMarshaller.marshall(userSettings.getJupyterLabAppSettings(), JUPYTERLABAPPSETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getCodeEditorAppSettings(), CODEEDITORAPPSETTINGS_BINDING);
+            protocolMarshaller.marshall(userSettings.getJupyterLabAppSettings(), JUPYTERLABAPPSETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getSpaceStorageSettings(), SPACESTORAGESETTINGS_BINDING);
             protocolMarshaller.marshall(userSettings.getDefaultLandingUri(), DEFAULTLANDINGURI_BINDING);
             protocolMarshaller.marshall(userSettings.getStudioWebPortal(), STUDIOWEBPORTAL_BINDING);

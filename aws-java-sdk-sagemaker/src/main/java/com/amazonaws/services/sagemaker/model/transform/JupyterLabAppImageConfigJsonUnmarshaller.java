@@ -48,6 +48,10 @@ public class JupyterLabAppImageConfigJsonUnmarshaller implements Unmarshaller<Ju
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("FileSystemConfig", targetDepth)) {
+                    context.nextToken();
+                    jupyterLabAppImageConfig.setFileSystemConfig(FileSystemConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ContainerConfig", targetDepth)) {
                     context.nextToken();
                     jupyterLabAppImageConfig.setContainerConfig(ContainerConfigJsonUnmarshaller.getInstance().unmarshall(context));

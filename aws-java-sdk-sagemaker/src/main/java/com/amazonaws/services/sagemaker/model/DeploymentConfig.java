@@ -41,16 +41,16 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     private BlueGreenUpdatePolicy blueGreenUpdatePolicy;
     /**
      * <p>
-     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
-     * </p>
-     */
-    private AutoRollbackConfig autoRollbackConfiguration;
-    /**
-     * <p>
      * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
      * </p>
      */
     private RollingUpdatePolicy rollingUpdatePolicy;
+    /**
+     * <p>
+     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * </p>
+     */
+    private AutoRollbackConfig autoRollbackConfiguration;
 
     /**
      * <p>
@@ -118,46 +118,6 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
-     * </p>
-     * 
-     * @param autoRollbackConfiguration
-     *        Automatic rollback configuration for handling endpoint deployment failures and recovery.
-     */
-
-    public void setAutoRollbackConfiguration(AutoRollbackConfig autoRollbackConfiguration) {
-        this.autoRollbackConfiguration = autoRollbackConfiguration;
-    }
-
-    /**
-     * <p>
-     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
-     * </p>
-     * 
-     * @return Automatic rollback configuration for handling endpoint deployment failures and recovery.
-     */
-
-    public AutoRollbackConfig getAutoRollbackConfiguration() {
-        return this.autoRollbackConfiguration;
-    }
-
-    /**
-     * <p>
-     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
-     * </p>
-     * 
-     * @param autoRollbackConfiguration
-     *        Automatic rollback configuration for handling endpoint deployment failures and recovery.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeploymentConfig withAutoRollbackConfiguration(AutoRollbackConfig autoRollbackConfiguration) {
-        setAutoRollbackConfiguration(autoRollbackConfiguration);
-        return this;
-    }
-
-    /**
-     * <p>
      * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
      * </p>
      * 
@@ -197,6 +157,46 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     */
+
+    public void setAutoRollbackConfiguration(AutoRollbackConfig autoRollbackConfiguration) {
+        this.autoRollbackConfiguration = autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * </p>
+     * 
+     * @return Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     */
+
+    public AutoRollbackConfig getAutoRollbackConfiguration() {
+        return this.autoRollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * </p>
+     * 
+     * @param autoRollbackConfiguration
+     *        Automatic rollback configuration for handling endpoint deployment failures and recovery.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentConfig withAutoRollbackConfiguration(AutoRollbackConfig autoRollbackConfiguration) {
+        setAutoRollbackConfiguration(autoRollbackConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -210,10 +210,10 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getBlueGreenUpdatePolicy() != null)
             sb.append("BlueGreenUpdatePolicy: ").append(getBlueGreenUpdatePolicy()).append(",");
-        if (getAutoRollbackConfiguration() != null)
-            sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration()).append(",");
         if (getRollingUpdatePolicy() != null)
-            sb.append("RollingUpdatePolicy: ").append(getRollingUpdatePolicy());
+            sb.append("RollingUpdatePolicy: ").append(getRollingUpdatePolicy()).append(",");
+        if (getAutoRollbackConfiguration() != null)
+            sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -232,13 +232,13 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getBlueGreenUpdatePolicy() != null && other.getBlueGreenUpdatePolicy().equals(this.getBlueGreenUpdatePolicy()) == false)
             return false;
-        if (other.getAutoRollbackConfiguration() == null ^ this.getAutoRollbackConfiguration() == null)
-            return false;
-        if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
-            return false;
         if (other.getRollingUpdatePolicy() == null ^ this.getRollingUpdatePolicy() == null)
             return false;
         if (other.getRollingUpdatePolicy() != null && other.getRollingUpdatePolicy().equals(this.getRollingUpdatePolicy()) == false)
+            return false;
+        if (other.getAutoRollbackConfiguration() == null ^ this.getAutoRollbackConfiguration() == null)
+            return false;
+        if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
             return false;
         return true;
     }
@@ -249,8 +249,8 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBlueGreenUpdatePolicy() == null) ? 0 : getBlueGreenUpdatePolicy().hashCode());
-        hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRollingUpdatePolicy() == null) ? 0 : getRollingUpdatePolicy().hashCode());
+        hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
         return hashCode;
     }
 

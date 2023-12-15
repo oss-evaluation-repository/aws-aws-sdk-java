@@ -97,6 +97,10 @@ public class TransformJobJsonUnmarshaller implements Unmarshaller<TransformJob, 
                     context.nextToken();
                     transformJob.setTransformOutput(TransformOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DataCaptureConfig", targetDepth)) {
+                    context.nextToken();
+                    transformJob.setDataCaptureConfig(BatchDataCaptureConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("TransformResources", targetDepth)) {
                     context.nextToken();
                     transformJob.setTransformResources(TransformResourcesJsonUnmarshaller.getInstance().unmarshall(context));
@@ -134,10 +138,6 @@ public class TransformJobJsonUnmarshaller implements Unmarshaller<TransformJob, 
                     transformJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("DataCaptureConfig", targetDepth)) {
-                    context.nextToken();
-                    transformJob.setDataCaptureConfig(BatchDataCaptureConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

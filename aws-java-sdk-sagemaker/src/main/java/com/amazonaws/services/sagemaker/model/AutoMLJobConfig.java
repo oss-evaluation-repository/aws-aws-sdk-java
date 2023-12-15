@@ -42,6 +42,12 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
     private AutoMLSecurityConfig securityConfig;
     /**
      * <p>
+     * The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    private AutoMLCandidateGenerationConfig candidateGenerationConfig;
+    /**
+     * <p>
      * The configuration for splitting the input training dataset.
      * </p>
      * <p>
@@ -49,12 +55,6 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AutoMLDataSplitConfig dataSplitConfig;
-    /**
-     * <p>
-     * The configuration for generating a candidate for an AutoML job (optional).
-     * </p>
-     */
-    private AutoMLCandidateGenerationConfig candidateGenerationConfig;
     /**
      * <p>
      * The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot
@@ -163,6 +163,46 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     * 
+     * @param candidateGenerationConfig
+     *        The configuration for generating a candidate for an AutoML job (optional).
+     */
+
+    public void setCandidateGenerationConfig(AutoMLCandidateGenerationConfig candidateGenerationConfig) {
+        this.candidateGenerationConfig = candidateGenerationConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     * 
+     * @return The configuration for generating a candidate for an AutoML job (optional).
+     */
+
+    public AutoMLCandidateGenerationConfig getCandidateGenerationConfig() {
+        return this.candidateGenerationConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     * 
+     * @param candidateGenerationConfig
+     *        The configuration for generating a candidate for an AutoML job (optional).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLJobConfig withCandidateGenerationConfig(AutoMLCandidateGenerationConfig candidateGenerationConfig) {
+        setCandidateGenerationConfig(candidateGenerationConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration for splitting the input training dataset.
      * </p>
      * <p>
@@ -213,46 +253,6 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     public AutoMLJobConfig withDataSplitConfig(AutoMLDataSplitConfig dataSplitConfig) {
         setDataSplitConfig(dataSplitConfig);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The configuration for generating a candidate for an AutoML job (optional).
-     * </p>
-     * 
-     * @param candidateGenerationConfig
-     *        The configuration for generating a candidate for an AutoML job (optional).
-     */
-
-    public void setCandidateGenerationConfig(AutoMLCandidateGenerationConfig candidateGenerationConfig) {
-        this.candidateGenerationConfig = candidateGenerationConfig;
-    }
-
-    /**
-     * <p>
-     * The configuration for generating a candidate for an AutoML job (optional).
-     * </p>
-     * 
-     * @return The configuration for generating a candidate for an AutoML job (optional).
-     */
-
-    public AutoMLCandidateGenerationConfig getCandidateGenerationConfig() {
-        return this.candidateGenerationConfig;
-    }
-
-    /**
-     * <p>
-     * The configuration for generating a candidate for an AutoML job (optional).
-     * </p>
-     * 
-     * @param candidateGenerationConfig
-     *        The configuration for generating a candidate for an AutoML job (optional).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AutoMLJobConfig withCandidateGenerationConfig(AutoMLCandidateGenerationConfig candidateGenerationConfig) {
-        setCandidateGenerationConfig(candidateGenerationConfig);
         return this;
     }
 
@@ -483,10 +483,10 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
             sb.append("CompletionCriteria: ").append(getCompletionCriteria()).append(",");
         if (getSecurityConfig() != null)
             sb.append("SecurityConfig: ").append(getSecurityConfig()).append(",");
-        if (getDataSplitConfig() != null)
-            sb.append("DataSplitConfig: ").append(getDataSplitConfig()).append(",");
         if (getCandidateGenerationConfig() != null)
             sb.append("CandidateGenerationConfig: ").append(getCandidateGenerationConfig()).append(",");
+        if (getDataSplitConfig() != null)
+            sb.append("DataSplitConfig: ").append(getDataSplitConfig()).append(",");
         if (getMode() != null)
             sb.append("Mode: ").append(getMode());
         sb.append("}");
@@ -511,13 +511,13 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSecurityConfig() != null && other.getSecurityConfig().equals(this.getSecurityConfig()) == false)
             return false;
-        if (other.getDataSplitConfig() == null ^ this.getDataSplitConfig() == null)
-            return false;
-        if (other.getDataSplitConfig() != null && other.getDataSplitConfig().equals(this.getDataSplitConfig()) == false)
-            return false;
         if (other.getCandidateGenerationConfig() == null ^ this.getCandidateGenerationConfig() == null)
             return false;
         if (other.getCandidateGenerationConfig() != null && other.getCandidateGenerationConfig().equals(this.getCandidateGenerationConfig()) == false)
+            return false;
+        if (other.getDataSplitConfig() == null ^ this.getDataSplitConfig() == null)
+            return false;
+        if (other.getDataSplitConfig() != null && other.getDataSplitConfig().equals(this.getDataSplitConfig()) == false)
             return false;
         if (other.getMode() == null ^ this.getMode() == null)
             return false;
@@ -533,8 +533,8 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getCompletionCriteria() == null) ? 0 : getCompletionCriteria().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfig() == null) ? 0 : getSecurityConfig().hashCode());
-        hashCode = prime * hashCode + ((getDataSplitConfig() == null) ? 0 : getDataSplitConfig().hashCode());
         hashCode = prime * hashCode + ((getCandidateGenerationConfig() == null) ? 0 : getCandidateGenerationConfig().hashCode());
+        hashCode = prime * hashCode + ((getDataSplitConfig() == null) ? 0 : getDataSplitConfig().hashCode());
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         return hashCode;
     }

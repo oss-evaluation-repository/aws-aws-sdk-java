@@ -56,6 +56,10 @@ public class AgentInfoJsonUnmarshaller implements Unmarshaller<AgentInfo, JsonUn
                     context.nextToken();
                     agentInfo.setConnectedToAgentTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("AgentPauseDurationInSeconds", targetDepth)) {
+                    context.nextToken();
+                    agentInfo.setAgentPauseDurationInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

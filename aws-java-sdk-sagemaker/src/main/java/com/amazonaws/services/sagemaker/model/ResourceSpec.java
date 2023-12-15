@@ -42,7 +42,7 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
     private String sageMakerImageVersionArn;
     /**
      * <p>
-     * The SageMakerImageVersionAlias.
+     * The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.
      * </p>
      */
     private String sageMakerImageVersionAlias;
@@ -150,11 +150,12 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SageMakerImageVersionAlias.
+     * The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.
      * </p>
      * 
      * @param sageMakerImageVersionAlias
-     *        The SageMakerImageVersionAlias.
+     *        The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning
+     *        format.
      */
 
     public void setSageMakerImageVersionAlias(String sageMakerImageVersionAlias) {
@@ -163,10 +164,11 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SageMakerImageVersionAlias.
+     * The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.
      * </p>
      * 
-     * @return The SageMakerImageVersionAlias.
+     * @return The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning
+     *         format.
      */
 
     public String getSageMakerImageVersionAlias() {
@@ -175,11 +177,12 @@ public class ResourceSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SageMakerImageVersionAlias.
+     * The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.
      * </p>
      * 
      * @param sageMakerImageVersionAlias
-     *        The SageMakerImageVersionAlias.
+     *        The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning
+     *        format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

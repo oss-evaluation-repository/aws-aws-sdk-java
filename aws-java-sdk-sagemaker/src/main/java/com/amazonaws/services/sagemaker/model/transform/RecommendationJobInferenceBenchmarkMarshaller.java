@@ -29,14 +29,14 @@ public class RecommendationJobInferenceBenchmarkMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Metrics").build();
+    private static final MarshallingInfo<StructuredPojo> ENDPOINTMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointMetrics").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> MODELCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelConfiguration").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
-    private static final MarshallingInfo<StructuredPojo> ENDPOINTMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointMetrics").build();
     private static final MarshallingInfo<java.util.Date> INVOCATIONENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvocationEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> INVOCATIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -59,10 +59,10 @@ public class RecommendationJobInferenceBenchmarkMarshaller {
 
         try {
             protocolMarshaller.marshall(recommendationJobInferenceBenchmark.getMetrics(), METRICS_BINDING);
+            protocolMarshaller.marshall(recommendationJobInferenceBenchmark.getEndpointMetrics(), ENDPOINTMETRICS_BINDING);
             protocolMarshaller.marshall(recommendationJobInferenceBenchmark.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(recommendationJobInferenceBenchmark.getModelConfiguration(), MODELCONFIGURATION_BINDING);
             protocolMarshaller.marshall(recommendationJobInferenceBenchmark.getFailureReason(), FAILUREREASON_BINDING);
-            protocolMarshaller.marshall(recommendationJobInferenceBenchmark.getEndpointMetrics(), ENDPOINTMETRICS_BINDING);
             protocolMarshaller.marshall(recommendationJobInferenceBenchmark.getInvocationEndTime(), INVOCATIONENDTIME_BINDING);
             protocolMarshaller.marshall(recommendationJobInferenceBenchmark.getInvocationStartTime(), INVOCATIONSTARTTIME_BINDING);
         } catch (Exception e) {
