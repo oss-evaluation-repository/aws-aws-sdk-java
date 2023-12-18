@@ -116,13 +116,36 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private TokenValidityUnitsType tokenValidityUnits;
     /**
      * <p>
-     * The read attributes.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      */
     private java.util.List<String> readAttributes;
     /**
      * <p>
-     * The user pool attributes that the app client can write to.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
      * </p>
      * <p>
      * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
@@ -986,10 +1009,33 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The read attributes.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      * 
-     * @return The read attributes.
+     * @return The list of user attributes that you want your app client to have read-only access to. After your user
+     *         authenticates in your app, their access token authorizes them to read their own attribute value for any
+     *         attribute in this list. An example of this kind of activity is when your user selects a link to view
+     *         their profile information. Your app makes a <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+     *         >GetUser</a> API request to retrieve and display your user's profile data.</p>
+     *         <p>
+     *         When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values
+     *         of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your
+     *         user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code>
+     *         doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API
+     *         response if you have specified your own custom set of read attributes.
      */
 
     public java.util.List<String> getReadAttributes() {
@@ -998,11 +1044,34 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The read attributes.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      * 
      * @param readAttributes
-     *        The read attributes.
+     *        The list of user attributes that you want your app client to have read-only access to. After your user
+     *        authenticates in your app, their access token authorizes them to read their own attribute value for any
+     *        attribute in this list. An example of this kind of activity is when your user selects a link to view their
+     *        profile information. Your app makes a <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+     *        >GetUser</a> API request to retrieve and display your user's profile data.</p>
+     *        <p>
+     *        When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values
+     *        of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your
+     *        user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code>
+     *        doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API
+     *        response if you have specified your own custom set of read attributes.
      */
 
     public void setReadAttributes(java.util.Collection<String> readAttributes) {
@@ -1016,7 +1085,19 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The read attributes.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1025,7 +1106,18 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param readAttributes
-     *        The read attributes.
+     *        The list of user attributes that you want your app client to have read-only access to. After your user
+     *        authenticates in your app, their access token authorizes them to read their own attribute value for any
+     *        attribute in this list. An example of this kind of activity is when your user selects a link to view their
+     *        profile information. Your app makes a <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+     *        >GetUser</a> API request to retrieve and display your user's profile data.</p>
+     *        <p>
+     *        When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values
+     *        of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your
+     *        user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code>
+     *        doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API
+     *        response if you have specified your own custom set of read attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1041,11 +1133,34 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The read attributes.
+     * The list of user attributes that you want your app client to have read-only access to. After your user
+     * authenticates in your app, their access token authorizes them to read their own attribute value for any attribute
+     * in this list. An example of this kind of activity is when your user selects a link to view their profile
+     * information. Your app makes a <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a>
+     * API request to retrieve and display your user's profile data.
+     * </p>
+     * <p>
+     * When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of
+     * <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool.
+     * When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any
+     * information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified
+     * your own custom set of read attributes.
      * </p>
      * 
      * @param readAttributes
-     *        The read attributes.
+     *        The list of user attributes that you want your app client to have read-only access to. After your user
+     *        authenticates in your app, their access token authorizes them to read their own attribute value for any
+     *        attribute in this list. An example of this kind of activity is when your user selects a link to view their
+     *        profile information. Your app makes a <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html"
+     *        >GetUser</a> API request to retrieve and display your user's profile data.</p>
+     *        <p>
+     *        When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values
+     *        of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your
+     *        user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code>
+     *        doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API
+     *        response if you have specified your own custom set of read attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1056,7 +1171,18 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user pool attributes that the app client can write to.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
      * </p>
      * <p>
      * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
@@ -1067,7 +1193,19 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * 
-     * @return The user pool attributes that the app client can write to.</p>
+     * @return The list of user attributes that you want your app client to have write access to. After your user
+     *         authenticates in your app, their access token authorizes them to set or modify their own attribute value
+     *         for any attribute in this list. An example of this kind of activity is when you present your user with a
+     *         form to update their profile information and they change their last name. Your app then makes an <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     *         >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value. </p>
+     *         <p>
+     *         When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the
+     *         values of the Standard attributes of your user pool. When your user pool has write access to these
+     *         default attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only
+     *         populates <code>WriteAttributes</code> in the API response if you have specified your own custom set of
+     *         write attributes.
+     *         </p>
      *         <p>
      *         If your app client allows users to sign in through an IdP, this array must include all attributes that
      *         you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
@@ -1083,7 +1221,18 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user pool attributes that the app client can write to.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
      * </p>
      * <p>
      * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
@@ -1095,7 +1244,19 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param writeAttributes
-     *        The user pool attributes that the app client can write to.</p>
+     *        The list of user attributes that you want your app client to have write access to. After your user
+     *        authenticates in your app, their access token authorizes them to set or modify their own attribute value
+     *        for any attribute in this list. An example of this kind of activity is when you present your user with a
+     *        form to update their profile information and they change their last name. Your app then makes an <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     *        >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value. </p>
+     *        <p>
+     *        When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values
+     *        of the Standard attributes of your user pool. When your user pool has write access to these default
+     *        attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     *        <code>WriteAttributes</code> in the API response if you have specified your own custom set of write
+     *        attributes.
+     *        </p>
      *        <p>
      *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
      *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
@@ -1116,7 +1277,18 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user pool attributes that the app client can write to.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
      * </p>
      * <p>
      * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
@@ -1133,7 +1305,19 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param writeAttributes
-     *        The user pool attributes that the app client can write to.</p>
+     *        The list of user attributes that you want your app client to have write access to. After your user
+     *        authenticates in your app, their access token authorizes them to set or modify their own attribute value
+     *        for any attribute in this list. An example of this kind of activity is when you present your user with a
+     *        form to update their profile information and they change their last name. Your app then makes an <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     *        >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value. </p>
+     *        <p>
+     *        When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values
+     *        of the Standard attributes of your user pool. When your user pool has write access to these default
+     *        attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     *        <code>WriteAttributes</code> in the API response if you have specified your own custom set of write
+     *        attributes.
+     *        </p>
      *        <p>
      *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
      *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
@@ -1156,7 +1340,18 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The user pool attributes that the app client can write to.
+     * The list of user attributes that you want your app client to have write access to. After your user authenticates
+     * in your app, their access token authorizes them to set or modify their own attribute value for any attribute in
+     * this list. An example of this kind of activity is when you present your user with a form to update their profile
+     * information and they change their last name. Your app then makes an <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     * >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.
+     * </p>
+     * <p>
+     * When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the
+     * Standard attributes of your user pool. When your user pool has write access to these default attributes,
+     * <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     * <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.
      * </p>
      * <p>
      * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
@@ -1168,7 +1363,19 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param writeAttributes
-     *        The user pool attributes that the app client can write to.</p>
+     *        The list of user attributes that you want your app client to have write access to. After your user
+     *        authenticates in your app, their access token authorizes them to set or modify their own attribute value
+     *        for any attribute in this list. An example of this kind of activity is when you present your user with a
+     *        form to update their profile information and they change their last name. Your app then makes an <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html"
+     *        >UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value. </p>
+     *        <p>
+     *        When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values
+     *        of the Standard attributes of your user pool. When your user pool has write access to these default
+     *        attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates
+     *        <code>WriteAttributes</code> in the API response if you have specified your own custom set of write
+     *        attributes.
+     *        </p>
      *        <p>
      *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
      *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your

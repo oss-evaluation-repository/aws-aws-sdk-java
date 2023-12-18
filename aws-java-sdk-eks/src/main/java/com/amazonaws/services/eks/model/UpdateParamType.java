@@ -45,7 +45,8 @@ public enum UpdateParamType {
     MaxUnavailablePercentage("MaxUnavailablePercentage"),
     ConfigurationValues("ConfigurationValues"),
     SecurityGroups("SecurityGroups"),
-    Subnets("Subnets");
+    Subnets("Subnets"),
+    AuthenticationMode("AuthenticationMode");
 
     private String value;
 

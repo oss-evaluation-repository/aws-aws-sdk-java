@@ -36,6 +36,8 @@ public class UpdateResolverEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolverEndpointType").build();
     private static final MarshallingInfo<List> UPDATEIPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateIpAddresses").build();
+    private static final MarshallingInfo<List> PROTOCOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Protocols").build();
 
     private static final UpdateResolverEndpointRequestMarshaller instance = new UpdateResolverEndpointRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class UpdateResolverEndpointRequestMarshaller {
             protocolMarshaller.marshall(updateResolverEndpointRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateResolverEndpointRequest.getResolverEndpointType(), RESOLVERENDPOINTTYPE_BINDING);
             protocolMarshaller.marshall(updateResolverEndpointRequest.getUpdateIpAddresses(), UPDATEIPADDRESSES_BINDING);
+            protocolMarshaller.marshall(updateResolverEndpointRequest.getProtocols(), PROTOCOLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

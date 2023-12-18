@@ -36,7 +36,9 @@ public class AdminConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceReq
     private String userPoolId;
     /**
      * <p>
-     * The user name for which you want to confirm user registration.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, you can also use their <code>sub</code> in this request.
      * </p>
      */
     private String username;
@@ -126,11 +128,15 @@ public class AdminConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The user name for which you want to confirm user registration.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, you can also use their <code>sub</code> in this request.
      * </p>
      * 
      * @param username
-     *        The user name for which you want to confirm user registration.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, you can also use their <code>sub</code> in this request.
      */
 
     public void setUsername(String username) {
@@ -139,10 +145,14 @@ public class AdminConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The user name for which you want to confirm user registration.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, you can also use their <code>sub</code> in this request.
      * </p>
      * 
-     * @return The user name for which you want to confirm user registration.
+     * @return The username of the user that you want to query or modify. The value of this parameter is typically your
+     *         user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *         attribute in your user pool, you can also use their <code>sub</code> in this request.
      */
 
     public String getUsername() {
@@ -151,11 +161,15 @@ public class AdminConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The user name for which you want to confirm user registration.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, you can also use their <code>sub</code> in this request.
      * </p>
      * 
      * @param username
-     *        The user name for which you want to confirm user registration.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, you can also use their <code>sub</code> in this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

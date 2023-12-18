@@ -37,7 +37,7 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     private String addonName;
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -67,28 +67,27 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     private String addonArn;
     /**
      * <p>
-     * The date and time that the add-on was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The date and time that the add-on was last modified.
+     * The Unix epoch timestamp for the last modification to the object.
      * </p>
      */
     private java.util.Date modifiedAt;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on
-     * uses.
+     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object
+     * that the add-on uses.
      * </p>
      */
     private String serviceAccountRoleArn;
     /**
      * <p>
-     * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with
-     * the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -159,11 +158,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -172,10 +171,10 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -184,11 +183,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,11 +377,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the add-on was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
      * @param createdAt
-     *        The date and time that the add-on was created.
+     *        The Unix epoch timestamp at object creation.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -391,10 +390,10 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the add-on was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
-     * @return The date and time that the add-on was created.
+     * @return The Unix epoch timestamp at object creation.
      */
 
     public java.util.Date getCreatedAt() {
@@ -403,11 +402,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the add-on was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
      * @param createdAt
-     *        The date and time that the add-on was created.
+     *        The Unix epoch timestamp at object creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,11 +417,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the add-on was last modified.
+     * The Unix epoch timestamp for the last modification to the object.
      * </p>
      * 
      * @param modifiedAt
-     *        The date and time that the add-on was last modified.
+     *        The Unix epoch timestamp for the last modification to the object.
      */
 
     public void setModifiedAt(java.util.Date modifiedAt) {
@@ -431,10 +430,10 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the add-on was last modified.
+     * The Unix epoch timestamp for the last modification to the object.
      * </p>
      * 
-     * @return The date and time that the add-on was last modified.
+     * @return The Unix epoch timestamp for the last modification to the object.
      */
 
     public java.util.Date getModifiedAt() {
@@ -443,11 +442,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the add-on was last modified.
+     * The Unix epoch timestamp for the last modification to the object.
      * </p>
      * 
      * @param modifiedAt
-     *        The date and time that the add-on was last modified.
+     *        The Unix epoch timestamp for the last modification to the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,13 +457,13 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on
-     * uses.
+     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object
+     * that the add-on uses.
      * </p>
      * 
      * @param serviceAccountRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the
-     *        add-on uses.
+     *        The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code>
+     *        object that the add-on uses.
      */
 
     public void setServiceAccountRoleArn(String serviceAccountRoleArn) {
@@ -473,12 +472,12 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on
-     * uses.
+     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object
+     * that the add-on uses.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the
-     *         add-on uses.
+     * @return The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code>
+     *         object that the add-on uses.
      */
 
     public String getServiceAccountRoleArn() {
@@ -487,13 +486,13 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on
-     * uses.
+     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object
+     * that the add-on uses.
      * </p>
      * 
      * @param serviceAccountRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the
-     *        add-on uses.
+     *        The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code>
+     *        object that the add-on uses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,14 +503,12 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with
-     * the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata that you apply to the add-on to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value. You define both. Add-on tags do not propagate to any other
-     *         resources associated with the cluster.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -520,15 +517,13 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with
-     * the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the add-on to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both. Add-on tags do not propagate to any other
-     *        resources associated with the cluster.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -537,15 +532,13 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with
-     * the cluster.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the add-on to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both. Add-on tags do not propagate to any other
-     *        resources associated with the cluster.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

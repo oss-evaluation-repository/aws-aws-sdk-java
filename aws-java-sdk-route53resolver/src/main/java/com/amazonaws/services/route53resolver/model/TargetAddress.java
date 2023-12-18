@@ -47,6 +47,72 @@ public class TargetAddress implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String ipv6;
+    /**
+     * <p>
+     * The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.
+     * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String protocol;
 
     /**
      * <p>
@@ -169,6 +235,541 @@ public class TargetAddress implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.
+     * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param protocol
+     *        The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *        <p>
+     *        For an inbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH-FIPS in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH-FIPS alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For an outbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     * @see Protocol
+     */
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
+    }
+
+    /**
+     * <p>
+     * The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.
+     * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *         <p>
+     *         For an inbound endpoint you can apply the protocols as follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Do53 and DoH in combination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do53 and DoH-FIPS in combination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do53 alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DoH alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DoH-FIPS alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         None, which is treated as Do53.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For an outbound endpoint you can apply the protocols as follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Do53 and DoH in combination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do53 alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DoH alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         None, which is treated as Do53.
+     *         </p>
+     *         </li>
+     * @see Protocol
+     */
+
+    public String getProtocol() {
+        return this.protocol;
+    }
+
+    /**
+     * <p>
+     * The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.
+     * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param protocol
+     *        The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *        <p>
+     *        For an inbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH-FIPS in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH-FIPS alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For an outbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public TargetAddress withProtocol(String protocol) {
+        setProtocol(protocol);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.
+     * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param protocol
+     *        The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *        <p>
+     *        For an inbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH-FIPS in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH-FIPS alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For an outbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public TargetAddress withProtocol(Protocol protocol) {
+        this.protocol = protocol.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +786,9 @@ public class TargetAddress implements Serializable, Cloneable, StructuredPojo {
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getIpv6() != null)
-            sb.append("Ipv6: ").append(getIpv6());
+            sb.append("Ipv6: ").append(getIpv6()).append(",");
+        if (getProtocol() != null)
+            sb.append("Protocol: ").append(getProtocol());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +815,10 @@ public class TargetAddress implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIpv6() != null && other.getIpv6().equals(this.getIpv6()) == false)
             return false;
+        if (other.getProtocol() == null ^ this.getProtocol() == null)
+            return false;
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +830,7 @@ public class TargetAddress implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIp() == null) ? 0 : getIp().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getIpv6() == null) ? 0 : getIpv6().hashCode());
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         return hashCode;
     }
 

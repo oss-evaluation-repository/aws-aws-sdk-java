@@ -39,8 +39,7 @@ public class DescribeAddonConfigurationResult extends com.amazonaws.AmazonWebSer
     private String addonVersion;
     /**
      * <p>
-     * A JSON schema that's used to validate the configuration values that you provide when an addon is created or
-     * updated.
+     * A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.
      * </p>
      */
     private String configurationSchema;
@@ -139,13 +138,12 @@ public class DescribeAddonConfigurationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A JSON schema that's used to validate the configuration values that you provide when an addon is created or
-     * updated.
+     * A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.
      * </p>
      * 
      * @param configurationSchema
-     *        A JSON schema that's used to validate the configuration values that you provide when an addon is created
-     *        or updated.
+     *        A JSON schema that's used to validate the configuration values you provide when an add-on is created or
+     *        updated.
      */
 
     public void setConfigurationSchema(String configurationSchema) {
@@ -154,12 +152,11 @@ public class DescribeAddonConfigurationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A JSON schema that's used to validate the configuration values that you provide when an addon is created or
-     * updated.
+     * A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.
      * </p>
      * 
-     * @return A JSON schema that's used to validate the configuration values that you provide when an addon is created
-     *         or updated.
+     * @return A JSON schema that's used to validate the configuration values you provide when an add-on is created or
+     *         updated.
      */
 
     public String getConfigurationSchema() {
@@ -168,13 +165,12 @@ public class DescribeAddonConfigurationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A JSON schema that's used to validate the configuration values that you provide when an addon is created or
-     * updated.
+     * A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.
      * </p>
      * 
      * @param configurationSchema
-     *        A JSON schema that's used to validate the configuration values that you provide when an addon is created
-     *        or updated.
+     *        A JSON schema that's used to validate the configuration values you provide when an add-on is created or
+     *        updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

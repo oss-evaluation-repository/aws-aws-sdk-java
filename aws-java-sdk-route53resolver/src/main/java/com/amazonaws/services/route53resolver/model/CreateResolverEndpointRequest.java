@@ -71,8 +71,26 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
      * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
+     * <note>
+     * <p>
+     * Even though the minimum is 1, Route 53 requires that you create at least two.
+     * </p>
+     * </note>
      */
     private java.util.List<IpAddressRequest> ipAddresses;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     * <code>PreferredInstanceType</code>.
+     * </p>
+     */
+    private String outpostArn;
+    /**
+     * <p>
+     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * </p>
+     */
+    private String preferredInstanceType;
     /**
      * <p>
      * A list of the tag keys and values that you want to associate with the endpoint.
@@ -88,17 +106,70 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     private String resolverEndpointType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
-     * <code>PreferredInstanceType</code>.
+     * The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.
      * </p>
-     */
-    private String outpostArn;
-    /**
      * <p>
-     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * For an inbound endpoint you can apply the protocols as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
      */
-    private String preferredInstanceType;
+    private java.util.List<String> protocols;
 
     /**
      * <p>
@@ -449,9 +520,17 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
      * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
+     * <note>
+     * <p>
+     * Even though the minimum is 1, Route 53 requires that you create at least two.
+     * </p>
+     * </note>
      * 
      * @return The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
-     *         you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
+     *         you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p> <note>
+     *         <p>
+     *         Even though the minimum is 1, Route 53 requires that you create at least two.
+     *         </p>
      */
 
     public java.util.List<IpAddressRequest> getIpAddresses() {
@@ -463,10 +542,18 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
      * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
+     * <note>
+     * <p>
+     * Even though the minimum is 1, Route 53 requires that you create at least two.
+     * </p>
+     * </note>
      * 
      * @param ipAddresses
      *        The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
-     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
+     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p> <note>
+     *        <p>
+     *        Even though the minimum is 1, Route 53 requires that you create at least two.
+     *        </p>
      */
 
     public void setIpAddresses(java.util.Collection<IpAddressRequest> ipAddresses) {
@@ -483,6 +570,11 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
      * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
+     * <note>
+     * <p>
+     * Even though the minimum is 1, Route 53 requires that you create at least two.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIpAddresses(java.util.Collection)} or {@link #withIpAddresses(java.util.Collection)} if you want to
@@ -491,7 +583,10 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param ipAddresses
      *        The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
-     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
+     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p> <note>
+     *        <p>
+     *        Even though the minimum is 1, Route 53 requires that you create at least two.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,15 +605,109 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
      * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
+     * <note>
+     * <p>
+     * Even though the minimum is 1, Route 53 requires that you create at least two.
+     * </p>
+     * </note>
      * 
      * @param ipAddresses
      *        The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
-     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
+     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC. </p> <note>
+     *        <p>
+     *        Even though the minimum is 1, Route 53 requires that you create at least two.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateResolverEndpointRequest withIpAddresses(java.util.Collection<IpAddressRequest> ipAddresses) {
         setIpAddresses(ipAddresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     * <code>PreferredInstanceType</code>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     *        <code>PreferredInstanceType</code>.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     * <code>PreferredInstanceType</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     *         <code>PreferredInstanceType</code>.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     * <code>PreferredInstanceType</code>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
+     *        <code>PreferredInstanceType</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResolverEndpointRequest withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * </p>
+     * 
+     * @param preferredInstanceType
+     *        The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     */
+
+    public void setPreferredInstanceType(String preferredInstanceType) {
+        this.preferredInstanceType = preferredInstanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * </p>
+     * 
+     * @return The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     */
+
+    public String getPreferredInstanceType() {
+        return this.preferredInstanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * </p>
+     * 
+     * @param preferredInstanceType
+     *        The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResolverEndpointRequest withPreferredInstanceType(String preferredInstanceType) {
+        setPreferredInstanceType(preferredInstanceType);
         return this;
     }
 
@@ -661,87 +850,694 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
-     * <code>PreferredInstanceType</code>.
+     * The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.
      * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @param outpostArn
-     *        The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
-     *        <code>PreferredInstanceType</code>.
+     * @return The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *         <p>
+     *         For an inbound endpoint you can apply the protocols as follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Do53 and DoH in combination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do53 and DoH-FIPS in combination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do53 alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DoH alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DoH-FIPS alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         None, which is treated as Do53.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For an outbound endpoint you can apply the protocols as follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Do53 and DoH in combination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do53 alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DoH alone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         None, which is treated as Do53.
+     *         </p>
+     *         </li>
+     * @see Protocol
      */
 
-    public void setOutpostArn(String outpostArn) {
-        this.outpostArn = outpostArn;
+    public java.util.List<String> getProtocols() {
+        return protocols;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
-     * <code>PreferredInstanceType</code>.
+     * The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.
      * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
-     *         <code>PreferredInstanceType</code>.
+     * @param protocols
+     *        The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *        <p>
+     *        For an inbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH-FIPS in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH-FIPS alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For an outbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     * @see Protocol
      */
 
-    public String getOutpostArn() {
-        return this.outpostArn;
+    public void setProtocols(java.util.Collection<String> protocols) {
+        if (protocols == null) {
+            this.protocols = null;
+            return;
+        }
+
+        this.protocols = new java.util.ArrayList<String>(protocols);
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
-     * <code>PreferredInstanceType</code>.
+     * The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.
+     * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param outpostArn
-     *        The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the
-     *        <code>PreferredInstanceType</code>.
+     * @param protocols
+     *        The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *        <p>
+     *        For an inbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH-FIPS in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH-FIPS alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For an outbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
      */
 
-    public CreateResolverEndpointRequest withOutpostArn(String outpostArn) {
-        setOutpostArn(outpostArn);
+    public CreateResolverEndpointRequest withProtocols(String... protocols) {
+        if (this.protocols == null) {
+            setProtocols(new java.util.ArrayList<String>(protocols.length));
+        }
+        for (String ele : protocols) {
+            this.protocols.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.
      * </p>
-     * 
-     * @param preferredInstanceType
-     *        The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
-     */
-
-    public void setPreferredInstanceType(String preferredInstanceType) {
-        this.preferredInstanceType = preferredInstanceType;
-    }
-
-    /**
      * <p>
-     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * For an inbound endpoint you can apply the protocols as follows:
      * </p>
-     * 
-     * @return The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
-     */
-
-    public String getPreferredInstanceType() {
-        return this.preferredInstanceType;
-    }
-
-    /**
+     * <ul>
+     * <li>
      * <p>
-     * The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * Do53 and DoH in combination.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @param preferredInstanceType
-     *        The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+     * @param protocols
+     *        The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *        <p>
+     *        For an inbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH-FIPS in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH-FIPS alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For an outbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
      */
 
-    public CreateResolverEndpointRequest withPreferredInstanceType(String preferredInstanceType) {
-        setPreferredInstanceType(preferredInstanceType);
+    public CreateResolverEndpointRequest withProtocols(java.util.Collection<String> protocols) {
+        setProtocols(protocols);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.
+     * </p>
+     * <p>
+     * For an inbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 and DoH-FIPS in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH-FIPS alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an outbound endpoint you can apply the protocols as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Do53 and DoH in combination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do53 alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DoH alone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * None, which is treated as Do53.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param protocols
+     *        The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only. </p>
+     *        <p>
+     *        For an inbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH-FIPS in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH-FIPS alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For an outbound endpoint you can apply the protocols as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Do53 and DoH in combination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do53 alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DoH alone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        None, which is treated as Do53.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Protocol
+     */
+
+    public CreateResolverEndpointRequest withProtocols(Protocol... protocols) {
+        java.util.ArrayList<String> protocolsCopy = new java.util.ArrayList<String>(protocols.length);
+        for (Protocol value : protocols) {
+            protocolsCopy.add(value.toString());
+        }
+        if (getProtocols() == null) {
+            setProtocols(protocolsCopy);
+        } else {
+            getProtocols().addAll(protocolsCopy);
+        }
         return this;
     }
 
@@ -767,14 +1563,16 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
             sb.append("Direction: ").append(getDirection()).append(",");
         if (getIpAddresses() != null)
             sb.append("IpAddresses: ").append(getIpAddresses()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
+        if (getPreferredInstanceType() != null)
+            sb.append("PreferredInstanceType: ").append(getPreferredInstanceType()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getResolverEndpointType() != null)
             sb.append("ResolverEndpointType: ").append(getResolverEndpointType()).append(",");
-        if (getOutpostArn() != null)
-            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
-        if (getPreferredInstanceType() != null)
-            sb.append("PreferredInstanceType: ").append(getPreferredInstanceType());
+        if (getProtocols() != null)
+            sb.append("Protocols: ").append(getProtocols());
         sb.append("}");
         return sb.toString();
     }
@@ -809,6 +1607,14 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getIpAddresses() != null && other.getIpAddresses().equals(this.getIpAddresses()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
+        if (other.getPreferredInstanceType() == null ^ this.getPreferredInstanceType() == null)
+            return false;
+        if (other.getPreferredInstanceType() != null && other.getPreferredInstanceType().equals(this.getPreferredInstanceType()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -817,13 +1623,9 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getResolverEndpointType() != null && other.getResolverEndpointType().equals(this.getResolverEndpointType()) == false)
             return false;
-        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+        if (other.getProtocols() == null ^ this.getProtocols() == null)
             return false;
-        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
-            return false;
-        if (other.getPreferredInstanceType() == null ^ this.getPreferredInstanceType() == null)
-            return false;
-        if (other.getPreferredInstanceType() != null && other.getPreferredInstanceType().equals(this.getPreferredInstanceType()) == false)
+        if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
             return false;
         return true;
     }
@@ -838,10 +1640,11 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getDirection() == null) ? 0 : getDirection().hashCode());
         hashCode = prime * hashCode + ((getIpAddresses() == null) ? 0 : getIpAddresses().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getResolverEndpointType() == null) ? 0 : getResolverEndpointType().hashCode());
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getPreferredInstanceType() == null) ? 0 : getPreferredInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getResolverEndpointType() == null) ? 0 : getResolverEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
         return hashCode;
     }
 

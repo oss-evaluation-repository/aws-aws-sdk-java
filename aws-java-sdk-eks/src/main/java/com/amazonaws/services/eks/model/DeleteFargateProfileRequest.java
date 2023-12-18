@@ -27,7 +27,7 @@ public class DeleteFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster associated with the Fargate profile to delete.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -40,11 +40,11 @@ public class DeleteFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster associated with the Fargate profile to delete.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster associated with the Fargate profile to delete.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -53,10 +53,10 @@ public class DeleteFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster associated with the Fargate profile to delete.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the Amazon EKS cluster associated with the Fargate profile to delete.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -65,11 +65,11 @@ public class DeleteFargateProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster associated with the Fargate profile to delete.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster associated with the Fargate profile to delete.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

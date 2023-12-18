@@ -206,11 +206,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * Define auth challenge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Verify auth challenge
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1293,11 +1288,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * Define auth challenge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Verify auth challenge
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1388,11 +1378,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <li>
      *         <p>
      *         Define auth challenge
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Verify auth challenge
      *         </p>
      *         </li>
      *         </ul>
@@ -1493,11 +1478,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * Define auth challenge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Verify auth challenge
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1589,11 +1569,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <li>
      *        <p>
      *        Define auth challenge
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Verify auth challenge
      *        </p>
      *        </li>
      *        </ul>
@@ -1694,11 +1669,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * Define auth challenge
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Verify auth challenge
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a href=
@@ -1790,11 +1760,6 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <li>
      *        <p>
      *        Define auth challenge
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Verify auth challenge
      *        </p>
      *        </li>
      *        </ul>

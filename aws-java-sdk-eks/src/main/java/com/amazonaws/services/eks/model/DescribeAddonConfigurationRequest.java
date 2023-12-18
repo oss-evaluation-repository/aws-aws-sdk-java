@@ -27,9 +27,7 @@ public class DescribeAddonConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.
+     * The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
      * </p>
      */
     private String addonName;
@@ -44,15 +42,12 @@ public class DescribeAddonConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.
+     * The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
      * </p>
      * 
      * @param addonName
-     *        The name of the add-on. The name must match one of the names that <a
-     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     *        <code>DescribeAddonVersions</code> </a> returns.
+     *        The name of the add-on. The name must match one of the names returned by
+     *        <code>DescribeAddonVersions</code>.
      */
 
     public void setAddonName(String addonName) {
@@ -61,14 +56,11 @@ public class DescribeAddonConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.
+     * The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
      * </p>
      * 
-     * @return The name of the add-on. The name must match one of the names that <a
-     *         href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     *         <code>DescribeAddonVersions</code> </a> returns.
+     * @return The name of the add-on. The name must match one of the names returned by
+     *         <code>DescribeAddonVersions</code>.
      */
 
     public String getAddonName() {
@@ -77,15 +69,12 @@ public class DescribeAddonConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the add-on. The name must match one of the names that <a
-     * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     * <code>DescribeAddonVersions</code> </a> returns.
+     * The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.
      * </p>
      * 
      * @param addonName
-     *        The name of the add-on. The name must match one of the names that <a
-     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-     *        <code>DescribeAddonVersions</code> </a> returns.
+     *        The name of the add-on. The name must match one of the names returned by
+     *        <code>DescribeAddonVersions</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,6 +45,8 @@ public class LambdaConfigTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerifyAuthChallengeResponse").build();
     private static final MarshallingInfo<String> PRETOKENGENERATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreTokenGeneration").build();
+    private static final MarshallingInfo<StructuredPojo> PRETOKENGENERATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreTokenGenerationConfig").build();
     private static final MarshallingInfo<String> USERMIGRATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserMigration").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMSMSSENDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -79,6 +81,7 @@ public class LambdaConfigTypeMarshaller {
             protocolMarshaller.marshall(lambdaConfigType.getCreateAuthChallenge(), CREATEAUTHCHALLENGE_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getVerifyAuthChallengeResponse(), VERIFYAUTHCHALLENGERESPONSE_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getPreTokenGeneration(), PRETOKENGENERATION_BINDING);
+            protocolMarshaller.marshall(lambdaConfigType.getPreTokenGenerationConfig(), PRETOKENGENERATIONCONFIG_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getUserMigration(), USERMIGRATION_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getCustomSMSSender(), CUSTOMSMSSENDER_BINDING);
             protocolMarshaller.marshall(lambdaConfigType.getCustomEmailSender(), CUSTOMEMAILSENDER_BINDING);

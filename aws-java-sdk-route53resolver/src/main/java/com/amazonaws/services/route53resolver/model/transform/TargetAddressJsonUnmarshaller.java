@@ -60,6 +60,10 @@ public class TargetAddressJsonUnmarshaller implements Unmarshaller<TargetAddress
                     context.nextToken();
                     targetAddress.setIpv6(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Protocol", targetDepth)) {
+                    context.nextToken();
+                    targetAddress.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

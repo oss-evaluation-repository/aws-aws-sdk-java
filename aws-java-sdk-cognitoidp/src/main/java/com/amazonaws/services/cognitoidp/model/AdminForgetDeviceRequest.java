@@ -36,7 +36,9 @@ public class AdminForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     private String userPoolId;
     /**
      * <p>
-     * The user name.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, you can also use their <code>sub</code> in this request.
      * </p>
      */
     private String username;
@@ -89,11 +91,15 @@ public class AdminForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user name.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, you can also use their <code>sub</code> in this request.
      * </p>
      * 
      * @param username
-     *        The user name.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, you can also use their <code>sub</code> in this request.
      */
 
     public void setUsername(String username) {
@@ -102,10 +108,14 @@ public class AdminForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user name.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, you can also use their <code>sub</code> in this request.
      * </p>
      * 
-     * @return The user name.
+     * @return The username of the user that you want to query or modify. The value of this parameter is typically your
+     *         user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *         attribute in your user pool, you can also use their <code>sub</code> in this request.
      */
 
     public String getUsername() {
@@ -114,11 +124,15 @@ public class AdminForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user name.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, you can also use their <code>sub</code> in this request.
      * </p>
      * 
      * @param username
-     *        The user name.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, you can also use their <code>sub</code> in this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

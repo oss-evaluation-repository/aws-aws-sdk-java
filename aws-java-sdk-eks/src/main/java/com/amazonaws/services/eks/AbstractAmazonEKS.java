@@ -29,12 +29,22 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public AssociateAccessPolicyResult associateAccessPolicy(AssociateAccessPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateEncryptionConfigResult associateEncryptionConfig(AssociateEncryptionConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public AssociateIdentityProviderConfigResult associateIdentityProviderConfig(AssociateIdentityProviderConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAccessEntryResult createAccessEntry(CreateAccessEntryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,6 +75,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public CreatePodIdentityAssociationResult createPodIdentityAssociation(CreatePodIdentityAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessEntryResult deleteAccessEntry(DeleteAccessEntryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -100,6 +115,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public DeregisterClusterResult deregisterCluster(DeregisterClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccessEntryResult describeAccessEntry(DescribeAccessEntryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,12 +174,32 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public DisassociateAccessPolicyResult disassociateAccessPolicy(DisassociateAccessPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateIdentityProviderConfigResult disassociateIdentityProviderConfig(DisassociateIdentityProviderConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public ListAccessEntriesResult listAccessEntries(ListAccessEntriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessPoliciesResult listAccessPolicies(ListAccessPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAddonsResult listAddons(ListAddonsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAssociatedAccessPoliciesResult listAssociatedAccessPolicies(ListAssociatedAccessPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -215,6 +255,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccessEntryResult updateAccessEntry(UpdateAccessEntryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

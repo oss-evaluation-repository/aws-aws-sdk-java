@@ -38,6 +38,8 @@ public class UpdateClusterConfigRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<StructuredPojo> ACCESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessConfig").build();
 
     private static final UpdateClusterConfigRequestMarshaller instance = new UpdateClusterConfigRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class UpdateClusterConfigRequestMarshaller {
             protocolMarshaller.marshall(updateClusterConfigRequest.getResourcesVpcConfig(), RESOURCESVPCCONFIG_BINDING);
             protocolMarshaller.marshall(updateClusterConfigRequest.getLogging(), LOGGING_BINDING);
             protocolMarshaller.marshall(updateClusterConfigRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(updateClusterConfigRequest.getAccessConfig(), ACCESSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

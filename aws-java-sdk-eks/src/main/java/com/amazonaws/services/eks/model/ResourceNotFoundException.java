@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>. You can
- * view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
- * Region-specific.
+ * The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You
+ * can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are
+ * Amazon Web Services Region specific.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

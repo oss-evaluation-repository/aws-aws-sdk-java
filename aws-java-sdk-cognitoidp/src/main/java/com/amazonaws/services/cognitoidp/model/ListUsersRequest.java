@@ -40,6 +40,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
      * Cognito returns all attributes for each user.
      * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
+     * </p>
      */
     private java.util.List<String> attributesToGet;
     /**
@@ -50,8 +56,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Integer limit;
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      */
     private String paginationToken;
@@ -212,10 +220,21 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
      * Cognito returns all attributes for each user.
      * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
+     * </p>
      * 
      * @return A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito
      *         to include in the response for each user. When you don't provide an <code>AttributesToGet</code>
-     *         parameter, Amazon Cognito returns all attributes for each user.
+     *         parameter, Amazon Cognito returns all attributes for each user.</p>
+     *         <p>
+     *         Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     *         <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for
+     *         the attribute you request. Attributes that you can't filter on, including custom attributes, must have a
+     *         value set in every user profile before an <code>AttributesToGet</code> parameter returns results.
      */
 
     public java.util.List<String> getAttributesToGet() {
@@ -228,11 +247,22 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
      * Cognito returns all attributes for each user.
      * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
+     * </p>
      * 
      * @param attributesToGet
      *        A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
      *        include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter,
-     *        Amazon Cognito returns all attributes for each user.
+     *        Amazon Cognito returns all attributes for each user.</p>
+     *        <p>
+     *        Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     *        <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for
+     *        the attribute you request. Attributes that you can't filter on, including custom attributes, must have a
+     *        value set in every user profile before an <code>AttributesToGet</code> parameter returns results.
      */
 
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
@@ -251,6 +281,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Cognito returns all attributes for each user.
      * </p>
      * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAttributesToGet(java.util.Collection)} or {@link #withAttributesToGet(java.util.Collection)} if you
      * want to override the existing values.
@@ -259,7 +295,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param attributesToGet
      *        A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
      *        include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter,
-     *        Amazon Cognito returns all attributes for each user.
+     *        Amazon Cognito returns all attributes for each user.</p>
+     *        <p>
+     *        Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     *        <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for
+     *        the attribute you request. Attributes that you can't filter on, including custom attributes, must have a
+     *        value set in every user profile before an <code>AttributesToGet</code> parameter returns results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +320,22 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon
      * Cognito returns all attributes for each user.
      * </p>
+     * <p>
+     * Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the
+     * attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in
+     * every user profile before an <code>AttributesToGet</code> parameter returns results.
+     * </p>
      * 
      * @param attributesToGet
      *        A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to
      *        include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter,
-     *        Amazon Cognito returns all attributes for each user.
+     *        Amazon Cognito returns all attributes for each user.</p>
+     *        <p>
+     *        Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with
+     *        <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for
+     *        the attribute you request. Attributes that you can't filter on, including custom attributes, must have a
+     *        value set in every user profile before an <code>AttributesToGet</code> parameter returns results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,13 +386,17 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        This API operation returns a limited number of results. The pagination token is an identifier that you can
+     *        present in an additional API request with the same parameters. When you include the pagination token,
+     *        Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *        pagination token. By use of this token, you can paginate through the full list of items.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -349,12 +405,16 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to this operation, which can be used to return the
-     *         next set of items in the list.
+     * @return This API operation returns a limited number of results. The pagination token is an identifier that you
+     *         can present in an additional API request with the same parameters. When you include the pagination token,
+     *         Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *         pagination token. By use of this token, you can paginate through the full list of items.
      */
 
     public String getPaginationToken() {
@@ -363,13 +423,17 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        This API operation returns a limited number of results. The pagination token is an identifier that you can
+     *        present in an additional API request with the same parameters. When you include the pagination token,
+     *        Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *        pagination token. By use of this token, you can paginate through the full list of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

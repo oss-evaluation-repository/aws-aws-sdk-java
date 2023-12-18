@@ -140,7 +140,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      *        The user account expiration limit, in days, after which a new account that hasn't signed in is no longer
      *        usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again,
      *        specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this
-     *        parameter is 7. </p> <note>
+     *        parameter is 7.</p> <note>
      *        <p>
      *        If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
      *        value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter
@@ -169,7 +169,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      * @return The user account expiration limit, in days, after which a new account that hasn't signed in is no longer
      *         usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again,
      *         specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this
-     *         parameter is 7. </p> <note>
+     *         parameter is 7.</p> <note>
      *         <p>
      *         If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
      *         value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available
@@ -199,7 +199,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
      *        The user account expiration limit, in days, after which a new account that hasn't signed in is no longer
      *        usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again,
      *        specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this
-     *        parameter is 7. </p> <note>
+     *        parameter is 7.</p> <note>
      *        <p>
      *        If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>, that
      *        value will be used, and <code>UnusedAccountValidityDays</code> will be no longer be an available parameter

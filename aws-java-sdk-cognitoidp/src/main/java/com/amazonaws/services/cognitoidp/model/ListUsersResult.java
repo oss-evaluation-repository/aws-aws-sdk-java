@@ -44,8 +44,9 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private java.util.List<UserType> users;
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      */
     private String paginationToken;
@@ -194,13 +195,15 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *        a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *        this token, you can paginate through the full list of items.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -209,12 +212,14 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to this operation, which can be used to return the
-     *         next set of items in the list.
+     * @return The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *         a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *         this token, you can paginate through the full list of items.
      */
 
     public String getPaginationToken() {
@@ -223,13 +228,15 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to this operation, which can be used to return the next
-     * set of items in the list.
+     * The identifier that Amazon Cognito returned with the previous request to this operation. When you include a
+     * pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token,
+     * you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to this operation, which can be used to return the
-     *        next set of items in the list.
+     *        The identifier that Amazon Cognito returned with the previous request to this operation. When you include
+     *        a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of
+     *        this token, you can paginate through the full list of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

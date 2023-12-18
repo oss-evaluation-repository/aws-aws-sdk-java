@@ -30,7 +30,7 @@ public class FargateProfileSelector implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Kubernetes namespace that the selector should match.
+     * The Kubernetes <code>namespace</code> that the selector should match.
      * </p>
      */
     private String namespace;
@@ -44,11 +44,11 @@ public class FargateProfileSelector implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Kubernetes namespace that the selector should match.
+     * The Kubernetes <code>namespace</code> that the selector should match.
      * </p>
      * 
      * @param namespace
-     *        The Kubernetes namespace that the selector should match.
+     *        The Kubernetes <code>namespace</code> that the selector should match.
      */
 
     public void setNamespace(String namespace) {
@@ -57,10 +57,10 @@ public class FargateProfileSelector implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Kubernetes namespace that the selector should match.
+     * The Kubernetes <code>namespace</code> that the selector should match.
      * </p>
      * 
-     * @return The Kubernetes namespace that the selector should match.
+     * @return The Kubernetes <code>namespace</code> that the selector should match.
      */
 
     public String getNamespace() {
@@ -69,11 +69,11 @@ public class FargateProfileSelector implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Kubernetes namespace that the selector should match.
+     * The Kubernetes <code>namespace</code> that the selector should match.
      * </p>
      * 
      * @param namespace
-     *        The Kubernetes namespace that the selector should match.
+     *        The Kubernetes <code>namespace</code> that the selector should match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

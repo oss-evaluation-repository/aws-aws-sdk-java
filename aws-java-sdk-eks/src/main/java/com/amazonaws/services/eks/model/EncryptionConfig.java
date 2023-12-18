@@ -30,7 +30,7 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the resources to be encrypted. The only supported value is "secrets".
+     * Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      * </p>
      */
     private java.util.List<String> resources;
@@ -43,10 +43,10 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the resources to be encrypted. The only supported value is "secrets".
+     * Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      * </p>
      * 
-     * @return Specifies the resources to be encrypted. The only supported value is "secrets".
+     * @return Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      */
 
     public java.util.List<String> getResources() {
@@ -55,11 +55,11 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the resources to be encrypted. The only supported value is "secrets".
+     * Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      * </p>
      * 
      * @param resources
-     *        Specifies the resources to be encrypted. The only supported value is "secrets".
+     *        Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -73,7 +73,7 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the resources to be encrypted. The only supported value is "secrets".
+     * Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param resources
-     *        Specifies the resources to be encrypted. The only supported value is "secrets".
+     *        Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies the resources to be encrypted. The only supported value is "secrets".
+     * Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      * </p>
      * 
      * @param resources
-     *        Specifies the resources to be encrypted. The only supported value is "secrets".
+     *        Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

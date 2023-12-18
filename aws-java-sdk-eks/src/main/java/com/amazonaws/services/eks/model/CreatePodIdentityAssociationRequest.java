@@ -54,14 +54,14 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
     private String roleArn;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -290,11 +290,11 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -303,10 +303,10 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -315,11 +315,11 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,8 +330,8 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -378,8 +378,8 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
      * </li>
      * </ul>
      * 
-     * @return The metadata that you apply to a resource to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value. You define both.</p>
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
      *         <p>
      *         The following basic restrictions apply to tags:
      *         </p>
@@ -432,8 +432,8 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -481,8 +481,8 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
      * </ul>
      * 
      * @param tags
-     *        The metadata that you apply to a resource to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both.</p>
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>
@@ -534,8 +534,8 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a
-     * key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * <p>
      * The following basic restrictions apply to tags:
@@ -583,8 +583,8 @@ public class CreatePodIdentityAssociationRequest extends com.amazonaws.AmazonWeb
      * </ul>
      * 
      * @param tags
-     *        The metadata that you apply to a resource to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value. You define both.</p>
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
      *        <p>
      *        The following basic restrictions apply to tags:
      *        </p>

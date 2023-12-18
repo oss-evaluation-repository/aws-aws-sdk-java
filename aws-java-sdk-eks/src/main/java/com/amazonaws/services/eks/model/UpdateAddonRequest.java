@@ -27,7 +27,7 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -91,26 +91,25 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resolveConflicts;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
      * The set of configuration values for the add-on that's created. The values that you provide are validated against
-     * the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
-     * DescribeAddonConfiguration</a>.
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
      * </p>
      */
     private String configurationValues;
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -119,10 +118,10 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -131,11 +130,11 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,11 +563,11 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -577,10 +576,10 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -589,11 +588,11 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,15 +604,12 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The set of configuration values for the add-on that's created. The values that you provide are validated against
-     * the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
-     * DescribeAddonConfiguration</a>.
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
      * </p>
      * 
      * @param configurationValues
      *        The set of configuration values for the add-on that's created. The values that you provide are validated
-     *        against the schema in <a
-     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"
-     *        >DescribeAddonConfiguration</a>.
+     *        against the schema returned by <code>DescribeAddonConfiguration</code>.
      */
 
     public void setConfigurationValues(String configurationValues) {
@@ -623,14 +619,11 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The set of configuration values for the add-on that's created. The values that you provide are validated against
-     * the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
-     * DescribeAddonConfiguration</a>.
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
      * </p>
      * 
      * @return The set of configuration values for the add-on that's created. The values that you provide are validated
-     *         against the schema in <a
-     *         href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"
-     *         >DescribeAddonConfiguration</a>.
+     *         against the schema returned by <code>DescribeAddonConfiguration</code>.
      */
 
     public String getConfigurationValues() {
@@ -640,15 +633,12 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The set of configuration values for the add-on that's created. The values that you provide are validated against
-     * the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html">
-     * DescribeAddonConfiguration</a>.
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
      * </p>
      * 
      * @param configurationValues
      *        The set of configuration values for the add-on that's created. The values that you provide are validated
-     *        against the schema in <a
-     *        href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"
-     *        >DescribeAddonConfiguration</a>.
+     *        against the schema returned by <code>DescribeAddonConfiguration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

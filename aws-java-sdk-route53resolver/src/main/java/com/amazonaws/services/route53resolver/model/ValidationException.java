@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or
- * <code>REPLACE</code> a domain.
+ * You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request. supported values are
+ * <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

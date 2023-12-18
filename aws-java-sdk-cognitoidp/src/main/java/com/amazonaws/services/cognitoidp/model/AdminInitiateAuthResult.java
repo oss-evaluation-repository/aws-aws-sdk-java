@@ -99,7 +99,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -220,7 +220,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -306,7 +306,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
      *        MFA types activated for the user pool will be listed in the challenge parameters
-     *        <code>MFA_CAN_SETUP</code> value.
+     *        <code>MFAS_CAN_SETUP</code> value.
      *        </p>
      *        <p>
      *        To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -396,7 +396,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -481,7 +481,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *         <p>
      *         <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
      *         MFA types activated for the user pool will be listed in the challenge parameters
-     *         <code>MFA_CAN_SETUP</code> value.
+     *         <code>MFAS_CAN_SETUP</code> value.
      *         </p>
      *         <p>
      *         To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -571,7 +571,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -657,7 +657,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
      *        MFA types activated for the user pool will be listed in the challenge parameters
-     *        <code>MFA_CAN_SETUP</code> value.
+     *        <code>MFAS_CAN_SETUP</code> value.
      *        </p>
      *        <p>
      *        To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -749,7 +749,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -835,7 +835,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
      *        MFA types activated for the user pool will be listed in the challenge parameters
-     *        <code>MFA_CAN_SETUP</code> value.
+     *        <code>MFAS_CAN_SETUP</code> value.
      *        </p>
      *        <p>
      *        To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -925,7 +925,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -1011,7 +1011,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The
      *        MFA types activated for the user pool will be listed in the challenge parameters
-     *        <code>MFA_CAN_SETUP</code> value.
+     *        <code>MFAS_CAN_SETUP</code> value.
      *        </p>
      *        <p>
      *        To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to

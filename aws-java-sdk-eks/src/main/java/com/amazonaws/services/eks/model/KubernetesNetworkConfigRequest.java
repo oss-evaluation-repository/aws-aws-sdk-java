@@ -50,13 +50,13 @@ public class KubernetesNetworkConfigRequest implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Between /24 and /12.
+     * Between <code>/24</code> and <code>/12</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster
+     * You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster
      * is created.
      * </p>
      * </important>
@@ -104,13 +104,13 @@ public class KubernetesNetworkConfigRequest implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Between /24 and /12.
+     * Between <code>/24</code> and <code>/12</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster
+     * You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster
      * is created.
      * </p>
      * </important>
@@ -135,13 +135,13 @@ public class KubernetesNetworkConfigRequest implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        Between /24 and /12.
+     *        Between <code>/24</code> and <code>/12</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <important>
      *        <p>
-     *        You can only specify a custom CIDR block when you create a cluster and can't change this value once the
+     *        You can only specify a custom CIDR block when you create a cluster. You can't change this value after the
      *        cluster is created.
      *        </p>
      */
@@ -172,13 +172,13 @@ public class KubernetesNetworkConfigRequest implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Between /24 and /12.
+     * Between <code>/24</code> and <code>/12</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster
+     * You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster
      * is created.
      * </p>
      * </important>
@@ -202,13 +202,13 @@ public class KubernetesNetworkConfigRequest implements Serializable, Cloneable, 
      *         </li>
      *         <li>
      *         <p>
-     *         Between /24 and /12.
+     *         Between <code>/24</code> and <code>/12</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <important>
      *         <p>
-     *         You can only specify a custom CIDR block when you create a cluster and can't change this value once the
+     *         You can only specify a custom CIDR block when you create a cluster. You can't change this value after the
      *         cluster is created.
      *         </p>
      */
@@ -239,13 +239,13 @@ public class KubernetesNetworkConfigRequest implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Between /24 and /12.
+     * Between <code>/24</code> and <code>/12</code>.
      * </p>
      * </li>
      * </ul>
      * <important>
      * <p>
-     * You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster
+     * You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster
      * is created.
      * </p>
      * </important>
@@ -270,13 +270,13 @@ public class KubernetesNetworkConfigRequest implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        Between /24 and /12.
+     *        Between <code>/24</code> and <code>/12</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <important>
      *        <p>
-     *        You can only specify a custom CIDR block when you create a cluster and can't change this value once the
+     *        You can only specify a custom CIDR block when you create a cluster. You can't change this value after the
      *        cluster is created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

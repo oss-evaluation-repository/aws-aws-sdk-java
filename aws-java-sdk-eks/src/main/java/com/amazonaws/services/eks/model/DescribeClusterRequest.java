@@ -27,18 +27,18 @@ public class DescribeClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the cluster to describe.
+     * The name of your cluster.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the cluster to describe.
+     * The name of your cluster.
      * </p>
      * 
      * @param name
-     *        The name of the cluster to describe.
+     *        The name of your cluster.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class DescribeClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the cluster to describe.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster to describe.
+     * @return The name of your cluster.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class DescribeClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the cluster to describe.
+     * The name of your cluster.
      * </p>
      * 
      * @param name
-     *        The name of the cluster to describe.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

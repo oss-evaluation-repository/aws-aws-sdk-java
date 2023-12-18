@@ -1,3 +1,20 @@
+# __1.12.621__ __2023-12-18__
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Amazon Cognito now supports trigger versions that define the fields in the request sent to pre token generation Lambda triggers.
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Add support for EKS Cluster Access Management.
+
+## __Amazon QuickSight__
+  - ### Features
+    - A docs-only release to add missing entities to the API reference.
+
+## __Amazon Route 53 Resolver__
+  - ### Features
+    - Add DOH protocols in resolver endpoints.
+
 # __1.12.620__ __2023-12-15__
 ## __AWS Cloud9__
   - ### Features

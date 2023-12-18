@@ -50,7 +50,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      * </p>
      * </li>
      * <li>
@@ -107,7 +107,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      * </p>
      * </li>
      * <li>
@@ -148,7 +148,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      *        </p>
      *        </li>
      *        <li>
@@ -196,7 +196,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      * </p>
      * </li>
      * <li>
@@ -236,7 +236,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     *         <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      *         </p>
      *         </li>
      *         <li>
@@ -284,7 +284,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      * </p>
      * </li>
      * <li>
@@ -325,7 +325,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      *        </p>
      *        </li>
      *        <li>
@@ -375,7 +375,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      * </p>
      * </li>
      * <li>
@@ -416,7 +416,7 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.
+     *        <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.
      *        </p>
      *        </li>
      *        <li>

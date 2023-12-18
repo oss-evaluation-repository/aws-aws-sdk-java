@@ -27,7 +27,7 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to delete the add-on from.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -48,11 +48,11 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to delete the add-on from.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster to delete the add-on from.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -61,10 +61,10 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to delete the add-on from.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster to delete the add-on from.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -73,11 +73,11 @@ public class DeleteAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster to delete the add-on from.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster to delete the add-on from.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

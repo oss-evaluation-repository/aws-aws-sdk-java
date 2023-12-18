@@ -67,7 +67,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private LambdaConfigType lambdaConfig;
     /**
      * <p>
-     * The status of a user pool.
+     * This parameter is no longer used.
      * </p>
      */
     @Deprecated
@@ -635,11 +635,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a user pool.
+     * This parameter is no longer used.
      * </p>
      * 
      * @param status
-     *        The status of a user pool.
+     *        This parameter is no longer used.
      * @see StatusType
      */
     @Deprecated
@@ -649,10 +649,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a user pool.
+     * This parameter is no longer used.
      * </p>
      * 
-     * @return The status of a user pool.
+     * @return This parameter is no longer used.
      * @see StatusType
      */
     @Deprecated
@@ -662,11 +662,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a user pool.
+     * This parameter is no longer used.
      * </p>
      * 
      * @param status
-     *        The status of a user pool.
+     *        This parameter is no longer used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -678,11 +678,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a user pool.
+     * This parameter is no longer used.
      * </p>
      * 
      * @param status
-     *        The status of a user pool.
+     *        This parameter is no longer used.
      * @see StatusType
      */
     @Deprecated
@@ -692,11 +692,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a user pool.
+     * This parameter is no longer used.
      * </p>
      * 
      * @param status
-     *        The status of a user pool.
+     *        This parameter is no longer used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */

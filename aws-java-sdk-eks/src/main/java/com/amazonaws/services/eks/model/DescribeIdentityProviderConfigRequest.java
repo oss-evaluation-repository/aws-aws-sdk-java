@@ -27,7 +27,7 @@ public class DescribeIdentityProviderConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The cluster name that the identity provider configuration is associated to.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -40,11 +40,11 @@ public class DescribeIdentityProviderConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The cluster name that the identity provider configuration is associated to.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The cluster name that the identity provider configuration is associated to.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -53,10 +53,10 @@ public class DescribeIdentityProviderConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The cluster name that the identity provider configuration is associated to.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The cluster name that the identity provider configuration is associated to.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -65,11 +65,11 @@ public class DescribeIdentityProviderConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The cluster name that the identity provider configuration is associated to.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The cluster name that the identity provider configuration is associated to.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

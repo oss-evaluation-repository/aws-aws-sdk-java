@@ -27,7 +27,7 @@ public class DeleteNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that is associated with your node group.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -40,11 +40,11 @@ public class DeleteNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that is associated with your node group.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster that is associated with your node group.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -53,10 +53,10 @@ public class DeleteNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that is associated with your node group.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the Amazon EKS cluster that is associated with your node group.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -65,11 +65,11 @@ public class DeleteNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that is associated with your node group.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster that is associated with your node group.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

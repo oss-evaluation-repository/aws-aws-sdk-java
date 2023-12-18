@@ -443,7 +443,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000
-     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.
+     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact Amazon Web Services
+     * Support.
      * </p>
      * <p>
      * The permissions resource is
@@ -466,7 +467,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000
-     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.
+     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact Amazon Web Services
+     * Support.
      * </p>
      * <p>
      * The permissions resource is
