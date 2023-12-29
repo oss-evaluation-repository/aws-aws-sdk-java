@@ -1,3 +1,16 @@
+# __1.12.629__ __2023-12-29__
+## __AWS App Runner__
+  - ### Features
+    - AWS App Runner adds Python 3.11 and Node.js 18 runtimes.
+
+## __Amazon Location Service__
+  - ### Features
+    - This release introduces a new parameter to bypasses an API key's expiry conditions and delete the key.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Add LinkEntityArn support for different partitions; Add UnsupportedUserEditionException in UpdateDashboardLinks API; Add support for New Reader Experience Topics
+
 # __1.12.628__ __2023-12-28__
 ## __AWS CodeStar connections__
   - ### Features

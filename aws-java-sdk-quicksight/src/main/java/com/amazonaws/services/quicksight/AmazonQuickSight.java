@@ -4917,6 +4917,10 @@ public interface AmazonQuickSight {
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
      *         credentials.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.UpdateDashboardLinks

@@ -42,6 +42,12 @@ public class TopicDetails implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
+     * The user experience version of a topic.
+     * </p>
+     */
+    private String userExperienceVersion;
+    /**
+     * <p>
      * The data sets that the topic is associated with.
      * </p>
      */
@@ -124,6 +130,65 @@ public class TopicDetails implements Serializable, Cloneable, StructuredPojo {
 
     public TopicDetails withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user experience version of a topic.
+     * </p>
+     * 
+     * @param userExperienceVersion
+     *        The user experience version of a topic.
+     * @see TopicUserExperienceVersion
+     */
+
+    public void setUserExperienceVersion(String userExperienceVersion) {
+        this.userExperienceVersion = userExperienceVersion;
+    }
+
+    /**
+     * <p>
+     * The user experience version of a topic.
+     * </p>
+     * 
+     * @return The user experience version of a topic.
+     * @see TopicUserExperienceVersion
+     */
+
+    public String getUserExperienceVersion() {
+        return this.userExperienceVersion;
+    }
+
+    /**
+     * <p>
+     * The user experience version of a topic.
+     * </p>
+     * 
+     * @param userExperienceVersion
+     *        The user experience version of a topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TopicUserExperienceVersion
+     */
+
+    public TopicDetails withUserExperienceVersion(String userExperienceVersion) {
+        setUserExperienceVersion(userExperienceVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user experience version of a topic.
+     * </p>
+     * 
+     * @param userExperienceVersion
+     *        The user experience version of a topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TopicUserExperienceVersion
+     */
+
+    public TopicDetails withUserExperienceVersion(TopicUserExperienceVersion userExperienceVersion) {
+        this.userExperienceVersion = userExperienceVersion.toString();
         return this;
     }
 
@@ -213,6 +278,8 @@ public class TopicDetails implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getUserExperienceVersion() != null)
+            sb.append("UserExperienceVersion: ").append(getUserExperienceVersion()).append(",");
         if (getDataSets() != null)
             sb.append("DataSets: ").append(getDataSets());
         sb.append("}");
@@ -237,6 +304,10 @@ public class TopicDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getUserExperienceVersion() == null ^ this.getUserExperienceVersion() == null)
+            return false;
+        if (other.getUserExperienceVersion() != null && other.getUserExperienceVersion().equals(this.getUserExperienceVersion()) == false)
+            return false;
         if (other.getDataSets() == null ^ this.getDataSets() == null)
             return false;
         if (other.getDataSets() != null && other.getDataSets().equals(this.getDataSets()) == false)
@@ -251,6 +322,7 @@ public class TopicDetails implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getUserExperienceVersion() == null) ? 0 : getUserExperienceVersion().hashCode());
         hashCode = prime * hashCode + ((getDataSets() == null) ? 0 : getDataSets().hashCode());
         return hashCode;
     }

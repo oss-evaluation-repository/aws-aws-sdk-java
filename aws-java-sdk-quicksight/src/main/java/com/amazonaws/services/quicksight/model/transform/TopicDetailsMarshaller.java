@@ -32,6 +32,8 @@ public class TopicDetailsMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> USEREXPERIENCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserExperienceVersion").build();
     private static final MarshallingInfo<List> DATASETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DataSets").build();
 
@@ -53,6 +55,7 @@ public class TopicDetailsMarshaller {
         try {
             protocolMarshaller.marshall(topicDetails.getName(), NAME_BINDING);
             protocolMarshaller.marshall(topicDetails.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(topicDetails.getUserExperienceVersion(), USEREXPERIENCEVERSION_BINDING);
             protocolMarshaller.marshall(topicDetails.getDataSets(), DATASETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -56,6 +56,10 @@ public class TopicDetailsJsonUnmarshaller implements Unmarshaller<TopicDetails, 
                     context.nextToken();
                     topicDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UserExperienceVersion", targetDepth)) {
+                    context.nextToken();
+                    topicDetails.setUserExperienceVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DataSets", targetDepth)) {
                     context.nextToken();
                     topicDetails.setDataSets(new ListUnmarshaller<DatasetMetadata>(DatasetMetadataJsonUnmarshaller.getInstance())

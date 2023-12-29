@@ -165,7 +165,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>,
-     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by
+     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> delimited by
      * colons (:).
      * </p>
      * </li>
@@ -1176,7 +1176,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>,
-     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by
+     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> delimited by
      * colons (:).
      * </p>
      * </li>
@@ -1211,7 +1211,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         Other than wildcards, you must include the full ARN, including the <code>arn</code>,
      *         <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and
-     *         <code>resource-id</code>, delimited by colons (:).
+     *         <code>resource-id</code> delimited by colons (:).
      *         </p>
      *         </li>
      *         <li>
@@ -1251,7 +1251,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>,
-     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by
+     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> delimited by
      * colons (:).
      * </p>
      * </li>
@@ -1287,7 +1287,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        Other than wildcards, you must include the full ARN, including the <code>arn</code>,
      *        <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and
-     *        <code>resource-id</code>, delimited by colons (:).
+     *        <code>resource-id</code> delimited by colons (:).
      *        </p>
      *        </li>
      *        <li>
@@ -1332,7 +1332,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>,
-     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by
+     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> delimited by
      * colons (:).
      * </p>
      * </li>
@@ -1373,7 +1373,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        Other than wildcards, you must include the full ARN, including the <code>arn</code>,
      *        <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and
-     *        <code>resource-id</code>, delimited by colons (:).
+     *        <code>resource-id</code> delimited by colons (:).
      *        </p>
      *        </li>
      *        <li>
@@ -1420,7 +1420,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>,
-     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by
+     * <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> delimited by
      * colons (:).
      * </p>
      * </li>
@@ -1456,7 +1456,7 @@ public class ApiKeyRestrictions implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        Other than wildcards, you must include the full ARN, including the <code>arn</code>,
      *        <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and
-     *        <code>resource-id</code>, delimited by colons (:).
+     *        <code>resource-id</code> delimited by colons (:).
      *        </p>
      *        </li>
      *        <li>

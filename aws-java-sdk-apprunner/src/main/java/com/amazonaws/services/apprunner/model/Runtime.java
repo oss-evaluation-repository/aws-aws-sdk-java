@@ -29,7 +29,9 @@ public enum Runtime {
     GO_1("GO_1"),
     DOTNET_6("DOTNET_6"),
     PHP_81("PHP_81"),
-    RUBY_31("RUBY_31");
+    RUBY_31("RUBY_31"),
+    PYTHON_311("PYTHON_311"),
+    NODEJS_18("NODEJS_18");
 
     private String value;
 
