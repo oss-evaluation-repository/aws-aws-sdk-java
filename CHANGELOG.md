@@ -1,3 +1,16 @@
+# __1.12.633__ __2024-01-08__
+## __AWS CodeBuild__
+  - ### Features
+    - Aws CodeBuild now supports new compute type BUILD_GENERAL1_XLARGE
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 R7iz bare metal instances are powered by custom 4th generation Intel Xeon Scalable processors.
+
+## __Amazon Route 53 Resolver__
+  - ### Features
+    - This release adds support for query type configuration on firewall rules that enables customers for granular action (ALLOW, ALERT, BLOCK) by DNS query type.
+
 # __1.12.632__ __2024-01-05__
 ## __AWS Key Management Service__
   - ### Features

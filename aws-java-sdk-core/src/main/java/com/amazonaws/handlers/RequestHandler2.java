@@ -29,6 +29,12 @@ import com.amazonaws.util.TimingInfo;
  * <p>
  * Note {@link TimingInfo} is accessible via {@link Request#getAWSRequestMetrics()} and hence is
  * omitted from the interface to reduce duplication by design.
+ *
+ * <p>
+ * <b>Migrating to AWS SDK for Java v2</b>
+ * <p>
+ * The v2 equivalent of this class is
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/interceptor/ExecutionInterceptor.html">ExecutionInterceptor</a>
  */
 public abstract class RequestHandler2 implements IRequestHandler2 {
 

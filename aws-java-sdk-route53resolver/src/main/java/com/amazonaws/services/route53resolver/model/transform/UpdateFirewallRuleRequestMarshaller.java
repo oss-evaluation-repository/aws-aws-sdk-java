@@ -45,6 +45,8 @@ public class UpdateFirewallRuleRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BlockOverrideTtl").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> QTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Qtype").build();
 
     private static final UpdateFirewallRuleRequestMarshaller instance = new UpdateFirewallRuleRequestMarshaller();
 
@@ -71,6 +73,7 @@ public class UpdateFirewallRuleRequestMarshaller {
             protocolMarshaller.marshall(updateFirewallRuleRequest.getBlockOverrideDnsType(), BLOCKOVERRIDEDNSTYPE_BINDING);
             protocolMarshaller.marshall(updateFirewallRuleRequest.getBlockOverrideTtl(), BLOCKOVERRIDETTL_BINDING);
             protocolMarshaller.marshall(updateFirewallRuleRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateFirewallRuleRequest.getQtype(), QTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

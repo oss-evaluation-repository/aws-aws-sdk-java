@@ -800,7 +800,9 @@ public enum InstanceType {
     M7iMetal24xl("m7i.metal-24xl"),
     M7iMetal48xl("m7i.metal-48xl"),
     R7iMetal24xl("r7i.metal-24xl"),
-    R7iMetal48xl("r7i.metal-48xl");
+    R7iMetal48xl("r7i.metal-48xl"),
+    R7izMetal16xl("r7iz.metal-16xl"),
+    R7izMetal32xl("r7iz.metal-32xl");
 
     private String value;
 

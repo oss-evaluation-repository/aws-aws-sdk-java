@@ -144,6 +144,79 @@ public class FirewallRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String modificationTime;
+    /**
+     * <p>
+     * The DNS query type you want the rule to evaluate. Allowed values are;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A: Returns an IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA: Returns an Ipv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME: Returns another domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MX: Specifies mail servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NAPTR: Regular-expression-based rewriting of domain names.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NS: Authoritative name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PTR: Maps an IP address to a domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOA: Start of authority record for the zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SPF: Lists the servers authorized to send emails from a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV: Application specific values that identify servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String qtype;
 
     /**
      * <p>
@@ -1028,6 +1101,445 @@ public class FirewallRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The DNS query type you want the rule to evaluate. Allowed values are;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A: Returns an IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA: Returns an Ipv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME: Returns another domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MX: Specifies mail servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NAPTR: Regular-expression-based rewriting of domain names.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NS: Authoritative name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PTR: Maps an IP address to a domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOA: Start of authority record for the zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SPF: Lists the servers authorized to send emails from a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV: Application specific values that identify servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param qtype
+     *        The DNS query type you want the rule to evaluate. Allowed values are; </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A: Returns an IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AAAA: Returns an Ipv6 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CNAME: Returns another domain name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MX: Specifies mail servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NAPTR: Regular-expression-based rewriting of domain names.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NS: Authoritative name servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PTR: Maps an IP address to a domain name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SOA: Start of authority record for the zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SPF: Lists the servers authorized to send emails from a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SRV: Application specific values that identify servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TXT: Verifies email senders and application-specific values.
+     *        </p>
+     *        </li>
+     */
+
+    public void setQtype(String qtype) {
+        this.qtype = qtype;
+    }
+
+    /**
+     * <p>
+     * The DNS query type you want the rule to evaluate. Allowed values are;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A: Returns an IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA: Returns an Ipv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME: Returns another domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MX: Specifies mail servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NAPTR: Regular-expression-based rewriting of domain names.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NS: Authoritative name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PTR: Maps an IP address to a domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOA: Start of authority record for the zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SPF: Lists the servers authorized to send emails from a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV: Application specific values that identify servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The DNS query type you want the rule to evaluate. Allowed values are; </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A: Returns an IPv4 address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AAAA: Returns an Ipv6 address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CNAME: Returns another domain name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MX: Specifies mail servers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NAPTR: Regular-expression-based rewriting of domain names.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NS: Authoritative name servers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PTR: Maps an IP address to a domain name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SOA: Start of authority record for the zone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SPF: Lists the servers authorized to send emails from a domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SRV: Application specific values that identify servers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TXT: Verifies email senders and application-specific values.
+     *         </p>
+     *         </li>
+     */
+
+    public String getQtype() {
+        return this.qtype;
+    }
+
+    /**
+     * <p>
+     * The DNS query type you want the rule to evaluate. Allowed values are;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A: Returns an IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA: Returns an Ipv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME: Returns another domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MX: Specifies mail servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NAPTR: Regular-expression-based rewriting of domain names.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NS: Authoritative name servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PTR: Maps an IP address to a domain name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOA: Start of authority record for the zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SPF: Lists the servers authorized to send emails from a domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV: Application specific values that identify servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param qtype
+     *        The DNS query type you want the rule to evaluate. Allowed values are; </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A: Returns an IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AAAA: Returns an Ipv6 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CNAME: Returns another domain name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DS: Record that identifies the DNSSEC signing key of a delegated zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MX: Specifies mail servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NAPTR: Regular-expression-based rewriting of domain names.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NS: Authoritative name servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PTR: Maps an IP address to a domain name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SOA: Start of authority record for the zone.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SPF: Lists the servers authorized to send emails from a domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SRV: Application specific values that identify servers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TXT: Verifies email senders and application-specific values.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FirewallRule withQtype(String qtype) {
+        setQtype(qtype);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1062,7 +1574,9 @@ public class FirewallRule implements Serializable, Cloneable, StructuredPojo {
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getModificationTime() != null)
-            sb.append("ModificationTime: ").append(getModificationTime());
+            sb.append("ModificationTime: ").append(getModificationTime()).append(",");
+        if (getQtype() != null)
+            sb.append("Qtype: ").append(getQtype());
         sb.append("}");
         return sb.toString();
     }
@@ -1125,6 +1639,10 @@ public class FirewallRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getModificationTime() != null && other.getModificationTime().equals(this.getModificationTime()) == false)
             return false;
+        if (other.getQtype() == null ^ this.getQtype() == null)
+            return false;
+        if (other.getQtype() != null && other.getQtype().equals(this.getQtype()) == false)
+            return false;
         return true;
     }
 
@@ -1145,6 +1663,7 @@ public class FirewallRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getModificationTime() == null) ? 0 : getModificationTime().hashCode());
+        hashCode = prime * hashCode + ((getQtype() == null) ? 0 : getQtype().hashCode());
         return hashCode;
     }
 

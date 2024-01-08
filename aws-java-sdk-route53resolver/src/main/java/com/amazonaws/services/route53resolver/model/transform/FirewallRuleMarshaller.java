@@ -51,6 +51,8 @@ public class FirewallRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
     private static final MarshallingInfo<String> MODIFICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModificationTime").build();
+    private static final MarshallingInfo<String> QTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Qtype").build();
 
     private static final FirewallRuleMarshaller instance = new FirewallRuleMarshaller();
 
@@ -80,6 +82,7 @@ public class FirewallRuleMarshaller {
             protocolMarshaller.marshall(firewallRule.getCreatorRequestId(), CREATORREQUESTID_BINDING);
             protocolMarshaller.marshall(firewallRule.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(firewallRule.getModificationTime(), MODIFICATIONTIME_BINDING);
+            protocolMarshaller.marshall(firewallRule.getQtype(), QTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

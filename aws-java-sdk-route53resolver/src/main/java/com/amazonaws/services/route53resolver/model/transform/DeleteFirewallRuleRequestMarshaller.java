@@ -31,6 +31,8 @@ public class DeleteFirewallRuleRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirewallRuleGroupId").build();
     private static final MarshallingInfo<String> FIREWALLDOMAINLISTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirewallDomainListId").build();
+    private static final MarshallingInfo<String> QTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Qtype").build();
 
     private static final DeleteFirewallRuleRequestMarshaller instance = new DeleteFirewallRuleRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DeleteFirewallRuleRequestMarshaller {
         try {
             protocolMarshaller.marshall(deleteFirewallRuleRequest.getFirewallRuleGroupId(), FIREWALLRULEGROUPID_BINDING);
             protocolMarshaller.marshall(deleteFirewallRuleRequest.getFirewallDomainListId(), FIREWALLDOMAINLISTID_BINDING);
+            protocolMarshaller.marshall(deleteFirewallRuleRequest.getQtype(), QTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

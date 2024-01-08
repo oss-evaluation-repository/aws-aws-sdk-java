@@ -58,8 +58,14 @@ import org.apache.commons.logging.LogFactory;
  *
  * More information about Amazon EC2 Metadata
  *
+ * <p>
+ * <b>Migrating to AWS SDK for Java v2</b>
+ * <p>
+ * The v2 equivalent of this class is
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/imds/Ec2MetadataClient.html">Ec2MetadataClient</a>
+ *
  * @see <a
- *      href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Amazon
+ *      href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Amazon
  *      EC2 User Guide: Instance Metadata</a>
  */
 public class EC2MetadataUtils {
