@@ -46,7 +46,7 @@ public class MonitorContactRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     * escalate from silent monitoring to barge.
+     * escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * </p>
      */
     private java.util.List<String> allowedMonitorCapabilities;
@@ -183,11 +183,11 @@ public class MonitorContactRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     * escalate from silent monitoring to barge.
+     * escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * </p>
      * 
      * @return Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     *         escalate from silent monitoring to barge.
+     *         escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * @see MonitorCapability
      */
 
@@ -198,12 +198,12 @@ public class MonitorContactRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     * escalate from silent monitoring to barge.
+     * escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * </p>
      * 
      * @param allowedMonitorCapabilities
      *        Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     *        escalate from silent monitoring to barge.
+     *        escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * @see MonitorCapability
      */
 
@@ -219,7 +219,7 @@ public class MonitorContactRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     * escalate from silent monitoring to barge.
+     * escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -229,7 +229,7 @@ public class MonitorContactRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param allowedMonitorCapabilities
      *        Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     *        escalate from silent monitoring to barge.
+     *        escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MonitorCapability
      */
@@ -247,12 +247,12 @@ public class MonitorContactRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     * escalate from silent monitoring to barge.
+     * escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * </p>
      * 
      * @param allowedMonitorCapabilities
      *        Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     *        escalate from silent monitoring to barge.
+     *        escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MonitorCapability
      */
@@ -265,12 +265,12 @@ public class MonitorContactRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     * escalate from silent monitoring to barge.
+     * escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * </p>
      * 
      * @param allowedMonitorCapabilities
      *        Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to
-     *        escalate from silent monitoring to barge.
+     *        escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MonitorCapability
      */

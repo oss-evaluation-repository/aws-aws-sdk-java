@@ -70,6 +70,8 @@ public class DescribedServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StructuredLogDestinations").build();
     private static final MarshallingInfo<StructuredPojo> S3STORAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3StorageOptions").build();
+    private static final MarshallingInfo<List> AS2SERVICEMANAGEDEGRESSIPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("As2ServiceManagedEgressIpAddresses").build();
 
     private static final DescribedServerMarshaller instance = new DescribedServerMarshaller();
 
@@ -108,6 +110,7 @@ public class DescribedServerMarshaller {
             protocolMarshaller.marshall(describedServer.getWorkflowDetails(), WORKFLOWDETAILS_BINDING);
             protocolMarshaller.marshall(describedServer.getStructuredLogDestinations(), STRUCTUREDLOGDESTINATIONS_BINDING);
             protocolMarshaller.marshall(describedServer.getS3StorageOptions(), S3STORAGEOPTIONS_BINDING);
+            protocolMarshaller.marshall(describedServer.getAs2ServiceManagedEgressIpAddresses(), AS2SERVICEMANAGEDEGRESSIPADDRESSES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

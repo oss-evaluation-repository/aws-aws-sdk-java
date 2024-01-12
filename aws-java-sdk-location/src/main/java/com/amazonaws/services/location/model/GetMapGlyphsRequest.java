@@ -60,7 +60,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     * <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      * </p>
      * </li>
      * </ul>
@@ -181,7 +182,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     * <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      * </p>
      * </li>
      * </ul>
@@ -277,7 +279,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     *        VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     *        <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -379,7 +382,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     * <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      * </p>
      * </li>
      * </ul>
@@ -475,7 +479,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     *         VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     *         <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -577,7 +582,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     * VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     * <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      * </p>
      * </li>
      * </ul>
@@ -673,7 +679,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code>
+     *        VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> |
+     *        <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code>
      *        </p>
      *        </li>
      *        </ul>

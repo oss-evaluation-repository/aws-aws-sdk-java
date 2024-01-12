@@ -23,7 +23,8 @@ public enum ParticipantRole {
     AGENT("AGENT"),
     CUSTOMER("CUSTOMER"),
     SYSTEM("SYSTEM"),
-    CUSTOM_BOT("CUSTOM_BOT");
+    CUSTOM_BOT("CUSTOM_BOT"),
+    SUPERVISOR("SUPERVISOR");
 
     private String value;
 

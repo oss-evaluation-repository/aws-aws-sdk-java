@@ -316,6 +316,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private S3StorageOptions s3StorageOptions;
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     */
+    private java.util.List<String> as2ServiceManagedEgressIpAddresses;
 
     /**
      * <p>
@@ -2626,6 +2637,113 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     * 
+     * @return The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use
+     *         the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+     *         <p>
+     *         These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update
+     *         an existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     */
+
+    public java.util.List<String> getAs2ServiceManagedEgressIpAddresses() {
+        return as2ServiceManagedEgressIpAddresses;
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     * 
+     * @param as2ServiceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use
+     *        the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+     *        <p>
+     *        These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update
+     *        an existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     */
+
+    public void setAs2ServiceManagedEgressIpAddresses(java.util.Collection<String> as2ServiceManagedEgressIpAddresses) {
+        if (as2ServiceManagedEgressIpAddresses == null) {
+            this.as2ServiceManagedEgressIpAddresses = null;
+            return;
+        }
+
+        this.as2ServiceManagedEgressIpAddresses = new java.util.ArrayList<String>(as2ServiceManagedEgressIpAddresses);
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAs2ServiceManagedEgressIpAddresses(java.util.Collection)} or
+     * {@link #withAs2ServiceManagedEgressIpAddresses(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param as2ServiceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use
+     *        the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+     *        <p>
+     *        These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update
+     *        an existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withAs2ServiceManagedEgressIpAddresses(String... as2ServiceManagedEgressIpAddresses) {
+        if (this.as2ServiceManagedEgressIpAddresses == null) {
+            setAs2ServiceManagedEgressIpAddresses(new java.util.ArrayList<String>(as2ServiceManagedEgressIpAddresses.length));
+        }
+        for (String ele : as2ServiceManagedEgressIpAddresses) {
+            this.as2ServiceManagedEgressIpAddresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2
+     * protocol. They are used for sending asynchronous MDNs.
+     * </p>
+     * <p>
+     * These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an
+     * existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * </p>
+     * 
+     * @param as2ServiceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use
+     *        the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+     *        <p>
+     *        These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update
+     *        an existing server and add the AS2 protocol, static IP addresses are assigned as well.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withAs2ServiceManagedEgressIpAddresses(java.util.Collection<String> as2ServiceManagedEgressIpAddresses) {
+        setAs2ServiceManagedEgressIpAddresses(as2ServiceManagedEgressIpAddresses);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2678,7 +2796,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         if (getStructuredLogDestinations() != null)
             sb.append("StructuredLogDestinations: ").append(getStructuredLogDestinations()).append(",");
         if (getS3StorageOptions() != null)
-            sb.append("S3StorageOptions: ").append(getS3StorageOptions());
+            sb.append("S3StorageOptions: ").append(getS3StorageOptions()).append(",");
+        if (getAs2ServiceManagedEgressIpAddresses() != null)
+            sb.append("As2ServiceManagedEgressIpAddresses: ").append(getAs2ServiceManagedEgressIpAddresses());
         sb.append("}");
         return sb.toString();
     }
@@ -2778,6 +2898,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getS3StorageOptions() != null && other.getS3StorageOptions().equals(this.getS3StorageOptions()) == false)
             return false;
+        if (other.getAs2ServiceManagedEgressIpAddresses() == null ^ this.getAs2ServiceManagedEgressIpAddresses() == null)
+            return false;
+        if (other.getAs2ServiceManagedEgressIpAddresses() != null
+                && other.getAs2ServiceManagedEgressIpAddresses().equals(this.getAs2ServiceManagedEgressIpAddresses()) == false)
+            return false;
         return true;
     }
 
@@ -2807,6 +2932,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getWorkflowDetails() == null) ? 0 : getWorkflowDetails().hashCode());
         hashCode = prime * hashCode + ((getStructuredLogDestinations() == null) ? 0 : getStructuredLogDestinations().hashCode());
         hashCode = prime * hashCode + ((getS3StorageOptions() == null) ? 0 : getS3StorageOptions().hashCode());
+        hashCode = prime * hashCode + ((getAs2ServiceManagedEgressIpAddresses() == null) ? 0 : getAs2ServiceManagedEgressIpAddresses().hashCode());
         return hashCode;
     }
 

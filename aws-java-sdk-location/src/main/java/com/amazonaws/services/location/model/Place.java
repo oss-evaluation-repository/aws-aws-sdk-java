@@ -115,15 +115,20 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
     private String street;
     /**
      * <p>
-     * An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the
+     * An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the
      * Queen County in New York.
      * </p>
      * <note>
      * <p>
-     * This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
-     * property is <code>borough</code>.
+     * This property is only returned for a place index that uses Esri as a data provider. The property is represented
+     * as a <code>district</code>.
      * </p>
      * </note>
+     * <p>
+     * For more information about data providers, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers</a>.
+     * </p>
      */
     private String subMunicipality;
     /**
@@ -152,8 +157,8 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
-     * <code>SearchPlaceIndexForPosition</code>.
+     * This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned
+     * for <code>SearchPlaceIndexForPosition</code>.
      * </p>
      * </note>
      */
@@ -164,7 +169,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri as a data provider.
+     * This property is returned only for a place index that uses Esri as a data provider.
      * </p>
      * </note>
      */
@@ -784,23 +789,33 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the
+     * An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the
      * Queen County in New York.
      * </p>
      * <note>
      * <p>
-     * This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
-     * property is <code>borough</code>.
+     * This property is only returned for a place index that uses Esri as a data provider. The property is represented
+     * as a <code>district</code>.
      * </p>
      * </note>
+     * <p>
+     * For more information about data providers, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers</a>.
+     * </p>
      * 
      * @param subMunicipality
-     *        An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality
-     *        in the Queen County in New York.</p> <note>
+     *        An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in
+     *        the Queen County in New York.</p> <note>
      *        <p>
-     *        This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
-     *        property is <code>borough</code>.
+     *        This property is only returned for a place index that uses Esri as a data provider. The property is
+     *        represented as a <code>district</code>.
      *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about data providers, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *        Location Service data providers</a>.
      */
 
     public void setSubMunicipality(String subMunicipality) {
@@ -809,22 +824,32 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the
+     * An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the
      * Queen County in New York.
      * </p>
      * <note>
      * <p>
-     * This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
-     * property is <code>borough</code>.
+     * This property is only returned for a place index that uses Esri as a data provider. The property is represented
+     * as a <code>district</code>.
      * </p>
      * </note>
+     * <p>
+     * For more information about data providers, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers</a>.
+     * </p>
      * 
-     * @return An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality
+     * @return An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality
      *         in the Queen County in New York.</p> <note>
      *         <p>
-     *         This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the
-     *         OpenData property is <code>borough</code>.
+     *         This property is only returned for a place index that uses Esri as a data provider. The property is
+     *         represented as a <code>district</code>.
      *         </p>
+     *         </note>
+     *         <p>
+     *         For more information about data providers, see <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *         Location Service data providers</a>.
      */
 
     public String getSubMunicipality() {
@@ -833,23 +858,33 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality in the
+     * An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the
      * Queen County in New York.
      * </p>
      * <note>
      * <p>
-     * This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
-     * property is <code>borough</code>.
+     * This property is only returned for a place index that uses Esri as a data provider. The property is represented
+     * as a <code>district</code>.
      * </p>
      * </note>
+     * <p>
+     * For more information about data providers, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers</a>.
+     * </p>
      * 
      * @param subMunicipality
-     *        An area that's part of a larger municipality. For example, <code>Blissville </code> is a submunicipality
-     *        in the Queen County in New York.</p> <note>
+     *        An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in
+     *        the Queen County in New York.</p> <note>
      *        <p>
-     *        This property supported by Esri and OpenData. The Esri property is <code>district</code>, and the OpenData
-     *        property is <code>borough</code>.
+     *        This property is only returned for a place index that uses Esri as a data provider. The property is
+     *        represented as a <code>district</code>.
      *        </p>
+     *        </note>
+     *        <p>
+     *        For more information about data providers, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *        Location Service data providers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1025,8 +1060,8 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
-     * <code>SearchPlaceIndexForPosition</code>.
+     * This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned
+     * for <code>SearchPlaceIndexForPosition</code>.
      * </p>
      * </note>
      * 
@@ -1034,8 +1069,8 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      *        For addresses with multiple units, the unit identifier. Can include numbers and letters, for example
      *        <code>3B</code> or <code>Unit 123</code>.</p> <note>
      *        <p>
-     *        Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
-     *        <code>SearchPlaceIndexForPosition</code>.
+     *        This property is returned only for a place index that uses Esri or Grab as a data provider. It is not
+     *        returned for <code>SearchPlaceIndexForPosition</code>.
      *        </p>
      */
 
@@ -1050,16 +1085,16 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
-     * <code>SearchPlaceIndexForPosition</code>.
+     * This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned
+     * for <code>SearchPlaceIndexForPosition</code>.
      * </p>
      * </note>
      * 
      * @return For addresses with multiple units, the unit identifier. Can include numbers and letters, for example
      *         <code>3B</code> or <code>Unit 123</code>.</p> <note>
      *         <p>
-     *         Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
-     *         <code>SearchPlaceIndexForPosition</code>.
+     *         This property is returned only for a place index that uses Esri or Grab as a data provider. It is not
+     *         returned for <code>SearchPlaceIndexForPosition</code>.
      *         </p>
      */
 
@@ -1074,8 +1109,8 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
-     * <code>SearchPlaceIndexForPosition</code>.
+     * This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned
+     * for <code>SearchPlaceIndexForPosition</code>.
      * </p>
      * </note>
      * 
@@ -1083,8 +1118,8 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      *        For addresses with multiple units, the unit identifier. Can include numbers and letters, for example
      *        <code>3B</code> or <code>Unit 123</code>.</p> <note>
      *        <p>
-     *        Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for
-     *        <code>SearchPlaceIndexForPosition</code>.
+     *        This property is returned only for a place index that uses Esri or Grab as a data provider. It is not
+     *        returned for <code>SearchPlaceIndexForPosition</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1100,7 +1135,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri as a data provider.
+     * This property is returned only for a place index that uses Esri as a data provider.
      * </p>
      * </note>
      * 
@@ -1108,7 +1143,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      *        For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
      *        <note>
      *        <p>
-     *        Returned only for a place index that uses Esri as a data provider.
+     *        This property is returned only for a place index that uses Esri as a data provider.
      *        </p>
      */
 
@@ -1122,14 +1157,14 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri as a data provider.
+     * This property is returned only for a place index that uses Esri as a data provider.
      * </p>
      * </note>
      * 
      * @return For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
      *         <note>
      *         <p>
-     *         Returned only for a place index that uses Esri as a data provider.
+     *         This property is returned only for a place index that uses Esri as a data provider.
      *         </p>
      */
 
@@ -1143,7 +1178,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Returned only for a place index that uses Esri as a data provider.
+     * This property is returned only for a place index that uses Esri as a data provider.
      * </p>
      * </note>
      * 
@@ -1151,7 +1186,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
      *        For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p>
      *        <note>
      *        <p>
-     *        Returned only for a place index that uses Esri as a data provider.
+     *        This property is returned only for a place index that uses Esri as a data provider.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

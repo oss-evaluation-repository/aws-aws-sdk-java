@@ -44,7 +44,7 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
     private String invocationRole;
     /**
      * <p>
-     * The identifier of the Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to use as your identity provider.
      * </p>
      */
     private String directoryId;
@@ -175,11 +175,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to use as your identity provider.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the Directory Service directory that you want to stop sharing.
+     *        The identifier of the Directory Service directory that you want to use as your identity provider.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -188,10 +188,10 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to use as your identity provider.
      * </p>
      * 
-     * @return The identifier of the Directory Service directory that you want to stop sharing.
+     * @return The identifier of the Directory Service directory that you want to use as your identity provider.
      */
 
     public String getDirectoryId() {
@@ -200,11 +200,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to use as your identity provider.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the Directory Service directory that you want to stop sharing.
+     *        The identifier of the Directory Service directory that you want to use as your identity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

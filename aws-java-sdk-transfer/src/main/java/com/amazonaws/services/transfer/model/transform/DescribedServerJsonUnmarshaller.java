@@ -138,6 +138,12 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                     context.nextToken();
                     describedServer.setS3StorageOptions(S3StorageOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("As2ServiceManagedEgressIpAddresses", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setAs2ServiceManagedEgressIpAddresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

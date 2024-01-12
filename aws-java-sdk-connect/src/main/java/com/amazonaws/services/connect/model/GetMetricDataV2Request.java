@@ -152,6 +152,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Feature
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Routing step expression
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -172,7 +177,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * </li>
      * <li>
@@ -191,6 +196,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      * <code>contact/segmentAttributes/connect:Subtype filter</code> key.
      * </p>
+     * <p>
+     * ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
+     * </p>
      * </li>
      * </ul>
      */
@@ -208,7 +216,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      */
     private java.util.List<String> groupings;
@@ -427,7 +436,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -605,7 +614,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>CONTACTS_CREATED</dt>
@@ -634,7 +643,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -763,6 +772,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * contact/segmentAttributes/connect:Subtype
      * </p>
      * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt>
      * <dd>
      * <p>
@@ -829,6 +856,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     * </p>
+     * </dd>
+     * <dt>STEP_CONTACTS_QUEUED</dt>
+     * <dd>
+     * <p>
+     * Unit: Count
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>
@@ -1613,6 +1649,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Feature
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Routing step expression
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -1633,7 +1674,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * </li>
      * <li>
@@ -1651,6 +1692,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      * <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+     * </p>
+     * <p>
+     * ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
      * </p>
      * </li>
      * </ul>
@@ -1687,6 +1731,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Feature
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Routing step expression
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -1707,7 +1756,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *         <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *         <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     *         <code>contact/segmentAttributes/connect:Subtype</code>
+     *         <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1725,6 +1774,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      *         <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      *         <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+     *         </p>
+     *         <p>
+     *         ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
      *         </p>
      *         </li>
      */
@@ -1768,6 +1820,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Feature
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Routing step expression
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -1788,7 +1845,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * </li>
      * <li>
@@ -1806,6 +1863,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      * <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+     * </p>
+     * <p>
+     * ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
      * </p>
      * </li>
      * </ul>
@@ -1843,6 +1903,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Feature
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Routing step expression
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -1863,7 +1928,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     *        <code>contact/segmentAttributes/connect:Subtype</code>
+     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1881,6 +1946,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      *        <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      *        <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+     *        </p>
+     *        <p>
+     *        ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
      *        </p>
      *        </li>
      */
@@ -1929,6 +1997,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Feature
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Routing step expression
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -1949,7 +2022,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * </li>
      * <li>
@@ -1967,6 +2040,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      * <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+     * </p>
+     * <p>
+     * ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
      * </p>
      * </li>
      * </ul>
@@ -2009,6 +2085,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Feature
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Routing step expression
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -2029,7 +2110,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     *        <code>contact/segmentAttributes/connect:Subtype</code>
+     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2047,6 +2128,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      *        <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      *        <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+     *        </p>
+     *        <p>
+     *        ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2097,6 +2181,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Feature
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Routing step expression
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -2117,7 +2206,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * </li>
      * <li>
@@ -2135,6 +2224,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      * <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      * <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+     * </p>
+     * <p>
+     * ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
      * </p>
      * </li>
      * </ul>
@@ -2172,6 +2264,11 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Feature
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Routing step expression
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.
@@ -2192,7 +2289,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> |
-     *        <code>contact/segmentAttributes/connect:Subtype</code>
+     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2210,6 +2307,9 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and
      *        <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the
      *        <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+     *        </p>
+     *        <p>
+     *        ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2233,7 +2333,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * 
      * @return The grouping applied to the metrics that are returned. For example, when results are grouped by queue,
@@ -2246,7 +2347,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      *         <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *         <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     *         <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     *         <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     *         <code>ROUTING_STEP_EXPRESSION</code>
      */
 
     public java.util.List<String> getGroupings() {
@@ -2266,7 +2368,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * 
      * @param groupings
@@ -2280,7 +2383,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      *        <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     *        <code>ROUTING_STEP_EXPRESSION</code>
      */
 
     public void setGroupings(java.util.Collection<String> groupings) {
@@ -2305,7 +2409,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2324,7 +2429,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      *        <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     *        <code>ROUTING_STEP_EXPRESSION</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2351,7 +2457,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     * <code>ROUTING_STEP_EXPRESSION</code>
      * </p>
      * 
      * @param groupings
@@ -2365,7 +2472,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code> |
      *        <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
-     *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+     *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code> |
+     *        <code>ROUTING_STEP_EXPRESSION</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2589,7 +2697,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -2767,7 +2875,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>CONTACTS_CREATED</dt>
@@ -2796,7 +2904,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -2925,6 +3033,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * contact/segmentAttributes/connect:Subtype
      * </p>
      * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt>
      * <dd>
      * <p>
@@ -2991,6 +3117,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     * </p>
+     * </dd>
+     * <dt>STEP_CONTACTS_QUEUED</dt>
+     * <dd>
+     * <p>
+     * Unit: Count
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>
@@ -3372,7 +3507,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *         </p>
      *         <note>
      *         <p>
@@ -3552,7 +3687,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *         </p>
      *         </dd>
      *         <dt>CONTACTS_CREATED</dt>
@@ -3582,7 +3717,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *         </p>
      *         <note>
      *         <p>
@@ -3711,6 +3846,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         contact/segmentAttributes/connect:Subtype
      *         </p>
      *         </dd>
+     *         <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     *         <dd>
+     *         <p>
+     *         Unit: Percent
+     *         </p>
+     *         <p>
+     *         Valid groupings and filters: Queue, RoutingStepExpression
+     *         </p>
+     *         </dd>
+     *         <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     *         <dd>
+     *         <p>
+     *         Unit: Percent
+     *         </p>
+     *         <p>
+     *         Valid groupings and filters: Queue, RoutingStepExpression
+     *         </p>
+     *         </dd>
      *         <dt>PERCENT_NON_TALK_TIME</dt>
      *         <dd>
      *         <p>
@@ -3777,6 +3930,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
      *         seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     *         </p>
+     *         </dd>
+     *         <dt>STEP_CONTACTS_QUEUED</dt>
+     *         <dd>
+     *         <p>
+     *         Unit: Count
+     *         </p>
+     *         <p>
+     *         Valid groupings and filters: Queue, RoutingStepExpression
      *         </p>
      *         </dd>
      *         <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>
@@ -4165,7 +4327,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -4343,7 +4505,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>CONTACTS_CREATED</dt>
@@ -4372,7 +4534,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -4501,6 +4663,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * contact/segmentAttributes/connect:Subtype
      * </p>
      * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt>
      * <dd>
      * <p>
@@ -4567,6 +4747,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     * </p>
+     * </dd>
+     * <dt>STEP_CONTACTS_QUEUED</dt>
+     * <dd>
+     * <p>
+     * Unit: Count
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>
@@ -4949,7 +5138,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        <note>
      *        <p>
@@ -5129,7 +5318,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        </dd>
      *        <dt>CONTACTS_CREATED</dt>
@@ -5159,7 +5348,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        <note>
      *        <p>
@@ -5288,6 +5477,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        contact/segmentAttributes/connect:Subtype
      *        </p>
      *        </dd>
+     *        <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Percent
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
+     *        </p>
+     *        </dd>
+     *        <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Percent
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
+     *        </p>
+     *        </dd>
      *        <dt>PERCENT_NON_TALK_TIME</dt>
      *        <dd>
      *        <p>
@@ -5354,6 +5561,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
      *        seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     *        </p>
+     *        </dd>
+     *        <dt>STEP_CONTACTS_QUEUED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
      *        </p>
      *        </dd>
      *        <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>
@@ -5747,7 +5963,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -5925,7 +6141,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>CONTACTS_CREATED</dt>
@@ -5954,7 +6170,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -6083,6 +6299,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * contact/segmentAttributes/connect:Subtype
      * </p>
      * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt>
      * <dd>
      * <p>
@@ -6149,6 +6383,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     * </p>
+     * </dd>
+     * <dt>STEP_CONTACTS_QUEUED</dt>
+     * <dd>
+     * <p>
+     * Unit: Count
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>
@@ -6536,7 +6779,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        <note>
      *        <p>
@@ -6716,7 +6959,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        </dd>
      *        <dt>CONTACTS_CREATED</dt>
@@ -6746,7 +6989,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        <note>
      *        <p>
@@ -6875,6 +7118,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        contact/segmentAttributes/connect:Subtype
      *        </p>
      *        </dd>
+     *        <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Percent
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
+     *        </p>
+     *        </dd>
+     *        <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Percent
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
+     *        </p>
+     *        </dd>
      *        <dt>PERCENT_NON_TALK_TIME</dt>
      *        <dd>
      *        <p>
@@ -6941,6 +7202,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
      *        seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     *        </p>
+     *        </dd>
+     *        <dt>STEP_CONTACTS_QUEUED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
      *        </p>
      *        </dd>
      *        <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>
@@ -7336,7 +7606,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -7514,7 +7784,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>CONTACTS_CREATED</dt>
@@ -7543,7 +7813,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      * </p>
      * <note>
      * <p>
@@ -7672,6 +7942,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * contact/segmentAttributes/connect:Subtype
      * </p>
      * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
+     * <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     * <dd>
+     * <p>
+     * Unit: Percent
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
+     * </p>
+     * </dd>
      * <dt>PERCENT_NON_TALK_TIME</dt>
      * <dd>
      * <p>
@@ -7738,6 +8026,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
      * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     * </p>
+     * </dd>
+     * <dt>STEP_CONTACTS_QUEUED</dt>
+     * <dd>
+     * <p>
+     * Unit: Count
+     * </p>
+     * <p>
+     * Valid groupings and filters: Queue, RoutingStepExpression
      * </p>
      * </dd>
      * <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>
@@ -8120,7 +8417,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        <note>
      *        <p>
@@ -8300,7 +8597,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        </dd>
      *        <dt>CONTACTS_CREATED</dt>
@@ -8330,7 +8627,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
      *        </p>
      *        <note>
      *        <p>
@@ -8459,6 +8756,24 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        contact/segmentAttributes/connect:Subtype
      *        </p>
      *        </dd>
+     *        <dt>PERCENT_CONTACTS_STEP_EXPIRED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Percent
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
+     *        </p>
+     *        </dd>
+     *        <dt>PERCENT_CONTACTS_STEP_JOINED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Percent
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
+     *        </p>
+     *        </dd>
      *        <dt>PERCENT_NON_TALK_TIME</dt>
      *        <dd>
      *        <p>
@@ -8525,6 +8840,15 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
      *        seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
+     *        </p>
+     *        </dd>
+     *        <dt>STEP_CONTACTS_QUEUED</dt>
+     *        <dd>
+     *        <p>
+     *        Unit: Count
+     *        </p>
+     *        <p>
+     *        Valid groupings and filters: Queue, RoutingStepExpression
      *        </p>
      *        </dd>
      *        <dt>SUM_AFTER_CONTACT_WORK_TIME</dt>

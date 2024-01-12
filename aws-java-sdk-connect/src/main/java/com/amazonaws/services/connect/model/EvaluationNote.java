@@ -32,6 +32,13 @@ public class EvaluationNote implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The note for an item (section or question) in a contact evaluation.
      * </p>
+     * <note>
+     * <p>
+     * Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars
+     * for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted,
+     * then the max char limit for all notes combined is N x 1024.
+     * </p>
+     * </note>
      */
     private String value;
 
@@ -39,9 +46,21 @@ public class EvaluationNote implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The note for an item (section or question) in a contact evaluation.
      * </p>
+     * <note>
+     * <p>
+     * Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars
+     * for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted,
+     * then the max char limit for all notes combined is N x 1024.
+     * </p>
+     * </note>
      * 
      * @param value
-     *        The note for an item (section or question) in a contact evaluation.
+     *        The note for an item (section or question) in a contact evaluation.</p> <note>
+     *        <p>
+     *        Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number
+     *        of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation
+     *        being submitted, then the max char limit for all notes combined is N x 1024.
+     *        </p>
      */
 
     public void setValue(String value) {
@@ -52,8 +71,20 @@ public class EvaluationNote implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The note for an item (section or question) in a contact evaluation.
      * </p>
+     * <note>
+     * <p>
+     * Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars
+     * for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted,
+     * then the max char limit for all notes combined is N x 1024.
+     * </p>
+     * </note>
      * 
-     * @return The note for an item (section or question) in a contact evaluation.
+     * @return The note for an item (section or question) in a contact evaluation.</p> <note>
+     *         <p>
+     *         Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number
+     *         of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation
+     *         being submitted, then the max char limit for all notes combined is N x 1024.
+     *         </p>
      */
 
     public String getValue() {
@@ -64,9 +95,21 @@ public class EvaluationNote implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The note for an item (section or question) in a contact evaluation.
      * </p>
+     * <note>
+     * <p>
+     * Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars
+     * for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted,
+     * then the max char limit for all notes combined is N x 1024.
+     * </p>
+     * </note>
      * 
      * @param value
-     *        The note for an item (section or question) in a contact evaluation.
+     *        The note for an item (section or question) in a contact evaluation.</p> <note>
+     *        <p>
+     *        Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number
+     *        of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation
+     *        being submitted, then the max char limit for all notes combined is N x 1024.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

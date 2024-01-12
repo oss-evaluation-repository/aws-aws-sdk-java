@@ -31,12 +31,14 @@ public class MapConfigurationUpdate implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that
-     * support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is
-     * <code>unset</code>.
+     * support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation
+     * style. Default is <code>unset</code>.
      * </p>
      * <note>
      * <p>
-     * Not all map resources or styles support custom layers. See Custom Layers for more information.
+     * Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom
+     * Layers</a>.
      * </p>
      * </note>
      */
@@ -59,20 +61,25 @@ public class MapConfigurationUpdate implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that
-     * support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is
-     * <code>unset</code>.
+     * support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation
+     * style. Default is <code>unset</code>.
      * </p>
      * <note>
      * <p>
-     * Not all map resources or styles support custom layers. See Custom Layers for more information.
+     * Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom
+     * Layers</a>.
      * </p>
      * </note>
      * 
      * @return Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles
-     *         that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation
-     *         style. Default is <code>unset</code>.</p> <note>
+     *         that support custom layers, you can enable layer(s), such as <code>POI</code> layer for the
+     *         VectorEsriNavigation style. Default is <code>unset</code>.</p> <note>
      *         <p>
-     *         Not all map resources or styles support custom layers. See Custom Layers for more information.
+     *         Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom
+     *         Layers</a>.
      *         </p>
      */
 
@@ -83,21 +90,25 @@ public class MapConfigurationUpdate implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that
-     * support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is
-     * <code>unset</code>.
+     * support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation
+     * style. Default is <code>unset</code>.
      * </p>
      * <note>
      * <p>
-     * Not all map resources or styles support custom layers. See Custom Layers for more information.
+     * Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom
+     * Layers</a>.
      * </p>
      * </note>
      * 
      * @param customLayers
      *        Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that
-     *        support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style.
-     *        Default is <code>unset</code>.</p> <note>
+     *        support custom layers, you can enable layer(s), such as <code>POI</code> layer for the
+     *        VectorEsriNavigation style. Default is <code>unset</code>.</p> <note>
      *        <p>
-     *        Not all map resources or styles support custom layers. See Custom Layers for more information.
+     *        Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers"
+     *        >Custom Layers</a>.
      *        </p>
      */
 
@@ -113,12 +124,14 @@ public class MapConfigurationUpdate implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that
-     * support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is
-     * <code>unset</code>.
+     * support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation
+     * style. Default is <code>unset</code>.
      * </p>
      * <note>
      * <p>
-     * Not all map resources or styles support custom layers. See Custom Layers for more information.
+     * Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom
+     * Layers</a>.
      * </p>
      * </note>
      * <p>
@@ -129,10 +142,12 @@ public class MapConfigurationUpdate implements Serializable, Cloneable, Structur
      * 
      * @param customLayers
      *        Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that
-     *        support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style.
-     *        Default is <code>unset</code>.</p> <note>
+     *        support custom layers, you can enable layer(s), such as <code>POI</code> layer for the
+     *        VectorEsriNavigation style. Default is <code>unset</code>.</p> <note>
      *        <p>
-     *        Not all map resources or styles support custom layers. See Custom Layers for more information.
+     *        Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers"
+     *        >Custom Layers</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -150,21 +165,25 @@ public class MapConfigurationUpdate implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that
-     * support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is
-     * <code>unset</code>.
+     * support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation
+     * style. Default is <code>unset</code>.
      * </p>
      * <note>
      * <p>
-     * Not all map resources or styles support custom layers. See Custom Layers for more information.
+     * Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers">Custom
+     * Layers</a>.
      * </p>
      * </note>
      * 
      * @param customLayers
      *        Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that
-     *        support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style.
-     *        Default is <code>unset</code>.</p> <note>
+     *        support custom layers, you can enable layer(s), such as <code>POI</code> layer for the
+     *        VectorEsriNavigation style. Default is <code>unset</code>.</p> <note>
      *        <p>
-     *        Not all map resources or styles support custom layers. See Custom Layers for more information.
+     *        Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers"
+     *        >Custom Layers</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

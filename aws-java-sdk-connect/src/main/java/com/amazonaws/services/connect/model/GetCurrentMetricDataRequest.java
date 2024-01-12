@@ -53,11 +53,19 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RoutingStepExpressions: 50
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any
      * channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both
      * resource IDs and resource ARNs in the same request.
+     * </p>
+     * <p>
+     * When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.
      * </p>
      * <p>
      * Currently tagging is only supported on the resources that are passed in the filter.
@@ -86,6 +94,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     * required.
      * </p>
      * </li>
      * </ul>
@@ -228,6 +242,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * The actual OLDEST_CONTACT_AGE is 24 seconds.
      * </p>
      * <p>
+     * When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue time.
+     * For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10 seconds has expired
+     * and <code>&lt;Expression 2&gt;</code> becomes active, then <code>OLDEST_CONTACT_AGE</code> for this queue will be
+     * counted starting from 10, not 0.
+     * </p>
+     * <p>
      * Name in real-time metrics report: <a href=
      * "https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time"
      * >Oldest</a>
@@ -366,11 +386,19 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RoutingStepExpressions: 50
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any
      * channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both
      * resource IDs and resource ARNs in the same request.
+     * </p>
+     * <p>
+     * When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.
      * </p>
      * <p>
      * Currently tagging is only supported on the resources that are passed in the filter.
@@ -394,11 +422,19 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        RoutingStepExpressions: 50
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any
      *        channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include
      *        both resource IDs and resource ARNs in the same request.
+     *        </p>
+     *        <p>
+     *        When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.
      *        </p>
      *        <p>
      *        Currently tagging is only supported on the resources that are passed in the filter.
@@ -428,11 +464,19 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RoutingStepExpressions: 50
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any
      * channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both
      * resource IDs and resource ARNs in the same request.
+     * </p>
+     * <p>
+     * When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.
      * </p>
      * <p>
      * Currently tagging is only supported on the resources that are passed in the filter.
@@ -455,11 +499,19 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *         Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         RoutingStepExpressions: 50
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Metric data is retrieved only for the resources associated with the queues or routing profiles, and by
      *         any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can
      *         include both resource IDs and resource ARNs in the same request.
+     *         </p>
+     *         <p>
+     *         When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.
      *         </p>
      *         <p>
      *         Currently tagging is only supported on the resources that are passed in the filter.
@@ -489,11 +541,19 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * RoutingStepExpressions: 50
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any
      * channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both
      * resource IDs and resource ARNs in the same request.
+     * </p>
+     * <p>
+     * When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.
      * </p>
      * <p>
      * Currently tagging is only supported on the resources that are passed in the filter.
@@ -517,11 +577,19 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        RoutingStepExpressions: 50
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any
      *        channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include
      *        both resource IDs and resource ARNs in the same request.
+     *        </p>
+     *        <p>
+     *        When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.
      *        </p>
      *        <p>
      *        Currently tagging is only supported on the resources that are passed in the filter.
@@ -557,6 +625,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     * required.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the
@@ -578,6 +652,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *         <li>
      *         <p>
      *         If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code>
+     *         is required.
      *         </p>
      *         </li>
      * @see Grouping
@@ -611,6 +691,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     * required.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param groupings
@@ -633,6 +719,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     *        required.
      *        </p>
      *        </li>
      * @see Grouping
@@ -671,6 +763,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     * required.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -698,6 +796,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     *        required.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -738,6 +842,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     * required.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param groupings
@@ -760,6 +870,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     *        required.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -795,6 +911,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     * required.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param groupings
@@ -817,6 +939,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When using the <code>RoutingStepExpression</code> filter, group by <code>ROUTING_STEP_EXPRESSION</code> is
+     *        required.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -971,6 +1099,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * The actual OLDEST_CONTACT_AGE is 24 seconds.
+     * </p>
+     * <p>
+     * When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue time.
+     * For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10 seconds has expired
+     * and <code>&lt;Expression 2&gt;</code> becomes active, then <code>OLDEST_CONTACT_AGE</code> for this queue will be
+     * counted starting from 10, not 0.
      * </p>
      * <p>
      * Name in real-time metrics report: <a href=
@@ -1134,6 +1268,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *         </p>
      *         <p>
      *         The actual OLDEST_CONTACT_AGE is 24 seconds.
+     *         </p>
+     *         <p>
+     *         When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue
+     *         time. For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10
+     *         seconds has expired and <code>&lt;Expression 2&gt;</code> becomes active, then
+     *         <code>OLDEST_CONTACT_AGE</code> for this queue will be counted starting from 10, not 0.
      *         </p>
      *         <p>
      *         Name in real-time metrics report: <a href=
@@ -1306,6 +1446,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * The actual OLDEST_CONTACT_AGE is 24 seconds.
      * </p>
      * <p>
+     * When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue time.
+     * For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10 seconds has expired
+     * and <code>&lt;Expression 2&gt;</code> becomes active, then <code>OLDEST_CONTACT_AGE</code> for this queue will be
+     * counted starting from 10, not 0.
+     * </p>
+     * <p>
      * Name in real-time metrics report: <a href=
      * "https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time"
      * >Oldest</a>
@@ -1468,6 +1614,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        The actual OLDEST_CONTACT_AGE is 24 seconds.
+     *        </p>
+     *        <p>
+     *        When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue
+     *        time. For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10
+     *        seconds has expired and <code>&lt;Expression 2&gt;</code> becomes active, then
+     *        <code>OLDEST_CONTACT_AGE</code> for this queue will be counted starting from 10, not 0.
      *        </p>
      *        <p>
      *        Name in real-time metrics report: <a href=
@@ -1645,6 +1797,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * The actual OLDEST_CONTACT_AGE is 24 seconds.
      * </p>
      * <p>
+     * When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue time.
+     * For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10 seconds has expired
+     * and <code>&lt;Expression 2&gt;</code> becomes active, then <code>OLDEST_CONTACT_AGE</code> for this queue will be
+     * counted starting from 10, not 0.
+     * </p>
+     * <p>
      * Name in real-time metrics report: <a href=
      * "https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time"
      * >Oldest</a>
@@ -1812,6 +1970,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        The actual OLDEST_CONTACT_AGE is 24 seconds.
+     *        </p>
+     *        <p>
+     *        When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue
+     *        time. For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10
+     *        seconds has expired and <code>&lt;Expression 2&gt;</code> becomes active, then
+     *        <code>OLDEST_CONTACT_AGE</code> for this queue will be counted starting from 10, not 0.
      *        </p>
      *        <p>
      *        Name in real-time metrics report: <a href=
@@ -1991,6 +2155,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      * The actual OLDEST_CONTACT_AGE is 24 seconds.
      * </p>
      * <p>
+     * When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue time.
+     * For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10 seconds has expired
+     * and <code>&lt;Expression 2&gt;</code> becomes active, then <code>OLDEST_CONTACT_AGE</code> for this queue will be
+     * counted starting from 10, not 0.
+     * </p>
+     * <p>
      * Name in real-time metrics report: <a href=
      * "https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time"
      * >Oldest</a>
@@ -2153,6 +2323,12 @@ public class GetCurrentMetricDataRequest extends com.amazonaws.AmazonWebServiceR
      *        </p>
      *        <p>
      *        The actual OLDEST_CONTACT_AGE is 24 seconds.
+     *        </p>
+     *        <p>
+     *        When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue
+     *        time. For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10
+     *        seconds has expired and <code>&lt;Expression 2&gt;</code> becomes active, then
+     *        <code>OLDEST_CONTACT_AGE</code> for this queue will be counted starting from 10, not 0.
      *        </p>
      *        <p>
      *        Name in real-time metrics report: <a href=

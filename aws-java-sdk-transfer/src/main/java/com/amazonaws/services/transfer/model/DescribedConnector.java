@@ -105,6 +105,13 @@ public class DescribedConnector implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private SftpConnectorConfig sftpConfig;
+    /**
+     * <p>
+     * The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create
+     * the connector.
+     * </p>
+     */
+    private java.util.List<String> serviceManagedEgressIpAddresses;
 
     /**
      * <p>
@@ -631,6 +638,84 @@ public class DescribedConnector implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create
+     * the connector.
+     * </p>
+     * 
+     * @return The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you
+     *         create the connector.
+     */
+
+    public java.util.List<String> getServiceManagedEgressIpAddresses() {
+        return serviceManagedEgressIpAddresses;
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create
+     * the connector.
+     * </p>
+     * 
+     * @param serviceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you
+     *        create the connector.
+     */
+
+    public void setServiceManagedEgressIpAddresses(java.util.Collection<String> serviceManagedEgressIpAddresses) {
+        if (serviceManagedEgressIpAddresses == null) {
+            this.serviceManagedEgressIpAddresses = null;
+            return;
+        }
+
+        this.serviceManagedEgressIpAddresses = new java.util.ArrayList<String>(serviceManagedEgressIpAddresses);
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create
+     * the connector.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServiceManagedEgressIpAddresses(java.util.Collection)} or
+     * {@link #withServiceManagedEgressIpAddresses(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param serviceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you
+     *        create the connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedConnector withServiceManagedEgressIpAddresses(String... serviceManagedEgressIpAddresses) {
+        if (this.serviceManagedEgressIpAddresses == null) {
+            setServiceManagedEgressIpAddresses(new java.util.ArrayList<String>(serviceManagedEgressIpAddresses.length));
+        }
+        for (String ele : serviceManagedEgressIpAddresses) {
+            this.serviceManagedEgressIpAddresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create
+     * the connector.
+     * </p>
+     * 
+     * @param serviceManagedEgressIpAddresses
+     *        The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you
+     *        create the connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedConnector withServiceManagedEgressIpAddresses(java.util.Collection<String> serviceManagedEgressIpAddresses) {
+        setServiceManagedEgressIpAddresses(serviceManagedEgressIpAddresses);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -657,7 +742,9 @@ public class DescribedConnector implements Serializable, Cloneable, StructuredPo
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSftpConfig() != null)
-            sb.append("SftpConfig: ").append(getSftpConfig());
+            sb.append("SftpConfig: ").append(getSftpConfig()).append(",");
+        if (getServiceManagedEgressIpAddresses() != null)
+            sb.append("ServiceManagedEgressIpAddresses: ").append(getServiceManagedEgressIpAddresses());
         sb.append("}");
         return sb.toString();
     }
@@ -704,6 +791,11 @@ public class DescribedConnector implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSftpConfig() != null && other.getSftpConfig().equals(this.getSftpConfig()) == false)
             return false;
+        if (other.getServiceManagedEgressIpAddresses() == null ^ this.getServiceManagedEgressIpAddresses() == null)
+            return false;
+        if (other.getServiceManagedEgressIpAddresses() != null
+                && other.getServiceManagedEgressIpAddresses().equals(this.getServiceManagedEgressIpAddresses()) == false)
+            return false;
         return true;
     }
 
@@ -720,6 +812,7 @@ public class DescribedConnector implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSftpConfig() == null) ? 0 : getSftpConfig().hashCode());
+        hashCode = prime * hashCode + ((getServiceManagedEgressIpAddresses() == null) ? 0 : getServiceManagedEgressIpAddresses().hashCode());
         return hashCode;
     }
 

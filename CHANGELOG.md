@@ -1,3 +1,36 @@
+# __1.12.636__ __2024-01-12__
+## __AWS S3 Control__
+  - ### Features
+    - S3 On Outposts team adds dualstack endpoints support for S3Control and S3Outposts API calls.
+
+## __AWS SDK for Java__
+  - ### Features
+    - Add Java SDK v1 End-of-Support Announcement to README.
+
+## __AWS Supply Chain__
+  - ### Features
+    - This release includes APIs CreateBillOfMaterialsImportJob and GetBillOfMaterialsImportJob.
+
+## __AWS Transfer Family__
+  - ### Features
+    - AWS Transfer Family now supports static IP addresses for SFTP & AS2 connectors and for async MDNs on AS2 servers.
+
+## __Amazon Connect Participant Service__
+  - ### Features
+    - Introduce new Supervisor participant role
+
+## __Amazon Connect Service__
+  - ### Features
+    - Supervisor Barge for Chat is now supported through the MonitorContact API.
+
+## __Amazon Location Service__
+  - ### Features
+    - Location SDK documentation update. Added missing fonts to the MapConfiguration data type. Updated note for the SubMunicipality property in the place data type.
+
+## __AmazonMWAA__
+  - ### Features
+    - This Amazon MWAA feature release includes new fields in CreateWebLoginToken response model. The new fields IamIdentity and AirflowIdentity will let you match identifications, as the Airflow identity length is currently hashed to 64 characters.
+
 # __1.12.635__ __2024-01-11__
 ## __AWS IoT__
   - ### Features

@@ -61,6 +61,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
      * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
      * <note>
      * <p>
      * To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
@@ -76,6 +80,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
+     * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
      * </p>
      */
     private java.util.List<String> groupings;
@@ -537,6 +545,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
      * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
      * <note>
      * <p>
      * To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
@@ -546,7 +558,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param filters
      *        The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *        for the resources associated with the queues or channels included in the filter. You can include both
-     *        queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+     *        queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     *        <p>
+     *        RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to
+     *        GetMetricDataV2 for more up-to-date features.
+     *        </p>
+     *        <note>
      *        <p>
      *        To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
      *        </p>
@@ -562,6 +579,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
      * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
      * <note>
      * <p>
      * To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
@@ -570,7 +591,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *         for the resources associated with the queues or channels included in the filter. You can include both
-     *         queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+     *         queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     *         <p>
+     *         RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to
+     *         GetMetricDataV2 for more up-to-date features.
+     *         </p>
+     *         <note>
      *         <p>
      *         To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
      *         </p>
@@ -586,6 +612,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
      * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
      * <note>
      * <p>
      * To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
@@ -595,7 +625,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param filters
      *        The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *        for the resources associated with the queues or channels included in the filter. You can include both
-     *        queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+     *        queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
+     *        <p>
+     *        RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to
+     *        GetMetricDataV2 for more up-to-date features.
+     *        </p>
+     *        <note>
      *        <p>
      *        To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
      *        </p>
@@ -616,12 +651,20 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
      * 
      * @return The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
      *         returned are grouped by queue. The values returned apply to the metrics for each queue rather than
      *         aggregated for all queues.</p>
      *         <p>
      *         If no grouping is specified, a summary of metrics for all queues is returned.
+     *         </p>
+     *         <p>
+     *         RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to
+     *         GetMetricDataV2 for more up-to-date features.
      * @see Grouping
      */
 
@@ -638,6 +681,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
      * 
      * @param groupings
      *        The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
@@ -645,6 +692,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        aggregated for all queues.</p>
      *        <p>
      *        If no grouping is specified, a summary of metrics for all queues is returned.
+     *        </p>
+     *        <p>
+     *        RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to
+     *        GetMetricDataV2 for more up-to-date features.
      * @see Grouping
      */
 
@@ -667,6 +718,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
      * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroupings(java.util.Collection)} or {@link #withGroupings(java.util.Collection)} if you want to
      * override the existing values.
@@ -678,6 +733,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        aggregated for all queues.</p>
      *        <p>
      *        If no grouping is specified, a summary of metrics for all queues is returned.
+     *        </p>
+     *        <p>
+     *        RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to
+     *        GetMetricDataV2 for more up-to-date features.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Grouping
      */
@@ -701,6 +760,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
      * 
      * @param groupings
      *        The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
@@ -708,6 +771,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        aggregated for all queues.</p>
      *        <p>
      *        If no grouping is specified, a summary of metrics for all queues is returned.
+     *        </p>
+     *        <p>
+     *        RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to
+     *        GetMetricDataV2 for more up-to-date features.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Grouping
      */
@@ -726,6 +793,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
+     * <p>
+     * RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for
+     * more up-to-date features.
+     * </p>
      * 
      * @param groupings
      *        The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
@@ -733,6 +804,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        aggregated for all queues.</p>
      *        <p>
      *        If no grouping is specified, a summary of metrics for all queues is returned.
+     *        </p>
+     *        <p>
+     *        RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to
+     *        GetMetricDataV2 for more up-to-date features.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Grouping
      */

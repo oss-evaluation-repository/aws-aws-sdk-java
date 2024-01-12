@@ -293,6 +293,8 @@ public interface AmazonConnectParticipant {
      *         The request was denied due to request throttling.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by Amazon Connect.
+     * @throws ConflictException
+     *         An attachment with that identifier is already being uploaded.
      * @sample AmazonConnectParticipant.SendEvent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendEvent" target="_top">AWS
      *      API Documentation</a>

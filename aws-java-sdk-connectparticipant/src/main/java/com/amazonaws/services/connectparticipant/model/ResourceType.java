@@ -26,7 +26,8 @@ public enum ResourceType {
     PARTICIPANT("PARTICIPANT"),
     HIERARCHY_LEVEL("HIERARCHY_LEVEL"),
     HIERARCHY_GROUP("HIERARCHY_GROUP"),
-    USER("USER");
+    USER("USER"),
+    PHONE_NUMBER("PHONE_NUMBER");
 
     private String value;
 
