@@ -46,6 +46,10 @@ public class UpdateTableRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultTimeToLive").build();
     private static final MarshallingInfo<StructuredPojo> CLIENTSIDETIMESTAMPS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientSideTimestamps").build();
+    private static final MarshallingInfo<StructuredPojo> AUTOSCALINGSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoScalingSpecification").build();
+    private static final MarshallingInfo<List> REPLICASPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicaSpecifications").build();
 
     private static final UpdateTableRequestMarshaller instance = new UpdateTableRequestMarshaller();
 
@@ -72,6 +76,8 @@ public class UpdateTableRequestMarshaller {
             protocolMarshaller.marshall(updateTableRequest.getTtl(), TTL_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getDefaultTimeToLive(), DEFAULTTIMETOLIVE_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getClientSideTimestamps(), CLIENTSIDETIMESTAMPS_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getAutoScalingSpecification(), AUTOSCALINGSPECIFICATION_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getReplicaSpecifications(), REPLICASPECIFICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

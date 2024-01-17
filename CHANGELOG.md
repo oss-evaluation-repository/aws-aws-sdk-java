@@ -1,3 +1,12 @@
+# __1.12.639__ __2024-01-17__
+## __Amazon DynamoDB__
+  - ### Features
+    - Updating note for enabling streams for UpdateTable.
+
+## __Amazon Keyspaces__
+  - ### Features
+    - This release adds support for Multi-Region Replication with provisioned tables, and Keyspaces auto scaling APIs
+
 # __1.12.638__ __2024-01-16__
 ## __AWS IoT__
   - ### Features

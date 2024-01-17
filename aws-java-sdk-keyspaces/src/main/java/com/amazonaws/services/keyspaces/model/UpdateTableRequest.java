@@ -192,6 +192,30 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private ClientSideTimestamps clientSideTimestamps;
+    /**
+     * <p>
+     * The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     */
+    private AutoScalingSpecification autoScalingSpecification;
+    /**
+     * <p>
+     * The Region specific settings of a multi-Regional table.
+     * </p>
+     */
+    private java.util.List<ReplicaSpecification> replicaSpecifications;
 
     /**
      * <p>
@@ -1271,6 +1295,189 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @param autoScalingSpecification
+     *        The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the
+     *        service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *        Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *        increasing and decreasing your table's read and write capacity automatically in response to application
+     *        traffic.</p>
+     *        <p>
+     *        If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the
+     *        minimum and maximum values or the auto scaling policy settings independently.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     *        automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     */
+
+    public void setAutoScalingSpecification(AutoScalingSpecification autoScalingSpecification) {
+        this.autoScalingSpecification = autoScalingSpecification;
+    }
+
+    /**
+     * <p>
+     * The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @return The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the
+     *         service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *         Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *         increasing and decreasing your table's read and write capacity automatically in response to application
+     *         traffic.</p>
+     *         <p>
+     *         If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the
+     *         minimum and maximum values or the auto scaling policy settings independently.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput
+     *         capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer
+     *         Guide</i>.
+     */
+
+    public AutoScalingSpecification getAutoScalingSpecification() {
+        return this.autoScalingSpecification;
+    }
+
+    /**
+     * <p>
+     * The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @param autoScalingSpecification
+     *        The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the
+     *        service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *        Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *        increasing and decreasing your table's read and write capacity automatically in response to application
+     *        traffic.</p>
+     *        <p>
+     *        If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the
+     *        minimum and maximum values or the auto scaling policy settings independently.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     *        automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTableRequest withAutoScalingSpecification(AutoScalingSpecification autoScalingSpecification) {
+        setAutoScalingSpecification(autoScalingSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @return The Region specific settings of a multi-Regional table.
+     */
+
+    public java.util.List<ReplicaSpecification> getReplicaSpecifications() {
+        return replicaSpecifications;
+    }
+
+    /**
+     * <p>
+     * The Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The Region specific settings of a multi-Regional table.
+     */
+
+    public void setReplicaSpecifications(java.util.Collection<ReplicaSpecification> replicaSpecifications) {
+        if (replicaSpecifications == null) {
+            this.replicaSpecifications = null;
+            return;
+        }
+
+        this.replicaSpecifications = new java.util.ArrayList<ReplicaSpecification>(replicaSpecifications);
+    }
+
+    /**
+     * <p>
+     * The Region specific settings of a multi-Regional table.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicaSpecifications(java.util.Collection)} or
+     * {@link #withReplicaSpecifications(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The Region specific settings of a multi-Regional table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTableRequest withReplicaSpecifications(ReplicaSpecification... replicaSpecifications) {
+        if (this.replicaSpecifications == null) {
+            setReplicaSpecifications(new java.util.ArrayList<ReplicaSpecification>(replicaSpecifications.length));
+        }
+        for (ReplicaSpecification ele : replicaSpecifications) {
+            this.replicaSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The Region specific settings of a multi-Regional table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTableRequest withReplicaSpecifications(java.util.Collection<ReplicaSpecification> replicaSpecifications) {
+        setReplicaSpecifications(replicaSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1299,7 +1506,11 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDefaultTimeToLive() != null)
             sb.append("DefaultTimeToLive: ").append(getDefaultTimeToLive()).append(",");
         if (getClientSideTimestamps() != null)
-            sb.append("ClientSideTimestamps: ").append(getClientSideTimestamps());
+            sb.append("ClientSideTimestamps: ").append(getClientSideTimestamps()).append(",");
+        if (getAutoScalingSpecification() != null)
+            sb.append("AutoScalingSpecification: ").append(getAutoScalingSpecification()).append(",");
+        if (getReplicaSpecifications() != null)
+            sb.append("ReplicaSpecifications: ").append(getReplicaSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -1350,6 +1561,14 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientSideTimestamps() != null && other.getClientSideTimestamps().equals(this.getClientSideTimestamps()) == false)
             return false;
+        if (other.getAutoScalingSpecification() == null ^ this.getAutoScalingSpecification() == null)
+            return false;
+        if (other.getAutoScalingSpecification() != null && other.getAutoScalingSpecification().equals(this.getAutoScalingSpecification()) == false)
+            return false;
+        if (other.getReplicaSpecifications() == null ^ this.getReplicaSpecifications() == null)
+            return false;
+        if (other.getReplicaSpecifications() != null && other.getReplicaSpecifications().equals(this.getReplicaSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -1367,6 +1586,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTtl() == null) ? 0 : getTtl().hashCode());
         hashCode = prime * hashCode + ((getDefaultTimeToLive() == null) ? 0 : getDefaultTimeToLive().hashCode());
         hashCode = prime * hashCode + ((getClientSideTimestamps() == null) ? 0 : getClientSideTimestamps().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingSpecification() == null) ? 0 : getAutoScalingSpecification().hashCode());
+        hashCode = prime * hashCode + ((getReplicaSpecifications() == null) ? 0 : getReplicaSpecifications().hashCode());
         return hashCode;
     }
 

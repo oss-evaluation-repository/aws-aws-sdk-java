@@ -147,6 +147,26 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<Tag> tagsOverride;
+    /**
+     * <p>
+     * The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     */
+    private AutoScalingSpecification autoScalingSpecification;
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     */
+    private java.util.List<ReplicaSpecification> replicaSpecifications;
 
     /**
      * <p>
@@ -947,6 +967,165 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @param autoScalingSpecification
+     *        The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the
+     *        service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *        Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *        increasing and decreasing your table's read and write capacity automatically in response to application
+     *        traffic.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     *        automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     */
+
+    public void setAutoScalingSpecification(AutoScalingSpecification autoScalingSpecification) {
+        this.autoScalingSpecification = autoScalingSpecification;
+    }
+
+    /**
+     * <p>
+     * The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @return The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the
+     *         service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *         Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *         increasing and decreasing your table's read and write capacity automatically in response to application
+     *         traffic.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput
+     *         capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer
+     *         Guide</i>.
+     */
+
+    public AutoScalingSpecification getAutoScalingSpecification() {
+        return this.autoScalingSpecification;
+    }
+
+    /**
+     * <p>
+     * The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service
+     * can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your
+     * table's read and write capacity automatically in response to application traffic.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @param autoScalingSpecification
+     *        The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the
+     *        service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon
+     *        Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     *        increasing and decreasing your table's read and write capacity automatically in response to application
+     *        traffic.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     *        automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableRequest withAutoScalingSpecification(AutoScalingSpecification autoScalingSpecification) {
+        setAutoScalingSpecification(autoScalingSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @return The optional Region specific settings of a multi-Regional table.
+     */
+
+    public java.util.List<ReplicaSpecification> getReplicaSpecifications() {
+        return replicaSpecifications;
+    }
+
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The optional Region specific settings of a multi-Regional table.
+     */
+
+    public void setReplicaSpecifications(java.util.Collection<ReplicaSpecification> replicaSpecifications) {
+        if (replicaSpecifications == null) {
+            this.replicaSpecifications = null;
+            return;
+        }
+
+        this.replicaSpecifications = new java.util.ArrayList<ReplicaSpecification>(replicaSpecifications);
+    }
+
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicaSpecifications(java.util.Collection)} or
+     * {@link #withReplicaSpecifications(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The optional Region specific settings of a multi-Regional table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableRequest withReplicaSpecifications(ReplicaSpecification... replicaSpecifications) {
+        if (this.replicaSpecifications == null) {
+            setReplicaSpecifications(new java.util.ArrayList<ReplicaSpecification>(replicaSpecifications.length));
+        }
+        for (ReplicaSpecification ele : replicaSpecifications) {
+            this.replicaSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional Region specific settings of a multi-Regional table.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The optional Region specific settings of a multi-Regional table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableRequest withReplicaSpecifications(java.util.Collection<ReplicaSpecification> replicaSpecifications) {
+        setReplicaSpecifications(replicaSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -975,7 +1154,11 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getPointInTimeRecoveryOverride() != null)
             sb.append("PointInTimeRecoveryOverride: ").append(getPointInTimeRecoveryOverride()).append(",");
         if (getTagsOverride() != null)
-            sb.append("TagsOverride: ").append(getTagsOverride());
+            sb.append("TagsOverride: ").append(getTagsOverride()).append(",");
+        if (getAutoScalingSpecification() != null)
+            sb.append("AutoScalingSpecification: ").append(getAutoScalingSpecification()).append(",");
+        if (getReplicaSpecifications() != null)
+            sb.append("ReplicaSpecifications: ").append(getReplicaSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -1028,6 +1211,14 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTagsOverride() != null && other.getTagsOverride().equals(this.getTagsOverride()) == false)
             return false;
+        if (other.getAutoScalingSpecification() == null ^ this.getAutoScalingSpecification() == null)
+            return false;
+        if (other.getAutoScalingSpecification() != null && other.getAutoScalingSpecification().equals(this.getAutoScalingSpecification()) == false)
+            return false;
+        if (other.getReplicaSpecifications() == null ^ this.getReplicaSpecifications() == null)
+            return false;
+        if (other.getReplicaSpecifications() != null && other.getReplicaSpecifications().equals(this.getReplicaSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -1045,6 +1236,8 @@ public class RestoreTableRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getEncryptionSpecificationOverride() == null) ? 0 : getEncryptionSpecificationOverride().hashCode());
         hashCode = prime * hashCode + ((getPointInTimeRecoveryOverride() == null) ? 0 : getPointInTimeRecoveryOverride().hashCode());
         hashCode = prime * hashCode + ((getTagsOverride() == null) ? 0 : getTagsOverride().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingSpecification() == null) ? 0 : getAutoScalingSpecification().hashCode());
+        hashCode = prime * hashCode + ((getReplicaSpecifications() == null) ? 0 : getReplicaSpecifications().hashCode());
         return hashCode;
     }
 

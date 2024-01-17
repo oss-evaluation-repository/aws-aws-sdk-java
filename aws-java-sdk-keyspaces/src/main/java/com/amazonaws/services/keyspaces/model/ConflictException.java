@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an action and
- * the same or a different action is already in progress, or if you try to create a resource that already exists.
+ * Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an action and the
+ * same or a different action is already in progress, or if you try to create a resource that already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

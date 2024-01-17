@@ -100,6 +100,13 @@ public class GetTableResultJsonUnmarshaller implements Unmarshaller<GetTableResu
                     context.nextToken();
                     getTableResult.setClientSideTimestamps(ClientSideTimestampsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("replicaSpecifications", targetDepth)) {
+                    context.nextToken();
+                    getTableResult.setReplicaSpecifications(new ListUnmarshaller<ReplicaSpecificationSummary>(ReplicaSpecificationSummaryJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -193,11 +193,11 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws ConflictException
-     *         Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an
+     *         Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an
      *         action and the same or a different action is already in progress, or if you try to create a resource that
      *         already exists.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @sample AmazonKeyspaces.CreateKeyspace
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CreateKeyspace" target="_top">AWS API
      *      Documentation</a>
@@ -274,11 +274,11 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws ConflictException
-     *         Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an
+     *         Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an
      *         action and the same or a different action is already in progress, or if you try to create a resource that
      *         already exists.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -346,11 +346,11 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws ConflictException
-     *         Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an
+     *         Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an
      *         action and the same or a different action is already in progress, or if you try to create a resource that
      *         already exists.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -424,11 +424,11 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws ConflictException
-     *         Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an
+     *         Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an
      *         action and the same or a different action is already in progress, or if you try to create a resource that
      *         already exists.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -496,7 +496,7 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -569,7 +569,7 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -623,6 +623,84 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns auto scaling related settings of the specified table in JSON format. If the table is a multi-Region
+     * table, the Amazon Web Services Region specific auto scaling settings of the table are included.
+     * </p>
+     * <p>
+     * Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in response to application traffic.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity
+     * automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+     * </p>
+     * 
+     * @param getTableAutoScalingSettingsRequest
+     * @return Result of the GetTableAutoScalingSettings operation returned by the service.
+     * @throws ValidationException
+     *         The operation failed due to an invalid or malformed request.
+     * @throws ServiceQuotaExceededException
+     *         The operation exceeded the service quota for this resource. For more information on service quotas, see
+     *         <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a> in the <i>Amazon
+     *         Keyspaces Developer Guide</i>.
+     * @throws InternalServerException
+     *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @sample AmazonKeyspaces.GetTableAutoScalingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetTableAutoScalingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetTableAutoScalingSettingsResult getTableAutoScalingSettings(GetTableAutoScalingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTableAutoScalingSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetTableAutoScalingSettingsResult executeGetTableAutoScalingSettings(GetTableAutoScalingSettingsRequest getTableAutoScalingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTableAutoScalingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTableAutoScalingSettingsRequest> request = null;
+        Response<GetTableAutoScalingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTableAutoScalingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getTableAutoScalingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Keyspaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTableAutoScalingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTableAutoScalingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetTableAutoScalingSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of keyspaces.
      * </p>
      * 
@@ -637,7 +715,7 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -705,7 +783,7 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -773,7 +851,7 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -827,8 +905,8 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code>
-     * and the current time. For more information about restore points, see <a href=
+     * Restores the table to the specified point in time within the <code>earliest_restorable_timestamp</code> and the
+     * current time. For more information about restore points, see <a href=
      * "https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window"
      * > Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
      * </p>
@@ -842,9 +920,9 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * In addition to the table's schema, data, and TTL settings, <code>RestoreTable</code> restores the capacity mode,
-     * encryption, and point-in-time recovery settings from the source table. Unlike the table's schema data and TTL
-     * settings, which are restored based on the selected timestamp, these settings are always restored based on the
-     * table's settings as of the current time or when the table was deleted.
+     * auto scaling settings, encryption settings, and point-in-time recovery settings from the source table. Unlike the
+     * table's schema data and TTL settings, which are restored based on the selected timestamp, these settings are
+     * always restored based on the table's settings as of the current time or when the table was deleted.
      * </p>
      * <p>
      * You can also overwrite these settings during restore:
@@ -857,7 +935,12 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * </li>
      * <li>
      * <p>
-     * Provisioned throughput capacity settings
+     * Provisioned throughput capacity units
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Auto scaling settings
      * </p>
      * </li>
      * <li>
@@ -882,11 +965,6 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * <ul>
      * <li>
      * <p>
-     * Automatic scaling policies (for tables that use provisioned capacity mode)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Identity and Access Management (IAM) policies
      * </p>
      * </li>
@@ -908,11 +986,11 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws ConflictException
-     *         Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an
+     *         Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an
      *         action and the same or a different action is already in progress, or if you try to create a resource that
      *         already exists.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -988,7 +1066,7 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -1056,11 +1134,11 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws ConflictException
-     *         Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an
+     *         Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an
      *         action and the same or a different action is already in progress, or if you try to create a resource that
      *         already exists.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -1114,9 +1192,9 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Adds new columns to the table or updates one of the table's settings, for example capacity mode, encryption,
-     * point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per update
-     * operation.
+     * Adds new columns to the table or updates one of the table's settings, for example capacity mode, auto scaling,
+     * encryption, point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per
+     * update operation.
      * </p>
      * 
      * @param updateTableRequest
@@ -1130,11 +1208,11 @@ public class AmazonKeyspacesClient extends AmazonWebServiceClient implements Ama
      * @throws InternalServerException
      *         Amazon Keyspaces was unable to fully process this request because of an internal server error.
      * @throws ConflictException
-     *         Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an
+     *         Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an
      *         action and the same or a different action is already in progress, or if you try to create a resource that
      *         already exists.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         You don't have sufficient access permissions to perform this action.
      * @throws ResourceNotFoundException
      *         The operation tried to access a keyspace or table that doesn't exist. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.

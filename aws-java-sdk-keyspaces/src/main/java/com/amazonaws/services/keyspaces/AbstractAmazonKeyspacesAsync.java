@@ -106,6 +106,19 @@ public class AbstractAmazonKeyspacesAsync extends AbstractAmazonKeyspaces implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(GetTableAutoScalingSettingsRequest request) {
+
+        return getTableAutoScalingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(GetTableAutoScalingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTableAutoScalingSettingsRequest, GetTableAutoScalingSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListKeyspacesResult> listKeyspacesAsync(ListKeyspacesRequest request) {
 
         return listKeyspacesAsync(request, null);

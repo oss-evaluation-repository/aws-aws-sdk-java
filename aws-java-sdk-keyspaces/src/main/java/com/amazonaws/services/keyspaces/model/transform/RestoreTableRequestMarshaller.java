@@ -46,6 +46,10 @@ public class RestoreTableRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pointInTimeRecoveryOverride").build();
     private static final MarshallingInfo<List> TAGSOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tagsOverride").build();
+    private static final MarshallingInfo<StructuredPojo> AUTOSCALINGSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoScalingSpecification").build();
+    private static final MarshallingInfo<List> REPLICASPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicaSpecifications").build();
 
     private static final RestoreTableRequestMarshaller instance = new RestoreTableRequestMarshaller();
 
@@ -72,6 +76,8 @@ public class RestoreTableRequestMarshaller {
             protocolMarshaller.marshall(restoreTableRequest.getEncryptionSpecificationOverride(), ENCRYPTIONSPECIFICATIONOVERRIDE_BINDING);
             protocolMarshaller.marshall(restoreTableRequest.getPointInTimeRecoveryOverride(), POINTINTIMERECOVERYOVERRIDE_BINDING);
             protocolMarshaller.marshall(restoreTableRequest.getTagsOverride(), TAGSOVERRIDE_BINDING);
+            protocolMarshaller.marshall(restoreTableRequest.getAutoScalingSpecification(), AUTOSCALINGSPECIFICATION_BINDING);
+            protocolMarshaller.marshall(restoreTableRequest.getReplicaSpecifications(), REPLICASPECIFICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

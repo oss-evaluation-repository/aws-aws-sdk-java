@@ -58,6 +58,11 @@ public class AbstractAmazonKeyspaces implements AmazonKeyspaces {
     }
 
     @Override
+    public GetTableAutoScalingSettingsResult getTableAutoScalingSettings(GetTableAutoScalingSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListKeyspacesResult listKeyspaces(ListKeyspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -298,6 +298,39 @@ public class AmazonKeyspacesAsyncClient extends AmazonKeyspacesClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(GetTableAutoScalingSettingsRequest request) {
+
+        return getTableAutoScalingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableAutoScalingSettingsResult> getTableAutoScalingSettingsAsync(final GetTableAutoScalingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTableAutoScalingSettingsRequest, GetTableAutoScalingSettingsResult> asyncHandler) {
+        final GetTableAutoScalingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTableAutoScalingSettingsResult>() {
+            @Override
+            public GetTableAutoScalingSettingsResult call() throws Exception {
+                GetTableAutoScalingSettingsResult result = null;
+
+                try {
+                    result = executeGetTableAutoScalingSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListKeyspacesResult> listKeyspacesAsync(ListKeyspacesRequest request) {
 
         return listKeyspacesAsync(request, null);

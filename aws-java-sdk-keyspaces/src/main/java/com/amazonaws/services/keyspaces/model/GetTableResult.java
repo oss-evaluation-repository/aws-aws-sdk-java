@@ -113,6 +113,12 @@ public class GetTableResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      */
     private ClientSideTimestamps clientSideTimestamps;
+    /**
+     * <p>
+     * Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.
+     * </p>
+     */
+    private java.util.List<ReplicaSpecificationSummary> replicaSpecifications;
 
     /**
      * <p>
@@ -723,6 +729,80 @@ public class GetTableResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
+     * <p>
+     * Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.
+     * </p>
+     * 
+     * @return Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is
+     *         replicated in.
+     */
+
+    public java.util.List<ReplicaSpecificationSummary> getReplicaSpecifications() {
+        return replicaSpecifications;
+    }
+
+    /**
+     * <p>
+     * Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated
+     *        in.
+     */
+
+    public void setReplicaSpecifications(java.util.Collection<ReplicaSpecificationSummary> replicaSpecifications) {
+        if (replicaSpecifications == null) {
+            this.replicaSpecifications = null;
+            return;
+        }
+
+        this.replicaSpecifications = new java.util.ArrayList<ReplicaSpecificationSummary>(replicaSpecifications);
+    }
+
+    /**
+     * <p>
+     * Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicaSpecifications(java.util.Collection)} or
+     * {@link #withReplicaSpecifications(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated
+     *        in.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTableResult withReplicaSpecifications(ReplicaSpecificationSummary... replicaSpecifications) {
+        if (this.replicaSpecifications == null) {
+            setReplicaSpecifications(new java.util.ArrayList<ReplicaSpecificationSummary>(replicaSpecifications.length));
+        }
+        for (ReplicaSpecificationSummary ele : replicaSpecifications) {
+            this.replicaSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated
+     *        in.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTableResult withReplicaSpecifications(java.util.Collection<ReplicaSpecificationSummary> replicaSpecifications) {
+        setReplicaSpecifications(replicaSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -759,7 +839,9 @@ public class GetTableResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
         if (getClientSideTimestamps() != null)
-            sb.append("ClientSideTimestamps: ").append(getClientSideTimestamps());
+            sb.append("ClientSideTimestamps: ").append(getClientSideTimestamps()).append(",");
+        if (getReplicaSpecifications() != null)
+            sb.append("ReplicaSpecifications: ").append(getReplicaSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -826,6 +908,10 @@ public class GetTableResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getClientSideTimestamps() != null && other.getClientSideTimestamps().equals(this.getClientSideTimestamps()) == false)
             return false;
+        if (other.getReplicaSpecifications() == null ^ this.getReplicaSpecifications() == null)
+            return false;
+        if (other.getReplicaSpecifications() != null && other.getReplicaSpecifications().equals(this.getReplicaSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -847,6 +933,7 @@ public class GetTableResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         hashCode = prime * hashCode + ((getDefaultTimeToLive() == null) ? 0 : getDefaultTimeToLive().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getClientSideTimestamps() == null) ? 0 : getClientSideTimestamps().hashCode());
+        hashCode = prime * hashCode + ((getReplicaSpecifications() == null) ? 0 : getReplicaSpecifications().hashCode());
         return hashCode;
     }
 

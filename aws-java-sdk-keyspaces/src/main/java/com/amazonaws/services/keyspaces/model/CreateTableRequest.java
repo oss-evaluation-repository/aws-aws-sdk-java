@@ -260,6 +260,53 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private ClientSideTimestamps clientSideTimestamps;
+    /**
+     * <p>
+     * The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage
+     * throughput capacity automatically on your behalf.
+     * </p>
+     * <p>
+     * Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and
+     * decreasing your table's read and write capacity automatically in response to application traffic. For more
+     * information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer
+     * Guide</i>.
+     * </p>
+     * <p>
+     * By default, auto scaling is disabled for a table.
+     * </p>
+     */
+    private AutoScalingSpecification autoScalingSpecification;
+    /**
+     * <p>
+     * The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the
+     * general settings of the table for the specified Region.
+     * </p>
+     * <p>
+     * For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently
+     * for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that
+     * there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica
+     * in a specific Region, you can do so by configuring the following parameters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<ReplicaSpecification> replicaSpecifications;
 
     /**
      * <p>
@@ -1737,6 +1784,369 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage
+     * throughput capacity automatically on your behalf.
+     * </p>
+     * <p>
+     * Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and
+     * decreasing your table's read and write capacity automatically in response to application traffic. For more
+     * information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer
+     * Guide</i>.
+     * </p>
+     * <p>
+     * By default, auto scaling is disabled for a table.
+     * </p>
+     * 
+     * @param autoScalingSpecification
+     *        The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can
+     *        manage throughput capacity automatically on your behalf.</p>
+     *        <p>
+     *        Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and
+     *        decreasing your table's read and write capacity automatically in response to application traffic. For more
+     *        information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     *        throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces
+     *        Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        By default, auto scaling is disabled for a table.
+     */
+
+    public void setAutoScalingSpecification(AutoScalingSpecification autoScalingSpecification) {
+        this.autoScalingSpecification = autoScalingSpecification;
+    }
+
+    /**
+     * <p>
+     * The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage
+     * throughput capacity automatically on your behalf.
+     * </p>
+     * <p>
+     * Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and
+     * decreasing your table's read and write capacity automatically in response to application traffic. For more
+     * information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer
+     * Guide</i>.
+     * </p>
+     * <p>
+     * By default, auto scaling is disabled for a table.
+     * </p>
+     * 
+     * @return The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can
+     *         manage throughput capacity automatically on your behalf.</p>
+     *         <p>
+     *         Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and
+     *         decreasing your table's read and write capacity automatically in response to application traffic. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput
+     *         capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer
+     *         Guide</i>.
+     *         </p>
+     *         <p>
+     *         By default, auto scaling is disabled for a table.
+     */
+
+    public AutoScalingSpecification getAutoScalingSpecification() {
+        return this.autoScalingSpecification;
+    }
+
+    /**
+     * <p>
+     * The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage
+     * throughput capacity automatically on your behalf.
+     * </p>
+     * <p>
+     * Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and
+     * decreasing your table's read and write capacity automatically in response to application traffic. For more
+     * information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer
+     * Guide</i>.
+     * </p>
+     * <p>
+     * By default, auto scaling is disabled for a table.
+     * </p>
+     * 
+     * @param autoScalingSpecification
+     *        The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can
+     *        manage throughput capacity automatically on your behalf.</p>
+     *        <p>
+     *        Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and
+     *        decreasing your table's read and write capacity automatically in response to application traffic. For more
+     *        information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     *        throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces
+     *        Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        By default, auto scaling is disabled for a table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withAutoScalingSpecification(AutoScalingSpecification autoScalingSpecification) {
+        setAutoScalingSpecification(autoScalingSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the
+     * general settings of the table for the specified Region.
+     * </p>
+     * <p>
+     * For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently
+     * for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that
+     * there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica
+     * in a specific Region, you can do so by configuring the following parameters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The optional Amazon Web Services Region specific settings of a multi-Region table. These settings
+     *         overwrite the general settings of the table for the specified Region. </p>
+     *         <p>
+     *         For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity
+     *         differently for each Region's replica. The write capacity, however, remains synchronized between all
+     *         replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the
+     *         read capacity for a table replica in a specific Region, you can do so by configuring the following
+     *         parameters.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>region</code>: The Region where these settings are applied. (Required)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<ReplicaSpecification> getReplicaSpecifications() {
+        return replicaSpecifications;
+    }
+
+    /**
+     * <p>
+     * The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the
+     * general settings of the table for the specified Region.
+     * </p>
+     * <p>
+     * For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently
+     * for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that
+     * there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica
+     * in a specific Region, you can do so by configuring the following parameters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param replicaSpecifications
+     *        The optional Amazon Web Services Region specific settings of a multi-Region table. These settings
+     *        overwrite the general settings of the table for the specified Region. </p>
+     *        <p>
+     *        For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity
+     *        differently for each Region's replica. The write capacity, however, remains synchronized between all
+     *        replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read
+     *        capacity for a table replica in a specific Region, you can do so by configuring the following parameters.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>region</code>: The Region where these settings are applied. (Required)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     *        </p>
+     *        </li>
+     */
+
+    public void setReplicaSpecifications(java.util.Collection<ReplicaSpecification> replicaSpecifications) {
+        if (replicaSpecifications == null) {
+            this.replicaSpecifications = null;
+            return;
+        }
+
+        this.replicaSpecifications = new java.util.ArrayList<ReplicaSpecification>(replicaSpecifications);
+    }
+
+    /**
+     * <p>
+     * The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the
+     * general settings of the table for the specified Region.
+     * </p>
+     * <p>
+     * For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently
+     * for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that
+     * there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica
+     * in a specific Region, you can do so by configuring the following parameters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicaSpecifications(java.util.Collection)} or
+     * {@link #withReplicaSpecifications(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param replicaSpecifications
+     *        The optional Amazon Web Services Region specific settings of a multi-Region table. These settings
+     *        overwrite the general settings of the table for the specified Region. </p>
+     *        <p>
+     *        For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity
+     *        differently for each Region's replica. The write capacity, however, remains synchronized between all
+     *        replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read
+     *        capacity for a table replica in a specific Region, you can do so by configuring the following parameters.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>region</code>: The Region where these settings are applied. (Required)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withReplicaSpecifications(ReplicaSpecification... replicaSpecifications) {
+        if (this.replicaSpecifications == null) {
+            setReplicaSpecifications(new java.util.ArrayList<ReplicaSpecification>(replicaSpecifications.length));
+        }
+        for (ReplicaSpecification ele : replicaSpecifications) {
+            this.replicaSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the
+     * general settings of the table for the specified Region.
+     * </p>
+     * <p>
+     * For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently
+     * for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that
+     * there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica
+     * in a specific Region, you can do so by configuring the following parameters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param replicaSpecifications
+     *        The optional Amazon Web Services Region specific settings of a multi-Region table. These settings
+     *        overwrite the general settings of the table for the specified Region. </p>
+     *        <p>
+     *        For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity
+     *        differently for each Region's replica. The write capacity, however, remains synchronized between all
+     *        replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read
+     *        capacity for a table replica in a specific Region, you can do so by configuring the following parameters.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>region</code>: The Region where these settings are applied. (Required)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withReplicaSpecifications(java.util.Collection<ReplicaSpecification> replicaSpecifications) {
+        setReplicaSpecifications(replicaSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1769,7 +2179,11 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientSideTimestamps() != null)
-            sb.append("ClientSideTimestamps: ").append(getClientSideTimestamps());
+            sb.append("ClientSideTimestamps: ").append(getClientSideTimestamps()).append(",");
+        if (getAutoScalingSpecification() != null)
+            sb.append("AutoScalingSpecification: ").append(getAutoScalingSpecification()).append(",");
+        if (getReplicaSpecifications() != null)
+            sb.append("ReplicaSpecifications: ").append(getReplicaSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -1828,6 +2242,14 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientSideTimestamps() != null && other.getClientSideTimestamps().equals(this.getClientSideTimestamps()) == false)
             return false;
+        if (other.getAutoScalingSpecification() == null ^ this.getAutoScalingSpecification() == null)
+            return false;
+        if (other.getAutoScalingSpecification() != null && other.getAutoScalingSpecification().equals(this.getAutoScalingSpecification()) == false)
+            return false;
+        if (other.getReplicaSpecifications() == null ^ this.getReplicaSpecifications() == null)
+            return false;
+        if (other.getReplicaSpecifications() != null && other.getReplicaSpecifications().equals(this.getReplicaSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -1847,6 +2269,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDefaultTimeToLive() == null) ? 0 : getDefaultTimeToLive().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientSideTimestamps() == null) ? 0 : getClientSideTimestamps().hashCode());
+        hashCode = prime * hashCode + ((getAutoScalingSpecification() == null) ? 0 : getAutoScalingSpecification().hashCode());
+        hashCode = prime * hashCode + ((getReplicaSpecifications() == null) ? 0 : getReplicaSpecifications().hashCode());
         return hashCode;
     }
 

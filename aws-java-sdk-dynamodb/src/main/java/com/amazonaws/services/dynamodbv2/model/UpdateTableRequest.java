@@ -112,7 +112,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a
+     * You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
      * stream, or if you try to disable a stream on a table that doesn't have a stream.
      * </p>
      * </note>
@@ -837,7 +837,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a
+     * You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
      * stream, or if you try to disable a stream on a table that doesn't have a stream.
      * </p>
      * </note>
@@ -845,8 +845,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param streamSpecification
      *        Represents the DynamoDB Streams configuration for the table.</p> <note>
      *        <p>
-     *        You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already
-     *        has a stream, or if you try to disable a stream on a table that doesn't have a stream.
+     *        You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
+     *        stream, or if you try to disable a stream on a table that doesn't have a stream.
      *        </p>
      */
 
@@ -860,15 +860,15 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a
+     * You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
      * stream, or if you try to disable a stream on a table that doesn't have a stream.
      * </p>
      * </note>
      * 
      * @return Represents the DynamoDB Streams configuration for the table.</p> <note>
      *         <p>
-     *         You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already
-     *         has a stream, or if you try to disable a stream on a table that doesn't have a stream.
+     *         You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has
+     *         a stream, or if you try to disable a stream on a table that doesn't have a stream.
      *         </p>
      */
 
@@ -882,7 +882,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a
+     * You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
      * stream, or if you try to disable a stream on a table that doesn't have a stream.
      * </p>
      * </note>
@@ -890,8 +890,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param streamSpecification
      *        Represents the DynamoDB Streams configuration for the table.</p> <note>
      *        <p>
-     *        You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already
-     *        has a stream, or if you try to disable a stream on a table that doesn't have a stream.
+     *        You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
+     *        stream, or if you try to disable a stream on a table that doesn't have a stream.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
