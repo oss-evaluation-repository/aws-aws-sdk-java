@@ -98,16 +98,16 @@ public interface AmazonConnectCases {
     BatchPutFieldOptionsResult batchPutFieldOptions(BatchPutFieldOptionsRequest batchPutFieldOptionsRequest);
 
     /**
+     * <note>
      * <p>
-     * Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs
-     * with a declared data types.
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
-     * <p>
-     * The following fields are required when creating a case:
-     * </p>
+     * </note>
      * 
      * <pre>
-     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * <code> &lt;p&gt;Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt; &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      * </pre>
      * 
      * @param createCaseRequest
@@ -400,6 +400,30 @@ public interface AmazonConnectCases {
      *      Documentation</a>
      */
     GetCaseResult getCase(GetCaseRequest getCaseRequest);
+
+    /**
+     * <p>
+     * Returns the audit history about a specific case if it exists.
+     * </p>
+     * 
+     * @param getCaseAuditEventsRequest
+     * @return Result of the GetCaseAuditEvents operation returned by the service.
+     * @throws InternalServerException
+     *         We couldn't process your request because of an issue with the server. Try again later.
+     * @throws ResourceNotFoundException
+     *         We couldn't find the requested resource. Check that your resources exists and were created in the same
+     *         Amazon Web Services Region as your request, and try your request again.
+     * @throws ValidationException
+     *         The request isn't valid. Check the syntax and try again.
+     * @throws ThrottlingException
+     *         The rate has been exceeded for this API. Please try again after a few minutes.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonConnectCases.GetCaseAuditEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCaseAuditEventsResult getCaseAuditEvents(GetCaseAuditEventsRequest getCaseAuditEventsRequest);
 
     /**
      * <p>
@@ -799,13 +823,17 @@ public interface AmazonConnectCases {
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
+     * <note>
      * <p>
-     * Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical
-     * to the <code>CreateCase</code> input .
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
-     * <p>
-     * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
-     * </p>
+     * </note>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt; input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.&lt;/p&gt; </code>
+     * </pre>
      * 
      * @param updateCaseRequest
      * @return Result of the UpdateCase operation returned by the service.

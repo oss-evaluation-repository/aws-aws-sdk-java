@@ -45,6 +45,8 @@ public class UpdateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
     private java.util.List<FieldValue> fields;
 
+    private UserUnion performedBy;
+
     /**
      * <p>
      * A unique identifier of the case.
@@ -204,6 +206,32 @@ public class UpdateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * @param performedBy
+     */
+
+    public void setPerformedBy(UserUnion performedBy) {
+        this.performedBy = performedBy;
+    }
+
+    /**
+     * @return
+     */
+
+    public UserUnion getPerformedBy() {
+        return this.performedBy;
+    }
+
+    /**
+     * @param performedBy
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCaseRequest withPerformedBy(UserUnion performedBy) {
+        setPerformedBy(performedBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -220,7 +248,9 @@ public class UpdateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getDomainId() != null)
             sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getFields() != null)
-            sb.append("Fields: ").append(getFields());
+            sb.append("Fields: ").append(getFields()).append(",");
+        if (getPerformedBy() != null)
+            sb.append("PerformedBy: ").append(getPerformedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +277,10 @@ public class UpdateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getFields() != null && other.getFields().equals(this.getFields()) == false)
             return false;
+        if (other.getPerformedBy() == null ^ this.getPerformedBy() == null)
+            return false;
+        if (other.getPerformedBy() != null && other.getPerformedBy().equals(this.getPerformedBy()) == false)
+            return false;
         return true;
     }
 
@@ -258,6 +292,7 @@ public class UpdateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getCaseId() == null) ? 0 : getCaseId().hashCode());
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getFields() == null) ? 0 : getFields().hashCode());
+        hashCode = prime * hashCode + ((getPerformedBy() == null) ? 0 : getPerformedBy().hashCode());
         return hashCode;
     }
 

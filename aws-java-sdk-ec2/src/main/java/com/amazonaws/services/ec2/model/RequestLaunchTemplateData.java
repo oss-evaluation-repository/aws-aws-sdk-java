@@ -216,8 +216,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateTagSpecificationRequest> tagSpecifications;
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> elasticGpuSpecifications;
     /**
@@ -1731,10 +1737,20 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
-     * @return An elastic GPU to associate with the instance.
+     * @return Deprecated.</p> <note>
+     *         <p>
+     *         Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *         acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *         </p>
      */
 
     public java.util.List<ElasticGpuSpecification> getElasticGpuSpecifications() {
@@ -1746,11 +1762,21 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
      * @param elasticGpuSpecifications
-     *        An elastic GPU to associate with the instance.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      */
 
     public void setElasticGpuSpecifications(java.util.Collection<ElasticGpuSpecification> elasticGpuSpecifications) {
@@ -1764,8 +1790,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setElasticGpuSpecifications(java.util.Collection)} or
@@ -1773,7 +1805,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      * 
      * @param elasticGpuSpecifications
-     *        An elastic GPU to associate with the instance.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1789,11 +1825,21 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
      * @param elasticGpuSpecifications
-     *        An elastic GPU to associate with the instance.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -67,6 +67,14 @@ public class ServiceConnectServiceJsonUnmarshaller implements Unmarshaller<Servi
                     context.nextToken();
                     serviceConnectService.setIngressPortOverride(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("timeout", targetDepth)) {
+                    context.nextToken();
+                    serviceConnectService.setTimeout(TimeoutConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("tls", targetDepth)) {
+                    context.nextToken();
+                    serviceConnectService.setTls(ServiceConnectTlsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

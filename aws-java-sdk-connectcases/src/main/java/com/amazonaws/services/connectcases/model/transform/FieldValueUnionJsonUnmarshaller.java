@@ -64,6 +64,10 @@ public class FieldValueUnionJsonUnmarshaller implements Unmarshaller<FieldValueU
                     context.nextToken();
                     fieldValueUnion.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("userArnValue", targetDepth)) {
+                    context.nextToken();
+                    fieldValueUnion.setUserArnValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

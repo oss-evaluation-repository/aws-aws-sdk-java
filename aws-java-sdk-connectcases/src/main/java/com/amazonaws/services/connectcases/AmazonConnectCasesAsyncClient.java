@@ -408,6 +408,39 @@ public class AmazonConnectCasesAsyncClient extends AmazonConnectCasesClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(GetCaseAuditEventsRequest request) {
+
+        return getCaseAuditEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(final GetCaseAuditEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCaseAuditEventsRequest, GetCaseAuditEventsResult> asyncHandler) {
+        final GetCaseAuditEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCaseAuditEventsResult>() {
+            @Override
+            public GetCaseAuditEventsResult call() throws Exception {
+                GetCaseAuditEventsResult result = null;
+
+                try {
+                    result = executeGetCaseAuditEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCaseEventConfigurationResult> getCaseEventConfigurationAsync(GetCaseEventConfigurationRequest request) {
 
         return getCaseEventConfigurationAsync(request, null);

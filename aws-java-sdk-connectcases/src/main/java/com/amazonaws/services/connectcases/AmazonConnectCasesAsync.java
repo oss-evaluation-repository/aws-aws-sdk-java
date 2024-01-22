@@ -99,16 +99,16 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
             com.amazonaws.handlers.AsyncHandler<BatchPutFieldOptionsRequest, BatchPutFieldOptionsResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs
-     * with a declared data types.
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
-     * <p>
-     * The following fields are required when creating a case:
-     * </p>
+     * </note>
      * 
      * <pre>
-     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * <code> &lt;p&gt;Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt; &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      * </pre>
      * 
      * @param createCaseRequest
@@ -120,16 +120,16 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
     java.util.concurrent.Future<CreateCaseResult> createCaseAsync(CreateCaseRequest createCaseRequest);
 
     /**
+     * <note>
      * <p>
-     * Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs
-     * with a declared data types.
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
-     * <p>
-     * The following fields are required when creating a case:
-     * </p>
+     * </note>
      * 
      * <pre>
-     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * <code> &lt;p&gt;Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt; &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      * </pre>
      * 
      * @param createCaseRequest
@@ -487,6 +487,37 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      */
     java.util.concurrent.Future<GetCaseResult> getCaseAsync(GetCaseRequest getCaseRequest,
             com.amazonaws.handlers.AsyncHandler<GetCaseRequest, GetCaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the audit history about a specific case if it exists.
+     * </p>
+     * 
+     * @param getCaseAuditEventsRequest
+     * @return A Java Future containing the result of the GetCaseAuditEvents operation returned by the service.
+     * @sample AmazonConnectCasesAsync.GetCaseAuditEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(GetCaseAuditEventsRequest getCaseAuditEventsRequest);
+
+    /**
+     * <p>
+     * Returns the audit history about a specific case if it exists.
+     * </p>
+     * 
+     * @param getCaseAuditEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCaseAuditEvents operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.GetCaseAuditEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(GetCaseAuditEventsRequest getCaseAuditEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCaseAuditEventsRequest, GetCaseAuditEventsResult> asyncHandler);
 
     /**
      * <p>
@@ -1021,13 +1052,17 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical
-     * to the <code>CreateCase</code> input .
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
-     * <p>
-     * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
-     * </p>
+     * </note>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt; input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.&lt;/p&gt; </code>
+     * </pre>
      * 
      * @param updateCaseRequest
      * @return A Java Future containing the result of the UpdateCase operation returned by the service.
@@ -1038,13 +1073,17 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
     java.util.concurrent.Future<UpdateCaseResult> updateCaseAsync(UpdateCaseRequest updateCaseRequest);
 
     /**
+     * <note>
      * <p>
-     * Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical
-     * to the <code>CreateCase</code> input .
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
-     * <p>
-     * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
-     * </p>
+     * </note>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt; input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.&lt;/p&gt; </code>
+     * </pre>
      * 
      * @param updateCaseRequest
      * @param asyncHandler

@@ -32,6 +32,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>association.route-table-association-id</code> - The ID of an association ID for the route table.
      * </p>
      * </li>
@@ -179,6 +184,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>association.route-table-association-id</code> - The ID of an association ID for the route table.
      * </p>
      * </li>
@@ -295,6 +305,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * 
      * @return The filters.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>association.route-table-association-id</code> - The ID of an association ID for the route table.
@@ -427,6 +442,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>association.route-table-association-id</code> - The ID of an association ID for the route table.
      * </p>
      * </li>
@@ -544,6 +564,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * @param filters
      *        The filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>association.route-table-association-id</code> - The ID of an association ID for the route table.
@@ -678,6 +703,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>association.route-table-association-id</code> - The ID of an association ID for the route table.
      * </p>
      * </li>
@@ -800,6 +830,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * @param filters
      *        The filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>association.route-table-association-id</code> - The ID of an association ID for the route table.
@@ -936,6 +971,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
+     * <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>association.route-table-association-id</code> - The ID of an association ID for the route table.
      * </p>
      * </li>
@@ -1053,6 +1093,11 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * @param filters
      *        The filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>association.gateway-id</code> - The ID of the gateway involved in the association.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>association.route-table-association-id</code> - The ID of an association ID for the route table.

@@ -37,6 +37,8 @@ public class CreateCaseRequestMarshaller {
             .marshallLocationName("domainId").build();
     private static final MarshallingInfo<List> FIELDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fields").build();
+    private static final MarshallingInfo<StructuredPojo> PERFORMEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("performedBy").build();
     private static final MarshallingInfo<String> TEMPLATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("templateId").build();
 
@@ -59,6 +61,7 @@ public class CreateCaseRequestMarshaller {
             protocolMarshaller.marshall(createCaseRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createCaseRequest.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(createCaseRequest.getFields(), FIELDS_BINDING);
+            protocolMarshaller.marshall(createCaseRequest.getPerformedBy(), PERFORMEDBY_BINDING);
             protocolMarshaller.marshall(createCaseRequest.getTemplateId(), TEMPLATEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

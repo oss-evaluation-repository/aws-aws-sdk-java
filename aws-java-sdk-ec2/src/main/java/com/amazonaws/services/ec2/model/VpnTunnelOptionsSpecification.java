@@ -130,7 +130,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.
      * </p>
      * <p>
-     * Default: <code>540</code>
+     * Default: <code>270</code>
      * </p>
      */
     private Integer rekeyMarginTimeSeconds;
@@ -857,7 +857,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.
      * </p>
      * <p>
-     * Default: <code>540</code>
+     * Default: <code>270</code>
      * </p>
      * 
      * @param rekeyMarginTimeSeconds
@@ -868,7 +868,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *        Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.
      *        </p>
      *        <p>
-     *        Default: <code>540</code>
+     *        Default: <code>270</code>
      */
 
     public void setRekeyMarginTimeSeconds(Integer rekeyMarginTimeSeconds) {
@@ -885,7 +885,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.
      * </p>
      * <p>
-     * Default: <code>540</code>
+     * Default: <code>270</code>
      * </p>
      * 
      * @return The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services
@@ -895,7 +895,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *         Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.
      *         </p>
      *         <p>
-     *         Default: <code>540</code>
+     *         Default: <code>270</code>
      */
 
     public Integer getRekeyMarginTimeSeconds() {
@@ -912,7 +912,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.
      * </p>
      * <p>
-     * Default: <code>540</code>
+     * Default: <code>270</code>
      * </p>
      * 
      * @param rekeyMarginTimeSeconds
@@ -923,7 +923,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *        Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.
      *        </p>
      *        <p>
-     *        Default: <code>540</code>
+     *        Default: <code>270</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

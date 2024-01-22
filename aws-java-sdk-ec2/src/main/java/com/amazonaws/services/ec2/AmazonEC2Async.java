@@ -11459,6 +11459,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DescribeEgressOnlyInternetGatewaysRequest, DescribeEgressOnlyInternetGatewaysResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * <p>
      * Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic
      * Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
@@ -11474,6 +11480,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeElasticGpusResult> describeElasticGpusAsync(DescribeElasticGpusRequest describeElasticGpusRequest);
 
     /**
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * <p>
      * Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic
      * Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
@@ -21007,8 +21019,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * This action calls on other describe actions to get instance information. Depending on your instance
      * configuration, you may need to allow the following actions in your IAM policy:
      * <code>DescribeSpotInstanceRequests</code>, <code>DescribeInstanceCreditSpecifications</code>,
-     * <code>DescribeVolumes</code>, <code>DescribeInstanceAttribute</code>, and <code>DescribeElasticGpus</code>. Or,
-     * you can allow <code>describe*</code> depending on your instance requirements.
+     * <code>DescribeVolumes</code>, and <code>DescribeInstanceAttribute</code>. Or, you can allow
+     * <code>describe*</code> depending on your instance requirements.
      * </p>
      * 
      * @param getLaunchTemplateDataRequest
@@ -21027,8 +21039,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * This action calls on other describe actions to get instance information. Depending on your instance
      * configuration, you may need to allow the following actions in your IAM policy:
      * <code>DescribeSpotInstanceRequests</code>, <code>DescribeInstanceCreditSpecifications</code>,
-     * <code>DescribeVolumes</code>, <code>DescribeInstanceAttribute</code>, and <code>DescribeElasticGpus</code>. Or,
-     * you can allow <code>describe*</code> depending on your instance requirements.
+     * <code>DescribeVolumes</code>, and <code>DescribeInstanceAttribute</code>. Or, you can allow
+     * <code>describe*</code> depending on your instance requirements.
      * </p>
      * 
      * @param getLaunchTemplateDataRequest
@@ -28342,7 +28354,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Performing this operation on an instance that uses an instance store as its root device returns an error.
      * </p>
      * <p>
-     * If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimted</code> CPU credit
+     * If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimited</code> CPU credit
      * option, the request fails. The <code>unlimited</code> CPU credit option is not supported on Dedicated Hosts.
      * Before you start the instance, either change its CPU credit option to <code>standard</code>, or change its
      * tenancy to <code>default</code> or <code>dedicated</code>.
@@ -28379,7 +28391,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Performing this operation on an instance that uses an instance store as its root device returns an error.
      * </p>
      * <p>
-     * If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimted</code> CPU credit
+     * If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimited</code> CPU credit
      * option, the request fails. The <code>unlimited</code> CPU credit option is not supported on Dedicated Hosts.
      * Before you start the instance, either change its CPU credit option to <code>standard</code>, or change its
      * tenancy to <code>default</code> or <code>dedicated</code>.

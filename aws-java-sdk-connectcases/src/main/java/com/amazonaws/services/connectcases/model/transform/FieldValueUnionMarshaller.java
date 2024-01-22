@@ -35,6 +35,8 @@ public class FieldValueUnionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("emptyValue").build();
     private static final MarshallingInfo<String> STRINGVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stringValue").build();
+    private static final MarshallingInfo<String> USERARNVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userArnValue").build();
 
     private static final FieldValueUnionMarshaller instance = new FieldValueUnionMarshaller();
 
@@ -56,6 +58,7 @@ public class FieldValueUnionMarshaller {
             protocolMarshaller.marshall(fieldValueUnion.getDoubleValue(), DOUBLEVALUE_BINDING);
             protocolMarshaller.marshall(fieldValueUnion.getEmptyValue(), EMPTYVALUE_BINDING);
             protocolMarshaller.marshall(fieldValueUnion.getStringValue(), STRINGVALUE_BINDING);
+            protocolMarshaller.marshall(fieldValueUnion.getUserArnValue(), USERARNVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

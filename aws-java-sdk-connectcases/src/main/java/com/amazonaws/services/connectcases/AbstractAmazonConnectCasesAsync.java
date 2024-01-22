@@ -158,6 +158,19 @@ public class AbstractAmazonConnectCasesAsync extends AbstractAmazonConnectCases 
     }
 
     @Override
+    public java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(GetCaseAuditEventsRequest request) {
+
+        return getCaseAuditEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(GetCaseAuditEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCaseAuditEventsRequest, GetCaseAuditEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCaseEventConfigurationResult> getCaseEventConfigurationAsync(GetCaseEventConfigurationRequest request) {
 
         return getCaseEventConfigurationAsync(request, null);

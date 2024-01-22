@@ -84,6 +84,14 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
      * </p>
      */
     private Integer ingressPortOverride;
+    /**
+     * <p>
+     * A reference to an object that represents the configured timeouts for Service Connect.
+     * </p>
+     */
+    private TimeoutConfiguration timeout;
+
+    private ServiceConnectTlsConfiguration tls;
 
     /**
      * <p>
@@ -474,6 +482,72 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A reference to an object that represents the configured timeouts for Service Connect.
+     * </p>
+     * 
+     * @param timeout
+     *        A reference to an object that represents the configured timeouts for Service Connect.
+     */
+
+    public void setTimeout(TimeoutConfiguration timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents the configured timeouts for Service Connect.
+     * </p>
+     * 
+     * @return A reference to an object that represents the configured timeouts for Service Connect.
+     */
+
+    public TimeoutConfiguration getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents the configured timeouts for Service Connect.
+     * </p>
+     * 
+     * @param timeout
+     *        A reference to an object that represents the configured timeouts for Service Connect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConnectService withTimeout(TimeoutConfiguration timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
+     * @param tls
+     */
+
+    public void setTls(ServiceConnectTlsConfiguration tls) {
+        this.tls = tls;
+    }
+
+    /**
+     * @return
+     */
+
+    public ServiceConnectTlsConfiguration getTls() {
+        return this.tls;
+    }
+
+    /**
+     * @param tls
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConnectService withTls(ServiceConnectTlsConfiguration tls) {
+        setTls(tls);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -492,7 +566,11 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
         if (getClientAliases() != null)
             sb.append("ClientAliases: ").append(getClientAliases()).append(",");
         if (getIngressPortOverride() != null)
-            sb.append("IngressPortOverride: ").append(getIngressPortOverride());
+            sb.append("IngressPortOverride: ").append(getIngressPortOverride()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getTls() != null)
+            sb.append("Tls: ").append(getTls());
         sb.append("}");
         return sb.toString();
     }
@@ -523,6 +601,14 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
             return false;
         if (other.getIngressPortOverride() != null && other.getIngressPortOverride().equals(this.getIngressPortOverride()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
+        if (other.getTls() == null ^ this.getTls() == null)
+            return false;
+        if (other.getTls() != null && other.getTls().equals(this.getTls()) == false)
+            return false;
         return true;
     }
 
@@ -535,6 +621,8 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getDiscoveryName() == null) ? 0 : getDiscoveryName().hashCode());
         hashCode = prime * hashCode + ((getClientAliases() == null) ? 0 : getClientAliases().hashCode());
         hashCode = prime * hashCode + ((getIngressPortOverride() == null) ? 0 : getIngressPortOverride().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getTls() == null) ? 0 : getTls().hashCode());
         return hashCode;
     }
 

@@ -78,6 +78,11 @@ public class AbstractAmazonConnectCases implements AmazonConnectCases {
     }
 
     @Override
+    public GetCaseAuditEventsResult getCaseAuditEvents(GetCaseAuditEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCaseEventConfigurationResult getCaseEventConfiguration(GetCaseEventConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

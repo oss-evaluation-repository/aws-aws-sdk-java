@@ -43,6 +43,11 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
      * subnet should be assigned a public IPv4 address.
      * </p>
+     * <p>
+     * Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public
+     * IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      */
     private Boolean mapPublicIpOnLaunch;
     /**
@@ -218,10 +223,20 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
      * subnet should be assigned a public IPv4 address.
      * </p>
+     * <p>
+     * Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public
+     * IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      * 
      * @param mapPublicIpOnLaunch
      *        Specify <code>true</code> to indicate that network interfaces attached to instances created in the
-     *        specified subnet should be assigned a public IPv4 address.
+     *        specified subnet should be assigned a public IPv4 address.</p>
+     *        <p>
+     *        Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including
+     *        public IPv4 addresses associated with running instances and Elastic IP addresses. For more information,
+     *        see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC
+     *        pricing page</a>.
      */
 
     public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
@@ -233,9 +248,19 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
      * subnet should be assigned a public IPv4 address.
      * </p>
+     * <p>
+     * Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public
+     * IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      * 
      * @return Specify <code>true</code> to indicate that network interfaces attached to instances created in the
-     *         specified subnet should be assigned a public IPv4 address.
+     *         specified subnet should be assigned a public IPv4 address.</p>
+     *         <p>
+     *         Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including
+     *         public IPv4 addresses associated with running instances and Elastic IP addresses. For more information,
+     *         see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC
+     *         pricing page</a>.
      */
 
     public Boolean getMapPublicIpOnLaunch() {
@@ -247,10 +272,20 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
      * subnet should be assigned a public IPv4 address.
      * </p>
+     * <p>
+     * Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public
+     * IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      * 
      * @param mapPublicIpOnLaunch
      *        Specify <code>true</code> to indicate that network interfaces attached to instances created in the
-     *        specified subnet should be assigned a public IPv4 address.
+     *        specified subnet should be assigned a public IPv4 address.</p>
+     *        <p>
+     *        Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including
+     *        public IPv4 addresses associated with running instances and Elastic IP addresses. For more information,
+     *        see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC
+     *        pricing page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,9 +299,19 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
      * subnet should be assigned a public IPv4 address.
      * </p>
+     * <p>
+     * Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public
+     * IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.
+     * </p>
      * 
      * @return Specify <code>true</code> to indicate that network interfaces attached to instances created in the
-     *         specified subnet should be assigned a public IPv4 address.
+     *         specified subnet should be assigned a public IPv4 address.</p>
+     *         <p>
+     *         Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including
+     *         public IPv4 addresses associated with running instances and Elastic IP addresses. For more information,
+     *         see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC
+     *         pricing page</a>.
      */
 
     public Boolean isMapPublicIpOnLaunch() {

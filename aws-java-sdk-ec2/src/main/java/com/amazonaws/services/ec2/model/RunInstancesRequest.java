@@ -280,11 +280,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String privateIpAddress;
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> elasticGpuSpecification;
     /**
@@ -322,11 +325,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <li>
      * <p>
      * Volumes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Elastic graphics
      * </p>
      * </li>
      * <li>
@@ -2440,16 +2438,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
-     * @return An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
-     *         your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
-     *         Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+     * @return Deprecated.</p> <note>
+     *         <p>
+     *         Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *         acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *         </p>
      */
 
     public java.util.List<ElasticGpuSpecification> getElasticGpuSpecification() {
@@ -2461,17 +2463,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
-     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      */
 
     public void setElasticGpuSpecification(java.util.Collection<ElasticGpuSpecification> elasticGpuSpecification) {
@@ -2485,11 +2491,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setElasticGpuSpecification(java.util.Collection)} or
@@ -2497,10 +2506,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
-     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2516,17 +2526,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * Deprecated.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
-     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+     *        Deprecated.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics
+     *        acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2736,11 +2750,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * Elastic graphics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Spot Instance requests
      * </p>
      * </li>
@@ -2768,11 +2777,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         <li>
      *         <p>
      *         Volumes
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Elastic graphics
      *         </p>
      *         </li>
      *         <li>
@@ -2818,11 +2822,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * Elastic graphics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Spot Instance requests
      * </p>
      * </li>
@@ -2851,11 +2850,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        Volumes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Elastic graphics
      *        </p>
      *        </li>
      *        <li>
@@ -2903,11 +2897,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * Elastic graphics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Spot Instance requests
      * </p>
      * </li>
@@ -2941,11 +2930,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        Volumes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Elastic graphics
      *        </p>
      *        </li>
      *        <li>
@@ -2995,11 +2979,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * Elastic graphics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Spot Instance requests
      * </p>
      * </li>
@@ -3028,11 +3007,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        Volumes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Elastic graphics
      *        </p>
      *        </li>
      *        <li>

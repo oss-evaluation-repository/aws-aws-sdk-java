@@ -28,15 +28,17 @@ public class EnableAwsNetworkPerformanceMetricSubscriptionRequest extends Amazon
 
     /**
      * <p>
-     * The source Region or Availability Zone that the metric subscription is enabled for. For example,
-     * <code>us-east-1</code>.
+     * The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that the
+     * metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability
+     * Zones must be in the same Region.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * The target Region or Availability Zone that the metric subscription is enabled for. For example,
-     * <code>eu-west-1</code>.
+     * The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that the
+     * metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability
+     * Zones must be in the same Region.
      * </p>
      */
     private String destination;
@@ -55,13 +57,15 @@ public class EnableAwsNetworkPerformanceMetricSubscriptionRequest extends Amazon
 
     /**
      * <p>
-     * The source Region or Availability Zone that the metric subscription is enabled for. For example,
-     * <code>us-east-1</code>.
+     * The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that the
+     * metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability
+     * Zones must be in the same Region.
      * </p>
      * 
      * @param source
-     *        The source Region or Availability Zone that the metric subscription is enabled for. For example,
-     *        <code>us-east-1</code>.
+     *        The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that
+     *        the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination
+     *        Availability Zones must be in the same Region.
      */
 
     public void setSource(String source) {
@@ -70,12 +74,14 @@ public class EnableAwsNetworkPerformanceMetricSubscriptionRequest extends Amazon
 
     /**
      * <p>
-     * The source Region or Availability Zone that the metric subscription is enabled for. For example,
-     * <code>us-east-1</code>.
+     * The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that the
+     * metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability
+     * Zones must be in the same Region.
      * </p>
      * 
-     * @return The source Region or Availability Zone that the metric subscription is enabled for. For example,
-     *         <code>us-east-1</code>.
+     * @return The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that
+     *         the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination
+     *         Availability Zones must be in the same Region.
      */
 
     public String getSource() {
@@ -84,13 +90,15 @@ public class EnableAwsNetworkPerformanceMetricSubscriptionRequest extends Amazon
 
     /**
      * <p>
-     * The source Region or Availability Zone that the metric subscription is enabled for. For example,
-     * <code>us-east-1</code>.
+     * The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that the
+     * metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability
+     * Zones must be in the same Region.
      * </p>
      * 
      * @param source
-     *        The source Region or Availability Zone that the metric subscription is enabled for. For example,
-     *        <code>us-east-1</code>.
+     *        The source Region (like <code>us-east-1</code>) or Availability Zone ID (like <code>use1-az1</code>) that
+     *        the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination
+     *        Availability Zones must be in the same Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +109,15 @@ public class EnableAwsNetworkPerformanceMetricSubscriptionRequest extends Amazon
 
     /**
      * <p>
-     * The target Region or Availability Zone that the metric subscription is enabled for. For example,
-     * <code>eu-west-1</code>.
+     * The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that the
+     * metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability
+     * Zones must be in the same Region.
      * </p>
      * 
      * @param destination
-     *        The target Region or Availability Zone that the metric subscription is enabled for. For example,
-     *        <code>eu-west-1</code>.
+     *        The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that
+     *        the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination
+     *        Availability Zones must be in the same Region.
      */
 
     public void setDestination(String destination) {
@@ -116,12 +126,14 @@ public class EnableAwsNetworkPerformanceMetricSubscriptionRequest extends Amazon
 
     /**
      * <p>
-     * The target Region or Availability Zone that the metric subscription is enabled for. For example,
-     * <code>eu-west-1</code>.
+     * The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that the
+     * metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability
+     * Zones must be in the same Region.
      * </p>
      * 
-     * @return The target Region or Availability Zone that the metric subscription is enabled for. For example,
-     *         <code>eu-west-1</code>.
+     * @return The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that
+     *         the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination
+     *         Availability Zones must be in the same Region.
      */
 
     public String getDestination() {
@@ -130,13 +142,15 @@ public class EnableAwsNetworkPerformanceMetricSubscriptionRequest extends Amazon
 
     /**
      * <p>
-     * The target Region or Availability Zone that the metric subscription is enabled for. For example,
-     * <code>eu-west-1</code>.
+     * The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that the
+     * metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination Availability
+     * Zones must be in the same Region.
      * </p>
      * 
      * @param destination
-     *        The target Region or Availability Zone that the metric subscription is enabled for. For example,
-     *        <code>eu-west-1</code>.
+     *        The target Region (like <code>us-east-2</code>) or Availability Zone ID (like <code>use2-az2</code>) that
+     *        the metric subscription is enabled for. If you use Availability Zone IDs, the Source and Destination
+     *        Availability Zones must be in the same Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

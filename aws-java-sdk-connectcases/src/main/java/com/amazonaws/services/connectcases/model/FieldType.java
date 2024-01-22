@@ -25,7 +25,8 @@ public enum FieldType {
     Boolean("Boolean"),
     DateTime("DateTime"),
     SingleSelect("SingleSelect"),
-    Url("Url");
+    Url("Url"),
+    User("User");
 
     private String value;
 

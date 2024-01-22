@@ -21,6 +21,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Object to store union of Field values.
  * </p>
+ * <note>
+ * <p>
+ * The <code>Summary</code> system field accepts 1500 characters while all other fields accept 500 characters.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/FieldValueUnion" target="_top">AWS API
  *      Documentation</a>
@@ -52,6 +57,12 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String stringValue;
+    /**
+     * <p>
+     * Represents the user that performed the audit.
+     * </p>
+     */
+    private String userArnValue;
 
     /**
      * <p>
@@ -226,6 +237,46 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Represents the user that performed the audit.
+     * </p>
+     * 
+     * @param userArnValue
+     *        Represents the user that performed the audit.
+     */
+
+    public void setUserArnValue(String userArnValue) {
+        this.userArnValue = userArnValue;
+    }
+
+    /**
+     * <p>
+     * Represents the user that performed the audit.
+     * </p>
+     * 
+     * @return Represents the user that performed the audit.
+     */
+
+    public String getUserArnValue() {
+        return this.userArnValue;
+    }
+
+    /**
+     * <p>
+     * Represents the user that performed the audit.
+     * </p>
+     * 
+     * @param userArnValue
+     *        Represents the user that performed the audit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldValueUnion withUserArnValue(String userArnValue) {
+        setUserArnValue(userArnValue);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -244,7 +295,9 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
         if (getEmptyValue() != null)
             sb.append("EmptyValue: ").append(getEmptyValue()).append(",");
         if (getStringValue() != null)
-            sb.append("StringValue: ").append(getStringValue());
+            sb.append("StringValue: ").append(getStringValue()).append(",");
+        if (getUserArnValue() != null)
+            sb.append("UserArnValue: ").append(getUserArnValue());
         sb.append("}");
         return sb.toString();
     }
@@ -275,6 +328,10 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getStringValue() != null && other.getStringValue().equals(this.getStringValue()) == false)
             return false;
+        if (other.getUserArnValue() == null ^ this.getUserArnValue() == null)
+            return false;
+        if (other.getUserArnValue() != null && other.getUserArnValue().equals(this.getUserArnValue()) == false)
+            return false;
         return true;
     }
 
@@ -287,6 +344,7 @@ public class FieldValueUnion implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDoubleValue() == null) ? 0 : getDoubleValue().hashCode());
         hashCode = prime * hashCode + ((getEmptyValue() == null) ? 0 : getEmptyValue().hashCode());
         hashCode = prime * hashCode + ((getStringValue() == null) ? 0 : getStringValue().hashCode());
+        hashCode = prime * hashCode + ((getUserArnValue() == null) ? 0 : getUserArnValue().hashCode());
         return hashCode;
     }
 

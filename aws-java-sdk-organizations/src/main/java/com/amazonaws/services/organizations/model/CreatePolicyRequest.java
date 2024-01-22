@@ -30,6 +30,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
      * type you specify in the <code>Type</code> parameter.
      * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
+     * </p>
      */
     private String content;
     /**
@@ -102,10 +107,19 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
      * type you specify in the <code>Type</code> parameter.
      * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
+     * </p>
      * 
      * @param content
      *        The policy text content to add to the new policy. The text that you supply must adhere to the rules of the
-     *        policy type you specify in the <code>Type</code> parameter.
+     *        policy type you specify in the <code>Type</code> parameter. </p>
+     *        <p>
+     *        The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *        >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      */
 
     public void setContent(String content) {
@@ -117,9 +131,18 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
      * type you specify in the <code>Type</code> parameter.
      * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
+     * </p>
      * 
      * @return The policy text content to add to the new policy. The text that you supply must adhere to the rules of
-     *         the policy type you specify in the <code>Type</code> parameter.
+     *         the policy type you specify in the <code>Type</code> parameter. </p>
+     *         <p>
+     *         The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *         >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      */
 
     public String getContent() {
@@ -131,10 +154,19 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
      * type you specify in the <code>Type</code> parameter.
      * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
+     * </p>
      * 
      * @param content
      *        The policy text content to add to the new policy. The text that you supply must adhere to the rules of the
-     *        policy type you specify in the <code>Type</code> parameter.
+     *        policy type you specify in the <code>Type</code> parameter. </p>
+     *        <p>
+     *        The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *        >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

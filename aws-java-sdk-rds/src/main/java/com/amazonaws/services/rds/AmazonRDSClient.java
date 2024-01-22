@@ -2064,6 +2064,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @return Result of the CreateDBCluster operation returned by the service.
      * @throws DBClusterAlreadyExistsException
      *         The user already has a DB cluster with the given identifier.
+     * @throws InsufficientDBInstanceCapacityException
+     *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws InsufficientStorageClusterCapacityException
      *         There is insufficient storage available for the current action. You might be able to resolve this error
      *         by updating your subnet group to use different Availability Zones that have more storage available.

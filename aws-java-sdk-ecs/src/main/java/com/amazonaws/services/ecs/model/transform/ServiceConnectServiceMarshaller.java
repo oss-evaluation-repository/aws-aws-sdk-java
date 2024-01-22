@@ -36,6 +36,10 @@ public class ServiceConnectServiceMarshaller {
             .marshallLocationName("clientAliases").build();
     private static final MarshallingInfo<Integer> INGRESSPORTOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ingressPortOverride").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
+    private static final MarshallingInfo<StructuredPojo> TLS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tls").build();
 
     private static final ServiceConnectServiceMarshaller instance = new ServiceConnectServiceMarshaller();
 
@@ -57,6 +61,8 @@ public class ServiceConnectServiceMarshaller {
             protocolMarshaller.marshall(serviceConnectService.getDiscoveryName(), DISCOVERYNAME_BINDING);
             protocolMarshaller.marshall(serviceConnectService.getClientAliases(), CLIENTALIASES_BINDING);
             protocolMarshaller.marshall(serviceConnectService.getIngressPortOverride(), INGRESSPORTOVERRIDE_BINDING);
+            protocolMarshaller.marshall(serviceConnectService.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(serviceConnectService.getTls(), TLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

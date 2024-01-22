@@ -51,14 +51,14 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -142,14 +142,14 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -207,14 +207,14 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *         <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *         control plane operations, such as API calls.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
-     *         control plane operations, such as API calls.
+     *         <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength
+     *         Zone control plane operations, such as API calls.
      *         </p>
      *         </li>
      *         <li>
@@ -282,14 +282,14 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -348,13 +348,13 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
@@ -425,14 +425,14 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -496,13 +496,13 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
@@ -575,14 +575,14 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -641,13 +641,13 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
