@@ -1,3 +1,8 @@
+# __1.12.643__ __2024-01-23__
+## __Inspector2__
+  - ### Features
+    - This release adds support for CIS scans on EC2 instances.
+
 # __1.12.642__ __2024-01-22__
 ## __AWS AppConfig Data__
   - ### Features

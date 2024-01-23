@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.12.643-SNAPSHOT</version>
+    <version>1.12.643</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -3839,7 +3839,7 @@
                   <script type="text/javascript" src="/assets/js/awsdocs-boot.js"></script>
                   <div>
                       <!-- BEGIN-SECTION -->
-                      <div id="divsearch" style="float:left;">
+                      <div id="divsearch" class="divsearch">
                           <span id="lblsearch" for="searchQuery">
                               <label>Search</label>
                           </span>
@@ -3862,16 +3862,14 @@
                                       <input name="this_doc_guide" type="hidden" value="API Reference" />
                                       <input name="doc_locale" type="hidden" value="en_us" />
                                   </form>
+                                  <a id="go_cti" target="_blank">Submit feedback...</a>
                               </div>
                               <!-- END-SECTION -->
 
-                              <!-- BEGIN-FEEDBACK-SECTION -->
-                              <div id="feedback-section">
+                              <div class="headline-section">
                                   <h3>AWS SDK for Java 1.x API Reference - ${project.version}</h3>
-                                  <div id="feedback-link-sectioin">
-                                      <a id="go_cti" target="_blank" style="display:inline;">Submit feedback...</a>
-                                  </div>
                               </div>
+
                               <script type="text/javascript">
                                   window.onload = function(){
                                   /* Dynamically add feedback links */
@@ -3894,6 +3892,12 @@
                               <!-- END-FEEDBACK-SECTION -->
 
                           </div>
+                          <div class="v1-deprecation-banner">
+                  We <a href="https://aws.amazon.com/blogs/developer/announcing-end-of-support-for-aws-sdk-for-java-v1-x-on-december-31-2025/">announced</a>
+                              the upcoming end-of-support for AWS SDK for Java (v1).
+                              We recommend that you migrate to <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">AWS SDK for Java v2</a>. For dates, additional details,
+                              and information on how to migrate, please refer to the linked announcement.
+                            </div>
                           ]]>
                       </header>
                       <footer>

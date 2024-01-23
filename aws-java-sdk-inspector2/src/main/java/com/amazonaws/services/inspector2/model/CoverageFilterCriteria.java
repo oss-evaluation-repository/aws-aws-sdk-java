@@ -86,7 +86,8 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
     /**
      * <p>
      * An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     * <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      * </p>
      */
     private java.util.List<CoverageStringFilter> resourceType;
@@ -752,11 +753,13 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
     /**
      * <p>
      * An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     * <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      * </p>
      * 
      * @return An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     *         <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     *         <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     *         <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      */
 
     public java.util.List<CoverageStringFilter> getResourceType() {
@@ -766,12 +769,14 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
     /**
      * <p>
      * An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     * <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      * </p>
      * 
      * @param resourceType
      *        An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     *        <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     *        <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     *        <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      */
 
     public void setResourceType(java.util.Collection<CoverageStringFilter> resourceType) {
@@ -786,7 +791,8 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
     /**
      * <p>
      * An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     * <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -796,7 +802,8 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
      * 
      * @param resourceType
      *        An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     *        <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     *        <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     *        <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -813,12 +820,14 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
     /**
      * <p>
      * An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     * <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     * <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      * </p>
      * 
      * @param resourceType
      *        An array of Amazon Web Services resource types to return coverage statistics for. The values can be
-     *        <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.
+     *        <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>,
+     *        <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

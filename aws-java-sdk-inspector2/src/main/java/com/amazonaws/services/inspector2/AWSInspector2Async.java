@@ -338,6 +338,39 @@ public interface AWSInspector2Async extends AWSInspector2 {
 
     /**
      * <p>
+     * Creates a CIS scan configuration.
+     * </p>
+     * 
+     * @param createCisScanConfigurationRequest
+     * @return A Java Future containing the result of the CreateCisScanConfiguration operation returned by the service.
+     * @sample AWSInspector2Async.CreateCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCisScanConfigurationResult> createCisScanConfigurationAsync(
+            CreateCisScanConfigurationRequest createCisScanConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a CIS scan configuration.
+     * </p>
+     * 
+     * @param createCisScanConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCisScanConfiguration operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.CreateCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCisScanConfigurationResult> createCisScanConfigurationAsync(
+            CreateCisScanConfigurationRequest createCisScanConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCisScanConfigurationRequest, CreateCisScanConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a filter resource using specified filter criteria. When the filter action is set to <code>SUPPRESS</code>
      * this action creates a suppression rule.
      * </p>
@@ -434,6 +467,39 @@ public interface AWSInspector2Async extends AWSInspector2 {
      */
     java.util.concurrent.Future<CreateSbomExportResult> createSbomExportAsync(CreateSbomExportRequest createSbomExportRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSbomExportRequest, CreateSbomExportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a CIS scan configuration.
+     * </p>
+     * 
+     * @param deleteCisScanConfigurationRequest
+     * @return A Java Future containing the result of the DeleteCisScanConfiguration operation returned by the service.
+     * @sample AWSInspector2Async.DeleteCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCisScanConfigurationResult> deleteCisScanConfigurationAsync(
+            DeleteCisScanConfigurationRequest deleteCisScanConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a CIS scan configuration.
+     * </p>
+     * 
+     * @param deleteCisScanConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCisScanConfiguration operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.DeleteCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCisScanConfigurationResult> deleteCisScanConfigurationAsync(
+            DeleteCisScanConfigurationRequest deleteCisScanConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCisScanConfigurationRequest, DeleteCisScanConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -663,6 +729,68 @@ public interface AWSInspector2Async extends AWSInspector2 {
     java.util.concurrent.Future<EnableDelegatedAdminAccountResult> enableDelegatedAdminAccountAsync(
             EnableDelegatedAdminAccountRequest enableDelegatedAdminAccountRequest,
             com.amazonaws.handlers.AsyncHandler<EnableDelegatedAdminAccountRequest, EnableDelegatedAdminAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a CIS scan report.
+     * </p>
+     * 
+     * @param getCisScanReportRequest
+     * @return A Java Future containing the result of the GetCisScanReport operation returned by the service.
+     * @sample AWSInspector2Async.GetCisScanReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCisScanReportResult> getCisScanReportAsync(GetCisScanReportRequest getCisScanReportRequest);
+
+    /**
+     * <p>
+     * Retrieves a CIS scan report.
+     * </p>
+     * 
+     * @param getCisScanReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCisScanReport operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.GetCisScanReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCisScanReportResult> getCisScanReportAsync(GetCisScanReportRequest getCisScanReportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCisScanReportRequest, GetCisScanReportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves CIS scan result details.
+     * </p>
+     * 
+     * @param getCisScanResultDetailsRequest
+     * @return A Java Future containing the result of the GetCisScanResultDetails operation returned by the service.
+     * @sample AWSInspector2Async.GetCisScanResultDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCisScanResultDetailsResult> getCisScanResultDetailsAsync(GetCisScanResultDetailsRequest getCisScanResultDetailsRequest);
+
+    /**
+     * <p>
+     * Retrieves CIS scan result details.
+     * </p>
+     * 
+     * @param getCisScanResultDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCisScanResultDetails operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.GetCisScanResultDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetCisScanResultDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCisScanResultDetailsResult> getCisScanResultDetailsAsync(GetCisScanResultDetailsRequest getCisScanResultDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCisScanResultDetailsRequest, GetCisScanResultDetailsResult> asyncHandler);
 
     /**
      * <p>
@@ -917,6 +1045,142 @@ public interface AWSInspector2Async extends AWSInspector2 {
      */
     java.util.concurrent.Future<ListAccountPermissionsResult> listAccountPermissionsAsync(ListAccountPermissionsRequest listAccountPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAccountPermissionsRequest, ListAccountPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists CIS scan configurations.
+     * </p>
+     * 
+     * @param listCisScanConfigurationsRequest
+     * @return A Java Future containing the result of the ListCisScanConfigurations operation returned by the service.
+     * @sample AWSInspector2Async.ListCisScanConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCisScanConfigurationsResult> listCisScanConfigurationsAsync(
+            ListCisScanConfigurationsRequest listCisScanConfigurationsRequest);
+
+    /**
+     * <p>
+     * Lists CIS scan configurations.
+     * </p>
+     * 
+     * @param listCisScanConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCisScanConfigurations operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.ListCisScanConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCisScanConfigurationsResult> listCisScanConfigurationsAsync(
+            ListCisScanConfigurationsRequest listCisScanConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCisScanConfigurationsRequest, ListCisScanConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists scan results aggregated by checks.
+     * </p>
+     * 
+     * @param listCisScanResultsAggregatedByChecksRequest
+     * @return A Java Future containing the result of the ListCisScanResultsAggregatedByChecks operation returned by the
+     *         service.
+     * @sample AWSInspector2Async.ListCisScanResultsAggregatedByChecks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCisScanResultsAggregatedByChecksResult> listCisScanResultsAggregatedByChecksAsync(
+            ListCisScanResultsAggregatedByChecksRequest listCisScanResultsAggregatedByChecksRequest);
+
+    /**
+     * <p>
+     * Lists scan results aggregated by checks.
+     * </p>
+     * 
+     * @param listCisScanResultsAggregatedByChecksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCisScanResultsAggregatedByChecks operation returned by the
+     *         service.
+     * @sample AWSInspector2AsyncHandler.ListCisScanResultsAggregatedByChecks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByChecks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCisScanResultsAggregatedByChecksResult> listCisScanResultsAggregatedByChecksAsync(
+            ListCisScanResultsAggregatedByChecksRequest listCisScanResultsAggregatedByChecksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCisScanResultsAggregatedByChecksRequest, ListCisScanResultsAggregatedByChecksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists scan results aggregated by a target resource.
+     * </p>
+     * 
+     * @param listCisScanResultsAggregatedByTargetResourceRequest
+     * @return A Java Future containing the result of the ListCisScanResultsAggregatedByTargetResource operation
+     *         returned by the service.
+     * @sample AWSInspector2Async.ListCisScanResultsAggregatedByTargetResource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCisScanResultsAggregatedByTargetResourceResult> listCisScanResultsAggregatedByTargetResourceAsync(
+            ListCisScanResultsAggregatedByTargetResourceRequest listCisScanResultsAggregatedByTargetResourceRequest);
+
+    /**
+     * <p>
+     * Lists scan results aggregated by a target resource.
+     * </p>
+     * 
+     * @param listCisScanResultsAggregatedByTargetResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCisScanResultsAggregatedByTargetResource operation
+     *         returned by the service.
+     * @sample AWSInspector2AsyncHandler.ListCisScanResultsAggregatedByTargetResource
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScanResultsAggregatedByTargetResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCisScanResultsAggregatedByTargetResourceResult> listCisScanResultsAggregatedByTargetResourceAsync(
+            ListCisScanResultsAggregatedByTargetResourceRequest listCisScanResultsAggregatedByTargetResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCisScanResultsAggregatedByTargetResourceRequest, ListCisScanResultsAggregatedByTargetResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a CIS scan list.
+     * </p>
+     * 
+     * @param listCisScansRequest
+     * @return A Java Future containing the result of the ListCisScans operation returned by the service.
+     * @sample AWSInspector2Async.ListCisScans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCisScansResult> listCisScansAsync(ListCisScansRequest listCisScansRequest);
+
+    /**
+     * <p>
+     * Returns a CIS scan list.
+     * </p>
+     * 
+     * @param listCisScansRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCisScans operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.ListCisScans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListCisScans" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCisScansResult> listCisScansAsync(ListCisScansRequest listCisScansRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCisScansRequest, ListCisScansResult> asyncHandler);
 
     /**
      * <p>
@@ -1265,6 +1529,146 @@ public interface AWSInspector2Async extends AWSInspector2 {
 
     /**
      * <p>
+     * Sends a CIS session health. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param sendCisSessionHealthRequest
+     * @return A Java Future containing the result of the SendCisSessionHealth operation returned by the service.
+     * @sample AWSInspector2Async.SendCisSessionHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendCisSessionHealthResult> sendCisSessionHealthAsync(SendCisSessionHealthRequest sendCisSessionHealthRequest);
+
+    /**
+     * <p>
+     * Sends a CIS session health. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param sendCisSessionHealthRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendCisSessionHealth operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.SendCisSessionHealth
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionHealth"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendCisSessionHealthResult> sendCisSessionHealthAsync(SendCisSessionHealthRequest sendCisSessionHealthRequest,
+            com.amazonaws.handlers.AsyncHandler<SendCisSessionHealthRequest, SendCisSessionHealthResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param sendCisSessionTelemetryRequest
+     * @return A Java Future containing the result of the SendCisSessionTelemetry operation returned by the service.
+     * @sample AWSInspector2Async.SendCisSessionTelemetry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendCisSessionTelemetryResult> sendCisSessionTelemetryAsync(SendCisSessionTelemetryRequest sendCisSessionTelemetryRequest);
+
+    /**
+     * <p>
+     * Sends a CIS session telemetry. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param sendCisSessionTelemetryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendCisSessionTelemetry operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.SendCisSessionTelemetry
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SendCisSessionTelemetry"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendCisSessionTelemetryResult> sendCisSessionTelemetryAsync(SendCisSessionTelemetryRequest sendCisSessionTelemetryRequest,
+            com.amazonaws.handlers.AsyncHandler<SendCisSessionTelemetryRequest, SendCisSessionTelemetryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param startCisSessionRequest
+     * @return A Java Future containing the result of the StartCisSession operation returned by the service.
+     * @sample AWSInspector2Async.StartCisSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartCisSessionResult> startCisSessionAsync(StartCisSessionRequest startCisSessionRequest);
+
+    /**
+     * <p>
+     * Starts a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon
+     * Inspector service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID
+     * supplied by the service.
+     * </p>
+     * 
+     * @param startCisSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCisSession operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.StartCisSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartCisSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartCisSessionResult> startCisSessionAsync(StartCisSessionRequest startCisSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCisSessionRequest, StartCisSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector
+     * service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by
+     * the service.
+     * </p>
+     * 
+     * @param stopCisSessionRequest
+     * @return A Java Future containing the result of the StopCisSession operation returned by the service.
+     * @sample AWSInspector2Async.StopCisSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopCisSessionResult> stopCisSessionAsync(StopCisSessionRequest stopCisSessionRequest);
+
+    /**
+     * <p>
+     * Stops a CIS session. This API is used by the Amazon Inspector SSM plugin to communicate with the Amazon Inspector
+     * service. The Amazon Inspector SSM plugin calls this API to start a CIS scan session for the scan ID supplied by
+     * the service.
+     * </p>
+     * 
+     * @param stopCisSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopCisSession operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.StopCisSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StopCisSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopCisSessionResult> stopCisSessionAsync(StopCisSessionRequest stopCisSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopCisSessionRequest, StopCisSessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds tags to a resource.
      * </p>
      * 
@@ -1324,6 +1728,39 @@ public interface AWSInspector2Async extends AWSInspector2 {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a CIS scan configuration.
+     * </p>
+     * 
+     * @param updateCisScanConfigurationRequest
+     * @return A Java Future containing the result of the UpdateCisScanConfiguration operation returned by the service.
+     * @sample AWSInspector2Async.UpdateCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCisScanConfigurationResult> updateCisScanConfigurationAsync(
+            UpdateCisScanConfigurationRequest updateCisScanConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates a CIS scan configuration.
+     * </p>
+     * 
+     * @param updateCisScanConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCisScanConfiguration operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.UpdateCisScanConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateCisScanConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCisScanConfigurationResult> updateCisScanConfigurationAsync(
+            UpdateCisScanConfigurationRequest updateCisScanConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCisScanConfigurationRequest, UpdateCisScanConfigurationResult> asyncHandler);
 
     /**
      * <p>

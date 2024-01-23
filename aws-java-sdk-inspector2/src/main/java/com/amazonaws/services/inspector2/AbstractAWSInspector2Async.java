@@ -149,6 +149,19 @@ public class AbstractAWSInspector2Async extends AbstractAWSInspector2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCisScanConfigurationResult> createCisScanConfigurationAsync(CreateCisScanConfigurationRequest request) {
+
+        return createCisScanConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCisScanConfigurationResult> createCisScanConfigurationAsync(CreateCisScanConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCisScanConfigurationRequest, CreateCisScanConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest request) {
 
         return createFilterAsync(request, null);
@@ -183,6 +196,19 @@ public class AbstractAWSInspector2Async extends AbstractAWSInspector2 implements
     @Override
     public java.util.concurrent.Future<CreateSbomExportResult> createSbomExportAsync(CreateSbomExportRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSbomExportRequest, CreateSbomExportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCisScanConfigurationResult> deleteCisScanConfigurationAsync(DeleteCisScanConfigurationRequest request) {
+
+        return deleteCisScanConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCisScanConfigurationResult> deleteCisScanConfigurationAsync(DeleteCisScanConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCisScanConfigurationRequest, DeleteCisScanConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -276,6 +302,32 @@ public class AbstractAWSInspector2Async extends AbstractAWSInspector2 implements
     @Override
     public java.util.concurrent.Future<EnableDelegatedAdminAccountResult> enableDelegatedAdminAccountAsync(EnableDelegatedAdminAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableDelegatedAdminAccountRequest, EnableDelegatedAdminAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCisScanReportResult> getCisScanReportAsync(GetCisScanReportRequest request) {
+
+        return getCisScanReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCisScanReportResult> getCisScanReportAsync(GetCisScanReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCisScanReportRequest, GetCisScanReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCisScanResultDetailsResult> getCisScanResultDetailsAsync(GetCisScanResultDetailsRequest request) {
+
+        return getCisScanResultDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCisScanResultDetailsResult> getCisScanResultDetailsAsync(GetCisScanResultDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCisScanResultDetailsRequest, GetCisScanResultDetailsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -382,6 +434,62 @@ public class AbstractAWSInspector2Async extends AbstractAWSInspector2 implements
     @Override
     public java.util.concurrent.Future<ListAccountPermissionsResult> listAccountPermissionsAsync(ListAccountPermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAccountPermissionsRequest, ListAccountPermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanConfigurationsResult> listCisScanConfigurationsAsync(ListCisScanConfigurationsRequest request) {
+
+        return listCisScanConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanConfigurationsResult> listCisScanConfigurationsAsync(ListCisScanConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCisScanConfigurationsRequest, ListCisScanConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanResultsAggregatedByChecksResult> listCisScanResultsAggregatedByChecksAsync(
+            ListCisScanResultsAggregatedByChecksRequest request) {
+
+        return listCisScanResultsAggregatedByChecksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanResultsAggregatedByChecksResult> listCisScanResultsAggregatedByChecksAsync(
+            ListCisScanResultsAggregatedByChecksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCisScanResultsAggregatedByChecksRequest, ListCisScanResultsAggregatedByChecksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanResultsAggregatedByTargetResourceResult> listCisScanResultsAggregatedByTargetResourceAsync(
+            ListCisScanResultsAggregatedByTargetResourceRequest request) {
+
+        return listCisScanResultsAggregatedByTargetResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanResultsAggregatedByTargetResourceResult> listCisScanResultsAggregatedByTargetResourceAsync(
+            ListCisScanResultsAggregatedByTargetResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCisScanResultsAggregatedByTargetResourceRequest, ListCisScanResultsAggregatedByTargetResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScansResult> listCisScansAsync(ListCisScansRequest request) {
+
+        return listCisScansAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScansResult> listCisScansAsync(ListCisScansRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCisScansRequest, ListCisScansResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -530,6 +638,58 @@ public class AbstractAWSInspector2Async extends AbstractAWSInspector2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<SendCisSessionHealthResult> sendCisSessionHealthAsync(SendCisSessionHealthRequest request) {
+
+        return sendCisSessionHealthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCisSessionHealthResult> sendCisSessionHealthAsync(SendCisSessionHealthRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendCisSessionHealthRequest, SendCisSessionHealthResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCisSessionTelemetryResult> sendCisSessionTelemetryAsync(SendCisSessionTelemetryRequest request) {
+
+        return sendCisSessionTelemetryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCisSessionTelemetryResult> sendCisSessionTelemetryAsync(SendCisSessionTelemetryRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendCisSessionTelemetryRequest, SendCisSessionTelemetryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCisSessionResult> startCisSessionAsync(StartCisSessionRequest request) {
+
+        return startCisSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCisSessionResult> startCisSessionAsync(StartCisSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartCisSessionRequest, StartCisSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCisSessionResult> stopCisSessionAsync(StopCisSessionRequest request) {
+
+        return stopCisSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCisSessionResult> stopCisSessionAsync(StopCisSessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopCisSessionRequest, StopCisSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -551,6 +711,19 @@ public class AbstractAWSInspector2Async extends AbstractAWSInspector2 implements
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCisScanConfigurationResult> updateCisScanConfigurationAsync(UpdateCisScanConfigurationRequest request) {
+
+        return updateCisScanConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCisScanConfigurationResult> updateCisScanConfigurationAsync(UpdateCisScanConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCisScanConfigurationRequest, UpdateCisScanConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

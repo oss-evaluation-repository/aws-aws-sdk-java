@@ -376,6 +376,39 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCisScanConfigurationResult> createCisScanConfigurationAsync(CreateCisScanConfigurationRequest request) {
+
+        return createCisScanConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCisScanConfigurationResult> createCisScanConfigurationAsync(final CreateCisScanConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCisScanConfigurationRequest, CreateCisScanConfigurationResult> asyncHandler) {
+        final CreateCisScanConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCisScanConfigurationResult>() {
+            @Override
+            public CreateCisScanConfigurationResult call() throws Exception {
+                CreateCisScanConfigurationResult result = null;
+
+                try {
+                    result = executeCreateCisScanConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest request) {
 
         return createFilterAsync(request, null);
@@ -459,6 +492,39 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
 
                 try {
                     result = executeCreateSbomExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCisScanConfigurationResult> deleteCisScanConfigurationAsync(DeleteCisScanConfigurationRequest request) {
+
+        return deleteCisScanConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCisScanConfigurationResult> deleteCisScanConfigurationAsync(final DeleteCisScanConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCisScanConfigurationRequest, DeleteCisScanConfigurationResult> asyncHandler) {
+        final DeleteCisScanConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCisScanConfigurationResult>() {
+            @Override
+            public DeleteCisScanConfigurationResult call() throws Exception {
+                DeleteCisScanConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteCisScanConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -692,6 +758,72 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
 
                 try {
                     result = executeEnableDelegatedAdminAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCisScanReportResult> getCisScanReportAsync(GetCisScanReportRequest request) {
+
+        return getCisScanReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCisScanReportResult> getCisScanReportAsync(final GetCisScanReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCisScanReportRequest, GetCisScanReportResult> asyncHandler) {
+        final GetCisScanReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCisScanReportResult>() {
+            @Override
+            public GetCisScanReportResult call() throws Exception {
+                GetCisScanReportResult result = null;
+
+                try {
+                    result = executeGetCisScanReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCisScanResultDetailsResult> getCisScanResultDetailsAsync(GetCisScanResultDetailsRequest request) {
+
+        return getCisScanResultDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCisScanResultDetailsResult> getCisScanResultDetailsAsync(final GetCisScanResultDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCisScanResultDetailsRequest, GetCisScanResultDetailsResult> asyncHandler) {
+        final GetCisScanResultDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCisScanResultDetailsResult>() {
+            @Override
+            public GetCisScanResultDetailsResult call() throws Exception {
+                GetCisScanResultDetailsResult result = null;
+
+                try {
+                    result = executeGetCisScanResultDetails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -958,6 +1090,142 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
 
                 try {
                     result = executeListAccountPermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanConfigurationsResult> listCisScanConfigurationsAsync(ListCisScanConfigurationsRequest request) {
+
+        return listCisScanConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanConfigurationsResult> listCisScanConfigurationsAsync(final ListCisScanConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCisScanConfigurationsRequest, ListCisScanConfigurationsResult> asyncHandler) {
+        final ListCisScanConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCisScanConfigurationsResult>() {
+            @Override
+            public ListCisScanConfigurationsResult call() throws Exception {
+                ListCisScanConfigurationsResult result = null;
+
+                try {
+                    result = executeListCisScanConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanResultsAggregatedByChecksResult> listCisScanResultsAggregatedByChecksAsync(
+            ListCisScanResultsAggregatedByChecksRequest request) {
+
+        return listCisScanResultsAggregatedByChecksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanResultsAggregatedByChecksResult> listCisScanResultsAggregatedByChecksAsync(
+            final ListCisScanResultsAggregatedByChecksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCisScanResultsAggregatedByChecksRequest, ListCisScanResultsAggregatedByChecksResult> asyncHandler) {
+        final ListCisScanResultsAggregatedByChecksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCisScanResultsAggregatedByChecksResult>() {
+            @Override
+            public ListCisScanResultsAggregatedByChecksResult call() throws Exception {
+                ListCisScanResultsAggregatedByChecksResult result = null;
+
+                try {
+                    result = executeListCisScanResultsAggregatedByChecks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanResultsAggregatedByTargetResourceResult> listCisScanResultsAggregatedByTargetResourceAsync(
+            ListCisScanResultsAggregatedByTargetResourceRequest request) {
+
+        return listCisScanResultsAggregatedByTargetResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScanResultsAggregatedByTargetResourceResult> listCisScanResultsAggregatedByTargetResourceAsync(
+            final ListCisScanResultsAggregatedByTargetResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCisScanResultsAggregatedByTargetResourceRequest, ListCisScanResultsAggregatedByTargetResourceResult> asyncHandler) {
+        final ListCisScanResultsAggregatedByTargetResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCisScanResultsAggregatedByTargetResourceResult>() {
+            @Override
+            public ListCisScanResultsAggregatedByTargetResourceResult call() throws Exception {
+                ListCisScanResultsAggregatedByTargetResourceResult result = null;
+
+                try {
+                    result = executeListCisScanResultsAggregatedByTargetResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScansResult> listCisScansAsync(ListCisScansRequest request) {
+
+        return listCisScansAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCisScansResult> listCisScansAsync(final ListCisScansRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCisScansRequest, ListCisScansResult> asyncHandler) {
+        final ListCisScansRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCisScansResult>() {
+            @Override
+            public ListCisScansResult call() throws Exception {
+                ListCisScansResult result = null;
+
+                try {
+                    result = executeListCisScans(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1337,6 +1605,138 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<SendCisSessionHealthResult> sendCisSessionHealthAsync(SendCisSessionHealthRequest request) {
+
+        return sendCisSessionHealthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCisSessionHealthResult> sendCisSessionHealthAsync(final SendCisSessionHealthRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendCisSessionHealthRequest, SendCisSessionHealthResult> asyncHandler) {
+        final SendCisSessionHealthRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendCisSessionHealthResult>() {
+            @Override
+            public SendCisSessionHealthResult call() throws Exception {
+                SendCisSessionHealthResult result = null;
+
+                try {
+                    result = executeSendCisSessionHealth(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCisSessionTelemetryResult> sendCisSessionTelemetryAsync(SendCisSessionTelemetryRequest request) {
+
+        return sendCisSessionTelemetryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCisSessionTelemetryResult> sendCisSessionTelemetryAsync(final SendCisSessionTelemetryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendCisSessionTelemetryRequest, SendCisSessionTelemetryResult> asyncHandler) {
+        final SendCisSessionTelemetryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendCisSessionTelemetryResult>() {
+            @Override
+            public SendCisSessionTelemetryResult call() throws Exception {
+                SendCisSessionTelemetryResult result = null;
+
+                try {
+                    result = executeSendCisSessionTelemetry(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCisSessionResult> startCisSessionAsync(StartCisSessionRequest request) {
+
+        return startCisSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCisSessionResult> startCisSessionAsync(final StartCisSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartCisSessionRequest, StartCisSessionResult> asyncHandler) {
+        final StartCisSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartCisSessionResult>() {
+            @Override
+            public StartCisSessionResult call() throws Exception {
+                StartCisSessionResult result = null;
+
+                try {
+                    result = executeStartCisSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCisSessionResult> stopCisSessionAsync(StopCisSessionRequest request) {
+
+        return stopCisSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCisSessionResult> stopCisSessionAsync(final StopCisSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopCisSessionRequest, StopCisSessionResult> asyncHandler) {
+        final StopCisSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopCisSessionResult>() {
+            @Override
+            public StopCisSessionResult call() throws Exception {
+                StopCisSessionResult result = null;
+
+                try {
+                    result = executeStopCisSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1387,6 +1787,39 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCisScanConfigurationResult> updateCisScanConfigurationAsync(UpdateCisScanConfigurationRequest request) {
+
+        return updateCisScanConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCisScanConfigurationResult> updateCisScanConfigurationAsync(final UpdateCisScanConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCisScanConfigurationRequest, UpdateCisScanConfigurationResult> asyncHandler) {
+        final UpdateCisScanConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCisScanConfigurationResult>() {
+            @Override
+            public UpdateCisScanConfigurationResult call() throws Exception {
+                UpdateCisScanConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateCisScanConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -73,6 +73,11 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public CreateCisScanConfigurationResult createCisScanConfiguration(CreateCisScanConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateFilterResult createFilter(CreateFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +89,11 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
 
     @Override
     public CreateSbomExportResult createSbomExport(CreateSbomExportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCisScanConfigurationResult deleteCisScanConfiguration(DeleteCisScanConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +129,16 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
 
     @Override
     public EnableDelegatedAdminAccountResult enableDelegatedAdminAccount(EnableDelegatedAdminAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCisScanReportResult getCisScanReport(GetCisScanReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCisScanResultDetailsResult getCisScanResultDetails(GetCisScanResultDetailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,6 +179,27 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
 
     @Override
     public ListAccountPermissionsResult listAccountPermissions(ListAccountPermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCisScanConfigurationsResult listCisScanConfigurations(ListCisScanConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCisScanResultsAggregatedByChecksResult listCisScanResultsAggregatedByChecks(ListCisScanResultsAggregatedByChecksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCisScanResultsAggregatedByTargetResourceResult listCisScanResultsAggregatedByTargetResource(
+            ListCisScanResultsAggregatedByTargetResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCisScansResult listCisScans(ListCisScansRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -218,12 +259,37 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public SendCisSessionHealthResult sendCisSessionHealth(SendCisSessionHealthRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendCisSessionTelemetryResult sendCisSessionTelemetry(SendCisSessionTelemetryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartCisSessionResult startCisSession(StartCisSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopCisSessionResult stopCisSession(StopCisSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCisScanConfigurationResult updateCisScanConfiguration(UpdateCisScanConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
