@@ -30,7 +30,7 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the associated Domain.
+     * The ID of the associated domain.
      * </p>
      */
     private String domainId;
@@ -85,11 +85,11 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the associated Domain.
+     * The ID of the associated domain.
      * </p>
      * 
      * @param domainId
-     *        The ID of the associated Domain.
+     *        The ID of the associated domain.
      */
 
     public void setDomainId(String domainId) {
@@ -98,10 +98,10 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the associated Domain.
+     * The ID of the associated domain.
      * </p>
      * 
-     * @return The ID of the associated Domain.
+     * @return The ID of the associated domain.
      */
 
     public String getDomainId() {
@@ -110,11 +110,11 @@ public class SpaceDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the associated Domain.
+     * The ID of the associated domain.
      * </p>
      * 
      * @param domainId
-     *        The ID of the associated Domain.
+     *        The ID of the associated domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

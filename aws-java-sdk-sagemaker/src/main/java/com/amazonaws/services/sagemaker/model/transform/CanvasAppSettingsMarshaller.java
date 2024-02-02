@@ -40,6 +40,8 @@ public class CanvasAppSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectDeploySettings").build();
     private static final MarshallingInfo<StructuredPojo> KENDRASETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KendraSettings").build();
+    private static final MarshallingInfo<StructuredPojo> GENERATIVEAISETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenerativeAiSettings").build();
 
     private static final CanvasAppSettingsMarshaller instance = new CanvasAppSettingsMarshaller();
 
@@ -63,6 +65,7 @@ public class CanvasAppSettingsMarshaller {
             protocolMarshaller.marshall(canvasAppSettings.getIdentityProviderOAuthSettings(), IDENTITYPROVIDEROAUTHSETTINGS_BINDING);
             protocolMarshaller.marshall(canvasAppSettings.getDirectDeploySettings(), DIRECTDEPLOYSETTINGS_BINDING);
             protocolMarshaller.marshall(canvasAppSettings.getKendraSettings(), KENDRASETTINGS_BINDING);
+            protocolMarshaller.marshall(canvasAppSettings.getGenerativeAiSettings(), GENERATIVEAISETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -54,7 +54,7 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String appSecurityGroupManagement;
     /**
      * <p>
-     * The default settings used to create a space within the Domain.
+     * The default settings used to create a space within the domain.
      * </p>
      */
     private DefaultSpaceSettings defaultSpaceSettings;
@@ -304,11 +304,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default settings used to create a space within the Domain.
+     * The default settings used to create a space within the domain.
      * </p>
      * 
      * @param defaultSpaceSettings
-     *        The default settings used to create a space within the Domain.
+     *        The default settings used to create a space within the domain.
      */
 
     public void setDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
@@ -317,10 +317,10 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default settings used to create a space within the Domain.
+     * The default settings used to create a space within the domain.
      * </p>
      * 
-     * @return The default settings used to create a space within the Domain.
+     * @return The default settings used to create a space within the domain.
      */
 
     public DefaultSpaceSettings getDefaultSpaceSettings() {
@@ -329,11 +329,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default settings used to create a space within the Domain.
+     * The default settings used to create a space within the domain.
      * </p>
      * 
      * @param defaultSpaceSettings
-     *        The default settings used to create a space within the Domain.
+     *        The default settings used to create a space within the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

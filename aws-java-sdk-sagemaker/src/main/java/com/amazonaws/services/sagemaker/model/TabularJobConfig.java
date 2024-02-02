@@ -113,7 +113,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      * The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * <note>
      * <p>
@@ -740,7 +740,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      * The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * <note>
      * <p>
@@ -755,7 +755,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      *        The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.</p> <note>
+     *        > SageMaker Autopilot problem types</a>.</p> <note>
      *        <p>
      *        You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide
      *        the <a href=
@@ -774,7 +774,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      * The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * <note>
      * <p>
@@ -788,7 +788,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      * @return The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *         > Amazon SageMaker Autopilot problem types</a>.</p> <note>
+     *         > SageMaker Autopilot problem types</a>.</p> <note>
      *         <p>
      *         You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide
      *         the <a href=
@@ -807,7 +807,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      * The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * <note>
      * <p>
@@ -822,7 +822,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      *        The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.</p> <note>
+     *        > SageMaker Autopilot problem types</a>.</p> <note>
      *        <p>
      *        You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide
      *        the <a href=
@@ -843,7 +843,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      * The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * <note>
      * <p>
@@ -858,7 +858,7 @@ public class TabularJobConfig implements Serializable, Cloneable, StructuredPojo
      *        The type of supervised learning problem available for the model candidates of the AutoML job V2. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.</p> <note>
+     *        > SageMaker Autopilot problem types</a>.</p> <note>
      *        <p>
      *        You must either specify the type of supervised learning problem in <code>ProblemType</code> and provide
      *        the <a href=

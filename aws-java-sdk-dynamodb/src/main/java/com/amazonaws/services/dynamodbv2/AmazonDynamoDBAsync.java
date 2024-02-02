@@ -2967,7 +2967,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and
      * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days.
-     * Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.
+     * Any number of users can execute up to 50 concurrent restores (any type of restore) in a given account.
      * </p>
      * <p>
      * When you restore using point in time recovery, DynamoDB restores your table data to the state based on the
@@ -3056,7 +3056,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and
      * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days.
-     * Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.
+     * Any number of users can execute up to 50 concurrent restores (any type of restore) in a given account.
      * </p>
      * <p>
      * When you restore using point in time recovery, DynamoDB restores your table data to the state based on the

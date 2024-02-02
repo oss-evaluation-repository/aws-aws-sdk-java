@@ -64,6 +64,12 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private KendraSettings kendraSettings;
+    /**
+     * <p>
+     * The generative AI settings for the SageMaker Canvas application.
+     * </p>
+     */
+    private GenerativeAiSettings generativeAiSettings;
 
     /**
      * <p>
@@ -336,6 +342,46 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The generative AI settings for the SageMaker Canvas application.
+     * </p>
+     * 
+     * @param generativeAiSettings
+     *        The generative AI settings for the SageMaker Canvas application.
+     */
+
+    public void setGenerativeAiSettings(GenerativeAiSettings generativeAiSettings) {
+        this.generativeAiSettings = generativeAiSettings;
+    }
+
+    /**
+     * <p>
+     * The generative AI settings for the SageMaker Canvas application.
+     * </p>
+     * 
+     * @return The generative AI settings for the SageMaker Canvas application.
+     */
+
+    public GenerativeAiSettings getGenerativeAiSettings() {
+        return this.generativeAiSettings;
+    }
+
+    /**
+     * <p>
+     * The generative AI settings for the SageMaker Canvas application.
+     * </p>
+     * 
+     * @param generativeAiSettings
+     *        The generative AI settings for the SageMaker Canvas application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CanvasAppSettings withGenerativeAiSettings(GenerativeAiSettings generativeAiSettings) {
+        setGenerativeAiSettings(generativeAiSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +404,9 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
         if (getDirectDeploySettings() != null)
             sb.append("DirectDeploySettings: ").append(getDirectDeploySettings()).append(",");
         if (getKendraSettings() != null)
-            sb.append("KendraSettings: ").append(getKendraSettings());
+            sb.append("KendraSettings: ").append(getKendraSettings()).append(",");
+        if (getGenerativeAiSettings() != null)
+            sb.append("GenerativeAiSettings: ").append(getGenerativeAiSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +447,10 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getKendraSettings() != null && other.getKendraSettings().equals(this.getKendraSettings()) == false)
             return false;
+        if (other.getGenerativeAiSettings() == null ^ this.getGenerativeAiSettings() == null)
+            return false;
+        if (other.getGenerativeAiSettings() != null && other.getGenerativeAiSettings().equals(this.getGenerativeAiSettings()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +465,7 @@ public class CanvasAppSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getIdentityProviderOAuthSettings() == null) ? 0 : getIdentityProviderOAuthSettings().hashCode());
         hashCode = prime * hashCode + ((getDirectDeploySettings() == null) ? 0 : getDirectDeploySettings().hashCode());
         hashCode = prime * hashCode + ((getKendraSettings() == null) ? 0 : getKendraSettings().hashCode());
+        hashCode = prime * hashCode + ((getGenerativeAiSettings() == null) ? 0 : getGenerativeAiSettings().hashCode());
         return hashCode;
     }
 

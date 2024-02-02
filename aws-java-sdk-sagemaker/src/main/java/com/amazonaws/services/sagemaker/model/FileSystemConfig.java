@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+ * The Amazon Elastic File System storage configuration for a SageMaker image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FileSystemConfig" target="_top">AWS API

@@ -52,7 +52,7 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Defines the type of supervised learning problem available for the candidates. For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      */
     private String problemType;
@@ -296,14 +296,14 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Defines the type of supervised learning problem available for the candidates. For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * 
      * @param problemType
      *        Defines the type of supervised learning problem available for the candidates. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.
+     *        > SageMaker Autopilot problem types</a>.
      * @see ProblemType
      */
 
@@ -315,13 +315,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Defines the type of supervised learning problem available for the candidates. For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * 
      * @return Defines the type of supervised learning problem available for the candidates. For more information, see
      *         <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *         > Amazon SageMaker Autopilot problem types</a>.
+     *         > SageMaker Autopilot problem types</a>.
      * @see ProblemType
      */
 
@@ -333,14 +333,14 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Defines the type of supervised learning problem available for the candidates. For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * 
      * @param problemType
      *        Defines the type of supervised learning problem available for the candidates. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.
+     *        > SageMaker Autopilot problem types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProblemType
      */
@@ -354,14 +354,14 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Defines the type of supervised learning problem available for the candidates. For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * 
      * @param problemType
      *        Defines the type of supervised learning problem available for the candidates. For more information, see <a
      *        href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.
+     *        > SageMaker Autopilot problem types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProblemType
      */

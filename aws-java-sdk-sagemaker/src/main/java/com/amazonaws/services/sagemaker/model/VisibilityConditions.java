@@ -30,8 +30,8 @@ public class VisibilityConditions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The key for that specifies the tag that you're using to filter the search results. The key must start with
-     * <code>Tags.</code>.
+     * The key that specifies the tag that you're using to filter the search results. It must be in the following
+     * format: <code>Tags.&lt;key&gt;/EqualsIfExists</code>.
      * </p>
      */
     private String key;
@@ -44,13 +44,13 @@ public class VisibilityConditions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The key for that specifies the tag that you're using to filter the search results. The key must start with
-     * <code>Tags.</code>.
+     * The key that specifies the tag that you're using to filter the search results. It must be in the following
+     * format: <code>Tags.&lt;key&gt;/EqualsIfExists</code>.
      * </p>
      * 
      * @param key
-     *        The key for that specifies the tag that you're using to filter the search results. The key must start with
-     *        <code>Tags.</code>.
+     *        The key that specifies the tag that you're using to filter the search results. It must be in the following
+     *        format: <code>Tags.&lt;key&gt;/EqualsIfExists</code>.
      */
 
     public void setKey(String key) {
@@ -59,12 +59,12 @@ public class VisibilityConditions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The key for that specifies the tag that you're using to filter the search results. The key must start with
-     * <code>Tags.</code>.
+     * The key that specifies the tag that you're using to filter the search results. It must be in the following
+     * format: <code>Tags.&lt;key&gt;/EqualsIfExists</code>.
      * </p>
      * 
-     * @return The key for that specifies the tag that you're using to filter the search results. The key must start
-     *         with <code>Tags.</code>.
+     * @return The key that specifies the tag that you're using to filter the search results. It must be in the
+     *         following format: <code>Tags.&lt;key&gt;/EqualsIfExists</code>.
      */
 
     public String getKey() {
@@ -73,13 +73,13 @@ public class VisibilityConditions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The key for that specifies the tag that you're using to filter the search results. The key must start with
-     * <code>Tags.</code>.
+     * The key that specifies the tag that you're using to filter the search results. It must be in the following
+     * format: <code>Tags.&lt;key&gt;/EqualsIfExists</code>.
      * </p>
      * 
      * @param key
-     *        The key for that specifies the tag that you're using to filter the search results. The key must start with
-     *        <code>Tags.</code>.
+     *        The key that specifies the tag that you're using to filter the search results. It must be in the following
+     *        format: <code>Tags.&lt;key&gt;/EqualsIfExists</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,8 +27,8 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The registry path of the container image to use as the starting point for this version. The path is an Amazon
-     * Elastic Container Registry (ECR) URI in the following format:
+     * The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR
+     * URI in the following format:
      * </p>
      * <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag] or [@digest]&gt;</code>
@@ -152,8 +152,8 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The registry path of the container image to use as the starting point for this version. The path is an Amazon
-     * Elastic Container Registry (ECR) URI in the following format:
+     * The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR
+     * URI in the following format:
      * </p>
      * <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag] or [@digest]&gt;</code>
@@ -161,7 +161,7 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param baseImage
      *        The registry path of the container image to use as the starting point for this version. The path is an
-     *        Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+     *        Amazon ECR URI in the following format:</p>
      *        <p>
      *        <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag] or [@digest]&gt;</code>
      */
@@ -172,15 +172,15 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The registry path of the container image to use as the starting point for this version. The path is an Amazon
-     * Elastic Container Registry (ECR) URI in the following format:
+     * The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR
+     * URI in the following format:
      * </p>
      * <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag] or [@digest]&gt;</code>
      * </p>
      * 
      * @return The registry path of the container image to use as the starting point for this version. The path is an
-     *         Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+     *         Amazon ECR URI in the following format:</p>
      *         <p>
      *         <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag] or [@digest]&gt;</code>
      */
@@ -191,8 +191,8 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The registry path of the container image to use as the starting point for this version. The path is an Amazon
-     * Elastic Container Registry (ECR) URI in the following format:
+     * The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR
+     * URI in the following format:
      * </p>
      * <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag] or [@digest]&gt;</code>
@@ -200,7 +200,7 @@ public class CreateImageVersionRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param baseImage
      *        The registry path of the container image to use as the starting point for this version. The path is an
-     *        Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+     *        Amazon ECR URI in the following format:</p>
      *        <p>
      *        <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag] or [@digest]&gt;</code>
      * @return Returns a reference to this object so that method calls can be chained together.

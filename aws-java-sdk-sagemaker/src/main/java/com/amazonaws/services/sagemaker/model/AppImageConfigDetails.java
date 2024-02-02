@@ -30,7 +30,7 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      */
     private String appImageConfigArn;
@@ -67,11 +67,11 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
      * @param appImageConfigArn
-     *        The Amazon Resource Name (ARN) of the AppImageConfig.
+     *        The ARN of the AppImageConfig.
      */
 
     public void setAppImageConfigArn(String appImageConfigArn) {
@@ -80,10 +80,10 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AppImageConfig.
+     * @return The ARN of the AppImageConfig.
      */
 
     public String getAppImageConfigArn() {
@@ -92,11 +92,11 @@ public class AppImageConfigDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AppImageConfig.
+     * The ARN of the AppImageConfig.
      * </p>
      * 
      * @param appImageConfigArn
-     *        The Amazon Resource Name (ARN) of the AppImageConfig.
+     *        The ARN of the AppImageConfig.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

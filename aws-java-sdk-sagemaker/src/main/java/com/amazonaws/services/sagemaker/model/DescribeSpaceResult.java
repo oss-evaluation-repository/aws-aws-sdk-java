@@ -25,7 +25,7 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the associated Domain.
+     * The ID of the associated domain.
      * </p>
      */
     private String domainId;
@@ -43,7 +43,7 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
     private String spaceName;
     /**
      * <p>
-     * The ID of the space's profile in the Amazon Elastic File System volume.
+     * The ID of the space's profile in the Amazon EFS volume.
      * </p>
      */
     private String homeEfsFileSystemUid;
@@ -126,11 +126,11 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the associated Domain.
+     * The ID of the associated domain.
      * </p>
      * 
      * @param domainId
-     *        The ID of the associated Domain.
+     *        The ID of the associated domain.
      */
 
     public void setDomainId(String domainId) {
@@ -139,10 +139,10 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the associated Domain.
+     * The ID of the associated domain.
      * </p>
      * 
-     * @return The ID of the associated Domain.
+     * @return The ID of the associated domain.
      */
 
     public String getDomainId() {
@@ -151,11 +151,11 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the associated Domain.
+     * The ID of the associated domain.
      * </p>
      * 
      * @param domainId
-     *        The ID of the associated Domain.
+     *        The ID of the associated domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,11 +246,11 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the space's profile in the Amazon Elastic File System volume.
+     * The ID of the space's profile in the Amazon EFS volume.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The ID of the space's profile in the Amazon Elastic File System volume.
+     *        The ID of the space's profile in the Amazon EFS volume.
      */
 
     public void setHomeEfsFileSystemUid(String homeEfsFileSystemUid) {
@@ -259,10 +259,10 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the space's profile in the Amazon Elastic File System volume.
+     * The ID of the space's profile in the Amazon EFS volume.
      * </p>
      * 
-     * @return The ID of the space's profile in the Amazon Elastic File System volume.
+     * @return The ID of the space's profile in the Amazon EFS volume.
      */
 
     public String getHomeEfsFileSystemUid() {
@@ -271,11 +271,11 @@ public class DescribeSpaceResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ID of the space's profile in the Amazon Elastic File System volume.
+     * The ID of the space's profile in the Amazon EFS volume.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The ID of the space's profile in the Amazon Elastic File System volume.
+     *        The ID of the space's profile in the Amazon EFS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

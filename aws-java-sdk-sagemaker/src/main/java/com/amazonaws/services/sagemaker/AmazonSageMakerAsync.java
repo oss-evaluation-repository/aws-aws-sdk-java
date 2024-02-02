@@ -356,7 +356,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the
-     * Amazon Elastic File System (EFS) storage volume on the image, and a list of the kernels in the image.
+     * Amazon Elastic File System storage volume on the image, and a list of the kernels in the image.
      * </p>
      * 
      * @param createAppImageConfigRequest
@@ -370,7 +370,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the
-     * Amazon Elastic File System (EFS) storage volume on the image, and a list of the kernels in the image.
+     * Amazon Elastic File System storage volume on the image, and a list of the kernels in the image.
      * </p>
      * 
      * @param createAppImageConfigRequest
@@ -1832,7 +1832,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a
-     * container image stored in Amazon Elastic Container Registry (ECR). For more information, see <a
+     * container image stored in Amazon ECR. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.
      * </p>
      * 
@@ -1847,7 +1847,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a
-     * container image stored in Amazon Elastic Container Registry (ECR). For more information, see <a
+     * container image stored in Amazon ECR. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.
      * </p>
      * 
@@ -1867,7 +1867,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon
-     * Elastic Container Registry (ECR) container image specified by <code>BaseImage</code>.
+     * ECR container image specified by <code>BaseImage</code>.
      * </p>
      * 
      * @param createImageVersionRequest
@@ -1881,7 +1881,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     /**
      * <p>
      * Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon
-     * Elastic Container Registry (ECR) container image specified by <code>BaseImage</code>.
+     * ECR container image specified by <code>BaseImage</code>.
      * </p>
      * 
      * @param createImageVersionRequest
@@ -2714,7 +2714,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
      * </p>
      * <p>
-     * View CloudWatch Logs for notebook instance lifecycle configurations in log group
+     * View Amazon CloudWatch Logs for notebook instance lifecycle configurations in log group
      * <code>/aws/sagemaker/NotebookInstances</code> in log stream
      * <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
      * </p>
@@ -2751,7 +2751,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
      * </p>
      * <p>
-     * View CloudWatch Logs for notebook instance lifecycle configurations in log group
+     * View Amazon CloudWatch Logs for notebook instance lifecycle configurations in log group
      * <code>/aws/sagemaker/NotebookInstances</code> in log stream
      * <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
      * </p>
@@ -2815,8 +2815,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be
      * automatically signed in to the domain, and granted access to all of the Apps and files associated with the
-     * Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the authentication mode
-     * equals IAM.
+     * Domain's Amazon Elastic File System volume. This operation can only be called when the authentication mode equals
+     * IAM.
      * </p>
      * <p>
      * The IAM role or user passed to this API defines the permissions to access the app. Once the presigned URL is
@@ -2849,8 +2849,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be
      * automatically signed in to the domain, and granted access to all of the Apps and files associated with the
-     * Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the authentication mode
-     * equals IAM.
+     * Domain's Amazon Elastic File System volume. This operation can only be called when the authentication mode equals
+     * IAM.
      * </p>
      * <p>
      * The IAM role or user passed to this API defines the permissions to access the app. Once the presigned URL is
@@ -3033,7 +3033,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a space used for real time collaboration in a Domain.
+     * Creates a space used for real time collaboration in a domain.
      * </p>
      * 
      * @param createSpaceRequest
@@ -3046,7 +3046,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a space used for real time collaboration in a Domain.
+     * Creates a space used for real time collaboration in a domain.
      * </p>
      * 
      * @param createSpaceRequest
@@ -3551,7 +3551,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when
      * a user onboards to a domain. If an administrator invites a person by email or imports them from IAM Identity
      * Center, a user profile is automatically created. A user profile is the primary holder of settings for an
-     * individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
+     * individual user and has a reference to the user's private Amazon Elastic File System home directory.
      * </p>
      * 
      * @param createUserProfileRequest
@@ -3568,7 +3568,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when
      * a user onboards to a domain. If an administrator invites a person by email or imports them from IAM Identity
      * Center, a user profile is automatically created. A user profile is the primary holder of settings for an
-     * individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
+     * individual user and has a reference to the user's private Amazon Elastic File System home directory.
      * </p>
      * 
      * @param createUserProfileRequest

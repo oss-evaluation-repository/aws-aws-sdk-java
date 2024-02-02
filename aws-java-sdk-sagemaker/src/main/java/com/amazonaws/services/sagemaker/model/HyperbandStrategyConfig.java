@@ -45,7 +45,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * The maximum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter
      * tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a value for
      * <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the hyperparameter tuning
-     * strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code> from the following keys (if
+     * strategy, <code>HyperbandTraining</code> attempts to infer <code>MaxResource</code> from the following keys (if
      * present) in <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters"
      * >StaticsHyperParameters</a>:
@@ -83,7 +83,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * to derive <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early stopping
      * decisions</a>. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training jobs,
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributed</a> training jobs,
      * ensure that duplicate metrics are not printed in the logs across the individual nodes in a training job. If
      * multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect stopping
      * decision and stop the job prematurely.
@@ -148,7 +148,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * The maximum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter
      * tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a value for
      * <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the hyperparameter tuning
-     * strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code> from the following keys (if
+     * strategy, <code>HyperbandTraining</code> attempts to infer <code>MaxResource</code> from the following keys (if
      * present) in <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters"
      * >StaticsHyperParameters</a>:
@@ -186,7 +186,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * to derive <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early stopping
      * decisions</a>. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training jobs,
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributed</a> training jobs,
      * ensure that duplicate metrics are not printed in the logs across the individual nodes in a training job. If
      * multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect stopping
      * decision and stop the job prematurely.
@@ -196,7 +196,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      *        The maximum number of resources (such as epochs) that can be used by a training job launched by a
      *        hyperparameter tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a
      *        value for <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the
-     *        hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code>
+     *        hyperparameter tuning strategy, <code>HyperbandTraining</code> attempts to infer <code>MaxResource</code>
      *        from the following keys (if present) in <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters"
      *        >StaticsHyperParameters</a>:</p>
@@ -233,7 +233,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      *        objective metric are used to derive <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early
      *        stopping decisions</a>. For <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributed</a> training
      *        jobs, ensure that duplicate metrics are not printed in the logs across the individual nodes in a training
      *        job. If multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect
      *        stopping decision and stop the job prematurely.
@@ -248,7 +248,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * The maximum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter
      * tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a value for
      * <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the hyperparameter tuning
-     * strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code> from the following keys (if
+     * strategy, <code>HyperbandTraining</code> attempts to infer <code>MaxResource</code> from the following keys (if
      * present) in <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters"
      * >StaticsHyperParameters</a>:
@@ -286,7 +286,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * to derive <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early stopping
      * decisions</a>. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training jobs,
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributed</a> training jobs,
      * ensure that duplicate metrics are not printed in the logs across the individual nodes in a training job. If
      * multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect stopping
      * decision and stop the job prematurely.
@@ -295,8 +295,8 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * @return The maximum number of resources (such as epochs) that can be used by a training job launched by a
      *         hyperparameter tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a
      *         value for <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the
-     *         hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts to infer
-     *         <code>MaxResource</code> from the following keys (if present) in <a href=
+     *         hyperparameter tuning strategy, <code>HyperbandTraining</code> attempts to infer <code>MaxResource</code>
+     *         from the following keys (if present) in <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters"
      *         >StaticsHyperParameters</a>:</p>
      *         <ul>
@@ -332,10 +332,10 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      *         objective metric are used to derive <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early
      *         stopping decisions</a>. For <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a>
-     *         training jobs, ensure that duplicate metrics are not printed in the logs across the individual nodes in a
-     *         training job. If multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an
-     *         incorrect stopping decision and stop the job prematurely.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributed</a> training
+     *         jobs, ensure that duplicate metrics are not printed in the logs across the individual nodes in a training
+     *         job. If multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect
+     *         stopping decision and stop the job prematurely.
      */
 
     public Integer getMaxResource() {
@@ -347,7 +347,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * The maximum number of resources (such as epochs) that can be used by a training job launched by a hyperparameter
      * tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a value for
      * <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the hyperparameter tuning
-     * strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code> from the following keys (if
+     * strategy, <code>HyperbandTraining</code> attempts to infer <code>MaxResource</code> from the following keys (if
      * present) in <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters"
      * >StaticsHyperParameters</a>:
@@ -385,7 +385,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      * to derive <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early stopping
      * decisions</a>. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training jobs,
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributed</a> training jobs,
      * ensure that duplicate metrics are not printed in the logs across the individual nodes in a training job. If
      * multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect stopping
      * decision and stop the job prematurely.
@@ -395,7 +395,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      *        The maximum number of resources (such as epochs) that can be used by a training job launched by a
      *        hyperparameter tuning job. Once a job reaches the <code>MaxResource</code> value, it is stopped. If a
      *        value for <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected as the
-     *        hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts to infer <code>MaxResource</code>
+     *        hyperparameter tuning strategy, <code>HyperbandTraining</code> attempts to infer <code>MaxResource</code>
      *        from the following keys (if present) in <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters"
      *        >StaticsHyperParameters</a>:</p>
@@ -432,7 +432,7 @@ public class HyperbandStrategyConfig implements Serializable, Cloneable, Structu
      *        objective metric are used to derive <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early
      *        stopping decisions</a>. For <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a> training
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributed</a> training
      *        jobs, ensure that duplicate metrics are not printed in the logs across the individual nodes in a training
      *        job. If multiple nodes are publishing duplicate or incorrect metrics, training jobs may make an incorrect
      *        stopping decision and stop the job prematurely.

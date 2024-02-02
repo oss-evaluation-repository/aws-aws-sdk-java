@@ -33,7 +33,7 @@ public class TabularResolvedAttributes implements Serializable, Cloneable, Struc
      * The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      * Classification, Multiclass Classification, Regression). For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      */
     private String problemType;
@@ -43,14 +43,14 @@ public class TabularResolvedAttributes implements Serializable, Cloneable, Struc
      * The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      * Classification, Multiclass Classification, Regression). For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * 
      * @param problemType
      *        The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      *        Classification, Multiclass Classification, Regression). For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.
+     *        > SageMaker Autopilot problem types</a>.
      * @see ProblemType
      */
 
@@ -63,13 +63,13 @@ public class TabularResolvedAttributes implements Serializable, Cloneable, Struc
      * The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      * Classification, Multiclass Classification, Regression). For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * 
      * @return The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      *         Classification, Multiclass Classification, Regression). For more information, see <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *         > Amazon SageMaker Autopilot problem types</a>.
+     *         > SageMaker Autopilot problem types</a>.
      * @see ProblemType
      */
 
@@ -82,14 +82,14 @@ public class TabularResolvedAttributes implements Serializable, Cloneable, Struc
      * The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      * Classification, Multiclass Classification, Regression). For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * 
      * @param problemType
      *        The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      *        Classification, Multiclass Classification, Regression). For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.
+     *        > SageMaker Autopilot problem types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProblemType
      */
@@ -104,14 +104,14 @@ public class TabularResolvedAttributes implements Serializable, Cloneable, Struc
      * The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      * Classification, Multiclass Classification, Regression). For more information, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.
+     * SageMaker Autopilot problem types</a>.
      * </p>
      * 
      * @param problemType
      *        The type of supervised learning problem available for the model candidates of the AutoML job V2 (Binary
      *        Classification, Multiclass Classification, Regression). For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"
-     *        > Amazon SageMaker Autopilot problem types</a>.
+     *        > SageMaker Autopilot problem types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProblemType
      */

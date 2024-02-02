@@ -43,7 +43,7 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
     private String userProfileName;
     /**
      * <p>
-     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * The ID of the user's profile in the Amazon Elastic File System volume.
      * </p>
      */
     private String homeEfsFileSystemUid;
@@ -212,11 +212,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * The ID of the user's profile in the Amazon Elastic File System volume.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     *        The ID of the user's profile in the Amazon Elastic File System volume.
      */
 
     public void setHomeEfsFileSystemUid(String homeEfsFileSystemUid) {
@@ -225,10 +225,10 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * The ID of the user's profile in the Amazon Elastic File System volume.
      * </p>
      * 
-     * @return The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * @return The ID of the user's profile in the Amazon Elastic File System volume.
      */
 
     public String getHomeEfsFileSystemUid() {
@@ -237,11 +237,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * The ID of the user's profile in the Amazon Elastic File System volume.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     *        The ID of the user's profile in the Amazon Elastic File System volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

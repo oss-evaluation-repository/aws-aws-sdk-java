@@ -36,7 +36,7 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
     private java.util.List<KernelSpec> kernelSpecs;
     /**
      * <p>
-     * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+     * The Amazon Elastic File System storage configuration for a SageMaker image.
      * </p>
      */
     private FileSystemConfig fileSystemConfig;
@@ -113,11 +113,11 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+     * The Amazon Elastic File System storage configuration for a SageMaker image.
      * </p>
      * 
      * @param fileSystemConfig
-     *        The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+     *        The Amazon Elastic File System storage configuration for a SageMaker image.
      */
 
     public void setFileSystemConfig(FileSystemConfig fileSystemConfig) {
@@ -126,10 +126,10 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+     * The Amazon Elastic File System storage configuration for a SageMaker image.
      * </p>
      * 
-     * @return The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+     * @return The Amazon Elastic File System storage configuration for a SageMaker image.
      */
 
     public FileSystemConfig getFileSystemConfig() {
@@ -138,11 +138,11 @@ public class KernelGatewayImageConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+     * The Amazon Elastic File System storage configuration for a SageMaker image.
      * </p>
      * 
      * @param fileSystemConfig
-     *        The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
+     *        The Amazon Elastic File System storage configuration for a SageMaker image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

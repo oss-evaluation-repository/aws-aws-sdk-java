@@ -54,7 +54,7 @@ public class ListSpacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String sortBy;
     /**
      * <p>
-     * A parameter to search for the Domain ID.
+     * A parameter to search for the domain ID.
      * </p>
      */
     private String domainIdEquals;
@@ -283,11 +283,11 @@ public class ListSpacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A parameter to search for the Domain ID.
+     * A parameter to search for the domain ID.
      * </p>
      * 
      * @param domainIdEquals
-     *        A parameter to search for the Domain ID.
+     *        A parameter to search for the domain ID.
      */
 
     public void setDomainIdEquals(String domainIdEquals) {
@@ -296,10 +296,10 @@ public class ListSpacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A parameter to search for the Domain ID.
+     * A parameter to search for the domain ID.
      * </p>
      * 
-     * @return A parameter to search for the Domain ID.
+     * @return A parameter to search for the domain ID.
      */
 
     public String getDomainIdEquals() {
@@ -308,11 +308,11 @@ public class ListSpacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A parameter to search for the Domain ID.
+     * A parameter to search for the domain ID.
      * </p>
      * 
      * @param domainIdEquals
-     *        A parameter to search for the Domain ID.
+     *        A parameter to search for the domain ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

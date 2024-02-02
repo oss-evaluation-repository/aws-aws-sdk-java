@@ -29,7 +29,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
  * </p>
  * <p>
- * View CloudWatch Logs for notebook instance lifecycle configurations in log group
+ * View Amazon CloudWatch Logs for notebook instance lifecycle configurations in log group
  * <code>/aws/sagemaker/NotebookInstances</code> in log stream
  * <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
  * </p>

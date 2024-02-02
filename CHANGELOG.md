@@ -1,3 +1,12 @@
+# __1.12.651__ __2024-02-02__
+## __Amazon DynamoDB__
+  - ### Features
+    - Any number of users can execute up to 50 concurrent restores (any type of restore) in a given account.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker Canvas adds GenerativeAiSettings support for CanvasAppSettings.
+
 # __1.12.650__ __2024-02-01__
 ## __AWS Elemental MediaConvert__
   - ### Features
