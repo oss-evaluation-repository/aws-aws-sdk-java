@@ -52,6 +52,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoTerminate").build();
     private static final MarshallingInfo<Boolean> TERMINATIONPROTECTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminationProtected").build();
+    private static final MarshallingInfo<Boolean> UNHEALTHYNODEREPLACEMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnhealthyNodeReplacement").build();
     private static final MarshallingInfo<Boolean> VISIBLETOALLUSERS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibleToAllUsers").build();
     private static final MarshallingInfo<List> APPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -123,6 +125,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getReleaseLabel(), RELEASELABEL_BINDING);
             protocolMarshaller.marshall(cluster.getAutoTerminate(), AUTOTERMINATE_BINDING);
             protocolMarshaller.marshall(cluster.getTerminationProtected(), TERMINATIONPROTECTED_BINDING);
+            protocolMarshaller.marshall(cluster.getUnhealthyNodeReplacement(), UNHEALTHYNODEREPLACEMENT_BINDING);
             protocolMarshaller.marshall(cluster.getVisibleToAllUsers(), VISIBLETOALLUSERS_BINDING);
             protocolMarshaller.marshall(cluster.getApplications(), APPLICATIONS_BINDING);
             protocolMarshaller.marshall(cluster.getTags(), TAGS_BINDING);

@@ -47,7 +47,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
      * </p>
      * </li>
      * <li>
@@ -203,8 +205,8 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private java.util.Date startingPositionTimestamp;
     /**
      * <p>
-     * (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for
-     * discarded records.
+     * (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the
+     * destination of an event after Lambda processes it.
      * </p>
      */
     private DestinationConfig destinationConfig;
@@ -315,7 +317,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
      * </p>
      * </li>
      * <li>
@@ -350,7 +354,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection
+     *        (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     *        event source mappings</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -391,7 +397,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
      * </p>
      * </li>
      * <li>
@@ -425,7 +433,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     *         <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC
+     *         connection (for <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event
+     *         source mappings</a>).
      *         </p>
      *         </li>
      *         <li>
@@ -466,7 +477,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
      * </p>
      * </li>
      * <li>
@@ -501,7 +514,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection
+     *        (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     *        event source mappings</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -1434,13 +1449,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for
-     * discarded records.
+     * (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the
+     * destination of an event after Lambda processes it.
      * </p>
      * 
      * @param destinationConfig
-     *        (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination
-     *        for discarded records.
+     *        (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies
+     *        the destination of an event after Lambda processes it.
      */
 
     public void setDestinationConfig(DestinationConfig destinationConfig) {
@@ -1449,12 +1464,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for
-     * discarded records.
+     * (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the
+     * destination of an event after Lambda processes it.
      * </p>
      * 
-     * @return (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination
-     *         for discarded records.
+     * @return (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that
+     *         specifies the destination of an event after Lambda processes it.
      */
 
     public DestinationConfig getDestinationConfig() {
@@ -1463,13 +1478,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for
-     * discarded records.
+     * (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the
+     * destination of an event after Lambda processes it.
      * </p>
      * 
      * @param destinationConfig
-     *        (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination
-     *        for discarded records.
+     *        (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies
+     *        the destination of an event after Lambda processes it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

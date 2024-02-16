@@ -1955,6 +1955,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<SetUnhealthyNodeReplacementResult> setUnhealthyNodeReplacementAsync(SetUnhealthyNodeReplacementRequest request) {
+
+        return setUnhealthyNodeReplacementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUnhealthyNodeReplacementResult> setUnhealthyNodeReplacementAsync(final SetUnhealthyNodeReplacementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetUnhealthyNodeReplacementRequest, SetUnhealthyNodeReplacementResult> asyncHandler) {
+        final SetUnhealthyNodeReplacementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetUnhealthyNodeReplacementResult>() {
+            @Override
+            public SetUnhealthyNodeReplacementResult call() throws Exception {
+                SetUnhealthyNodeReplacementResult result = null;
+
+                try {
+                    result = executeSetUnhealthyNodeReplacement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetVisibleToAllUsersResult> setVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request) {
 
         return setVisibleToAllUsersAsync(request, null);

@@ -398,7 +398,7 @@ public class PhoneNumberInformation implements Serializable, Cloneable {
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getIso2CountryCode() != null)

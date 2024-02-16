@@ -3344,7 +3344,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * set the value to <code>false</code>.
      * </p>
      * <p>
-     * For more information, see<a
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
      * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
@@ -3394,6 +3394,79 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<SetTerminationProtectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new SetTerminationProtectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Specify whether to enable unhealthy node replacement, which lets Amazon EMR gracefully replace core nodes on a
+     * cluster if any nodes become unhealthy. For example, a node becomes unhealthy if disk usage is above 90%. If
+     * unhealthy node replacement is on and <code>TerminationProtected</code> are off, Amazon EMR immediately terminates
+     * the unhealthy core nodes. To use unhealthy node replacement and retain unhealthy core nodes, use to turn on
+     * termination protection. In such cases, Amazon EMR adds the unhealthy nodes to a denylist, reducing job
+     * interruptions and failures.
+     * </p>
+     * <p>
+     * If unhealthy node replacement is on, Amazon EMR notifies YARN and other applications on the cluster to stop
+     * scheduling tasks with these nodes, moves the data, and then terminates the nodes.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html">graceful
+     * node replacement</a> in the <i>Amazon EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param setUnhealthyNodeReplacementRequest
+     * @return Result of the SetUnhealthyNodeReplacement operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @sample AmazonElasticMapReduce.SetUnhealthyNodeReplacement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetUnhealthyNodeReplacement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetUnhealthyNodeReplacementResult setUnhealthyNodeReplacement(SetUnhealthyNodeReplacementRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetUnhealthyNodeReplacement(request);
+    }
+
+    @SdkInternalApi
+    final SetUnhealthyNodeReplacementResult executeSetUnhealthyNodeReplacement(SetUnhealthyNodeReplacementRequest setUnhealthyNodeReplacementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setUnhealthyNodeReplacementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetUnhealthyNodeReplacementRequest> request = null;
+        Response<SetUnhealthyNodeReplacementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetUnhealthyNodeReplacementRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(setUnhealthyNodeReplacementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUnhealthyNodeReplacement");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetUnhealthyNodeReplacementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SetUnhealthyNodeReplacementResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

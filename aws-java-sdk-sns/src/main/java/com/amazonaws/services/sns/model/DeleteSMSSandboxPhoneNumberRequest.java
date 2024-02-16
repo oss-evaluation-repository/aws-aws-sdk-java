@@ -85,7 +85,7 @@ public class DeleteSMSSandboxPhoneNumberRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber());
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

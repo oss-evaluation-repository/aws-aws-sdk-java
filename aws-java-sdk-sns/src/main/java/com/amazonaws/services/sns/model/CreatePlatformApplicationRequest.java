@@ -45,8 +45,8 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     * >SetPlatformApplicationAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">
+     * <code>SetPlatformApplicationAttributes</code> </a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -146,13 +146,13 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     * >SetPlatformApplicationAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">
+     * <code>SetPlatformApplicationAttributes</code> </a>.
      * </p>
      * 
      * @return For a list of attributes, see <a
-     *         href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     *         >SetPlatformApplicationAttributes</a>.
+     *         href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">
+     *         <code>SetPlatformApplicationAttributes</code> </a>.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -165,14 +165,14 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     * >SetPlatformApplicationAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">
+     * <code>SetPlatformApplicationAttributes</code> </a>.
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
-     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     *        >SetPlatformApplicationAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">
+     *        <code>SetPlatformApplicationAttributes</code> </a>.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -182,14 +182,14 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     * >SetPlatformApplicationAttributes</a>.
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">
+     * <code>SetPlatformApplicationAttributes</code> </a>.
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
-     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     *        >SetPlatformApplicationAttributes</a>.
+     *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">
+     *        <code>SetPlatformApplicationAttributes</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,14 +38,16 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the application logs for your function that Lambda sends to CloudWatch. Lambda only
-     * sends application logs at the selected level and lower.
+     * sends application logs at the selected level of detail and lower, where <code>TRACE</code> is the highest level
+     * and <code>FATAL</code> is the lowest.
      * </p>
      */
     private String applicationLogLevel;
     /**
      * <p>
      * Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only sends
-     * system logs at the selected level and lower.
+     * system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.
      * </p>
      */
     private String systemLogLevel;
@@ -128,12 +130,14 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the application logs for your function that Lambda sends to CloudWatch. Lambda only
-     * sends application logs at the selected level and lower.
+     * sends application logs at the selected level of detail and lower, where <code>TRACE</code> is the highest level
+     * and <code>FATAL</code> is the lowest.
      * </p>
      * 
      * @param applicationLogLevel
      *        Set this property to filter the application logs for your function that Lambda sends to CloudWatch. Lambda
-     *        only sends application logs at the selected level and lower.
+     *        only sends application logs at the selected level of detail and lower, where <code>TRACE</code> is the
+     *        highest level and <code>FATAL</code> is the lowest.
      * @see ApplicationLogLevel
      */
 
@@ -144,11 +148,13 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the application logs for your function that Lambda sends to CloudWatch. Lambda only
-     * sends application logs at the selected level and lower.
+     * sends application logs at the selected level of detail and lower, where <code>TRACE</code> is the highest level
+     * and <code>FATAL</code> is the lowest.
      * </p>
      * 
      * @return Set this property to filter the application logs for your function that Lambda sends to CloudWatch.
-     *         Lambda only sends application logs at the selected level and lower.
+     *         Lambda only sends application logs at the selected level of detail and lower, where <code>TRACE</code> is
+     *         the highest level and <code>FATAL</code> is the lowest.
      * @see ApplicationLogLevel
      */
 
@@ -159,12 +165,14 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the application logs for your function that Lambda sends to CloudWatch. Lambda only
-     * sends application logs at the selected level and lower.
+     * sends application logs at the selected level of detail and lower, where <code>TRACE</code> is the highest level
+     * and <code>FATAL</code> is the lowest.
      * </p>
      * 
      * @param applicationLogLevel
      *        Set this property to filter the application logs for your function that Lambda sends to CloudWatch. Lambda
-     *        only sends application logs at the selected level and lower.
+     *        only sends application logs at the selected level of detail and lower, where <code>TRACE</code> is the
+     *        highest level and <code>FATAL</code> is the lowest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationLogLevel
      */
@@ -177,12 +185,14 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the application logs for your function that Lambda sends to CloudWatch. Lambda only
-     * sends application logs at the selected level and lower.
+     * sends application logs at the selected level of detail and lower, where <code>TRACE</code> is the highest level
+     * and <code>FATAL</code> is the lowest.
      * </p>
      * 
      * @param applicationLogLevel
      *        Set this property to filter the application logs for your function that Lambda sends to CloudWatch. Lambda
-     *        only sends application logs at the selected level and lower.
+     *        only sends application logs at the selected level of detail and lower, where <code>TRACE</code> is the
+     *        highest level and <code>FATAL</code> is the lowest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationLogLevel
      */
@@ -195,12 +205,14 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only sends
-     * system logs at the selected level and lower.
+     * system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.
      * </p>
      * 
      * @param systemLogLevel
      *        Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only
-     *        sends system logs at the selected level and lower.
+     *        sends system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest level
+     *        and <code>WARN</code> is the lowest.
      * @see SystemLogLevel
      */
 
@@ -211,11 +223,13 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only sends
-     * system logs at the selected level and lower.
+     * system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.
      * </p>
      * 
      * @return Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda
-     *         only sends system logs at the selected level and lower.
+     *         only sends system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest
+     *         level and <code>WARN</code> is the lowest.
      * @see SystemLogLevel
      */
 
@@ -226,12 +240,14 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only sends
-     * system logs at the selected level and lower.
+     * system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.
      * </p>
      * 
      * @param systemLogLevel
      *        Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only
-     *        sends system logs at the selected level and lower.
+     *        sends system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest level
+     *        and <code>WARN</code> is the lowest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SystemLogLevel
      */
@@ -244,12 +260,14 @@ public class LoggingConfig implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only sends
-     * system logs at the selected level and lower.
+     * system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest level and
+     * <code>WARN</code> is the lowest.
      * </p>
      * 
      * @param systemLogLevel
      *        Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only
-     *        sends system logs at the selected level and lower.
+     *        sends system logs at the selected level of detail and lower, where <code>DEBUG</code> is the highest level
+     *        and <code>WARN</code> is the lowest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SystemLogLevel
      */

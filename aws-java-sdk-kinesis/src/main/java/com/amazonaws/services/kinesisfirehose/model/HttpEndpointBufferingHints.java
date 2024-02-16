@@ -20,9 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes the buffering options that can be applied before data is delivered to the HTTP endpoint destination.
- * Kinesis Data Firehose treats these options as hints, and it might choose to use more optimal values. The
- * <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for
- * one of them, you must also provide a value for the other.
+ * Firehose treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code>
+ * and <code>IntervalInSeconds</code> parameters are optional. However, if specify a value for one of them, you must
+ * also provide a value for the other.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/HttpEndpointBufferingHints"

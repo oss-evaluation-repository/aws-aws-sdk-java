@@ -55,8 +55,8 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
     private String prefix;
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
@@ -120,6 +120,18 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
      * </p>
      */
     private DynamicPartitioningConfiguration dynamicPartitioningConfiguration;
+    /**
+     * <p>
+     * Specify a file extension. It will override the default file extension
+     * </p>
+     */
+    private String fileExtension;
+    /**
+     * <p>
+     * The time zone you prefer. UTC is the default.
+     * </p>
+     */
+    private String customTimeZone;
 
     /**
      * <p>
@@ -285,17 +297,17 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
-     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *        S3 Objects</a>.
+     *        A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     *        immediately following the bucket name. For information about how to specify this prefix, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      */
 
     public void setErrorOutputPrefix(String errorOutputPrefix) {
@@ -304,16 +316,16 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
-     * @return A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *         prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *         see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *         S3 Objects</a>.
+     * @return A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix
+     *         appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *         Objects</a>.
      */
 
     public String getErrorOutputPrefix() {
@@ -322,17 +334,17 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
-     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *        S3 Objects</a>.
+     *        A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     *        immediately following the bucket name. For information about how to specify this prefix, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -796,6 +808,86 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Specify a file extension. It will override the default file extension
+     * </p>
+     * 
+     * @param fileExtension
+     *        Specify a file extension. It will override the default file extension
+     */
+
+    public void setFileExtension(String fileExtension) {
+        this.fileExtension = fileExtension;
+    }
+
+    /**
+     * <p>
+     * Specify a file extension. It will override the default file extension
+     * </p>
+     * 
+     * @return Specify a file extension. It will override the default file extension
+     */
+
+    public String getFileExtension() {
+        return this.fileExtension;
+    }
+
+    /**
+     * <p>
+     * Specify a file extension. It will override the default file extension
+     * </p>
+     * 
+     * @param fileExtension
+     *        Specify a file extension. It will override the default file extension
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExtendedS3DestinationUpdate withFileExtension(String fileExtension) {
+        setFileExtension(fileExtension);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time zone you prefer. UTC is the default.
+     * </p>
+     * 
+     * @param customTimeZone
+     *        The time zone you prefer. UTC is the default.
+     */
+
+    public void setCustomTimeZone(String customTimeZone) {
+        this.customTimeZone = customTimeZone;
+    }
+
+    /**
+     * <p>
+     * The time zone you prefer. UTC is the default.
+     * </p>
+     * 
+     * @return The time zone you prefer. UTC is the default.
+     */
+
+    public String getCustomTimeZone() {
+        return this.customTimeZone;
+    }
+
+    /**
+     * <p>
+     * The time zone you prefer. UTC is the default.
+     * </p>
+     * 
+     * @param customTimeZone
+     *        The time zone you prefer. UTC is the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExtendedS3DestinationUpdate withCustomTimeZone(String customTimeZone) {
+        setCustomTimeZone(customTimeZone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -832,7 +924,11 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
         if (getDataFormatConversionConfiguration() != null)
             sb.append("DataFormatConversionConfiguration: ").append(getDataFormatConversionConfiguration()).append(",");
         if (getDynamicPartitioningConfiguration() != null)
-            sb.append("DynamicPartitioningConfiguration: ").append(getDynamicPartitioningConfiguration());
+            sb.append("DynamicPartitioningConfiguration: ").append(getDynamicPartitioningConfiguration()).append(",");
+        if (getFileExtension() != null)
+            sb.append("FileExtension: ").append(getFileExtension()).append(",");
+        if (getCustomTimeZone() != null)
+            sb.append("CustomTimeZone: ").append(getCustomTimeZone());
         sb.append("}");
         return sb.toString();
     }
@@ -901,6 +997,14 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
         if (other.getDynamicPartitioningConfiguration() != null
                 && other.getDynamicPartitioningConfiguration().equals(this.getDynamicPartitioningConfiguration()) == false)
             return false;
+        if (other.getFileExtension() == null ^ this.getFileExtension() == null)
+            return false;
+        if (other.getFileExtension() != null && other.getFileExtension().equals(this.getFileExtension()) == false)
+            return false;
+        if (other.getCustomTimeZone() == null ^ this.getCustomTimeZone() == null)
+            return false;
+        if (other.getCustomTimeZone() != null && other.getCustomTimeZone().equals(this.getCustomTimeZone()) == false)
+            return false;
         return true;
     }
 
@@ -922,6 +1026,8 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getS3BackupUpdate() == null) ? 0 : getS3BackupUpdate().hashCode());
         hashCode = prime * hashCode + ((getDataFormatConversionConfiguration() == null) ? 0 : getDataFormatConversionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDynamicPartitioningConfiguration() == null) ? 0 : getDynamicPartitioningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getFileExtension() == null) ? 0 : getFileExtension().hashCode());
+        hashCode = prime * hashCode + ((getCustomTimeZone() == null) ? 0 : getCustomTimeZone().hashCode());
         return hashCode;
     }
 

@@ -67,6 +67,19 @@ public class AbstractAmazonKinesisFirehoseAsync extends AbstractAmazonKinesisFir
     }
 
     @Override
+    public java.util.concurrent.Future<GetKinesisStreamResult> getKinesisStreamAsync(GetKinesisStreamRequest request) {
+
+        return getKinesisStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKinesisStreamResult> getKinesisStreamAsync(GetKinesisStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetKinesisStreamRequest, GetKinesisStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeliveryStreamsResult> listDeliveryStreamsAsync(ListDeliveryStreamsRequest request) {
 
         return listDeliveryStreamsAsync(request, null);
@@ -179,6 +192,19 @@ public class AbstractAmazonKinesisFirehoseAsync extends AbstractAmazonKinesisFir
     @Override
     public java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(UpdateDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDestinationRequest, UpdateDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(VerifyResourcesExistForTagrisRequest request) {
+
+        return verifyResourcesExistForTagrisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(VerifyResourcesExistForTagrisRequest request,
+            com.amazonaws.handlers.AsyncHandler<VerifyResourcesExistForTagrisRequest, VerifyResourcesExistForTagrisResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

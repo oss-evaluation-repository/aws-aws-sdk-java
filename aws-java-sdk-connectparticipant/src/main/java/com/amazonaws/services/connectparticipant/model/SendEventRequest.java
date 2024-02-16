@@ -37,7 +37,7 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * application/vnd.amazonaws.connect.event.connection.acknowledged
+     * application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)
      * </p>
      * </li>
      * <li>
@@ -91,7 +91,7 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * application/vnd.amazonaws.connect.event.connection.acknowledged
+     * application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)
      * </p>
      * </li>
      * <li>
@@ -116,7 +116,7 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        application/vnd.amazonaws.connect.event.connection.acknowledged
+     *        application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)
      *        </p>
      *        </li>
      *        <li>
@@ -147,7 +147,7 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * application/vnd.amazonaws.connect.event.connection.acknowledged
+     * application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)
      * </p>
      * </li>
      * <li>
@@ -171,7 +171,7 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         application/vnd.amazonaws.connect.event.connection.acknowledged
+     *         application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)
      *         </p>
      *         </li>
      *         <li>
@@ -202,7 +202,7 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * application/vnd.amazonaws.connect.event.connection.acknowledged
+     * application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)
      * </p>
      * </li>
      * <li>
@@ -227,7 +227,7 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        application/vnd.amazonaws.connect.event.connection.acknowledged
+     *        application/vnd.amazonaws.connect.event.connection.acknowledged (will be deprecated on December 31, 2024)
      *        </p>
      *        </li>
      *        <li>

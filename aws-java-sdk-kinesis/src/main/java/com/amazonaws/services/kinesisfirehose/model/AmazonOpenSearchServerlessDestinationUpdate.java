@@ -30,8 +30,8 @@ public class AmazonOpenSearchServerlessDestinationUpdate implements Serializable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless
-     * offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for
+     * Amazon OpenSearch Service Configuration API and for indexing documents.
      * </p>
      */
     private String roleARN;
@@ -56,8 +56,8 @@ public class AmazonOpenSearchServerlessDestinationUpdate implements Serializable
     private AmazonOpenSearchServerlessBufferingHints bufferingHints;
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for
-     * Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes).
      * </p>
      */
     private AmazonOpenSearchServerlessRetryOptions retryOptions;
@@ -70,13 +70,13 @@ public class AmazonOpenSearchServerlessDestinationUpdate implements Serializable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless
-     * offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for
+     * Amazon OpenSearch Service Configuration API and for indexing documents.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless
+     *        offering for Amazon OpenSearch Service Configuration API and for indexing documents.
      */
 
     public void setRoleARN(String roleARN) {
@@ -85,12 +85,12 @@ public class AmazonOpenSearchServerlessDestinationUpdate implements Serializable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless
-     * offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for
+     * Amazon OpenSearch Service Configuration API and for indexing documents.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *         Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless
+     *         offering for Amazon OpenSearch Service Configuration API and for indexing documents.
      */
 
     public String getRoleARN() {
@@ -99,13 +99,13 @@ public class AmazonOpenSearchServerlessDestinationUpdate implements Serializable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless
-     * offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for
+     * Amazon OpenSearch Service Configuration API and for indexing documents.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless
+     *        offering for Amazon OpenSearch Service Configuration API and for indexing documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,13 +245,13 @@ public class AmazonOpenSearchServerlessDestinationUpdate implements Serializable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for
-     * Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering
-     *        for Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     *        OpenSearch Service. The default value is 300 (5 minutes).
      */
 
     public void setRetryOptions(AmazonOpenSearchServerlessRetryOptions retryOptions) {
@@ -260,12 +260,12 @@ public class AmazonOpenSearchServerlessDestinationUpdate implements Serializable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for
-     * Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless
-     *         offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * @return The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     *         OpenSearch Service. The default value is 300 (5 minutes).
      */
 
     public AmazonOpenSearchServerlessRetryOptions getRetryOptions() {
@@ -274,13 +274,13 @@ public class AmazonOpenSearchServerlessDestinationUpdate implements Serializable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for
-     * Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering
-     *        for Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     *        OpenSearch Service. The default value is 300 (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

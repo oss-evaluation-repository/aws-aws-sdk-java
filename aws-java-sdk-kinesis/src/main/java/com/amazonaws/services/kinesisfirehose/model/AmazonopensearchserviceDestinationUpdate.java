@@ -30,8 +30,8 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
-     * OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch
+     * Service Configuration API and for indexing documents.
      * </p>
      */
     private String roleARN;
@@ -58,13 +58,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     /**
      * <p>
      * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
-     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
-     * during runtime.
+     * to specify a new type for an existing index that already has another type, Firehose returns an error during
+     * runtime.
      * </p>
      * <p>
-     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
-     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
-     * with a new index name, provide an empty string for TypeName.
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data
+     * to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new
+     * index name, provide an empty string for TypeName.
      * </p>
      */
     private String typeName;
@@ -83,8 +83,8 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     private AmazonopensearchserviceBufferingHints bufferingHints;
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
-     * default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The default
+     * value is 300 (5 minutes).
      * </p>
      */
     private AmazonopensearchserviceRetryOptions retryOptions;
@@ -96,21 +96,21 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      */
     private DocumentIdOptions documentIdOptions;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
-     * OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch
+     * Service Configuration API and for indexing documents.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Amazon OpenSearch Service Configuration API and for indexing documents.
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch
+     *        Service Configuration API and for indexing documents.
      */
 
     public void setRoleARN(String roleARN) {
@@ -119,12 +119,12 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
-     * OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch
+     * Service Configuration API and for indexing documents.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *         Amazon OpenSearch Service Configuration API and for indexing documents.
+     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon
+     *         OpenSearch Service Configuration API and for indexing documents.
      */
 
     public String getRoleARN() {
@@ -133,13 +133,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
-     * OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch
+     * Service Configuration API and for indexing documents.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Amazon OpenSearch Service Configuration API and for indexing documents.
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon OpenSearch
+     *        Service Configuration API and for indexing documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,23 +283,23 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     /**
      * <p>
      * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
-     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
-     * during runtime.
+     * to specify a new type for an existing index that already has another type, Firehose returns an error during
+     * runtime.
      * </p>
      * <p>
-     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
-     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
-     * with a new index name, provide an empty string for TypeName.
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data
+     * to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new
+     * index name, provide an empty string for TypeName.
      * </p>
      * 
      * @param typeName
      *        The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
-     *        you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
-     *        returns an error during runtime. </p>
+     *        you try to specify a new type for an existing index that already has another type, Firehose returns an
+     *        error during runtime. </p>
      *        <p>
-     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
-     *        still delivers data to Elasticsearch with the old index name and type name. If you want to update your
-     *        delivery stream with a new index name, provide an empty string for TypeName.
+     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still
+     *        delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery
+     *        stream with a new index name, provide an empty string for TypeName.
      */
 
     public void setTypeName(String typeName) {
@@ -309,22 +309,22 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     /**
      * <p>
      * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
-     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
-     * during runtime.
+     * to specify a new type for an existing index that already has another type, Firehose returns an error during
+     * runtime.
      * </p>
      * <p>
-     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
-     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
-     * with a new index name, provide an empty string for TypeName.
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data
+     * to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new
+     * index name, provide an empty string for TypeName.
      * </p>
      * 
      * @return The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
-     *         you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
-     *         returns an error during runtime. </p>
+     *         you try to specify a new type for an existing index that already has another type, Firehose returns an
+     *         error during runtime. </p>
      *         <p>
-     *         If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
-     *         still delivers data to Elasticsearch with the old index name and type name. If you want to update your
-     *         delivery stream with a new index name, provide an empty string for TypeName.
+     *         If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still
+     *         delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery
+     *         stream with a new index name, provide an empty string for TypeName.
      */
 
     public String getTypeName() {
@@ -334,23 +334,23 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     /**
      * <p>
      * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
-     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
-     * during runtime.
+     * to specify a new type for an existing index that already has another type, Firehose returns an error during
+     * runtime.
      * </p>
      * <p>
-     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
-     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
-     * with a new index name, provide an empty string for TypeName.
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data
+     * to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new
+     * index name, provide an empty string for TypeName.
      * </p>
      * 
      * @param typeName
      *        The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
-     *        you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
-     *        returns an error during runtime. </p>
+     *        you try to specify a new type for an existing index that already has another type, Firehose returns an
+     *        error during runtime. </p>
      *        <p>
-     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
-     *        still delivers data to Elasticsearch with the old index name and type name. If you want to update your
-     *        delivery stream with a new index name, provide an empty string for TypeName.
+     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still
+     *        delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery
+     *        stream with a new index name, provide an empty string for TypeName.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,13 +471,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
-     * default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The default
+     * value is 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
-     *        Service. The default value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     *        default value is 300 (5 minutes).
      */
 
     public void setRetryOptions(AmazonopensearchserviceRetryOptions retryOptions) {
@@ -486,12 +486,12 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
-     * default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The default
+     * value is 300 (5 minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
-     *         Service. The default value is 300 (5 minutes).
+     * @return The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     *         default value is 300 (5 minutes).
      */
 
     public AmazonopensearchserviceRetryOptions getRetryOptions() {
@@ -500,13 +500,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
-     * default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The default
+     * value is 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
-     *        Service. The default value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     *        default value is 300 (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,13 +595,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      */
 
     public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
@@ -610,12 +610,12 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
-     * @return Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose
-     *         generated document ID and OpenSearch Service generated document ID.
+     * @return Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *         and OpenSearch Service generated document ID.
      */
 
     public DocumentIdOptions getDocumentIdOptions() {
@@ -624,13 +624,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -118,6 +118,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Boolean terminationProtected;
     /**
      * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     */
+    private Boolean unhealthyNodeReplacement;
+    /**
+     * <p>
      * Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the
      * cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster
      * actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that
@@ -942,6 +949,66 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     public Boolean isTerminationProtected() {
         return this.terminationProtected;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     * 
+     * @param unhealthyNodeReplacement
+     *        Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within
+     *        the cluster.
+     */
+
+    public void setUnhealthyNodeReplacement(Boolean unhealthyNodeReplacement) {
+        this.unhealthyNodeReplacement = unhealthyNodeReplacement;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded
+     *         within the cluster.
+     */
+
+    public Boolean getUnhealthyNodeReplacement() {
+        return this.unhealthyNodeReplacement;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     * 
+     * @param unhealthyNodeReplacement
+     *        Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within
+     *        the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withUnhealthyNodeReplacement(Boolean unhealthyNodeReplacement) {
+        setUnhealthyNodeReplacement(unhealthyNodeReplacement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the
+     * cluster.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded
+     *         within the cluster.
+     */
+
+    public Boolean isUnhealthyNodeReplacement() {
+        return this.unhealthyNodeReplacement;
     }
 
     /**
@@ -2290,6 +2357,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             sb.append("AutoTerminate: ").append(getAutoTerminate()).append(",");
         if (getTerminationProtected() != null)
             sb.append("TerminationProtected: ").append(getTerminationProtected()).append(",");
+        if (getUnhealthyNodeReplacement() != null)
+            sb.append("UnhealthyNodeReplacement: ").append(getUnhealthyNodeReplacement()).append(",");
         if (getVisibleToAllUsers() != null)
             sb.append("VisibleToAllUsers: ").append(getVisibleToAllUsers()).append(",");
         if (getApplications() != null)
@@ -2393,6 +2462,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (other.getTerminationProtected() == null ^ this.getTerminationProtected() == null)
             return false;
         if (other.getTerminationProtected() != null && other.getTerminationProtected().equals(this.getTerminationProtected()) == false)
+            return false;
+        if (other.getUnhealthyNodeReplacement() == null ^ this.getUnhealthyNodeReplacement() == null)
+            return false;
+        if (other.getUnhealthyNodeReplacement() != null && other.getUnhealthyNodeReplacement().equals(this.getUnhealthyNodeReplacement()) == false)
             return false;
         if (other.getVisibleToAllUsers() == null ^ this.getVisibleToAllUsers() == null)
             return false;
@@ -2498,6 +2571,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode());
         hashCode = prime * hashCode + ((getAutoTerminate() == null) ? 0 : getAutoTerminate().hashCode());
         hashCode = prime * hashCode + ((getTerminationProtected() == null) ? 0 : getTerminationProtected().hashCode());
+        hashCode = prime * hashCode + ((getUnhealthyNodeReplacement() == null) ? 0 : getUnhealthyNodeReplacement().hashCode());
         hashCode = prime * hashCode + ((getVisibleToAllUsers() == null) ? 0 : getVisibleToAllUsers().hashCode());
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

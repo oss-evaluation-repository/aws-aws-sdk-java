@@ -96,6 +96,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setTerminationProtected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("UnhealthyNodeReplacement", targetDepth)) {
+                    context.nextToken();
+                    cluster.setUnhealthyNodeReplacement(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("VisibleToAllUsers", targetDepth)) {
                     context.nextToken();
                     cluster.setVisibleToAllUsers(context.getUnmarshaller(Boolean.class).unmarshall(context));

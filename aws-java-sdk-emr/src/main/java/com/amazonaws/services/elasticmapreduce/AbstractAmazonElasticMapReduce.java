@@ -301,6 +301,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public SetUnhealthyNodeReplacementResult setUnhealthyNodeReplacement(SetUnhealthyNodeReplacementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetVisibleToAllUsersResult setVisibleToAllUsers(SetVisibleToAllUsersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

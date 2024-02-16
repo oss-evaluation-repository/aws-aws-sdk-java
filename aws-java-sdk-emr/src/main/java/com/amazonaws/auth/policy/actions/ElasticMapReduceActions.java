@@ -123,6 +123,8 @@ public enum ElasticMapReduceActions implements Action {
     SetKeepJobFlowAliveWhenNoSteps("elasticmapreduce:SetKeepJobFlowAliveWhenNoSteps"),
     /** Action for the SetTerminationProtection operation. */
     SetTerminationProtection("elasticmapreduce:SetTerminationProtection"),
+    /** Action for the SetUnhealthyNodeReplacement operation. */
+    SetUnhealthyNodeReplacement("elasticmapreduce:SetUnhealthyNodeReplacement"),
     /** Action for the SetVisibleToAllUsers operation. */
     SetVisibleToAllUsers("elasticmapreduce:SetVisibleToAllUsers"),
     /** Action for the StartNotebookExecution operation. */

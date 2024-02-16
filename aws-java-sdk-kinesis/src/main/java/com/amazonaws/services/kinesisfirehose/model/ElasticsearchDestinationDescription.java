@@ -43,15 +43,14 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
-     * ES.
+     * Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * </p>
      */
     private String domainARN;
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this <code>ClusterEndpoint</code>
+     * or the <code>DomainARN</code> field to send data to Amazon ES.
      * </p>
      */
     private String clusterEndpoint;
@@ -118,8 +117,8 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     private VpcConfigurationDescription vpcConfigurationDescription;
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      */
     private DocumentIdOptions documentIdOptions;
@@ -183,8 +182,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
-     * ES.
+     * Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * </p>
      * 
      * @param domainARN
@@ -192,8 +190,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      *        <p>
-     *        Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
-     *        Amazon ES.
+     *        Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      */
 
     public void setDomainARN(String domainARN) {
@@ -207,16 +204,14 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
-     * ES.
+     * Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * </p>
      * 
      * @return The ARN of the Amazon ES domain. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      *         <p>
-     *         Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
-     *         Amazon ES.
+     *         Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      */
 
     public String getDomainARN() {
@@ -230,8 +225,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
-     * ES.
+     * Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * </p>
      * 
      * @param domainARN
@@ -239,8 +233,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      *        <p>
-     *        Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
-     *        Amazon ES.
+     *        Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,12 +244,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this <code>ClusterEndpoint</code>
+     * or the <code>DomainARN</code> field to send data to Amazon ES.
      * </p>
      * 
      * @param clusterEndpoint
-     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *        The endpoint to use when communicating with the cluster. Firehose uses either this
      *        <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
      */
 
@@ -266,11 +259,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this <code>ClusterEndpoint</code>
+     * or the <code>DomainARN</code> field to send data to Amazon ES.
      * </p>
      * 
-     * @return The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     * @return The endpoint to use when communicating with the cluster. Firehose uses either this
      *         <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
      */
 
@@ -280,12 +273,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this <code>ClusterEndpoint</code>
+     * or the <code>DomainARN</code> field to send data to Amazon ES.
      * </p>
      * 
      * @param clusterEndpoint
-     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *        The endpoint to use when communicating with the cluster. Firehose uses either this
      *        <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -769,13 +762,13 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      */
 
     public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
@@ -784,12 +777,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
-     * @return Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose
-     *         generated document ID and OpenSearch Service generated document ID.
+     * @return Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *         and OpenSearch Service generated document ID.
      */
 
     public DocumentIdOptions getDocumentIdOptions() {
@@ -798,13 +791,13 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

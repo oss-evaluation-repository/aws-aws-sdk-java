@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An attachment with that identifier is already being uploaded.
+ * The requested operation conflicts with the current state of a service resource associated with the request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -255,8 +255,16 @@ public interface AmazonSNS {
      * </li>
      * <li>
      * <p>
-     * For <code>GCM</code> (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code> and the
+     * For GCM (Firebase Cloud Messaging) using key credentials, there is no <code>PlatformPrincipal</code>. The
      * <code>PlatformCredential</code> is <code>API key</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GCM (Firebase Cloud Messaging) using token credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using the Amazon Web Services CLI, the
+     * file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS
+     * recommends using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</code>.
      * </p>
      * </li>
      * <li>
@@ -422,7 +430,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param deleteEndpointRequest
-     *        Input for DeleteEndpoint action.
+     *        Input for <code>DeleteEndpoint</code> action.
      * @return Result of the DeleteEndpoint operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -445,7 +453,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param deletePlatformApplicationRequest
-     *        Input for DeletePlatformApplication action.
+     *        Input for <code>DeletePlatformApplication</code> action.
      * @return Result of the DeletePlatformApplication operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -567,7 +575,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param getEndpointAttributesRequest
-     *        Input for GetEndpointAttributes action.
+     *        Input for <code>GetEndpointAttributes</code> action.
      * @return Result of the GetEndpointAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -592,7 +600,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param getPlatformApplicationAttributesRequest
-     *        Input for GetPlatformApplicationAttributes action.
+     *        Input for <code>GetPlatformApplicationAttributes</code> action.
      * @return Result of the GetPlatformApplicationAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -742,7 +750,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param listEndpointsByPlatformApplicationRequest
-     *        Input for ListEndpointsByPlatformApplication action.
+     *        Input for <code>ListEndpointsByPlatformApplication</code> action.
      * @return Result of the ListEndpointsByPlatformApplication operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -832,7 +840,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param listPlatformApplicationsRequest
-     *        Input for ListPlatformApplications action.
+     *        Input for <code>ListPlatformApplications</code> action.
      * @return Result of the ListPlatformApplications operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -1300,7 +1308,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param setEndpointAttributesRequest
-     *        Input for SetEndpointAttributes action.
+     *        Input for <code>SetEndpointAttributes</code> action.
      * @return Result of the SetEndpointAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
@@ -1327,7 +1335,7 @@ public interface AmazonSNS {
      * </p>
      * 
      * @param setPlatformApplicationAttributesRequest
-     *        Input for SetPlatformApplicationAttributes action.
+     *        Input for <code>SetPlatformApplicationAttributes</code> action.
      * @return Result of the SetPlatformApplicationAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.

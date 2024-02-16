@@ -21,6 +21,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Describes a data processor.
  * </p>
+ * <note>
+ * <p>
+ * If you want to add a new line delimiter between records in objects that are delivered to Amazon S3, choose
+ * <code>AppendDelimiterToRecord</code> as a processor type. You don’t have to put a processor parameter when you select
+ * <code>AppendDelimiterToRecord</code>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/Processor" target="_top">AWS API
  *      Documentation</a>

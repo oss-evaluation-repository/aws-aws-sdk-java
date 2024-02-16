@@ -181,7 +181,7 @@ public class ListPhoneNumbersOptedOutResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPhoneNumbers() != null)
-            sb.append("PhoneNumbers: ").append(getPhoneNumbers()).append(",");
+            sb.append("PhoneNumbers: ").append("***Sensitive Data Redacted***").append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");

@@ -261,8 +261,16 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </li>
      * <li>
      * <p>
-     * For <code>GCM</code> (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code> and the
+     * For GCM (Firebase Cloud Messaging) using key credentials, there is no <code>PlatformPrincipal</code>. The
      * <code>PlatformCredential</code> is <code>API key</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GCM (Firebase Cloud Messaging) using token credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using the Amazon Web Services CLI, the
+     * file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS
+     * recommends using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</code>.
      * </p>
      * </li>
      * <li>
@@ -330,8 +338,16 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </li>
      * <li>
      * <p>
-     * For <code>GCM</code> (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code> and the
+     * For GCM (Firebase Cloud Messaging) using key credentials, there is no <code>PlatformPrincipal</code>. The
      * <code>PlatformCredential</code> is <code>API key</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For GCM (Firebase Cloud Messaging) using token credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using the Amazon Web Services CLI, the
+     * file must be in string format and special characters must be ignored. To format the file correctly, Amazon SNS
+     * recommends using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat service.json`</code>.
      * </p>
      * </li>
      * <li>
@@ -549,7 +565,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param deleteEndpointRequest
-     *        Input for DeleteEndpoint action.
+     *        Input for <code>DeleteEndpoint</code> action.
      * @return A Java Future containing the result of the DeleteEndpoint operation returned by the service.
      * @sample AmazonSNSAsync.DeleteEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteEndpoint" target="_top">AWS API
@@ -569,7 +585,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param deleteEndpointRequest
-     *        Input for DeleteEndpoint action.
+     *        Input for <code>DeleteEndpoint</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -591,7 +607,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param deletePlatformApplicationRequest
-     *        Input for DeletePlatformApplication action.
+     *        Input for <code>DeletePlatformApplication</code> action.
      * @return A Java Future containing the result of the DeletePlatformApplication operation returned by the service.
      * @sample AmazonSNSAsync.DeletePlatformApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeletePlatformApplication" target="_top">AWS
@@ -609,7 +625,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param deletePlatformApplicationRequest
-     *        Input for DeletePlatformApplication action.
+     *        Input for <code>DeletePlatformApplication</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -766,7 +782,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param getEndpointAttributesRequest
-     *        Input for GetEndpointAttributes action.
+     *        Input for <code>GetEndpointAttributes</code> action.
      * @return A Java Future containing the result of the GetEndpointAttributes operation returned by the service.
      * @sample AmazonSNSAsync.GetEndpointAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes" target="_top">AWS API
@@ -783,7 +799,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param getEndpointAttributesRequest
-     *        Input for GetEndpointAttributes action.
+     *        Input for <code>GetEndpointAttributes</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -805,7 +821,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param getPlatformApplicationAttributesRequest
-     *        Input for GetPlatformApplicationAttributes action.
+     *        Input for <code>GetPlatformApplicationAttributes</code> action.
      * @return A Java Future containing the result of the GetPlatformApplicationAttributes operation returned by the
      *         service.
      * @sample AmazonSNSAsync.GetPlatformApplicationAttributes
@@ -824,7 +840,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param getPlatformApplicationAttributesRequest
-     *        Input for GetPlatformApplicationAttributes action.
+     *        Input for <code>GetPlatformApplicationAttributes</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1047,7 +1063,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param listEndpointsByPlatformApplicationRequest
-     *        Input for ListEndpointsByPlatformApplication action.
+     *        Input for <code>ListEndpointsByPlatformApplication</code> action.
      * @return A Java Future containing the result of the ListEndpointsByPlatformApplication operation returned by the
      *         service.
      * @sample AmazonSNSAsync.ListEndpointsByPlatformApplication
@@ -1073,7 +1089,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param listEndpointsByPlatformApplicationRequest
-     *        Input for ListEndpointsByPlatformApplication action.
+     *        Input for <code>ListEndpointsByPlatformApplication</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1188,7 +1204,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param listPlatformApplicationsRequest
-     *        Input for ListPlatformApplications action.
+     *        Input for <code>ListPlatformApplications</code> action.
      * @return A Java Future containing the result of the ListPlatformApplications operation returned by the service.
      * @sample AmazonSNSAsync.ListPlatformApplications
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications" target="_top">AWS
@@ -1212,7 +1228,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param listPlatformApplicationsRequest
-     *        Input for ListPlatformApplications action.
+     *        Input for <code>ListPlatformApplications</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1887,7 +1903,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param setEndpointAttributesRequest
-     *        Input for SetEndpointAttributes action.
+     *        Input for <code>SetEndpointAttributes</code> action.
      * @return A Java Future containing the result of the SetEndpointAttributes operation returned by the service.
      * @sample AmazonSNSAsync.SetEndpointAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetEndpointAttributes" target="_top">AWS API
@@ -1904,7 +1920,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param setEndpointAttributesRequest
-     *        Input for SetEndpointAttributes action.
+     *        Input for <code>SetEndpointAttributes</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1928,7 +1944,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param setPlatformApplicationAttributesRequest
-     *        Input for SetPlatformApplicationAttributes action.
+     *        Input for <code>SetPlatformApplicationAttributes</code> action.
      * @return A Java Future containing the result of the SetPlatformApplicationAttributes operation returned by the
      *         service.
      * @sample AmazonSNSAsync.SetPlatformApplicationAttributes
@@ -1949,7 +1965,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param setPlatformApplicationAttributesRequest
-     *        Input for SetPlatformApplicationAttributes action.
+     *        Input for <code>SetPlatformApplicationAttributes</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

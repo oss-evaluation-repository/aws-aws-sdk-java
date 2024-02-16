@@ -55,8 +55,8 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
     private String prefix;
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
@@ -251,17 +251,17 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
-     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *        S3 Objects</a>.
+     *        A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     *        immediately following the bucket name. For information about how to specify this prefix, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      */
 
     public void setErrorOutputPrefix(String errorOutputPrefix) {
@@ -270,16 +270,16 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
-     * @return A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *         prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *         see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *         S3 Objects</a>.
+     * @return A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix
+     *         appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *         Objects</a>.
      */
 
     public String getErrorOutputPrefix() {
@@ -288,17 +288,17 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
-     * appears immediately following the bucket name. For information about how to specify this prefix, see <a
+     * A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     * immediately following the bucket name. For information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
      * Objects</a>.
      * </p>
      * 
      * @param errorOutputPrefix
-     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
-     *        prefix appears immediately following the bucket name. For information about how to specify this prefix,
-     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon
-     *        S3 Objects</a>.
+     *        A prefix that Firehose evaluates and adds to failed records before writing them to S3. This prefix appears
+     *        immediately following the bucket name. For information about how to specify this prefix, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom Prefixes for Amazon S3
+     *        Objects</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

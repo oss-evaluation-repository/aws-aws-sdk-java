@@ -57,6 +57,11 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * <code>DescribeDBShardGroups</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DescribePendingMaintenanceActions</code>
  * </p>
  * </li>

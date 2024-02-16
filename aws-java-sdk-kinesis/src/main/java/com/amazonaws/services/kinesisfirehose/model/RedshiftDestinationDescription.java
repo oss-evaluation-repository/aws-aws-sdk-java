@@ -56,8 +56,8 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
     private String username;
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
-     * is 3600 (60 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60
+     * minutes).
      * </p>
      */
     private RedshiftRetryOptions retryOptions;
@@ -266,13 +266,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
-     * is 3600 (60 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60
+     * minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
-     *        Default value is 3600 (60 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     *        3600 (60 minutes).
      */
 
     public void setRetryOptions(RedshiftRetryOptions retryOptions) {
@@ -281,12 +281,12 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
-     * is 3600 (60 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60
+     * minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
-     *         Default value is 3600 (60 minutes).
+     * @return The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     *         3600 (60 minutes).
      */
 
     public RedshiftRetryOptions getRetryOptions() {
@@ -295,13 +295,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
-     * is 3600 (60 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60
+     * minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
-     *        Default value is 3600 (60 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     *        3600 (60 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

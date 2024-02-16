@@ -32,6 +32,25 @@ public class OnFailure implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the destination resource.
      * </p>
+     * <p>
+     * To retain records of <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations"
+     * >asynchronous invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda function, or
+     * Amazon EventBridge event bus as the destination.
+     * </p>
+     * <p>
+     * To retain records of failed invocations from <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#event-source-mapping-destinations"
+     * >Kinesis and DynamoDB event sources</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
+     * destination.
+     * </p>
+     * <p>
+     * To retain records of failed invocations from <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination"
+     * >self-managed Kafka</a> or <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
+     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the destination.
+     * </p>
      */
     private String destination;
 
@@ -39,9 +58,46 @@ public class OnFailure implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the destination resource.
      * </p>
+     * <p>
+     * To retain records of <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations"
+     * >asynchronous invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda function, or
+     * Amazon EventBridge event bus as the destination.
+     * </p>
+     * <p>
+     * To retain records of failed invocations from <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#event-source-mapping-destinations"
+     * >Kinesis and DynamoDB event sources</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
+     * destination.
+     * </p>
+     * <p>
+     * To retain records of failed invocations from <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination"
+     * >self-managed Kafka</a> or <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
+     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the destination.
+     * </p>
      * 
      * @param destination
-     *        The Amazon Resource Name (ARN) of the destination resource.
+     *        The Amazon Resource Name (ARN) of the destination resource.</p>
+     *        <p>
+     *        To retain records of <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations"
+     *        >asynchronous invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda function,
+     *        or Amazon EventBridge event bus as the destination.
+     *        </p>
+     *        <p>
+     *        To retain records of failed invocations from <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#event-source-mapping-destinations"
+     *        >Kinesis and DynamoDB event sources</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
+     *        destination.
+     *        </p>
+     *        <p>
+     *        To retain records of failed invocations from <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination"
+     *        >self-managed Kafka</a> or <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination"
+     *        >Amazon MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the destination.
      */
 
     public void setDestination(String destination) {
@@ -52,8 +108,45 @@ public class OnFailure implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the destination resource.
      * </p>
+     * <p>
+     * To retain records of <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations"
+     * >asynchronous invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda function, or
+     * Amazon EventBridge event bus as the destination.
+     * </p>
+     * <p>
+     * To retain records of failed invocations from <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#event-source-mapping-destinations"
+     * >Kinesis and DynamoDB event sources</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
+     * destination.
+     * </p>
+     * <p>
+     * To retain records of failed invocations from <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination"
+     * >self-managed Kafka</a> or <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
+     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the destination.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the destination resource.
+     * @return The Amazon Resource Name (ARN) of the destination resource.</p>
+     *         <p>
+     *         To retain records of <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations"
+     *         >asynchronous invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda function,
+     *         or Amazon EventBridge event bus as the destination.
+     *         </p>
+     *         <p>
+     *         To retain records of failed invocations from <a href=
+     *         "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#event-source-mapping-destinations"
+     *         >Kinesis and DynamoDB event sources</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
+     *         destination.
+     *         </p>
+     *         <p>
+     *         To retain records of failed invocations from <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination"
+     *         >self-managed Kafka</a> or <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination"
+     *         >Amazon MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the destination.
      */
 
     public String getDestination() {
@@ -64,9 +157,46 @@ public class OnFailure implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the destination resource.
      * </p>
+     * <p>
+     * To retain records of <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations"
+     * >asynchronous invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda function, or
+     * Amazon EventBridge event bus as the destination.
+     * </p>
+     * <p>
+     * To retain records of failed invocations from <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#event-source-mapping-destinations"
+     * >Kinesis and DynamoDB event sources</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
+     * destination.
+     * </p>
+     * <p>
+     * To retain records of failed invocations from <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination"
+     * >self-managed Kafka</a> or <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination">Amazon
+     * MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the destination.
+     * </p>
      * 
      * @param destination
-     *        The Amazon Resource Name (ARN) of the destination resource.
+     *        The Amazon Resource Name (ARN) of the destination resource.</p>
+     *        <p>
+     *        To retain records of <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations"
+     *        >asynchronous invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Lambda function,
+     *        or Amazon EventBridge event bus as the destination.
+     *        </p>
+     *        <p>
+     *        To retain records of failed invocations from <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#event-source-mapping-destinations"
+     *        >Kinesis and DynamoDB event sources</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the
+     *        destination.
+     *        </p>
+     *        <p>
+     *        To retain records of failed invocations from <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination"
+     *        >self-managed Kafka</a> or <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination"
+     *        >Amazon MSK</a>, you can configure an Amazon SNS topic or Amazon SQS queue as the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

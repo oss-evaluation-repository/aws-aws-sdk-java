@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.
+ * Details about a Kinesis data stream used as the source for a Firehose delivery stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SourceDescription" target="_top">AWS API

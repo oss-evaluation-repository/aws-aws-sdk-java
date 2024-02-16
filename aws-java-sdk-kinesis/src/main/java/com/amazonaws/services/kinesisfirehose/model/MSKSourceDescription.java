@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the Amazon MSK cluster used as the source for a Kinesis Data Firehose delivery stream.
+ * Details about the Amazon MSK cluster used as the source for a Firehose delivery stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/MSKSourceDescription" target="_top">AWS API
@@ -48,8 +48,7 @@ public class MSKSourceDescription implements Serializable, Cloneable, Structured
     private AuthenticationConfiguration authenticationConfiguration;
     /**
      * <p>
-     * Kinesis Data Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this
-     * timestamp.
+     * Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.
      * </p>
      */
     private java.util.Date deliveryStartTimestamp;
@@ -176,13 +175,12 @@ public class MSKSourceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Kinesis Data Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this
-     * timestamp.
+     * Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.
      * </p>
      * 
      * @param deliveryStartTimestamp
-     *        Kinesis Data Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with
-     *        this timestamp.
+     *        Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this
+     *        timestamp.
      */
 
     public void setDeliveryStartTimestamp(java.util.Date deliveryStartTimestamp) {
@@ -191,12 +189,11 @@ public class MSKSourceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Kinesis Data Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this
-     * timestamp.
+     * Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.
      * </p>
      * 
-     * @return Kinesis Data Firehose starts retrieving records from the topic within the Amazon MSK cluster starting
-     *         with this timestamp.
+     * @return Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this
+     *         timestamp.
      */
 
     public java.util.Date getDeliveryStartTimestamp() {
@@ -205,13 +202,12 @@ public class MSKSourceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Kinesis Data Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this
-     * timestamp.
+     * Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this timestamp.
      * </p>
      * 
      * @param deliveryStartTimestamp
-     *        Kinesis Data Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with
-     *        this timestamp.
+     *        Firehose starts retrieving records from the topic within the Amazon MSK cluster starting with this
+     *        timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

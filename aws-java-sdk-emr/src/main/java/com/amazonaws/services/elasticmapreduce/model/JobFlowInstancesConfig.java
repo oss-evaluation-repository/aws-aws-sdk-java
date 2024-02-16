@@ -98,6 +98,12 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
     private Boolean terminationProtected;
     /**
      * <p>
+     * Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     * </p>
+     */
+    private Boolean unhealthyNodeReplacement;
+    /**
+     * <p>
      * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
      * are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3",
      * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
@@ -708,6 +714,58 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     * </p>
+     * 
+     * @param unhealthyNodeReplacement
+     *        Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     */
+
+    public void setUnhealthyNodeReplacement(Boolean unhealthyNodeReplacement) {
+        this.unhealthyNodeReplacement = unhealthyNodeReplacement;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     */
+
+    public Boolean getUnhealthyNodeReplacement() {
+        return this.unhealthyNodeReplacement;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     * </p>
+     * 
+     * @param unhealthyNodeReplacement
+     *        Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobFlowInstancesConfig withUnhealthyNodeReplacement(Boolean unhealthyNodeReplacement) {
+        setUnhealthyNodeReplacement(unhealthyNodeReplacement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     * </p>
+     * 
+     * @return Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.
+     */
+
+    public Boolean isUnhealthyNodeReplacement() {
+        return this.unhealthyNodeReplacement;
+    }
+
+    /**
+     * <p>
      * Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs
      * are "0.18" (no longer maintained), "0.20" (no longer maintained), "0.20.205" (no longer maintained), "1.0.3",
      * "2.2.0", or "2.4.0". If you do not set this value, the default of 0.18 is used, unless the
@@ -1269,6 +1327,8 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
             sb.append("KeepJobFlowAliveWhenNoSteps: ").append(getKeepJobFlowAliveWhenNoSteps()).append(",");
         if (getTerminationProtected() != null)
             sb.append("TerminationProtected: ").append(getTerminationProtected()).append(",");
+        if (getUnhealthyNodeReplacement() != null)
+            sb.append("UnhealthyNodeReplacement: ").append(getUnhealthyNodeReplacement()).append(",");
         if (getHadoopVersion() != null)
             sb.append("HadoopVersion: ").append(getHadoopVersion()).append(",");
         if (getEc2SubnetId() != null)
@@ -1335,6 +1395,10 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
             return false;
         if (other.getTerminationProtected() != null && other.getTerminationProtected().equals(this.getTerminationProtected()) == false)
             return false;
+        if (other.getUnhealthyNodeReplacement() == null ^ this.getUnhealthyNodeReplacement() == null)
+            return false;
+        if (other.getUnhealthyNodeReplacement() != null && other.getUnhealthyNodeReplacement().equals(this.getUnhealthyNodeReplacement()) == false)
+            return false;
         if (other.getHadoopVersion() == null ^ this.getHadoopVersion() == null)
             return false;
         if (other.getHadoopVersion() != null && other.getHadoopVersion().equals(this.getHadoopVersion()) == false)
@@ -1387,6 +1451,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
         hashCode = prime * hashCode + ((getKeepJobFlowAliveWhenNoSteps() == null) ? 0 : getKeepJobFlowAliveWhenNoSteps().hashCode());
         hashCode = prime * hashCode + ((getTerminationProtected() == null) ? 0 : getTerminationProtected().hashCode());
+        hashCode = prime * hashCode + ((getUnhealthyNodeReplacement() == null) ? 0 : getUnhealthyNodeReplacement().hashCode());
         hashCode = prime * hashCode + ((getHadoopVersion() == null) ? 0 : getHadoopVersion().hashCode());
         hashCode = prime * hashCode + ((getEc2SubnetId() == null) ? 0 : getEc2SubnetId().hashCode());
         hashCode = prime * hashCode + ((getEc2SubnetIds() == null) ? 0 : getEc2SubnetIds().hashCode());

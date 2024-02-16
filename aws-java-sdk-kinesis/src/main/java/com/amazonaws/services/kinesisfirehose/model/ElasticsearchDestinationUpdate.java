@@ -30,10 +30,10 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-     * Firehose Access to an Amazon S3 Destination</a> and <a
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
+     * API and for indexing documents. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose Access
+     * to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
@@ -68,13 +68,12 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a
-     * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during
-     * runtime.
+     * new type for an existing index that already has another type, Firehose returns an error during runtime.
      * </p>
      * <p>
-     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
-     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
-     * with a new index name, provide an empty string for <code>TypeName</code>.
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data
+     * to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new
+     * index name, provide an empty string for <code>TypeName</code>.
      * </p>
      */
     private String typeName;
@@ -96,8 +95,8 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     private ElasticsearchBufferingHints bufferingHints;
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
-     * is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5
+     * minutes).
      * </p>
      */
     private ElasticsearchRetryOptions retryOptions;
@@ -121,27 +120,27 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      */
     private DocumentIdOptions documentIdOptions;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-     * Firehose Access to an Amazon S3 Destination</a> and <a
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
+     * API and for indexing documents. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose Access
+     * to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Amazon ES Configuration API and for indexing documents. For more information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
-     *        Data Firehose Access to an Amazon S3 Destination</a> and <a
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES
+     *        Configuration API and for indexing documents. For more information, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose
+     *        Access to an Amazon S3 Destination</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
@@ -152,18 +151,18 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-     * Firehose Access to an Amazon S3 Destination</a> and <a
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
+     * API and for indexing documents. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose Access
+     * to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *         Amazon ES Configuration API and for indexing documents. For more information, see <a
-     *         href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
-     *         Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES
+     *         Configuration API and for indexing documents. For more information, see <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
+     *         Firehose Access to an Amazon S3 Destination</a> and <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
@@ -174,19 +173,19 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-     * Firehose Access to an Amazon S3 Destination</a> and <a
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
+     * API and for indexing documents. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose Access
+     * to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Amazon ES Configuration API and for indexing documents. For more information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
-     *        Data Firehose Access to an Amazon S3 Destination</a> and <a
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES
+     *        Configuration API and for indexing documents. For more information, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose
+     *        Access to an Amazon S3 Destination</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -365,23 +364,22 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a
-     * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during
-     * runtime.
+     * new type for an existing index that already has another type, Firehose returns an error during runtime.
      * </p>
      * <p>
-     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
-     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
-     * with a new index name, provide an empty string for <code>TypeName</code>.
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data
+     * to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new
+     * index name, provide an empty string for <code>TypeName</code>.
      * </p>
      * 
      * @param typeName
      *        The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
-     *        specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *        error during runtime.</p>
+     *        specify a new type for an existing index that already has another type, Firehose returns an error during
+     *        runtime.</p>
      *        <p>
-     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
-     *        still delivers data to Elasticsearch with the old index name and type name. If you want to update your
-     *        delivery stream with a new index name, provide an empty string for <code>TypeName</code>.
+     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still
+     *        delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery
+     *        stream with a new index name, provide an empty string for <code>TypeName</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -391,22 +389,21 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a
-     * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during
-     * runtime.
+     * new type for an existing index that already has another type, Firehose returns an error during runtime.
      * </p>
      * <p>
-     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
-     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
-     * with a new index name, provide an empty string for <code>TypeName</code>.
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data
+     * to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new
+     * index name, provide an empty string for <code>TypeName</code>.
      * </p>
      * 
      * @return The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
-     *         specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *         error during runtime.</p>
+     *         specify a new type for an existing index that already has another type, Firehose returns an error during
+     *         runtime.</p>
      *         <p>
-     *         If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
-     *         still delivers data to Elasticsearch with the old index name and type name. If you want to update your
-     *         delivery stream with a new index name, provide an empty string for <code>TypeName</code>.
+     *         If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still
+     *         delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery
+     *         stream with a new index name, provide an empty string for <code>TypeName</code>.
      */
 
     public String getTypeName() {
@@ -416,23 +413,22 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     /**
      * <p>
      * The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a
-     * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during
-     * runtime.
+     * new type for an existing index that already has another type, Firehose returns an error during runtime.
      * </p>
      * <p>
-     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
-     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
-     * with a new index name, provide an empty string for <code>TypeName</code>.
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still delivers data
+     * to Elasticsearch with the old index name and type name. If you want to update your delivery stream with a new
+     * index name, provide an empty string for <code>TypeName</code>.
      * </p>
      * 
      * @param typeName
      *        The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
-     *        specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *        error during runtime.</p>
+     *        specify a new type for an existing index that already has another type, Firehose returns an error during
+     *        runtime.</p>
      *        <p>
-     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
-     *        still delivers data to Elasticsearch with the old index name and type name. If you want to update your
-     *        delivery stream with a new index name, provide an empty string for <code>TypeName</code>.
+     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Firehose still
+     *        delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery
+     *        stream with a new index name, provide an empty string for <code>TypeName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,13 +588,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
-     * is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5
+     * minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
-     *        value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300
+     *        (5 minutes).
      */
 
     public void setRetryOptions(ElasticsearchRetryOptions retryOptions) {
@@ -607,12 +603,12 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
-     * is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5
+     * minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
-     *         value is 300 (5 minutes).
+     * @return The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300
+     *         (5 minutes).
      */
 
     public ElasticsearchRetryOptions getRetryOptions() {
@@ -621,13 +617,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
-     * is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5
+     * minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
-     *        value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300
+     *        (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -758,13 +754,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      */
 
     public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
@@ -773,12 +769,12 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
-     * @return Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose
-     *         generated document ID and OpenSearch Service generated document ID.
+     * @return Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *         and OpenSearch Service generated document ID.
      */
 
     public DocumentIdOptions getDocumentIdOptions() {
@@ -787,13 +783,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,10 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Kinesis Data Firehose throws this exception when an attempt to put records or to start or stop delivery stream
- * encryption fails. This happens when the KMS service throws one of the following exception types:
- * <code>AccessDeniedException</code>, <code>InvalidStateException</code>, <code>DisabledException</code>, or
- * <code>NotFoundException</code>.
+ * Firehose throws this exception when an attempt to put records or to start or stop delivery stream encryption fails.
+ * This happens when the KMS service throws one of the following exception types: <code>AccessDeniedException</code>,
+ * <code>InvalidStateException</code>, <code>DisabledException</code>, or <code>NotFoundException</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

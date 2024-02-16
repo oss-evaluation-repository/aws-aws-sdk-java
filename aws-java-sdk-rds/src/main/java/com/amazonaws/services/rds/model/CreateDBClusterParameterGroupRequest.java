@@ -75,7 +75,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>RDS for PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>postgres12</code>
+     * Example: <code>postgres13</code>
      * </p>
      * <p>
      * To list all of the available parameter group families for a DB engine, use the following command:
@@ -290,7 +290,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>RDS for PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>postgres12</code>
+     * Example: <code>postgres13</code>
      * </p>
      * <p>
      * To list all of the available parameter group families for a DB engine, use the following command:
@@ -362,7 +362,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <b>RDS for PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>postgres12</code>
+     *        Example: <code>postgres13</code>
      *        </p>
      *        <p>
      *        To list all of the available parameter group families for a DB engine, use the following command:
@@ -440,7 +440,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>RDS for PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>postgres12</code>
+     * Example: <code>postgres13</code>
      * </p>
      * <p>
      * To list all of the available parameter group families for a DB engine, use the following command:
@@ -511,7 +511,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <b>RDS for PostgreSQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>postgres12</code>
+     *         Example: <code>postgres13</code>
      *         </p>
      *         <p>
      *         To list all of the available parameter group families for a DB engine, use the following command:
@@ -589,7 +589,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>RDS for PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>postgres12</code>
+     * Example: <code>postgres13</code>
      * </p>
      * <p>
      * To list all of the available parameter group families for a DB engine, use the following command:
@@ -661,7 +661,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <b>RDS for PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>postgres12</code>
+     *        Example: <code>postgres13</code>
      *        </p>
      *        <p>
      *        To list all of the available parameter group families for a DB engine, use the following command:

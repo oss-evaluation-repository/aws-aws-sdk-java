@@ -53,6 +53,10 @@ public class ExtendedS3DestinationConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataFormatConversionConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> DYNAMICPARTITIONINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamicPartitioningConfiguration").build();
+    private static final MarshallingInfo<String> FILEEXTENSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileExtension").build();
+    private static final MarshallingInfo<String> CUSTOMTIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomTimeZone").build();
 
     private static final ExtendedS3DestinationConfigurationMarshaller instance = new ExtendedS3DestinationConfigurationMarshaller();
 
@@ -83,6 +87,8 @@ public class ExtendedS3DestinationConfigurationMarshaller {
             protocolMarshaller.marshall(extendedS3DestinationConfiguration.getS3BackupConfiguration(), S3BACKUPCONFIGURATION_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationConfiguration.getDataFormatConversionConfiguration(), DATAFORMATCONVERSIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationConfiguration.getDynamicPartitioningConfiguration(), DYNAMICPARTITIONINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(extendedS3DestinationConfiguration.getFileExtension(), FILEEXTENSION_BINDING);
+            protocolMarshaller.marshall(extendedS3DestinationConfiguration.getCustomTimeZone(), CUSTOMTIMEZONE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

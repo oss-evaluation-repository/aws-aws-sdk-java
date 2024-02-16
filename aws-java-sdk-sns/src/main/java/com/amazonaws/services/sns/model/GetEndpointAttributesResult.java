@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Response from GetEndpointAttributes of the EndpointArn.
+ * Response from <code>GetEndpointAttributes</code> of the <code>EndpointArn</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetEndpointAttributes" target="_top">AWS API

@@ -31,8 +31,8 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless
-     * offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for
+     * Amazon OpenSearch Service Configuration API and for indexing documents.
      * </p>
      */
     private String roleARN;
@@ -58,18 +58,18 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
     private AmazonOpenSearchServerlessBufferingHints bufferingHints;
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for
-     * Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes).
      * </p>
      */
     private AmazonOpenSearchServerlessRetryOptions retryOptions;
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
-     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
-     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
-     * appended to the prefix.
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose writes
+     * any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to
+     * the prefix.
      * </p>
      */
     private String s3BackupMode;
@@ -84,13 +84,13 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless
-     * offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for
+     * Amazon OpenSearch Service Configuration API and for indexing documents.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless
+     *        offering for Amazon OpenSearch Service Configuration API and for indexing documents.
      */
 
     public void setRoleARN(String roleARN) {
@@ -99,12 +99,12 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless
-     * offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for
+     * Amazon OpenSearch Service Configuration API and for indexing documents.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *         Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless
+     *         offering for Amazon OpenSearch Service Configuration API and for indexing documents.
      */
 
     public String getRoleARN() {
@@ -113,13 +113,13 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Serverless
-     * offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless offering for
+     * Amazon OpenSearch Service Configuration API and for indexing documents.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Serverless offering for Amazon OpenSearch Service Configuration API and for indexing documents.
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Serverless
+     *        offering for Amazon OpenSearch Service Configuration API and for indexing documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,13 +262,13 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for
-     * Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering
-     *        for Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     *        OpenSearch Service. The default value is 300 (5 minutes).
      */
 
     public void setRetryOptions(AmazonOpenSearchServerlessRetryOptions retryOptions) {
@@ -277,12 +277,12 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for
-     * Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless
-     *         offering for Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * @return The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     *         OpenSearch Service. The default value is 300 (5 minutes).
      */
 
     public AmazonOpenSearchServerlessRetryOptions getRetryOptions() {
@@ -291,13 +291,13 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering for
-     * Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     * OpenSearch Service. The default value is 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to the Serverless offering
-     *        for Amazon OpenSearch Service. The default value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to the Serverless offering for Amazon
+     *        OpenSearch Service. The default value is 300 (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,19 +308,19 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
-     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
-     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
-     * appended to the prefix.
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose writes
+     * any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to
+     * the prefix.
      * </p>
      * 
      * @param s3BackupMode
-     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis
-     *        Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
-     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data
-     *        Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
-     *        AmazonOpenSearchService-failed/ appended to the prefix.
+     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose
+     *        writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers
+     *        all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     *        appended to the prefix.
      * @see AmazonOpenSearchServerlessS3BackupMode
      */
 
@@ -330,18 +330,18 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
-     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
-     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
-     * appended to the prefix.
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose writes
+     * any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to
+     * the prefix.
      * </p>
      * 
-     * @return Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis
-     *         Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination,
-     *         with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data
-     *         Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
-     *         AmazonOpenSearchService-failed/ appended to the prefix.
+     * @return Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose
+     *         writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *         AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers
+     *         all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     *         appended to the prefix.
      * @see AmazonOpenSearchServerlessS3BackupMode
      */
 
@@ -351,19 +351,19 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
-     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
-     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
-     * appended to the prefix.
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose writes
+     * any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to
+     * the prefix.
      * </p>
      * 
      * @param s3BackupMode
-     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis
-     *        Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
-     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data
-     *        Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
-     *        AmazonOpenSearchService-failed/ appended to the prefix.
+     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose
+     *        writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers
+     *        all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     *        appended to the prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonOpenSearchServerlessS3BackupMode
      */
@@ -375,19 +375,19 @@ public class AmazonOpenSearchServerlessDestinationConfiguration implements Seria
 
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
-     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
-     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
-     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
-     * appended to the prefix.
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose writes
+     * any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers all
+     * incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/ appended to
+     * the prefix.
      * </p>
      * 
      * @param s3BackupMode
-     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis
-     *        Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
-     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data
-     *        Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
-     *        AmazonOpenSearchService-failed/ appended to the prefix.
+     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Firehose
+     *        writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Firehose delivers
+     *        all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     *        appended to the prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonOpenSearchServerlessS3BackupMode
      */

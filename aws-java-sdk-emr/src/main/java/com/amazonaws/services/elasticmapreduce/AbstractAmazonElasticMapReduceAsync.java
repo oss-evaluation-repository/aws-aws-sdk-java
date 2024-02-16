@@ -742,6 +742,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     }
 
     @Override
+    public java.util.concurrent.Future<SetUnhealthyNodeReplacementResult> setUnhealthyNodeReplacementAsync(SetUnhealthyNodeReplacementRequest request) {
+
+        return setUnhealthyNodeReplacementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUnhealthyNodeReplacementResult> setUnhealthyNodeReplacementAsync(SetUnhealthyNodeReplacementRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetUnhealthyNodeReplacementRequest, SetUnhealthyNodeReplacementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SetVisibleToAllUsersResult> setVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request) {
 
         return setVisibleToAllUsersAsync(request, null);

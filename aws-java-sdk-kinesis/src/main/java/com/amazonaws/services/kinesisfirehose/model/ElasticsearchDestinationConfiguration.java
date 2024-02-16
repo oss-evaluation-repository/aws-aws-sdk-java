@@ -30,10 +30,10 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-     * Firehose Access to an Amazon S3 Destination</a> and <a
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
+     * API and for indexing documents. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose Access
+     * to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
@@ -68,8 +68,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a
-     * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run
-     * time.
+     * new type for an existing index that already has another type, Firehose returns an error during run time.
      * </p>
      * <p>
      * For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
@@ -94,20 +93,20 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     private ElasticsearchBufferingHints bufferingHints;
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
-     * is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5
+     * minutes).
      * </p>
      */
     private ElasticsearchRetryOptions retryOptions;
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>,
-     * Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination,
-     * with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
-     * see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     * for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>,
+     * Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
+     * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * <p>
      * You can't change this backup mode after you create the delivery stream.
@@ -140,27 +139,27 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     private VpcConfiguration vpcConfiguration;
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      */
     private DocumentIdOptions documentIdOptions;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-     * Firehose Access to an Amazon S3 Destination</a> and <a
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
+     * API and for indexing documents. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose Access
+     * to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Amazon ES Configuration API and for indexing documents. For more information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
-     *        Data Firehose Access to an Amazon S3 Destination</a> and <a
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES
+     *        Configuration API and for indexing documents. For more information, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose
+     *        Access to an Amazon S3 Destination</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
@@ -171,18 +170,18 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-     * Firehose Access to an Amazon S3 Destination</a> and <a
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
+     * API and for indexing documents. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose Access
+     * to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *         Amazon ES Configuration API and for indexing documents. For more information, see <a
-     *         href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
-     *         Data Firehose Access to an Amazon S3 Destination</a> and <a
+     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES
+     *         Configuration API and for indexing documents. For more information, see <a
+     *         href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant
+     *         Firehose Access to an Amazon S3 Destination</a> and <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
@@ -193,19 +192,19 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
-     * Configuration API and for indexing documents. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
-     * Firehose Access to an Amazon S3 Destination</a> and <a
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES Configuration
+     * API and for indexing documents. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose Access
+     * to an Amazon S3 Destination</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
-     *        Amazon ES Configuration API and for indexing documents. For more information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
-     *        Data Firehose Access to an Amazon S3 Destination</a> and <a
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for calling the Amazon ES
+     *        Configuration API and for indexing documents. For more information, see <a
+     *        href="https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Firehose
+     *        Access to an Amazon S3 Destination</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -384,8 +383,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a
-     * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run
-     * time.
+     * new type for an existing index that already has another type, Firehose returns an error during run time.
      * </p>
      * <p>
      * For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
@@ -393,8 +391,8 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * 
      * @param typeName
      *        The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
-     *        specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *        error during run time.</p>
+     *        specify a new type for an existing index that already has another type, Firehose returns an error during
+     *        run time.</p>
      *        <p>
      *        For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
      */
@@ -406,16 +404,15 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a
-     * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run
-     * time.
+     * new type for an existing index that already has another type, Firehose returns an error during run time.
      * </p>
      * <p>
      * For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
      * </p>
      * 
      * @return The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
-     *         specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *         error during run time.</p>
+     *         specify a new type for an existing index that already has another type, Firehose returns an error during
+     *         run time.</p>
      *         <p>
      *         For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
      */
@@ -427,8 +424,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to specify a
-     * new type for an existing index that already has another type, Kinesis Data Firehose returns an error during run
-     * time.
+     * new type for an existing index that already has another type, Firehose returns an error during run time.
      * </p>
      * <p>
      * For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
@@ -436,8 +432,8 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * 
      * @param typeName
      *        The Elasticsearch type name. For Elasticsearch 6.x, there can be only one type per index. If you try to
-     *        specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an
-     *        error during run time.</p>
+     *        specify a new type for an existing index that already has another type, Firehose returns an error during
+     *        run time.</p>
      *        <p>
      *        For Elasticsearch 7.x, don't specify a <code>TypeName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -599,13 +595,13 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
-     * is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5
+     * minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
-     *        value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300
+     *        (5 minutes).
      */
 
     public void setRetryOptions(ElasticsearchRetryOptions retryOptions) {
@@ -614,12 +610,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
-     * is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5
+     * minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
-     *         value is 300 (5 minutes).
+     * @return The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300
+     *         (5 minutes).
      */
 
     public ElasticsearchRetryOptions getRetryOptions() {
@@ -628,13 +624,13 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
-     * is 300 (5 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300 (5
+     * minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
-     *        value is 300 (5 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon ES. The default value is 300
+     *        (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -646,12 +642,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>,
-     * Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination,
-     * with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
-     * see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     * for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>,
+     * Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
+     * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * <p>
      * You can't change this backup mode after you create the delivery stream.
@@ -659,13 +655,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>
-     *        , Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3
-     *        destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     *        <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
-     *        writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *        , Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
+     *        <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed
+     *        documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
+     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3
+     *        Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
      *        <p>
      *        You can't change this backup mode after you create the delivery stream.
      * @see ElasticsearchS3BackupMode
@@ -678,23 +673,23 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>,
-     * Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination,
-     * with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
-     * see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     * for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>,
+     * Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
+     * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * <p>
      * You can't change this backup mode after you create the delivery stream.
      * </p>
      * 
      * @return Defines how documents should be delivered to Amazon S3. When it is set to
-     *         <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents that could not be indexed to
-     *         the configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the
-     *         key prefix. When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to
-     *         Amazon S3, and also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to
-     *         the prefix. For more information, see <a
+     *         <code>FailedDocumentsOnly</code>, Firehose writes any documents that could not be indexed to the
+     *         configured Amazon S3 destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key
+     *         prefix. When set to <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and
+     *         also writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix.
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
      *         for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
      *         <p>
@@ -709,12 +704,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>,
-     * Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination,
-     * with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
-     * see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     * for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>,
+     * Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
+     * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * <p>
      * You can't change this backup mode after you create the delivery stream.
@@ -722,13 +717,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>
-     *        , Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3
-     *        destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     *        <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
-     *        writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *        , Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
+     *        <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed
+     *        documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
+     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3
+     *        Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
      *        <p>
      *        You can't change this backup mode after you create the delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -743,12 +737,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>,
-     * Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination,
-     * with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
-     * see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     * for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>,
+     * Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
+     * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * <p>
      * You can't change this backup mode after you create the delivery stream.
@@ -756,13 +750,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>
-     *        , Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3
-     *        destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     *        <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
-     *        writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *        , Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
+     *        <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed
+     *        documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
+     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3
+     *        Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
      *        <p>
      *        You can't change this backup mode after you create the delivery stream.
      * @see ElasticsearchS3BackupMode
@@ -775,12 +768,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>,
-     * Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination,
-     * with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
-     * see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     * for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to <code>AllDocuments</code>,
+     * Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     * <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
+     * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * <p>
      * You can't change this backup mode after you create the delivery stream.
@@ -788,13 +781,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>
-     *        , Kinesis Data Firehose writes any documents that could not be indexed to the configured Amazon S3
-     *        destination, with <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
-     *        <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
-     *        writes failed documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *        , Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        <code>AmazonOpenSearchService-failed/</code> appended to the key prefix. When set to
+     *        <code>AllDocuments</code>, Firehose delivers all incoming records to Amazon S3, and also writes failed
+     *        documents with <code>AmazonOpenSearchService-failed/</code> appended to the prefix. For more information,
+     *        see <a href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3
+     *        Backup for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
      *        <p>
      *        You can't change this backup mode after you create the delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -968,13 +960,13 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      */
 
     public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
@@ -983,12 +975,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
-     * @return Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose
-     *         generated document ID and OpenSearch Service generated document ID.
+     * @return Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *         and OpenSearch Service generated document ID.
      */
 
     public DocumentIdOptions getDocumentIdOptions() {
@@ -997,13 +989,13 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

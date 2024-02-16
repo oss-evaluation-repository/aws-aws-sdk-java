@@ -160,7 +160,7 @@ public class SMSSandboxPhoneNumber implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus());
         sb.append("}");

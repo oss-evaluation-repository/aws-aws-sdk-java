@@ -47,7 +47,9 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
      * </p>
      * </li>
      * <li>
@@ -134,7 +136,9 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
      * </p>
      * </li>
      * <li>
@@ -169,7 +173,9 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection
+     *        (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     *        event source mappings</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -210,7 +216,9 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
      * </p>
      * </li>
      * <li>
@@ -244,7 +252,10 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     *         <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC
+     *         connection (for <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event
+     *         source mappings</a>).
      *         </p>
      *         </li>
      *         <li>
@@ -285,7 +296,9 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection (for
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account event source
+     * mappings</a>).
      * </p>
      * </li>
      * <li>
@@ -320,7 +333,9 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster or the ARN of the VPC connection
+     *        (for <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     *        event source mappings</a>).
      *        </p>
      *        </li>
      *        <li>

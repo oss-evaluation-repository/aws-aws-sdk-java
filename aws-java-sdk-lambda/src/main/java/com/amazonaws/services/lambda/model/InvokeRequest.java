@@ -91,6 +91,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.
+     * Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.
      * </p>
      */
     private String clientContext;
@@ -651,11 +652,13 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.
+     * Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.
      * </p>
      * 
      * @param clientContext
      *        Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context
-     *        object.
+     *        object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations
+     *        only.
      */
 
     public void setClientContext(String clientContext) {
@@ -665,10 +668,12 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.
+     * Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.
      * </p>
      * 
      * @return Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context
-     *         object.
+     *         object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations
+     *         only.
      */
 
     public String getClientContext() {
@@ -678,11 +683,13 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.
+     * Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations only.
      * </p>
      * 
      * @param clientContext
      *        Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context
-     *        object.
+     *        object. Lambda passes the <code>ClientContext</code> object to your function for synchronous invocations
+     *        only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

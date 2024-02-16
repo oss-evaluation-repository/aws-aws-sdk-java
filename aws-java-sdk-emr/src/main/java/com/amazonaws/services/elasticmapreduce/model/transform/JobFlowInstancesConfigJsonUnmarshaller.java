@@ -88,6 +88,10 @@ public class JobFlowInstancesConfigJsonUnmarshaller implements Unmarshaller<JobF
                     context.nextToken();
                     jobFlowInstancesConfig.setTerminationProtected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("UnhealthyNodeReplacement", targetDepth)) {
+                    context.nextToken();
+                    jobFlowInstancesConfig.setUnhealthyNodeReplacement(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("HadoopVersion", targetDepth)) {
                     context.nextToken();
                     jobFlowInstancesConfig.setHadoopVersion(context.getUnmarshaller(String.class).unmarshall(context));

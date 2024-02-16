@@ -30,11 +30,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
- * <fullname>Amazon Kinesis Data Firehose API Reference</fullname>
+ * <fullname>Amazon Data Firehose</fullname>
  * <p>
- * Amazon Kinesis Data Firehose is a fully managed service that delivers real-time streaming data to destinations such
- * as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other
- * supportd destinations.
+ * Amazon Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon
+ * Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supportd
+ * destinations.
  * </p>
  */
 @ThreadSafe
@@ -359,6 +359,39 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     }
 
     @Override
+    public java.util.concurrent.Future<GetKinesisStreamResult> getKinesisStreamAsync(GetKinesisStreamRequest request) {
+
+        return getKinesisStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKinesisStreamResult> getKinesisStreamAsync(final GetKinesisStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKinesisStreamRequest, GetKinesisStreamResult> asyncHandler) {
+        final GetKinesisStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKinesisStreamResult>() {
+            @Override
+            public GetKinesisStreamResult call() throws Exception {
+                GetKinesisStreamResult result = null;
+
+                try {
+                    result = executeGetKinesisStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeliveryStreamsResult> listDeliveryStreamsAsync(ListDeliveryStreamsRequest request) {
 
         return listDeliveryStreamsAsync(request, null);
@@ -641,6 +674,40 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
 
                 try {
                     result = executeUpdateDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(VerifyResourcesExistForTagrisRequest request) {
+
+        return verifyResourcesExistForTagrisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyResourcesExistForTagrisResult> verifyResourcesExistForTagrisAsync(
+            final VerifyResourcesExistForTagrisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<VerifyResourcesExistForTagrisRequest, VerifyResourcesExistForTagrisResult> asyncHandler) {
+        final VerifyResourcesExistForTagrisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<VerifyResourcesExistForTagrisResult>() {
+            @Override
+            public VerifyResourcesExistForTagrisResult call() throws Exception {
+                VerifyResourcesExistForTagrisResult result = null;
+
+                try {
+                    result = executeVerifyResourcesExistForTagris(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -52,6 +52,8 @@ public class JobFlowInstancesDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeepJobFlowAliveWhenNoSteps").build();
     private static final MarshallingInfo<Boolean> TERMINATIONPROTECTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminationProtected").build();
+    private static final MarshallingInfo<Boolean> UNHEALTHYNODEREPLACEMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnhealthyNodeReplacement").build();
     private static final MarshallingInfo<String> HADOOPVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HadoopVersion").build();
 
@@ -83,6 +85,7 @@ public class JobFlowInstancesDetailMarshaller {
             protocolMarshaller.marshall(jobFlowInstancesDetail.getPlacement(), PLACEMENT_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesDetail.getKeepJobFlowAliveWhenNoSteps(), KEEPJOBFLOWALIVEWHENNOSTEPS_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesDetail.getTerminationProtected(), TERMINATIONPROTECTED_BINDING);
+            protocolMarshaller.marshall(jobFlowInstancesDetail.getUnhealthyNodeReplacement(), UNHEALTHYNODEREPLACEMENT_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesDetail.getHadoopVersion(), HADOOPVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

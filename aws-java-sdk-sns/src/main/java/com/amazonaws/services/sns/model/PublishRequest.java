@@ -1675,7 +1675,7 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getTargetArn() != null)
             sb.append("TargetArn: ").append(getTargetArn()).append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getMessage() != null)
             sb.append("Message: ").append(getMessage()).append(",");
         if (getSubject() != null)

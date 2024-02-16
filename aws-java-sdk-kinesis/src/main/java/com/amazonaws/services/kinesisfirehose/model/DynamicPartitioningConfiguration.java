@@ -32,24 +32,24 @@ public class DynamicPartitioningConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+     * The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
      * </p>
      */
     private RetryOptions retryOptions;
     /**
      * <p>
-     * Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     * Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+     * The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+     *        The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
      */
 
     public void setRetryOptions(RetryOptions retryOptions) {
@@ -58,10 +58,10 @@ public class DynamicPartitioningConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+     * The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+     * @return The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
      */
 
     public RetryOptions getRetryOptions() {
@@ -70,11 +70,11 @@ public class DynamicPartitioningConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+     * The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+     *        The retry behavior in case Firehose is unable to deliver data to an Amazon S3 prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,11 +85,11 @@ public class DynamicPartitioningConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     * Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      * </p>
      * 
      * @param enabled
-     *        Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     *        Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -98,10 +98,10 @@ public class DynamicPartitioningConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     * Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      * </p>
      * 
-     * @return Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     * @return Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      */
 
     public Boolean getEnabled() {
@@ -110,11 +110,11 @@ public class DynamicPartitioningConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     * Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      * </p>
      * 
      * @param enabled
-     *        Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     *        Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,10 +125,10 @@ public class DynamicPartitioningConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     * Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      * </p>
      * 
-     * @return Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.
+     * @return Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
      */
 
     public Boolean isEnabled() {

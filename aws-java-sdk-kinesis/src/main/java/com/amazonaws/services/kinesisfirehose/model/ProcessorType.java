@@ -22,6 +22,7 @@ public enum ProcessorType {
 
     RecordDeAggregation("RecordDeAggregation"),
     Decompression("Decompression"),
+    CloudWatchLogProcessing("CloudWatchLogProcessing"),
     Lambda("Lambda"),
     MetadataExtraction("MetadataExtraction"),
     AppendDelimiterToRecord("AppendDelimiterToRecord");

@@ -157,7 +157,7 @@ public class CreateSMSSandboxPhoneNumberRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode());
         sb.append("}");

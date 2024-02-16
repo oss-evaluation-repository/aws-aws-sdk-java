@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.
- * This parameter is required if <code>Enabled</code> is set to true.
+ * Specifies the schema to which you want Firehose to configure your data before it writes it to Amazon S3. This
+ * parameter is required if <code>Enabled</code> is set to true.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SchemaConfiguration" target="_top">AWS API
@@ -31,8 +31,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same
-     * account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.
+     * The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use
+     * for Firehose. Cross-account roles aren't allowed.
      * </p>
      * <important>
      * <p>
@@ -86,16 +86,16 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to
-     * <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any updates to the table
-     * are automatically picked up.
+     * <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the table are
+     * automatically picked up.
      * </p>
      */
     private String versionId;
 
     /**
      * <p>
-     * The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same
-     * account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.
+     * The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use
+     * for Firehose. Cross-account roles aren't allowed.
      * </p>
      * <important>
      * <p>
@@ -106,8 +106,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </important>
      * 
      * @param roleARN
-     *        The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the
-     *        same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
+     *        The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account
+     *        you use for Firehose. Cross-account roles aren't allowed.</p> <important>
      *        <p>
      *        If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *        <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value
@@ -121,8 +121,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same
-     * account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.
+     * The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use
+     * for Firehose. Cross-account roles aren't allowed.
      * </p>
      * <important>
      * <p>
@@ -132,8 +132,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * </important>
      * 
-     * @return The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the
-     *         same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
+     * @return The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account
+     *         you use for Firehose. Cross-account roles aren't allowed.</p> <important>
      *         <p>
      *         If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *         <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value
@@ -147,8 +147,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same
-     * account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.
+     * The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account you use
+     * for Firehose. Cross-account roles aren't allowed.
      * </p>
      * <important>
      * <p>
@@ -159,8 +159,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </important>
      * 
      * @param roleARN
-     *        The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the
-     *        same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
+     *        The role that Firehose can use to access Amazon Web Services Glue. This role must be in the same account
+     *        you use for Firehose. Cross-account roles aren't allowed.</p> <important>
      *        <p>
      *        If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *        <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value
@@ -424,14 +424,14 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to
-     * <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any updates to the table
-     * are automatically picked up.
+     * <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the table are
+     * automatically picked up.
      * </p>
      * 
      * @param versionId
      *        Specifies the table version for the output data schema. If you don't specify this version ID, or if you
-     *        set it to <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any
-     *        updates to the table are automatically picked up.
+     *        set it to <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the
+     *        table are automatically picked up.
      */
 
     public void setVersionId(String versionId) {
@@ -441,13 +441,13 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to
-     * <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any updates to the table
-     * are automatically picked up.
+     * <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the table are
+     * automatically picked up.
      * </p>
      * 
      * @return Specifies the table version for the output data schema. If you don't specify this version ID, or if you
-     *         set it to <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any
-     *         updates to the table are automatically picked up.
+     *         set it to <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the
+     *         table are automatically picked up.
      */
 
     public String getVersionId() {
@@ -457,14 +457,14 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Specifies the table version for the output data schema. If you don't specify this version ID, or if you set it to
-     * <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any updates to the table
-     * are automatically picked up.
+     * <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the table are
+     * automatically picked up.
      * </p>
      * 
      * @param versionId
      *        Specifies the table version for the output data schema. If you don't specify this version ID, or if you
-     *        set it to <code>LATEST</code>, Kinesis Data Firehose uses the most recent version. This means that any
-     *        updates to the table are automatically picked up.
+     *        set it to <code>LATEST</code>, Firehose uses the most recent version. This means that any updates to the
+     *        table are automatically picked up.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

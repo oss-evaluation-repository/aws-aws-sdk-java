@@ -122,7 +122,7 @@ public class SnowflakeDestinationConfiguration implements Serializable, Cloneabl
     private String roleARN;
     /**
      * <p>
-     * The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.
+     * The time period where Firehose will retry sending data to the chosen HTTP endpoint.
      * </p>
      */
     private SnowflakeRetryOptions retryOptions;
@@ -796,11 +796,11 @@ public class SnowflakeDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.
+     * The time period where Firehose will retry sending data to the chosen HTTP endpoint.
      * </p>
      * 
      * @param retryOptions
-     *        The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.
+     *        The time period where Firehose will retry sending data to the chosen HTTP endpoint.
      */
 
     public void setRetryOptions(SnowflakeRetryOptions retryOptions) {
@@ -809,10 +809,10 @@ public class SnowflakeDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.
+     * The time period where Firehose will retry sending data to the chosen HTTP endpoint.
      * </p>
      * 
-     * @return The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.
+     * @return The time period where Firehose will retry sending data to the chosen HTTP endpoint.
      */
 
     public SnowflakeRetryOptions getRetryOptions() {
@@ -821,11 +821,11 @@ public class SnowflakeDestinationConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.
+     * The time period where Firehose will retry sending data to the chosen HTTP endpoint.
      * </p>
      * 
      * @param retryOptions
-     *        The time period where Kinesis Data Firehose will retry sending data to the chosen HTTP endpoint.
+     *        The time period where Firehose will retry sending data to the chosen HTTP endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

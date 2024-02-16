@@ -27,7 +27,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A runtime identifier. For example, <code>go1.x</code>.
+     * A runtime identifier. For example, <code>java21</code>.
      * </p>
      * <p>
      * The following list includes deprecated runtimes. For more information, see <a
@@ -64,7 +64,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A runtime identifier. For example, <code>go1.x</code>.
+     * A runtime identifier. For example, <code>java21</code>.
      * </p>
      * <p>
      * The following list includes deprecated runtimes. For more information, see <a
@@ -73,7 +73,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param compatibleRuntime
-     *        A runtime identifier. For example, <code>go1.x</code>.</p>
+     *        A runtime identifier. For example, <code>java21</code>.</p>
      *        <p>
      *        The following list includes deprecated runtimes. For more information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
@@ -87,7 +87,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A runtime identifier. For example, <code>go1.x</code>.
+     * A runtime identifier. For example, <code>java21</code>.
      * </p>
      * <p>
      * The following list includes deprecated runtimes. For more information, see <a
@@ -95,7 +95,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * deprecation policy</a>.
      * </p>
      * 
-     * @return A runtime identifier. For example, <code>go1.x</code>.</p>
+     * @return A runtime identifier. For example, <code>java21</code>.</p>
      *         <p>
      *         The following list includes deprecated runtimes. For more information, see <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
@@ -109,7 +109,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A runtime identifier. For example, <code>go1.x</code>.
+     * A runtime identifier. For example, <code>java21</code>.
      * </p>
      * <p>
      * The following list includes deprecated runtimes. For more information, see <a
@@ -118,7 +118,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param compatibleRuntime
-     *        A runtime identifier. For example, <code>go1.x</code>.</p>
+     *        A runtime identifier. For example, <code>java21</code>.</p>
      *        <p>
      *        The following list includes deprecated runtimes. For more information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
@@ -134,7 +134,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A runtime identifier. For example, <code>go1.x</code>.
+     * A runtime identifier. For example, <code>java21</code>.
      * </p>
      * <p>
      * The following list includes deprecated runtimes. For more information, see <a
@@ -143,7 +143,7 @@ public class ListLayerVersionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param compatibleRuntime
-     *        A runtime identifier. For example, <code>go1.x</code>.</p>
+     *        A runtime identifier. For example, <code>java21</code>.</p>
      *        <p>
      *        The following list includes deprecated runtimes. For more information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime

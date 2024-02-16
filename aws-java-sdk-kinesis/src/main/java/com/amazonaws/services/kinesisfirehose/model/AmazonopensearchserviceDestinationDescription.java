@@ -43,8 +43,8 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     private String domainARN;
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint
-     * or the DomainARN field to send data to Amazon OpenSearch Service.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the
+     * DomainARN field to send data to Amazon OpenSearch Service.
      * </p>
      */
     private String clusterEndpoint;
@@ -95,8 +95,8 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     private VpcConfigurationDescription vpcConfigurationDescription;
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      */
     private DocumentIdOptions documentIdOptions;
@@ -183,13 +183,13 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint
-     * or the DomainARN field to send data to Amazon OpenSearch Service.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the
+     * DomainARN field to send data to Amazon OpenSearch Service.
      * </p>
      * 
      * @param clusterEndpoint
-     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     *        ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.
+     *        The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the
+     *        DomainARN field to send data to Amazon OpenSearch Service.
      */
 
     public void setClusterEndpoint(String clusterEndpoint) {
@@ -198,12 +198,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint
-     * or the DomainARN field to send data to Amazon OpenSearch Service.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the
+     * DomainARN field to send data to Amazon OpenSearch Service.
      * </p>
      * 
-     * @return The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     *         ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.
+     * @return The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the
+     *         DomainARN field to send data to Amazon OpenSearch Service.
      */
 
     public String getClusterEndpoint() {
@@ -212,13 +212,13 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint
-     * or the DomainARN field to send data to Amazon OpenSearch Service.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the
+     * DomainARN field to send data to Amazon OpenSearch Service.
      * </p>
      * 
      * @param clusterEndpoint
-     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     *        ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.
+     *        The endpoint to use when communicating with the cluster. Firehose uses either this ClusterEndpoint or the
+     *        DomainARN field to send data to Amazon OpenSearch Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -617,13 +617,13 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      */
 
     public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
@@ -632,12 +632,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
-     * @return Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose
-     *         generated document ID and OpenSearch Service generated document ID.
+     * @return Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *         and OpenSearch Service generated document ID.
      */
 
     public DocumentIdOptions getDocumentIdOptions() {
@@ -646,13 +646,13 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
 
     /**
      * <p>
-     * Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     * document ID and OpenSearch Service generated document ID.
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
      * </p>
      * 
      * @param documentIdOptions
-     *        Indicates the method for setting up document ID. The supported methods are Kinesis Data Firehose generated
-     *        document ID and OpenSearch Service generated document ID.
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

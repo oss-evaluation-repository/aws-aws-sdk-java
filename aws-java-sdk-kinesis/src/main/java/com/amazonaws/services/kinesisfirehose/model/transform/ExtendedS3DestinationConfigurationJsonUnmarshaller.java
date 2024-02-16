@@ -102,6 +102,14 @@ public class ExtendedS3DestinationConfigurationJsonUnmarshaller implements Unmar
                     extendedS3DestinationConfiguration.setDynamicPartitioningConfiguration(DynamicPartitioningConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("FileExtension", targetDepth)) {
+                    context.nextToken();
+                    extendedS3DestinationConfiguration.setFileExtension(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CustomTimeZone", targetDepth)) {
+                    context.nextToken();
+                    extendedS3DestinationConfiguration.setCustomTimeZone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
