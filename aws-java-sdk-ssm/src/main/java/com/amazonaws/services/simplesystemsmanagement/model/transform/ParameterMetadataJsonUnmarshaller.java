@@ -52,6 +52,10 @@ public class ParameterMetadataJsonUnmarshaller implements Unmarshaller<Parameter
                     context.nextToken();
                     parameterMetadata.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ARN", targetDepth)) {
+                    context.nextToken();
+                    parameterMetadata.setARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
                     parameterMetadata.setType(context.getUnmarshaller(String.class).unmarshall(context));

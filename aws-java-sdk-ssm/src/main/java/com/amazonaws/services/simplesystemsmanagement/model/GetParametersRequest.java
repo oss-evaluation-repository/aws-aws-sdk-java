@@ -27,11 +27,17 @@ public class GetParametersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Names of the parameters for which you want to query information.
+     * The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared with
+     * you from another account, you must use the full ARNs.
      * </p>
      * <p>
      * To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      * <code>"Name": "name:version"</code>.
+     * </p>
+     * <p>
+     * For more information about shared parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     * parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> names;
@@ -45,17 +51,29 @@ public class GetParametersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Names of the parameters for which you want to query information.
+     * The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared with
+     * you from another account, you must use the full ARNs.
      * </p>
      * <p>
      * To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      * <code>"Name": "name:version"</code>.
      * </p>
+     * <p>
+     * For more information about shared parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     * parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
      * 
-     * @return Names of the parameters for which you want to query information.</p>
+     * @return The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared
+     *         with you from another account, you must use the full ARNs.</p>
      *         <p>
      *         To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      *         <code>"Name": "name:version"</code>.
+     *         </p>
+     *         <p>
+     *         For more information about shared parameters, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     *         parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.List<String> getNames() {
@@ -67,18 +85,30 @@ public class GetParametersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Names of the parameters for which you want to query information.
+     * The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared with
+     * you from another account, you must use the full ARNs.
      * </p>
      * <p>
      * To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      * <code>"Name": "name:version"</code>.
      * </p>
+     * <p>
+     * For more information about shared parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     * parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
      * 
      * @param names
-     *        Names of the parameters for which you want to query information.</p>
+     *        The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared
+     *        with you from another account, you must use the full ARNs.</p>
      *        <p>
      *        To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      *        <code>"Name": "name:version"</code>.
+     *        </p>
+     *        <p>
+     *        For more information about shared parameters, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     *        parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -92,11 +122,17 @@ public class GetParametersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Names of the parameters for which you want to query information.
+     * The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared with
+     * you from another account, you must use the full ARNs.
      * </p>
      * <p>
      * To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      * <code>"Name": "name:version"</code>.
+     * </p>
+     * <p>
+     * For more information about shared parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     * parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -105,10 +141,16 @@ public class GetParametersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param names
-     *        Names of the parameters for which you want to query information.</p>
+     *        The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared
+     *        with you from another account, you must use the full ARNs.</p>
      *        <p>
      *        To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      *        <code>"Name": "name:version"</code>.
+     *        </p>
+     *        <p>
+     *        For more information about shared parameters, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     *        parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,18 +166,30 @@ public class GetParametersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Names of the parameters for which you want to query information.
+     * The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared with
+     * you from another account, you must use the full ARNs.
      * </p>
      * <p>
      * To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      * <code>"Name": "name:version"</code>.
      * </p>
+     * <p>
+     * For more information about shared parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     * parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
      * 
      * @param names
-     *        Names of the parameters for which you want to query information.</p>
+     *        The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared
+     *        with you from another account, you must use the full ARNs.</p>
      *        <p>
      *        To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use
      *        <code>"Name": "name:version"</code>.
+     *        </p>
+     *        <p>
+     *        For more information about shared parameters, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working with shared
+     *        parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

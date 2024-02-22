@@ -264,6 +264,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public RestartChannelPipelinesResult restartChannelPipelines(RestartChannelPipelinesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartChannelResult startChannel(StartChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

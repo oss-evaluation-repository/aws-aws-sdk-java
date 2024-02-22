@@ -1278,6 +1278,37 @@ public interface AWSMediaLive {
     RejectInputDeviceTransferResult rejectInputDeviceTransfer(RejectInputDeviceTransferRequest rejectInputDeviceTransferRequest);
 
     /**
+     * Restart pipelines in one channel that is currently running.
+     * 
+     * @param restartChannelPipelinesRequest
+     *        Pipelines to restart.
+     * @return Result of the RestartChannelPipelines operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Verify that the syntax is
+     *         correct.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials that you sent.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The channel or pipeline you specified doesn't exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaLive.RestartChannelPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RestartChannelPipelinesResult restartChannelPipelines(RestartChannelPipelinesRequest restartChannelPipelinesRequest);
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest

@@ -76,6 +76,10 @@ public class ModelVersionSummaryJsonUnmarshaller implements Unmarshaller<ModelVe
                     context.nextToken();
                     modelVersionSummary.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelQuality", targetDepth)) {
+                    context.nextToken();
+                    modelVersionSummary.setModelQuality(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

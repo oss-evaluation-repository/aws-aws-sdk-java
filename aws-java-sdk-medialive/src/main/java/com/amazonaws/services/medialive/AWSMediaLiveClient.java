@@ -3393,6 +3393,81 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Restart pipelines in one channel that is currently running.
+     * 
+     * @param restartChannelPipelinesRequest
+     *        Pipelines to restart.
+     * @return Result of the RestartChannelPipelines operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Verify that the syntax is
+     *         correct.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials that you sent.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The channel or pipeline you specified doesn't exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaLive.RestartChannelPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RestartChannelPipelinesResult restartChannelPipelines(RestartChannelPipelinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestartChannelPipelines(request);
+    }
+
+    @SdkInternalApi
+    final RestartChannelPipelinesResult executeRestartChannelPipelines(RestartChannelPipelinesRequest restartChannelPipelinesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restartChannelPipelinesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestartChannelPipelinesRequest> request = null;
+        Response<RestartChannelPipelinesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestartChannelPipelinesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(restartChannelPipelinesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestartChannelPipelines");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestartChannelPipelinesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RestartChannelPipelinesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest

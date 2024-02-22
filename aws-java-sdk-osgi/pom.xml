@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.12.664-SNAPSHOT</version>
+    <version>1.12.664</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -3913,8 +3913,7 @@
 
                           </div>
                           <div class="v1-deprecation-banner">
-                  We <a href="https://aws.amazon
-                  .com/blogs/developer/announcing-end-of-support-for-aws-sdk-for-java-v1-x-on-december-31-2025/" target="_blank">announced</a>
+                  We <a href="https://aws.amazon.com/blogs/developer/announcing-end-of-support-for-aws-sdk-for-java-v1-x-on-december-31-2025/" target="_blank">announced</a>
                               the upcoming end-of-support for AWS SDK for Java (v1).
                               We recommend that you migrate to <a
                               href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html" target="_blank">AWS SDK for Java v2</a>. For dates, additional details,

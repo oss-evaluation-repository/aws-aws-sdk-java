@@ -1,3 +1,20 @@
+# __1.12.664__ __2024-02-21__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - MediaLive now supports the ability to restart pipelines in a running channel.
+
+## __AWS IoT Events__
+  - ### Features
+    - Increase the maximum length of descriptions for Inputs, Detector Models, and Alarm Models
+
+## __Amazon Lookout for Equipment__
+  - ### Features
+    - This release adds a field exposing model quality to read APIs for models. It also adds a model quality field to the API response when creating an inference scheduler.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release adds support for sharing Systems Manager parameters with other AWS accounts.
+
 # __1.12.663__ __2024-02-20__
 ## __AWS Lambda__
   - ### Features

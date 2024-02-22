@@ -26,13 +26,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /**
-     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
-     */
+    /** Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE' */
     private String channelClass;
-    /**
-     * Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
-     */
+    /** Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID) */
     private String channelConfiguration;
     /** Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK' */
     private String codec;
@@ -40,9 +36,7 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String duration;
 
     private Integer maxResults;
-    /**
-     * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
-     */
+    /** Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS' */
     private String maximumBitrate;
     /** Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS' */
     private String maximumFramerate;
@@ -52,13 +46,9 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String resolution;
     /** Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL' */
     private String resourceType;
-    /**
-     * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
-     */
+    /** Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION' */
     private String specialFeature;
-    /**
-     * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
-     */
+    /** Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM' */
     private String videoQuality;
 
     /**

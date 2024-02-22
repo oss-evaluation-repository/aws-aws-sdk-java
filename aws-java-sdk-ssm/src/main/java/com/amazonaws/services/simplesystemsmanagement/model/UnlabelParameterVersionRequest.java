@@ -29,6 +29,11 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the parameter from which you want to delete one or more labels.
      * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
      */
     private String name;
     /**
@@ -49,9 +54,17 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the parameter from which you want to delete one or more labels.
      * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        The name of the parameter from which you want to delete one or more labels.
+     *        The name of the parameter from which you want to delete one or more labels.</p> <note>
+     *        <p>
+     *        You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -62,8 +75,16 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the parameter from which you want to delete one or more labels.
      * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
      * 
-     * @return The name of the parameter from which you want to delete one or more labels.
+     * @return The name of the parameter from which you want to delete one or more labels.</p> <note>
+     *         <p>
+     *         You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *         </p>
      */
 
     public String getName() {
@@ -74,9 +95,17 @@ public class UnlabelParameterVersionRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the parameter from which you want to delete one or more labels.
      * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        The name of the parameter from which you want to delete one or more labels.
+     *        The name of the parameter from which you want to delete one or more labels.</p> <note>
+     *        <p>
+     *        You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

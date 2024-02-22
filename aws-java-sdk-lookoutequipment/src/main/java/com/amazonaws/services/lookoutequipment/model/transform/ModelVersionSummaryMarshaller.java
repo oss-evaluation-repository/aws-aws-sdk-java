@@ -41,6 +41,8 @@ public class ModelVersionSummaryMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> SOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceType").build();
+    private static final MarshallingInfo<String> MODELQUALITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelQuality").build();
 
     private static final ModelVersionSummaryMarshaller instance = new ModelVersionSummaryMarshaller();
 
@@ -65,6 +67,7 @@ public class ModelVersionSummaryMarshaller {
             protocolMarshaller.marshall(modelVersionSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(modelVersionSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(modelVersionSummary.getSourceType(), SOURCETYPE_BINDING);
+            protocolMarshaller.marshall(modelVersionSummary.getModelQuality(), MODELQUALITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

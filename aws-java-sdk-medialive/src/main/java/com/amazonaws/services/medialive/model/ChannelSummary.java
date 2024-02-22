@@ -225,7 +225,6 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types
      * (HLS, for example), there is one destination per packager.
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDestinations(java.util.Collection)} or {@link #withDestinations(java.util.Collection)} if you want to

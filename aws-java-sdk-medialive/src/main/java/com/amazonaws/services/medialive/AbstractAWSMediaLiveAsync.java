@@ -639,6 +639,19 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(RestartChannelPipelinesRequest request) {
+
+        return restartChannelPipelinesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(RestartChannelPipelinesRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestartChannelPipelinesRequest, RestartChannelPipelinesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartChannelResult> startChannelAsync(StartChannelRequest request) {
 
         return startChannelAsync(request, null);

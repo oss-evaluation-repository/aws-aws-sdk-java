@@ -1416,6 +1416,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<RejectInputDeviceTransferRequest, RejectInputDeviceTransferResult> asyncHandler);
 
     /**
+     * Restart pipelines in one channel that is currently running.
+     * 
+     * @param restartChannelPipelinesRequest
+     *        Pipelines to restart.
+     * @return A Java Future containing the result of the RestartChannelPipelines operation returned by the service.
+     * @sample AWSMediaLiveAsync.RestartChannelPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(RestartChannelPipelinesRequest restartChannelPipelinesRequest);
+
+    /**
+     * Restart pipelines in one channel that is currently running.
+     * 
+     * @param restartChannelPipelinesRequest
+     *        Pipelines to restart.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestartChannelPipelines operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.RestartChannelPipelines
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(RestartChannelPipelinesRequest restartChannelPipelinesRequest,
+            com.amazonaws.handlers.AsyncHandler<RestartChannelPipelinesRequest, RestartChannelPipelinesResult> asyncHandler);
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest

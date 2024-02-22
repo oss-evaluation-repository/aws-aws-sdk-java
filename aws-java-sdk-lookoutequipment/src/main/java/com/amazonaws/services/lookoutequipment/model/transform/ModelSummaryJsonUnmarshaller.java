@@ -104,6 +104,10 @@ public class ModelSummaryJsonUnmarshaller implements Unmarshaller<ModelSummary, 
                     context.nextToken();
                     modelSummary.setModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ModelQuality", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setModelQuality(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -71,7 +71,6 @@ public class InputVpcRequest implements Serializable, Cloneable, StructuredPojo 
     /**
      * A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces. Requires subnetIds.
      * If none are specified then the VPC default security group will be used.
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
@@ -139,7 +138,6 @@ public class InputVpcRequest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * A list of 2 VPC subnet IDs from the same VPC. Subnet IDs must be mapped to two unique availability zones (AZ).
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to

@@ -28,7 +28,7 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
-     * dialog, music, and sounds.
+     * dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
      */
     private String accessibility;
     /**
@@ -50,11 +50,12 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
-     * dialog, music, and sounds.
+     * dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
      * 
      * @param accessibility
      *        Indicates whether the caption track implements accessibility features such as written descriptions of
-     *        spoken dialog, music, and sounds.
+     *        spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output
+     *        group.
      * @see AccessibilityType
      */
 
@@ -64,10 +65,11 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
-     * dialog, music, and sounds.
+     * dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
      * 
      * @return Indicates whether the caption track implements accessibility features such as written descriptions of
-     *         spoken dialog, music, and sounds.
+     *         spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output
+     *         group.
      * @see AccessibilityType
      */
 
@@ -77,11 +79,12 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
-     * dialog, music, and sounds.
+     * dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
      * 
      * @param accessibility
      *        Indicates whether the caption track implements accessibility features such as written descriptions of
-     *        spoken dialog, music, and sounds.
+     *        spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessibilityType
      */
@@ -93,11 +96,12 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
 
     /**
      * Indicates whether the caption track implements accessibility features such as written descriptions of spoken
-     * dialog, music, and sounds.
+     * dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group.
      * 
      * @param accessibility
      *        Indicates whether the caption track implements accessibility features such as written descriptions of
-     *        spoken dialog, music, and sounds.
+     *        spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessibilityType
      */

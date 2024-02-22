@@ -27,10 +27,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
-     * the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading
-     * forward slash character (/) when you create or reference a parameter. For example:
-     * <code>/Dev/DBServer/MySQL/db-string13</code>
+     * The fully qualified name of the parameter that you want to add to the system.
+     * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
+     * <p>
+     * The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a
+     * hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For
+     * example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
      * Naming Constraints:
@@ -366,10 +373,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
-     * the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading
-     * forward slash character (/) when you create or reference a parameter. For example:
-     * <code>/Dev/DBServer/MySQL/db-string13</code>
+     * The fully qualified name of the parameter that you want to add to the system.
+     * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
+     * <p>
+     * The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a
+     * hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For
+     * example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
      * Naming Constraints:
@@ -425,10 +439,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param name
-     *        The fully qualified name of the parameter that you want to add to the system. The fully qualified name
-     *        includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must
-     *        include a leading forward slash character (/) when you create or reference a parameter. For example:
-     *        <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     *        The fully qualified name of the parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in
+     *        a hierarchy, you must include a leading forward slash character (/) when you create or reference a
+     *        parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
+     *        </p>
      *        <p>
      *        Naming Constraints:
      *        </p>
@@ -488,10 +508,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
-     * the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading
-     * forward slash character (/) when you create or reference a parameter. For example:
-     * <code>/Dev/DBServer/MySQL/db-string13</code>
+     * The fully qualified name of the parameter that you want to add to the system.
+     * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
+     * <p>
+     * The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a
+     * hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For
+     * example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
      * Naming Constraints:
@@ -546,10 +573,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The fully qualified name of the parameter that you want to add to the system. The fully qualified name
-     *         includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must
-     *         include a leading forward slash character (/) when you create or reference a parameter. For example:
-     *         <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * @return The fully qualified name of the parameter that you want to add to the system.</p> <note>
+     *         <p>
+     *         You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters
+     *         in a hierarchy, you must include a leading forward slash character (/) when you create or reference a
+     *         parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
+     *         </p>
      *         <p>
      *         Naming Constraints:
      *         </p>
@@ -609,10 +642,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
-     * the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading
-     * forward slash character (/) when you create or reference a parameter. For example:
-     * <code>/Dev/DBServer/MySQL/db-string13</code>
+     * The fully qualified name of the parameter that you want to add to the system.
+     * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
+     * <p>
+     * The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a
+     * hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For
+     * example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
      * Naming Constraints:
@@ -668,10 +708,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param name
-     *        The fully qualified name of the parameter that you want to add to the system. The fully qualified name
-     *        includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must
-     *        include a leading forward slash character (/) when you create or reference a parameter. For example:
-     *        <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     *        The fully qualified name of the parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in
+     *        a hierarchy, you must include a leading forward slash character (/) when you create or reference a
+     *        parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
+     *        </p>
      *        <p>
      *        Naming Constraints:
      *        </p>

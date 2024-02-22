@@ -1623,6 +1623,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(RestartChannelPipelinesRequest request) {
+
+        return restartChannelPipelinesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(final RestartChannelPipelinesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestartChannelPipelinesRequest, RestartChannelPipelinesResult> asyncHandler) {
+        final RestartChannelPipelinesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestartChannelPipelinesResult>() {
+            @Override
+            public RestartChannelPipelinesResult call() throws Exception {
+                RestartChannelPipelinesResult result = null;
+
+                try {
+                    result = executeRestartChannelPipelines(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartChannelResult> startChannelAsync(StartChannelRequest request) {
 
         return startChannelAsync(request, null);
