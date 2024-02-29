@@ -97,9 +97,9 @@ public class RetrievedReference implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent()).append(",");
+            sb.append("Content: ").append("***Sensitive Data Redacted***").append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation());
+            sb.append("Location: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

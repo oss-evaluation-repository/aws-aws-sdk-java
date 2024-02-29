@@ -51,8 +51,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dd>
      * <p>
      * The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on
-     * EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This
-     * parameter maps to <code>Memory</code> in the <a
+     * Amazon EC2 resources. If your container attempts to exceed the memory specified, the container is terminated.
+     * This parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory
@@ -169,8 +169,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several
-     * places; it must be specified for each node at least once.
+     * shares. For Amazon EC2 resources, you must specify at least one vCPU. This is required but can be specified in
+     * several places; it must be specified for each node at least once.
      * </p>
      * <p>
      * The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate
@@ -262,8 +262,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dd>
      * <p>
      * The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on
-     * EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This
-     * parameter maps to <code>Memory</code> in the <a
+     * Amazon EC2 resources. If your container attempts to exceed the memory specified, the container is terminated.
+     * This parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory
@@ -380,8 +380,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several
-     * places; it must be specified for each node at least once.
+     * shares. For Amazon EC2 resources, you must specify at least one vCPU. This is required but can be specified in
+     * several places; it must be specified for each node at least once.
      * </p>
      * <p>
      * The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate
@@ -462,8 +462,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <dd>
      *        <p>
      *        The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are
-     *        running on EC2 resources. If your container attempts to exceed the memory specified, the container is
-     *        terminated. This parameter maps to <code>Memory</code> in the <a
+     *        running on Amazon EC2 resources. If your container attempts to exceed the memory specified, the container
+     *        is terminated. This parameter maps to <code>Memory</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
@@ -581,9 +581,9 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one
-     *        vCPU. This is required but can be specified in several places; it must be specified for each node at least
-     *        once.
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at least
+     *        one vCPU. This is required but can be specified in several places; it must be specified for each node at
+     *        least once.
      *        </p>
      *        <p>
      *        The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about
@@ -673,8 +673,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dd>
      * <p>
      * The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on
-     * EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This
-     * parameter maps to <code>Memory</code> in the <a
+     * Amazon EC2 resources. If your container attempts to exceed the memory specified, the container is terminated.
+     * This parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory
@@ -791,8 +791,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several
-     * places; it must be specified for each node at least once.
+     * shares. For Amazon EC2 resources, you must specify at least one vCPU. This is required but can be specified in
+     * several places; it must be specified for each node at least once.
      * </p>
      * <p>
      * The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate
@@ -872,8 +872,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *         <dd>
      *         <p>
      *         The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are
-     *         running on EC2 resources. If your container attempts to exceed the memory specified, the container is
-     *         terminated. This parameter maps to <code>Memory</code> in the <a
+     *         running on Amazon EC2 resources. If your container attempts to exceed the memory specified, the container
+     *         is terminated. This parameter maps to <code>Memory</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
      *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
@@ -991,8 +991,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one
-     *         vCPU. This is required but can be specified in several places; it must be specified for each node at
+     *         run</a>. Each vCPU is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at least
+     *         one vCPU. This is required but can be specified in several places; it must be specified for each node at
      *         least once.
      *         </p>
      *         <p>
@@ -1083,8 +1083,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dd>
      * <p>
      * The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on
-     * EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This
-     * parameter maps to <code>Memory</code> in the <a
+     * Amazon EC2 resources. If your container attempts to exceed the memory specified, the container is terminated.
+     * This parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory
@@ -1201,8 +1201,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several
-     * places; it must be specified for each node at least once.
+     * shares. For Amazon EC2 resources, you must specify at least one vCPU. This is required but can be specified in
+     * several places; it must be specified for each node at least once.
      * </p>
      * <p>
      * The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate
@@ -1283,8 +1283,8 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <dd>
      *        <p>
      *        The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are
-     *        running on EC2 resources. If your container attempts to exceed the memory specified, the container is
-     *        terminated. This parameter maps to <code>Memory</code> in the <a
+     *        running on Amazon EC2 resources. If your container attempts to exceed the memory specified, the container
+     *        is terminated. This parameter maps to <code>Memory</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
      *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
@@ -1402,9 +1402,9 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one
-     *        vCPU. This is required but can be specified in several places; it must be specified for each node at least
-     *        once.
+     *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at least
+     *        one vCPU. This is required but can be specified in several places; it must be specified for each node at
+     *        least once.
      *        </p>
      *        <p>
      *        The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about

@@ -54,6 +54,12 @@ public class EksPodPropertiesOverrideJsonUnmarshaller implements Unmarshaller<Ek
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("initContainers", targetDepth)) {
+                    context.nextToken();
+                    eksPodPropertiesOverride.setInitContainers(new ListUnmarshaller<EksContainerOverride>(EksContainerOverrideJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("metadata", targetDepth)) {
                     context.nextToken();
                     eksPodPropertiesOverride.setMetadata(EksMetadataJsonUnmarshaller.getInstance().unmarshall(context));

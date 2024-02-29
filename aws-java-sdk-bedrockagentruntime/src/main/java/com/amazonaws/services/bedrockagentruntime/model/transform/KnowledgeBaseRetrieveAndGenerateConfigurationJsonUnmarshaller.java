@@ -57,6 +57,11 @@ public class KnowledgeBaseRetrieveAndGenerateConfigurationJsonUnmarshaller imple
                     context.nextToken();
                     knowledgeBaseRetrieveAndGenerateConfiguration.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("retrievalConfiguration", targetDepth)) {
+                    context.nextToken();
+                    knowledgeBaseRetrieveAndGenerateConfiguration.setRetrievalConfiguration(KnowledgeBaseRetrievalConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

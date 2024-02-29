@@ -78,6 +78,11 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
     }
 
     @Override
+    public GetApproximateUsageRecordsResult getApproximateUsageRecords(GetApproximateUsageRecordsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCostAndUsageResult getCostAndUsage(GetCostAndUsageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

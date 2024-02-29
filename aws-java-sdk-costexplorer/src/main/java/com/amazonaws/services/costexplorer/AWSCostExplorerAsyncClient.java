@@ -426,6 +426,39 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetApproximateUsageRecordsResult> getApproximateUsageRecordsAsync(GetApproximateUsageRecordsRequest request) {
+
+        return getApproximateUsageRecordsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApproximateUsageRecordsResult> getApproximateUsageRecordsAsync(final GetApproximateUsageRecordsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetApproximateUsageRecordsRequest, GetApproximateUsageRecordsResult> asyncHandler) {
+        final GetApproximateUsageRecordsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetApproximateUsageRecordsResult>() {
+            @Override
+            public GetApproximateUsageRecordsResult call() throws Exception {
+                GetApproximateUsageRecordsResult result = null;
+
+                try {
+                    result = executeGetApproximateUsageRecords(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCostAndUsageResult> getCostAndUsageAsync(GetCostAndUsageRequest request) {
 
         return getCostAndUsageAsync(request, null);

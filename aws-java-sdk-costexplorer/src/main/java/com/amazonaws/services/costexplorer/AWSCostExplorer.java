@@ -247,6 +247,23 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+     * </p>
+     * 
+     * @param getApproximateUsageRecordsRequest
+     * @return Result of the GetApproximateUsageRecords operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetApproximateUsageRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetApproximateUsageRecordsResult getApproximateUsageRecords(GetApproximateUsageRecordsRequest getApproximateUsageRecordsRequest);
+
+    /**
+     * <p>
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric that you
      * want the request to return. For example, you can specify <code>BlendedCosts</code> or <code>UsageQuantity</code>.
      * You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>,

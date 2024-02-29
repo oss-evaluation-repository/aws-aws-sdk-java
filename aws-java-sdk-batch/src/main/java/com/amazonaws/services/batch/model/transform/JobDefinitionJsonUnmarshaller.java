@@ -108,6 +108,10 @@ public class JobDefinitionJsonUnmarshaller implements Unmarshaller<JobDefinition
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ecsProperties", targetDepth)) {
+                    context.nextToken();
+                    jobDefinition.setEcsProperties(EcsPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("eksProperties", targetDepth)) {
                     context.nextToken();
                     jobDefinition.setEksProperties(EksPropertiesJsonUnmarshaller.getInstance().unmarshall(context));

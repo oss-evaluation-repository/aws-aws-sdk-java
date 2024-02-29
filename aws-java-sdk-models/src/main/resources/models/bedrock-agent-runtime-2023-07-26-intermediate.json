@@ -1223,7 +1223,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "TextResponsePart",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param textResponsePart */",
         "setterMethodName" : "setTextResponsePart",
         "setterModel" : {
@@ -1294,7 +1294,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "TextResponsePart",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param textResponsePart */",
           "setterMethodName" : "setTextResponsePart",
           "setterModel" : {
@@ -1816,7 +1816,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Content",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param content */",
         "setterMethodName" : "setContent",
         "setterModel" : {
@@ -1885,7 +1885,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Location",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param location */",
         "setterMethodName" : "setLocation",
         "setterModel" : {
@@ -2025,7 +2025,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Content",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param content */",
           "setterMethodName" : "setContent",
           "setterModel" : {
@@ -2095,7 +2095,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Location",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param location */",
           "setterMethodName" : "setLocation",
           "setterModel" : {
@@ -2374,6 +2374,75 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "retrievalConfiguration",
+        "c2jShape" : "KnowledgeBaseRetrievalConfiguration",
+        "deprecated" : false,
+        "documentation" : "",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param retrievalConfiguration \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withRetrievalConfiguration",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getRetrievalConfiguration",
+        "getterModel" : {
+          "returnType" : "KnowledgeBaseRetrievalConfiguration",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "retrievalConfiguration",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "retrievalConfiguration",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "RetrievalConfiguration",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param retrievalConfiguration */",
+        "setterMethodName" : "setRetrievalConfiguration",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "KnowledgeBaseRetrievalConfiguration",
+          "variableName" : "retrievalConfiguration",
+          "variableType" : "KnowledgeBaseRetrievalConfiguration",
+          "documentation" : "",
+          "simpleType" : "KnowledgeBaseRetrievalConfiguration",
+          "variableSetterType" : "KnowledgeBaseRetrievalConfiguration"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param retrievalConfiguration \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "KnowledgeBaseRetrievalConfiguration",
+          "variableName" : "retrievalConfiguration",
+          "variableType" : "KnowledgeBaseRetrievalConfiguration",
+          "documentation" : "",
+          "simpleType" : "KnowledgeBaseRetrievalConfiguration",
+          "variableSetterType" : "KnowledgeBaseRetrievalConfiguration"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "KnowledgeBaseId" : {
@@ -2515,6 +2584,76 @@
             "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
+        },
+        "RetrievalConfiguration" : {
+          "c2jName" : "retrievalConfiguration",
+          "c2jShape" : "KnowledgeBaseRetrievalConfiguration",
+          "deprecated" : false,
+          "documentation" : "",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param retrievalConfiguration \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withRetrievalConfiguration",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getRetrievalConfiguration",
+          "getterModel" : {
+            "returnType" : "KnowledgeBaseRetrievalConfiguration",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "retrievalConfiguration",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "retrievalConfiguration",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "RetrievalConfiguration",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param retrievalConfiguration */",
+          "setterMethodName" : "setRetrievalConfiguration",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "KnowledgeBaseRetrievalConfiguration",
+            "variableName" : "retrievalConfiguration",
+            "variableType" : "KnowledgeBaseRetrievalConfiguration",
+            "documentation" : "",
+            "simpleType" : "KnowledgeBaseRetrievalConfiguration",
+            "variableSetterType" : "KnowledgeBaseRetrievalConfiguration"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param retrievalConfiguration \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "KnowledgeBaseRetrievalConfiguration",
+            "variableName" : "retrievalConfiguration",
+            "variableType" : "KnowledgeBaseRetrievalConfiguration",
+            "documentation" : "",
+            "simpleType" : "KnowledgeBaseRetrievalConfiguration",
+            "variableSetterType" : "KnowledgeBaseRetrievalConfiguration"
+          },
+          "xmlNameSpaceUri" : null
         }
       },
       "packageName" : "com.amazonaws.services.bedrockagentruntime.model",
@@ -2628,6 +2767,75 @@
           "variableSetterType" : "Integer"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "overrideSearchType",
+        "c2jShape" : "SearchType",
+        "deprecated" : false,
+        "documentation" : "<p>Override the type of query to be performed on data store</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "SearchType",
+        "fluentSetterDocumentation" : "/**<p>Override the type of query to be performed on data store</p>\n@param overrideSearchType Override the type of query to be performed on data store\n@return Returns a reference to this object so that method calls can be chained together.\n@see SearchType*/",
+        "fluentSetterMethodName" : "withOverrideSearchType",
+        "getterDocumentation" : "/**<p>Override the type of query to be performed on data store</p>\n@return Override the type of query to be performed on data store\n@see SearchType*/",
+        "getterMethodName" : "getOverrideSearchType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "overrideSearchType",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "overrideSearchType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OverrideSearchType",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Override the type of query to be performed on data store</p>\n@param overrideSearchType Override the type of query to be performed on data store\n@see SearchType*/",
+        "setterMethodName" : "setOverrideSearchType",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "overrideSearchType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Override the type of query to be performed on data store</p>\n@param overrideSearchType Override the type of query to be performed on data store\n@return Returns a reference to this object so that method calls can be chained together.\n@see SearchType*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "overrideSearchType",
+          "variableType" : "String",
+          "documentation" : "<p>Override the type of query to be performed on data store</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "NumberOfResults" : {
@@ -2699,12 +2907,82 @@
             "variableSetterType" : "Integer"
           },
           "xmlNameSpaceUri" : null
+        },
+        "OverrideSearchType" : {
+          "c2jName" : "overrideSearchType",
+          "c2jShape" : "SearchType",
+          "deprecated" : false,
+          "documentation" : "<p>Override the type of query to be performed on data store</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "SearchType",
+          "fluentSetterDocumentation" : "/**<p>Override the type of query to be performed on data store</p>\n@param overrideSearchType Override the type of query to be performed on data store\n@return Returns a reference to this object so that method calls can be chained together.\n@see SearchType*/",
+          "fluentSetterMethodName" : "withOverrideSearchType",
+          "getterDocumentation" : "/**<p>Override the type of query to be performed on data store</p>\n@return Override the type of query to be performed on data store\n@see SearchType*/",
+          "getterMethodName" : "getOverrideSearchType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "overrideSearchType",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "overrideSearchType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OverrideSearchType",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Override the type of query to be performed on data store</p>\n@param overrideSearchType Override the type of query to be performed on data store\n@see SearchType*/",
+          "setterMethodName" : "setOverrideSearchType",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "overrideSearchType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Override the type of query to be performed on data store</p>\n@param overrideSearchType Override the type of query to be performed on data store\n@return Returns a reference to this object so that method calls can be chained together.\n@see SearchType*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "overrideSearchType",
+            "variableType" : "String",
+            "documentation" : "<p>Override the type of query to be performed on data store</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
         }
       },
       "packageName" : "com.amazonaws.services.bedrockagentruntime.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "numberOfResults" ],
+      "required" : [ ],
       "shapeName" : "KnowledgeBaseVectorSearchConfiguration",
       "signerAware" : false,
       "signerType" : null,
@@ -6817,7 +7095,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Content",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param content */",
         "setterMethodName" : "setContent",
         "setterModel" : {
@@ -6886,7 +7164,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Location",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**\n@param location */",
         "setterMethodName" : "setLocation",
         "setterModel" : {
@@ -6957,7 +7235,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Content",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param content */",
           "setterMethodName" : "setContent",
           "setterModel" : {
@@ -7027,7 +7305,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Location",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**\n@param location */",
           "setterMethodName" : "setLocation",
           "setterModel" : {
@@ -7075,6 +7353,56 @@
         "documentation" : null,
         "simpleType" : "RetrievedReference",
         "variableSetterType" : "RetrievedReference"
+      },
+      "wrapper" : false
+    },
+    "SearchType" : {
+      "c2jName" : "SearchType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Query type to be performed on data store.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "HYBRID",
+        "value" : "HYBRID"
+      }, {
+        "name" : "SEMANTIC",
+        "value" : "SEMANTIC"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.bedrockagentruntime.enum.SearchType",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.bedrockagentruntime.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "SearchType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "SearchType",
+        "variableName" : "searchType",
+        "variableType" : "SearchType",
+        "documentation" : null,
+        "simpleType" : "SearchType",
+        "variableSetterType" : "SearchType"
       },
       "wrapper" : false
     },

@@ -31,6 +31,8 @@ public class KnowledgeBaseRetrieveAndGenerateConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("knowledgeBaseId").build();
     private static final MarshallingInfo<String> MODELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("modelArn").build();
+    private static final MarshallingInfo<StructuredPojo> RETRIEVALCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retrievalConfiguration").build();
 
     private static final KnowledgeBaseRetrieveAndGenerateConfigurationMarshaller instance = new KnowledgeBaseRetrieveAndGenerateConfigurationMarshaller();
 
@@ -50,6 +52,7 @@ public class KnowledgeBaseRetrieveAndGenerateConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(knowledgeBaseRetrieveAndGenerateConfiguration.getKnowledgeBaseId(), KNOWLEDGEBASEID_BINDING);
             protocolMarshaller.marshall(knowledgeBaseRetrieveAndGenerateConfiguration.getModelArn(), MODELARN_BINDING);
+            protocolMarshaller.marshall(knowledgeBaseRetrieveAndGenerateConfiguration.getRetrievalConfiguration(), RETRIEVALCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

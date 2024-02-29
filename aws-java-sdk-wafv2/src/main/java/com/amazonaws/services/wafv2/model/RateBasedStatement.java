@@ -188,6 +188,21 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
     private Long limit;
     /**
      * <p>
+     * The amount of time, in seconds, that WAF should include in its request counts, looking back from the current
+     * time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes
+     * immediately preceding the current time. Valid settings are 60, 120, 300, and 600.
+     * </p>
+     * <p>
+     * This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF
+     * checks the rate about every 10 seconds.
+     * </p>
+     * <p>
+     * Default: <code>300</code> (5 minutes)
+     * </p>
+     */
+    private Long evaluationWindowSec;
+    /**
+     * <p>
      * Setting that indicates how to aggregate the request counts.
      * </p>
      * <note>
@@ -418,6 +433,97 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
 
     public RateBasedStatement withLimit(Long limit) {
         setLimit(limit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in seconds, that WAF should include in its request counts, looking back from the current
+     * time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes
+     * immediately preceding the current time. Valid settings are 60, 120, 300, and 600.
+     * </p>
+     * <p>
+     * This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF
+     * checks the rate about every 10 seconds.
+     * </p>
+     * <p>
+     * Default: <code>300</code> (5 minutes)
+     * </p>
+     * 
+     * @param evaluationWindowSec
+     *        The amount of time, in seconds, that WAF should include in its request counts, looking back from the
+     *        current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the
+     *        2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600. </p>
+     *        <p>
+     *        This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it
+     *        checks. WAF checks the rate about every 10 seconds.
+     *        </p>
+     *        <p>
+     *        Default: <code>300</code> (5 minutes)
+     */
+
+    public void setEvaluationWindowSec(Long evaluationWindowSec) {
+        this.evaluationWindowSec = evaluationWindowSec;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in seconds, that WAF should include in its request counts, looking back from the current
+     * time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes
+     * immediately preceding the current time. Valid settings are 60, 120, 300, and 600.
+     * </p>
+     * <p>
+     * This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF
+     * checks the rate about every 10 seconds.
+     * </p>
+     * <p>
+     * Default: <code>300</code> (5 minutes)
+     * </p>
+     * 
+     * @return The amount of time, in seconds, that WAF should include in its request counts, looking back from the
+     *         current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the
+     *         2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600. </p>
+     *         <p>
+     *         This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it
+     *         checks. WAF checks the rate about every 10 seconds.
+     *         </p>
+     *         <p>
+     *         Default: <code>300</code> (5 minutes)
+     */
+
+    public Long getEvaluationWindowSec() {
+        return this.evaluationWindowSec;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in seconds, that WAF should include in its request counts, looking back from the current
+     * time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the 2 minutes
+     * immediately preceding the current time. Valid settings are 60, 120, 300, and 600.
+     * </p>
+     * <p>
+     * This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it checks. WAF
+     * checks the rate about every 10 seconds.
+     * </p>
+     * <p>
+     * Default: <code>300</code> (5 minutes)
+     * </p>
+     * 
+     * @param evaluationWindowSec
+     *        The amount of time, in seconds, that WAF should include in its request counts, looking back from the
+     *        current time. For example, for a setting of 120, when WAF checks the rate, it counts the requests for the
+     *        2 minutes immediately preceding the current time. Valid settings are 60, 120, 300, and 600. </p>
+     *        <p>
+     *        This setting doesn't determine how often WAF checks the rate, but how far back it looks each time it
+     *        checks. WAF checks the rate about every 10 seconds.
+     *        </p>
+     *        <p>
+     *        Default: <code>300</code> (5 minutes)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RateBasedStatement withEvaluationWindowSec(Long evaluationWindowSec) {
+        setEvaluationWindowSec(evaluationWindowSec);
         return this;
     }
 
@@ -1127,6 +1233,8 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
+        if (getEvaluationWindowSec() != null)
+            sb.append("EvaluationWindowSec: ").append(getEvaluationWindowSec()).append(",");
         if (getAggregateKeyType() != null)
             sb.append("AggregateKeyType: ").append(getAggregateKeyType()).append(",");
         if (getScopeDownStatement() != null)
@@ -1153,6 +1261,10 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getEvaluationWindowSec() == null ^ this.getEvaluationWindowSec() == null)
+            return false;
+        if (other.getEvaluationWindowSec() != null && other.getEvaluationWindowSec().equals(this.getEvaluationWindowSec()) == false)
+            return false;
         if (other.getAggregateKeyType() == null ^ this.getAggregateKeyType() == null)
             return false;
         if (other.getAggregateKeyType() != null && other.getAggregateKeyType().equals(this.getAggregateKeyType()) == false)
@@ -1178,6 +1290,7 @@ public class RateBasedStatement implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationWindowSec() == null) ? 0 : getEvaluationWindowSec().hashCode());
         hashCode = prime * hashCode + ((getAggregateKeyType() == null) ? 0 : getAggregateKeyType().hashCode());
         hashCode = prime * hashCode + ((getScopeDownStatement() == null) ? 0 : getScopeDownStatement().hashCode());
         hashCode = prime * hashCode + ((getForwardedIPConfig() == null) ? 0 : getForwardedIPConfig().hashCode());

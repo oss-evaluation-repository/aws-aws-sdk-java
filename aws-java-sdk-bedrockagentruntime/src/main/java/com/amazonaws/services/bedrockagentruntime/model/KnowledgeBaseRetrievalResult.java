@@ -143,9 +143,9 @@ public class KnowledgeBaseRetrievalResult implements Serializable, Cloneable, St
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent()).append(",");
+            sb.append("Content: ").append("***Sensitive Data Redacted***").append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation()).append(",");
+            sb.append("Location: ").append("***Sensitive Data Redacted***").append(",");
         if (getScore() != null)
             sb.append("Score: ").append(getScore());
         sb.append("}");

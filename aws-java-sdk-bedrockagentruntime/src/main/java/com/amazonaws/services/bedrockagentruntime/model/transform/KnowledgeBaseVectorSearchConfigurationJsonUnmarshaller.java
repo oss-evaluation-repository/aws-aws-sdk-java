@@ -52,6 +52,10 @@ public class KnowledgeBaseVectorSearchConfigurationJsonUnmarshaller implements U
                     context.nextToken();
                     knowledgeBaseVectorSearchConfiguration.setNumberOfResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("overrideSearchType", targetDepth)) {
+                    context.nextToken();
+                    knowledgeBaseVectorSearchConfiguration.setOverrideSearchType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

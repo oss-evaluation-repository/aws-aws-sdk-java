@@ -30,6 +30,8 @@ public class RateBasedStatementMarshaller {
 
     private static final MarshallingInfo<Long> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<Long> EVALUATIONWINDOWSEC_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationWindowSec").build();
     private static final MarshallingInfo<String> AGGREGATEKEYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AggregateKeyType").build();
     private static final MarshallingInfo<StructuredPojo> SCOPEDOWNSTATEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -56,6 +58,7 @@ public class RateBasedStatementMarshaller {
 
         try {
             protocolMarshaller.marshall(rateBasedStatement.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(rateBasedStatement.getEvaluationWindowSec(), EVALUATIONWINDOWSEC_BINDING);
             protocolMarshaller.marshall(rateBasedStatement.getAggregateKeyType(), AGGREGATEKEYTYPE_BINDING);
             protocolMarshaller.marshall(rateBasedStatement.getScopeDownStatement(), SCOPEDOWNSTATEMENT_BINDING);
             protocolMarshaller.marshall(rateBasedStatement.getForwardedIPConfig(), FORWARDEDIPCONFIG_BINDING);

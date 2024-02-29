@@ -56,6 +56,16 @@ public class NodePropertyOverrideJsonUnmarshaller implements Unmarshaller<NodePr
                     context.nextToken();
                     nodePropertyOverride.setContainerOverrides(ContainerOverridesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ecsPropertiesOverride", targetDepth)) {
+                    context.nextToken();
+                    nodePropertyOverride.setEcsPropertiesOverride(EcsPropertiesOverrideJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("instanceTypes", targetDepth)) {
+                    context.nextToken();
+                    nodePropertyOverride.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

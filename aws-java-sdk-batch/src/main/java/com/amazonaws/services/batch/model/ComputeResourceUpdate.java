@@ -89,8 +89,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -122,11 +122,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -225,8 +226,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute
-     * environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of the
+     * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -261,8 +262,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
     private String instanceRole;
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the
      * Batch <code>ListTagsForResource</code> API operation.
@@ -348,15 +349,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -769,8 +770,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -798,8 +799,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * 
      * @return The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
      *         subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter
-     *         wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the
-     *         VPC subnets from the compute resource. For more information, see <a
+     *         wasn't specified and no change is made. For Amazon EC2 compute resources, providing an empty list removes
+     *         the VPC subnets from the compute resource. For more information, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
      *         <i>Amazon VPC User Guide</i>.</p>
      *         <p>
@@ -832,8 +833,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -862,8 +863,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * @param subnets
      *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
      *        subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter
-     *        wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC
-     *        subnets from the compute resource. For more information, see <a
+     *        wasn't specified and no change is made. For Amazon EC2 compute resources, providing an empty list removes
+     *        the VPC subnets from the compute resource. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.</p>
      *        <p>
@@ -901,8 +902,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -936,8 +937,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * @param subnets
      *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
      *        subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter
-     *        wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC
-     *        subnets from the compute resource. For more information, see <a
+     *        wasn't specified and no change is made. For Amazon EC2 compute resources, providing an empty list removes
+     *        the VPC subnets from the compute resource. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.</p>
      *        <p>
@@ -977,8 +978,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -1007,8 +1008,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * @param subnets
      *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
      *        subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter
-     *        wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC
-     *        subnets from the compute resource. For more information, see <a
+     *        wasn't specified and no change is made. For Amazon EC2 compute resources, providing an empty list removes
+     *        the VPC subnets from the compute resource. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.</p>
      *        <p>
@@ -1044,11 +1045,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1056,11 +1058,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * @return The Amazon EC2 security groups that are associated with instances launched in the compute environment.
      *         This parameter is required for Fargate compute resources, where it can contain up to 5 security groups.
      *         For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified
-     *         and no change is made. For EC2 compute resources, providing an empty list removes the security groups
-     *         from the compute resource.</p>
+     *         and no change is made. For Amazon EC2 compute resources, providing an empty list removes the security
+     *         groups from the compute resource.</p>
      *         <p>
-     *         When updating a compute environment, changing the EC2 security groups requires an infrastructure update
-     *         of the compute environment. For more information, see <a
+     *         When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure
+     *         update of the compute environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *         compute environments</a> in the <i>Batch User Guide</i>.
      */
@@ -1074,11 +1076,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1087,11 +1090,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups that are associated with instances launched in the compute environment.
      *        This parameter is required for Fargate compute resources, where it can contain up to 5 security groups.
      *        For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified
-     *        and no change is made. For EC2 compute resources, providing an empty list removes the security groups from
-     *        the compute resource.</p>
+     *        and no change is made. For Amazon EC2 compute resources, providing an empty list removes the security
+     *        groups from the compute resource.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 security groups requires an infrastructure update of
-     *        the compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure
+     *        update of the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      */
@@ -1110,11 +1113,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1128,11 +1132,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups that are associated with instances launched in the compute environment.
      *        This parameter is required for Fargate compute resources, where it can contain up to 5 security groups.
      *        For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified
-     *        and no change is made. For EC2 compute resources, providing an empty list removes the security groups from
-     *        the compute resource.</p>
+     *        and no change is made. For Amazon EC2 compute resources, providing an empty list removes the security
+     *        groups from the compute resource.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 security groups requires an infrastructure update of
-     *        the compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure
+     *        update of the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1153,11 +1157,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1166,11 +1171,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups that are associated with instances launched in the compute environment.
      *        This parameter is required for Fargate compute resources, where it can contain up to 5 security groups.
      *        For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified
-     *        and no change is made. For EC2 compute resources, providing an empty list removes the security groups from
-     *        the compute resource.</p>
+     *        and no change is made. For Amazon EC2 compute resources, providing an empty list removes the security
+     *        groups from the compute resource.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 security groups requires an infrastructure update of
-     *        the compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure
+     *        update of the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1917,8 +1922,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute
-     * environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of the
+     * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1933,8 +1938,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an
      *        empty string.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the
-     *        compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of
+     *        the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      *        </p>
@@ -1954,8 +1959,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute
-     * environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of the
+     * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1969,8 +1974,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *         key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an
      *         empty string.</p>
      *         <p>
-     *         When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the
-     *         compute environment. For more information, see <a
+     *         When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update
+     *         of the compute environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *         compute environments</a> in the <i>Batch User Guide</i>.
      *         </p>
@@ -1990,8 +1995,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute
-     * environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of the
+     * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -2006,8 +2011,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an
      *        empty string.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the
-     *        compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of
+     *        the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      *        </p>
@@ -2161,8 +2166,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the
      * Batch <code>ListTagsForResource</code> API operation.
@@ -2179,9 +2184,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * </note>
      * 
-     * @return Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *         Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
-     *         key and <code>String2</code> is the tag value-for example,
+     * @return Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *         For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the
+     *         tag key and <code>String2</code> is the tag value-for example,
      *         <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *         instances in the Amazon EC2 console. These tags aren't seen when using the Batch
      *         <code>ListTagsForResource</code> API operation.</p>
@@ -2203,8 +2208,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the
      * Batch <code>ListTagsForResource</code> API operation.
@@ -2222,9 +2227,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *        Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key
-     *        and <code>String2</code> is the tag value-for example,
+     *        Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *        For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
+     *        key and <code>String2</code> is the tag value-for example,
      *        <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *        instances in the Amazon EC2 console. These tags aren't seen when using the Batch
      *        <code>ListTagsForResource</code> API operation.</p>
@@ -2246,8 +2251,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the
      * Batch <code>ListTagsForResource</code> API operation.
@@ -2265,9 +2270,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *        Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key
-     *        and <code>String2</code> is the tag value-for example,
+     *        Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *        For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
+     *        key and <code>String2</code> is the tag value-for example,
      *        <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *        instances in the Amazon EC2 console. These tags aren't seen when using the Batch
      *        <code>ListTagsForResource</code> API operation.</p>
@@ -2725,15 +2730,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -2744,14 +2749,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * </note>
      * 
-     * @return Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * @return Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      *         environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
      *         <p>
      *         When updating a compute environment, changing this setting requires an infrastructure update of the
      *         compute environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     *         compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom
-     *         AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
+     *         compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any
+     *         custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
      *         </p>
      *         <p>
      *         One or two values can be provided.
@@ -2768,15 +2773,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -2788,14 +2793,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param ec2Configuration
-     *        Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     *        Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
      *        <p>
      *        When updating a compute environment, changing this setting requires an infrastructure update of the
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom
-     *        AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
+     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any
+     *        custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
      *        </p>
      *        <p>
      *        One or two values can be provided.
@@ -2817,15 +2822,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -2842,14 +2847,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param ec2Configuration
-     *        Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     *        Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
      *        <p>
      *        When updating a compute environment, changing this setting requires an infrastructure update of the
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom
-     *        AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
+     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any
+     *        custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
      *        </p>
      *        <p>
      *        One or two values can be provided.
@@ -2873,15 +2878,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -2893,14 +2898,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param ec2Configuration
-     *        Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     *        Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
      *        <p>
      *        When updating a compute environment, changing this setting requires an infrastructure update of the
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom
-     *        AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
+     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any
+     *        custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
      *        </p>
      *        <p>
      *        One or two values can be provided.

@@ -48,6 +48,10 @@ public class EksContainerOverrideJsonUnmarshaller implements Unmarshaller<EksCon
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    eksContainerOverride.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("image", targetDepth)) {
                     context.nextToken();
                     eksContainerOverride.setImage(context.getUnmarshaller(String.class).unmarshall(context));

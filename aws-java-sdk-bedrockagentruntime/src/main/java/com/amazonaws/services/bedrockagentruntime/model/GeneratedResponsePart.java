@@ -69,7 +69,7 @@ public class GeneratedResponsePart implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTextResponsePart() != null)
-            sb.append("TextResponsePart: ").append(getTextResponsePart());
+            sb.append("TextResponsePart: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

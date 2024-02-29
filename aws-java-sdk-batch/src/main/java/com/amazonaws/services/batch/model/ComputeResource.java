@@ -260,8 +260,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private String instanceRole;
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an
      * infrastructure update to the compute environment. For more information, see <a
@@ -333,10 +333,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
-     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both. For more information,
-     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     * support</a> in the <i>Batch User Guide</i>.
+     * a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">
+     * CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not both. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -347,7 +348,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2228,8 +2229,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an
      * infrastructure update to the compute environment. For more information, see <a
@@ -2243,9 +2244,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *         Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
-     *         key and <code>String2</code> is the tag value-for example,
+     * @return Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *         For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the
+     *         tag key and <code>String2</code> is the tag value-for example,
      *         <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *         instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute
      *         environment. For more information, see <a
@@ -2263,8 +2264,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an
      * infrastructure update to the compute environment. For more information, see <a
@@ -2279,9 +2280,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *        Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key
-     *        and <code>String2</code> is the tag value-for example,
+     *        Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *        For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
+     *        key and <code>String2</code> is the tag value-for example,
      *        <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *        instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute
      *        environment. For more information, see <a
@@ -2299,8 +2300,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an
      * infrastructure update to the compute environment. For more information, see <a
@@ -2315,9 +2316,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *        Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key
-     *        and <code>String2</code> is the tag value-for example,
+     *        Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *        For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
+     *        key and <code>String2</code> is the tag value-for example,
      *        <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *        instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute
      *        environment. For more information, see <a
@@ -2693,10 +2694,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
-     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both. For more information,
-     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     * support</a> in the <i>Batch User Guide</i>.
+     * a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">
+     * CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not both. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2706,11 +2708,12 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param launchTemplate
      *        The launch template to use for your compute resources. Any other compute resource parameters that you
-     *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
-     *        template. You must specify either the launch template ID or launch template name in the request, but not
-     *        both. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     *        support</a> in the <i>Batch User Guide</i>.</p> <note>
+     *        specify in a <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html"
+     *        >CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     *        specify either the launch template ID or launch template name in the request, but not both. For more
+     *        information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
+     *        template support</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -2723,10 +2726,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
-     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both. For more information,
-     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     * support</a> in the <i>Batch User Guide</i>.
+     * a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">
+     * CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not both. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2735,9 +2739,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @return The launch template to use for your compute resources. Any other compute resource parameters that you
-     *         specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
-     *         template. You must specify either the launch template ID or launch template name in the request, but not
-     *         both. For more information, see <a
+     *         specify in a <a
+     *         href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html"
+     *         >CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     *         specify either the launch template ID or launch template name in the request, but not both. For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
      *         support</a> in the <i>Batch User Guide</i>.</p> <note>
      *         <p>
@@ -2752,10 +2758,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
-     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both. For more information,
-     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     * support</a> in the <i>Batch User Guide</i>.
+     * a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">
+     * CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not both. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2765,11 +2772,12 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param launchTemplate
      *        The launch template to use for your compute resources. Any other compute resource parameters that you
-     *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
-     *        template. You must specify either the launch template ID or launch template name in the request, but not
-     *        both. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     *        support</a> in the <i>Batch User Guide</i>.</p> <note>
+     *        specify in a <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html"
+     *        >CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     *        specify either the launch template ID or launch template name in the request, but not both. For more
+     *        information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
+     *        template support</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -2783,7 +2791,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2795,8 +2803,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
-     *         environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+     * @return Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the
+     *         compute environment. If <code>Ec2Configuration</code> isn't specified, the default is
+     *         <code>ECS_AL2</code>.</p>
      *         <p>
      *         One or two values can be provided.
      *         </p>
@@ -2812,7 +2821,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2825,8 +2834,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param ec2Configuration
-     *        Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
-     *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+     *        Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the
+     *        compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>
+     *        .</p>
      *        <p>
      *        One or two values can be provided.
      *        </p>
@@ -2847,7 +2857,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2865,8 +2875,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param ec2Configuration
-     *        Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
-     *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+     *        Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the
+     *        compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>
+     *        .</p>
      *        <p>
      *        One or two values can be provided.
      *        </p>
@@ -2889,7 +2900,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2902,8 +2913,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param ec2Configuration
-     *        Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
-     *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+     *        Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the
+     *        compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>
+     *        .</p>
      *        <p>
      *        One or two values can be provided.
      *        </p>

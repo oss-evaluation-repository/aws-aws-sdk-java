@@ -403,6 +403,39 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+     * </p>
+     * 
+     * @param getApproximateUsageRecordsRequest
+     * @return A Java Future containing the result of the GetApproximateUsageRecords operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetApproximateUsageRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApproximateUsageRecordsResult> getApproximateUsageRecordsAsync(
+            GetApproximateUsageRecordsRequest getApproximateUsageRecordsRequest);
+
+    /**
+     * <p>
+     * Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+     * </p>
+     * 
+     * @param getApproximateUsageRecordsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApproximateUsageRecords operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetApproximateUsageRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApproximateUsageRecordsResult> getApproximateUsageRecordsAsync(
+            GetApproximateUsageRecordsRequest getApproximateUsageRecordsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApproximateUsageRecordsRequest, GetApproximateUsageRecordsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric that you
      * want the request to return. For example, you can specify <code>BlendedCosts</code> or <code>UsageQuantity</code>.
      * You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>,

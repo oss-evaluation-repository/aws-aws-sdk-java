@@ -53,6 +53,8 @@ public class RegisterJobDefinitionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformCapabilities").build();
     private static final MarshallingInfo<StructuredPojo> EKSPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eksProperties").build();
+    private static final MarshallingInfo<StructuredPojo> ECSPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecsProperties").build();
 
     private static final RegisterJobDefinitionRequestMarshaller instance = new RegisterJobDefinitionRequestMarshaller();
 
@@ -82,6 +84,7 @@ public class RegisterJobDefinitionRequestMarshaller {
             protocolMarshaller.marshall(registerJobDefinitionRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(registerJobDefinitionRequest.getPlatformCapabilities(), PLATFORMCAPABILITIES_BINDING);
             protocolMarshaller.marshall(registerJobDefinitionRequest.getEksProperties(), EKSPROPERTIES_BINDING);
+            protocolMarshaller.marshall(registerJobDefinitionRequest.getEcsProperties(), ECSPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

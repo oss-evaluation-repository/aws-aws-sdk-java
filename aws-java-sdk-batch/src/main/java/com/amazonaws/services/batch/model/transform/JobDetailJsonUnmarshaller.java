@@ -162,6 +162,10 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ecsProperties", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setEcsProperties(EcsPropertiesDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("isCancelled", targetDepth)) {
                     context.nextToken();
                     jobDetail.setIsCancelled(context.getUnmarshaller(Boolean.class).unmarshall(context));

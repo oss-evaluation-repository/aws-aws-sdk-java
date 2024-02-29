@@ -52,6 +52,10 @@ public class RateBasedStatementJsonUnmarshaller implements Unmarshaller<RateBase
                     context.nextToken();
                     rateBasedStatement.setLimit(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("EvaluationWindowSec", targetDepth)) {
+                    context.nextToken();
+                    rateBasedStatement.setEvaluationWindowSec(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("AggregateKeyType", targetDepth)) {
                     context.nextToken();
                     rateBasedStatement.setAggregateKeyType(context.getUnmarshaller(String.class).unmarshall(context));

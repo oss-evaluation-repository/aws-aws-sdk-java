@@ -105,11 +105,11 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * An object with various properties that override the defaults for the job definition that specify the name of a
-     * container in the specified job definition and the overrides it should receive. You can override the default
-     * command for a container, which is specified in the job definition or the Docker image, with a
-     * <code>command</code> override. You can also override existing environment variables on a container or add new
-     * environment variables to it with an <code>environment</code> override.
+     * An object with properties that override the defaults for the job definition that specify the name of a container
+     * in the specified job definition and the overrides it should receive. You can override the default command for a
+     * container, which is specified in the job definition or the Docker image, with a <code>command</code> override.
+     * You can also override existing environment variables on a container or add new environment variables to it with
+     * an <code>environment</code> override.
      * </p>
      */
     private ContainerOverrides containerOverrides;
@@ -165,11 +165,18 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that
-     * override defaults for the job definition.
+     * An object, with properties that override defaults for the job definition, can only be specified for jobs that are
+     * run on Amazon EKS resources.
      * </p>
      */
     private EksPropertiesOverride eksPropertiesOverride;
+    /**
+     * <p>
+     * An object, with properties that override defaults for the job definition, can only be specified for jobs that are
+     * run on Amazon ECS resources.
+     * </p>
+     */
+    private EcsPropertiesOverride ecsPropertiesOverride;
 
     /**
      * <p>
@@ -715,16 +722,16 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object with various properties that override the defaults for the job definition that specify the name of a
-     * container in the specified job definition and the overrides it should receive. You can override the default
-     * command for a container, which is specified in the job definition or the Docker image, with a
-     * <code>command</code> override. You can also override existing environment variables on a container or add new
-     * environment variables to it with an <code>environment</code> override.
+     * An object with properties that override the defaults for the job definition that specify the name of a container
+     * in the specified job definition and the overrides it should receive. You can override the default command for a
+     * container, which is specified in the job definition or the Docker image, with a <code>command</code> override.
+     * You can also override existing environment variables on a container or add new environment variables to it with
+     * an <code>environment</code> override.
      * </p>
      * 
      * @param containerOverrides
-     *        An object with various properties that override the defaults for the job definition that specify the name
-     *        of a container in the specified job definition and the overrides it should receive. You can override the
+     *        An object with properties that override the defaults for the job definition that specify the name of a
+     *        container in the specified job definition and the overrides it should receive. You can override the
      *        default command for a container, which is specified in the job definition or the Docker image, with a
      *        <code>command</code> override. You can also override existing environment variables on a container or add
      *        new environment variables to it with an <code>environment</code> override.
@@ -736,15 +743,15 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object with various properties that override the defaults for the job definition that specify the name of a
-     * container in the specified job definition and the overrides it should receive. You can override the default
-     * command for a container, which is specified in the job definition or the Docker image, with a
-     * <code>command</code> override. You can also override existing environment variables on a container or add new
-     * environment variables to it with an <code>environment</code> override.
+     * An object with properties that override the defaults for the job definition that specify the name of a container
+     * in the specified job definition and the overrides it should receive. You can override the default command for a
+     * container, which is specified in the job definition or the Docker image, with a <code>command</code> override.
+     * You can also override existing environment variables on a container or add new environment variables to it with
+     * an <code>environment</code> override.
      * </p>
      * 
-     * @return An object with various properties that override the defaults for the job definition that specify the name
-     *         of a container in the specified job definition and the overrides it should receive. You can override the
+     * @return An object with properties that override the defaults for the job definition that specify the name of a
+     *         container in the specified job definition and the overrides it should receive. You can override the
      *         default command for a container, which is specified in the job definition or the Docker image, with a
      *         <code>command</code> override. You can also override existing environment variables on a container or add
      *         new environment variables to it with an <code>environment</code> override.
@@ -756,16 +763,16 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object with various properties that override the defaults for the job definition that specify the name of a
-     * container in the specified job definition and the overrides it should receive. You can override the default
-     * command for a container, which is specified in the job definition or the Docker image, with a
-     * <code>command</code> override. You can also override existing environment variables on a container or add new
-     * environment variables to it with an <code>environment</code> override.
+     * An object with properties that override the defaults for the job definition that specify the name of a container
+     * in the specified job definition and the overrides it should receive. You can override the default command for a
+     * container, which is specified in the job definition or the Docker image, with a <code>command</code> override.
+     * You can also override existing environment variables on a container or add new environment variables to it with
+     * an <code>environment</code> override.
      * </p>
      * 
      * @param containerOverrides
-     *        An object with various properties that override the defaults for the job definition that specify the name
-     *        of a container in the specified job definition and the overrides it should receive. You can override the
+     *        An object with properties that override the defaults for the job definition that specify the name of a
+     *        container in the specified job definition and the overrides it should receive. You can override the
      *        default command for a container, which is specified in the job definition or the Docker image, with a
      *        <code>command</code> override. You can also override existing environment variables on a container or add
      *        new environment variables to it with an <code>environment</code> override.
@@ -1148,13 +1155,13 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that
-     * override defaults for the job definition.
+     * An object, with properties that override defaults for the job definition, can only be specified for jobs that are
+     * run on Amazon EKS resources.
      * </p>
      * 
      * @param eksPropertiesOverride
-     *        An object that can only be specified for jobs that are run on Amazon EKS resources with various properties
-     *        that override defaults for the job definition.
+     *        An object, with properties that override defaults for the job definition, can only be specified for jobs
+     *        that are run on Amazon EKS resources.
      */
 
     public void setEksPropertiesOverride(EksPropertiesOverride eksPropertiesOverride) {
@@ -1163,12 +1170,12 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that
-     * override defaults for the job definition.
+     * An object, with properties that override defaults for the job definition, can only be specified for jobs that are
+     * run on Amazon EKS resources.
      * </p>
      * 
-     * @return An object that can only be specified for jobs that are run on Amazon EKS resources with various
-     *         properties that override defaults for the job definition.
+     * @return An object, with properties that override defaults for the job definition, can only be specified for jobs
+     *         that are run on Amazon EKS resources.
      */
 
     public EksPropertiesOverride getEksPropertiesOverride() {
@@ -1177,18 +1184,64 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that
-     * override defaults for the job definition.
+     * An object, with properties that override defaults for the job definition, can only be specified for jobs that are
+     * run on Amazon EKS resources.
      * </p>
      * 
      * @param eksPropertiesOverride
-     *        An object that can only be specified for jobs that are run on Amazon EKS resources with various properties
-     *        that override defaults for the job definition.
+     *        An object, with properties that override defaults for the job definition, can only be specified for jobs
+     *        that are run on Amazon EKS resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SubmitJobRequest withEksPropertiesOverride(EksPropertiesOverride eksPropertiesOverride) {
         setEksPropertiesOverride(eksPropertiesOverride);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object, with properties that override defaults for the job definition, can only be specified for jobs that are
+     * run on Amazon ECS resources.
+     * </p>
+     * 
+     * @param ecsPropertiesOverride
+     *        An object, with properties that override defaults for the job definition, can only be specified for jobs
+     *        that are run on Amazon ECS resources.
+     */
+
+    public void setEcsPropertiesOverride(EcsPropertiesOverride ecsPropertiesOverride) {
+        this.ecsPropertiesOverride = ecsPropertiesOverride;
+    }
+
+    /**
+     * <p>
+     * An object, with properties that override defaults for the job definition, can only be specified for jobs that are
+     * run on Amazon ECS resources.
+     * </p>
+     * 
+     * @return An object, with properties that override defaults for the job definition, can only be specified for jobs
+     *         that are run on Amazon ECS resources.
+     */
+
+    public EcsPropertiesOverride getEcsPropertiesOverride() {
+        return this.ecsPropertiesOverride;
+    }
+
+    /**
+     * <p>
+     * An object, with properties that override defaults for the job definition, can only be specified for jobs that are
+     * run on Amazon ECS resources.
+     * </p>
+     * 
+     * @param ecsPropertiesOverride
+     *        An object, with properties that override defaults for the job definition, can only be specified for jobs
+     *        that are run on Amazon ECS resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitJobRequest withEcsPropertiesOverride(EcsPropertiesOverride ecsPropertiesOverride) {
+        setEcsPropertiesOverride(ecsPropertiesOverride);
         return this;
     }
 
@@ -1233,7 +1286,9 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getEksPropertiesOverride() != null)
-            sb.append("EksPropertiesOverride: ").append(getEksPropertiesOverride());
+            sb.append("EksPropertiesOverride: ").append(getEksPropertiesOverride()).append(",");
+        if (getEcsPropertiesOverride() != null)
+            sb.append("EcsPropertiesOverride: ").append(getEcsPropertiesOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -1308,6 +1363,10 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getEksPropertiesOverride() != null && other.getEksPropertiesOverride().equals(this.getEksPropertiesOverride()) == false)
             return false;
+        if (other.getEcsPropertiesOverride() == null ^ this.getEcsPropertiesOverride() == null)
+            return false;
+        if (other.getEcsPropertiesOverride() != null && other.getEcsPropertiesOverride().equals(this.getEcsPropertiesOverride()) == false)
+            return false;
         return true;
     }
 
@@ -1331,6 +1390,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEksPropertiesOverride() == null) ? 0 : getEksPropertiesOverride().hashCode());
+        hashCode = prime * hashCode + ((getEcsPropertiesOverride() == null) ? 0 : getEcsPropertiesOverride().hashCode());
         return hashCode;
     }
 

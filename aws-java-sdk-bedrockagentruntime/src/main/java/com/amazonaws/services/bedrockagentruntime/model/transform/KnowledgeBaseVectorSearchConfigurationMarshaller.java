@@ -29,6 +29,8 @@ public class KnowledgeBaseVectorSearchConfigurationMarshaller {
 
     private static final MarshallingInfo<Integer> NUMBEROFRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfResults").build();
+    private static final MarshallingInfo<String> OVERRIDESEARCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("overrideSearchType").build();
 
     private static final KnowledgeBaseVectorSearchConfigurationMarshaller instance = new KnowledgeBaseVectorSearchConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class KnowledgeBaseVectorSearchConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(knowledgeBaseVectorSearchConfiguration.getNumberOfResults(), NUMBEROFRESULTS_BINDING);
+            protocolMarshaller.marshall(knowledgeBaseVectorSearchConfiguration.getOverrideSearchType(), OVERRIDESEARCHTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

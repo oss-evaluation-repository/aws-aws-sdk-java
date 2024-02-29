@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The platform configuration for jobs that are running on Fargate resources. Jobs that run on EC2 resources must not
- * specify this parameter.
+ * The platform configuration for jobs that are running on Fargate resources. Jobs that run on Amazon EC2 resources must
+ * not specify this parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/FargatePlatformConfiguration" target="_top">AWS

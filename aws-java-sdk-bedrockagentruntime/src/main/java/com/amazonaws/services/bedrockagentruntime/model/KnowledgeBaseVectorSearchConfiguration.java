@@ -35,6 +35,12 @@ public class KnowledgeBaseVectorSearchConfiguration implements Serializable, Clo
      * </p>
      */
     private Integer numberOfResults;
+    /**
+     * <p>
+     * Override the type of query to be performed on data store
+     * </p>
+     */
+    private String overrideSearchType;
 
     /**
      * <p>
@@ -77,6 +83,65 @@ public class KnowledgeBaseVectorSearchConfiguration implements Serializable, Clo
     }
 
     /**
+     * <p>
+     * Override the type of query to be performed on data store
+     * </p>
+     * 
+     * @param overrideSearchType
+     *        Override the type of query to be performed on data store
+     * @see SearchType
+     */
+
+    public void setOverrideSearchType(String overrideSearchType) {
+        this.overrideSearchType = overrideSearchType;
+    }
+
+    /**
+     * <p>
+     * Override the type of query to be performed on data store
+     * </p>
+     * 
+     * @return Override the type of query to be performed on data store
+     * @see SearchType
+     */
+
+    public String getOverrideSearchType() {
+        return this.overrideSearchType;
+    }
+
+    /**
+     * <p>
+     * Override the type of query to be performed on data store
+     * </p>
+     * 
+     * @param overrideSearchType
+     *        Override the type of query to be performed on data store
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SearchType
+     */
+
+    public KnowledgeBaseVectorSearchConfiguration withOverrideSearchType(String overrideSearchType) {
+        setOverrideSearchType(overrideSearchType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Override the type of query to be performed on data store
+     * </p>
+     * 
+     * @param overrideSearchType
+     *        Override the type of query to be performed on data store
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SearchType
+     */
+
+    public KnowledgeBaseVectorSearchConfiguration withOverrideSearchType(SearchType overrideSearchType) {
+        this.overrideSearchType = overrideSearchType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -89,7 +154,9 @@ public class KnowledgeBaseVectorSearchConfiguration implements Serializable, Clo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNumberOfResults() != null)
-            sb.append("NumberOfResults: ").append(getNumberOfResults());
+            sb.append("NumberOfResults: ").append(getNumberOfResults()).append(",");
+        if (getOverrideSearchType() != null)
+            sb.append("OverrideSearchType: ").append(getOverrideSearchType());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +175,10 @@ public class KnowledgeBaseVectorSearchConfiguration implements Serializable, Clo
             return false;
         if (other.getNumberOfResults() != null && other.getNumberOfResults().equals(this.getNumberOfResults()) == false)
             return false;
+        if (other.getOverrideSearchType() == null ^ this.getOverrideSearchType() == null)
+            return false;
+        if (other.getOverrideSearchType() != null && other.getOverrideSearchType().equals(this.getOverrideSearchType()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +188,7 @@ public class KnowledgeBaseVectorSearchConfiguration implements Serializable, Clo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNumberOfResults() == null) ? 0 : getNumberOfResults().hashCode());
+        hashCode = prime * hashCode + ((getOverrideSearchType() == null) ? 0 : getOverrideSearchType().hashCode());
         return hashCode;
     }
 

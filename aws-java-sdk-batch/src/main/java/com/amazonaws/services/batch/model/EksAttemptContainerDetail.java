@@ -30,7 +30,7 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      */
     private Integer exitCode;
@@ -44,11 +44,11 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
      * @param exitCode
-     *        The exit code for the job attempt. A non-zero exit code is considered failed.
+     *        The exit code returned for the job attempt. A non-zero exit code is considered failed.
      */
 
     public void setExitCode(Integer exitCode) {
@@ -57,10 +57,10 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
-     * @return The exit code for the job attempt. A non-zero exit code is considered failed.
+     * @return The exit code returned for the job attempt. A non-zero exit code is considered failed.
      */
 
     public Integer getExitCode() {
@@ -69,11 +69,11 @@ public class EksAttemptContainerDetail implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The exit code for the job attempt. A non-zero exit code is considered failed.
+     * The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * </p>
      * 
      * @param exitCode
-     *        The exit code for the job attempt. A non-zero exit code is considered failed.
+     *        The exit code returned for the job attempt. A non-zero exit code is considered failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

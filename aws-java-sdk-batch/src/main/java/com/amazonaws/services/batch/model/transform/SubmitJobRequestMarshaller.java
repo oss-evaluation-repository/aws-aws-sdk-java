@@ -59,6 +59,8 @@ public class SubmitJobRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> EKSPROPERTIESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eksPropertiesOverride").build();
+    private static final MarshallingInfo<StructuredPojo> ECSPROPERTIESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecsPropertiesOverride").build();
 
     private static final SubmitJobRequestMarshaller instance = new SubmitJobRequestMarshaller();
 
@@ -91,6 +93,7 @@ public class SubmitJobRequestMarshaller {
             protocolMarshaller.marshall(submitJobRequest.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getEksPropertiesOverride(), EKSPROPERTIESOVERRIDE_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getEcsPropertiesOverride(), ECSPROPERTIESOVERRIDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

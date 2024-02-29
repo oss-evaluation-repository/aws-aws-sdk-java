@@ -57,7 +57,9 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      */
@@ -252,7 +254,9 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -267,7 +271,10 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>namespaceId</code> feature is in public preview.
+     *        The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *        core devices.</a>
      *        </p>
      */
 
@@ -288,7 +295,9 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -302,7 +311,10 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>namespaceId</code> feature is in public preview.
+     *         The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *         core devices.</a>
      *         </p>
      */
 
@@ -323,7 +335,9 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -338,7 +352,10 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>namespaceId</code> feature is in public preview.
+     *        The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *        core devices.</a>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

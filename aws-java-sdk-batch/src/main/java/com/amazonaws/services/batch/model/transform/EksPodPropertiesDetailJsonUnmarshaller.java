@@ -66,6 +66,12 @@ public class EksPodPropertiesDetailJsonUnmarshaller implements Unmarshaller<EksP
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("initContainers", targetDepth)) {
+                    context.nextToken();
+                    eksPodPropertiesDetail.setInitContainers(new ListUnmarshaller<EksContainerDetail>(EksContainerDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("volumes", targetDepth)) {
                     context.nextToken();
                     eksPodPropertiesDetail.setVolumes(new ListUnmarshaller<EksVolume>(EksVolumeJsonUnmarshaller.getInstance())
@@ -83,6 +89,10 @@ public class EksPodPropertiesDetailJsonUnmarshaller implements Unmarshaller<EksP
                 if (context.testExpression("metadata", targetDepth)) {
                     context.nextToken();
                     eksPodPropertiesDetail.setMetadata(EksMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("shareProcessNamespace", targetDepth)) {
+                    context.nextToken();
+                    eksPodPropertiesDetail.setShareProcessNamespace(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

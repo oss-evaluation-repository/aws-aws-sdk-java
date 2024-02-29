@@ -799,6 +799,67 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+     * </p>
+     * 
+     * @param getApproximateUsageRecordsRequest
+     * @return Result of the GetApproximateUsageRecords operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetApproximateUsageRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetApproximateUsageRecordsResult getApproximateUsageRecords(GetApproximateUsageRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApproximateUsageRecords(request);
+    }
+
+    @SdkInternalApi
+    final GetApproximateUsageRecordsResult executeGetApproximateUsageRecords(GetApproximateUsageRecordsRequest getApproximateUsageRecordsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getApproximateUsageRecordsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApproximateUsageRecordsRequest> request = null;
+        Response<GetApproximateUsageRecordsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApproximateUsageRecordsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getApproximateUsageRecordsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApproximateUsageRecords");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetApproximateUsageRecordsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetApproximateUsageRecordsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric that you
      * want the request to return. For example, you can specify <code>BlendedCosts</code> or <code>UsageQuantity</code>.
      * You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>,

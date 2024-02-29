@@ -84,8 +84,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job
-     * definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it
-     * specifies the number of vCPUs reserved for the job.
+     * definition. It's not supported for jobs running on Fargate resources. For jobs running on Amazon EC2 resources,
+     * it specifies the number of vCPUs reserved for the job.
      * </p>
      * <p>
      * Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a
@@ -100,10 +100,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the
-     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it
-     * specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified
-     * number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory
-     * hard limit can be specified in several places. It must be specified for each node at least once.
+     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2
+     * resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the
+     * specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+     * memory hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      */
     @Deprecated
@@ -264,8 +264,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     * >LogConfiguration</a> data type).
      * </p>
      * </note>
      * <p>
@@ -294,15 +295,15 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     private java.util.List<Secret> secrets;
     /**
      * <p>
-     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      */
     private FargatePlatformConfiguration fargatePlatformConfiguration;
@@ -639,8 +640,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job
-     * definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it
-     * specifies the number of vCPUs reserved for the job.
+     * definition. It's not supported for jobs running on Fargate resources. For jobs running on Amazon EC2 resources,
+     * it specifies the number of vCPUs reserved for the job.
      * </p>
      * <p>
      * Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a
@@ -652,8 +653,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * 
      * @param vcpus
      *        This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for
-     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
-     *        resources, it specifies the number of vCPUs reserved for the job.</p>
+     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs running on Amazon
+     *        EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
      *        <p>
      *        Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
@@ -670,8 +671,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job
-     * definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it
-     * specifies the number of vCPUs reserved for the job.
+     * definition. It's not supported for jobs running on Fargate resources. For jobs running on Amazon EC2 resources,
+     * it specifies the number of vCPUs reserved for the job.
      * </p>
      * <p>
      * Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a
@@ -682,8 +683,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for
-     *         the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
-     *         resources, it specifies the number of vCPUs reserved for the job.</p>
+     *         the job definition. It's not supported for jobs running on Fargate resources. For jobs running on Amazon
+     *         EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
      *         <p>
      *         Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
@@ -700,8 +701,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for the job
-     * definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2 resources, it
-     * specifies the number of vCPUs reserved for the job.
+     * definition. It's not supported for jobs running on Fargate resources. For jobs running on Amazon EC2 resources,
+     * it specifies the number of vCPUs reserved for the job.
      * </p>
      * <p>
      * Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a
@@ -713,8 +714,8 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * 
      * @param vcpus
      *        This parameter is deprecated, use <code>resourceRequirements</code> to specify the vCPU requirements for
-     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs running on EC2
-     *        resources, it specifies the number of vCPUs reserved for the job.</p>
+     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs running on Amazon
+     *        EC2 resources, it specifies the number of vCPUs reserved for the job.</p>
      *        <p>
      *        Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
@@ -733,16 +734,16 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the
-     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it
-     * specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified
-     * number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory
-     * hard limit can be specified in several places. It must be specified for each node at least once.
+     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2
+     * resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the
+     * specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+     * memory hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      * 
      * @param memory
      *        This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for
-     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2
-     *        resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
+     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon
+     *        EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
      *        exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
      *        this parameter. The memory hard limit can be specified in several places. It must be specified for each
      *        node at least once.
@@ -755,18 +756,18 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the
-     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it
-     * specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified
-     * number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory
-     * hard limit can be specified in several places. It must be specified for each node at least once.
+     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2
+     * resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the
+     * specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+     * memory hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      * 
      * @return This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements
      *         for the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on
-     *         EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
-     *         exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
-     *         this parameter. The memory hard limit can be specified in several places. It must be specified for each
-     *         node at least once.
+     *         Amazon EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container
+     *         attempts to exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a
+     *         job using this parameter. The memory hard limit can be specified in several places. It must be specified
+     *         for each node at least once.
      */
     @Deprecated
     public Integer getMemory() {
@@ -776,16 +777,16 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for the
-     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2 resources, it
-     * specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the specified
-     * number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The memory
-     * hard limit can be specified in several places. It must be specified for each node at least once.
+     * job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon EC2
+     * resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to exceed the
+     * specified number, it's terminated. You must specify at least 4 MiB of memory for a job using this parameter. The
+     * memory hard limit can be specified in several places. It must be specified for each node at least once.
      * </p>
      * 
      * @param memory
      *        This parameter is deprecated, use <code>resourceRequirements</code> to specify the memory requirements for
-     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on EC2
-     *        resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
+     *        the job definition. It's not supported for jobs running on Fargate resources. For jobs that run on Amazon
+     *        EC2 resources, it specifies the memory hard limit (in MiB) for a container. If your container attempts to
      *        exceed the specified number, it's terminated. You must specify at least 4 MiB of memory for a job using
      *        this parameter. The memory hard limit can be specified in several places. It must be specified for each
      *        node at least once.
@@ -1973,8 +1974,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     * >LogConfiguration</a> data type).
      * </p>
      * </note>
      * <p>
@@ -2009,8 +2011,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <note>
      *        <p>
-     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *        <a>LogConfiguration</a> data type).
+     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     *        >LogConfiguration</a> data type).
      *        </p>
      *        </note>
      *        <p>
@@ -2050,8 +2054,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     * >LogConfiguration</a> data type).
      * </p>
      * </note>
      * <p>
@@ -2085,8 +2090,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         </p>
      *         <note>
      *         <p>
-     *         Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *         <a>LogConfiguration</a> data type).
+     *         Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     *         >LogConfiguration</a> data type).
      *         </p>
      *         </note>
      *         <p>
@@ -2126,8 +2133,9 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).
+     * Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     * >LogConfiguration</a> data type).
      * </p>
      * </note>
      * <p>
@@ -2162,8 +2170,10 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <note>
      *        <p>
-     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
-     *        <a>LogConfiguration</a> data type).
+     *        Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the <a
+     *        href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html"
+     *        >LogConfiguration</a> data type).
      *        </p>
      *        </note>
      *        <p>
@@ -2275,13 +2285,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
      * @param networkConfiguration
-     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *        resources must not specify this parameter.
+     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *        EC2 resources must not specify this parameter.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -2290,12 +2300,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
-     * @return The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *         resources must not specify this parameter.
+     * @return The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *         EC2 resources must not specify this parameter.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -2304,13 +2314,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
      * @param networkConfiguration
-     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *        resources must not specify this parameter.
+     *        The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *        EC2 resources must not specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2321,13 +2331,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
      * @param fargatePlatformConfiguration
-     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *        resources must not specify this parameter.
+     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *        EC2 resources must not specify this parameter.
      */
 
     public void setFargatePlatformConfiguration(FargatePlatformConfiguration fargatePlatformConfiguration) {
@@ -2336,12 +2346,12 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
-     * @return The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *         resources must not specify this parameter.
+     * @return The platform configuration for jobs that are running on Fargate resources. Jobs that are running on
+     *         Amazon EC2 resources must not specify this parameter.
      */
 
     public FargatePlatformConfiguration getFargatePlatformConfiguration() {
@@ -2350,13 +2360,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources
-     * must not specify this parameter.
+     * The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2
+     * resources must not specify this parameter.
      * </p>
      * 
      * @param fargatePlatformConfiguration
-     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on EC2
-     *        resources must not specify this parameter.
+     *        The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon
+     *        EC2 resources must not specify this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,28 @@
+# __1.12.669__ __2024-02-28__
+## __AWS Batch__
+  - ### Features
+    - This release adds Batch support for configuration of multicontainer jobs in ECS, Fargate, and EKS. This support is available for all types of jobs, including both array jobs and multi-node parallel jobs.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This release introduces the new API 'GetApproximateUsageRecords', which retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+
+## __AWS IoT__
+  - ### Features
+    - This release reduces the maximum results returned per query invocation from 500 to 100 for the SearchIndex API. This change has no implications as long as the API is invoked until the nextToken is NULL.
+
+## __AWS WAFV2__
+  - ### Features
+    - AWS WAF now supports configurable time windows for request aggregation with rate-based rules. Customers can now select time windows of 1 minute, 2 minutes or 10 minutes, in addition to the previously supported 5 minutes.
+
+## __Agents for Amazon Bedrock Runtime__
+  - ### Features
+    - This release adds support to override search strategy performed by the Retrieve and RetrieveAndGenerate APIs for Amazon Bedrock Agents
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release increases the range of MaxResults for GetNetworkInsightsAccessScopeAnalysisFindings to 1,000.
+
 # __1.12.668__ __2024-02-27__
 ## __AWS Amplify UI Builder__
   - ### Features

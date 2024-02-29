@@ -33,6 +33,8 @@ public class KnowledgeBaseRetrieveAndGenerateConfiguration implements Serializab
 
     private String modelArn;
 
+    private KnowledgeBaseRetrievalConfiguration retrievalConfiguration;
+
     /**
      * @param knowledgeBaseId
      */
@@ -86,6 +88,32 @@ public class KnowledgeBaseRetrieveAndGenerateConfiguration implements Serializab
     }
 
     /**
+     * @param retrievalConfiguration
+     */
+
+    public void setRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration retrievalConfiguration) {
+        this.retrievalConfiguration = retrievalConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public KnowledgeBaseRetrievalConfiguration getRetrievalConfiguration() {
+        return this.retrievalConfiguration;
+    }
+
+    /**
+     * @param retrievalConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KnowledgeBaseRetrieveAndGenerateConfiguration withRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration retrievalConfiguration) {
+        setRetrievalConfiguration(retrievalConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -100,7 +128,9 @@ public class KnowledgeBaseRetrieveAndGenerateConfiguration implements Serializab
         if (getKnowledgeBaseId() != null)
             sb.append("KnowledgeBaseId: ").append(getKnowledgeBaseId()).append(",");
         if (getModelArn() != null)
-            sb.append("ModelArn: ").append(getModelArn());
+            sb.append("ModelArn: ").append(getModelArn()).append(",");
+        if (getRetrievalConfiguration() != null)
+            sb.append("RetrievalConfiguration: ").append(getRetrievalConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -123,6 +153,10 @@ public class KnowledgeBaseRetrieveAndGenerateConfiguration implements Serializab
             return false;
         if (other.getModelArn() != null && other.getModelArn().equals(this.getModelArn()) == false)
             return false;
+        if (other.getRetrievalConfiguration() == null ^ this.getRetrievalConfiguration() == null)
+            return false;
+        if (other.getRetrievalConfiguration() != null && other.getRetrievalConfiguration().equals(this.getRetrievalConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -133,6 +167,7 @@ public class KnowledgeBaseRetrieveAndGenerateConfiguration implements Serializab
 
         hashCode = prime * hashCode + ((getKnowledgeBaseId() == null) ? 0 : getKnowledgeBaseId().hashCode());
         hashCode = prime * hashCode + ((getModelArn() == null) ? 0 : getModelArn().hashCode());
+        hashCode = prime * hashCode + ((getRetrievalConfiguration() == null) ? 0 : getRetrievalConfiguration().hashCode());
         return hashCode;
     }
 
