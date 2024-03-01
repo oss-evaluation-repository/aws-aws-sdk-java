@@ -28,7 +28,9 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The affinity setting for the instance.
+     * The affinity setting for the instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String affinity;
@@ -92,11 +94,15 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The affinity setting for the instance.
+     * The affinity setting for the instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param affinity
-     *        The affinity setting for the instance.
+     *        The affinity setting for the instance. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity"
+     *        >Host affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * @see Affinity
      */
 
@@ -106,10 +112,14 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The affinity setting for the instance.
+     * The affinity setting for the instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
-     * @return The affinity setting for the instance.
+     * @return The affinity setting for the instance. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity"
+     *         >Host affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * @see Affinity
      */
 
@@ -119,11 +129,15 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The affinity setting for the instance.
+     * The affinity setting for the instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param affinity
-     *        The affinity setting for the instance.
+     *        The affinity setting for the instance. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity"
+     *        >Host affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Affinity
      */
@@ -135,11 +149,15 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The affinity setting for the instance.
+     * The affinity setting for the instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param affinity
-     *        The affinity setting for the instance.
+     *        The affinity setting for the instance. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity"
+     *        >Host affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * @see Affinity
      */
 
@@ -149,11 +167,15 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The affinity setting for the instance.
+     * The affinity setting for the instance. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param affinity
-     *        The affinity setting for the instance.
+     *        The affinity setting for the instance. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity"
+     *        >Host affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Affinity
      */

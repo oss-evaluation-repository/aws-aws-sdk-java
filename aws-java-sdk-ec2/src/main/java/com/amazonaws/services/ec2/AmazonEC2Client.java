@@ -14807,8 +14807,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes Capacity Block offerings available for purchase. With Capacity Blocks, you purchase a specific instance
-     * type for a period of time.
+     * Describes Capacity Block offerings available for purchase in the Amazon Web Services Region that you're currently
+     * using. With Capacity Blocks, you purchase a specific instance type for a period of time.
      * </p>
      * 
      * @param describeCapacityBlockOfferingsRequest
@@ -16057,9 +16057,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Describes the running instances for the specified EC2 Fleet.
      * </p>
+     * <note>
+     * <p>
+     * Currently, <code>DescribeFleetInstances</code> does not support fleets of type <code>instant</code>. Instead, use
+     * <code>DescribeFleets</code>, specifying the <code>instant</code> fleet ID in the request.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe your
      * EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -16116,11 +16122,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the specified EC2 Fleets or all of your EC2 Fleets.
+     * Describes the specified EC2 Fleet or all of your EC2 Fleets.
      * </p>
+     * <important>
+     * <p>
+     * If a fleet is of type <code>instant</code>, you must specify the fleet ID in the request, otherwise the fleet
+     * does not appear in the response.
+     * </p>
+     * </important>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe your
      * EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -17368,6 +17380,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeInstanceStatusRequest
      * @return Result of the DescribeInstanceStatus operation returned by the service.
@@ -17671,6 +17689,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * fails. If you describe instances and specify only instance IDs that are in an unaffected zone, the call works
      * normally.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeInstancesRequest
      * @return Result of the DescribeInstances operation returned by the service.
@@ -19837,6 +19861,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
      * Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesRequest
      *        Contains the parameters for DescribeReservedInstances.
@@ -19920,6 +19950,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
      * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesListingsRequest
      *        Contains the parameters for DescribeReservedInstancesListings.
@@ -19990,6 +20026,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in
      * the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesModificationsRequest
      *        Contains the parameters for DescribeReservedInstancesModifications.
@@ -20065,6 +20107,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
      * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesOfferingsRequest
      *        Contains the parameters for DescribeReservedInstancesOfferings.
@@ -31935,7 +31983,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Modify the affinity between an instance and a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When
      * affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next
-     * time the instance is launched, it is automatically associated with the host on which it lands. If the instance is
+     * time the instance is started, it is automatically associated with the host on which it lands. If the instance is
      * restarted or rebooted, this relationship persists.
      * </p>
      * </li>

@@ -47,7 +47,7 @@ public class InstanceTopology implements Serializable, Cloneable {
     /**
      * <p>
      * The network nodes. The nodes are hashed based on your account. Instances from different accounts running under
-     * the same droplet will return a different hashed list of strings.
+     * the same server will return a different hashed list of strings.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> networkNodes;
@@ -187,11 +187,11 @@ public class InstanceTopology implements Serializable, Cloneable {
     /**
      * <p>
      * The network nodes. The nodes are hashed based on your account. Instances from different accounts running under
-     * the same droplet will return a different hashed list of strings.
+     * the same server will return a different hashed list of strings.
      * </p>
      * 
      * @return The network nodes. The nodes are hashed based on your account. Instances from different accounts running
-     *         under the same droplet will return a different hashed list of strings.
+     *         under the same server will return a different hashed list of strings.
      */
 
     public java.util.List<String> getNetworkNodes() {
@@ -204,12 +204,12 @@ public class InstanceTopology implements Serializable, Cloneable {
     /**
      * <p>
      * The network nodes. The nodes are hashed based on your account. Instances from different accounts running under
-     * the same droplet will return a different hashed list of strings.
+     * the same server will return a different hashed list of strings.
      * </p>
      * 
      * @param networkNodes
      *        The network nodes. The nodes are hashed based on your account. Instances from different accounts running
-     *        under the same droplet will return a different hashed list of strings.
+     *        under the same server will return a different hashed list of strings.
      */
 
     public void setNetworkNodes(java.util.Collection<String> networkNodes) {
@@ -224,7 +224,7 @@ public class InstanceTopology implements Serializable, Cloneable {
     /**
      * <p>
      * The network nodes. The nodes are hashed based on your account. Instances from different accounts running under
-     * the same droplet will return a different hashed list of strings.
+     * the same server will return a different hashed list of strings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -234,7 +234,7 @@ public class InstanceTopology implements Serializable, Cloneable {
      * 
      * @param networkNodes
      *        The network nodes. The nodes are hashed based on your account. Instances from different accounts running
-     *        under the same droplet will return a different hashed list of strings.
+     *        under the same server will return a different hashed list of strings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,12 +251,12 @@ public class InstanceTopology implements Serializable, Cloneable {
     /**
      * <p>
      * The network nodes. The nodes are hashed based on your account. Instances from different accounts running under
-     * the same droplet will return a different hashed list of strings.
+     * the same server will return a different hashed list of strings.
      * </p>
      * 
      * @param networkNodes
      *        The network nodes. The nodes are hashed based on your account. Instances from different accounts running
-     *        under the same droplet will return a different hashed list of strings.
+     *        under the same server will return a different hashed list of strings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

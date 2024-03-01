@@ -72,6 +72,15 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The number of units provided by the specified instance type.
      * </p>
+     * <note>
+     * <p>
+     * When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is
+     * divided by the specified weight). However, if all the specified weights are above the requested
+     * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i>
+     * hour.
+     * </p>
+     * </note>
      */
     private Double weightedCapacity;
     /**
@@ -418,9 +427,25 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The number of units provided by the specified instance type.
      * </p>
+     * <note>
+     * <p>
+     * When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is
+     * divided by the specified weight). However, if all the specified weights are above the requested
+     * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i>
+     * hour.
+     * </p>
+     * </note>
      * 
      * @param weightedCapacity
-     *        The number of units provided by the specified instance type.
+     *        The number of units provided by the specified instance type.</p> <note>
+     *        <p>
+     *        When specifying weights, the price used in the <code>lowest-price</code> and
+     *        <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance
+     *        price is divided by the specified weight). However, if all the specified weights are above the requested
+     *        <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per
+     *        <i>instance</i> hour.
+     *        </p>
      */
 
     public void setWeightedCapacity(Double weightedCapacity) {
@@ -431,8 +456,24 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The number of units provided by the specified instance type.
      * </p>
+     * <note>
+     * <p>
+     * When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is
+     * divided by the specified weight). However, if all the specified weights are above the requested
+     * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i>
+     * hour.
+     * </p>
+     * </note>
      * 
-     * @return The number of units provided by the specified instance type.
+     * @return The number of units provided by the specified instance type.</p> <note>
+     *         <p>
+     *         When specifying weights, the price used in the <code>lowest-price</code> and
+     *         <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance
+     *         price is divided by the specified weight). However, if all the specified weights are above the requested
+     *         <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per
+     *         <i>instance</i> hour.
+     *         </p>
      */
 
     public Double getWeightedCapacity() {
@@ -443,9 +484,25 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The number of units provided by the specified instance type.
      * </p>
+     * <note>
+     * <p>
+     * When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is
+     * divided by the specified weight). However, if all the specified weights are above the requested
+     * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i>
+     * hour.
+     * </p>
+     * </note>
      * 
      * @param weightedCapacity
-     *        The number of units provided by the specified instance type.
+     *        The number of units provided by the specified instance type.</p> <note>
+     *        <p>
+     *        When specifying weights, the price used in the <code>lowest-price</code> and
+     *        <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance
+     *        price is divided by the specified weight). However, if all the specified weights are above the requested
+     *        <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per
+     *        <i>instance</i> hour.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -187,9 +187,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     * </p>
-     * <p>
      * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
      * </p>
@@ -203,9 +200,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * <note>
      * <p>
      * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
-     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then
-     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to
-     * <code>100</code>.
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * <p>
@@ -593,18 +592,17 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     * </p>
-     * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
      * threshold is based on the per vCPU or per memory price instead of the per instance price.
      * </p>
      * <note>
      * <p>
      * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
-     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then
-     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to
-     * <code>100</code>.
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      */
@@ -1555,9 +1553,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     * </p>
-     * <p>
      * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
      * </p>
@@ -1571,9 +1566,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * <note>
      * <p>
      * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
-     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then
-     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to
-     * <code>100</code>.
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * <p>
@@ -1592,9 +1589,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
      *        <p>
-     *        To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     *        </p>
-     *        <p>
      *        If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *        protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
      *        price.
@@ -1610,8 +1604,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        <p>
      *        Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
      *        <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either,
-     *        then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults
-     *        to <code>100</code>.
+     *        Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of
+     *        instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider
+     *        all instance types that match your attributes, include one of these parameters and specify a high value,
+     *        such as <code>999999</code>.
      *        </p>
      *        </note>
      *        <p>
@@ -1636,9 +1632,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     * </p>
-     * <p>
      * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
      * </p>
@@ -1652,9 +1645,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * <note>
      * <p>
      * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
-     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then
-     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to
-     * <code>100</code>.
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * <p>
@@ -1672,9 +1667,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *         The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *         </p>
      *         <p>
-     *         To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     *         </p>
-     *         <p>
      *         If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *         protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
      *         price.
@@ -1690,8 +1682,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *         <p>
      *         Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
      *         <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify
-     *         either, then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter
-     *         defaults to <code>100</code>.
+     *         either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide
+     *         range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want
+     *         to consider all instance types that match your attributes, include one of these parameters and specify a
+     *         high value, such as <code>999999</code>.
      *         </p>
      *         </note>
      *         <p>
@@ -1716,9 +1710,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     * </p>
-     * <p>
      * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
      * </p>
@@ -1732,9 +1723,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * <note>
      * <p>
      * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
-     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then
-     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to
-     * <code>100</code>.
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * <p>
@@ -1753,9 +1746,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
      *        <p>
-     *        To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     *        </p>
-     *        <p>
      *        If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *        protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
      *        price.
@@ -1771,8 +1761,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        <p>
      *        Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
      *        <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either,
-     *        then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults
-     *        to <code>100</code>.
+     *        Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of
+     *        instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider
+     *        all instance types that match your attributes, include one of these parameters and specify a high value,
+     *        such as <code>999999</code>.
      *        </p>
      *        </note>
      *        <p>
@@ -5059,18 +5051,17 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     * </p>
-     * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
      * threshold is based on the per vCPU or per memory price instead of the per instance price.
      * </p>
      * <note>
      * <p>
      * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
-     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then
-     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to
-     * <code>100</code>.
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * 
@@ -5086,9 +5077,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
      *        <p>
-     *        To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     *        </p>
-     *        <p>
      *        If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *        protection threshold is based on the per vCPU or per memory price instead of the per instance price.
      *        </p>
@@ -5096,8 +5084,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        <p>
      *        Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
      *        <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either,
-     *        then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults
-     *        to <code>100</code>.
+     *        Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of
+     *        instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider
+     *        all instance types that match your attributes, include one of these parameters and specify a high value,
+     *        such as <code>999999</code>.
      *        </p>
      */
 
@@ -5118,18 +5108,17 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     * </p>
-     * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
      * threshold is based on the per vCPU or per memory price instead of the per instance price.
      * </p>
      * <note>
      * <p>
      * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
-     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then
-     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to
-     * <code>100</code>.
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * 
@@ -5144,9 +5133,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *         The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *         </p>
      *         <p>
-     *         To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     *         </p>
-     *         <p>
      *         If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *         protection threshold is based on the per vCPU or per memory price instead of the per instance price.
      *         </p>
@@ -5154,8 +5140,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *         <p>
      *         Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
      *         <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify
-     *         either, then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter
-     *         defaults to <code>100</code>.
+     *         either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide
+     *         range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want
+     *         to consider all instance types that match your attributes, include one of these parameters and specify a
+     *         high value, such as <code>999999</code>.
      *         </p>
      */
 
@@ -5176,18 +5164,17 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     * </p>
-     * <p>
      * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
      * threshold is based on the per vCPU or per memory price instead of the per instance price.
      * </p>
      * <note>
      * <p>
      * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
-     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then
-     * <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to
-     * <code>100</code>.
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * 
@@ -5203,9 +5190,6 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
      *        <p>
-     *        To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
-     *        </p>
-     *        <p>
      *        If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
      *        protection threshold is based on the per vCPU or per memory price instead of the per instance price.
      *        </p>
@@ -5213,8 +5197,10 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        <p>
      *        Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
      *        <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either,
-     *        then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults
-     *        to <code>100</code>.
+     *        Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of
+     *        instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider
+     *        all instance types that match your attributes, include one of these parameters and specify a high value,
+     *        such as <code>999999</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

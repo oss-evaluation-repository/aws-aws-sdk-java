@@ -30,17 +30,20 @@ public class Access implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of actions for the access permissions.
+     * A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be
+     * used in the list of actions to check.
      * </p>
      */
     private java.util.List<String> actions;
 
     /**
      * <p>
-     * A list of actions for the access permissions.
+     * A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be
+     * used in the list of actions to check.
      * </p>
      * 
-     * @return A list of actions for the access permissions.
+     * @return A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy
+     *         can be used in the list of actions to check.
      */
 
     public java.util.List<String> getActions() {
@@ -49,11 +52,13 @@ public class Access implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of actions for the access permissions.
+     * A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be
+     * used in the list of actions to check.
      * </p>
      * 
      * @param actions
-     *        A list of actions for the access permissions.
+     *        A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy
+     *        can be used in the list of actions to check.
      */
 
     public void setActions(java.util.Collection<String> actions) {
@@ -67,7 +72,8 @@ public class Access implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of actions for the access permissions.
+     * A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be
+     * used in the list of actions to check.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +82,8 @@ public class Access implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param actions
-     *        A list of actions for the access permissions.
+     *        A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy
+     *        can be used in the list of actions to check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +99,13 @@ public class Access implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of actions for the access permissions.
+     * A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy can be
+     * used in the list of actions to check.
      * </p>
      * 
      * @param actions
-     *        A list of actions for the access permissions.
+     *        A list of actions for the access permissions. Any strings that can be used as an action in an IAM policy
+     *        can be used in the list of actions to check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,16 @@
+# __1.12.671__ __2024-03-01__
+## __Access Analyzer__
+  - ### Features
+    - Fixed a typo in description field.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - With this release, Amazon EC2 Auto Scaling groups, EC2 Fleet, and Spot Fleet improve the default price protection behavior of attribute-based instance type selection of Spot Instances, to consistently select from a wide range of instance types.
+
+## __Auto Scaling__
+  - ### Features
+    - With this release, Amazon EC2 Auto Scaling groups, EC2 Fleet, and Spot Fleet improve the default price protection behavior of attribute-based instance type selection of Spot Instances, to consistently select from a wide range of instance types.
+
 # __1.12.670__ __2024-02-29__
 ## __AWS Migration Hub Orchestrator__
   - ### Features

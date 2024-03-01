@@ -25,9 +25,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * bucket policy, the access preview uses the existing policy attached to the directory bucket. If the access preview is
  * for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes an directory bucket
  * without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more
- * information about bucket policy limits, see <a
+ * information about Amazon S3 directory bucket policies, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html"
- * >Example bucket policies</a>.
+ * >Example directory bucket policies for S3 Express One Zone</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/S3ExpressDirectoryBucketConfiguration"
