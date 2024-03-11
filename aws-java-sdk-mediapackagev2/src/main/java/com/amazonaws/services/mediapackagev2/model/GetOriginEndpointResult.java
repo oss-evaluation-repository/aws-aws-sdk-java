@@ -97,6 +97,13 @@ public class GetOriginEndpointResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.List<GetLowLatencyHlsManifestConfiguration> lowLatencyHlsManifests;
     /**
      * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     */
+    private String eTag;
+    /**
+     * <p>
      * The comma-separated list of tag key:value pairs assigned to the origin endpoint.
      * </p>
      */
@@ -673,6 +680,52 @@ public class GetOriginEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @param eTag
+     *        The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *        concurrent updates to the resource.
+     */
+
+    public void setETag(String eTag) {
+        this.eTag = eTag;
+    }
+
+    /**
+     * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @return The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *         concurrent updates to the resource.
+     */
+
+    public String getETag() {
+        return this.eTag;
+    }
+
+    /**
+     * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @param eTag
+     *        The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *        concurrent updates to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetOriginEndpointResult withETag(String eTag) {
+        setETag(eTag);
+        return this;
+    }
+
+    /**
+     * <p>
      * The comma-separated list of tag key:value pairs assigned to the origin endpoint.
      * </p>
      * 
@@ -775,6 +828,8 @@ public class GetOriginEndpointResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("HlsManifests: ").append(getHlsManifests()).append(",");
         if (getLowLatencyHlsManifests() != null)
             sb.append("LowLatencyHlsManifests: ").append(getLowLatencyHlsManifests()).append(",");
+        if (getETag() != null)
+            sb.append("ETag: ").append(getETag()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -839,6 +894,10 @@ public class GetOriginEndpointResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getLowLatencyHlsManifests() != null && other.getLowLatencyHlsManifests().equals(this.getLowLatencyHlsManifests()) == false)
             return false;
+        if (other.getETag() == null ^ this.getETag() == null)
+            return false;
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -863,6 +922,7 @@ public class GetOriginEndpointResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getStartoverWindowSeconds() == null) ? 0 : getStartoverWindowSeconds().hashCode());
         hashCode = prime * hashCode + ((getHlsManifests() == null) ? 0 : getHlsManifests().hashCode());
         hashCode = prime * hashCode + ((getLowLatencyHlsManifests() == null) ? 0 : getLowLatencyHlsManifests().hashCode());
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

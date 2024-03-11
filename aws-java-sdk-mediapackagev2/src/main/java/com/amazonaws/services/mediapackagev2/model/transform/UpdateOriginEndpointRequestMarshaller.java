@@ -46,6 +46,8 @@ public class UpdateOriginEndpointRequestMarshaller {
             .marshallLocationName("HlsManifests").build();
     private static final MarshallingInfo<List> LOWLATENCYHLSMANIFESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LowLatencyHlsManifests").build();
+    private static final MarshallingInfo<String> ETAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amzn-update-if-match").build();
 
     private static final UpdateOriginEndpointRequestMarshaller instance = new UpdateOriginEndpointRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class UpdateOriginEndpointRequestMarshaller {
             protocolMarshaller.marshall(updateOriginEndpointRequest.getStartoverWindowSeconds(), STARTOVERWINDOWSECONDS_BINDING);
             protocolMarshaller.marshall(updateOriginEndpointRequest.getHlsManifests(), HLSMANIFESTS_BINDING);
             protocolMarshaller.marshall(updateOriginEndpointRequest.getLowLatencyHlsManifests(), LOWLATENCYHLSMANIFESTS_BINDING);
+            protocolMarshaller.marshall(updateOriginEndpointRequest.getETag(), ETAG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

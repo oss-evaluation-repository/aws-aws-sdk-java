@@ -102,6 +102,10 @@ public class GetOriginEndpointResultJsonUnmarshaller implements Unmarshaller<Get
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ETag", targetDepth)) {
+                    context.nextToken();
+                    getOriginEndpointResult.setETag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     getOriginEndpointResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

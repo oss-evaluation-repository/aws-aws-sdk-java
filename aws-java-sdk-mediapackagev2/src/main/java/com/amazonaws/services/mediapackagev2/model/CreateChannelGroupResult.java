@@ -57,6 +57,13 @@ public class CreateChannelGroupResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.Date modifiedAt;
     /**
      * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     */
+    private String eTag;
+    /**
+     * <p>
      * The description for your channel group.
      * </p>
      */
@@ -282,6 +289,52 @@ public class CreateChannelGroupResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @param eTag
+     *        The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *        concurrent updates to the resource.
+     */
+
+    public void setETag(String eTag) {
+        this.eTag = eTag;
+    }
+
+    /**
+     * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @return The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *         concurrent updates to the resource.
+     */
+
+    public String getETag() {
+        return this.eTag;
+    }
+
+    /**
+     * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @param eTag
+     *        The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *        concurrent updates to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelGroupResult withETag(String eTag) {
+        setETag(eTag);
+        return this;
+    }
+
+    /**
+     * <p>
      * The description for your channel group.
      * </p>
      * 
@@ -410,6 +463,8 @@ public class CreateChannelGroupResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getModifiedAt() != null)
             sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
+        if (getETag() != null)
+            sb.append("ETag: ").append(getETag()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
@@ -448,6 +503,10 @@ public class CreateChannelGroupResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getModifiedAt() != null && other.getModifiedAt().equals(this.getModifiedAt()) == false)
             return false;
+        if (other.getETag() == null ^ this.getETag() == null)
+            return false;
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -469,6 +528,7 @@ public class CreateChannelGroupResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getEgressDomain() == null) ? 0 : getEgressDomain().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

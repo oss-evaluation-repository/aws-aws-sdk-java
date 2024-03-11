@@ -451,11 +451,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * </p>
      * <p>
      * Valid values for <code>ddd</code> are:
@@ -3616,11 +3611,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * </p>
      * <p>
      * Valid values for <code>ddd</code> are:
@@ -3669,12 +3659,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param preferredMaintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
      *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period. Valid values for <code>ddd</code> are:</p>
-     *        <p>
-     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
-     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period.
-     *        </p>
+     *        period.</p>
      *        <p>
      *        Valid values for <code>ddd</code> are:
      *        </p>
@@ -3727,11 +3712,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * </p>
      * <p>
      * Valid values for <code>ddd</code> are:
@@ -3779,12 +3759,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
      *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
-     *         minute period. Valid values for <code>ddd</code> are:</p>
-     *         <p>
-     *         Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
-     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
-     *         minute period.
-     *         </p>
+     *         minute period.</p>
      *         <p>
      *         Valid values for <code>ddd</code> are:
      *         </p>
@@ -3837,11 +3812,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * </p>
      * <p>
      * Valid values for <code>ddd</code> are:
@@ -3890,12 +3860,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param preferredMaintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
      *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period. Valid values for <code>ddd</code> are:</p>
-     *        <p>
-     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
-     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period.
-     *        </p>
+     *        period.</p>
      *        <p>
      *        Valid values for <code>ddd</code> are:
      *        </p>

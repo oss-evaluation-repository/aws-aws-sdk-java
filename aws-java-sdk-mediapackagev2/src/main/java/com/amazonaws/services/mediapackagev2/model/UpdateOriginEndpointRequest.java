@@ -85,6 +85,13 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.List<CreateLowLatencyHlsManifestConfiguration> lowLatencyHlsManifests;
+    /**
+     * <p>
+     * The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's
+     * current entity tag, the update request will be rejected.
+     * </p>
+     */
+    private String eTag;
 
     /**
      * <p>
@@ -567,6 +574,52 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's
+     * current entity tag, the update request will be rejected.
+     * </p>
+     * 
+     * @param eTag
+     *        The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the
+     *        resource's current entity tag, the update request will be rejected.
+     */
+
+    public void setETag(String eTag) {
+        this.eTag = eTag;
+    }
+
+    /**
+     * <p>
+     * The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's
+     * current entity tag, the update request will be rejected.
+     * </p>
+     * 
+     * @return The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the
+     *         resource's current entity tag, the update request will be rejected.
+     */
+
+    public String getETag() {
+        return this.eTag;
+    }
+
+    /**
+     * <p>
+     * The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's
+     * current entity tag, the update request will be rejected.
+     * </p>
+     * 
+     * @param eTag
+     *        The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the
+     *        resource's current entity tag, the update request will be rejected.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOriginEndpointRequest withETag(String eTag) {
+        setETag(eTag);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -595,7 +648,9 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
         if (getHlsManifests() != null)
             sb.append("HlsManifests: ").append(getHlsManifests()).append(",");
         if (getLowLatencyHlsManifests() != null)
-            sb.append("LowLatencyHlsManifests: ").append(getLowLatencyHlsManifests());
+            sb.append("LowLatencyHlsManifests: ").append(getLowLatencyHlsManifests()).append(",");
+        if (getETag() != null)
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }
@@ -646,6 +701,10 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getLowLatencyHlsManifests() != null && other.getLowLatencyHlsManifests().equals(this.getLowLatencyHlsManifests()) == false)
             return false;
+        if (other.getETag() == null ^ this.getETag() == null)
+            return false;
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false)
+            return false;
         return true;
     }
 
@@ -663,6 +722,7 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getStartoverWindowSeconds() == null) ? 0 : getStartoverWindowSeconds().hashCode());
         hashCode = prime * hashCode + ((getHlsManifests() == null) ? 0 : getHlsManifests().hashCode());
         hashCode = prime * hashCode + ((getLowLatencyHlsManifests() == null) ? 0 : getLowLatencyHlsManifests().hashCode());
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode());
         return hashCode;
     }
 

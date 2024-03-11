@@ -39,6 +39,10 @@ public class CreateSyncConfigurationRequestMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<String> SYNCTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SyncType").build();
+    private static final MarshallingInfo<String> PUBLISHDEPLOYMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublishDeploymentStatus").build();
+    private static final MarshallingInfo<String> TRIGGERRESOURCEUPDATEON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggerResourceUpdateOn").build();
 
     private static final CreateSyncConfigurationRequestMarshaller instance = new CreateSyncConfigurationRequestMarshaller();
 
@@ -62,6 +66,8 @@ public class CreateSyncConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createSyncConfigurationRequest.getResourceName(), RESOURCENAME_BINDING);
             protocolMarshaller.marshall(createSyncConfigurationRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createSyncConfigurationRequest.getSyncType(), SYNCTYPE_BINDING);
+            protocolMarshaller.marshall(createSyncConfigurationRequest.getPublishDeploymentStatus(), PUBLISHDEPLOYMENTSTATUS_BINDING);
+            protocolMarshaller.marshall(createSyncConfigurationRequest.getTriggerResourceUpdateOn(), TRIGGERRESOURCEUPDATEON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

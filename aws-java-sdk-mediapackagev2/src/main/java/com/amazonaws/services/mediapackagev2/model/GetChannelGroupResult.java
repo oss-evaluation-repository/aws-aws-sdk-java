@@ -63,6 +63,13 @@ public class GetChannelGroupResult extends com.amazonaws.AmazonWebServiceResult<
     private String description;
     /**
      * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     */
+    private String eTag;
+    /**
+     * <p>
      * The comma-separated list of tag key:value pairs assigned to the channel group.
      * </p>
      */
@@ -322,6 +329,52 @@ public class GetChannelGroupResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @param eTag
+     *        The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *        concurrent updates to the resource.
+     */
+
+    public void setETag(String eTag) {
+        this.eTag = eTag;
+    }
+
+    /**
+     * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @return The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *         concurrent updates to the resource.
+     */
+
+    public String getETag() {
+        return this.eTag;
+    }
+
+    /**
+     * <p>
+     * The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent
+     * updates to the resource.
+     * </p>
+     * 
+     * @param eTag
+     *        The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make
+     *        concurrent updates to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetChannelGroupResult withETag(String eTag) {
+        setETag(eTag);
+        return this;
+    }
+
+    /**
+     * <p>
      * The comma-separated list of tag key:value pairs assigned to the channel group.
      * </p>
      * 
@@ -412,6 +465,8 @@ public class GetChannelGroupResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getETag() != null)
+            sb.append("ETag: ").append(getETag()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -452,6 +507,10 @@ public class GetChannelGroupResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getETag() == null ^ this.getETag() == null)
+            return false;
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -470,6 +529,7 @@ public class GetChannelGroupResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

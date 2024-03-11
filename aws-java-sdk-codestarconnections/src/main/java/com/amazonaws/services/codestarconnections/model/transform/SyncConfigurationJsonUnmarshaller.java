@@ -84,6 +84,14 @@ public class SyncConfigurationJsonUnmarshaller implements Unmarshaller<SyncConfi
                     context.nextToken();
                     syncConfiguration.setSyncType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PublishDeploymentStatus", targetDepth)) {
+                    context.nextToken();
+                    syncConfiguration.setPublishDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TriggerResourceUpdateOn", targetDepth)) {
+                    context.nextToken();
+                    syncConfiguration.setTriggerResourceUpdateOn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

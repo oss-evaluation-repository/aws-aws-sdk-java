@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the information required for client programs to connect to a cache node.
+ * Represents the information required for client programs to connect to a cache node. This value is read-only.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Endpoint" target="_top">AWS API

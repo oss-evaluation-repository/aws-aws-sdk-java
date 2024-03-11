@@ -45,6 +45,10 @@ public class SyncConfigurationMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<String> SYNCTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SyncType").build();
+    private static final MarshallingInfo<String> PUBLISHDEPLOYMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublishDeploymentStatus").build();
+    private static final MarshallingInfo<String> TRIGGERRESOURCEUPDATEON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TriggerResourceUpdateOn").build();
 
     private static final SyncConfigurationMarshaller instance = new SyncConfigurationMarshaller();
 
@@ -71,6 +75,8 @@ public class SyncConfigurationMarshaller {
             protocolMarshaller.marshall(syncConfiguration.getResourceName(), RESOURCENAME_BINDING);
             protocolMarshaller.marshall(syncConfiguration.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(syncConfiguration.getSyncType(), SYNCTYPE_BINDING);
+            protocolMarshaller.marshall(syncConfiguration.getPublishDeploymentStatus(), PUBLISHDEPLOYMENTSTATUS_BINDING);
+            protocolMarshaller.marshall(syncConfiguration.getTriggerResourceUpdateOn(), TRIGGERRESOURCEUPDATEON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

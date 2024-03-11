@@ -106,9 +106,9 @@ public class ServerlessCache implements Serializable, Cloneable {
     private String userGroupId;
     /**
      * <p>
-     * If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in
-     * your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across
-     * AZs in your default VPC.
+     * If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across
+     * AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets
+     * across AZs in your default VPC.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
@@ -709,14 +709,14 @@ public class ServerlessCache implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in
-     * your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across
-     * AZs in your default VPC.
+     * If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across
+     * AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets
+     * across AZs in your default VPC.
      * </p>
      * 
-     * @return If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across
-     *         AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default
-     *         subnets across AZs in your default VPC.
+     * @return If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets
+     *         across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3
+     *         default subnets across AZs in your default VPC.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -728,15 +728,15 @@ public class ServerlessCache implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in
-     * your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across
-     * AZs in your default VPC.
+     * If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across
+     * AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets
+     * across AZs in your default VPC.
      * </p>
      * 
      * @param subnetIds
-     *        If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across
-     *        AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default
-     *        subnets across AZs in your default VPC.
+     *        If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets
+     *        across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3
+     *        default subnets across AZs in your default VPC.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -750,9 +750,9 @@ public class ServerlessCache implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in
-     * your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across
-     * AZs in your default VPC.
+     * If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across
+     * AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets
+     * across AZs in your default VPC.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -761,9 +761,9 @@ public class ServerlessCache implements Serializable, Cloneable {
      * </p>
      * 
      * @param subnetIds
-     *        If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across
-     *        AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default
-     *        subnets across AZs in your default VPC.
+     *        If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets
+     *        across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3
+     *        default subnets across AZs in your default VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -779,15 +779,15 @@ public class ServerlessCache implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across AZs in
-     * your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets across
-     * AZs in your default VPC.
+     * If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets across
+     * AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default subnets
+     * across AZs in your default VPC.
      * </p>
      * 
      * @param subnetIds
-     *        If no subnet IDs are given and your VPC is in SFO, then ElastiCache will select 2 default subnets across
-     *        AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3 default
-     *        subnets across AZs in your default VPC.
+     *        If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache will select 2 default subnets
+     *        across AZs in your VPC. For all other Regions, if no subnet IDs are given then ElastiCache will select 3
+     *        default subnets across AZs in your default VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

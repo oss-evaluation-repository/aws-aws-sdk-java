@@ -65,6 +65,18 @@ public class CreateSyncConfigurationRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String syncType;
+    /**
+     * <p>
+     * Whether to enable or disable publishing of deployment status to source providers.
+     * </p>
+     */
+    private String publishDeploymentStatus;
+    /**
+     * <p>
+     * When to trigger Git sync to begin the stack update.
+     * </p>
+     */
+    private String triggerResourceUpdateOn;
 
     /**
      * <p>
@@ -350,6 +362,124 @@ public class CreateSyncConfigurationRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Whether to enable or disable publishing of deployment status to source providers.
+     * </p>
+     * 
+     * @param publishDeploymentStatus
+     *        Whether to enable or disable publishing of deployment status to source providers.
+     * @see PublishDeploymentStatus
+     */
+
+    public void setPublishDeploymentStatus(String publishDeploymentStatus) {
+        this.publishDeploymentStatus = publishDeploymentStatus;
+    }
+
+    /**
+     * <p>
+     * Whether to enable or disable publishing of deployment status to source providers.
+     * </p>
+     * 
+     * @return Whether to enable or disable publishing of deployment status to source providers.
+     * @see PublishDeploymentStatus
+     */
+
+    public String getPublishDeploymentStatus() {
+        return this.publishDeploymentStatus;
+    }
+
+    /**
+     * <p>
+     * Whether to enable or disable publishing of deployment status to source providers.
+     * </p>
+     * 
+     * @param publishDeploymentStatus
+     *        Whether to enable or disable publishing of deployment status to source providers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PublishDeploymentStatus
+     */
+
+    public CreateSyncConfigurationRequest withPublishDeploymentStatus(String publishDeploymentStatus) {
+        setPublishDeploymentStatus(publishDeploymentStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to enable or disable publishing of deployment status to source providers.
+     * </p>
+     * 
+     * @param publishDeploymentStatus
+     *        Whether to enable or disable publishing of deployment status to source providers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PublishDeploymentStatus
+     */
+
+    public CreateSyncConfigurationRequest withPublishDeploymentStatus(PublishDeploymentStatus publishDeploymentStatus) {
+        this.publishDeploymentStatus = publishDeploymentStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * When to trigger Git sync to begin the stack update.
+     * </p>
+     * 
+     * @param triggerResourceUpdateOn
+     *        When to trigger Git sync to begin the stack update.
+     * @see TriggerResourceUpdateOn
+     */
+
+    public void setTriggerResourceUpdateOn(String triggerResourceUpdateOn) {
+        this.triggerResourceUpdateOn = triggerResourceUpdateOn;
+    }
+
+    /**
+     * <p>
+     * When to trigger Git sync to begin the stack update.
+     * </p>
+     * 
+     * @return When to trigger Git sync to begin the stack update.
+     * @see TriggerResourceUpdateOn
+     */
+
+    public String getTriggerResourceUpdateOn() {
+        return this.triggerResourceUpdateOn;
+    }
+
+    /**
+     * <p>
+     * When to trigger Git sync to begin the stack update.
+     * </p>
+     * 
+     * @param triggerResourceUpdateOn
+     *        When to trigger Git sync to begin the stack update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TriggerResourceUpdateOn
+     */
+
+    public CreateSyncConfigurationRequest withTriggerResourceUpdateOn(String triggerResourceUpdateOn) {
+        setTriggerResourceUpdateOn(triggerResourceUpdateOn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When to trigger Git sync to begin the stack update.
+     * </p>
+     * 
+     * @param triggerResourceUpdateOn
+     *        When to trigger Git sync to begin the stack update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TriggerResourceUpdateOn
+     */
+
+    public CreateSyncConfigurationRequest withTriggerResourceUpdateOn(TriggerResourceUpdateOn triggerResourceUpdateOn) {
+        this.triggerResourceUpdateOn = triggerResourceUpdateOn.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -372,7 +502,11 @@ public class CreateSyncConfigurationRequest extends com.amazonaws.AmazonWebServi
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSyncType() != null)
-            sb.append("SyncType: ").append(getSyncType());
+            sb.append("SyncType: ").append(getSyncType()).append(",");
+        if (getPublishDeploymentStatus() != null)
+            sb.append("PublishDeploymentStatus: ").append(getPublishDeploymentStatus()).append(",");
+        if (getTriggerResourceUpdateOn() != null)
+            sb.append("TriggerResourceUpdateOn: ").append(getTriggerResourceUpdateOn());
         sb.append("}");
         return sb.toString();
     }
@@ -411,6 +545,14 @@ public class CreateSyncConfigurationRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getSyncType() != null && other.getSyncType().equals(this.getSyncType()) == false)
             return false;
+        if (other.getPublishDeploymentStatus() == null ^ this.getPublishDeploymentStatus() == null)
+            return false;
+        if (other.getPublishDeploymentStatus() != null && other.getPublishDeploymentStatus().equals(this.getPublishDeploymentStatus()) == false)
+            return false;
+        if (other.getTriggerResourceUpdateOn() == null ^ this.getTriggerResourceUpdateOn() == null)
+            return false;
+        if (other.getTriggerResourceUpdateOn() != null && other.getTriggerResourceUpdateOn().equals(this.getTriggerResourceUpdateOn()) == false)
+            return false;
         return true;
     }
 
@@ -425,6 +567,8 @@ public class CreateSyncConfigurationRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSyncType() == null) ? 0 : getSyncType().hashCode());
+        hashCode = prime * hashCode + ((getPublishDeploymentStatus() == null) ? 0 : getPublishDeploymentStatus().hashCode());
+        hashCode = prime * hashCode + ((getTriggerResourceUpdateOn() == null) ? 0 : getTriggerResourceUpdateOn().hashCode());
         return hashCode;
     }
 

@@ -72,6 +72,10 @@ public class UpdateChannelGroupResultJsonUnmarshaller implements Unmarshaller<Up
                     context.nextToken();
                     updateChannelGroupResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ETag", targetDepth)) {
+                    context.nextToken();
+                    updateChannelGroupResult.setETag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     updateChannelGroupResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

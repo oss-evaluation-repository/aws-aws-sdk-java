@@ -31,6 +31,8 @@ public class UpdateChannelRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("ChannelGroupName").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ChannelName").build();
+    private static final MarshallingInfo<String> ETAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amzn-update-if-match").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
@@ -52,6 +54,7 @@ public class UpdateChannelRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateChannelRequest.getChannelGroupName(), CHANNELGROUPNAME_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getChannelName(), CHANNELNAME_BINDING);
+            protocolMarshaller.marshall(updateChannelRequest.getETag(), ETAG_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

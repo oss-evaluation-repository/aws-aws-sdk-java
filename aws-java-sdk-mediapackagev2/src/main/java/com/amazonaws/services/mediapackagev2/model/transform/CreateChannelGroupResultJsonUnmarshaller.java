@@ -68,6 +68,10 @@ public class CreateChannelGroupResultJsonUnmarshaller implements Unmarshaller<Cr
                     context.nextToken();
                     createChannelGroupResult.setModifiedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("ETag", targetDepth)) {
+                    context.nextToken();
+                    createChannelGroupResult.setETag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     createChannelGroupResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

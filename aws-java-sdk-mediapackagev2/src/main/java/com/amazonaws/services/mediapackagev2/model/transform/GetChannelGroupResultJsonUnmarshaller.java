@@ -72,6 +72,10 @@ public class GetChannelGroupResultJsonUnmarshaller implements Unmarshaller<GetCh
                     context.nextToken();
                     getChannelGroupResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ETag", targetDepth)) {
+                    context.nextToken();
+                    getChannelGroupResult.setETag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     getChannelGroupResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

@@ -41,6 +41,13 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String channelName;
     /**
      * <p>
+     * The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's
+     * current entity tag, the update request will be rejected.
+     * </p>
+     */
+    private String eTag;
+    /**
+     * <p>
      * Any descriptive information that you want to add to the channel for future identification purposes.
      * </p>
      */
@@ -140,6 +147,52 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's
+     * current entity tag, the update request will be rejected.
+     * </p>
+     * 
+     * @param eTag
+     *        The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the
+     *        resource's current entity tag, the update request will be rejected.
+     */
+
+    public void setETag(String eTag) {
+        this.eTag = eTag;
+    }
+
+    /**
+     * <p>
+     * The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's
+     * current entity tag, the update request will be rejected.
+     * </p>
+     * 
+     * @return The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the
+     *         resource's current entity tag, the update request will be rejected.
+     */
+
+    public String getETag() {
+        return this.eTag;
+    }
+
+    /**
+     * <p>
+     * The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's
+     * current entity tag, the update request will be rejected.
+     * </p>
+     * 
+     * @param eTag
+     *        The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the
+     *        resource's current entity tag, the update request will be rejected.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withETag(String eTag) {
+        setETag(eTag);
+        return this;
+    }
+
+    /**
+     * <p>
      * Any descriptive information that you want to add to the channel for future identification purposes.
      * </p>
      * 
@@ -194,6 +247,8 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ChannelGroupName: ").append(getChannelGroupName()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
+        if (getETag() != null)
+            sb.append("ETag: ").append(getETag()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription());
         sb.append("}");
@@ -218,6 +273,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
             return false;
+        if (other.getETag() == null ^ this.getETag() == null)
+            return false;
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -232,6 +291,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getChannelGroupName() == null) ? 0 : getChannelGroupName().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
