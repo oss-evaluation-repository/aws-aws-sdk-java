@@ -60,8 +60,8 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private String runtimeEnvironment;
     /**
      * <p>
-     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
-     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for
+     * Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * </p>
      */
     private String applicationMode;
@@ -306,13 +306,13 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
-     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for
+     * Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * </p>
      * 
      * @param applicationMode
-     *        For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a
-     *        Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     *        For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed
+     *        Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * @see ApplicationMode
      */
 
@@ -322,12 +322,12 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
-     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for
+     * Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * </p>
      * 
-     * @return For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a
-     *         Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * @return For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed
+     *         Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * @see ApplicationMode
      */
 
@@ -337,13 +337,13 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
-     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for
+     * Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * </p>
      * 
      * @param applicationMode
-     *        For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a
-     *        Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     *        For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed
+     *        Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationMode
      */
@@ -355,13 +355,13 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
-     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed Service for
+     * Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * </p>
      * 
      * @param applicationMode
-     *        For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a
-     *        Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     *        For a Managed Service for Apache Flink application, the mode is <code>STREAMING</code>. For a Managed
+     *        Service for Apache Flink Studio notebook, it is <code>INTERACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationMode
      */

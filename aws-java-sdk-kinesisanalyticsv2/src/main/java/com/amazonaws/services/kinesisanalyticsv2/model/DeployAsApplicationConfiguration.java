@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.
+ * The information required to deploy a Managed Service for Apache Flink Studio notebook as an application with durable
+ * state.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeployAsApplicationConfiguration"

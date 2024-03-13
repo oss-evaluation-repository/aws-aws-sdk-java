@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Kinesis Data
- * Analytics Studio notebook.
+ * Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Managed
+ * Service for Apache Flink Studio notebook.
  * </p>
  * 
  * @see <a

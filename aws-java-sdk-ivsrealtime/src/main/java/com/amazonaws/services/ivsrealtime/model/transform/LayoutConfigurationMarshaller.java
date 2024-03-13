@@ -29,6 +29,8 @@ public class LayoutConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> GRID_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("grid").build();
+    private static final MarshallingInfo<StructuredPojo> PIP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pip").build();
 
     private static final LayoutConfigurationMarshaller instance = new LayoutConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class LayoutConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(layoutConfiguration.getGrid(), GRID_BINDING);
+            protocolMarshaller.marshall(layoutConfiguration.getPip(), PIP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

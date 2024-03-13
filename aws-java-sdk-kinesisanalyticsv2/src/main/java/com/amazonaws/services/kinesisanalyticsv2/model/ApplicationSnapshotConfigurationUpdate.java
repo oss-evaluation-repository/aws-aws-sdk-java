@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+ * Describes updates to whether snapshots are enabled for a Managed Service for Apache Flink application.
  * </p>
  * 
  * @see <a

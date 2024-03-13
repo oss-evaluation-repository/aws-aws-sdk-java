@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you
- * write in a Kinesis Data Analytics Studio notebook.
+ * write in a Managed Service for Apache Flink Studio notebook.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CatalogConfiguration"
@@ -32,7 +32,7 @@ public class CatalogConfiguration implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL
-     * queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
+     * queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private GlueDataCatalogConfiguration glueDataCatalogConfiguration;
@@ -40,12 +40,12 @@ public class CatalogConfiguration implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL
-     * queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
+     * queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param glueDataCatalogConfiguration
      *        The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink
-     *        SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
+     *        SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.
      */
 
     public void setGlueDataCatalogConfiguration(GlueDataCatalogConfiguration glueDataCatalogConfiguration) {
@@ -55,11 +55,12 @@ public class CatalogConfiguration implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL
-     * queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
+     * queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @return The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink
-     *         SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
+     *         SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio
+     *         notebook.
      */
 
     public GlueDataCatalogConfiguration getGlueDataCatalogConfiguration() {
@@ -69,12 +70,12 @@ public class CatalogConfiguration implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL
-     * queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
+     * queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param glueDataCatalogConfiguration
      *        The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink
-     *        SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
+     *        SQL queries and table API transforms that you write in a Managed Service for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

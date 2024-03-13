@@ -33,7 +33,7 @@ public class StartApplicationRequest extends com.amazonaws.AmazonWebServiceReque
     private String applicationName;
     /**
      * <p>
-     * Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
+     * Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
      * </p>
      */
     private RunConfiguration runConfiguration;
@@ -80,11 +80,11 @@ public class StartApplicationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
+     * Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param runConfiguration
-     *        Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
+     *        Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
      */
 
     public void setRunConfiguration(RunConfiguration runConfiguration) {
@@ -93,10 +93,10 @@ public class StartApplicationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
+     * Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
+     * @return Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
      */
 
     public RunConfiguration getRunConfiguration() {
@@ -105,11 +105,11 @@ public class StartApplicationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
+     * Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param runConfiguration
-     *        Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
+     *        Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

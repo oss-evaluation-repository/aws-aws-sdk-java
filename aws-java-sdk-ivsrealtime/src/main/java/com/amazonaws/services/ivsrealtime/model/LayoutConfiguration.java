@@ -34,6 +34,12 @@ public class LayoutConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private GridConfiguration grid;
+    /**
+     * <p>
+     * Configuration related to PiP layout.
+     * </p>
+     */
+    private PipConfiguration pip;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class LayoutConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Configuration related to PiP layout.
+     * </p>
+     * 
+     * @param pip
+     *        Configuration related to PiP layout.
+     */
+
+    public void setPip(PipConfiguration pip) {
+        this.pip = pip;
+    }
+
+    /**
+     * <p>
+     * Configuration related to PiP layout.
+     * </p>
+     * 
+     * @return Configuration related to PiP layout.
+     */
+
+    public PipConfiguration getPip() {
+        return this.pip;
+    }
+
+    /**
+     * <p>
+     * Configuration related to PiP layout.
+     * </p>
+     * 
+     * @param pip
+     *        Configuration related to PiP layout.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LayoutConfiguration withPip(PipConfiguration pip) {
+        setPip(pip);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class LayoutConfiguration implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGrid() != null)
-            sb.append("Grid: ").append(getGrid());
+            sb.append("Grid: ").append(getGrid()).append(",");
+        if (getPip() != null)
+            sb.append("Pip: ").append(getPip());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class LayoutConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getGrid() != null && other.getGrid().equals(this.getGrid()) == false)
             return false;
+        if (other.getPip() == null ^ this.getPip() == null)
+            return false;
+        if (other.getPip() != null && other.getPip().equals(this.getPip()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class LayoutConfiguration implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGrid() == null) ? 0 : getGrid().hashCode());
+        hashCode = prime * hashCode + ((getPip() == null) ? 0 : getPip().hashCode());
         return hashCode;
     }
 

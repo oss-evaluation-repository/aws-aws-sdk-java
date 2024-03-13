@@ -52,6 +52,10 @@ public class LayoutConfigurationJsonUnmarshaller implements Unmarshaller<LayoutC
                     context.nextToken();
                     layoutConfiguration.setGrid(GridConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("pip", targetDepth)) {
+                    context.nextToken();
+                    layoutConfiguration.setPip(PipConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

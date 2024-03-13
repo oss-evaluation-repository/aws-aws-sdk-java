@@ -40,7 +40,7 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source
-     * discovery purposes.
+     * for discovery purposes.
      * </p>
      */
     private InputStartingPositionConfiguration inputStartingPositionConfiguration;
@@ -141,12 +141,12 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source
-     * discovery purposes.
+     * for discovery purposes.
      * </p>
      * 
      * @param inputStartingPositionConfiguration
      *        The point at which you want Kinesis Data Analytics to start reading records from the specified streaming
-     *        source discovery purposes.
+     *        source for discovery purposes.
      */
 
     public void setInputStartingPositionConfiguration(InputStartingPositionConfiguration inputStartingPositionConfiguration) {
@@ -156,11 +156,11 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source
-     * discovery purposes.
+     * for discovery purposes.
      * </p>
      * 
      * @return The point at which you want Kinesis Data Analytics to start reading records from the specified streaming
-     *         source discovery purposes.
+     *         source for discovery purposes.
      */
 
     public InputStartingPositionConfiguration getInputStartingPositionConfiguration() {
@@ -170,12 +170,12 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source
-     * discovery purposes.
+     * for discovery purposes.
      * </p>
      * 
      * @param inputStartingPositionConfiguration
      *        The point at which you want Kinesis Data Analytics to start reading records from the specified streaming
-     *        source discovery purposes.
+     *        source for discovery purposes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

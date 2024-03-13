@@ -26,7 +26,7 @@ public class DeleteApplicationVpcConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the Kinesis Data Analytics application.
+     * The ARN of the Managed Service for Apache Flink application.
      * </p>
      */
     private String applicationARN;
@@ -39,11 +39,11 @@ public class DeleteApplicationVpcConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the Kinesis Data Analytics application.
+     * The ARN of the Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationARN
-     *        The ARN of the Kinesis Data Analytics application.
+     *        The ARN of the Managed Service for Apache Flink application.
      */
 
     public void setApplicationARN(String applicationARN) {
@@ -52,10 +52,10 @@ public class DeleteApplicationVpcConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the Kinesis Data Analytics application.
+     * The ARN of the Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return The ARN of the Kinesis Data Analytics application.
+     * @return The ARN of the Managed Service for Apache Flink application.
      */
 
     public String getApplicationARN() {
@@ -64,11 +64,11 @@ public class DeleteApplicationVpcConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the Kinesis Data Analytics application.
+     * The ARN of the Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationARN
-     *        The ARN of the Kinesis Data Analytics application.
+     *        The ARN of the Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

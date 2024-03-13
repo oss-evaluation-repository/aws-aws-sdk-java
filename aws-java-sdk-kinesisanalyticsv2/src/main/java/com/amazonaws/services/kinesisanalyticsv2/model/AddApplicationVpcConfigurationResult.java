@@ -32,8 +32,8 @@ public class AddApplicationVpcConfigurationResult extends com.amazonaws.AmazonWe
     private String applicationARN;
     /**
      * <p>
-     * Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you
-     * update the application.
+     * Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each
+     * time you update the application.
      * </p>
      */
     private Long applicationVersionId;
@@ -86,13 +86,13 @@ public class AddApplicationVpcConfigurationResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you
-     * update the application.
+     * Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each
+     * time you update the application.
      * </p>
      * 
      * @param applicationVersionId
-     *        Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each
-     *        time you update the application.
+     *        Provides the current application version. Managed Service for Apache Flink updates the
+     *        ApplicationVersionId each time you update the application.
      */
 
     public void setApplicationVersionId(Long applicationVersionId) {
@@ -101,12 +101,12 @@ public class AddApplicationVpcConfigurationResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you
-     * update the application.
+     * Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each
+     * time you update the application.
      * </p>
      * 
-     * @return Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each
-     *         time you update the application.
+     * @return Provides the current application version. Managed Service for Apache Flink updates the
+     *         ApplicationVersionId each time you update the application.
      */
 
     public Long getApplicationVersionId() {
@@ -115,13 +115,13 @@ public class AddApplicationVpcConfigurationResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each time you
-     * update the application.
+     * Provides the current application version. Managed Service for Apache Flink updates the ApplicationVersionId each
+     * time you update the application.
      * </p>
      * 
      * @param applicationVersionId
-     *        Provides the current application version. Kinesis Data Analytics updates the ApplicationVersionId each
-     *        time you update the application.
+     *        Provides the current application version. Managed Service for Apache Flink updates the
+     *        ApplicationVersionId each time you update the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

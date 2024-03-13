@@ -73,8 +73,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis
-     * Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      */
     private String applicationMode;
@@ -474,13 +474,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis
-     * Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      * 
      * @param applicationMode
-     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a
-     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     *        Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a
+     *        Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * @see ApplicationMode
      */
 
@@ -490,12 +490,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis
-     * Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      * 
-     * @return Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a
-     *         Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * @return Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a
+     *         Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * @see ApplicationMode
      */
 
@@ -505,13 +505,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis
-     * Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      * 
      * @param applicationMode
-     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a
-     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     *        Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a
+     *        Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationMode
      */
@@ -523,13 +523,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a Kinesis
-     * Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a Managed
+     * Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * </p>
      * 
      * @param applicationMode
-     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application. To create a
-     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     *        Use the <code>STREAMING</code> mode to create a Managed Service for Apache Flink application. To create a
+     *        Managed Service for Apache Flink Studio notebook, use the <code>INTERACTIVE</code> mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationMode
      */

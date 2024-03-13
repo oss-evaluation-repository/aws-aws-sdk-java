@@ -52,6 +52,22 @@ public class GridConfigurationJsonUnmarshaller implements Unmarshaller<GridConfi
                     context.nextToken();
                     gridConfiguration.setFeaturedParticipantAttribute(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("gridGap", targetDepth)) {
+                    context.nextToken();
+                    gridConfiguration.setGridGap(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("omitStoppedVideo", targetDepth)) {
+                    context.nextToken();
+                    gridConfiguration.setOmitStoppedVideo(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("videoAspectRatio", targetDepth)) {
+                    context.nextToken();
+                    gridConfiguration.setVideoAspectRatio(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("videoFillMode", targetDepth)) {
+                    context.nextToken();
+                    gridConfiguration.setVideoFillMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

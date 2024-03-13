@@ -30,8 +30,8 @@ public class ApplicationVersionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
-     * you update the application.
+     * The ID of the application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code>
+     * each time you update the application.
      * </p>
      */
     private Long applicationVersionId;
@@ -44,13 +44,13 @@ public class ApplicationVersionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
-     * you update the application.
+     * The ID of the application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code>
+     * each time you update the application.
      * </p>
      * 
      * @param applicationVersionId
-     *        The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
-     *        each time you update the application.
+     *        The ID of the application version. Managed Service for Apache Flink updates the
+     *        <code>ApplicationVersionId</code> each time you update the application.
      */
 
     public void setApplicationVersionId(Long applicationVersionId) {
@@ -59,12 +59,12 @@ public class ApplicationVersionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
-     * you update the application.
+     * The ID of the application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code>
+     * each time you update the application.
      * </p>
      * 
-     * @return The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
-     *         each time you update the application.
+     * @return The ID of the application version. Managed Service for Apache Flink updates the
+     *         <code>ApplicationVersionId</code> each time you update the application.
      */
 
     public Long getApplicationVersionId() {
@@ -73,13 +73,13 @@ public class ApplicationVersionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
-     * you update the application.
+     * The ID of the application version. Managed Service for Apache Flink updates the <code>ApplicationVersionId</code>
+     * each time you update the application.
      * </p>
      * 
      * @param applicationVersionId
-     *        The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
-     *        each time you update the application.
+     *        The ID of the application version. Managed Service for Apache Flink updates the
+     *        <code>ApplicationVersionId</code> each time you update the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

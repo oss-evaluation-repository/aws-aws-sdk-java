@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes configuration parameters for a Flink-based Kinesis Data Analytics application.
+ * Describes configuration parameters for a Managed Service for Apache Flink application.
  * </p>
  * 
  * @see <a

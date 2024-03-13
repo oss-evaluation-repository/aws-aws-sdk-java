@@ -1,3 +1,16 @@
+# __1.12.679__ __2024-03-13__
+## __Amazon Interactive Video Service RealTime__
+  - ### Features
+    - adds support for multiple new composition layout configuration options (grid, pip)
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Support new RuntimeEnvironmentUpdate parameter within UpdateApplication API allowing callers to change the Flink version upon which their application runs.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - This release makes the default option for S3 on Outposts request signing to use the SigV4A algorithm when using AWS Common Runtime (CRT).
+
 # __1.12.678__ __2024-03-12__
 ## __AWS CloudFormation__
   - ### Features

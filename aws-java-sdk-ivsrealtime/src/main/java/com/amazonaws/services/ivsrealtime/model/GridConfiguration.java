@@ -37,6 +37,32 @@ public class GridConfiguration implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String featuredParticipantAttribute;
+    /**
+     * <p>
+     * Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.
+     * </p>
+     */
+    private Integer gridGap;
+    /**
+     * <p>
+     * Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.
+     * </p>
+     */
+    private Boolean omitStoppedVideo;
+    /**
+     * <p>
+     * Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * </p>
+     */
+    private String videoAspectRatio;
+    /**
+     * <p>
+     * Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     * <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for featured
+     * participants.
+     * </p>
+     */
+    private String videoFillMode;
 
     /**
      * <p>
@@ -88,6 +114,236 @@ public class GridConfiguration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.
+     * </p>
+     * 
+     * @param gridGap
+     *        Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.
+     */
+
+    public void setGridGap(Integer gridGap) {
+        this.gridGap = gridGap;
+    }
+
+    /**
+     * <p>
+     * Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.
+     * </p>
+     * 
+     * @return Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.
+     */
+
+    public Integer getGridGap() {
+        return this.gridGap;
+    }
+
+    /**
+     * <p>
+     * Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.
+     * </p>
+     * 
+     * @param gridGap
+     *        Specifies the spacing between participant tiles in pixels. Default: <code>2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GridConfiguration withGridGap(Integer gridGap) {
+        setGridGap(gridGap);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.
+     * </p>
+     * 
+     * @param omitStoppedVideo
+     *        Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>
+     *        .
+     */
+
+    public void setOmitStoppedVideo(Boolean omitStoppedVideo) {
+        this.omitStoppedVideo = omitStoppedVideo;
+    }
+
+    /**
+     * <p>
+     * Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.
+     * </p>
+     * 
+     * @return Determines whether to omit participants with stopped video in the composition. Default:
+     *         <code>false</code>.
+     */
+
+    public Boolean getOmitStoppedVideo() {
+        return this.omitStoppedVideo;
+    }
+
+    /**
+     * <p>
+     * Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.
+     * </p>
+     * 
+     * @param omitStoppedVideo
+     *        Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GridConfiguration withOmitStoppedVideo(Boolean omitStoppedVideo) {
+        setOmitStoppedVideo(omitStoppedVideo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether to omit participants with stopped video in the composition. Default: <code>false</code>.
+     * </p>
+     * 
+     * @return Determines whether to omit participants with stopped video in the composition. Default:
+     *         <code>false</code>.
+     */
+
+    public Boolean isOmitStoppedVideo() {
+        return this.omitStoppedVideo;
+    }
+
+    /**
+     * <p>
+     * Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * </p>
+     * 
+     * @param videoAspectRatio
+     *        Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * @see VideoAspectRatio
+     */
+
+    public void setVideoAspectRatio(String videoAspectRatio) {
+        this.videoAspectRatio = videoAspectRatio;
+    }
+
+    /**
+     * <p>
+     * Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * </p>
+     * 
+     * @return Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * @see VideoAspectRatio
+     */
+
+    public String getVideoAspectRatio() {
+        return this.videoAspectRatio;
+    }
+
+    /**
+     * <p>
+     * Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * </p>
+     * 
+     * @param videoAspectRatio
+     *        Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VideoAspectRatio
+     */
+
+    public GridConfiguration withVideoAspectRatio(String videoAspectRatio) {
+        setVideoAspectRatio(videoAspectRatio);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * </p>
+     * 
+     * @param videoAspectRatio
+     *        Sets the non-featured participant display mode. Default: <code>VIDEO</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VideoAspectRatio
+     */
+
+    public GridConfiguration withVideoAspectRatio(VideoAspectRatio videoAspectRatio) {
+        this.videoAspectRatio = videoAspectRatio.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     * <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for featured
+     * participants.
+     * </p>
+     * 
+     * @param videoFillMode
+     *        Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     *        <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for
+     *        featured participants.
+     * @see VideoFillMode
+     */
+
+    public void setVideoFillMode(String videoFillMode) {
+        this.videoFillMode = videoFillMode;
+    }
+
+    /**
+     * <p>
+     * Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     * <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for featured
+     * participants.
+     * </p>
+     * 
+     * @return Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     *         <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for
+     *         featured participants.
+     * @see VideoFillMode
+     */
+
+    public String getVideoFillMode() {
+        return this.videoFillMode;
+    }
+
+    /**
+     * <p>
+     * Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     * <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for featured
+     * participants.
+     * </p>
+     * 
+     * @param videoFillMode
+     *        Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     *        <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for
+     *        featured participants.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VideoFillMode
+     */
+
+    public GridConfiguration withVideoFillMode(String videoFillMode) {
+        setVideoFillMode(videoFillMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     * <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for featured
+     * participants.
+     * </p>
+     * 
+     * @param videoFillMode
+     *        Defines how video fits within the participant tile. When not set, <code>videoFillMode</code> defaults to
+     *        <code>COVER</code> fill mode for participants in the grid and to <code>CONTAIN</code> fill mode for
+     *        featured participants.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VideoFillMode
+     */
+
+    public GridConfiguration withVideoFillMode(VideoFillMode videoFillMode) {
+        this.videoFillMode = videoFillMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -100,7 +356,15 @@ public class GridConfiguration implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFeaturedParticipantAttribute() != null)
-            sb.append("FeaturedParticipantAttribute: ").append(getFeaturedParticipantAttribute());
+            sb.append("FeaturedParticipantAttribute: ").append(getFeaturedParticipantAttribute()).append(",");
+        if (getGridGap() != null)
+            sb.append("GridGap: ").append(getGridGap()).append(",");
+        if (getOmitStoppedVideo() != null)
+            sb.append("OmitStoppedVideo: ").append(getOmitStoppedVideo()).append(",");
+        if (getVideoAspectRatio() != null)
+            sb.append("VideoAspectRatio: ").append(getVideoAspectRatio()).append(",");
+        if (getVideoFillMode() != null)
+            sb.append("VideoFillMode: ").append(getVideoFillMode());
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +383,22 @@ public class GridConfiguration implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getFeaturedParticipantAttribute() != null && other.getFeaturedParticipantAttribute().equals(this.getFeaturedParticipantAttribute()) == false)
             return false;
+        if (other.getGridGap() == null ^ this.getGridGap() == null)
+            return false;
+        if (other.getGridGap() != null && other.getGridGap().equals(this.getGridGap()) == false)
+            return false;
+        if (other.getOmitStoppedVideo() == null ^ this.getOmitStoppedVideo() == null)
+            return false;
+        if (other.getOmitStoppedVideo() != null && other.getOmitStoppedVideo().equals(this.getOmitStoppedVideo()) == false)
+            return false;
+        if (other.getVideoAspectRatio() == null ^ this.getVideoAspectRatio() == null)
+            return false;
+        if (other.getVideoAspectRatio() != null && other.getVideoAspectRatio().equals(this.getVideoAspectRatio()) == false)
+            return false;
+        if (other.getVideoFillMode() == null ^ this.getVideoFillMode() == null)
+            return false;
+        if (other.getVideoFillMode() != null && other.getVideoFillMode().equals(this.getVideoFillMode()) == false)
+            return false;
         return true;
     }
 
@@ -128,6 +408,10 @@ public class GridConfiguration implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFeaturedParticipantAttribute() == null) ? 0 : getFeaturedParticipantAttribute().hashCode());
+        hashCode = prime * hashCode + ((getGridGap() == null) ? 0 : getGridGap().hashCode());
+        hashCode = prime * hashCode + ((getOmitStoppedVideo() == null) ? 0 : getOmitStoppedVideo().hashCode());
+        hashCode = prime * hashCode + ((getVideoAspectRatio() == null) ? 0 : getVideoAspectRatio().hashCode());
+        hashCode = prime * hashCode + ((getVideoFillMode() == null) ? 0 : getVideoFillMode().hashCode());
         return hashCode;
     }
 

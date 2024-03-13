@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+ * The monitoring configuration for Apache Zeppelin within a Managed Service for Apache Flink Studio notebook.
  * </p>
  * 
  * @see <a

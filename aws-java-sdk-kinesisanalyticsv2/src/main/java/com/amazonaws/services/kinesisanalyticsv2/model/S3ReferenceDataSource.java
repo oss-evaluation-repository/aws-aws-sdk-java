@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * reference data.
  * </p>
  * <p>
- * A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the
+ * A SQL-based Kinesis Data Analytics application loads reference data only once. If the data changes, you call the
  * <a>UpdateApplication</a> operation to trigger reloading of data into your application.
  * </p>
  * 

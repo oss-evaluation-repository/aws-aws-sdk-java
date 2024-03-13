@@ -29,6 +29,14 @@ public class GridConfigurationMarshaller {
 
     private static final MarshallingInfo<String> FEATUREDPARTICIPANTATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("featuredParticipantAttribute").build();
+    private static final MarshallingInfo<Integer> GRIDGAP_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("gridGap").build();
+    private static final MarshallingInfo<Boolean> OMITSTOPPEDVIDEO_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("omitStoppedVideo").build();
+    private static final MarshallingInfo<String> VIDEOASPECTRATIO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoAspectRatio").build();
+    private static final MarshallingInfo<String> VIDEOFILLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoFillMode").build();
 
     private static final GridConfigurationMarshaller instance = new GridConfigurationMarshaller();
 
@@ -47,6 +55,10 @@ public class GridConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(gridConfiguration.getFeaturedParticipantAttribute(), FEATUREDPARTICIPANTATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(gridConfiguration.getGridGap(), GRIDGAP_BINDING);
+            protocolMarshaller.marshall(gridConfiguration.getOmitStoppedVideo(), OMITSTOPPEDVIDEO_BINDING);
+            protocolMarshaller.marshall(gridConfiguration.getVideoAspectRatio(), VIDEOASPECTRATIO_BINDING);
+            protocolMarshaller.marshall(gridConfiguration.getVideoFillMode(), VIDEOFILLMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
