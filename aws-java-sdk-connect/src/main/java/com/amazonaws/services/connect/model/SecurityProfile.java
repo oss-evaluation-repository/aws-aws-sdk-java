@@ -89,6 +89,20 @@ public class SecurityProfile implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String lastModifiedRegion;
+    /**
+     * <p>
+     * The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are
+     * acceptable ResourceNames: <code>User</code>.
+     * </p>
+     */
+    private java.util.List<String> hierarchyRestrictedResources;
+    /**
+     * <p>
+     * The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon
+     * Connect.
+     * </p>
+     */
+    private String allowedAccessControlHierarchyGroupId;
 
     /**
      * <p>
@@ -583,6 +597,130 @@ public class SecurityProfile implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are
+     * acceptable ResourceNames: <code>User</code>.
+     * </p>
+     * 
+     * @return The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.
+     *         Following are acceptable ResourceNames: <code>User</code>.
+     */
+
+    public java.util.List<String> getHierarchyRestrictedResources() {
+        return hierarchyRestrictedResources;
+    }
+
+    /**
+     * <p>
+     * The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are
+     * acceptable ResourceNames: <code>User</code>.
+     * </p>
+     * 
+     * @param hierarchyRestrictedResources
+     *        The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.
+     *        Following are acceptable ResourceNames: <code>User</code>.
+     */
+
+    public void setHierarchyRestrictedResources(java.util.Collection<String> hierarchyRestrictedResources) {
+        if (hierarchyRestrictedResources == null) {
+            this.hierarchyRestrictedResources = null;
+            return;
+        }
+
+        this.hierarchyRestrictedResources = new java.util.ArrayList<String>(hierarchyRestrictedResources);
+    }
+
+    /**
+     * <p>
+     * The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are
+     * acceptable ResourceNames: <code>User</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHierarchyRestrictedResources(java.util.Collection)} or
+     * {@link #withHierarchyRestrictedResources(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param hierarchyRestrictedResources
+     *        The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.
+     *        Following are acceptable ResourceNames: <code>User</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecurityProfile withHierarchyRestrictedResources(String... hierarchyRestrictedResources) {
+        if (this.hierarchyRestrictedResources == null) {
+            setHierarchyRestrictedResources(new java.util.ArrayList<String>(hierarchyRestrictedResources.length));
+        }
+        for (String ele : hierarchyRestrictedResources) {
+            this.hierarchyRestrictedResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect. Following are
+     * acceptable ResourceNames: <code>User</code>.
+     * </p>
+     * 
+     * @param hierarchyRestrictedResources
+     *        The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.
+     *        Following are acceptable ResourceNames: <code>User</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecurityProfile withHierarchyRestrictedResources(java.util.Collection<String> hierarchyRestrictedResources) {
+        setHierarchyRestrictedResources(hierarchyRestrictedResources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon
+     * Connect.
+     * </p>
+     * 
+     * @param allowedAccessControlHierarchyGroupId
+     *        The identifier of the hierarchy group that a security profile uses to restrict access to resources in
+     *        Amazon Connect.
+     */
+
+    public void setAllowedAccessControlHierarchyGroupId(String allowedAccessControlHierarchyGroupId) {
+        this.allowedAccessControlHierarchyGroupId = allowedAccessControlHierarchyGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon
+     * Connect.
+     * </p>
+     * 
+     * @return The identifier of the hierarchy group that a security profile uses to restrict access to resources in
+     *         Amazon Connect.
+     */
+
+    public String getAllowedAccessControlHierarchyGroupId() {
+        return this.allowedAccessControlHierarchyGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon
+     * Connect.
+     * </p>
+     * 
+     * @param allowedAccessControlHierarchyGroupId
+     *        The identifier of the hierarchy group that a security profile uses to restrict access to resources in
+     *        Amazon Connect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecurityProfile withAllowedAccessControlHierarchyGroupId(String allowedAccessControlHierarchyGroupId) {
+        setAllowedAccessControlHierarchyGroupId(allowedAccessControlHierarchyGroupId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -613,7 +751,11 @@ public class SecurityProfile implements Serializable, Cloneable, StructuredPojo 
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getLastModifiedRegion() != null)
-            sb.append("LastModifiedRegion: ").append(getLastModifiedRegion());
+            sb.append("LastModifiedRegion: ").append(getLastModifiedRegion()).append(",");
+        if (getHierarchyRestrictedResources() != null)
+            sb.append("HierarchyRestrictedResources: ").append(getHierarchyRestrictedResources()).append(",");
+        if (getAllowedAccessControlHierarchyGroupId() != null)
+            sb.append("AllowedAccessControlHierarchyGroupId: ").append(getAllowedAccessControlHierarchyGroupId());
         sb.append("}");
         return sb.toString();
     }
@@ -668,6 +810,15 @@ public class SecurityProfile implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLastModifiedRegion() != null && other.getLastModifiedRegion().equals(this.getLastModifiedRegion()) == false)
             return false;
+        if (other.getHierarchyRestrictedResources() == null ^ this.getHierarchyRestrictedResources() == null)
+            return false;
+        if (other.getHierarchyRestrictedResources() != null && other.getHierarchyRestrictedResources().equals(this.getHierarchyRestrictedResources()) == false)
+            return false;
+        if (other.getAllowedAccessControlHierarchyGroupId() == null ^ this.getAllowedAccessControlHierarchyGroupId() == null)
+            return false;
+        if (other.getAllowedAccessControlHierarchyGroupId() != null
+                && other.getAllowedAccessControlHierarchyGroupId().equals(this.getAllowedAccessControlHierarchyGroupId()) == false)
+            return false;
         return true;
     }
 
@@ -686,6 +837,8 @@ public class SecurityProfile implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getTagRestrictedResources() == null) ? 0 : getTagRestrictedResources().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedRegion() == null) ? 0 : getLastModifiedRegion().hashCode());
+        hashCode = prime * hashCode + ((getHierarchyRestrictedResources() == null) ? 0 : getHierarchyRestrictedResources().hashCode());
+        hashCode = prime * hashCode + ((getAllowedAccessControlHierarchyGroupId() == null) ? 0 : getAllowedAccessControlHierarchyGroupId().hashCode());
         return hashCode;
     }
 

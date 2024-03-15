@@ -52,6 +52,10 @@ public class UserSearchFilterJsonUnmarshaller implements Unmarshaller<UserSearch
                     context.nextToken();
                     userSearchFilter.setTagFilter(ControlPlaneTagFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UserAttributeFilter", targetDepth)) {
+                    context.nextToken();
+                    userSearchFilter.setUserAttributeFilter(ControlPlaneUserAttributeFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

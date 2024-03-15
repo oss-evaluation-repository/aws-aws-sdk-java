@@ -33,6 +33,8 @@ public class ListRecoveryPointsByResourceRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<Boolean> MANAGEDBYAWSBACKUPONLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("managedByAWSBackupOnly").build();
 
     private static final ListRecoveryPointsByResourceRequestMarshaller instance = new ListRecoveryPointsByResourceRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListRecoveryPointsByResourceRequestMarshaller {
             protocolMarshaller.marshall(listRecoveryPointsByResourceRequest.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByResourceRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsByResourceRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listRecoveryPointsByResourceRequest.getManagedByAWSBackupOnly(), MANAGEDBYAWSBACKUPONLY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

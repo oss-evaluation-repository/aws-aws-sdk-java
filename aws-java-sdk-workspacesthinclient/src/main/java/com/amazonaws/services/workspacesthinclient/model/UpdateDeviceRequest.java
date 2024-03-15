@@ -49,12 +49,6 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String softwareSetUpdateSchedule;
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.
-     * </p>
-     */
-    private String kmsKeyArn;
 
     /**
      * <p>
@@ -236,46 +230,6 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.
-     * </p>
-     * 
-     * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.
-     */
-
-    public void setKmsKeyArn(String kmsKeyArn) {
-        this.kmsKeyArn = kmsKeyArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.
-     */
-
-    public String getKmsKeyArn() {
-        return this.kmsKeyArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.
-     * </p>
-     * 
-     * @param kmsKeyArn
-     *        The Amazon Resource Name (ARN) of the Key Management Service key to use for the update.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateDeviceRequest withKmsKeyArn(String kmsKeyArn) {
-        setKmsKeyArn(kmsKeyArn);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -294,9 +248,7 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getDesiredSoftwareSetId() != null)
             sb.append("DesiredSoftwareSetId: ").append(getDesiredSoftwareSetId()).append(",");
         if (getSoftwareSetUpdateSchedule() != null)
-            sb.append("SoftwareSetUpdateSchedule: ").append(getSoftwareSetUpdateSchedule()).append(",");
-        if (getKmsKeyArn() != null)
-            sb.append("KmsKeyArn: ").append(getKmsKeyArn());
+            sb.append("SoftwareSetUpdateSchedule: ").append(getSoftwareSetUpdateSchedule());
         sb.append("}");
         return sb.toString();
     }
@@ -327,10 +279,6 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getSoftwareSetUpdateSchedule() != null && other.getSoftwareSetUpdateSchedule().equals(this.getSoftwareSetUpdateSchedule()) == false)
             return false;
-        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
-            return false;
-        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
-            return false;
         return true;
     }
 
@@ -343,7 +291,6 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDesiredSoftwareSetId() == null) ? 0 : getDesiredSoftwareSetId().hashCode());
         hashCode = prime * hashCode + ((getSoftwareSetUpdateSchedule() == null) ? 0 : getSoftwareSetUpdateSchedule().hashCode());
-        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         return hashCode;
     }
 

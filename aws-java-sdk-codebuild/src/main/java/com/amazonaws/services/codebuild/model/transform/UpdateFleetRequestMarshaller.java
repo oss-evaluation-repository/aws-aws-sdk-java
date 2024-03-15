@@ -38,6 +38,8 @@ public class UpdateFleetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeType").build();
     private static final MarshallingInfo<StructuredPojo> SCALINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scalingConfiguration").build();
+    private static final MarshallingInfo<String> OVERFLOWBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("overflowBehavior").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -62,6 +64,7 @@ public class UpdateFleetRequestMarshaller {
             protocolMarshaller.marshall(updateFleetRequest.getEnvironmentType(), ENVIRONMENTTYPE_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getComputeType(), COMPUTETYPE_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getScalingConfiguration(), SCALINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getOverflowBehavior(), OVERFLOWBEHAVIOR_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

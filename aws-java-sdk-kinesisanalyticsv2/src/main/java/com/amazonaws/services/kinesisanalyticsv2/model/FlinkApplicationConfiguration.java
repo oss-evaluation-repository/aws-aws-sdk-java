@@ -32,9 +32,9 @@ public class FlinkApplicationConfiguration implements Serializable, Cloneable, S
      * <p>
      * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application
      * state for fault tolerance. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"
      * > Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.
      * </p>
      */
     private CheckpointConfiguration checkpointConfiguration;
@@ -55,17 +55,17 @@ public class FlinkApplicationConfiguration implements Serializable, Cloneable, S
      * <p>
      * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application
      * state for fault tolerance. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"
      * > Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.
      * </p>
      * 
      * @param checkpointConfiguration
      *        Describes an application's checkpointing configuration. Checkpointing is the process of persisting
      *        application state for fault tolerance. For more information, see <a href=
-     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     *        "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"
      *        > Checkpoints for Fault Tolerance</a> in the <a
-     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
+     *        href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.
      */
 
     public void setCheckpointConfiguration(CheckpointConfiguration checkpointConfiguration) {
@@ -76,16 +76,16 @@ public class FlinkApplicationConfiguration implements Serializable, Cloneable, S
      * <p>
      * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application
      * state for fault tolerance. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"
      * > Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.
      * </p>
      * 
      * @return Describes an application's checkpointing configuration. Checkpointing is the process of persisting
      *         application state for fault tolerance. For more information, see <a href=
-     *         "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     *         "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"
      *         > Checkpoints for Fault Tolerance</a> in the <a
-     *         href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
+     *         href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.
      */
 
     public CheckpointConfiguration getCheckpointConfiguration() {
@@ -96,17 +96,17 @@ public class FlinkApplicationConfiguration implements Serializable, Cloneable, S
      * <p>
      * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application
      * state for fault tolerance. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"
      * > Checkpoints for Fault Tolerance</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.
      * </p>
      * 
      * @param checkpointConfiguration
      *        Describes an application's checkpointing configuration. Checkpointing is the process of persisting
      *        application state for fault tolerance. For more information, see <a href=
-     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+     *        "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"
      *        > Checkpoints for Fault Tolerance</a> in the <a
-     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
+     *        href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

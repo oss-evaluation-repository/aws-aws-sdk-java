@@ -92,6 +92,16 @@ public class SecurityProfileJsonUnmarshaller implements Unmarshaller<SecurityPro
                     context.nextToken();
                     securityProfile.setLastModifiedRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("HierarchyRestrictedResources", targetDepth)) {
+                    context.nextToken();
+                    securityProfile.setHierarchyRestrictedResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("AllowedAccessControlHierarchyGroupId", targetDepth)) {
+                    context.nextToken();
+                    securityProfile.setAllowedAccessControlHierarchyGroupId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

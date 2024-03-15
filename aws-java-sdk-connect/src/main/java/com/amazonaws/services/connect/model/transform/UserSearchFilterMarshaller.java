@@ -29,6 +29,8 @@ public class UserSearchFilterMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> TAGFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagFilter").build();
+    private static final MarshallingInfo<StructuredPojo> USERATTRIBUTEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserAttributeFilter").build();
 
     private static final UserSearchFilterMarshaller instance = new UserSearchFilterMarshaller();
 
@@ -47,6 +49,7 @@ public class UserSearchFilterMarshaller {
 
         try {
             protocolMarshaller.marshall(userSearchFilter.getTagFilter(), TAGFILTER_BINDING);
+            protocolMarshaller.marshall(userSearchFilter.getUserAttributeFilter(), USERATTRIBUTEFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

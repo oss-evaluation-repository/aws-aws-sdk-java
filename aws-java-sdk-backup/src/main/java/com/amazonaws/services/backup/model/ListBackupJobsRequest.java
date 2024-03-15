@@ -49,6 +49,21 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Returns only backup jobs that are in the specified state.
      * </p>
+     * <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to
+     * jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than
+     * <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     * </p>
+     * <p>
+     * To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second,
+     * smaller number:
+     * </p>
+     * <p>
+     * GET /backup-jobs/?state=COMPLETED
+     * </p>
+     * <p>
+     * GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
+     * </p>
      */
     private String byState;
     /**
@@ -344,9 +359,38 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Returns only backup jobs that are in the specified state.
      * </p>
+     * <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to
+     * jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than
+     * <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     * </p>
+     * <p>
+     * To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second,
+     * smaller number:
+     * </p>
+     * <p>
+     * GET /backup-jobs/?state=COMPLETED
+     * </p>
+     * <p>
+     * GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
+     * </p>
      * 
      * @param byState
-     *        Returns only backup jobs that are in the specified state.
+     *        Returns only backup jobs that are in the specified state.</p>
+     *        <p>
+     *        <code>Completed with issues</code> is a status found only in the Backup console. For API, this status
+     *        refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value
+     *        other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     *        </p>
+     *        <p>
+     *        To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the
+     *        second, smaller number:
+     *        </p>
+     *        <p>
+     *        GET /backup-jobs/?state=COMPLETED
+     *        </p>
+     *        <p>
+     *        GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
      * @see BackupJobState
      */
 
@@ -358,8 +402,37 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Returns only backup jobs that are in the specified state.
      * </p>
+     * <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to
+     * jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than
+     * <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     * </p>
+     * <p>
+     * To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second,
+     * smaller number:
+     * </p>
+     * <p>
+     * GET /backup-jobs/?state=COMPLETED
+     * </p>
+     * <p>
+     * GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
+     * </p>
      * 
-     * @return Returns only backup jobs that are in the specified state.
+     * @return Returns only backup jobs that are in the specified state.</p>
+     *         <p>
+     *         <code>Completed with issues</code> is a status found only in the Backup console. For API, this status
+     *         refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value
+     *         other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     *         </p>
+     *         <p>
+     *         To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the
+     *         second, smaller number:
+     *         </p>
+     *         <p>
+     *         GET /backup-jobs/?state=COMPLETED
+     *         </p>
+     *         <p>
+     *         GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
      * @see BackupJobState
      */
 
@@ -371,9 +444,38 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Returns only backup jobs that are in the specified state.
      * </p>
+     * <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to
+     * jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than
+     * <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     * </p>
+     * <p>
+     * To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second,
+     * smaller number:
+     * </p>
+     * <p>
+     * GET /backup-jobs/?state=COMPLETED
+     * </p>
+     * <p>
+     * GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
+     * </p>
      * 
      * @param byState
-     *        Returns only backup jobs that are in the specified state.
+     *        Returns only backup jobs that are in the specified state.</p>
+     *        <p>
+     *        <code>Completed with issues</code> is a status found only in the Backup console. For API, this status
+     *        refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value
+     *        other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     *        </p>
+     *        <p>
+     *        To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the
+     *        second, smaller number:
+     *        </p>
+     *        <p>
+     *        GET /backup-jobs/?state=COMPLETED
+     *        </p>
+     *        <p>
+     *        GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupJobState
      */
@@ -387,9 +489,38 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Returns only backup jobs that are in the specified state.
      * </p>
+     * <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console. For API, this status refers to
+     * jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other than
+     * <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     * </p>
+     * <p>
+     * To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the second,
+     * smaller number:
+     * </p>
+     * <p>
+     * GET /backup-jobs/?state=COMPLETED
+     * </p>
+     * <p>
+     * GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
+     * </p>
      * 
      * @param byState
-     *        Returns only backup jobs that are in the specified state.
+     *        Returns only backup jobs that are in the specified state.</p>
+     *        <p>
+     *        <code>Completed with issues</code> is a status found only in the Backup console. For API, this status
+     *        refers to jobs with a state of <code>COMPLETED</code> and a <code>MessageCategory</code> with a value
+     *        other than <code>SUCCESS</code>; that is, the status is completed but comes with a status message.
+     *        </p>
+     *        <p>
+     *        To obtain the job count for <code>Completed with issues</code>, run two GET requests, and subtract the
+     *        second, smaller number:
+     *        </p>
+     *        <p>
+     *        GET /backup-jobs/?state=COMPLETED
+     *        </p>
+     *        <p>
+     *        GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupJobState
      */

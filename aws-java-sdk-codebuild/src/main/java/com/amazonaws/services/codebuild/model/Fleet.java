@@ -211,6 +211,25 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     private ScalingConfigurationOutput scalingConfiguration;
     /**
      * <p>
+     * The compute fleet overflow behavior.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to
+     * become available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String overflowBehavior;
+    /**
+     * <p>
      * A list of tag key and value pairs associated with this compute fleet.
      * </p>
      * <p>
@@ -1621,6 +1640,165 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The compute fleet overflow behavior.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to
+     * become available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param overflowBehavior
+     *        The compute fleet overflow behavior.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance
+     *        to become available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     *        </p>
+     *        </li>
+     * @see FleetOverflowBehavior
+     */
+
+    public void setOverflowBehavior(String overflowBehavior) {
+        this.overflowBehavior = overflowBehavior;
+    }
+
+    /**
+     * <p>
+     * The compute fleet overflow behavior.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to
+     * become available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The compute fleet overflow behavior.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
+     *         instance to become available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     *         </p>
+     *         </li>
+     * @see FleetOverflowBehavior
+     */
+
+    public String getOverflowBehavior() {
+        return this.overflowBehavior;
+    }
+
+    /**
+     * <p>
+     * The compute fleet overflow behavior.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to
+     * become available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param overflowBehavior
+     *        The compute fleet overflow behavior.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance
+     *        to become available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetOverflowBehavior
+     */
+
+    public Fleet withOverflowBehavior(String overflowBehavior) {
+        setOverflowBehavior(overflowBehavior);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compute fleet overflow behavior.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance to
+     * become available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param overflowBehavior
+     *        The compute fleet overflow behavior.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For overflow behavior <code>QUEUE</code>, your overflow builds need to wait on the existing fleet instance
+     *        to become available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetOverflowBehavior
+     */
+
+    public Fleet withOverflowBehavior(FleetOverflowBehavior overflowBehavior) {
+        this.overflowBehavior = overflowBehavior.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of tag key and value pairs associated with this compute fleet.
      * </p>
      * <p>
@@ -1745,6 +1923,8 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             sb.append("ComputeType: ").append(getComputeType()).append(",");
         if (getScalingConfiguration() != null)
             sb.append("ScalingConfiguration: ").append(getScalingConfiguration()).append(",");
+        if (getOverflowBehavior() != null)
+            sb.append("OverflowBehavior: ").append(getOverflowBehavior()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1801,6 +1981,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScalingConfiguration() != null && other.getScalingConfiguration().equals(this.getScalingConfiguration()) == false)
             return false;
+        if (other.getOverflowBehavior() == null ^ this.getOverflowBehavior() == null)
+            return false;
+        if (other.getOverflowBehavior() != null && other.getOverflowBehavior().equals(this.getOverflowBehavior()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1823,6 +2007,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEnvironmentType() == null) ? 0 : getEnvironmentType().hashCode());
         hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
         hashCode = prime * hashCode + ((getScalingConfiguration() == null) ? 0 : getScalingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getOverflowBehavior() == null) ? 0 : getOverflowBehavior().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

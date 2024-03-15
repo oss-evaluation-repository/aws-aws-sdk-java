@@ -50,6 +50,23 @@ public class ListRecoveryPointsByResourceRequest extends com.amazonaws.AmazonWeb
      * </note>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * This attribute filters recovery points based on ownership.
+     * </p>
+     * <p>
+     * If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected
+     * resources that are managed by Backup.
+     * </p>
+     * <p>
+     * If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected
+     * resource.
+     * </p>
+     * <p>
+     * Type: Boolean
+     * </p>
+     */
+    private Boolean managedByAWSBackupOnly;
 
     /**
      * <p>
@@ -208,6 +225,142 @@ public class ListRecoveryPointsByResourceRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * This attribute filters recovery points based on ownership.
+     * </p>
+     * <p>
+     * If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected
+     * resources that are managed by Backup.
+     * </p>
+     * <p>
+     * If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected
+     * resource.
+     * </p>
+     * <p>
+     * Type: Boolean
+     * </p>
+     * 
+     * @param managedByAWSBackupOnly
+     *        This attribute filters recovery points based on ownership.</p>
+     *        <p>
+     *        If this is set to <code>TRUE</code>, the response will contain recovery points associated with the
+     *        selected resources that are managed by Backup.
+     *        </p>
+     *        <p>
+     *        If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the
+     *        selected resource.
+     *        </p>
+     *        <p>
+     *        Type: Boolean
+     */
+
+    public void setManagedByAWSBackupOnly(Boolean managedByAWSBackupOnly) {
+        this.managedByAWSBackupOnly = managedByAWSBackupOnly;
+    }
+
+    /**
+     * <p>
+     * This attribute filters recovery points based on ownership.
+     * </p>
+     * <p>
+     * If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected
+     * resources that are managed by Backup.
+     * </p>
+     * <p>
+     * If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected
+     * resource.
+     * </p>
+     * <p>
+     * Type: Boolean
+     * </p>
+     * 
+     * @return This attribute filters recovery points based on ownership.</p>
+     *         <p>
+     *         If this is set to <code>TRUE</code>, the response will contain recovery points associated with the
+     *         selected resources that are managed by Backup.
+     *         </p>
+     *         <p>
+     *         If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the
+     *         selected resource.
+     *         </p>
+     *         <p>
+     *         Type: Boolean
+     */
+
+    public Boolean getManagedByAWSBackupOnly() {
+        return this.managedByAWSBackupOnly;
+    }
+
+    /**
+     * <p>
+     * This attribute filters recovery points based on ownership.
+     * </p>
+     * <p>
+     * If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected
+     * resources that are managed by Backup.
+     * </p>
+     * <p>
+     * If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected
+     * resource.
+     * </p>
+     * <p>
+     * Type: Boolean
+     * </p>
+     * 
+     * @param managedByAWSBackupOnly
+     *        This attribute filters recovery points based on ownership.</p>
+     *        <p>
+     *        If this is set to <code>TRUE</code>, the response will contain recovery points associated with the
+     *        selected resources that are managed by Backup.
+     *        </p>
+     *        <p>
+     *        If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the
+     *        selected resource.
+     *        </p>
+     *        <p>
+     *        Type: Boolean
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRecoveryPointsByResourceRequest withManagedByAWSBackupOnly(Boolean managedByAWSBackupOnly) {
+        setManagedByAWSBackupOnly(managedByAWSBackupOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This attribute filters recovery points based on ownership.
+     * </p>
+     * <p>
+     * If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected
+     * resources that are managed by Backup.
+     * </p>
+     * <p>
+     * If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected
+     * resource.
+     * </p>
+     * <p>
+     * Type: Boolean
+     * </p>
+     * 
+     * @return This attribute filters recovery points based on ownership.</p>
+     *         <p>
+     *         If this is set to <code>TRUE</code>, the response will contain recovery points associated with the
+     *         selected resources that are managed by Backup.
+     *         </p>
+     *         <p>
+     *         If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the
+     *         selected resource.
+     *         </p>
+     *         <p>
+     *         Type: Boolean
+     */
+
+    public Boolean isManagedByAWSBackupOnly() {
+        return this.managedByAWSBackupOnly;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -224,7 +377,9 @@ public class ListRecoveryPointsByResourceRequest extends com.amazonaws.AmazonWeb
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getManagedByAWSBackupOnly() != null)
+            sb.append("ManagedByAWSBackupOnly: ").append(getManagedByAWSBackupOnly());
         sb.append("}");
         return sb.toString();
     }
@@ -251,6 +406,10 @@ public class ListRecoveryPointsByResourceRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getManagedByAWSBackupOnly() == null ^ this.getManagedByAWSBackupOnly() == null)
+            return false;
+        if (other.getManagedByAWSBackupOnly() != null && other.getManagedByAWSBackupOnly().equals(this.getManagedByAWSBackupOnly()) == false)
+            return false;
         return true;
     }
 
@@ -262,6 +421,7 @@ public class ListRecoveryPointsByResourceRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getManagedByAWSBackupOnly() == null) ? 0 : getManagedByAWSBackupOnly().hashCode());
         return hashCode;
     }
 

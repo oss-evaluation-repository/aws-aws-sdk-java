@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon Simple Storage (Amazon S3) location and and security configuration for <code>OfflineStore</code>.
+ * The Amazon Simple Storage (Amazon S3) location and security configuration for <code>OfflineStore</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/S3StorageConfig" target="_top">AWS API

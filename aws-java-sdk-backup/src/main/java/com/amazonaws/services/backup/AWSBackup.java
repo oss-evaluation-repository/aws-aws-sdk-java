@@ -1914,8 +1914,8 @@ public interface AWSBackup {
      * </p>
      * <p>
      * This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for
-     * Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS,
-     * Amazon Aurora, and Amazon Neptune.
+     * Lustre, Amazon FSx for NetApp ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility),
+     * Amazon RDS, Amazon Aurora, and Amazon Neptune.
      * </p>
      * 
      * @param stopBackupJobRequest

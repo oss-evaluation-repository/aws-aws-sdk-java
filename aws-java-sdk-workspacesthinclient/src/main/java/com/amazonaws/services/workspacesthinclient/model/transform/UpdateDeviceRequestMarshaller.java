@@ -35,8 +35,6 @@ public class UpdateDeviceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("desiredSoftwareSetId").build();
     private static final MarshallingInfo<String> SOFTWARESETUPDATESCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("softwareSetUpdateSchedule").build();
-    private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("kmsKeyArn").build();
 
     private static final UpdateDeviceRequestMarshaller instance = new UpdateDeviceRequestMarshaller();
 
@@ -58,7 +56,6 @@ public class UpdateDeviceRequestMarshaller {
             protocolMarshaller.marshall(updateDeviceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateDeviceRequest.getDesiredSoftwareSetId(), DESIREDSOFTWARESETID_BINDING);
             protocolMarshaller.marshall(updateDeviceRequest.getSoftwareSetUpdateSchedule(), SOFTWARESETUPDATESCHEDULE_BINDING);
-            protocolMarshaller.marshall(updateDeviceRequest.getKmsKeyArn(), KMSKEYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

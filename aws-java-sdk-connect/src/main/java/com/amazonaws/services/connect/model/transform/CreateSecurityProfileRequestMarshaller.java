@@ -45,6 +45,10 @@ public class CreateSecurityProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagRestrictedResources").build();
     private static final MarshallingInfo<List> APPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Applications").build();
+    private static final MarshallingInfo<List> HIERARCHYRESTRICTEDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HierarchyRestrictedResources").build();
+    private static final MarshallingInfo<String> ALLOWEDACCESSCONTROLHIERARCHYGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedAccessControlHierarchyGroupId").build();
 
     private static final CreateSecurityProfileRequestMarshaller instance = new CreateSecurityProfileRequestMarshaller();
 
@@ -70,6 +74,8 @@ public class CreateSecurityProfileRequestMarshaller {
             protocolMarshaller.marshall(createSecurityProfileRequest.getAllowedAccessControlTags(), ALLOWEDACCESSCONTROLTAGS_BINDING);
             protocolMarshaller.marshall(createSecurityProfileRequest.getTagRestrictedResources(), TAGRESTRICTEDRESOURCES_BINDING);
             protocolMarshaller.marshall(createSecurityProfileRequest.getApplications(), APPLICATIONS_BINDING);
+            protocolMarshaller.marshall(createSecurityProfileRequest.getHierarchyRestrictedResources(), HIERARCHYRESTRICTEDRESOURCES_BINDING);
+            protocolMarshaller.marshall(createSecurityProfileRequest.getAllowedAccessControlHierarchyGroupId(), ALLOWEDACCESSCONTROLHIERARCHYGROUPID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

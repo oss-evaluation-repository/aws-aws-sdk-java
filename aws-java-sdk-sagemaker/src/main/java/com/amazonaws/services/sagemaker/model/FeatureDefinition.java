@@ -34,6 +34,21 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
      * The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following:
      * <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.
      * </p>
+     * <p>
+     * The name:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must start and end with an alphanumeric character.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String featureName;
     /**
@@ -79,10 +94,39 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
      * The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following:
      * <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.
      * </p>
+     * <p>
+     * The name:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must start and end with an alphanumeric character.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param featureName
      *        The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following:
-     *        <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.
+     *        <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+     *        <p>
+     *        The name:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must start and end with an alphanumeric character.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
+     *        </p>
+     *        </li>
      */
 
     public void setFeatureName(String featureName) {
@@ -94,9 +138,38 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
      * The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following:
      * <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.
      * </p>
+     * <p>
+     * The name:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must start and end with an alphanumeric character.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the
-     *         following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.
+     *         following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+     *         <p>
+     *         The name:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must start and end with an alphanumeric character.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
+     *         </p>
+     *         </li>
      */
 
     public String getFeatureName() {
@@ -108,10 +181,39 @@ public class FeatureDefinition implements Serializable, Cloneable, StructuredPoj
      * The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following:
      * <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.
      * </p>
+     * <p>
+     * The name:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must start and end with an alphanumeric character.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param featureName
      *        The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following:
-     *        <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.
+     *        <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+     *        <p>
+     *        The name:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must start and end with an alphanumeric character.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

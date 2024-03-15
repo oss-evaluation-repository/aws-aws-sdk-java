@@ -46,6 +46,10 @@ public class FrameworkControl implements Serializable, Cloneable, StructuredPojo
      * The scope of a control. The control scope defines what the control will evaluate. Three examples of control
      * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
      * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a>
+     * </p>
      */
     private ControlScope controlScope;
 
@@ -164,10 +168,18 @@ public class FrameworkControl implements Serializable, Cloneable, StructuredPojo
      * The scope of a control. The control scope defines what the control will evaluate. Three examples of control
      * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
      * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a>
+     * </p>
      * 
      * @param controlScope
      *        The scope of a control. The control scope defines what the control will evaluate. Three examples of
-     *        control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
+     *        control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     *        <code>ControlScope</code>.</a>
      */
 
     public void setControlScope(ControlScope controlScope) {
@@ -179,9 +191,18 @@ public class FrameworkControl implements Serializable, Cloneable, StructuredPojo
      * The scope of a control. The control scope defines what the control will evaluate. Three examples of control
      * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
      * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a>
+     * </p>
      * 
      * @return The scope of a control. The control scope defines what the control will evaluate. Three examples of
-     *         control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
+     *         control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup
+     *         plans.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     *         <code>ControlScope</code>.</a>
      */
 
     public ControlScope getControlScope() {
@@ -193,10 +214,18 @@ public class FrameworkControl implements Serializable, Cloneable, StructuredPojo
      * The scope of a control. The control scope defines what the control will evaluate. Three examples of control
      * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
      * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a>
+     * </p>
      * 
      * @param controlScope
      *        The scope of a control. The control scope defines what the control will evaluate. Three examples of
-     *        control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
+     *        control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     *        <code>ControlScope</code>.</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

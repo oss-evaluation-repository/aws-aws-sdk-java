@@ -94,6 +94,12 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
      * </p>
      */
     private String resourceName;
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     */
+    private String vaultType;
 
     /**
      * <p>
@@ -563,6 +569,65 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault in which the described recovery point is stored.
+     * @see VaultType
+     */
+
+    public void setVaultType(String vaultType) {
+        this.vaultType = vaultType;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     * 
+     * @return This is the type of vault in which the described recovery point is stored.
+     * @see VaultType
+     */
+
+    public String getVaultType() {
+        return this.vaultType;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault in which the described recovery point is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VaultType
+     */
+
+    public RecoveryPointByResource withVaultType(String vaultType) {
+        setVaultType(vaultType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the type of vault in which the described recovery point is stored.
+     * </p>
+     * 
+     * @param vaultType
+     *        This is the type of vault in which the described recovery point is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VaultType
+     */
+
+    public RecoveryPointByResource withVaultType(VaultType vaultType) {
+        this.vaultType = vaultType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -593,7 +658,9 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
         if (getParentRecoveryPointArn() != null)
             sb.append("ParentRecoveryPointArn: ").append(getParentRecoveryPointArn()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: ").append(getResourceName());
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
+        if (getVaultType() != null)
+            sb.append("VaultType: ").append(getVaultType());
         sb.append("}");
         return sb.toString();
     }
@@ -648,6 +715,10 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
             return false;
         if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
             return false;
+        if (other.getVaultType() == null ^ this.getVaultType() == null)
+            return false;
+        if (other.getVaultType() != null && other.getVaultType().equals(this.getVaultType()) == false)
+            return false;
         return true;
     }
 
@@ -666,6 +737,7 @@ public class RecoveryPointByResource implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getIsParent() == null) ? 0 : getIsParent().hashCode());
         hashCode = prime * hashCode + ((getParentRecoveryPointArn() == null) ? 0 : getParentRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
+        hashCode = prime * hashCode + ((getVaultType() == null) ? 0 : getVaultType().hashCode());
         return hashCode;
     }
 

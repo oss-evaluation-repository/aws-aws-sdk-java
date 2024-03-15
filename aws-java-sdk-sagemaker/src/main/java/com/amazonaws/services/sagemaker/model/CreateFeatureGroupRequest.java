@@ -28,7 +28,10 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
-     * Amazon Web Services account. The name:
+     * Amazon Web Services account.
+     * </p>
+     * <p>
+     * The name:
      * </p>
      * <ul>
      * <li>
@@ -38,7 +41,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      * </p>
      * </li>
      * </ul>
@@ -195,7 +198,10 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
-     * Amazon Web Services account. The name:
+     * Amazon Web Services account.
+     * </p>
+     * <p>
+     * The name:
      * </p>
      * <ul>
      * <li>
@@ -205,14 +211,17 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param featureGroupName
      *        The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in
-     *        an Amazon Web Services account. The name:</p>
+     *        an Amazon Web Services account.</p>
+     *        <p>
+     *        The name:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -221,7 +230,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     *        Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      *        </p>
      *        </li>
      */
@@ -233,7 +242,10 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
-     * Amazon Web Services account. The name:
+     * Amazon Web Services account.
+     * </p>
+     * <p>
+     * The name:
      * </p>
      * <ul>
      * <li>
@@ -243,13 +255,16 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region
-     *         in an Amazon Web Services account. The name:</p>
+     *         in an Amazon Web Services account.</p>
+     *         <p>
+     *         The name:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -258,7 +273,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     *         Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      *         </p>
      *         </li>
      */
@@ -270,7 +285,10 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an
-     * Amazon Web Services account. The name:
+     * Amazon Web Services account.
+     * </p>
+     * <p>
+     * The name:
      * </p>
      * <ul>
      * <li>
@@ -280,14 +298,17 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     * Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      * </p>
      * </li>
      * </ul>
      * 
      * @param featureGroupName
      *        The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in
-     *        an Amazon Web Services account. The name:</p>
+     *        an Amazon Web Services account.</p>
+     *        <p>
+     *        The name:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -296,7 +317,7 @@ public class CreateFeatureGroupRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Can only contain alphanumeric character and hyphens. Spaces are not allowed.
+     *        Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

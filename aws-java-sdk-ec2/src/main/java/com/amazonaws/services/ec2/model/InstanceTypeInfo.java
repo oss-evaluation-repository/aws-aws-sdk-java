@@ -194,6 +194,18 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
      * </p>
      */
     private NitroTpmInfo nitroTpmInfo;
+    /**
+     * <p>
+     * Describes the media accelerator settings for the instance type.
+     * </p>
+     */
+    private MediaAcceleratorInfo mediaAcceleratorInfo;
+    /**
+     * <p>
+     * Describes the Neuron accelerator settings for the instance type.
+     * </p>
+     */
+    private NeuronInfo neuronInfo;
 
     /**
      * <p>
@@ -1747,6 +1759,86 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the media accelerator settings for the instance type.
+     * </p>
+     * 
+     * @param mediaAcceleratorInfo
+     *        Describes the media accelerator settings for the instance type.
+     */
+
+    public void setMediaAcceleratorInfo(MediaAcceleratorInfo mediaAcceleratorInfo) {
+        this.mediaAcceleratorInfo = mediaAcceleratorInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the media accelerator settings for the instance type.
+     * </p>
+     * 
+     * @return Describes the media accelerator settings for the instance type.
+     */
+
+    public MediaAcceleratorInfo getMediaAcceleratorInfo() {
+        return this.mediaAcceleratorInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the media accelerator settings for the instance type.
+     * </p>
+     * 
+     * @param mediaAcceleratorInfo
+     *        Describes the media accelerator settings for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceTypeInfo withMediaAcceleratorInfo(MediaAcceleratorInfo mediaAcceleratorInfo) {
+        setMediaAcceleratorInfo(mediaAcceleratorInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the Neuron accelerator settings for the instance type.
+     * </p>
+     * 
+     * @param neuronInfo
+     *        Describes the Neuron accelerator settings for the instance type.
+     */
+
+    public void setNeuronInfo(NeuronInfo neuronInfo) {
+        this.neuronInfo = neuronInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the Neuron accelerator settings for the instance type.
+     * </p>
+     * 
+     * @return Describes the Neuron accelerator settings for the instance type.
+     */
+
+    public NeuronInfo getNeuronInfo() {
+        return this.neuronInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the Neuron accelerator settings for the instance type.
+     * </p>
+     * 
+     * @param neuronInfo
+     *        Describes the Neuron accelerator settings for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceTypeInfo withNeuronInfo(NeuronInfo neuronInfo) {
+        setNeuronInfo(neuronInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1811,7 +1903,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         if (getNitroTpmSupport() != null)
             sb.append("NitroTpmSupport: ").append(getNitroTpmSupport()).append(",");
         if (getNitroTpmInfo() != null)
-            sb.append("NitroTpmInfo: ").append(getNitroTpmInfo());
+            sb.append("NitroTpmInfo: ").append(getNitroTpmInfo()).append(",");
+        if (getMediaAcceleratorInfo() != null)
+            sb.append("MediaAcceleratorInfo: ").append(getMediaAcceleratorInfo()).append(",");
+        if (getNeuronInfo() != null)
+            sb.append("NeuronInfo: ").append(getNeuronInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -1935,6 +2031,14 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             return false;
         if (other.getNitroTpmInfo() != null && other.getNitroTpmInfo().equals(this.getNitroTpmInfo()) == false)
             return false;
+        if (other.getMediaAcceleratorInfo() == null ^ this.getMediaAcceleratorInfo() == null)
+            return false;
+        if (other.getMediaAcceleratorInfo() != null && other.getMediaAcceleratorInfo().equals(this.getMediaAcceleratorInfo()) == false)
+            return false;
+        if (other.getNeuronInfo() == null ^ this.getNeuronInfo() == null)
+            return false;
+        if (other.getNeuronInfo() != null && other.getNeuronInfo().equals(this.getNeuronInfo()) == false)
+            return false;
         return true;
     }
 
@@ -1970,6 +2074,8 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNitroEnclavesSupport() == null) ? 0 : getNitroEnclavesSupport().hashCode());
         hashCode = prime * hashCode + ((getNitroTpmSupport() == null) ? 0 : getNitroTpmSupport().hashCode());
         hashCode = prime * hashCode + ((getNitroTpmInfo() == null) ? 0 : getNitroTpmInfo().hashCode());
+        hashCode = prime * hashCode + ((getMediaAcceleratorInfo() == null) ? 0 : getMediaAcceleratorInfo().hashCode());
+        hashCode = prime * hashCode + ((getNeuronInfo() == null) ? 0 : getNeuronInfo().hashCode());
         return hashCode;
     }
 

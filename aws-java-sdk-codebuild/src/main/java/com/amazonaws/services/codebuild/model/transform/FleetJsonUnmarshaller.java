@@ -88,6 +88,10 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                     context.nextToken();
                     fleet.setScalingConfiguration(ScalingConfigurationOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("overflowBehavior", targetDepth)) {
+                    context.nextToken();
+                    fleet.setOverflowBehavior(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     fleet.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

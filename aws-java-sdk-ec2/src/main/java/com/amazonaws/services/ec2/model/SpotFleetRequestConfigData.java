@@ -145,6 +145,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
      * <code>LaunchTemplateConfigs</code>.
      * </p>
+     * <note>
+     * <p>
+     * If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from
+     * the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<SpotFleetLaunchSpecification> launchSpecifications;
     /**
@@ -1379,10 +1385,21 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
      * <code>LaunchTemplateConfigs</code>.
      * </p>
+     * <note>
+     * <p>
+     * If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from
+     * the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.
+     * </p>
+     * </note>
      * 
      * @return The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
      *         you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request,
-     *         you must use <code>LaunchTemplateConfigs</code>.
+     *         you must use <code>LaunchTemplateConfigs</code>.</p> <note>
+     *         <p>
+     *         If an AMI specified in a launch specification is deregistered or disabled, no new instances can be
+     *         launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be
+     *         maintained.
+     *         </p>
      */
 
     public java.util.List<SpotFleetLaunchSpecification> getLaunchSpecifications() {
@@ -1398,11 +1415,22 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
      * <code>LaunchTemplateConfigs</code>.
      * </p>
+     * <note>
+     * <p>
+     * If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from
+     * the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.
+     * </p>
+     * </note>
      * 
      * @param launchSpecifications
      *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
      *        you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request,
-     *        you must use <code>LaunchTemplateConfigs</code>.
+     *        you must use <code>LaunchTemplateConfigs</code>.</p> <note>
+     *        <p>
+     *        If an AMI specified in a launch specification is deregistered or disabled, no new instances can be
+     *        launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be
+     *        maintained.
+     *        </p>
      */
 
     public void setLaunchSpecifications(java.util.Collection<SpotFleetLaunchSpecification> launchSpecifications) {
@@ -1420,6 +1448,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
      * <code>LaunchTemplateConfigs</code>.
      * </p>
+     * <note>
+     * <p>
+     * If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from
+     * the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLaunchSpecifications(java.util.Collection)} or {@link #withLaunchSpecifications(java.util.Collection)}
@@ -1429,7 +1463,12 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * @param launchSpecifications
      *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
      *        you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request,
-     *        you must use <code>LaunchTemplateConfigs</code>.
+     *        you must use <code>LaunchTemplateConfigs</code>.</p> <note>
+     *        <p>
+     *        If an AMI specified in a launch specification is deregistered or disabled, no new instances can be
+     *        launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be
+     *        maintained.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1449,11 +1488,22 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request, you must use
      * <code>LaunchTemplateConfigs</code>.
      * </p>
+     * <note>
+     * <p>
+     * If an AMI specified in a launch specification is deregistered or disabled, no new instances can be launched from
+     * the AMI. For fleets of type <code>maintain</code>, the target capacity will not be maintained.
+     * </p>
+     * </note>
      * 
      * @param launchSpecifications
      *        The launch specifications for the Spot Fleet request. If you specify <code>LaunchSpecifications</code>,
      *        you can't specify <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your request,
-     *        you must use <code>LaunchTemplateConfigs</code>.
+     *        you must use <code>LaunchTemplateConfigs</code>.</p> <note>
+     *        <p>
+     *        If an AMI specified in a launch specification is deregistered or disabled, no new instances can be
+     *        launched from the AMI. For fleets of type <code>maintain</code>, the target capacity will not be
+     *        maintained.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
