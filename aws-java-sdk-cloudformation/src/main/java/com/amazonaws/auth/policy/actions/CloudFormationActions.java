@@ -137,6 +137,8 @@ public enum CloudFormationActions implements Action {
     ListStackInstances("cloudformation:ListStackInstances"),
     /** Action for the ListStackResources operation. */
     ListStackResources("cloudformation:ListStackResources"),
+    /** Action for the ListStackSetAutoDeploymentTargets operation. */
+    ListStackSetAutoDeploymentTargets("cloudformation:ListStackSetAutoDeploymentTargets"),
     /** Action for the ListStackSetOperationResults operation. */
     ListStackSetOperationResults("cloudformation:ListStackSetOperationResults"),
     /** Action for the ListStackSetOperations operation. */

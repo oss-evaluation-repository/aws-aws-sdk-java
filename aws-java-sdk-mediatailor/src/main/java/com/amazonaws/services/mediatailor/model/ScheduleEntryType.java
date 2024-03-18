@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ScheduleEntryType {
 
     PROGRAM("PROGRAM"),
-    FILLER_SLATE("FILLER_SLATE");
+    FILLER_SLATE("FILLER_SLATE"),
+    ALTERNATE_MEDIA("ALTERNATE_MEDIA");
 
     private String value;
 

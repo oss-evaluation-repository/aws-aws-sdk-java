@@ -2204,6 +2204,41 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     }
 
     @Override
+    public java.util.concurrent.Future<ListStackSetAutoDeploymentTargetsResult> listStackSetAutoDeploymentTargetsAsync(
+            ListStackSetAutoDeploymentTargetsRequest request) {
+
+        return listStackSetAutoDeploymentTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackSetAutoDeploymentTargetsResult> listStackSetAutoDeploymentTargetsAsync(
+            final ListStackSetAutoDeploymentTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStackSetAutoDeploymentTargetsRequest, ListStackSetAutoDeploymentTargetsResult> asyncHandler) {
+        final ListStackSetAutoDeploymentTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStackSetAutoDeploymentTargetsResult>() {
+            @Override
+            public ListStackSetAutoDeploymentTargetsResult call() throws Exception {
+                ListStackSetAutoDeploymentTargetsResult result = null;
+
+                try {
+                    result = executeListStackSetAutoDeploymentTargets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStackSetOperationResultsResult> listStackSetOperationResultsAsync(ListStackSetOperationResultsRequest request) {
 
         return listStackSetOperationResultsAsync(request, null);

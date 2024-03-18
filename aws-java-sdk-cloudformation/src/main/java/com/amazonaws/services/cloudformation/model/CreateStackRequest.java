@@ -152,7 +152,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     * <code>AWS::IAM::AccessKey</code> </a>
      * </p>
      * </li>
      * <li>
@@ -992,7 +992,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     * <code>AWS::IAM::AccessKey</code> </a>
      * </p>
      * </li>
      * <li>
@@ -1124,7 +1124,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *         <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     *         <code>AWS::IAM::AccessKey</code> </a>
      *         </p>
      *         </li>
      *         <li>
@@ -1269,7 +1269,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     * <code>AWS::IAM::AccessKey</code> </a>
      * </p>
      * </li>
      * <li>
@@ -1402,7 +1402,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *        <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     *        <code>AWS::IAM::AccessKey</code> </a>
      *        </p>
      *        </li>
      *        <li>
@@ -1549,7 +1549,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     * <code>AWS::IAM::AccessKey</code> </a>
      * </p>
      * </li>
      * <li>
@@ -1687,7 +1687,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *        <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     *        <code>AWS::IAM::AccessKey</code> </a>
      *        </p>
      *        </li>
      *        <li>
@@ -1836,7 +1836,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     * <code>AWS::IAM::AccessKey</code> </a>
      * </p>
      * </li>
      * <li>
@@ -1969,7 +1969,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *        <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     *        <code>AWS::IAM::AccessKey</code> </a>
      *        </p>
      *        </li>
      *        <li>
@@ -2113,7 +2113,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     * <code>AWS::IAM::AccessKey</code> </a>
      * </p>
      * </li>
      * <li>
@@ -2246,7 +2246,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *        <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a>
+     *        <code>AWS::IAM::AccessKey</code> </a>
      *        </p>
      *        </li>
      *        <li>

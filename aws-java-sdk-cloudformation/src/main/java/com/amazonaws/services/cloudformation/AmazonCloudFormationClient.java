@@ -4162,6 +4162,65 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Returns summary information about deployment targets for a stack set.
+     * </p>
+     * 
+     * @param listStackSetAutoDeploymentTargetsRequest
+     * @return Result of the ListStackSetAutoDeploymentTargets operation returned by the service.
+     * @throws StackSetNotFoundException
+     *         The specified stack set doesn't exist.
+     * @sample AmazonCloudFormation.ListStackSetAutoDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListStackSetAutoDeploymentTargetsResult listStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStackSetAutoDeploymentTargets(request);
+    }
+
+    @SdkInternalApi
+    final ListStackSetAutoDeploymentTargetsResult executeListStackSetAutoDeploymentTargets(
+            ListStackSetAutoDeploymentTargetsRequest listStackSetAutoDeploymentTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStackSetAutoDeploymentTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStackSetAutoDeploymentTargetsRequest> request = null;
+        Response<ListStackSetAutoDeploymentTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStackSetAutoDeploymentTargetsRequestMarshaller().marshall(super.beforeMarshalling(listStackSetAutoDeploymentTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetAutoDeploymentTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListStackSetAutoDeploymentTargetsResult> responseHandler = new StaxResponseHandler<ListStackSetAutoDeploymentTargetsResult>(
+                    new ListStackSetAutoDeploymentTargetsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns summary information about the results of a stack set operation.
      * </p>
      * 

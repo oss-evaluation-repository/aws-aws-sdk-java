@@ -149,6 +149,15 @@ public class DeleteIntegrationResultStaxUnmarshaller implements Unmarshaller<Del
                     continue;
                 }
 
+                if (context.testExpression("DataFilter", targetDepth)) {
+                    deleteIntegrationResult.setDataFilter(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Description", targetDepth)) {
+                    deleteIntegrationResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return deleteIntegrationResult;

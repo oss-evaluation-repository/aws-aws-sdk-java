@@ -91,6 +91,14 @@ public class CreateIntegrationRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
+        if (createIntegrationRequest.getDataFilter() != null) {
+            request.addParameter("DataFilter", StringUtils.fromString(createIntegrationRequest.getDataFilter()));
+        }
+
+        if (createIntegrationRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createIntegrationRequest.getDescription()));
+        }
+
         return request;
     }
 

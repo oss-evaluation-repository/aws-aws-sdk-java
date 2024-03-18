@@ -85,6 +85,19 @@ public class Integration implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IntegrationError> errors;
+    /**
+     * <p>
+     * Data filters for the integration. These filters determine which tables from the source database are sent to the
+     * target Amazon Redshift data warehouse.
+     * </p>
+     */
+    private String dataFilter;
+    /**
+     * <p>
+     * A description of the integration.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -604,6 +617,92 @@ public class Integration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Data filters for the integration. These filters determine which tables from the source database are sent to the
+     * target Amazon Redshift data warehouse.
+     * </p>
+     * 
+     * @param dataFilter
+     *        Data filters for the integration. These filters determine which tables from the source database are sent
+     *        to the target Amazon Redshift data warehouse.
+     */
+
+    public void setDataFilter(String dataFilter) {
+        this.dataFilter = dataFilter;
+    }
+
+    /**
+     * <p>
+     * Data filters for the integration. These filters determine which tables from the source database are sent to the
+     * target Amazon Redshift data warehouse.
+     * </p>
+     * 
+     * @return Data filters for the integration. These filters determine which tables from the source database are sent
+     *         to the target Amazon Redshift data warehouse.
+     */
+
+    public String getDataFilter() {
+        return this.dataFilter;
+    }
+
+    /**
+     * <p>
+     * Data filters for the integration. These filters determine which tables from the source database are sent to the
+     * target Amazon Redshift data warehouse.
+     * </p>
+     * 
+     * @param dataFilter
+     *        Data filters for the integration. These filters determine which tables from the source database are sent
+     *        to the target Amazon Redshift data warehouse.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integration withDataFilter(String dataFilter) {
+        setDataFilter(dataFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the integration.
+     * </p>
+     * 
+     * @param description
+     *        A description of the integration.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the integration.
+     * </p>
+     * 
+     * @return A description of the integration.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the integration.
+     * </p>
+     * 
+     * @param description
+     *        A description of the integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integration withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -634,7 +733,11 @@ public class Integration implements Serializable, Cloneable {
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getErrors() != null)
-            sb.append("Errors: ").append(getErrors());
+            sb.append("Errors: ").append(getErrors()).append(",");
+        if (getDataFilter() != null)
+            sb.append("DataFilter: ").append(getDataFilter()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -689,6 +792,14 @@ public class Integration implements Serializable, Cloneable {
             return false;
         if (other.getErrors() != null && other.getErrors().equals(this.getErrors()) == false)
             return false;
+        if (other.getDataFilter() == null ^ this.getDataFilter() == null)
+            return false;
+        if (other.getDataFilter() != null && other.getDataFilter().equals(this.getDataFilter()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -707,6 +818,8 @@ public class Integration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getErrors() == null) ? 0 : getErrors().hashCode());
+        hashCode = prime * hashCode + ((getDataFilter() == null) ? 0 : getDataFilter().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

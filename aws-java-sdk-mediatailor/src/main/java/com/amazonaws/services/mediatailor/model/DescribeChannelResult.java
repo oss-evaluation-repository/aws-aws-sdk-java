@@ -31,6 +31,12 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     private String arn;
     /**
      * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     */
+    private java.util.List<String> audiences;
+    /**
+     * <p>
      * The name of the channel.
      * </p>
      */
@@ -136,6 +142,76 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     public DescribeChannelResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @return The list of audiences defined in channel.
+     */
+
+    public java.util.List<String> getAudiences() {
+        return audiences;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     */
+
+    public void setAudiences(java.util.Collection<String> audiences) {
+        if (audiences == null) {
+            this.audiences = null;
+            return;
+        }
+
+        this.audiences = new java.util.ArrayList<String>(audiences);
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudiences(java.util.Collection)} or {@link #withAudiences(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withAudiences(String... audiences) {
+        if (this.audiences == null) {
+            setAudiences(new java.util.ArrayList<String>(audiences.length));
+        }
+        for (String ele : audiences) {
+            this.audiences.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withAudiences(java.util.Collection<String> audiences) {
+        setAudiences(audiences);
         return this;
     }
 
@@ -688,6 +764,8 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAudiences() != null)
+            sb.append("Audiences: ").append(getAudiences()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getChannelState() != null)
@@ -727,6 +805,10 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getAudiences() == null ^ this.getAudiences() == null)
+            return false;
+        if (other.getAudiences() != null && other.getAudiences().equals(this.getAudiences()) == false)
             return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
@@ -781,6 +863,7 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAudiences() == null) ? 0 : getAudiences().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getChannelState() == null) ? 0 : getChannelState().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

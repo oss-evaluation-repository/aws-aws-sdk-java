@@ -52,6 +52,12 @@ public class DescribeChannelResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeChannelResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Audiences", targetDepth)) {
+                    context.nextToken();
+                    describeChannelResult.setAudiences(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ChannelName", targetDepth)) {
                     context.nextToken();
                     describeChannelResult.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -30,6 +30,8 @@ public class UpdateProgramRequestMarshaller {
 
     private static final MarshallingInfo<List> ADBREAKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AdBreaks").build();
+    private static final MarshallingInfo<List> AUDIENCEMEDIA_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AudienceMedia").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> PROGRAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -54,6 +56,7 @@ public class UpdateProgramRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateProgramRequest.getAdBreaks(), ADBREAKS_BINDING);
+            protocolMarshaller.marshall(updateProgramRequest.getAudienceMedia(), AUDIENCEMEDIA_BINDING);
             protocolMarshaller.marshall(updateProgramRequest.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(updateProgramRequest.getProgramName(), PROGRAMNAME_BINDING);
             protocolMarshaller.marshall(updateProgramRequest.getScheduleConfiguration(), SCHEDULECONFIGURATION_BINDING);

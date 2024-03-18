@@ -2636,6 +2636,41 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
+     * Returns summary information about deployment targets for a stack set.
+     * </p>
+     * 
+     * @param listStackSetAutoDeploymentTargetsRequest
+     * @return A Java Future containing the result of the ListStackSetAutoDeploymentTargets operation returned by the
+     *         service.
+     * @sample AmazonCloudFormationAsync.ListStackSetAutoDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStackSetAutoDeploymentTargetsResult> listStackSetAutoDeploymentTargetsAsync(
+            ListStackSetAutoDeploymentTargetsRequest listStackSetAutoDeploymentTargetsRequest);
+
+    /**
+     * <p>
+     * Returns summary information about deployment targets for a stack set.
+     * </p>
+     * 
+     * @param listStackSetAutoDeploymentTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStackSetAutoDeploymentTargets operation returned by the
+     *         service.
+     * @sample AmazonCloudFormationAsyncHandler.ListStackSetAutoDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStackSetAutoDeploymentTargetsResult> listStackSetAutoDeploymentTargetsAsync(
+            ListStackSetAutoDeploymentTargetsRequest listStackSetAutoDeploymentTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStackSetAutoDeploymentTargetsRequest, ListStackSetAutoDeploymentTargetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns summary information about the results of a stack set operation.
      * </p>
      * 

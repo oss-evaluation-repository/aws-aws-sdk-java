@@ -766,8 +766,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later
-     * running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set
-     * to <code>true</code>.
+     * running. Timestream only supports using this operation with <code>ValidateOnly</code> set to <code>true</code>.
      * </p>
      * 
      * @param prepareQueryRequest

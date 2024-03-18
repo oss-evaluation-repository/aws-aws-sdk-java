@@ -58,6 +58,12 @@ public class UpdateProgramResultJsonUnmarshaller implements Unmarshaller<UpdateP
                     context.nextToken();
                     updateProgramResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AudienceMedia", targetDepth)) {
+                    context.nextToken();
+                    updateProgramResult.setAudienceMedia(new ListUnmarshaller<AudienceMedia>(AudienceMediaJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ChannelName", targetDepth)) {
                     context.nextToken();
                     updateProgramResult.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));

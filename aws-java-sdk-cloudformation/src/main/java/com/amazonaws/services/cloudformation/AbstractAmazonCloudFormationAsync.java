@@ -833,6 +833,21 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
     }
 
     @Override
+    public java.util.concurrent.Future<ListStackSetAutoDeploymentTargetsResult> listStackSetAutoDeploymentTargetsAsync(
+            ListStackSetAutoDeploymentTargetsRequest request) {
+
+        return listStackSetAutoDeploymentTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStackSetAutoDeploymentTargetsResult> listStackSetAutoDeploymentTargetsAsync(
+            ListStackSetAutoDeploymentTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListStackSetAutoDeploymentTargetsRequest, ListStackSetAutoDeploymentTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStackSetOperationResultsResult> listStackSetOperationResultsAsync(ListStackSetOperationResultsRequest request) {
 
         return listStackSetOperationResultsAsync(request, null);

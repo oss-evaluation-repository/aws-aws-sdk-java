@@ -54,7 +54,8 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String keyId;
     /**
      * <p>
-     * The name of the key policy. The only valid value is <code>default</code>.
+     * The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only
+     * valid value is <code>default</code>.
      * </p>
      */
     private String policyName;
@@ -306,11 +307,13 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the key policy. The only valid value is <code>default</code>.
+     * The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only
+     * valid value is <code>default</code>.
      * </p>
      * 
      * @param policyName
-     *        The name of the key policy. The only valid value is <code>default</code>.
+     *        The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The
+     *        only valid value is <code>default</code>.
      */
 
     public void setPolicyName(String policyName) {
@@ -319,10 +322,12 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the key policy. The only valid value is <code>default</code>.
+     * The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only
+     * valid value is <code>default</code>.
      * </p>
      * 
-     * @return The name of the key policy. The only valid value is <code>default</code>.
+     * @return The name of the key policy. If no policy name is specified, the default value is <code>default</code>.
+     *         The only valid value is <code>default</code>.
      */
 
     public String getPolicyName() {
@@ -331,11 +336,13 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the key policy. The only valid value is <code>default</code>.
+     * The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only
+     * valid value is <code>default</code>.
      * </p>
      * 
      * @param policyName
-     *        The name of the key policy. The only valid value is <code>default</code>.
+     *        The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The
+     *        only valid value is <code>default</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

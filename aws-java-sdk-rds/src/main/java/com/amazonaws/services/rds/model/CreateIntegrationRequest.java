@@ -65,6 +65,23 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     private com.amazonaws.internal.SdkInternalMap<String, String> additionalEncryptionContext;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for
+     * Aurora zero-ETL integrations with Amazon Redshift</a>.
+     * </p>
+     * <p>
+     * Valid for: Integrations with Aurora MySQL source DB clusters only
+     * </p>
+     */
+    private String dataFilter;
+    /**
+     * <p>
+     * A description of the integration.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -399,6 +416,113 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for
+     * Aurora zero-ETL integrations with Amazon Redshift</a>.
+     * </p>
+     * <p>
+     * Valid for: Integrations with Aurora MySQL source DB clusters only
+     * </p>
+     * 
+     * @param dataFilter
+     *        Data filtering options for the integration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering
+     *        for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     *        <p>
+     *        Valid for: Integrations with Aurora MySQL source DB clusters only
+     */
+
+    public void setDataFilter(String dataFilter) {
+        this.dataFilter = dataFilter;
+    }
+
+    /**
+     * <p>
+     * Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for
+     * Aurora zero-ETL integrations with Amazon Redshift</a>.
+     * </p>
+     * <p>
+     * Valid for: Integrations with Aurora MySQL source DB clusters only
+     * </p>
+     * 
+     * @return Data filtering options for the integration. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     *         filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     *         <p>
+     *         Valid for: Integrations with Aurora MySQL source DB clusters only
+     */
+
+    public String getDataFilter() {
+        return this.dataFilter;
+    }
+
+    /**
+     * <p>
+     * Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for
+     * Aurora zero-ETL integrations with Amazon Redshift</a>.
+     * </p>
+     * <p>
+     * Valid for: Integrations with Aurora MySQL source DB clusters only
+     * </p>
+     * 
+     * @param dataFilter
+     *        Data filtering options for the integration. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering
+     *        for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     *        <p>
+     *        Valid for: Integrations with Aurora MySQL source DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIntegrationRequest withDataFilter(String dataFilter) {
+        setDataFilter(dataFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the integration.
+     * </p>
+     * 
+     * @param description
+     *        A description of the integration.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the integration.
+     * </p>
+     * 
+     * @return A description of the integration.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the integration.
+     * </p>
+     * 
+     * @param description
+     *        A description of the integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIntegrationRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -421,7 +545,11 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getAdditionalEncryptionContext() != null)
             sb.append("AdditionalEncryptionContext: ").append(getAdditionalEncryptionContext()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDataFilter() != null)
+            sb.append("DataFilter: ").append(getDataFilter()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -460,6 +588,14 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDataFilter() == null ^ this.getDataFilter() == null)
+            return false;
+        if (other.getDataFilter() != null && other.getDataFilter().equals(this.getDataFilter()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -474,6 +610,8 @@ public class CreateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getKMSKeyId() == null) ? 0 : getKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getAdditionalEncryptionContext() == null) ? 0 : getAdditionalEncryptionContext().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDataFilter() == null) ? 0 : getDataFilter().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

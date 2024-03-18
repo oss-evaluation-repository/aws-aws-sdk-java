@@ -29,6 +29,8 @@ public class ClipRangeMarshaller {
 
     private static final MarshallingInfo<Long> ENDOFFSETMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndOffsetMillis").build();
+    private static final MarshallingInfo<Long> STARTOFFSETMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartOffsetMillis").build();
 
     private static final ClipRangeMarshaller instance = new ClipRangeMarshaller();
 
@@ -47,6 +49,7 @@ public class ClipRangeMarshaller {
 
         try {
             protocolMarshaller.marshall(clipRange.getEndOffsetMillis(), ENDOFFSETMILLIS_BINDING);
+            protocolMarshaller.marshall(clipRange.getStartOffsetMillis(), STARTOFFSETMILLIS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

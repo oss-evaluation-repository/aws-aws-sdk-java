@@ -5950,8 +5950,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
      * the same key material</a> into that KMS key, but you cannot import different key material. You might reimport key
      * material to replace key material that expired or key material that you deleted. You might also reimport key
-     * material to change the expiration model or expiration date of the key material. Before reimporting key material,
-     * if necessary, call <a>DeleteImportedKeyMaterial</a> to delete the current imported key material.
+     * material to change the expiration model or expiration date of the key material.
      * </p>
      * <p>
      * Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>) and when (
@@ -7674,8 +7673,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Deletes the specified grant. You revoke a grant to terminate the permissions that the grant allows. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/managing-grants.html#grant-delete">Retiring and
-     * revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking
+     * grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
      * </p>
      * <p>
      * When you create, retire, or revoke a grant, there might be a brief delay, usually less than five minutes, until

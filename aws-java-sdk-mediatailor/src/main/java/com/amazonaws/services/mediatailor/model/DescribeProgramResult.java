@@ -37,6 +37,12 @@ public class DescribeProgramResult extends com.amazonaws.AmazonWebServiceResult<
     private String arn;
     /**
      * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     */
+    private java.util.List<AudienceMedia> audienceMedia;
+    /**
+     * <p>
      * The name of the channel that the program belongs to.
      * </p>
      */
@@ -198,6 +204,76 @@ public class DescribeProgramResult extends com.amazonaws.AmazonWebServiceResult<
 
     public DescribeProgramResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @return The list of AudienceMedia defined in program.
+     */
+
+    public java.util.List<AudienceMedia> getAudienceMedia() {
+        return audienceMedia;
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     */
+
+    public void setAudienceMedia(java.util.Collection<AudienceMedia> audienceMedia) {
+        if (audienceMedia == null) {
+            this.audienceMedia = null;
+            return;
+        }
+
+        this.audienceMedia = new java.util.ArrayList<AudienceMedia>(audienceMedia);
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudienceMedia(java.util.Collection)} or {@link #withAudienceMedia(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProgramResult withAudienceMedia(AudienceMedia... audienceMedia) {
+        if (this.audienceMedia == null) {
+            setAudienceMedia(new java.util.ArrayList<AudienceMedia>(audienceMedia.length));
+        }
+        for (AudienceMedia ele : audienceMedia) {
+            this.audienceMedia.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProgramResult withAudienceMedia(java.util.Collection<AudienceMedia> audienceMedia) {
+        setAudienceMedia(audienceMedia);
         return this;
     }
 
@@ -584,6 +660,8 @@ public class DescribeProgramResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("AdBreaks: ").append(getAdBreaks()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAudienceMedia() != null)
+            sb.append("AudienceMedia: ").append(getAudienceMedia()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getClipRange() != null)
@@ -623,6 +701,10 @@ public class DescribeProgramResult extends com.amazonaws.AmazonWebServiceResult<
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getAudienceMedia() == null ^ this.getAudienceMedia() == null)
+            return false;
+        if (other.getAudienceMedia() != null && other.getAudienceMedia().equals(this.getAudienceMedia()) == false)
             return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
@@ -670,6 +752,7 @@ public class DescribeProgramResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getAdBreaks() == null) ? 0 : getAdBreaks().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAudienceMedia() == null) ? 0 : getAudienceMedia().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getClipRange() == null) ? 0 : getClipRange().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

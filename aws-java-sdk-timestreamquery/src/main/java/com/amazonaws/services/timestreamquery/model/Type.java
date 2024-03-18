@@ -32,7 +32,9 @@ public class Type implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information,
+     * see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.
      * </p>
      */
     private String scalarType;
@@ -57,11 +59,16 @@ public class Type implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information,
+     * see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.
      * </p>
      * 
      * @param scalarType
-     *        Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     *        Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     *        data types</a>.
      * @see ScalarType
      */
 
@@ -71,10 +78,15 @@ public class Type implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information,
+     * see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.
      * </p>
      * 
-     * @return Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     * @return Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     *         data types</a>.
      * @see ScalarType
      */
 
@@ -84,11 +96,16 @@ public class Type implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information,
+     * see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.
      * </p>
      * 
      * @param scalarType
-     *        Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     *        Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     *        data types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalarType
      */
@@ -100,11 +117,16 @@ public class Type implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     * Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information,
+     * see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.
      * </p>
      * 
      * @param scalarType
-     *        Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.
+     *        Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     *        data types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalarType
      */

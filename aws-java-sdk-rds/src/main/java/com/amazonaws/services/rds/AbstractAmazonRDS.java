@@ -769,6 +769,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public ModifyIntegrationResult modifyIntegration(ModifyIntegrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -31,6 +31,8 @@ public class ChannelMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<List> AUDIENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Audiences").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> CHANNELSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class ChannelMarshaller {
 
         try {
             protocolMarshaller.marshall(channel.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(channel.getAudiences(), AUDIENCES_BINDING);
             protocolMarshaller.marshall(channel.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(channel.getChannelState(), CHANNELSTATE_BINDING);
             protocolMarshaller.marshall(channel.getCreationTime(), CREATIONTIME_BINDING);

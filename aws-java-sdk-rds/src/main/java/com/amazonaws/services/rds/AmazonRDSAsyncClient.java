@@ -4967,6 +4967,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyIntegrationResult> modifyIntegrationAsync(ModifyIntegrationRequest request) {
+
+        return modifyIntegrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyIntegrationResult> modifyIntegrationAsync(final ModifyIntegrationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyIntegrationRequest, ModifyIntegrationResult> asyncHandler) {
+        final ModifyIntegrationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyIntegrationResult>() {
+            @Override
+            public ModifyIntegrationResult call() throws Exception {
+                ModifyIntegrationResult result = null;
+
+                try {
+                    result = executeModifyIntegration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<OptionGroup> modifyOptionGroupAsync(ModifyOptionGroupRequest request) {
 
         return modifyOptionGroupAsync(request, null);

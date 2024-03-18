@@ -60,6 +60,12 @@ public class ScheduleEntryJsonUnmarshaller implements Unmarshaller<ScheduleEntry
                     context.nextToken();
                     scheduleEntry.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Audiences", targetDepth)) {
+                    context.nextToken();
+                    scheduleEntry.setAudiences(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ChannelName", targetDepth)) {
                     context.nextToken();
                     scheduleEntry.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));

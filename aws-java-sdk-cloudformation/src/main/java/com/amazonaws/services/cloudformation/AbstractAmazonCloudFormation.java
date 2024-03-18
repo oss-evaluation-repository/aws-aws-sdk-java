@@ -334,6 +334,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public ListStackSetAutoDeploymentTargetsResult listStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListStackSetOperationResultsResult listStackSetOperationResults(ListStackSetOperationResultsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

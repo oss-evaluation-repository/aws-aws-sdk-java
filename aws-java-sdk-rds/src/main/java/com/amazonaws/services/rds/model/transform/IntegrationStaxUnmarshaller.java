@@ -149,6 +149,15 @@ public class IntegrationStaxUnmarshaller implements Unmarshaller<Integration, St
                     continue;
                 }
 
+                if (context.testExpression("DataFilter", targetDepth)) {
+                    integration.setDataFilter(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Description", targetDepth)) {
+                    integration.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return integration;

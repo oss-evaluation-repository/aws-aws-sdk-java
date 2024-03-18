@@ -35,6 +35,13 @@ public class ClipRange implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long endOffsetMillis;
+    /**
+     * <p>
+     * The start offset of the clip range, in milliseconds. This offset truncates the start at the number of
+     * milliseconds into the duration of the VOD source.
+     * </p>
+     */
+    private Long startOffsetMillis;
 
     /**
      * <p>
@@ -83,6 +90,52 @@ public class ClipRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The start offset of the clip range, in milliseconds. This offset truncates the start at the number of
+     * milliseconds into the duration of the VOD source.
+     * </p>
+     * 
+     * @param startOffsetMillis
+     *        The start offset of the clip range, in milliseconds. This offset truncates the start at the number of
+     *        milliseconds into the duration of the VOD source.
+     */
+
+    public void setStartOffsetMillis(Long startOffsetMillis) {
+        this.startOffsetMillis = startOffsetMillis;
+    }
+
+    /**
+     * <p>
+     * The start offset of the clip range, in milliseconds. This offset truncates the start at the number of
+     * milliseconds into the duration of the VOD source.
+     * </p>
+     * 
+     * @return The start offset of the clip range, in milliseconds. This offset truncates the start at the number of
+     *         milliseconds into the duration of the VOD source.
+     */
+
+    public Long getStartOffsetMillis() {
+        return this.startOffsetMillis;
+    }
+
+    /**
+     * <p>
+     * The start offset of the clip range, in milliseconds. This offset truncates the start at the number of
+     * milliseconds into the duration of the VOD source.
+     * </p>
+     * 
+     * @param startOffsetMillis
+     *        The start offset of the clip range, in milliseconds. This offset truncates the start at the number of
+     *        milliseconds into the duration of the VOD source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClipRange withStartOffsetMillis(Long startOffsetMillis) {
+        setStartOffsetMillis(startOffsetMillis);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +148,9 @@ public class ClipRange implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndOffsetMillis() != null)
-            sb.append("EndOffsetMillis: ").append(getEndOffsetMillis());
+            sb.append("EndOffsetMillis: ").append(getEndOffsetMillis()).append(",");
+        if (getStartOffsetMillis() != null)
+            sb.append("StartOffsetMillis: ").append(getStartOffsetMillis());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +169,10 @@ public class ClipRange implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndOffsetMillis() != null && other.getEndOffsetMillis().equals(this.getEndOffsetMillis()) == false)
             return false;
+        if (other.getStartOffsetMillis() == null ^ this.getStartOffsetMillis() == null)
+            return false;
+        if (other.getStartOffsetMillis() != null && other.getStartOffsetMillis().equals(this.getStartOffsetMillis()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +182,7 @@ public class ClipRange implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEndOffsetMillis() == null) ? 0 : getEndOffsetMillis().hashCode());
+        hashCode = prime * hashCode + ((getStartOffsetMillis() == null) ? 0 : getStartOffsetMillis().hashCode());
         return hashCode;
     }
 

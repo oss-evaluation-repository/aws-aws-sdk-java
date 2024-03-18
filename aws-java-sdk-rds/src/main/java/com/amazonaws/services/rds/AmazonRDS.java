@@ -3892,6 +3892,33 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Modifies a zero-ETL integration with Amazon Redshift.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, you can only modify integrations that have Aurora MySQL source DB clusters. Integrations with Aurora
+     * PostgreSQL and RDS sources currently don't support modifying the integration.
+     * </p>
+     * </note>
+     * 
+     * @param modifyIntegrationRequest
+     * @return Result of the ModifyIntegration operation returned by the service.
+     * @throws IntegrationNotFoundException
+     *         The specified integration could not be found.
+     * @throws InvalidIntegrationStateException
+     *         The integration is in an invalid state and can't perform the requested operation.
+     * @throws IntegrationConflictOperationException
+     *         A conflicting conditional operation is currently in progress against this resource. Typically occurs when
+     *         there are multiple requests being made to the same resource at the same time, and these requests conflict
+     *         with each other.
+     * @sample AmazonRDS.ModifyIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyIntegrationResult modifyIntegration(ModifyIntegrationRequest modifyIntegrationRequest);
+
+    /**
+     * <p>
      * Modifies an existing option group.
      * </p>
      * 

@@ -34,6 +34,8 @@ public class ScheduleEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApproximateStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<List> AUDIENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Audiences").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> LIVESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class ScheduleEntryMarshaller {
             protocolMarshaller.marshall(scheduleEntry.getApproximateDurationSeconds(), APPROXIMATEDURATIONSECONDS_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getApproximateStartTime(), APPROXIMATESTARTTIME_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(scheduleEntry.getAudiences(), AUDIENCES_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getLiveSourceName(), LIVESOURCENAME_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getProgramName(), PROGRAMNAME_BINDING);

@@ -6535,6 +6535,49 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Modifies a zero-ETL integration with Amazon Redshift.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, you can only modify integrations that have Aurora MySQL source DB clusters. Integrations with Aurora
+     * PostgreSQL and RDS sources currently don't support modifying the integration.
+     * </p>
+     * </note>
+     * 
+     * @param modifyIntegrationRequest
+     * @return A Java Future containing the result of the ModifyIntegration operation returned by the service.
+     * @sample AmazonRDSAsync.ModifyIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyIntegrationResult> modifyIntegrationAsync(ModifyIntegrationRequest modifyIntegrationRequest);
+
+    /**
+     * <p>
+     * Modifies a zero-ETL integration with Amazon Redshift.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, you can only modify integrations that have Aurora MySQL source DB clusters. Integrations with Aurora
+     * PostgreSQL and RDS sources currently don't support modifying the integration.
+     * </p>
+     * </note>
+     * 
+     * @param modifyIntegrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyIntegration operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ModifyIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyIntegrationResult> modifyIntegrationAsync(ModifyIntegrationRequest modifyIntegrationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyIntegrationRequest, ModifyIntegrationResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies an existing option group.
      * </p>
      * 

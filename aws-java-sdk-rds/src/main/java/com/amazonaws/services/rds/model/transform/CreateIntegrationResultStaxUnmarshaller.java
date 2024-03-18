@@ -149,6 +149,15 @@ public class CreateIntegrationResultStaxUnmarshaller implements Unmarshaller<Cre
                     continue;
                 }
 
+                if (context.testExpression("DataFilter", targetDepth)) {
+                    createIntegrationResult.setDataFilter(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Description", targetDepth)) {
+                    createIntegrationResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createIntegrationResult;

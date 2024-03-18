@@ -10021,6 +10021,76 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
+     * Modifies a zero-ETL integration with Amazon Redshift.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, you can only modify integrations that have Aurora MySQL source DB clusters. Integrations with Aurora
+     * PostgreSQL and RDS sources currently don't support modifying the integration.
+     * </p>
+     * </note>
+     * 
+     * @param modifyIntegrationRequest
+     * @return Result of the ModifyIntegration operation returned by the service.
+     * @throws IntegrationNotFoundException
+     *         The specified integration could not be found.
+     * @throws InvalidIntegrationStateException
+     *         The integration is in an invalid state and can't perform the requested operation.
+     * @throws IntegrationConflictOperationException
+     *         A conflicting conditional operation is currently in progress against this resource. Typically occurs when
+     *         there are multiple requests being made to the same resource at the same time, and these requests conflict
+     *         with each other.
+     * @sample AmazonRDS.ModifyIntegration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyIntegrationResult modifyIntegration(ModifyIntegrationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyIntegration(request);
+    }
+
+    @SdkInternalApi
+    final ModifyIntegrationResult executeModifyIntegration(ModifyIntegrationRequest modifyIntegrationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyIntegrationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyIntegrationRequest> request = null;
+        Response<ModifyIntegrationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyIntegrationRequestMarshaller().marshall(super.beforeMarshalling(modifyIntegrationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyIntegration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyIntegrationResult> responseHandler = new StaxResponseHandler<ModifyIntegrationResult>(
+                    new ModifyIntegrationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies an existing option group.
      * </p>
      * 

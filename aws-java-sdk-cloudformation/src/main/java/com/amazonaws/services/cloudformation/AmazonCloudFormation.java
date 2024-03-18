@@ -1457,6 +1457,21 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Returns summary information about deployment targets for a stack set.
+     * </p>
+     * 
+     * @param listStackSetAutoDeploymentTargetsRequest
+     * @return Result of the ListStackSetAutoDeploymentTargets operation returned by the service.
+     * @throws StackSetNotFoundException
+     *         The specified stack set doesn't exist.
+     * @sample AmazonCloudFormation.ListStackSetAutoDeploymentTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListStackSetAutoDeploymentTargetsResult listStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest listStackSetAutoDeploymentTargetsRequest);
+
+    /**
+     * <p>
      * Returns summary information about the results of a stack set operation.
      * </p>
      * 

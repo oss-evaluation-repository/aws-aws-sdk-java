@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetChannelScheduleRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUDIENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("audience").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> DURATIONMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class GetChannelScheduleRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getChannelScheduleRequest.getAudience(), AUDIENCE_BINDING);
             protocolMarshaller.marshall(getChannelScheduleRequest.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(getChannelScheduleRequest.getDurationMinutes(), DURATIONMINUTES_BINDING);
             protocolMarshaller.marshall(getChannelScheduleRequest.getMaxResults(), MAXRESULTS_BINDING);

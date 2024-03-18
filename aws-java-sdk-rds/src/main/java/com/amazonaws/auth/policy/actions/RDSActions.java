@@ -277,6 +277,8 @@ public enum RDSActions implements Action {
     ModifyEventSubscription("rds:ModifyEventSubscription"),
     /** Action for the ModifyGlobalCluster operation. */
     ModifyGlobalCluster("rds:ModifyGlobalCluster"),
+    /** Action for the ModifyIntegration operation. */
+    ModifyIntegration("rds:ModifyIntegration"),
     /** Action for the ModifyOptionGroup operation. */
     ModifyOptionGroup("rds:ModifyOptionGroup"),
     /** Action for the ModifyTenantDatabase operation. */
