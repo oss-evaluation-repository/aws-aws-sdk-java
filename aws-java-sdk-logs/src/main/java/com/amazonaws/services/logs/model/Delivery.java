@@ -65,8 +65,8 @@ public class Delivery implements Serializable, Cloneable, StructuredPojo {
     private String deliveryDestinationArn;
     /**
      * <p>
-     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis
-     * Data Firehose.
+     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
+     * Firehose.
      * </p>
      */
     private String deliveryDestinationType;
@@ -239,13 +239,13 @@ public class Delivery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis
-     * Data Firehose.
+     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
+     * Firehose.
      * </p>
      * 
      * @param deliveryDestinationType
      *        Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
-     *        Kinesis Data Firehose.
+     *        Firehose.
      * @see DeliveryDestinationType
      */
 
@@ -255,12 +255,12 @@ public class Delivery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis
-     * Data Firehose.
+     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
+     * Firehose.
      * </p>
      * 
      * @return Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
-     *         Kinesis Data Firehose.
+     *         Firehose.
      * @see DeliveryDestinationType
      */
 
@@ -270,13 +270,13 @@ public class Delivery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis
-     * Data Firehose.
+     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
+     * Firehose.
      * </p>
      * 
      * @param deliveryDestinationType
      *        Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
-     *        Kinesis Data Firehose.
+     *        Firehose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryDestinationType
      */
@@ -288,13 +288,13 @@ public class Delivery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or Kinesis
-     * Data Firehose.
+     * Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
+     * Firehose.
      * </p>
      * 
      * @param deliveryDestinationType
      *        Displays whether the delivery destination associated with this delivery is CloudWatch Logs, Amazon S3, or
-     *        Kinesis Data Firehose.
+     *        Firehose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryDestinationType
      */

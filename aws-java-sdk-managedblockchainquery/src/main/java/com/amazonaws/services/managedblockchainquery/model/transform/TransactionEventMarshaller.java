@@ -47,6 +47,18 @@ public class TransactionEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transactionId").build();
     private static final MarshallingInfo<Integer> VOUTINDEX_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("voutIndex").build();
+    private static final MarshallingInfo<Boolean> VOUTSPENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("voutSpent").build();
+    private static final MarshallingInfo<String> SPENTVOUTTRANSACTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spentVoutTransactionId").build();
+    private static final MarshallingInfo<String> SPENTVOUTTRANSACTIONHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spentVoutTransactionHash").build();
+    private static final MarshallingInfo<Integer> SPENTVOUTINDEX_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spentVoutIndex").build();
+    private static final MarshallingInfo<StructuredPojo> BLOCKCHAININSTANT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blockchainInstant").build();
+    private static final MarshallingInfo<String> CONFIRMATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("confirmationStatus").build();
 
     private static final TransactionEventMarshaller instance = new TransactionEventMarshaller();
 
@@ -74,6 +86,12 @@ public class TransactionEventMarshaller {
             protocolMarshaller.marshall(transactionEvent.getTokenId(), TOKENID_BINDING);
             protocolMarshaller.marshall(transactionEvent.getTransactionId(), TRANSACTIONID_BINDING);
             protocolMarshaller.marshall(transactionEvent.getVoutIndex(), VOUTINDEX_BINDING);
+            protocolMarshaller.marshall(transactionEvent.getVoutSpent(), VOUTSPENT_BINDING);
+            protocolMarshaller.marshall(transactionEvent.getSpentVoutTransactionId(), SPENTVOUTTRANSACTIONID_BINDING);
+            protocolMarshaller.marshall(transactionEvent.getSpentVoutTransactionHash(), SPENTVOUTTRANSACTIONHASH_BINDING);
+            protocolMarshaller.marshall(transactionEvent.getSpentVoutIndex(), SPENTVOUTINDEX_BINDING);
+            protocolMarshaller.marshall(transactionEvent.getBlockchainInstant(), BLOCKCHAININSTANT_BINDING);
+            protocolMarshaller.marshall(transactionEvent.getConfirmationStatus(), CONFIRMATIONSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

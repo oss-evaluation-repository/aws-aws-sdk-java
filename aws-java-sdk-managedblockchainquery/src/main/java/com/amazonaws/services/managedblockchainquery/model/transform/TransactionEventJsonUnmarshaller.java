@@ -88,6 +88,30 @@ public class TransactionEventJsonUnmarshaller implements Unmarshaller<Transactio
                     context.nextToken();
                     transactionEvent.setVoutIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("voutSpent", targetDepth)) {
+                    context.nextToken();
+                    transactionEvent.setVoutSpent(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("spentVoutTransactionId", targetDepth)) {
+                    context.nextToken();
+                    transactionEvent.setSpentVoutTransactionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("spentVoutTransactionHash", targetDepth)) {
+                    context.nextToken();
+                    transactionEvent.setSpentVoutTransactionHash(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("spentVoutIndex", targetDepth)) {
+                    context.nextToken();
+                    transactionEvent.setSpentVoutIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("blockchainInstant", targetDepth)) {
+                    context.nextToken();
+                    transactionEvent.setBlockchainInstant(BlockchainInstantJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("confirmationStatus", targetDepth)) {
+                    context.nextToken();
+                    transactionEvent.setConfirmationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

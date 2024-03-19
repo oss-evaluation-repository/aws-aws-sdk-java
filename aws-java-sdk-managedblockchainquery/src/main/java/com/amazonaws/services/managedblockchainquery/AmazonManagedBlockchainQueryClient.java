@@ -534,6 +534,81 @@ public class AmazonManagedBlockchainQueryClient extends AmazonWebServiceClient i
 
     /**
      * <p>
+     * Lists all the transaction events for an address on the blockchain.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported on the Bitcoin networks.
+     * </p>
+     * </note>
+     * 
+     * @param listFilteredTransactionEventsRequest
+     * @return Result of the ListFilteredTransactionEvents operation returned by the service.
+     * @throws ThrottlingException
+     *         The request or operation couldn't be performed because a service is throttling requests. The most common
+     *         source of throttling errors is when you create resources that exceed your service limit for this resource
+     *         type. Request a limit increase or delete unused resources, if possible.
+     * @throws ValidationException
+     *         The resource passed is invalid.
+     * @throws AccessDeniedException
+     *         The Amazon Web Services account doesn’t have access to this resource.
+     * @throws InternalServerException
+     *         The request processing has failed because of an internal error in the service.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded for this resource.
+     * @sample AmazonManagedBlockchainQuery.ListFilteredTransactionEvents
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFilteredTransactionEventsResult listFilteredTransactionEvents(ListFilteredTransactionEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFilteredTransactionEvents(request);
+    }
+
+    @SdkInternalApi
+    final ListFilteredTransactionEventsResult executeListFilteredTransactionEvents(ListFilteredTransactionEventsRequest listFilteredTransactionEventsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFilteredTransactionEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFilteredTransactionEventsRequest> request = null;
+        Response<ListFilteredTransactionEventsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFilteredTransactionEventsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listFilteredTransactionEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain Query");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFilteredTransactionEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFilteredTransactionEventsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListFilteredTransactionEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This action returns the following for a given blockchain network:
      * </p>
      * <ul>
@@ -623,7 +698,7 @@ public class AmazonManagedBlockchainQueryClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction event.
+     * Lists all the transaction events for a transaction
      * </p>
      * <note>
      * <p>
@@ -698,7 +773,7 @@ public class AmazonManagedBlockchainQueryClient extends AmazonWebServiceClient i
 
     /**
      * <p>
-     * Lists all of the transactions on a given wallet address or to a specific contract.
+     * Lists all the transaction events for a transaction.
      * </p>
      * 
      * @param listTransactionsRequest

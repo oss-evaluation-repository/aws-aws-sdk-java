@@ -13844,6 +13844,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes the specified EC2 Mac Dedicated Host or all of your EC2 Mac Dedicated Hosts.
+     * </p>
+     * 
+     * @param describeMacHostsRequest
+     * @return A Java Future containing the result of the DescribeMacHosts operation returned by the service.
+     * @sample AmazonEC2Async.DescribeMacHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMacHostsResult> describeMacHostsAsync(DescribeMacHostsRequest describeMacHostsRequest);
+
+    /**
+     * <p>
+     * Describes the specified EC2 Mac Dedicated Host or all of your EC2 Mac Dedicated Hosts.
+     * </p>
+     * 
+     * @param describeMacHostsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMacHosts operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeMacHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMacHostsResult> describeMacHostsAsync(DescribeMacHostsRequest describeMacHostsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMacHostsRequest, DescribeMacHostsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
      * </p>
      * <p>

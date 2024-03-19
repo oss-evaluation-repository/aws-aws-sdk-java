@@ -124,44 +124,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code>AWS::IAM::Policy</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a>
+     * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
      * </ul>
@@ -187,11 +190,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      * includes the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * > <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you reference a macro in your template the
-     * stack set operation will fail.
+     * >AWS::Include</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+     * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
+     * operation will fail.
      * </p>
      * </important></li>
      * </ul>
@@ -743,44 +746,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code>AWS::IAM::Policy</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a>
+     * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
      * </ul>
@@ -806,11 +812,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      * includes the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * > <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you reference a macro in your template the
-     * stack set operation will fail.
+     * >AWS::Include</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+     * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
+     * operation will fail.
      * </p>
      * </important></li>
      * </ul>
@@ -857,46 +863,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *         <code>AWS::IAM::AccessKey</code> </a>
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
+     *         >AWS::IAM::AccessKey</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *         <code>AWS::IAM::Group</code> </a>
+     *         <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *         ::IAM::Group</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *         <code>AWS::IAM::InstanceProfile</code> </a>
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *         >AWS::IAM::InstanceProfile</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *         <code>AWS::IAM::Policy</code> </a>
+     *         AWS::IAM::Policy</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *         <code>AWS::IAM::Role</code> </a>
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *         IAM::Role</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *         <code>AWS::IAM::User</code> </a>
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS
+     *         ::IAM::User</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *         <code>AWS::IAM::UserToGroupAddition</code> </a>
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *         >AWS::IAM::UserToGroupAddition</a>
      *         </p>
      *         </li>
      *         </ul>
@@ -923,11 +930,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      *         includes the <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *         > <code>AWS::Include</code> </a> and <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     *         <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you
-     *         specify this capability for a stack set with service-managed permissions, if you reference a macro in
-     *         your template the stack set operation will fail.
+     *         >AWS::Include</a> and <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *         >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     *         capability for a stack set with service-managed permissions, if you reference a macro in your template
+     *         the stack set operation will fail.
      *         </p>
      *         </important></li>
      * @see Capability
@@ -984,44 +991,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code>AWS::IAM::Policy</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a>
+     * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
      * </ul>
@@ -1047,11 +1057,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      * includes the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * > <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you reference a macro in your template the
-     * stack set operation will fail.
+     * >AWS::Include</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+     * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
+     * operation will fail.
      * </p>
      * </important></li>
      * </ul>
@@ -1100,45 +1110,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *        <code>AWS::IAM::AccessKey</code> </a>
+     *        AWS::IAM::AccessKey</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        <code>AWS::IAM::Group</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *        <code>AWS::IAM::InstanceProfile</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        <code>AWS::IAM::Policy</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        <code>AWS::IAM::Role</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        <code>AWS::IAM::User</code> </a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *        <code>AWS::IAM::UserToGroupAddition</code> </a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *        >AWS::IAM::InstanceProfile</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *        >AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -1164,11 +1176,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      *        includes the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *        > <code>AWS::Include</code> </a> and <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     *        <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you
-     *        specify this capability for a stack set with service-managed permissions, if you reference a macro in your
-     *        template the stack set operation will fail.
+     *        >AWS::Include</a> and <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
      *        </important></li>
      * @see Capability
@@ -1227,44 +1239,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code>AWS::IAM::Policy</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a>
+     * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
      * </ul>
@@ -1290,11 +1305,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      * includes the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * > <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you reference a macro in your template the
-     * stack set operation will fail.
+     * >AWS::Include</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+     * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
+     * operation will fail.
      * </p>
      * </important></li>
      * </ul>
@@ -1348,45 +1363,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *        <code>AWS::IAM::AccessKey</code> </a>
+     *        AWS::IAM::AccessKey</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        <code>AWS::IAM::Group</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *        <code>AWS::IAM::InstanceProfile</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        <code>AWS::IAM::Policy</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        <code>AWS::IAM::Role</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        <code>AWS::IAM::User</code> </a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *        <code>AWS::IAM::UserToGroupAddition</code> </a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *        >AWS::IAM::InstanceProfile</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *        >AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -1412,11 +1429,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      *        includes the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *        > <code>AWS::Include</code> </a> and <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     *        <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you
-     *        specify this capability for a stack set with service-managed permissions, if you reference a macro in your
-     *        template the stack set operation will fail.
+     *        >AWS::Include</a> and <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
      *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1477,44 +1494,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code>AWS::IAM::Policy</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a>
+     * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
      * </ul>
@@ -1540,11 +1560,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      * includes the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * > <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you reference a macro in your template the
-     * stack set operation will fail.
+     * >AWS::Include</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+     * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
+     * operation will fail.
      * </p>
      * </important></li>
      * </ul>
@@ -1593,45 +1613,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *        <code>AWS::IAM::AccessKey</code> </a>
+     *        AWS::IAM::AccessKey</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        <code>AWS::IAM::Group</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *        <code>AWS::IAM::InstanceProfile</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        <code>AWS::IAM::Policy</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        <code>AWS::IAM::Role</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        <code>AWS::IAM::User</code> </a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *        <code>AWS::IAM::UserToGroupAddition</code> </a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *        >AWS::IAM::InstanceProfile</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *        >AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -1657,11 +1679,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      *        includes the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *        > <code>AWS::Include</code> </a> and <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     *        <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you
-     *        specify this capability for a stack set with service-managed permissions, if you reference a macro in your
-     *        template the stack set operation will fail.
+     *        >AWS::Include</a> and <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
      *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1717,44 +1739,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code>AWS::IAM::Policy</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a>
+     * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
      * </ul>
@@ -1780,11 +1805,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      * includes the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * > <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you specify
-     * this capability for a stack set with service-managed permissions, if you reference a macro in your template the
-     * stack set operation will fail.
+     * >AWS::Include</a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+     * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
+     * operation will fail.
      * </p>
      * </important></li>
      * </ul>
@@ -1833,45 +1858,47 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *        <code>AWS::IAM::AccessKey</code> </a>
+     *        AWS::IAM::AccessKey</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        <code>AWS::IAM::Group</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *        <code>AWS::IAM::InstanceProfile</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        <code>AWS::IAM::Policy</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        <code>AWS::IAM::Role</code> </a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        <code>AWS::IAM::User</code> </a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *        <code>AWS::IAM::UserToGroupAddition</code> </a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *        >AWS::IAM::InstanceProfile</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *        >AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -1897,11 +1924,11 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Stack sets with service-managed permissions don't currently support the use of macros in templates. (This
      *        includes the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *        > <code>AWS::Include</code> </a> and <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     *        <code>AWS::Serverless</code> </a> transforms, which are macros hosted by CloudFormation.) Even if you
-     *        specify this capability for a stack set with service-managed permissions, if you reference a macro in your
-     *        template the stack set operation will fail.
+     *        >AWS::Include</a> and <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
      *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.

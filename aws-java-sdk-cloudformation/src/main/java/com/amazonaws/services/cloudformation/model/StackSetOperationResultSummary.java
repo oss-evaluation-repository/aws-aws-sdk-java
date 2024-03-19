@@ -94,7 +94,7 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      */
     private String organizationalUnitId;
@@ -667,14 +667,14 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitId
      *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
      *        for <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     *        <code>DeploymentTargets</code> </a>.
+     *        DeploymentTargets</a>.
      */
 
     public void setOrganizationalUnitId(String organizationalUnitId) {
@@ -685,13 +685,13 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @return [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
      *         for <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     *         <code>DeploymentTargets</code> </a>.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     *         >DeploymentTargets</a>.
      */
 
     public String getOrganizationalUnitId() {
@@ -702,14 +702,14 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitId
      *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
      *        for <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     *        <code>DeploymentTargets</code> </a>.
+     *        DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

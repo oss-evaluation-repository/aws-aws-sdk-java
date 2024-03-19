@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * This structure contains information about one <i>delivery destination</i> in your account. A delivery destination is
  * an Amazon Web Services resource that represents an Amazon Web Services service that logs can be sent to. CloudWatch
- * Logs, Amazon S3, are supported as Kinesis Data Firehose delivery destinations.
+ * Logs, Amazon S3, are supported as Firehose delivery destinations.
  * </p>
  * <p>
  * To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the
@@ -84,7 +84,7 @@ public class DeliveryDestination implements Serializable, Cloneable, StructuredP
     private String arn;
     /**
      * <p>
-     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * </p>
      */
     private String deliveryDestinationType;
@@ -189,11 +189,11 @@ public class DeliveryDestination implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * </p>
      * 
      * @param deliveryDestinationType
-     *        Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     *        Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * @see DeliveryDestinationType
      */
 
@@ -203,10 +203,10 @@ public class DeliveryDestination implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * </p>
      * 
-     * @return Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     * @return Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * @see DeliveryDestinationType
      */
 
@@ -216,11 +216,11 @@ public class DeliveryDestination implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * </p>
      * 
      * @param deliveryDestinationType
-     *        Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     *        Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryDestinationType
      */
@@ -232,11 +232,11 @@ public class DeliveryDestination implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     * Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * </p>
      * 
      * @param deliveryDestinationType
-     *        Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+     *        Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryDestinationType
      */

@@ -25,7 +25,7 @@ public class InternalServerException extends com.amazonaws.services.managedblock
 
     /**
      * <p>
-     * The container of the <code>retryAfterSeconds</code> value.
+     * Specifies the <code>retryAfterSeconds</code> value.
      * </p>
      */
     private Integer retryAfterSeconds;
@@ -42,11 +42,11 @@ public class InternalServerException extends com.amazonaws.services.managedblock
 
     /**
      * <p>
-     * The container of the <code>retryAfterSeconds</code> value.
+     * Specifies the <code>retryAfterSeconds</code> value.
      * </p>
      * 
      * @param retryAfterSeconds
-     *        The container of the <code>retryAfterSeconds</code> value.
+     *        Specifies the <code>retryAfterSeconds</code> value.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
@@ -56,10 +56,10 @@ public class InternalServerException extends com.amazonaws.services.managedblock
 
     /**
      * <p>
-     * The container of the <code>retryAfterSeconds</code> value.
+     * Specifies the <code>retryAfterSeconds</code> value.
      * </p>
      * 
-     * @return The container of the <code>retryAfterSeconds</code> value.
+     * @return Specifies the <code>retryAfterSeconds</code> value.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Retry-After")
@@ -69,11 +69,11 @@ public class InternalServerException extends com.amazonaws.services.managedblock
 
     /**
      * <p>
-     * The container of the <code>retryAfterSeconds</code> value.
+     * Specifies the <code>retryAfterSeconds</code> value.
      * </p>
      * 
      * @param retryAfterSeconds
-     *        The container of the <code>retryAfterSeconds</code> value.
+     *        Specifies the <code>retryAfterSeconds</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

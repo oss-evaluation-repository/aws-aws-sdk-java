@@ -53,6 +53,11 @@ public class AbstractAmazonManagedBlockchainQuery implements AmazonManagedBlockc
     }
 
     @Override
+    public ListFilteredTransactionEventsResult listFilteredTransactionEvents(ListFilteredTransactionEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTokenBalancesResult listTokenBalances(ListTokenBalancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -30,13 +30,13 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are too new.
+     * The index of the first log event that is too new. This field is inclusive.
      * </p>
      */
     private Integer tooNewLogEventStartIndex;
     /**
      * <p>
-     * The log events that are dated too far in the past.
+     * The index of the last log event that is too old. This field is exclusive.
      * </p>
      */
     private Integer tooOldLogEventEndIndex;
@@ -49,11 +49,11 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are too new.
+     * The index of the first log event that is too new. This field is inclusive.
      * </p>
      * 
      * @param tooNewLogEventStartIndex
-     *        The log events that are too new.
+     *        The index of the first log event that is too new. This field is inclusive.
      */
 
     public void setTooNewLogEventStartIndex(Integer tooNewLogEventStartIndex) {
@@ -62,10 +62,10 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are too new.
+     * The index of the first log event that is too new. This field is inclusive.
      * </p>
      * 
-     * @return The log events that are too new.
+     * @return The index of the first log event that is too new. This field is inclusive.
      */
 
     public Integer getTooNewLogEventStartIndex() {
@@ -74,11 +74,11 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are too new.
+     * The index of the first log event that is too new. This field is inclusive.
      * </p>
      * 
      * @param tooNewLogEventStartIndex
-     *        The log events that are too new.
+     *        The index of the first log event that is too new. This field is inclusive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are dated too far in the past.
+     * The index of the last log event that is too old. This field is exclusive.
      * </p>
      * 
      * @param tooOldLogEventEndIndex
-     *        The log events that are dated too far in the past.
+     *        The index of the last log event that is too old. This field is exclusive.
      */
 
     public void setTooOldLogEventEndIndex(Integer tooOldLogEventEndIndex) {
@@ -102,10 +102,10 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are dated too far in the past.
+     * The index of the last log event that is too old. This field is exclusive.
      * </p>
      * 
-     * @return The log events that are dated too far in the past.
+     * @return The index of the last log event that is too old. This field is exclusive.
      */
 
     public Integer getTooOldLogEventEndIndex() {
@@ -114,11 +114,11 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are dated too far in the past.
+     * The index of the last log event that is too old. This field is exclusive.
      * </p>
      * 
      * @param tooOldLogEventEndIndex
-     *        The log events that are dated too far in the past.
+     *        The index of the last log event that is too old. This field is exclusive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

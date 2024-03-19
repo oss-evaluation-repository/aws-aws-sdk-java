@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * This structure contains information about one <i>delivery source</i> in your account. A delivery source is an Amazon
  * Web Services resource that sends logs to an Amazon Web Services destination. The destination can be CloudWatch Logs,
- * Amazon S3, or Kinesis Data Firehose.
+ * Amazon S3, or Firehose.
  * </p>
  * <p>
  * Only some Amazon Web Services services support being configured as a delivery source. These services are listed as

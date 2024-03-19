@@ -43,20 +43,9 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
     private String dataviewName;
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String azMode;
     /**
@@ -115,6 +104,12 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private Boolean autoUpdate;
+    /**
+     * <p>
+     * Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     */
+    private Boolean readWrite;
     /**
      * <p>
      * A description of the dataview.
@@ -258,34 +253,13 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. This can be one of the following </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>SINGLE</code> – Assigns one availability zone per cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MULTI</code> – Assigns all the availability zones per cluster.
-     *        </p>
-     *        </li>
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @see KxAzMode
      */
 
@@ -295,33 +269,12 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The number of availability zones you want to assign per cluster. This can be one of the following </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>SINGLE</code> – Assigns one availability zone per cluster.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MULTI</code> – Assigns all the availability zones per cluster.
-     *         </p>
-     *         </li>
+     * @return The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *         <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @see KxAzMode
      */
 
@@ -331,34 +284,13 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. This can be one of the following </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>SINGLE</code> – Assigns one availability zone per cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MULTI</code> – Assigns all the availability zones per cluster.
-     *        </p>
-     *        </li>
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KxAzMode
      */
@@ -370,34 +302,13 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. This can be one of the following </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>SINGLE</code> – Assigns one availability zone per cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MULTI</code> – Assigns all the availability zones per cluster.
-     *        </p>
-     *        </li>
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KxAzMode
      */
@@ -900,6 +811,58 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     * 
+     * @param readWrite
+     *        Returns True if the dataview is created as writeable and False otherwise.
+     */
+
+    public void setReadWrite(Boolean readWrite) {
+        this.readWrite = readWrite;
+    }
+
+    /**
+     * <p>
+     * Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     * 
+     * @return Returns True if the dataview is created as writeable and False otherwise.
+     */
+
+    public Boolean getReadWrite() {
+        return this.readWrite;
+    }
+
+    /**
+     * <p>
+     * Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     * 
+     * @param readWrite
+     *        Returns True if the dataview is created as writeable and False otherwise.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateKxDataviewResult withReadWrite(Boolean readWrite) {
+        setReadWrite(readWrite);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     * 
+     * @return Returns True if the dataview is created as writeable and False otherwise.
+     */
+
+    public Boolean isReadWrite() {
+        return this.readWrite;
+    }
+
+    /**
+     * <p>
      * A description of the dataview.
      * </p>
      * 
@@ -1068,6 +1031,8 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("Status: ").append(getStatus()).append(",");
         if (getAutoUpdate() != null)
             sb.append("AutoUpdate: ").append(getAutoUpdate()).append(",");
+        if (getReadWrite() != null)
+            sb.append("ReadWrite: ").append(getReadWrite()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getCreatedTimestamp() != null)
@@ -1128,6 +1093,10 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getAutoUpdate() != null && other.getAutoUpdate().equals(this.getAutoUpdate()) == false)
             return false;
+        if (other.getReadWrite() == null ^ this.getReadWrite() == null)
+            return false;
+        if (other.getReadWrite() != null && other.getReadWrite().equals(this.getReadWrite()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -1158,6 +1127,7 @@ public class UpdateKxDataviewResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getActiveVersions() == null) ? 0 : getActiveVersions().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getAutoUpdate() == null) ? 0 : getAutoUpdate().hashCode());
+        hashCode = prime * hashCode + ((getReadWrite() == null) ? 0 : getReadWrite().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTimestamp() == null) ? 0 : getLastModifiedTimestamp().hashCode());

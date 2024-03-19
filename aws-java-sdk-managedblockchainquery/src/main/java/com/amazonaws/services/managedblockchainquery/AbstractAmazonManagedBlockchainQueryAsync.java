@@ -93,6 +93,19 @@ public class AbstractAmazonManagedBlockchainQueryAsync extends AbstractAmazonMan
     }
 
     @Override
+    public java.util.concurrent.Future<ListFilteredTransactionEventsResult> listFilteredTransactionEventsAsync(ListFilteredTransactionEventsRequest request) {
+
+        return listFilteredTransactionEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFilteredTransactionEventsResult> listFilteredTransactionEventsAsync(ListFilteredTransactionEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFilteredTransactionEventsRequest, ListFilteredTransactionEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTokenBalancesResult> listTokenBalancesAsync(ListTokenBalancesRequest request) {
 
         return listTokenBalancesAsync(request, null);

@@ -97,6 +97,10 @@ public class KxDataviewListEntryJsonUnmarshaller implements Unmarshaller<KxDatav
                     context.nextToken();
                     kxDataviewListEntry.setAutoUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("readWrite", targetDepth)) {
+                    context.nextToken();
+                    kxDataviewListEntry.setReadWrite(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("createdTimestamp", targetDepth)) {
                     context.nextToken();
                     kxDataviewListEntry.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

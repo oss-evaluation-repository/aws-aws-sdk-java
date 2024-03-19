@@ -99,8 +99,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update the stack set template.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameterOverrides;
@@ -481,8 +481,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update the stack set template.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
      * </p>
      * 
      * @return A list of stack set parameters whose values you want to override in the selected stack instances.</p>
@@ -523,8 +523,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      *         parameter itself, use <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     *         <code>UpdateStackSet</code> </a> to update the stack set template.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *         >UpdateStackSet</a> to update the stack set template.
      */
 
     public java.util.List<Parameter> getParameterOverrides() {
@@ -575,8 +575,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update the stack set template.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
      * </p>
      * 
      * @param parameterOverrides
@@ -618,8 +618,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      *        parameter itself, use <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     *        <code>UpdateStackSet</code> </a> to update the stack set template.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *        >UpdateStackSet</a> to update the stack set template.
      */
 
     public void setParameterOverrides(java.util.Collection<Parameter> parameterOverrides) {
@@ -672,8 +672,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update the stack set template.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -720,8 +720,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      *        parameter itself, use <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     *        <code>UpdateStackSet</code> </a> to update the stack set template.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *        >UpdateStackSet</a> to update the stack set template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -776,8 +776,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update the stack set template.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update the stack set template.
      * </p>
      * 
      * @param parameterOverrides
@@ -819,8 +819,8 @@ public class CreateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      *        parameter itself, use <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     *        <code>UpdateStackSet</code> </a> to update the stack set template.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *        >UpdateStackSet</a> to update the stack set template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

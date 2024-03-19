@@ -54,8 +54,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data
      * terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally
      * use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If
-     * you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already
-     * exist.
+     * you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
      * </p>
      * </li>
      * <li>
@@ -107,7 +106,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.
+     * An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -119,8 +118,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A logical destination in a different account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as
-     * logical destinations.
+     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+     * destinations.
      * </p>
      * </li>
      * </ul>
@@ -243,8 +242,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data
      * terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally
      * use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If
-     * you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already
-     * exist.
+     * you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
      * </p>
      * </li>
      * <li>
@@ -296,7 +294,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.
+     * An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -308,8 +306,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A logical destination in a different account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as
-     * logical destinations.
+     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+     * destinations.
      * </p>
      * </li>
      * </ul>
@@ -356,8 +354,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive
      *        data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can
      *        optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit
-     *        findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3
-     *        buckets, they must already exist.
+     *        findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must
+     *        already exist.
      *        </p>
      *        </li>
      *        <li>
@@ -410,8 +408,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account
-     *        delivery.
+     *        An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      *        </p>
      *        </li>
      *        <li>
@@ -423,8 +420,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        A logical destination in a different account created with <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     *        >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     *        supported as logical destinations.
+     *        >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     *        logical destinations.
      *        </p>
      *        </li>
      *        </ul>
@@ -477,8 +474,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data
      * terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally
      * use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If
-     * you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already
-     * exist.
+     * you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
      * </p>
      * </li>
      * <li>
@@ -530,7 +526,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.
+     * An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -542,8 +538,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A logical destination in a different account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as
-     * logical destinations.
+     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+     * destinations.
      * </p>
      * </li>
      * </ul>
@@ -589,8 +585,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive
      *         data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You
      *         can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send
-     *         audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3
-     *         buckets, they must already exist.
+     *         audit findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they
+     *         must already exist.
      *         </p>
      *         </li>
      *         <li>
@@ -643,8 +639,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account
-     *         delivery.
+     *         An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      *         </p>
      *         </li>
      *         <li>
@@ -656,8 +651,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         A logical destination in a different account created with <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     *         >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     *         supported as logical destinations.
+     *         >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     *         logical destinations.
      *         </p>
      *         </li>
      *         </ul>
@@ -710,8 +705,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data
      * terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally
      * use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If
-     * you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already
-     * exist.
+     * you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
      * </p>
      * </li>
      * <li>
@@ -763,7 +757,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.
+     * An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -775,8 +769,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A logical destination in a different account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as
-     * logical destinations.
+     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+     * destinations.
      * </p>
      * </li>
      * </ul>
@@ -823,8 +817,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive
      *        data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can
      *        optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit
-     *        findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3
-     *        buckets, they must already exist.
+     *        findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must
+     *        already exist.
      *        </p>
      *        </li>
      *        <li>
@@ -877,8 +871,7 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account
-     *        delivery.
+     *        An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      *        </p>
      *        </li>
      *        <li>
@@ -890,8 +883,8 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        A logical destination in a different account created with <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     *        >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     *        supported as logical destinations.
+     *        >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     *        logical destinations.
      *        </p>
      *        </li>
      *        </ul>

@@ -31,11 +31,11 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For public extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For private extensions, this will be the
-     * ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.
      * </p>
      * <p>
      * Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -50,8 +50,8 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The configuration data must be formatted as JSON, and validate against the schema returned in the
      * <code>ConfigurationSchema</code> response element of <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
-     * <code>DescribeType</code> </a>. For more information, see <a href=
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      * >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -92,11 +92,11 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For public extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For private extensions, this will be the
-     * ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.
      * </p>
      * <p>
      * Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -107,11 +107,11 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      *        The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *        <p>
      *        For public extensions, this will be the ARN assigned when you call the <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *        <code>ActivateType</code> </a> API operation in this account and Region. For private extensions, this will
-     *        be the ARN assigned when you call the <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *        <code>RegisterType</code> </a> API operation in this account and Region.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *        >ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN
+     *        assigned when you call the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *        >RegisterType</a> API operation in this account and Region.
      *        </p>
      *        <p>
      *        Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -128,11 +128,11 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For public extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For private extensions, this will be the
-     * ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.
      * </p>
      * <p>
      * Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -142,11 +142,11 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * @return The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *         <p>
      *         For public extensions, this will be the ARN assigned when you call the <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *         <code>ActivateType</code> </a> API operation in this account and Region. For private extensions, this
-     *         will be the ARN assigned when you call the <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *         <code>RegisterType</code> </a> API operation in this account and Region.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *         >ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN
+     *         assigned when you call the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *         >RegisterType</a> API operation in this account and Region.
      *         </p>
      *         <p>
      *         Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -163,11 +163,11 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For public extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For private extensions, this will be the
-     * ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.
      * </p>
      * <p>
      * Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -178,11 +178,11 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      *        The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *        <p>
      *        For public extensions, this will be the ARN assigned when you call the <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *        <code>ActivateType</code> </a> API operation in this account and Region. For private extensions, this will
-     *        be the ARN assigned when you call the <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *        <code>RegisterType</code> </a> API operation in this account and Region.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *        >ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN
+     *        assigned when you call the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *        >RegisterType</a> API operation in this account and Region.
      *        </p>
      *        <p>
      *        Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an
@@ -202,8 +202,8 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The configuration data must be formatted as JSON, and validate against the schema returned in the
      * <code>ConfigurationSchema</code> response element of <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
-     * <code>DescribeType</code> </a>. For more information, see <a href=
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      * >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -213,8 +213,8 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The configuration data must be formatted as JSON, and validate against the schema returned in the
      *        <code>ConfigurationSchema</code> response element of <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
-     *        <code>DescribeType</code> </a>. For more information, see <a href=
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html"
+     *        >DescribeType</a>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      *        >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User
      *        Guide</i>.
@@ -231,8 +231,8 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The configuration data must be formatted as JSON, and validate against the schema returned in the
      * <code>ConfigurationSchema</code> response element of <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
-     * <code>DescribeType</code> </a>. For more information, see <a href=
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      * >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -241,8 +241,8 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         The configuration data must be formatted as JSON, and validate against the schema returned in the
      *         <code>ConfigurationSchema</code> response element of <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
-     *         <code>DescribeType</code> </a>. For more information, see <a href=
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html"
+     *         >DescribeType</a>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      *         >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User
      *         Guide</i>.
@@ -259,8 +259,8 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The configuration data must be formatted as JSON, and validate against the schema returned in the
      * <code>ConfigurationSchema</code> response element of <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
-     * <code>DescribeType</code> </a>. For more information, see <a href=
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      * >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
@@ -270,8 +270,8 @@ public class SetTypeConfigurationRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        The configuration data must be formatted as JSON, and validate against the schema returned in the
      *        <code>ConfigurationSchema</code> response element of <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
-     *        <code>DescribeType</code> </a>. For more information, see <a href=
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html"
+     *        >DescribeType</a>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration"
      *        >Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User
      *        Guide</i>.

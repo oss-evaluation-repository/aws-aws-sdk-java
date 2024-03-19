@@ -51,8 +51,7 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      * The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data
      * terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally
      * use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If
-     * you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already
-     * exist.
+     * you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
      * </p>
      * </li>
      * <li>
@@ -147,8 +146,7 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      * The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data
      * terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally
      * use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If
-     * you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already
-     * exist.
+     * you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
      * </p>
      * </li>
      * <li>
@@ -199,8 +197,8 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      *        The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive
      *        data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can
      *        optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit
-     *        findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3
-     *        buckets, they must already exist.
+     *        findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must
+     *        already exist.
      *        </p>
      *        </li>
      *        <li>
@@ -257,8 +255,7 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      * The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data
      * terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally
      * use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If
-     * you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already
-     * exist.
+     * you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
      * </p>
      * </li>
      * <li>
@@ -308,8 +305,8 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      *         The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive
      *         data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You
      *         can optionally use that <code>FindingsDestination</code> object to list one or more destinations to send
-     *         audit findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3
-     *         buckets, they must already exist.
+     *         audit findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they
+     *         must already exist.
      *         </p>
      *         </li>
      *         <li>
@@ -366,8 +363,7 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      * The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive data
      * terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can optionally
      * use that <code>FindingsDestination</code> object to list one or more destinations to send audit findings to. If
-     * you specify destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already
-     * exist.
+     * you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
      * </p>
      * </li>
      * <li>
@@ -418,8 +414,8 @@ public class PutDataProtectionPolicyRequest extends com.amazonaws.AmazonWebServi
      *        The <code>Operation</code> property with an <code>Audit</code> action is required to find the sensitive
      *        data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code> object. You can
      *        optionally use that <code>FindingsDestination</code> object to list one or more destinations to send audit
-     *        findings to. If you specify destinations such as log groups, Kinesis Data Firehose streams, and S3
-     *        buckets, they must already exist.
+     *        findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must
+     *        already exist.
      *        </p>
      *        </li>
      *        <li>

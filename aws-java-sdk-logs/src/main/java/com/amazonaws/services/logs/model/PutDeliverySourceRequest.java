@@ -40,9 +40,26 @@ public class PutDeliverySourceRequest extends com.amazonaws.AmazonWebServiceRequ
     private String resourceArn;
     /**
      * <p>
-     * Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is
-     * <code>EVENT_LOGS</code>.
+     * Defines the type of log that the source is sending.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String logType;
     /**
@@ -144,13 +161,47 @@ public class PutDeliverySourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is
-     * <code>EVENT_LOGS</code>.
+     * Defines the type of log that the source is sending.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param logType
-     *        Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is
-     *        <code>EVENT_LOGS</code>.
+     *        Defines the type of log that the source is sending.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>,
+     *        <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     *        <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setLogType(String logType) {
@@ -159,12 +210,46 @@ public class PutDeliverySourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is
-     * <code>EVENT_LOGS</code>.
+     * Defines the type of log that the source is sending.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is
-     *         <code>EVENT_LOGS</code>.
+     * @return Defines the type of log that the source is sending.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>,
+     *         <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     *         <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getLogType() {
@@ -173,13 +258,47 @@ public class PutDeliverySourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is
-     * <code>EVENT_LOGS</code>.
+     * Defines the type of log that the source is sending.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param logType
-     *        Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is
-     *        <code>EVENT_LOGS</code>.
+     *        Defines the type of log that the source is sending.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>,
+     *        <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     *        <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

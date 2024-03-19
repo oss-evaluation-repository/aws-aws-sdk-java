@@ -89,6 +89,10 @@ public class GetKxDataviewResultJsonUnmarshaller implements Unmarshaller<GetKxDa
                     context.nextToken();
                     getKxDataviewResult.setAutoUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("readWrite", targetDepth)) {
+                    context.nextToken();
+                    getKxDataviewResult.setReadWrite(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("environmentId", targetDepth)) {
                     context.nextToken();
                     getKxDataviewResult.setEnvironmentId(context.getUnmarshaller(String.class).unmarshall(context));

@@ -270,6 +270,53 @@ public interface AmazonManagedBlockchainQueryAsync extends AmazonManagedBlockcha
 
     /**
      * <p>
+     * Lists all the transaction events for an address on the blockchain.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported on the Bitcoin networks.
+     * </p>
+     * </note>
+     * 
+     * @param listFilteredTransactionEventsRequest
+     * @return A Java Future containing the result of the ListFilteredTransactionEvents operation returned by the
+     *         service.
+     * @sample AmazonManagedBlockchainQueryAsync.ListFilteredTransactionEvents
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFilteredTransactionEventsResult> listFilteredTransactionEventsAsync(
+            ListFilteredTransactionEventsRequest listFilteredTransactionEventsRequest);
+
+    /**
+     * <p>
+     * Lists all the transaction events for an address on the blockchain.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported on the Bitcoin networks.
+     * </p>
+     * </note>
+     * 
+     * @param listFilteredTransactionEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFilteredTransactionEvents operation returned by the
+     *         service.
+     * @sample AmazonManagedBlockchainQueryAsyncHandler.ListFilteredTransactionEvents
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFilteredTransactionEventsResult> listFilteredTransactionEventsAsync(
+            ListFilteredTransactionEventsRequest listFilteredTransactionEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFilteredTransactionEventsRequest, ListFilteredTransactionEventsResult> asyncHandler);
+
+    /**
+     * <p>
      * This action returns the following for a given blockchain network:
      * </p>
      * <ul>
@@ -345,7 +392,7 @@ public interface AmazonManagedBlockchainQueryAsync extends AmazonManagedBlockcha
 
     /**
      * <p>
-     * An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction event.
+     * Lists all the transaction events for a transaction
      * </p>
      * <note>
      * <p>
@@ -365,7 +412,7 @@ public interface AmazonManagedBlockchainQueryAsync extends AmazonManagedBlockcha
 
     /**
      * <p>
-     * An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction event.
+     * Lists all the transaction events for a transaction
      * </p>
      * <note>
      * <p>
@@ -390,7 +437,7 @@ public interface AmazonManagedBlockchainQueryAsync extends AmazonManagedBlockcha
 
     /**
      * <p>
-     * Lists all of the transactions on a given wallet address or to a specific contract.
+     * Lists all the transaction events for a transaction.
      * </p>
      * 
      * @param listTransactionsRequest
@@ -403,7 +450,7 @@ public interface AmazonManagedBlockchainQueryAsync extends AmazonManagedBlockcha
 
     /**
      * <p>
-     * Lists all of the transactions on a given wallet address or to a specific contract.
+     * Lists all the transaction events for a transaction.
      * </p>
      * 
      * @param listTransactionsRequest

@@ -18816,6 +18816,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes the specified EC2 Mac Dedicated Host or all of your EC2 Mac Dedicated Hosts.
+     * </p>
+     * 
+     * @param describeMacHostsRequest
+     * @return Result of the DescribeMacHosts operation returned by the service.
+     * @sample AmazonEC2.DescribeMacHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeMacHostsResult describeMacHosts(DescribeMacHostsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMacHosts(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMacHostsResult executeDescribeMacHosts(DescribeMacHostsRequest describeMacHostsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMacHostsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMacHostsRequest> request = null;
+        Response<DescribeMacHostsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMacHostsRequestMarshaller().marshall(super.beforeMarshalling(describeMacHostsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMacHosts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeMacHostsResult> responseHandler = new StaxResponseHandler<DescribeMacHostsResult>(
+                    new DescribeMacHostsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
      * </p>
      * <p>

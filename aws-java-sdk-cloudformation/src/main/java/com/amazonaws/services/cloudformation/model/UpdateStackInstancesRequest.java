@@ -104,10 +104,10 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a
      * template, before you can override the parameter value specified in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override
-     * the parameter value using <code>UpdateStackInstances</code>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the
+     * stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameterOverrides;
@@ -513,10 +513,10 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a
      * template, before you can override the parameter value specified in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override
-     * the parameter value using <code>UpdateStackInstances</code>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the
+     * stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.
      * </p>
      * 
      * @return A list of input parameters whose values you want to update for the specified stack instances.</p>
@@ -559,10 +559,10 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *         parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a
      *         parameter to a template, before you can override the parameter value specified in the stack set you must
      *         first use <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     *         <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter
-     *         value specified in the stack set. Once a stack instance has been updated with the new parameter, you can
-     *         then override the parameter value using <code>UpdateStackInstances</code>.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     *         >UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified
+     *         in the stack set. Once a stack instance has been updated with the new parameter, you can then override
+     *         the parameter value using <code>UpdateStackInstances</code>.
      */
 
     public java.util.List<Parameter> getParameterOverrides() {
@@ -614,10 +614,10 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a
      * template, before you can override the parameter value specified in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override
-     * the parameter value using <code>UpdateStackInstances</code>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the
+     * stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.
      * </p>
      * 
      * @param parameterOverrides
@@ -661,9 +661,9 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter
      *        to a template, before you can override the parameter value specified in the stack set you must first use
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     *        <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter
-     *        value specified in the stack set. Once a stack instance has been updated with the new parameter, you can
-     *        then override the parameter value using <code>UpdateStackInstances</code>.
+     *        UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified
+     *        in the stack set. Once a stack instance has been updated with the new parameter, you can then override the
+     *        parameter value using <code>UpdateStackInstances</code>.
      */
 
     public void setParameterOverrides(java.util.Collection<Parameter> parameterOverrides) {
@@ -717,10 +717,10 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a
      * template, before you can override the parameter value specified in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override
-     * the parameter value using <code>UpdateStackInstances</code>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the
+     * stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -769,9 +769,9 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter
      *        to a template, before you can override the parameter value specified in the stack set you must first use
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     *        <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter
-     *        value specified in the stack set. Once a stack instance has been updated with the new parameter, you can
-     *        then override the parameter value using <code>UpdateStackInstances</code>.
+     *        UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified
+     *        in the stack set. Once a stack instance has been updated with the new parameter, you can then override the
+     *        parameter value using <code>UpdateStackInstances</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -827,10 +827,10 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * You can only override the parameter <i>values</i> that are specified in the stack set; to add or delete a
      * parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter to a
      * template, before you can override the parameter value specified in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new parameter, you can then override
-     * the parameter value using <code>UpdateStackInstances</code>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html"
+     * >UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified in the
+     * stack set. Once a stack instance has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.
      * </p>
      * 
      * @param parameterOverrides
@@ -874,9 +874,9 @@ public class UpdateStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        parameter itself, use <code>UpdateStackSet</code> to update the stack set template. If you add a parameter
      *        to a template, before you can override the parameter value specified in the stack set you must first use
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
-     *        <code>UpdateStackSet</code> </a> to update all stack instances with the updated template and parameter
-     *        value specified in the stack set. Once a stack instance has been updated with the new parameter, you can
-     *        then override the parameter value using <code>UpdateStackInstances</code>.
+     *        UpdateStackSet</a> to update all stack instances with the updated template and parameter value specified
+     *        in the stack set. Once a stack instance has been updated with the new parameter, you can then override the
+     *        parameter value using <code>UpdateStackInstances</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

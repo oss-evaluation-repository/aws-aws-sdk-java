@@ -270,7 +270,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
-     * Kinesis Data Firehose.
+     * Firehose.
      * </p>
      * <p>
      * To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the
@@ -338,7 +338,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
-     * Kinesis Data Firehose.
+     * Firehose.
      * </p>
      * <p>
      * To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the
@@ -1423,8 +1423,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The
-     * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only some Amazon Web Services services
-     * support being configured as a delivery source. These services are listed in <a
+     * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web Services services support being
+     * configured as a delivery source. These services are listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable logging
      * from Amazon Web Services services.</a>
      * </p>
@@ -1450,8 +1450,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The
-     * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only some Amazon Web Services services
-     * support being configured as a delivery source. These services are listed in <a
+     * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web Services services support being
+     * configured as a delivery source. These services are listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable logging
      * from Amazon Web Services services.</a>
      * </p>
@@ -2133,8 +2133,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The
-     * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only some Amazon Web Services services
-     * support being configured as a delivery source. These services are listed in <a
+     * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web Services services support being
+     * configured as a delivery source. These services are listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable logging
      * from Amazon Web Services services.</a>
      * </p>
@@ -2163,8 +2163,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The
-     * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only some Amazon Web Services services
-     * support being configured as a delivery source. These services are listed in <a
+     * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web Services services support being
+     * configured as a delivery source. These services are listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable logging
      * from Amazon Web Services services.</a>
      * </p>
@@ -2776,9 +2776,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * A subscription filter policy sets up a real-time feed of log events from CloudWatch Logs to other Amazon Web
      * Services services. Account-level subscription filter policies apply to both existing log groups and log groups
-     * that are created later in this account. Supported destinations are Kinesis Data Streams, Kinesis Data Firehose,
-     * and Lambda. When log events are sent to the receiving service, they are Base64 encoded and compressed with the
-     * GZIP format.
+     * that are created later in this account. Supported destinations are Kinesis Data Streams, Firehose, and Lambda.
+     * When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.
      * </p>
      * <p>
      * The following destinations are supported for subscription filters:
@@ -2791,7 +2790,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.
+     * An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -2803,8 +2802,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * A logical destination in a different account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as
-     * logical destinations.
+     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+     * destinations.
      * </p>
      * </li>
      * </ul>
@@ -2879,9 +2878,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * A subscription filter policy sets up a real-time feed of log events from CloudWatch Logs to other Amazon Web
      * Services services. Account-level subscription filter policies apply to both existing log groups and log groups
-     * that are created later in this account. Supported destinations are Kinesis Data Streams, Kinesis Data Firehose,
-     * and Lambda. When log events are sent to the receiving service, they are Base64 encoded and compressed with the
-     * GZIP format.
+     * that are created later in this account. Supported destinations are Kinesis Data Streams, Firehose, and Lambda.
+     * When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.
      * </p>
      * <p>
      * The following destinations are supported for subscription filters:
@@ -2894,7 +2892,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.
+     * An Firehose data stream in the same account as the subscription policy, for same-account delivery.
      * </p>
      * </li>
      * <li>
@@ -2906,8 +2904,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * A logical destination in a different account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
-     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as
-     * logical destinations.
+     * >PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+     * destinations.
      * </p>
      * </li>
      * </ul>
@@ -3026,7 +3024,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * Creates or updates a logical <i>delivery destination</i>. A delivery destination is an Amazon Web Services
      * resource that represents an Amazon Web Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and
-     * Kinesis Data Firehose are supported as logs delivery destinations.
+     * Firehose are supported as logs delivery destinations.
      * </p>
      * <p>
      * To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the
@@ -3092,7 +3090,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * Creates or updates a logical <i>delivery destination</i>. A delivery destination is an Amazon Web Services
      * resource that represents an Amazon Web Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and
-     * Kinesis Data Firehose are supported as logs delivery destinations.
+     * Firehose are supported as logs delivery destinations.
      * </p>
      * <p>
      * To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the
@@ -3285,8 +3283,7 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Creates or updates a logical <i>delivery source</i>. A delivery source represents an Amazon Web Services resource
-     * that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Kinesis
-     * Data Firehose.
+     * that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.
      * </p>
      * <p>
      * To configure logs delivery between a delivery destination and an Amazon Web Services service that is supported as
@@ -3351,8 +3348,7 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Creates or updates a logical <i>delivery source</i>. A delivery source represents an Amazon Web Services resource
-     * that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Kinesis
-     * Data Firehose.
+     * that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.
      * </p>
      * <p>
      * To configure logs delivery between a delivery destination and an Amazon Web Services service that is supported as
@@ -3951,7 +3947,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * A logical destination created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
      * >PutDestination</a> that belongs to a different account, for cross-account delivery. We currently support Kinesis
-     * Data Streams and Kinesis Data Firehose as logical destinations.
+     * Data Streams and Firehose as logical destinations.
      * </p>
      * </li>
      * <li>
@@ -4006,7 +4002,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * A logical destination created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html"
      * >PutDestination</a> that belongs to a different account, for cross-account delivery. We currently support Kinesis
-     * Data Streams and Kinesis Data Firehose as logical destinations.
+     * Data Streams and Firehose as logical destinations.
      * </p>
      * </li>
      * <li>

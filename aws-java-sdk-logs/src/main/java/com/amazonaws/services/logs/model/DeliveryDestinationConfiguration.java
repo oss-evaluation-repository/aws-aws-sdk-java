@@ -31,8 +31,8 @@ public class DeliveryDestinationConfiguration implements Serializable, Cloneable
     /**
      * <p>
      * The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web
-     * Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis
-     * Data Firehose.
+     * Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
+     * Firehose.
      * </p>
      */
     private String destinationResourceArn;
@@ -40,14 +40,14 @@ public class DeliveryDestinationConfiguration implements Serializable, Cloneable
     /**
      * <p>
      * The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web
-     * Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis
-     * Data Firehose.
+     * Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
+     * Firehose.
      * </p>
      * 
      * @param destinationResourceArn
      *        The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web
      *        Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
-     *        Kinesis Data Firehose.
+     *        Firehose.
      */
 
     public void setDestinationResourceArn(String destinationResourceArn) {
@@ -57,13 +57,13 @@ public class DeliveryDestinationConfiguration implements Serializable, Cloneable
     /**
      * <p>
      * The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web
-     * Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis
-     * Data Firehose.
+     * Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
+     * Firehose.
      * </p>
      * 
      * @return The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web
      *         Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
-     *         Kinesis Data Firehose.
+     *         Firehose.
      */
 
     public String getDestinationResourceArn() {
@@ -73,14 +73,14 @@ public class DeliveryDestinationConfiguration implements Serializable, Cloneable
     /**
      * <p>
      * The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web
-     * Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis
-     * Data Firehose.
+     * Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
+     * Firehose.
      * </p>
      * 
      * @param destinationResourceArn
      *        The ARN of the Amazon Web Services destination that this delivery destination represents. That Amazon Web
      *        Services destination can be a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in
-     *        Kinesis Data Firehose.
+     *        Firehose.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

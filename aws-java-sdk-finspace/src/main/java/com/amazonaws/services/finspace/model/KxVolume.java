@@ -107,7 +107,8 @@ public class KxVolume implements Serializable, Cloneable, StructuredPojo {
     private String statusReason;
     /**
      * <p>
-     * The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is supported.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      */
     private String azMode;
@@ -744,11 +745,13 @@ public class KxVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is supported.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      * 
      * @param azMode
-     *        The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is supported.
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @see KxAzMode
      */
 
@@ -758,11 +761,12 @@ public class KxVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is supported.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      * 
-     * @return The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is
-     *         supported.
+     * @return The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *         <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @see KxAzMode
      */
 
@@ -772,11 +776,13 @@ public class KxVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is supported.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      * 
      * @param azMode
-     *        The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is supported.
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KxAzMode
      */
@@ -788,11 +794,13 @@ public class KxVolume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is supported.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      * 
      * @param azMode
-     *        The number of availability zones assigned to the volume. Currently, only <code>SINGLE</code> is supported.
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KxAzMode
      */

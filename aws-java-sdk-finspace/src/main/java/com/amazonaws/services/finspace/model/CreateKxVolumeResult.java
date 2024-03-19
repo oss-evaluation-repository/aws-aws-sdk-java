@@ -114,8 +114,8 @@ public class CreateKxVolumeResult extends com.amazonaws.AmazonWebServiceResult<c
     private String statusReason;
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     * <code>SINGLE</code> for volumes.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      */
     private String azMode;
@@ -831,13 +831,13 @@ public class CreateKxVolumeResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     * <code>SINGLE</code> for volumes.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     *        <code>SINGLE</code> for volumes.
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @see KxAzMode
      */
 
@@ -847,12 +847,12 @@ public class CreateKxVolumeResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     * <code>SINGLE</code> for volumes.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      * 
-     * @return The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     *         <code>SINGLE</code> for volumes.
+     * @return The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *         <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @see KxAzMode
      */
 
@@ -862,13 +862,13 @@ public class CreateKxVolumeResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     * <code>SINGLE</code> for volumes.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     *        <code>SINGLE</code> for volumes.
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KxAzMode
      */
@@ -880,13 +880,13 @@ public class CreateKxVolumeResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     * <code>SINGLE</code> for volumes.
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. Currently, FinSpace only support
-     *        <code>SINGLE</code> for volumes.
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KxAzMode
      */

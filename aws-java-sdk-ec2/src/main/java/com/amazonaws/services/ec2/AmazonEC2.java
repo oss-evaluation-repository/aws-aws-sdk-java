@@ -6065,6 +6065,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes the specified EC2 Mac Dedicated Host or all of your EC2 Mac Dedicated Hosts.
+     * </p>
+     * 
+     * @param describeMacHostsRequest
+     * @return Result of the DescribeMacHosts operation returned by the service.
+     * @sample AmazonEC2.DescribeMacHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeMacHostsResult describeMacHosts(DescribeMacHostsRequest describeMacHostsRequest);
+
+    /**
+     * <p>
      * Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
      * </p>
      * <p>

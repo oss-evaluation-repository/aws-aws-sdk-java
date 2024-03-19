@@ -29,6 +29,8 @@ public class ListTransactionEventsRequestMarshaller {
 
     private static final MarshallingInfo<String> TRANSACTIONHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transactionHash").build();
+    private static final MarshallingInfo<String> TRANSACTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transactionId").build();
     private static final MarshallingInfo<String> NETWORK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("network").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class ListTransactionEventsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listTransactionEventsRequest.getTransactionHash(), TRANSACTIONHASH_BINDING);
+            protocolMarshaller.marshall(listTransactionEventsRequest.getTransactionId(), TRANSACTIONID_BINDING);
             protocolMarshaller.marshall(listTransactionEventsRequest.getNetwork(), NETWORK_BINDING);
             protocolMarshaller.marshall(listTransactionEventsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listTransactionEventsRequest.getMaxResults(), MAXRESULTS_BINDING);

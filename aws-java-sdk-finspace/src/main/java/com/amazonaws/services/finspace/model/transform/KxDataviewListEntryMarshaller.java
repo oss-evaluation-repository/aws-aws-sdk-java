@@ -50,6 +50,8 @@ public class KxDataviewListEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Boolean> AUTOUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoUpdate").build();
+    private static final MarshallingInfo<Boolean> READWRITE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("readWrite").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -84,6 +86,7 @@ public class KxDataviewListEntryMarshaller {
             protocolMarshaller.marshall(kxDataviewListEntry.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(kxDataviewListEntry.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(kxDataviewListEntry.getAutoUpdate(), AUTOUPDATE_BINDING);
+            protocolMarshaller.marshall(kxDataviewListEntry.getReadWrite(), READWRITE_BINDING);
             protocolMarshaller.marshall(kxDataviewListEntry.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(kxDataviewListEntry.getLastModifiedTimestamp(), LASTMODIFIEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(kxDataviewListEntry.getStatusReason(), STATUSREASON_BINDING);

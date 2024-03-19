@@ -57,7 +57,7 @@ public class Transaction implements Serializable, Cloneable, StructuredPojo {
     private String blockHash;
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      */
     private String transactionHash;
@@ -148,8 +148,7 @@ public class Transaction implements Serializable, Cloneable, StructuredPojo {
     private String transactionFee;
     /**
      * <p>
-     * The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the
-     * blockchain.
+     * The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * </p>
      */
     private String transactionId;
@@ -273,12 +272,11 @@ public class Transaction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionHash
-     *        The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *        blockchain.
+     *        The hash of a transaction. It is generated when a transaction is created.
      */
 
     public void setTransactionHash(String transactionHash) {
@@ -287,11 +285,10 @@ public class Transaction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
-     * @return The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *         blockchain.
+     * @return The hash of a transaction. It is generated when a transaction is created.
      */
 
     public String getTransactionHash() {
@@ -300,12 +297,11 @@ public class Transaction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionHash
-     *        The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *        blockchain.
+     *        The hash of a transaction. It is generated when a transaction is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -882,13 +878,11 @@ public class Transaction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the
-     * blockchain.
+     * The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionId
-     *        The unique identifier of the transaction. It is generated whenever a transaction is verified and added to
-     *        the blockchain.
+     *        The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      */
 
     public void setTransactionId(String transactionId) {
@@ -897,12 +891,10 @@ public class Transaction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the
-     * blockchain.
+     * The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * </p>
      * 
-     * @return The unique identifier of the transaction. It is generated whenever a transaction is verified and added to
-     *         the blockchain.
+     * @return The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      */
 
     public String getTransactionId() {
@@ -911,13 +903,11 @@ public class Transaction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the
-     * blockchain.
+     * The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionId
-     *        The unique identifier of the transaction. It is generated whenever a transaction is verified and added to
-     *        the blockchain.
+     *        The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

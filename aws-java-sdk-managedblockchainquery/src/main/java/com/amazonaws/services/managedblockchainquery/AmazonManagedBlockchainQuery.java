@@ -219,6 +219,37 @@ public interface AmazonManagedBlockchainQuery {
 
     /**
      * <p>
+     * Lists all the transaction events for an address on the blockchain.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported on the Bitcoin networks.
+     * </p>
+     * </note>
+     * 
+     * @param listFilteredTransactionEventsRequest
+     * @return Result of the ListFilteredTransactionEvents operation returned by the service.
+     * @throws ThrottlingException
+     *         The request or operation couldn't be performed because a service is throttling requests. The most common
+     *         source of throttling errors is when you create resources that exceed your service limit for this resource
+     *         type. Request a limit increase or delete unused resources, if possible.
+     * @throws ValidationException
+     *         The resource passed is invalid.
+     * @throws AccessDeniedException
+     *         The Amazon Web Services account doesn’t have access to this resource.
+     * @throws InternalServerException
+     *         The request processing has failed because of an internal error in the service.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded for this resource.
+     * @sample AmazonManagedBlockchainQuery.ListFilteredTransactionEvents
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFilteredTransactionEventsResult listFilteredTransactionEvents(ListFilteredTransactionEventsRequest listFilteredTransactionEventsRequest);
+
+    /**
+     * <p>
      * This action returns the following for a given blockchain network:
      * </p>
      * <ul>
@@ -266,7 +297,7 @@ public interface AmazonManagedBlockchainQuery {
 
     /**
      * <p>
-     * An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction event.
+     * Lists all the transaction events for a transaction
      * </p>
      * <note>
      * <p>
@@ -298,7 +329,7 @@ public interface AmazonManagedBlockchainQuery {
 
     /**
      * <p>
-     * Lists all of the transactions on a given wallet address or to a specific contract.
+     * Lists all the transaction events for a transaction.
      * </p>
      * 
      * @param listTransactionsRequest

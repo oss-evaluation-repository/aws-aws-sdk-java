@@ -47,6 +47,8 @@ public class CreateKxDataviewRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentConfigurations").build();
     private static final MarshallingInfo<Boolean> AUTOUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoUpdate").build();
+    private static final MarshallingInfo<Boolean> READWRITE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("readWrite").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -79,6 +81,7 @@ public class CreateKxDataviewRequestMarshaller {
             protocolMarshaller.marshall(createKxDataviewRequest.getChangesetId(), CHANGESETID_BINDING);
             protocolMarshaller.marshall(createKxDataviewRequest.getSegmentConfigurations(), SEGMENTCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(createKxDataviewRequest.getAutoUpdate(), AUTOUPDATE_BINDING);
+            protocolMarshaller.marshall(createKxDataviewRequest.getReadWrite(), READWRITE_BINDING);
             protocolMarshaller.marshall(createKxDataviewRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createKxDataviewRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createKxDataviewRequest.getClientToken(), CLIENTTOKEN_BINDING);

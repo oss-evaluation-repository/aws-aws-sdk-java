@@ -27,7 +27,7 @@ public class GetTransactionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      */
     private String transactionHash;
@@ -40,12 +40,11 @@ public class GetTransactionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionHash
-     *        The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *        blockchain.
+     *        The hash of a transaction. It is generated when a transaction is created.
      */
 
     public void setTransactionHash(String transactionHash) {
@@ -54,11 +53,10 @@ public class GetTransactionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
-     * @return The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *         blockchain.
+     * @return The hash of a transaction. It is generated when a transaction is created.
      */
 
     public String getTransactionHash() {
@@ -67,12 +65,11 @@ public class GetTransactionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionHash
-     *        The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *        blockchain.
+     *        The hash of a transaction. It is generated when a transaction is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

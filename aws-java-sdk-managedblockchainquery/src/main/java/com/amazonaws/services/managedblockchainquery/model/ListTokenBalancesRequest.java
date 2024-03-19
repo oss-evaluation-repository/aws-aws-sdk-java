@@ -56,7 +56,7 @@ public class ListTokenBalancesRequest extends com.amazonaws.AmazonWebServiceRequ
      * The maximum number of token balances to return.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -241,7 +241,7 @@ public class ListTokenBalancesRequest extends com.amazonaws.AmazonWebServiceRequ
      * The maximum number of token balances to return.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -257,7 +257,7 @@ public class ListTokenBalancesRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param maxResults
      *        The maximum number of token balances to return.</p>
      *        <p>
-     *        Default:<code>100</code>
+     *        Default: <code>100</code>
      *        </p>
      *        <note>
      *        <p>
@@ -279,7 +279,7 @@ public class ListTokenBalancesRequest extends com.amazonaws.AmazonWebServiceRequ
      * The maximum number of token balances to return.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -294,7 +294,7 @@ public class ListTokenBalancesRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @return The maximum number of token balances to return.</p>
      *         <p>
-     *         Default:<code>100</code>
+     *         Default: <code>100</code>
      *         </p>
      *         <note>
      *         <p>
@@ -316,7 +316,7 @@ public class ListTokenBalancesRequest extends com.amazonaws.AmazonWebServiceRequ
      * The maximum number of token balances to return.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -332,7 +332,7 @@ public class ListTokenBalancesRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param maxResults
      *        The maximum number of token balances to return.</p>
      *        <p>
-     *        Default:<code>100</code>
+     *        Default: <code>100</code>
      *        </p>
      *        <note>
      *        <p>

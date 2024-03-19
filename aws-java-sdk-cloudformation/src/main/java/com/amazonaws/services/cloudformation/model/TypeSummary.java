@@ -38,9 +38,8 @@ public class TypeSummary implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specified a <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as
-     * the type name.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as the type name.
      * </p>
      */
     private String typeName;
@@ -53,8 +52,7 @@ public class TypeSummary implements Serializable, Cloneable {
      * This applies only to private extensions you have registered in your account. For public extensions, both those
      * provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
      * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
@@ -75,15 +73,13 @@ public class TypeSummary implements Serializable, Cloneable {
      * <li>
      * <p>
      * Private extensions you have registered in your account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Public extensions you have activated in your account with auto-update specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
      * </p>
      * </li>
      * </ul>
@@ -243,18 +239,17 @@ public class TypeSummary implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specified a <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as
-     * the type name.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as the type name.
      * </p>
      * 
      * @param typeName
      *        The name of the extension.</p>
      *        <p>
      *        If you specified a <code>TypeNameAlias</code> when you call the <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *        <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that
-     *        alias as the type name.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *        >ActivateType</a> API operation in your account and Region, CloudFormation considers that alias as the
+     *        type name.
      */
 
     public void setTypeName(String typeName) {
@@ -267,17 +262,16 @@ public class TypeSummary implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specified a <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as
-     * the type name.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as the type name.
      * </p>
      * 
      * @return The name of the extension.</p>
      *         <p>
      *         If you specified a <code>TypeNameAlias</code> when you call the <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *         <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that
-     *         alias as the type name.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *         >ActivateType</a> API operation in your account and Region, CloudFormation considers that alias as the
+     *         type name.
      */
 
     public String getTypeName() {
@@ -290,18 +284,17 @@ public class TypeSummary implements Serializable, Cloneable {
      * </p>
      * <p>
      * If you specified a <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that alias as
-     * the type name.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as the type name.
      * </p>
      * 
      * @param typeName
      *        The name of the extension.</p>
      *        <p>
      *        If you specified a <code>TypeNameAlias</code> when you call the <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *        <code>ActivateType</code> </a> API operation in your account and Region, CloudFormation considers that
-     *        alias as the type name.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *        >ActivateType</a> API operation in your account and Region, CloudFormation considers that alias as the
+     *        type name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,8 +312,7 @@ public class TypeSummary implements Serializable, Cloneable {
      * This applies only to private extensions you have registered in your account. For public extensions, both those
      * provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
      * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
@@ -333,8 +325,8 @@ public class TypeSummary implements Serializable, Cloneable {
      *        This applies only to private extensions you have registered in your account. For public extensions, both
      *        those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For
      *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *        <code>RegisterType</code> </a>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *        >RegisterType</a>.
      *        </p>
      *        <p>
      *        To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
@@ -353,8 +345,7 @@ public class TypeSummary implements Serializable, Cloneable {
      * This applies only to private extensions you have registered in your account. For public extensions, both those
      * provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
      * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
@@ -366,8 +357,8 @@ public class TypeSummary implements Serializable, Cloneable {
      *         This applies only to private extensions you have registered in your account. For public extensions, both
      *         those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For
      *         more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *         <code>RegisterType</code> </a>.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *         >RegisterType</a>.
      *         </p>
      *         <p>
      *         To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
@@ -386,8 +377,7 @@ public class TypeSummary implements Serializable, Cloneable {
      * This applies only to private extensions you have registered in your account. For public extensions, both those
      * provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
      * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
@@ -400,8 +390,8 @@ public class TypeSummary implements Serializable, Cloneable {
      *        This applies only to private extensions you have registered in your account. For public extensions, both
      *        those provided by Amazon and published by third parties, CloudFormation returns <code>null</code>. For
      *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *        <code>RegisterType</code> </a>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *        >RegisterType</a>.
      *        </p>
      *        <p>
      *        To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
@@ -461,15 +451,13 @@ public class TypeSummary implements Serializable, Cloneable {
      * <li>
      * <p>
      * Private extensions you have registered in your account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Public extensions you have activated in your account with auto-update specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
      * </p>
      * </li>
      * </ul>
@@ -483,15 +471,15 @@ public class TypeSummary implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Private extensions you have registered in your account. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *        <code>RegisterType</code> </a>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *        >RegisterType</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Public extensions you have activated in your account with auto-update specified. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *        <code>ActivateType</code> </a>.
+     *        ActivateType</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -511,15 +499,13 @@ public class TypeSummary implements Serializable, Cloneable {
      * <li>
      * <p>
      * Private extensions you have registered in your account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Public extensions you have activated in your account with auto-update specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
      * </p>
      * </li>
      * </ul>
@@ -532,15 +518,15 @@ public class TypeSummary implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         Private extensions you have registered in your account. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *         <code>RegisterType</code> </a>.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *         >RegisterType</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Public extensions you have activated in your account with auto-update specified. For more information,
      *         see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *         <code>ActivateType</code> </a>.
+     *         ActivateType</a>.
      *         </p>
      *         </li>
      *         </ul>
@@ -560,15 +546,13 @@ public class TypeSummary implements Serializable, Cloneable {
      * <li>
      * <p>
      * Private extensions you have registered in your account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Public extensions you have activated in your account with auto-update specified. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.
      * </p>
      * </li>
      * </ul>
@@ -582,15 +566,15 @@ public class TypeSummary implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Private extensions you have registered in your account. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     *        <code>RegisterType</code> </a>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *        >RegisterType</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Public extensions you have activated in your account with auto-update specified. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     *        <code>ActivateType</code> </a>.
+     *        ActivateType</a>.
      *        </p>
      *        </li>
      *        </ul>

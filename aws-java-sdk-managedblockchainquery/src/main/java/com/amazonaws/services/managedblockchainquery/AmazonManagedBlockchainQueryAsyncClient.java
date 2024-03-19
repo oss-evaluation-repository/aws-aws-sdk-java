@@ -246,6 +246,40 @@ public class AmazonManagedBlockchainQueryAsyncClient extends AmazonManagedBlockc
     }
 
     @Override
+    public java.util.concurrent.Future<ListFilteredTransactionEventsResult> listFilteredTransactionEventsAsync(ListFilteredTransactionEventsRequest request) {
+
+        return listFilteredTransactionEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFilteredTransactionEventsResult> listFilteredTransactionEventsAsync(
+            final ListFilteredTransactionEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFilteredTransactionEventsRequest, ListFilteredTransactionEventsResult> asyncHandler) {
+        final ListFilteredTransactionEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFilteredTransactionEventsResult>() {
+            @Override
+            public ListFilteredTransactionEventsResult call() throws Exception {
+                ListFilteredTransactionEventsResult result = null;
+
+                try {
+                    result = executeListFilteredTransactionEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTokenBalancesResult> listTokenBalancesAsync(ListTokenBalancesRequest request) {
 
         return listTokenBalancesAsync(request, null);

@@ -45,20 +45,9 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
     private String dataviewName;
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String azMode;
     /**
@@ -88,6 +77,39 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Boolean autoUpdate;
+    /**
+     * <p>
+     * The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     * following are some considerations related to writable dataviews.&#x2028;&#x2028;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire
+     * database path.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b> if
+     * <code>readWrite</code> is <b>True</b> for a dataview.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already
+     * in use by another dataview, the dataview creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     * <code>readWrite</code> parameter later.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Boolean readWrite;
     /**
      * <p>
      * A description of the dataview.
@@ -229,34 +251,13 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. This can be one of the following </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>SINGLE</code> – Assigns one availability zone per cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MULTI</code> – Assigns all the availability zones per cluster.
-     *        </p>
-     *        </li>
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @see KxAzMode
      */
 
@@ -266,33 +267,12 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The number of availability zones you want to assign per cluster. This can be one of the following </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>SINGLE</code> – Assigns one availability zone per cluster.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MULTI</code> – Assigns all the availability zones per cluster.
-     *         </p>
-     *         </li>
+     * @return The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *         <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @see KxAzMode
      */
 
@@ -302,34 +282,13 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. This can be one of the following </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>SINGLE</code> – Assigns one availability zone per cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MULTI</code> – Assigns all the availability zones per cluster.
-     *        </p>
-     *        </li>
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KxAzMode
      */
@@ -341,34 +300,13 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of availability zones you want to assign per cluster. This can be one of the following
+     * The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     * <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>SINGLE</code> – Assigns one availability zone per cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MULTI</code> – Assigns all the availability zones per cluster.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param azMode
-     *        The number of availability zones you want to assign per cluster. This can be one of the following </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>SINGLE</code> – Assigns one availability zone per cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MULTI</code> – Assigns all the availability zones per cluster.
-     *        </p>
-     *        </li>
+     *        The number of availability zones you want to assign per volume. Currently, FinSpace only supports
+     *        <code>SINGLE</code> for volumes. This places dataview in a single AZ.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KxAzMode
      */
@@ -610,6 +548,270 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     * following are some considerations related to writable dataviews.&#x2028;&#x2028;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire
+     * database path.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b> if
+     * <code>readWrite</code> is <b>True</b> for a dataview.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already
+     * in use by another dataview, the dataview creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     * <code>readWrite</code> parameter later.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param readWrite
+     *        The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     *        following are some considerations related to writable dataviews.&#x2028;&#x2028;</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You cannot create partial writable dataviews. When you create writeable dataviews you must provide the
+     *        entire database path.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as
+     *        <b>False</b> if <code>readWrite</code> is <b>True</b> for a dataview.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is
+     *        already in use by another dataview, the dataview creation fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     *        <code>readWrite</code> parameter later.
+     *        </p>
+     *        </li>
+     */
+
+    public void setReadWrite(Boolean readWrite) {
+        this.readWrite = readWrite;
+    }
+
+    /**
+     * <p>
+     * The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     * following are some considerations related to writable dataviews.&#x2028;&#x2028;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire
+     * database path.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b> if
+     * <code>readWrite</code> is <b>True</b> for a dataview.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already
+     * in use by another dataview, the dataview creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     * <code>readWrite</code> parameter later.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     *         following are some considerations related to writable dataviews.&#x2028;&#x2028;</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You cannot create partial writable dataviews. When you create writeable dataviews you must provide the
+     *         entire database path.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as
+     *         <b>False</b> if <code>readWrite</code> is <b>True</b> for a dataview.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is
+     *         already in use by another dataview, the dataview creation fails.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     *         <code>readWrite</code> parameter later.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean getReadWrite() {
+        return this.readWrite;
+    }
+
+    /**
+     * <p>
+     * The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     * following are some considerations related to writable dataviews.&#x2028;&#x2028;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire
+     * database path.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b> if
+     * <code>readWrite</code> is <b>True</b> for a dataview.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already
+     * in use by another dataview, the dataview creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     * <code>readWrite</code> parameter later.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param readWrite
+     *        The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     *        following are some considerations related to writable dataviews.&#x2028;&#x2028;</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You cannot create partial writable dataviews. When you create writeable dataviews you must provide the
+     *        entire database path.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as
+     *        <b>False</b> if <code>readWrite</code> is <b>True</b> for a dataview.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is
+     *        already in use by another dataview, the dataview creation fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     *        <code>readWrite</code> parameter later.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateKxDataviewRequest withReadWrite(Boolean readWrite) {
+        setReadWrite(readWrite);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     * following are some considerations related to writable dataviews.&#x2028;&#x2028;
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot create partial writable dataviews. When you create writeable dataviews you must provide the entire
+     * database path.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b> if
+     * <code>readWrite</code> is <b>True</b> for a dataview.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is already
+     * in use by another dataview, the dataview creation fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     * <code>readWrite</code> parameter later.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The option to specify whether you want to make the dataview writable to perform database maintenance. The
+     *         following are some considerations related to writable dataviews.&#x2028;&#x2028;</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You cannot create partial writable dataviews. When you create writeable dataviews you must provide the
+     *         entire database path.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You cannot perform updates on a writeable dataview. Hence, <code>autoUpdate</code> must be set as
+     *         <b>False</b> if <code>readWrite</code> is <b>True</b> for a dataview.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You must also use a unique volume for creating a writeable dataview. So, if you choose a volume that is
+     *         already in use by another dataview, the dataview creation fails.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Once you create a dataview as writeable, you cannot change it to read-only. So, you cannot update the
+     *         <code>readWrite</code> parameter later.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean isReadWrite() {
+        return this.readWrite;
+    }
+
+    /**
+     * <p>
      * A description of the dataview.
      * </p>
      * 
@@ -784,6 +986,8 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("SegmentConfigurations: ").append(getSegmentConfigurations()).append(",");
         if (getAutoUpdate() != null)
             sb.append("AutoUpdate: ").append(getAutoUpdate()).append(",");
+        if (getReadWrite() != null)
+            sb.append("ReadWrite: ").append(getReadWrite()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
@@ -836,6 +1040,10 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getAutoUpdate() != null && other.getAutoUpdate().equals(this.getAutoUpdate()) == false)
             return false;
+        if (other.getReadWrite() == null ^ this.getReadWrite() == null)
+            return false;
+        if (other.getReadWrite() != null && other.getReadWrite().equals(this.getReadWrite()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -864,6 +1072,7 @@ public class CreateKxDataviewRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getChangesetId() == null) ? 0 : getChangesetId().hashCode());
         hashCode = prime * hashCode + ((getSegmentConfigurations() == null) ? 0 : getSegmentConfigurations().hashCode());
         hashCode = prime * hashCode + ((getAutoUpdate() == null) ? 0 : getAutoUpdate().hashCode());
+        hashCode = prime * hashCode + ((getReadWrite() == null) ? 0 : getReadWrite().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());

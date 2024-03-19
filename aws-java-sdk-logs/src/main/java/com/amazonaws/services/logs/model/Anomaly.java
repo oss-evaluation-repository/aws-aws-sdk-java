@@ -119,7 +119,7 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
      * An array of sample log event messages that are considered to be part of this anomaly.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<String> logSamples;
+    private com.amazonaws.internal.SdkInternalList<LogEvent> logSamples;
     /**
      * <p>
      * An array of structures where each structure contains information about one token that makes up the pattern.
@@ -779,9 +779,9 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
      * @return An array of sample log event messages that are considered to be part of this anomaly.
      */
 
-    public java.util.List<String> getLogSamples() {
+    public java.util.List<LogEvent> getLogSamples() {
         if (logSamples == null) {
-            logSamples = new com.amazonaws.internal.SdkInternalList<String>();
+            logSamples = new com.amazonaws.internal.SdkInternalList<LogEvent>();
         }
         return logSamples;
     }
@@ -795,13 +795,13 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
      *        An array of sample log event messages that are considered to be part of this anomaly.
      */
 
-    public void setLogSamples(java.util.Collection<String> logSamples) {
+    public void setLogSamples(java.util.Collection<LogEvent> logSamples) {
         if (logSamples == null) {
             this.logSamples = null;
             return;
         }
 
-        this.logSamples = new com.amazonaws.internal.SdkInternalList<String>(logSamples);
+        this.logSamples = new com.amazonaws.internal.SdkInternalList<LogEvent>(logSamples);
     }
 
     /**
@@ -819,11 +819,11 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Anomaly withLogSamples(String... logSamples) {
+    public Anomaly withLogSamples(LogEvent... logSamples) {
         if (this.logSamples == null) {
-            setLogSamples(new com.amazonaws.internal.SdkInternalList<String>(logSamples.length));
+            setLogSamples(new com.amazonaws.internal.SdkInternalList<LogEvent>(logSamples.length));
         }
-        for (String ele : logSamples) {
+        for (LogEvent ele : logSamples) {
             this.logSamples.add(ele);
         }
         return this;
@@ -839,7 +839,7 @@ public class Anomaly implements Serializable, Cloneable, StructuredPojo {
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Anomaly withLogSamples(java.util.Collection<String> logSamples) {
+    public Anomaly withLogSamples(java.util.Collection<LogEvent> logSamples) {
         setLogSamples(logSamples);
         return this;
     }

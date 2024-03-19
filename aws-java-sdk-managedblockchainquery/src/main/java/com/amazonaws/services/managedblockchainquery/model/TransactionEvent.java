@@ -36,7 +36,7 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
     private String network;
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      */
     private String transactionHash;
@@ -66,7 +66,7 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
     private String value;
     /**
      * <p>
-     * The blockchain address. for the contract
+     * The blockchain address for the contract
      * </p>
      */
     private String contractAddress;
@@ -78,17 +78,68 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
     private String tokenId;
     /**
      * <p>
-     * The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the
-     * blockchain.
+     * The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * </p>
      */
     private String transactionId;
     /**
      * <p>
-     * The position of the vout in the transaction output list.
+     * The position of the transaction output in the transaction output list.
      * </p>
      */
     private Integer voutIndex;
+    /**
+     * <p>
+     * Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event types.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VOUT</code> event types.
+     * </p>
+     * </note>
+     */
+    private Boolean voutSpent;
+    /**
+     * <p>
+     * The transactionId that <i>created</i> the spent transaction output.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     */
+    private String spentVoutTransactionId;
+    /**
+     * <p>
+     * The transactionHash that <i>created</i> the spent transaction output.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     */
+    private String spentVoutTransactionHash;
+    /**
+     * <p>
+     * The position of the spent transaction output in the output list of the <i>creating transaction</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     */
+    private Integer spentVoutIndex;
+
+    private BlockchainInstant blockchainInstant;
+    /**
+     * <p>
+     * This container specifies whether the transaction has reached Finality.
+     * </p>
+     */
+    private String confirmationStatus;
 
     /**
      * <p>
@@ -151,12 +202,11 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionHash
-     *        The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *        blockchain.
+     *        The hash of a transaction. It is generated when a transaction is created.
      */
 
     public void setTransactionHash(String transactionHash) {
@@ -165,11 +215,10 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
-     * @return The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *         blockchain.
+     * @return The hash of a transaction. It is generated when a transaction is created.
      */
 
     public String getTransactionHash() {
@@ -178,12 +227,11 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.
+     * The hash of a transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionHash
-     *        The hash of the transaction. It is generated whenever a transaction is verified and added to the
-     *        blockchain.
+     *        The hash of a transaction. It is generated when a transaction is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,11 +421,11 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The blockchain address. for the contract
+     * The blockchain address for the contract
      * </p>
      * 
      * @param contractAddress
-     *        The blockchain address. for the contract
+     *        The blockchain address for the contract
      */
 
     public void setContractAddress(String contractAddress) {
@@ -386,10 +434,10 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The blockchain address. for the contract
+     * The blockchain address for the contract
      * </p>
      * 
-     * @return The blockchain address. for the contract
+     * @return The blockchain address for the contract
      */
 
     public String getContractAddress() {
@@ -398,11 +446,11 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The blockchain address. for the contract
+     * The blockchain address for the contract
      * </p>
      * 
      * @param contractAddress
-     *        The blockchain address. for the contract
+     *        The blockchain address for the contract
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,13 +501,11 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the
-     * blockchain.
+     * The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionId
-     *        The unique identifier of the transaction. It is generated whenever a transaction is verified and added to
-     *        the blockchain.
+     *        The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      */
 
     public void setTransactionId(String transactionId) {
@@ -468,12 +514,10 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the
-     * blockchain.
+     * The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * </p>
      * 
-     * @return The unique identifier of the transaction. It is generated whenever a transaction is verified and added to
-     *         the blockchain.
+     * @return The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      */
 
     public String getTransactionId() {
@@ -482,13 +526,11 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the
-     * blockchain.
+     * The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * </p>
      * 
      * @param transactionId
-     *        The unique identifier of the transaction. It is generated whenever a transaction is verified and added to
-     *        the blockchain.
+     *        The identifier of a Bitcoin transaction. It is generated when a transaction is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -499,11 +541,11 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The position of the vout in the transaction output list.
+     * The position of the transaction output in the transaction output list.
      * </p>
      * 
      * @param voutIndex
-     *        The position of the vout in the transaction output list.
+     *        The position of the transaction output in the transaction output list.
      */
 
     public void setVoutIndex(Integer voutIndex) {
@@ -512,10 +554,10 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The position of the vout in the transaction output list.
+     * The position of the transaction output in the transaction output list.
      * </p>
      * 
-     * @return The position of the vout in the transaction output list.
+     * @return The position of the transaction output in the transaction output list.
      */
 
     public Integer getVoutIndex() {
@@ -524,16 +566,384 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The position of the vout in the transaction output list.
+     * The position of the transaction output in the transaction output list.
      * </p>
      * 
      * @param voutIndex
-     *        The position of the vout in the transaction output list.
+     *        The position of the transaction output in the transaction output list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TransactionEvent withVoutIndex(Integer voutIndex) {
         setVoutIndex(voutIndex);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event types.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VOUT</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @param voutSpent
+     *        Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event
+     *        types.</p> <note>
+     *        <p>
+     *        This is only returned for <code>BITCOIN_VOUT</code> event types.
+     *        </p>
+     */
+
+    public void setVoutSpent(Boolean voutSpent) {
+        this.voutSpent = voutSpent;
+    }
+
+    /**
+     * <p>
+     * Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event types.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VOUT</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event
+     *         types.</p> <note>
+     *         <p>
+     *         This is only returned for <code>BITCOIN_VOUT</code> event types.
+     *         </p>
+     */
+
+    public Boolean getVoutSpent() {
+        return this.voutSpent;
+    }
+
+    /**
+     * <p>
+     * Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event types.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VOUT</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @param voutSpent
+     *        Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event
+     *        types.</p> <note>
+     *        <p>
+     *        This is only returned for <code>BITCOIN_VOUT</code> event types.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransactionEvent withVoutSpent(Boolean voutSpent) {
+        setVoutSpent(voutSpent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event types.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VOUT</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies if the transaction output is spent or unspent. This is only returned for BITCOIN_VOUT event
+     *         types.</p> <note>
+     *         <p>
+     *         This is only returned for <code>BITCOIN_VOUT</code> event types.
+     *         </p>
+     */
+
+    public Boolean isVoutSpent() {
+        return this.voutSpent;
+    }
+
+    /**
+     * <p>
+     * The transactionId that <i>created</i> the spent transaction output.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @param spentVoutTransactionId
+     *        The transactionId that <i>created</i> the spent transaction output.</p> <note>
+     *        <p>
+     *        This is only returned for <code>BITCOIN_VIN</code> event types.
+     *        </p>
+     */
+
+    public void setSpentVoutTransactionId(String spentVoutTransactionId) {
+        this.spentVoutTransactionId = spentVoutTransactionId;
+    }
+
+    /**
+     * <p>
+     * The transactionId that <i>created</i> the spent transaction output.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @return The transactionId that <i>created</i> the spent transaction output.</p> <note>
+     *         <p>
+     *         This is only returned for <code>BITCOIN_VIN</code> event types.
+     *         </p>
+     */
+
+    public String getSpentVoutTransactionId() {
+        return this.spentVoutTransactionId;
+    }
+
+    /**
+     * <p>
+     * The transactionId that <i>created</i> the spent transaction output.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @param spentVoutTransactionId
+     *        The transactionId that <i>created</i> the spent transaction output.</p> <note>
+     *        <p>
+     *        This is only returned for <code>BITCOIN_VIN</code> event types.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransactionEvent withSpentVoutTransactionId(String spentVoutTransactionId) {
+        setSpentVoutTransactionId(spentVoutTransactionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The transactionHash that <i>created</i> the spent transaction output.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @param spentVoutTransactionHash
+     *        The transactionHash that <i>created</i> the spent transaction output.</p> <note>
+     *        <p>
+     *        This is only returned for <code>BITCOIN_VIN</code> event types.
+     *        </p>
+     */
+
+    public void setSpentVoutTransactionHash(String spentVoutTransactionHash) {
+        this.spentVoutTransactionHash = spentVoutTransactionHash;
+    }
+
+    /**
+     * <p>
+     * The transactionHash that <i>created</i> the spent transaction output.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @return The transactionHash that <i>created</i> the spent transaction output.</p> <note>
+     *         <p>
+     *         This is only returned for <code>BITCOIN_VIN</code> event types.
+     *         </p>
+     */
+
+    public String getSpentVoutTransactionHash() {
+        return this.spentVoutTransactionHash;
+    }
+
+    /**
+     * <p>
+     * The transactionHash that <i>created</i> the spent transaction output.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @param spentVoutTransactionHash
+     *        The transactionHash that <i>created</i> the spent transaction output.</p> <note>
+     *        <p>
+     *        This is only returned for <code>BITCOIN_VIN</code> event types.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransactionEvent withSpentVoutTransactionHash(String spentVoutTransactionHash) {
+        setSpentVoutTransactionHash(spentVoutTransactionHash);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The position of the spent transaction output in the output list of the <i>creating transaction</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @param spentVoutIndex
+     *        The position of the spent transaction output in the output list of the <i>creating transaction</i>.</p>
+     *        <note>
+     *        <p>
+     *        This is only returned for <code>BITCOIN_VIN</code> event types.
+     *        </p>
+     */
+
+    public void setSpentVoutIndex(Integer spentVoutIndex) {
+        this.spentVoutIndex = spentVoutIndex;
+    }
+
+    /**
+     * <p>
+     * The position of the spent transaction output in the output list of the <i>creating transaction</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @return The position of the spent transaction output in the output list of the <i>creating transaction</i>.</p>
+     *         <note>
+     *         <p>
+     *         This is only returned for <code>BITCOIN_VIN</code> event types.
+     *         </p>
+     */
+
+    public Integer getSpentVoutIndex() {
+        return this.spentVoutIndex;
+    }
+
+    /**
+     * <p>
+     * The position of the spent transaction output in the output list of the <i>creating transaction</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This is only returned for <code>BITCOIN_VIN</code> event types.
+     * </p>
+     * </note>
+     * 
+     * @param spentVoutIndex
+     *        The position of the spent transaction output in the output list of the <i>creating transaction</i>.</p>
+     *        <note>
+     *        <p>
+     *        This is only returned for <code>BITCOIN_VIN</code> event types.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransactionEvent withSpentVoutIndex(Integer spentVoutIndex) {
+        setSpentVoutIndex(spentVoutIndex);
+        return this;
+    }
+
+    /**
+     * @param blockchainInstant
+     */
+
+    public void setBlockchainInstant(BlockchainInstant blockchainInstant) {
+        this.blockchainInstant = blockchainInstant;
+    }
+
+    /**
+     * @return
+     */
+
+    public BlockchainInstant getBlockchainInstant() {
+        return this.blockchainInstant;
+    }
+
+    /**
+     * @param blockchainInstant
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransactionEvent withBlockchainInstant(BlockchainInstant blockchainInstant) {
+        setBlockchainInstant(blockchainInstant);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This container specifies whether the transaction has reached Finality.
+     * </p>
+     * 
+     * @param confirmationStatus
+     *        This container specifies whether the transaction has reached Finality.
+     * @see ConfirmationStatus
+     */
+
+    public void setConfirmationStatus(String confirmationStatus) {
+        this.confirmationStatus = confirmationStatus;
+    }
+
+    /**
+     * <p>
+     * This container specifies whether the transaction has reached Finality.
+     * </p>
+     * 
+     * @return This container specifies whether the transaction has reached Finality.
+     * @see ConfirmationStatus
+     */
+
+    public String getConfirmationStatus() {
+        return this.confirmationStatus;
+    }
+
+    /**
+     * <p>
+     * This container specifies whether the transaction has reached Finality.
+     * </p>
+     * 
+     * @param confirmationStatus
+     *        This container specifies whether the transaction has reached Finality.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfirmationStatus
+     */
+
+    public TransactionEvent withConfirmationStatus(String confirmationStatus) {
+        setConfirmationStatus(confirmationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This container specifies whether the transaction has reached Finality.
+     * </p>
+     * 
+     * @param confirmationStatus
+     *        This container specifies whether the transaction has reached Finality.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfirmationStatus
+     */
+
+    public TransactionEvent withConfirmationStatus(ConfirmationStatus confirmationStatus) {
+        this.confirmationStatus = confirmationStatus.toString();
         return this;
     }
 
@@ -568,7 +978,19 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
         if (getTransactionId() != null)
             sb.append("TransactionId: ").append(getTransactionId()).append(",");
         if (getVoutIndex() != null)
-            sb.append("VoutIndex: ").append(getVoutIndex());
+            sb.append("VoutIndex: ").append(getVoutIndex()).append(",");
+        if (getVoutSpent() != null)
+            sb.append("VoutSpent: ").append(getVoutSpent()).append(",");
+        if (getSpentVoutTransactionId() != null)
+            sb.append("SpentVoutTransactionId: ").append(getSpentVoutTransactionId()).append(",");
+        if (getSpentVoutTransactionHash() != null)
+            sb.append("SpentVoutTransactionHash: ").append(getSpentVoutTransactionHash()).append(",");
+        if (getSpentVoutIndex() != null)
+            sb.append("SpentVoutIndex: ").append(getSpentVoutIndex()).append(",");
+        if (getBlockchainInstant() != null)
+            sb.append("BlockchainInstant: ").append(getBlockchainInstant()).append(",");
+        if (getConfirmationStatus() != null)
+            sb.append("ConfirmationStatus: ").append(getConfirmationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -623,6 +1045,30 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getVoutIndex() != null && other.getVoutIndex().equals(this.getVoutIndex()) == false)
             return false;
+        if (other.getVoutSpent() == null ^ this.getVoutSpent() == null)
+            return false;
+        if (other.getVoutSpent() != null && other.getVoutSpent().equals(this.getVoutSpent()) == false)
+            return false;
+        if (other.getSpentVoutTransactionId() == null ^ this.getSpentVoutTransactionId() == null)
+            return false;
+        if (other.getSpentVoutTransactionId() != null && other.getSpentVoutTransactionId().equals(this.getSpentVoutTransactionId()) == false)
+            return false;
+        if (other.getSpentVoutTransactionHash() == null ^ this.getSpentVoutTransactionHash() == null)
+            return false;
+        if (other.getSpentVoutTransactionHash() != null && other.getSpentVoutTransactionHash().equals(this.getSpentVoutTransactionHash()) == false)
+            return false;
+        if (other.getSpentVoutIndex() == null ^ this.getSpentVoutIndex() == null)
+            return false;
+        if (other.getSpentVoutIndex() != null && other.getSpentVoutIndex().equals(this.getSpentVoutIndex()) == false)
+            return false;
+        if (other.getBlockchainInstant() == null ^ this.getBlockchainInstant() == null)
+            return false;
+        if (other.getBlockchainInstant() != null && other.getBlockchainInstant().equals(this.getBlockchainInstant()) == false)
+            return false;
+        if (other.getConfirmationStatus() == null ^ this.getConfirmationStatus() == null)
+            return false;
+        if (other.getConfirmationStatus() != null && other.getConfirmationStatus().equals(this.getConfirmationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -641,6 +1087,12 @@ public class TransactionEvent implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTokenId() == null) ? 0 : getTokenId().hashCode());
         hashCode = prime * hashCode + ((getTransactionId() == null) ? 0 : getTransactionId().hashCode());
         hashCode = prime * hashCode + ((getVoutIndex() == null) ? 0 : getVoutIndex().hashCode());
+        hashCode = prime * hashCode + ((getVoutSpent() == null) ? 0 : getVoutSpent().hashCode());
+        hashCode = prime * hashCode + ((getSpentVoutTransactionId() == null) ? 0 : getSpentVoutTransactionId().hashCode());
+        hashCode = prime * hashCode + ((getSpentVoutTransactionHash() == null) ? 0 : getSpentVoutTransactionHash().hashCode());
+        hashCode = prime * hashCode + ((getSpentVoutIndex() == null) ? 0 : getSpentVoutIndex().hashCode());
+        hashCode = prime * hashCode + ((getBlockchainInstant() == null) ? 0 : getBlockchainInstant().hashCode());
+        hashCode = prime * hashCode + ((getConfirmationStatus() == null) ? 0 : getConfirmationStatus().hashCode());
         return hashCode;
     }
 

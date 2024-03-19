@@ -34,9 +34,9 @@ public class ListStackSetAutoDeploymentTargetsResult extends com.amazonaws.Amazo
      * <p>
      * If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve
      * the next set of results, call <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for the <code>NextToken</code>
-     * parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html"
+     * >ListStackSetAutoDeploymentTargets</a> again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty string.
      * </p>
      */
     private String nextToken;
@@ -118,18 +118,17 @@ public class ListStackSetAutoDeploymentTargetsResult extends com.amazonaws.Amazo
      * <p>
      * If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve
      * the next set of results, call <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for the <code>NextToken</code>
-     * parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html"
+     * >ListStackSetAutoDeploymentTargets</a> again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty string.
      * </p>
      * 
      * @param nextToken
      *        If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To
      *        retrieve the next set of results, call <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html"
-     *        > <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for the
-     *        <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an
-     *        empty string.
+     *        >ListStackSetAutoDeploymentTargets</a> again and use that value for the <code>NextToken</code> parameter.
+     *        If the request returns all results, <code>NextToken</code> is set to an empty string.
      */
 
     public void setNextToken(String nextToken) {
@@ -140,17 +139,16 @@ public class ListStackSetAutoDeploymentTargetsResult extends com.amazonaws.Amazo
      * <p>
      * If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve
      * the next set of results, call <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for the <code>NextToken</code>
-     * parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html"
+     * >ListStackSetAutoDeploymentTargets</a> again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty string.
      * </p>
      * 
      * @return If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To
      *         retrieve the next set of results, call <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html"
-     *         > <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for the
-     *         <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an
-     *         empty string.
+     *         >ListStackSetAutoDeploymentTargets</a> again and use that value for the <code>NextToken</code> parameter.
+     *         If the request returns all results, <code>NextToken</code> is set to an empty string.
      */
 
     public String getNextToken() {
@@ -161,18 +159,17 @@ public class ListStackSetAutoDeploymentTargetsResult extends com.amazonaws.Amazo
      * <p>
      * If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve
      * the next set of results, call <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for the <code>NextToken</code>
-     * parameter. If the request returns all results, <code>NextToken</code> is set to an empty string.
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html"
+     * >ListStackSetAutoDeploymentTargets</a> again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty string.
      * </p>
      * 
      * @param nextToken
      *        If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To
      *        retrieve the next set of results, call <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html"
-     *        > <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for the
-     *        <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to an
-     *        empty string.
+     *        >ListStackSetAutoDeploymentTargets</a> again and use that value for the <code>NextToken</code> parameter.
+     *        If the request returns all results, <code>NextToken</code> is set to an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

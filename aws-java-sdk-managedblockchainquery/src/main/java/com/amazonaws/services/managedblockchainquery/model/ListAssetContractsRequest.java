@@ -42,7 +42,7 @@ public class ListAssetContractsRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum number of contracts to list.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -142,7 +142,7 @@ public class ListAssetContractsRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum number of contracts to list.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -158,7 +158,7 @@ public class ListAssetContractsRequest extends com.amazonaws.AmazonWebServiceReq
      * @param maxResults
      *        The maximum number of contracts to list.</p>
      *        <p>
-     *        Default:<code>100</code>
+     *        Default: <code>100</code>
      *        </p>
      *        <note>
      *        <p>
@@ -180,7 +180,7 @@ public class ListAssetContractsRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum number of contracts to list.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -195,7 +195,7 @@ public class ListAssetContractsRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return The maximum number of contracts to list.</p>
      *         <p>
-     *         Default:<code>100</code>
+     *         Default: <code>100</code>
      *         </p>
      *         <note>
      *         <p>
@@ -217,7 +217,7 @@ public class ListAssetContractsRequest extends com.amazonaws.AmazonWebServiceReq
      * The maximum number of contracts to list.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -233,7 +233,7 @@ public class ListAssetContractsRequest extends com.amazonaws.AmazonWebServiceReq
      * @param maxResults
      *        The maximum number of contracts to list.</p>
      *        <p>
-     *        Default:<code>100</code>
+     *        Default: <code>100</code>
      *        </p>
      *        <note>
      *        <p>

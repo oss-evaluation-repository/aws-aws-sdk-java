@@ -44,8 +44,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     * >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String deletionPolicy;
@@ -67,8 +67,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     * >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String updateReplacePolicy;
@@ -91,8 +91,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     * >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param deletionPolicy
@@ -111,8 +111,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     *        <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     *        >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * @see GeneratedTemplateDeletionPolicy
      */
 
@@ -138,8 +138,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     * >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The <code>DeletionPolicy</code> assigned to resources in the generated template. Supported values
@@ -158,8 +158,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     *         <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     *         >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * @see GeneratedTemplateDeletionPolicy
      */
 
@@ -185,8 +185,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     * >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param deletionPolicy
@@ -205,8 +205,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     *        <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     *        >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GeneratedTemplateDeletionPolicy
      */
@@ -234,8 +234,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     * >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param deletionPolicy
@@ -254,8 +254,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     *        <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html"
+     *        >DeletionPolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GeneratedTemplateDeletionPolicy
      */
@@ -283,8 +283,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     * >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param updateReplacePolicy
@@ -304,8 +304,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     *        <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     *        >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * @see GeneratedTemplateUpdateReplacePolicy
      */
 
@@ -331,8 +331,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     * >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The <code>UpdateReplacePolicy</code> assigned to resources in the generated template. Supported values
@@ -351,8 +351,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     *         <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     *         >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * @see GeneratedTemplateUpdateReplacePolicy
      */
 
@@ -378,8 +378,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     * >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param updateReplacePolicy
@@ -399,8 +399,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     *        <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     *        >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GeneratedTemplateUpdateReplacePolicy
      */
@@ -428,8 +428,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     * >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param updateReplacePolicy
@@ -449,8 +449,8 @@ public class TemplateConfiguration implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     *        <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html"
+     *        >UpdateReplacePolicy attribute</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GeneratedTemplateUpdateReplacePolicy
      */

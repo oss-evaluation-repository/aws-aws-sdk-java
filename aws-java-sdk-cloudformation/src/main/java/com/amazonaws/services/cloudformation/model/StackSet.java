@@ -152,7 +152,7 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> organizationalUnitIds;
@@ -1222,13 +1222,13 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @return [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
      *         for <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     *         <code>DeploymentTargets</code> </a>.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     *         >DeploymentTargets</a>.
      */
 
     public java.util.List<String> getOrganizationalUnitIds() {
@@ -1242,14 +1242,14 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitIds
      *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
      *        for <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     *        <code>DeploymentTargets</code> </a>.
+     *        DeploymentTargets</a>.
      */
 
     public void setOrganizationalUnitIds(java.util.Collection<String> organizationalUnitIds) {
@@ -1265,7 +1265,7 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1277,7 +1277,7 @@ public class StackSet implements Serializable, Cloneable {
      *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
      *        for <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     *        <code>DeploymentTargets</code> </a>.
+     *        DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1295,14 +1295,14 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitIds
      *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
      *        for <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     *        <code>DeploymentTargets</code> </a>.
+     *        DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

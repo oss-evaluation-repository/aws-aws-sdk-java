@@ -94,6 +94,10 @@ public class UpdateKxDataviewResultJsonUnmarshaller implements Unmarshaller<Upda
                     context.nextToken();
                     updateKxDataviewResult.setAutoUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("readWrite", targetDepth)) {
+                    context.nextToken();
+                    updateKxDataviewResult.setReadWrite(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     updateKxDataviewResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

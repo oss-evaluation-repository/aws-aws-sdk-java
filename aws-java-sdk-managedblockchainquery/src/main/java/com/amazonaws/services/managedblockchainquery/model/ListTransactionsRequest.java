@@ -43,8 +43,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
     private BlockchainInstant toBlockchainInstant;
     /**
      * <p>
-     * The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be
-     * ordered by <code>fromTime</code>.
+     * The order by which the results will be sorted.
      * </p>
      */
     private ListTransactionsSort sort;
@@ -59,7 +58,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The maximum number of transactions to list.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -77,7 +76,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * This filter is used to include transactions in the response that haven't reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i>
-     * </a>. Transactions that have reached finiality are always part of the response.
+     * </a>. Transactions that have reached finality are always part of the response.
      * </p>
      */
     private ConfirmationStatusFilter confirmationStatusFilter;
@@ -235,13 +234,11 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be
-     * ordered by <code>fromTime</code>.
+     * The order by which the results will be sorted.
      * </p>
      * 
      * @param sort
-     *        The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be
-     *        ordered by <code>fromTime</code>.
+     *        The order by which the results will be sorted.
      */
 
     public void setSort(ListTransactionsSort sort) {
@@ -250,12 +247,10 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be
-     * ordered by <code>fromTime</code>.
+     * The order by which the results will be sorted.
      * </p>
      * 
-     * @return The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will
-     *         be ordered by <code>fromTime</code>.
+     * @return The order by which the results will be sorted.
      */
 
     public ListTransactionsSort getSort() {
@@ -264,13 +259,11 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be
-     * ordered by <code>fromTime</code>.
+     * The order by which the results will be sorted.
      * </p>
      * 
      * @param sort
-     *        The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be
-     *        ordered by <code>fromTime</code>.
+     *        The order by which the results will be sorted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,7 +317,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The maximum number of transactions to list.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -340,7 +333,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * @param maxResults
      *        The maximum number of transactions to list.</p>
      *        <p>
-     *        Default:<code>100</code>
+     *        Default: <code>100</code>
      *        </p>
      *        <note>
      *        <p>
@@ -362,7 +355,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The maximum number of transactions to list.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -377,7 +370,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The maximum number of transactions to list.</p>
      *         <p>
-     *         Default:<code>100</code>
+     *         Default: <code>100</code>
      *         </p>
      *         <note>
      *         <p>
@@ -399,7 +392,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * The maximum number of transactions to list.
      * </p>
      * <p>
-     * Default:<code>100</code>
+     * Default: <code>100</code>
      * </p>
      * <note>
      * <p>
@@ -415,7 +408,7 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * @param maxResults
      *        The maximum number of transactions to list.</p>
      *        <p>
-     *        Default:<code>100</code>
+     *        Default: <code>100</code>
      *        </p>
      *        <note>
      *        <p>
@@ -438,13 +431,13 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * This filter is used to include transactions in the response that haven't reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i>
-     * </a>. Transactions that have reached finiality are always part of the response.
+     * </a>. Transactions that have reached finality are always part of the response.
      * </p>
      * 
      * @param confirmationStatusFilter
      *        This filter is used to include transactions in the response that haven't reached <a
      *        href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     *        <i>finality</i> </a>. Transactions that have reached finiality are always part of the response.
+     *        <i>finality</i> </a>. Transactions that have reached finality are always part of the response.
      */
 
     public void setConfirmationStatusFilter(ConfirmationStatusFilter confirmationStatusFilter) {
@@ -455,12 +448,12 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * This filter is used to include transactions in the response that haven't reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i>
-     * </a>. Transactions that have reached finiality are always part of the response.
+     * </a>. Transactions that have reached finality are always part of the response.
      * </p>
      * 
      * @return This filter is used to include transactions in the response that haven't reached <a
      *         href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     *         <i>finality</i> </a>. Transactions that have reached finiality are always part of the response.
+     *         <i>finality</i> </a>. Transactions that have reached finality are always part of the response.
      */
 
     public ConfirmationStatusFilter getConfirmationStatusFilter() {
@@ -471,13 +464,13 @@ public class ListTransactionsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * This filter is used to include transactions in the response that haven't reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i>
-     * </a>. Transactions that have reached finiality are always part of the response.
+     * </a>. Transactions that have reached finality are always part of the response.
      * </p>
      * 
      * @param confirmationStatusFilter
      *        This filter is used to include transactions in the response that haven't reached <a
      *        href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     *        <i>finality</i> </a>. Transactions that have reached finiality are always part of the response.
+     *        <i>finality</i> </a>. Transactions that have reached finality are always part of the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,6 +32,8 @@ public class KxDataviewSegmentConfigurationMarshaller {
             .marshallLocationName("dbPaths").build();
     private static final MarshallingInfo<String> VOLUMENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("volumeName").build();
+    private static final MarshallingInfo<Boolean> ONDEMAND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("onDemand").build();
 
     private static final KxDataviewSegmentConfigurationMarshaller instance = new KxDataviewSegmentConfigurationMarshaller();
 
@@ -51,6 +53,7 @@ public class KxDataviewSegmentConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(kxDataviewSegmentConfiguration.getDbPaths(), DBPATHS_BINDING);
             protocolMarshaller.marshall(kxDataviewSegmentConfiguration.getVolumeName(), VOLUMENAME_BINDING);
+            protocolMarshaller.marshall(kxDataviewSegmentConfiguration.getOnDemand(), ONDEMAND_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

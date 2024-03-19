@@ -99,7 +99,7 @@ public class AnomalyJsonUnmarshaller implements Unmarshaller<Anomaly, JsonUnmars
                 }
                 if (context.testExpression("logSamples", targetDepth)) {
                     context.nextToken();
-                    anomaly.setLogSamples(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+                    anomaly.setLogSamples(new ListUnmarshaller<LogEvent>(LogEventJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

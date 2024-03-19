@@ -1635,6 +1635,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeMacHostsResult describeMacHosts(DescribeMacHostsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeManagedPrefixListsResult describeManagedPrefixLists(DescribeManagedPrefixListsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

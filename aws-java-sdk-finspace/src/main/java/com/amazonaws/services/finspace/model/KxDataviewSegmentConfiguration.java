@@ -43,6 +43,14 @@ public class KxDataviewSegmentConfiguration implements Serializable, Cloneable, 
      * </p>
      */
     private String volumeName;
+    /**
+     * <p>
+     * Enables on-demand caching on the selected database path when a particular file or a column of the database is
+     * accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.
+     * </p>
+     */
+    private Boolean onDemand;
 
     /**
      * <p>
@@ -163,6 +171,78 @@ public class KxDataviewSegmentConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Enables on-demand caching on the selected database path when a particular file or a column of the database is
+     * accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.
+     * </p>
+     * 
+     * @param onDemand
+     *        Enables on-demand caching on the selected database path when a particular file or a column of the database
+     *        is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the
+     *        filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is
+     *        <b>False</b>.
+     */
+
+    public void setOnDemand(Boolean onDemand) {
+        this.onDemand = onDemand;
+    }
+
+    /**
+     * <p>
+     * Enables on-demand caching on the selected database path when a particular file or a column of the database is
+     * accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.
+     * </p>
+     * 
+     * @return Enables on-demand caching on the selected database path when a particular file or a column of the
+     *         database is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files
+     *         on the filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is
+     *         <b>False</b>.
+     */
+
+    public Boolean getOnDemand() {
+        return this.onDemand;
+    }
+
+    /**
+     * <p>
+     * Enables on-demand caching on the selected database path when a particular file or a column of the database is
+     * accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.
+     * </p>
+     * 
+     * @param onDemand
+     *        Enables on-demand caching on the selected database path when a particular file or a column of the database
+     *        is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the
+     *        filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is
+     *        <b>False</b>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KxDataviewSegmentConfiguration withOnDemand(Boolean onDemand) {
+        setOnDemand(onDemand);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables on-demand caching on the selected database path when a particular file or a column of the database is
+     * accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value is <b>False</b>.
+     * </p>
+     * 
+     * @return Enables on-demand caching on the selected database path when a particular file or a column of the
+     *         database is accessed. When on demand caching is <b>True</b>, dataviews perform minimal loading of files
+     *         on the filesystem as needed. When it is set to <b>False</b>, everything is cached. The default value is
+     *         <b>False</b>.
+     */
+
+    public Boolean isOnDemand() {
+        return this.onDemand;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -177,7 +257,9 @@ public class KxDataviewSegmentConfiguration implements Serializable, Cloneable, 
         if (getDbPaths() != null)
             sb.append("DbPaths: ").append(getDbPaths()).append(",");
         if (getVolumeName() != null)
-            sb.append("VolumeName: ").append(getVolumeName());
+            sb.append("VolumeName: ").append(getVolumeName()).append(",");
+        if (getOnDemand() != null)
+            sb.append("OnDemand: ").append(getOnDemand());
         sb.append("}");
         return sb.toString();
     }
@@ -200,6 +282,10 @@ public class KxDataviewSegmentConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getVolumeName() != null && other.getVolumeName().equals(this.getVolumeName()) == false)
             return false;
+        if (other.getOnDemand() == null ^ this.getOnDemand() == null)
+            return false;
+        if (other.getOnDemand() != null && other.getOnDemand().equals(this.getOnDemand()) == false)
+            return false;
         return true;
     }
 
@@ -210,6 +296,7 @@ public class KxDataviewSegmentConfiguration implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getDbPaths() == null) ? 0 : getDbPaths().hashCode());
         hashCode = prime * hashCode + ((getVolumeName() == null) ? 0 : getVolumeName().hashCode());
+        hashCode = prime * hashCode + ((getOnDemand() == null) ? 0 : getOnDemand().hashCode());
         return hashCode;
     }
 
