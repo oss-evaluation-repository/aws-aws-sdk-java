@@ -43,6 +43,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public CreatePackageGroupResult createPackageGroup(CreatePackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRepositoryResult createRepository(CreateRepositoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,6 +64,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
 
     @Override
     public DeletePackageResult deletePackage(DeletePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePackageGroupResult deletePackageGroup(DeletePackageGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,6 +98,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public DescribePackageGroupResult describePackageGroup(DescribePackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePackageVersionResult describePackageVersion(DescribePackageVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +119,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
 
     @Override
     public DisposePackageVersionsResult disposePackageVersions(DisposePackageVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAssociatedPackageGroupResult getAssociatedPackageGroup(GetAssociatedPackageGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,7 +158,22 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public ListAllowedRepositoriesForGroupResult listAllowedRepositoriesForGroup(ListAllowedRepositoriesForGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAssociatedPackagesResult listAssociatedPackages(ListAssociatedPackagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDomainsResult listDomains(ListDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPackageGroupsResult listPackageGroups(ListPackageGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,6 +204,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
 
     @Override
     public ListRepositoriesInDomainResult listRepositoriesInDomain(ListRepositoriesInDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSubPackageGroupsResult listSubPackageGroups(ListSubPackageGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -204,6 +244,16 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePackageGroupResult updatePackageGroup(UpdatePackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePackageGroupOriginConfigurationResult updatePackageGroupOriginConfiguration(UpdatePackageGroupOriginConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

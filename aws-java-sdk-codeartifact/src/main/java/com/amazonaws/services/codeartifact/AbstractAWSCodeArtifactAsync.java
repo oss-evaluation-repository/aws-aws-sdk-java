@@ -67,6 +67,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePackageGroupResult> createPackageGroupAsync(CreatePackageGroupRequest request) {
+
+        return createPackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePackageGroupResult> createPackageGroupAsync(CreatePackageGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageGroupRequest, CreatePackageGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(CreateRepositoryRequest request) {
 
         return createRepositoryAsync(request, null);
@@ -114,6 +127,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     @Override
     public java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePackageRequest, DeletePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePackageGroupResult> deletePackageGroupAsync(DeletePackageGroupRequest request) {
+
+        return deletePackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePackageGroupResult> deletePackageGroupAsync(DeletePackageGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageGroupRequest, DeletePackageGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -186,6 +212,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePackageGroupResult> describePackageGroupAsync(DescribePackageGroupRequest request) {
+
+        return describePackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePackageGroupResult> describePackageGroupAsync(DescribePackageGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribePackageGroupRequest, DescribePackageGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePackageVersionResult> describePackageVersionAsync(DescribePackageVersionRequest request) {
 
         return describePackageVersionAsync(request, null);
@@ -233,6 +272,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     @Override
     public java.util.concurrent.Future<DisposePackageVersionsResult> disposePackageVersionsAsync(DisposePackageVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DisposePackageVersionsRequest, DisposePackageVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedPackageGroupResult> getAssociatedPackageGroupAsync(GetAssociatedPackageGroupRequest request) {
+
+        return getAssociatedPackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedPackageGroupResult> getAssociatedPackageGroupAsync(GetAssociatedPackageGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAssociatedPackageGroupRequest, GetAssociatedPackageGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -316,6 +368,34 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListAllowedRepositoriesForGroupResult> listAllowedRepositoriesForGroupAsync(
+            ListAllowedRepositoriesForGroupRequest request) {
+
+        return listAllowedRepositoriesForGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAllowedRepositoriesForGroupResult> listAllowedRepositoriesForGroupAsync(
+            ListAllowedRepositoriesForGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAllowedRepositoriesForGroupRequest, ListAllowedRepositoriesForGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedPackagesResult> listAssociatedPackagesAsync(ListAssociatedPackagesRequest request) {
+
+        return listAssociatedPackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedPackagesResult> listAssociatedPackagesAsync(ListAssociatedPackagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssociatedPackagesRequest, ListAssociatedPackagesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request) {
 
         return listDomainsAsync(request, null);
@@ -324,6 +404,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     @Override
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPackageGroupsResult> listPackageGroupsAsync(ListPackageGroupsRequest request) {
+
+        return listPackageGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPackageGroupsResult> listPackageGroupsAsync(ListPackageGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPackageGroupsRequest, ListPackageGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -402,6 +495,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     @Override
     public java.util.concurrent.Future<ListRepositoriesInDomainResult> listRepositoriesInDomainAsync(ListRepositoriesInDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRepositoriesInDomainRequest, ListRepositoriesInDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubPackageGroupsResult> listSubPackageGroupsAsync(ListSubPackageGroupsRequest request) {
+
+        return listSubPackageGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubPackageGroupsResult> listSubPackageGroupsAsync(ListSubPackageGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSubPackageGroupsRequest, ListSubPackageGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -493,6 +599,34 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageGroupResult> updatePackageGroupAsync(UpdatePackageGroupRequest request) {
+
+        return updatePackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageGroupResult> updatePackageGroupAsync(UpdatePackageGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageGroupRequest, UpdatePackageGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageGroupOriginConfigurationResult> updatePackageGroupOriginConfigurationAsync(
+            UpdatePackageGroupOriginConfigurationRequest request) {
+
+        return updatePackageGroupOriginConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageGroupOriginConfigurationResult> updatePackageGroupOriginConfigurationAsync(
+            UpdatePackageGroupOriginConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageGroupOriginConfigurationRequest, UpdatePackageGroupOriginConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

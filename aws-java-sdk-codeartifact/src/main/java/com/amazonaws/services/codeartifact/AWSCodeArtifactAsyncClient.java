@@ -33,10 +33,7 @@ import java.util.concurrent.ExecutorService;
  * the point of view of a package manager client.
  * </p>
  * <p>
- * <b>CodeArtifact Components</b>
- * </p>
- * <p>
- * Use the information in this guide to help you work with the following CodeArtifact components:
+ * <b>CodeArtifact concepts</b>
  * </p>
  * <ul>
  * <li>
@@ -46,7 +43,8 @@ import java.util.concurrent.ExecutorService;
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
  * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), Python CLIs (<b>
- * <code>pip</code> </b> and <code>twine</code>), and NuGet CLIs (<code>nuget</code> and <code>dotnet</code>).
+ * <code>pip</code> </b> and <code>twine</code>), NuGet CLIs (<code>nuget</code> and <code>dotnet</code>), and the Swift
+ * package manager (<b> <code>swift</code> </b>).
  * </p>
  * </li>
  * <li>
@@ -74,8 +72,10 @@ import java.util.concurrent.ExecutorService;
  * install the software. CodeArtifact supports <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-swift">Swift</a>, and <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic">generic</a> package formats.
  * </p>
  * <p>
  * In CodeArtifact, a package consists of:
@@ -105,6 +105,15 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <b>Package group</b>: A group of packages that match a specified definition. Package groups can be used to apply
+ * configuration to multiple packages that match a defined pattern using package format, package namespace, and package
+ * name. You can use package groups to more conveniently configure package origin controls for multiple packages.
+ * Package origin controls are used to block or allow ingestion or publishing of new package versions, which protects
+ * users from malicious actions known as dependency substitution attacks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <b>Package version</b>: A version of a package, such as <code>@types/node 12.6.9</code>. The version number format
  * and semantics vary for different package formats. For example, npm package versions must conform to the <a
  * href="https://semver.org/">Semantic Versioning specification</a>. In CodeArtifact, a package version consists of the
@@ -127,7 +136,7 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * </ul>
  * <p>
- * CodeArtifact supports these operations:
+ * <b>CodeArtifact supported API operations</b>
  * </p>
  * <ul>
  * <li>
@@ -143,7 +152,12 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
- * <code>CreateDomain</code>: Creates a domain
+ * <code>CreateDomain</code>: Creates a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CreatePackageGroup</code>: Creates a package group.
  * </p>
  * </li>
  * <li>
@@ -164,6 +178,12 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * <code>DeletePackage</code>: Deletes a package and all associated package versions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeletePackageGroup</code>: Deletes a package group. Does not delete packages or package versions that are
+ * associated with a package group.
  * </p>
  * </li>
  * <li>
@@ -197,6 +217,13 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <code>DescribePackageGroup</code>: Returns a <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroup.html">PackageGroup</a> object
+ * that contains details about a package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DescribePackageVersion</code>: Returns a <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
  * >PackageVersionDescription</a> object that contains details about a package version.
@@ -217,6 +244,11 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * <code>DisassociateExternalConnection</code>: Removes an existing external connection from a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetAssociatedPackageGroup</code>: Returns the most closely associated package group to the specified package.
  * </p>
  * </li>
  * <li>
@@ -249,6 +281,11 @@ import java.util.concurrent.ExecutorService;
  * <ul>
  * <li>
  * <p>
+ * <code>generic</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>maven</code>
  * </p>
  * </li>
@@ -267,11 +304,27 @@ import java.util.concurrent.ExecutorService;
  * <code>pypi</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>swift</code>
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
  * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is set on a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAllowedRepositoriesForGroup</code>: Lists the allowed repositories for a package group that has origin
+ * configuration set to <code>ALLOW_SPECIFIC_REPOSITORIES</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAssociatedPackages</code>: Returns a list of packages associated with the requested package group.
  * </p>
  * </li>
  * <li>
@@ -283,6 +336,11 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * <code>ListPackages</code>: Lists the packages in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListPackageGroups</code>: Returns a list of package groups in the requested domain.
  * </p>
  * </li>
  * <li>
@@ -313,6 +371,11 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <code>ListSubPackageGroups</code>: Returns a list of direct children of the specified package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>PublishPackageVersion</code>: Creates a new package version containing one or more assets.
  * </p>
  * </li>
@@ -331,6 +394,17 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository that specifies permissions to
  * access it.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroup</code>: Updates a package group. This API cannot be used to update a package group's origin
+ * configuration or pattern.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroupOriginConfiguration</code>: Updates the package origin configuration for a package group.
  * </p>
  * </li>
  * <li>
@@ -489,6 +563,39 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePackageGroupResult> createPackageGroupAsync(CreatePackageGroupRequest request) {
+
+        return createPackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePackageGroupResult> createPackageGroupAsync(final CreatePackageGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePackageGroupRequest, CreatePackageGroupResult> asyncHandler) {
+        final CreatePackageGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePackageGroupResult>() {
+            @Override
+            public CreatePackageGroupResult call() throws Exception {
+                CreatePackageGroupResult result = null;
+
+                try {
+                    result = executeCreatePackageGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRepositoryResult> createRepositoryAsync(CreateRepositoryRequest request) {
 
         return createRepositoryAsync(request, null);
@@ -606,6 +713,39 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
 
                 try {
                     result = executeDeletePackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePackageGroupResult> deletePackageGroupAsync(DeletePackageGroupRequest request) {
+
+        return deletePackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePackageGroupResult> deletePackageGroupAsync(final DeletePackageGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePackageGroupRequest, DeletePackageGroupResult> asyncHandler) {
+        final DeletePackageGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePackageGroupResult>() {
+            @Override
+            public DeletePackageGroupResult call() throws Exception {
+                DeletePackageGroupResult result = null;
+
+                try {
+                    result = executeDeletePackageGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -789,6 +929,39 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePackageGroupResult> describePackageGroupAsync(DescribePackageGroupRequest request) {
+
+        return describePackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePackageGroupResult> describePackageGroupAsync(final DescribePackageGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePackageGroupRequest, DescribePackageGroupResult> asyncHandler) {
+        final DescribePackageGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePackageGroupResult>() {
+            @Override
+            public DescribePackageGroupResult call() throws Exception {
+                DescribePackageGroupResult result = null;
+
+                try {
+                    result = executeDescribePackageGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePackageVersionResult> describePackageVersionAsync(DescribePackageVersionRequest request) {
 
         return describePackageVersionAsync(request, null);
@@ -906,6 +1079,39 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
 
                 try {
                     result = executeDisposePackageVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedPackageGroupResult> getAssociatedPackageGroupAsync(GetAssociatedPackageGroupRequest request) {
+
+        return getAssociatedPackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociatedPackageGroupResult> getAssociatedPackageGroupAsync(final GetAssociatedPackageGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAssociatedPackageGroupRequest, GetAssociatedPackageGroupResult> asyncHandler) {
+        final GetAssociatedPackageGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAssociatedPackageGroupResult>() {
+            @Override
+            public GetAssociatedPackageGroupResult call() throws Exception {
+                GetAssociatedPackageGroupResult result = null;
+
+                try {
+                    result = executeGetAssociatedPackageGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1121,6 +1327,74 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListAllowedRepositoriesForGroupResult> listAllowedRepositoriesForGroupAsync(
+            ListAllowedRepositoriesForGroupRequest request) {
+
+        return listAllowedRepositoriesForGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAllowedRepositoriesForGroupResult> listAllowedRepositoriesForGroupAsync(
+            final ListAllowedRepositoriesForGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAllowedRepositoriesForGroupRequest, ListAllowedRepositoriesForGroupResult> asyncHandler) {
+        final ListAllowedRepositoriesForGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAllowedRepositoriesForGroupResult>() {
+            @Override
+            public ListAllowedRepositoriesForGroupResult call() throws Exception {
+                ListAllowedRepositoriesForGroupResult result = null;
+
+                try {
+                    result = executeListAllowedRepositoriesForGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedPackagesResult> listAssociatedPackagesAsync(ListAssociatedPackagesRequest request) {
+
+        return listAssociatedPackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedPackagesResult> listAssociatedPackagesAsync(final ListAssociatedPackagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssociatedPackagesRequest, ListAssociatedPackagesResult> asyncHandler) {
+        final ListAssociatedPackagesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAssociatedPackagesResult>() {
+            @Override
+            public ListAssociatedPackagesResult call() throws Exception {
+                ListAssociatedPackagesResult result = null;
+
+                try {
+                    result = executeListAssociatedPackages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request) {
 
         return listDomainsAsync(request, null);
@@ -1138,6 +1412,39 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
 
                 try {
                     result = executeListDomains(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPackageGroupsResult> listPackageGroupsAsync(ListPackageGroupsRequest request) {
+
+        return listPackageGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPackageGroupsResult> listPackageGroupsAsync(final ListPackageGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPackageGroupsRequest, ListPackageGroupsResult> asyncHandler) {
+        final ListPackageGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPackageGroupsResult>() {
+            @Override
+            public ListPackageGroupsResult call() throws Exception {
+                ListPackageGroupsResult result = null;
+
+                try {
+                    result = executeListPackageGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1337,6 +1644,39 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
 
                 try {
                     result = executeListRepositoriesInDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubPackageGroupsResult> listSubPackageGroupsAsync(ListSubPackageGroupsRequest request) {
+
+        return listSubPackageGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSubPackageGroupsResult> listSubPackageGroupsAsync(final ListSubPackageGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSubPackageGroupsRequest, ListSubPackageGroupsResult> asyncHandler) {
+        final ListSubPackageGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSubPackageGroupsResult>() {
+            @Override
+            public ListSubPackageGroupsResult call() throws Exception {
+                ListSubPackageGroupsResult result = null;
+
+                try {
+                    result = executeListSubPackageGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1570,6 +1910,74 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageGroupResult> updatePackageGroupAsync(UpdatePackageGroupRequest request) {
+
+        return updatePackageGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageGroupResult> updatePackageGroupAsync(final UpdatePackageGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePackageGroupRequest, UpdatePackageGroupResult> asyncHandler) {
+        final UpdatePackageGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePackageGroupResult>() {
+            @Override
+            public UpdatePackageGroupResult call() throws Exception {
+                UpdatePackageGroupResult result = null;
+
+                try {
+                    result = executeUpdatePackageGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageGroupOriginConfigurationResult> updatePackageGroupOriginConfigurationAsync(
+            UpdatePackageGroupOriginConfigurationRequest request) {
+
+        return updatePackageGroupOriginConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackageGroupOriginConfigurationResult> updatePackageGroupOriginConfigurationAsync(
+            final UpdatePackageGroupOriginConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePackageGroupOriginConfigurationRequest, UpdatePackageGroupOriginConfigurationResult> asyncHandler) {
+        final UpdatePackageGroupOriginConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePackageGroupOriginConfigurationResult>() {
+            @Override
+            public UpdatePackageGroupOriginConfigurationResult call() throws Exception {
+                UpdatePackageGroupOriginConfigurationResult result = null;
+
+                try {
+                    result = executeUpdatePackageGroupOriginConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

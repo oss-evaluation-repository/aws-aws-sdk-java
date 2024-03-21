@@ -31,8 +31,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
     private String format;
     /**
      * <p>
-     * The namespace of the package version that contains the requested package version assets. The package version
-     * component that specifies its namespace depends on its type. For example:
+     * The namespace of the package version that contains the requested package version assets. The package component
+     * that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -42,7 +42,12 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -148,8 +153,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version that contains the requested package version assets. The package version
-     * component that specifies its namespace depends on its type. For example:
+     * The namespace of the package version that contains the requested package version assets. The package component
+     * that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -159,7 +164,12 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -172,7 +182,7 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * 
      * @param namespace
      *        The namespace of the package version that contains the requested package version assets. The package
-     *        version component that specifies its namespace depends on its type. For example:</p>
+     *        component that specifies its namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -181,7 +191,12 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package version is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is its <code>namespace</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -198,8 +213,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version that contains the requested package version assets. The package version
-     * component that specifies its namespace depends on its type. For example:
+     * The namespace of the package version that contains the requested package version assets. The package component
+     * that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -209,7 +224,12 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -221,7 +241,7 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @return The namespace of the package version that contains the requested package version assets. The package
-     *         version component that specifies its namespace depends on its type. For example:</p>
+     *         component that specifies its namespace depends on its type. For example:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -230,7 +250,12 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         The namespace of an npm package version is its <code>scope</code>.
+     *         The namespace of an npm or Swift package version is its <code>scope</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is its <code>namespace</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -247,8 +272,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version that contains the requested package version assets. The package version
-     * component that specifies its namespace depends on its type. For example:
+     * The namespace of the package version that contains the requested package version assets. The package component
+     * that specifies its namespace depends on its type. For example:
      * </p>
      * <ul>
      * <li>
@@ -258,7 +283,12 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -271,7 +301,7 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * 
      * @param namespace
      *        The namespace of the package version that contains the requested package version assets. The package
-     *        version component that specifies its namespace depends on its type. For example:</p>
+     *        component that specifies its namespace depends on its type. For example:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -280,7 +310,12 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package version is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is its <code>namespace</code>.
      *        </p>
      *        </li>
      *        <li>

@@ -33,10 +33,7 @@ import com.amazonaws.services.codeartifact.model.*;
  * the point of view of a package manager client.
  * </p>
  * <p>
- * <b>CodeArtifact Components</b>
- * </p>
- * <p>
- * Use the information in this guide to help you work with the following CodeArtifact components:
+ * <b>CodeArtifact concepts</b>
  * </p>
  * <ul>
  * <li>
@@ -46,7 +43,8 @@ import com.amazonaws.services.codeartifact.model.*;
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
  * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), Python CLIs (<b>
- * <code>pip</code> </b> and <code>twine</code>), and NuGet CLIs (<code>nuget</code> and <code>dotnet</code>).
+ * <code>pip</code> </b> and <code>twine</code>), NuGet CLIs (<code>nuget</code> and <code>dotnet</code>), and the Swift
+ * package manager (<b> <code>swift</code> </b>).
  * </p>
  * </li>
  * <li>
@@ -74,8 +72,10 @@ import com.amazonaws.services.codeartifact.model.*;
  * install the software. CodeArtifact supports <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-swift">Swift</a>, and <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic">generic</a> package formats.
  * </p>
  * <p>
  * In CodeArtifact, a package consists of:
@@ -105,6 +105,15 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
+ * <b>Package group</b>: A group of packages that match a specified definition. Package groups can be used to apply
+ * configuration to multiple packages that match a defined pattern using package format, package namespace, and package
+ * name. You can use package groups to more conveniently configure package origin controls for multiple packages.
+ * Package origin controls are used to block or allow ingestion or publishing of new package versions, which protects
+ * users from malicious actions known as dependency substitution attacks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <b>Package version</b>: A version of a package, such as <code>@types/node 12.6.9</code>. The version number format
  * and semantics vary for different package formats. For example, npm package versions must conform to the <a
  * href="https://semver.org/">Semantic Versioning specification</a>. In CodeArtifact, a package version consists of the
@@ -127,7 +136,7 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * </ul>
  * <p>
- * CodeArtifact supports these operations:
+ * <b>CodeArtifact supported API operations</b>
  * </p>
  * <ul>
  * <li>
@@ -143,7 +152,12 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
- * <code>CreateDomain</code>: Creates a domain
+ * <code>CreateDomain</code>: Creates a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CreatePackageGroup</code>: Creates a package group.
  * </p>
  * </li>
  * <li>
@@ -164,6 +178,12 @@ import com.amazonaws.services.codeartifact.model.*;
  * <li>
  * <p>
  * <code>DeletePackage</code>: Deletes a package and all associated package versions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeletePackageGroup</code>: Deletes a package group. Does not delete packages or package versions that are
+ * associated with a package group.
  * </p>
  * </li>
  * <li>
@@ -197,6 +217,13 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>DescribePackageGroup</code>: Returns a <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroup.html">PackageGroup</a> object
+ * that contains details about a package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DescribePackageVersion</code>: Returns a <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
  * >PackageVersionDescription</a> object that contains details about a package version.
@@ -217,6 +244,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * <li>
  * <p>
  * <code>DisassociateExternalConnection</code>: Removes an existing external connection from a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetAssociatedPackageGroup</code>: Returns the most closely associated package group to the specified package.
  * </p>
  * </li>
  * <li>
@@ -249,6 +281,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * <ul>
  * <li>
  * <p>
+ * <code>generic</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>maven</code>
  * </p>
  * </li>
@@ -267,11 +304,27 @@ import com.amazonaws.services.codeartifact.model.*;
  * <code>pypi</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>swift</code>
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
  * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is set on a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAllowedRepositoriesForGroup</code>: Lists the allowed repositories for a package group that has origin
+ * configuration set to <code>ALLOW_SPECIFIC_REPOSITORIES</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAssociatedPackages</code>: Returns a list of packages associated with the requested package group.
  * </p>
  * </li>
  * <li>
@@ -283,6 +336,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * <li>
  * <p>
  * <code>ListPackages</code>: Lists the packages in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListPackageGroups</code>: Returns a list of package groups in the requested domain.
  * </p>
  * </li>
  * <li>
@@ -313,6 +371,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListSubPackageGroups</code>: Returns a list of direct children of the specified package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>PublishPackageVersion</code>: Creates a new package version containing one or more assets.
  * </p>
  * </li>
@@ -331,6 +394,17 @@ import com.amazonaws.services.codeartifact.model.*;
  * <p>
  * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository that specifies permissions to
  * access it.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroup</code>: Updates a package group. This API cannot be used to update a package group's origin
+ * configuration or pattern.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroupOriginConfiguration</code>: Updates the package origin configuration for a package group.
  * </p>
  * </li>
  * <li>
@@ -479,6 +553,41 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
 
     /**
      * <p>
+     * Creates a package group. For more information about creating package groups, including example CLI commands, see
+     * <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/create-package-group.html">Create a package group</a>
+     * in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param createPackageGroupRequest
+     * @return A Java Future containing the result of the CreatePackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsync.CreatePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreatePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePackageGroupResult> createPackageGroupAsync(CreatePackageGroupRequest createPackageGroupRequest);
+
+    /**
+     * <p>
+     * Creates a package group. For more information about creating package groups, including example CLI commands, see
+     * <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/create-package-group.html">Create a package group</a>
+     * in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param createPackageGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.CreatePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreatePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePackageGroupResult> createPackageGroupAsync(CreatePackageGroupRequest createPackageGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePackageGroupRequest, CreatePackageGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a repository.
      * </p>
      * 
@@ -612,6 +721,43 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      */
     java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest deletePackageRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePackageRequest, DeletePackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a package group. Deleting a package group does not delete packages or package versions associated with
+     * the package group. When a package group is deleted, the direct child package groups will become children of the
+     * package group's direct parent package group. Therefore, if any of the child groups are inheriting any settings
+     * from the parent, those settings could change.
+     * </p>
+     * 
+     * @param deletePackageGroupRequest
+     * @return A Java Future containing the result of the DeletePackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsync.DeletePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePackageGroupResult> deletePackageGroupAsync(DeletePackageGroupRequest deletePackageGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a package group. Deleting a package group does not delete packages or package versions associated with
+     * the package group. When a package group is deleted, the direct child package groups will become children of the
+     * package group's direct parent package group. Therefore, if any of the child groups are inheriting any settings
+     * from the parent, those settings could change.
+     * </p>
+     * 
+     * @param deletePackageGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.DeletePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePackageGroupResult> deletePackageGroupAsync(DeletePackageGroupRequest deletePackageGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePackageGroupRequest, DeletePackageGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -809,6 +955,41 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
     /**
      * <p>
      * Returns a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroupDescription.html">
+     * PackageGroupDescription</a> object that contains information about the requested package group.
+     * </p>
+     * 
+     * @param describePackageGroupRequest
+     * @return A Java Future containing the result of the DescribePackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsync.DescribePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePackageGroupResult> describePackageGroupAsync(DescribePackageGroupRequest describePackageGroupRequest);
+
+    /**
+     * <p>
+     * Returns a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroupDescription.html">
+     * PackageGroupDescription</a> object that contains information about the requested package group.
+     * </p>
+     * 
+     * @param describePackageGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.DescribePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePackageGroupResult> describePackageGroupAsync(DescribePackageGroupRequest describePackageGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePackageGroupRequest, DescribePackageGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
      * >PackageVersionDescription</a> object that contains information about the requested package version.
      * </p>
@@ -965,6 +1146,55 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      */
     java.util.concurrent.Future<DisposePackageVersionsResult> disposePackageVersionsAsync(DisposePackageVersionsRequest disposePackageVersionsRequest,
             com.amazonaws.handlers.AsyncHandler<DisposePackageVersionsRequest, DisposePackageVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the most closely associated package group to the specified package. This API does not require that the
+     * package exist in any repository in the domain. As such, <code>GetAssociatedPackageGroup</code> can be used to see
+     * which package group's origin configuration applies to a package before that package is in a repository. This can
+     * be helpful to check if public packages are blocked without ingesting them.
+     * </p>
+     * <p>
+     * For information package group association and matching, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param getAssociatedPackageGroupRequest
+     * @return A Java Future containing the result of the GetAssociatedPackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsync.GetAssociatedPackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAssociatedPackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAssociatedPackageGroupResult> getAssociatedPackageGroupAsync(
+            GetAssociatedPackageGroupRequest getAssociatedPackageGroupRequest);
+
+    /**
+     * <p>
+     * Returns the most closely associated package group to the specified package. This API does not require that the
+     * package exist in any repository in the domain. As such, <code>GetAssociatedPackageGroup</code> can be used to see
+     * which package group's origin configuration applies to a package before that package is in a repository. This can
+     * be helpful to check if public packages are blocked without ingesting them.
+     * </p>
+     * <p>
+     * For information package group association and matching, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param getAssociatedPackageGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAssociatedPackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.GetAssociatedPackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAssociatedPackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAssociatedPackageGroupResult> getAssociatedPackageGroupAsync(
+            GetAssociatedPackageGroupRequest getAssociatedPackageGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAssociatedPackageGroupRequest, GetAssociatedPackageGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1172,6 +1402,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      * <ul>
      * <li>
      * <p>
+     * <code>generic</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>maven</code>
      * </p>
      * </li>
@@ -1188,6 +1423,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      * <li>
      * <p>
      * <code>pypi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>swift</code>
      * </p>
      * </li>
      * </ul>
@@ -1208,6 +1448,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      * <ul>
      * <li>
      * <p>
+     * <code>generic</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>maven</code>
      * </p>
      * </li>
@@ -1224,6 +1469,11 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      * <li>
      * <p>
      * <code>pypi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>swift</code>
      * </p>
      * </li>
      * </ul>
@@ -1278,6 +1528,84 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
 
     /**
      * <p>
+     * Lists the repositories in the added repositories list of the specified restriction type for a package group. For
+     * more information about restriction types and added repository lists, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package group origin
+     * controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listAllowedRepositoriesForGroupRequest
+     * @return A Java Future containing the result of the ListAllowedRepositoriesForGroup operation returned by the
+     *         service.
+     * @sample AWSCodeArtifactAsync.ListAllowedRepositoriesForGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAllowedRepositoriesForGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAllowedRepositoriesForGroupResult> listAllowedRepositoriesForGroupAsync(
+            ListAllowedRepositoriesForGroupRequest listAllowedRepositoriesForGroupRequest);
+
+    /**
+     * <p>
+     * Lists the repositories in the added repositories list of the specified restriction type for a package group. For
+     * more information about restriction types and added repository lists, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package group origin
+     * controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listAllowedRepositoriesForGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAllowedRepositoriesForGroup operation returned by the
+     *         service.
+     * @sample AWSCodeArtifactAsyncHandler.ListAllowedRepositoriesForGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAllowedRepositoriesForGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAllowedRepositoriesForGroupResult> listAllowedRepositoriesForGroupAsync(
+            ListAllowedRepositoriesForGroupRequest listAllowedRepositoriesForGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAllowedRepositoriesForGroupRequest, ListAllowedRepositoriesForGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of packages associated with the requested package group. For information package group association
+     * and matching, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listAssociatedPackagesRequest
+     * @return A Java Future containing the result of the ListAssociatedPackages operation returned by the service.
+     * @sample AWSCodeArtifactAsync.ListAssociatedPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAssociatedPackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssociatedPackagesResult> listAssociatedPackagesAsync(ListAssociatedPackagesRequest listAssociatedPackagesRequest);
+
+    /**
+     * <p>
+     * Returns a list of packages associated with the requested package group. For information package group association
+     * and matching, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listAssociatedPackagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssociatedPackages operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.ListAssociatedPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAssociatedPackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssociatedPackagesResult> listAssociatedPackagesAsync(ListAssociatedPackagesRequest listAssociatedPackagesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssociatedPackagesRequest, ListAssociatedPackagesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
      * >DomainSummary</a> objects for all domains owned by the Amazon Web Services account that makes this call. Each
@@ -1312,6 +1640,37 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      */
     java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest listDomainsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of package groups in the requested domain.
+     * </p>
+     * 
+     * @param listPackageGroupsRequest
+     * @return A Java Future containing the result of the ListPackageGroups operation returned by the service.
+     * @sample AWSCodeArtifactAsync.ListPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPackageGroupsResult> listPackageGroupsAsync(ListPackageGroupsRequest listPackageGroupsRequest);
+
+    /**
+     * <p>
+     * Returns a list of package groups in the requested domain.
+     * </p>
+     * 
+     * @param listPackageGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPackageGroups operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.ListPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPackageGroupsResult> listPackageGroupsAsync(ListPackageGroupsRequest listPackageGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPackageGroupsRequest, ListPackageGroupsResult> asyncHandler);
 
     /**
      * <p>
@@ -1540,6 +1899,47 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      */
     java.util.concurrent.Future<ListRepositoriesInDomainResult> listRepositoriesInDomainAsync(ListRepositoriesInDomainRequest listRepositoriesInDomainRequest,
             com.amazonaws.handlers.AsyncHandler<ListRepositoriesInDomainRequest, ListRepositoriesInDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of direct children of the specified package group.
+     * </p>
+     * <p>
+     * For information package group hierarchy, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listSubPackageGroupsRequest
+     * @return A Java Future containing the result of the ListSubPackageGroups operation returned by the service.
+     * @sample AWSCodeArtifactAsync.ListSubPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListSubPackageGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSubPackageGroupsResult> listSubPackageGroupsAsync(ListSubPackageGroupsRequest listSubPackageGroupsRequest);
+
+    /**
+     * <p>
+     * Returns a list of direct children of the specified package group.
+     * </p>
+     * <p>
+     * For information package group hierarchy, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listSubPackageGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSubPackageGroups operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.ListSubPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListSubPackageGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSubPackageGroupsResult> listSubPackageGroupsAsync(ListSubPackageGroupsRequest listSubPackageGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSubPackageGroupsRequest, ListSubPackageGroupsResult> asyncHandler);
 
     /**
      * <p>
@@ -1851,6 +2251,96 @@ public interface AWSCodeArtifactAsync extends AWSCodeArtifact {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a package group. This API cannot be used to update a package group's origin configuration or pattern. To
+     * update a package group's origin configuration, use <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroupOriginConfiguration.html"
+     * >UpdatePackageGroupOriginConfiguration</a>.
+     * </p>
+     * 
+     * @param updatePackageGroupRequest
+     * @return A Java Future containing the result of the UpdatePackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsync.UpdatePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePackageGroupResult> updatePackageGroupAsync(UpdatePackageGroupRequest updatePackageGroupRequest);
+
+    /**
+     * <p>
+     * Updates a package group. This API cannot be used to update a package group's origin configuration or pattern. To
+     * update a package group's origin configuration, use <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroupOriginConfiguration.html"
+     * >UpdatePackageGroupOriginConfiguration</a>.
+     * </p>
+     * 
+     * @param updatePackageGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackageGroup operation returned by the service.
+     * @sample AWSCodeArtifactAsyncHandler.UpdatePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePackageGroupResult> updatePackageGroupAsync(UpdatePackageGroupRequest updatePackageGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageGroupRequest, UpdatePackageGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the package origin configuration for a package group.
+     * </p>
+     * <p>
+     * The package origin configuration determines how new versions of a package can be added to a repository. You can
+     * allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from
+     * an external connection or upstream source. For more information about package group origin controls and
+     * configuration, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package group origin
+     * controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param updatePackageGroupOriginConfigurationRequest
+     * @return A Java Future containing the result of the UpdatePackageGroupOriginConfiguration operation returned by
+     *         the service.
+     * @sample AWSCodeArtifactAsync.UpdatePackageGroupOriginConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroupOriginConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePackageGroupOriginConfigurationResult> updatePackageGroupOriginConfigurationAsync(
+            UpdatePackageGroupOriginConfigurationRequest updatePackageGroupOriginConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the package origin configuration for a package group.
+     * </p>
+     * <p>
+     * The package origin configuration determines how new versions of a package can be added to a repository. You can
+     * allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from
+     * an external connection or upstream source. For more information about package group origin controls and
+     * configuration, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package group origin
+     * controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param updatePackageGroupOriginConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePackageGroupOriginConfiguration operation returned by
+     *         the service.
+     * @sample AWSCodeArtifactAsyncHandler.UpdatePackageGroupOriginConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroupOriginConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePackageGroupOriginConfigurationResult> updatePackageGroupOriginConfigurationAsync(
+            UpdatePackageGroupOriginConfigurationRequest updatePackageGroupOriginConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePackageGroupOriginConfigurationRequest, UpdatePackageGroupOriginConfigurationResult> asyncHandler);
 
     /**
      * <p>

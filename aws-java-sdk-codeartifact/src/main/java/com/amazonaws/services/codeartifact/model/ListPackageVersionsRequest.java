@@ -55,26 +55,48 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * The namespace of the package that contains the requested package versions. The package component that specifies
      * its namespace depends on its type. For example:
      * </p>
+     * <note>
+     * <p>
+     * The namespace is required when deleting package versions of the following formats:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * Maven
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * Swift
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * The namespace of a Maven package version is its <code>groupId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -309,21 +331,37 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * The namespace of the package that contains the requested package versions. The package component that specifies
      * its namespace depends on its type. For example:
      * </p>
+     * <note>
+     * <p>
+     * The namespace is required when deleting package versions of the following formats:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * Maven
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * Swift
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * The namespace of a Maven package version is its <code>groupId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
@@ -331,31 +369,58 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
      *        The namespace of the package that contains the requested package versions. The package component that
-     *        specifies its namespace depends on its type. For example:</p>
+     *        specifies its namespace depends on its type. For example:</p> <note>
+     *        <p>
+     *        The namespace is required when deleting package versions of the following formats:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of a Maven package is its <code>groupId</code>.
+     *        Maven
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package is its <code>scope</code>.
+     *        Swift
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *        a namespace.
+     *        generic
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The namespace of a Maven package version is its <code>groupId</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The namespace of a generic package is its <code>namespace</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *        formats do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -369,21 +434,37 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * The namespace of the package that contains the requested package versions. The package component that specifies
      * its namespace depends on its type. For example:
      * </p>
+     * <note>
+     * <p>
+     * The namespace is required when deleting package versions of the following formats:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * Maven
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * Swift
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * The namespace of a Maven package version is its <code>groupId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
@@ -391,30 +472,57 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package that contains the requested package versions. The package component that
-     *         specifies its namespace depends on its type. For example:</p>
+     *         specifies its namespace depends on its type. For example:</p> <note>
+     *         <p>
+     *         The namespace is required when deleting package versions of the following formats:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The namespace of a Maven package is its <code>groupId</code>.
+     *         Maven
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The namespace of an npm package is its <code>scope</code>.
+     *         Swift
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *         a namespace.
+     *         generic
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The namespace of a Maven package version is its <code>groupId</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of an npm or Swift package version is its <code>scope</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         The namespace of a generic package is its <code>namespace</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *         formats do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -428,21 +536,37 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * The namespace of the package that contains the requested package versions. The package component that specifies
      * its namespace depends on its type. For example:
      * </p>
+     * <note>
+     * <p>
+     * The namespace is required when deleting package versions of the following formats:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * Maven
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * Swift
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * The namespace of a Maven package version is its <code>groupId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
@@ -450,31 +574,58 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
      *        The namespace of the package that contains the requested package versions. The package component that
-     *        specifies its namespace depends on its type. For example:</p>
+     *        specifies its namespace depends on its type. For example:</p> <note>
+     *        <p>
+     *        The namespace is required when deleting package versions of the following formats:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of a Maven package is its <code>groupId</code>.
+     *        Maven
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package is its <code>scope</code>.
+     *        Swift
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *        a namespace.
+     *        generic
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The namespace of a Maven package version is its <code>groupId</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The namespace of a generic package is its <code>namespace</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *        formats do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

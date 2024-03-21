@@ -34,10 +34,7 @@ import com.amazonaws.services.codeartifact.model.*;
  * the point of view of a package manager client.
  * </p>
  * <p>
- * <b>CodeArtifact Components</b>
- * </p>
- * <p>
- * Use the information in this guide to help you work with the following CodeArtifact components:
+ * <b>CodeArtifact concepts</b>
  * </p>
  * <ul>
  * <li>
@@ -47,7 +44,8 @@ import com.amazonaws.services.codeartifact.model.*;
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
  * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), Python CLIs (<b>
- * <code>pip</code> </b> and <code>twine</code>), and NuGet CLIs (<code>nuget</code> and <code>dotnet</code>).
+ * <code>pip</code> </b> and <code>twine</code>), NuGet CLIs (<code>nuget</code> and <code>dotnet</code>), and the Swift
+ * package manager (<b> <code>swift</code> </b>).
  * </p>
  * </li>
  * <li>
@@ -75,8 +73,10 @@ import com.amazonaws.services.codeartifact.model.*;
  * install the software. CodeArtifact supports <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-swift">Swift</a>, and <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic">generic</a> package formats.
  * </p>
  * <p>
  * In CodeArtifact, a package consists of:
@@ -106,6 +106,15 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
+ * <b>Package group</b>: A group of packages that match a specified definition. Package groups can be used to apply
+ * configuration to multiple packages that match a defined pattern using package format, package namespace, and package
+ * name. You can use package groups to more conveniently configure package origin controls for multiple packages.
+ * Package origin controls are used to block or allow ingestion or publishing of new package versions, which protects
+ * users from malicious actions known as dependency substitution attacks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <b>Package version</b>: A version of a package, such as <code>@types/node 12.6.9</code>. The version number format
  * and semantics vary for different package formats. For example, npm package versions must conform to the <a
  * href="https://semver.org/">Semantic Versioning specification</a>. In CodeArtifact, a package version consists of the
@@ -128,7 +137,7 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * </ul>
  * <p>
- * CodeArtifact supports these operations:
+ * <b>CodeArtifact supported API operations</b>
  * </p>
  * <ul>
  * <li>
@@ -144,7 +153,12 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
- * <code>CreateDomain</code>: Creates a domain
+ * <code>CreateDomain</code>: Creates a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CreatePackageGroup</code>: Creates a package group.
  * </p>
  * </li>
  * <li>
@@ -165,6 +179,12 @@ import com.amazonaws.services.codeartifact.model.*;
  * <li>
  * <p>
  * <code>DeletePackage</code>: Deletes a package and all associated package versions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeletePackageGroup</code>: Deletes a package group. Does not delete packages or package versions that are
+ * associated with a package group.
  * </p>
  * </li>
  * <li>
@@ -198,6 +218,13 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>DescribePackageGroup</code>: Returns a <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroup.html">PackageGroup</a> object
+ * that contains details about a package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DescribePackageVersion</code>: Returns a <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
  * >PackageVersionDescription</a> object that contains details about a package version.
@@ -218,6 +245,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * <li>
  * <p>
  * <code>DisassociateExternalConnection</code>: Removes an existing external connection from a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetAssociatedPackageGroup</code>: Returns the most closely associated package group to the specified package.
  * </p>
  * </li>
  * <li>
@@ -250,6 +282,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * <ul>
  * <li>
  * <p>
+ * <code>generic</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>maven</code>
  * </p>
  * </li>
@@ -268,11 +305,27 @@ import com.amazonaws.services.codeartifact.model.*;
  * <code>pypi</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>swift</code>
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
  * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is set on a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAllowedRepositoriesForGroup</code>: Lists the allowed repositories for a package group that has origin
+ * configuration set to <code>ALLOW_SPECIFIC_REPOSITORIES</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAssociatedPackages</code>: Returns a list of packages associated with the requested package group.
  * </p>
  * </li>
  * <li>
@@ -284,6 +337,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * <li>
  * <p>
  * <code>ListPackages</code>: Lists the packages in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListPackageGroups</code>: Returns a list of package groups in the requested domain.
  * </p>
  * </li>
  * <li>
@@ -314,6 +372,11 @@ import com.amazonaws.services.codeartifact.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListSubPackageGroups</code>: Returns a list of direct children of the specified package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>PublishPackageVersion</code>: Creates a new package version containing one or more assets.
  * </p>
  * </li>
@@ -332,6 +395,17 @@ import com.amazonaws.services.codeartifact.model.*;
  * <p>
  * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository that specifies permissions to
  * access it.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroup</code>: Updates a package group. This API cannot be used to update a package group's origin
+ * configuration or pattern.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroupOriginConfiguration</code>: Updates the package origin configuration for a package group.
  * </p>
  * </li>
  * <li>
@@ -457,6 +531,35 @@ public interface AWSCodeArtifact {
 
     /**
      * <p>
+     * Creates a package group. For more information about creating package groups, including example CLI commands, see
+     * <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/create-package-group.html">Create a package group</a>
+     * in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param createPackageGroupRequest
+     * @return Result of the CreatePackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws ConflictException
+     *         The operation did not succeed because prerequisites are not met.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.CreatePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreatePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreatePackageGroupResult createPackageGroup(CreatePackageGroupRequest createPackageGroupRequest);
+
+    /**
+     * <p>
      * Creates a repository.
      * </p>
      * 
@@ -558,6 +661,36 @@ public interface AWSCodeArtifact {
      *      Documentation</a>
      */
     DeletePackageResult deletePackage(DeletePackageRequest deletePackageRequest);
+
+    /**
+     * <p>
+     * Deletes a package group. Deleting a package group does not delete packages or package versions associated with
+     * the package group. When a package group is deleted, the direct child package groups will become children of the
+     * package group's direct parent package group. Therefore, if any of the child groups are inheriting any settings
+     * from the parent, those settings could change.
+     * </p>
+     * 
+     * @param deletePackageGroupRequest
+     * @return Result of the DeletePackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws ConflictException
+     *         The operation did not succeed because prerequisites are not met.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @sample AWSCodeArtifact.DeletePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeletePackageGroupResult deletePackageGroup(DeletePackageGroupRequest deletePackageGroupRequest);
 
     /**
      * <p>
@@ -700,6 +833,31 @@ public interface AWSCodeArtifact {
     /**
      * <p>
      * Returns a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroupDescription.html">
+     * PackageGroupDescription</a> object that contains information about the requested package group.
+     * </p>
+     * 
+     * @param describePackageGroupRequest
+     * @return Result of the DescribePackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.DescribePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePackageGroupResult describePackageGroup(DescribePackageGroupRequest describePackageGroupRequest);
+
+    /**
+     * <p>
+     * Returns a <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
      * >PackageVersionDescription</a> object that contains information about the requested package version.
      * </p>
@@ -812,6 +970,35 @@ public interface AWSCodeArtifact {
      *      target="_top">AWS API Documentation</a>
      */
     DisposePackageVersionsResult disposePackageVersions(DisposePackageVersionsRequest disposePackageVersionsRequest);
+
+    /**
+     * <p>
+     * Returns the most closely associated package group to the specified package. This API does not require that the
+     * package exist in any repository in the domain. As such, <code>GetAssociatedPackageGroup</code> can be used to see
+     * which package group's origin configuration applies to a package before that package is in a repository. This can
+     * be helpful to check if public packages are blocked without ingesting them.
+     * </p>
+     * <p>
+     * For information package group association and matching, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param getAssociatedPackageGroupRequest
+     * @return Result of the GetAssociatedPackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.GetAssociatedPackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAssociatedPackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAssociatedPackageGroupResult getAssociatedPackageGroup(GetAssociatedPackageGroupRequest getAssociatedPackageGroupRequest);
 
     /**
      * <p>
@@ -951,6 +1138,11 @@ public interface AWSCodeArtifact {
      * <ul>
      * <li>
      * <p>
+     * <code>generic</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>maven</code>
      * </p>
      * </li>
@@ -967,6 +1159,11 @@ public interface AWSCodeArtifact {
      * <li>
      * <p>
      * <code>pypi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>swift</code>
      * </p>
      * </li>
      * </ul>
@@ -1014,6 +1211,58 @@ public interface AWSCodeArtifact {
 
     /**
      * <p>
+     * Lists the repositories in the added repositories list of the specified restriction type for a package group. For
+     * more information about restriction types and added repository lists, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package group origin
+     * controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listAllowedRepositoriesForGroupRequest
+     * @return Result of the ListAllowedRepositoriesForGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.ListAllowedRepositoriesForGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAllowedRepositoriesForGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAllowedRepositoriesForGroupResult listAllowedRepositoriesForGroup(ListAllowedRepositoriesForGroupRequest listAllowedRepositoriesForGroupRequest);
+
+    /**
+     * <p>
+     * Returns a list of packages associated with the requested package group. For information package group association
+     * and matching, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listAssociatedPackagesRequest
+     * @return Result of the ListAssociatedPackages operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.ListAssociatedPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAssociatedPackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssociatedPackagesResult listAssociatedPackages(ListAssociatedPackagesRequest listAssociatedPackagesRequest);
+
+    /**
+     * <p>
      * Returns a list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
      * >DomainSummary</a> objects for all domains owned by the Amazon Web Services account that makes this call. Each
@@ -1035,6 +1284,29 @@ public interface AWSCodeArtifact {
      *      Documentation</a>
      */
     ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest);
+
+    /**
+     * <p>
+     * Returns a list of package groups in the requested domain.
+     * </p>
+     * 
+     * @param listPackageGroupsRequest
+     * @return Result of the ListPackageGroups operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.ListPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListPackageGroupsResult listPackageGroups(ListPackageGroupsRequest listPackageGroupsRequest);
 
     /**
      * <p>
@@ -1190,6 +1462,34 @@ public interface AWSCodeArtifact {
      *      target="_top">AWS API Documentation</a>
      */
     ListRepositoriesInDomainResult listRepositoriesInDomain(ListRepositoriesInDomainRequest listRepositoriesInDomainRequest);
+
+    /**
+     * <p>
+     * Returns a list of direct children of the specified package group.
+     * </p>
+     * <p>
+     * For information package group hierarchy, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listSubPackageGroupsRequest
+     * @return Result of the ListSubPackageGroups operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.ListSubPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListSubPackageGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSubPackageGroupsResult listSubPackageGroups(ListSubPackageGroupsRequest listSubPackageGroupsRequest);
 
     /**
      * <p>
@@ -1401,6 +1701,69 @@ public interface AWSCodeArtifact {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates a package group. This API cannot be used to update a package group's origin configuration or pattern. To
+     * update a package group's origin configuration, use <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroupOriginConfiguration.html"
+     * >UpdatePackageGroupOriginConfiguration</a>.
+     * </p>
+     * 
+     * @param updatePackageGroupRequest
+     * @return Result of the UpdatePackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.UpdatePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePackageGroupResult updatePackageGroup(UpdatePackageGroupRequest updatePackageGroupRequest);
+
+    /**
+     * <p>
+     * Updates the package origin configuration for a package group.
+     * </p>
+     * <p>
+     * The package origin configuration determines how new versions of a package can be added to a repository. You can
+     * allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from
+     * an external connection or upstream source. For more information about package group origin controls and
+     * configuration, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package group origin
+     * controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param updatePackageGroupOriginConfigurationRequest
+     * @return Result of the UpdatePackageGroupOriginConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.UpdatePackageGroupOriginConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroupOriginConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdatePackageGroupOriginConfigurationResult updatePackageGroupOriginConfiguration(
+            UpdatePackageGroupOriginConfigurationRequest updatePackageGroupOriginConfigurationRequest);
 
     /**
      * <p>

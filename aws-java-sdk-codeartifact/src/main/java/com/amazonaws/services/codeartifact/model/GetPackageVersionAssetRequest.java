@@ -52,9 +52,31 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
     private String format;
     /**
      * <p>
-     * The namespace of the package version with the requested asset file. The package version component that specifies
-     * its namespace depends on its type. For example:
+     * The namespace of the package version with the requested asset file. The package component that specifies its
+     * namespace depends on its type. For example:
      * </p>
+     * <note>
+     * <p>
+     * The namespace is required when requesting assets from package versions of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maven
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -63,18 +85,18 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
      * not have a namespace.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * </ul>
@@ -295,9 +317,31 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the package version with the requested asset file. The package version component that specifies
-     * its namespace depends on its type. For example:
+     * The namespace of the package version with the requested asset file. The package component that specifies its
+     * namespace depends on its type. For example:
      * </p>
+     * <note>
+     * <p>
+     * The namespace is required when requesting assets from package versions of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maven
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -306,7 +350,12 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -315,16 +364,32 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * The namespace of a generic package is its <code>namespace</code>.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package version with the requested asset file. The package version component that
-     *        specifies its namespace depends on its type. For example:</p>
+     *        The namespace of the package version with the requested asset file. The package component that specifies
+     *        its namespace depends on its type. For example:</p> <note>
+     *        <p>
+     *        The namespace is required when requesting assets from package versions of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maven
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Swift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        generic
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </note>
      *        <ul>
      *        <li>
      *        <p>
@@ -333,18 +398,18 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package version is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is its <code>namespace</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Python and NuGet package versions do not contain a corresponding component, package versions of those
      *        formats do not have a namespace.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The namespace of a generic package is its <code>namespace</code>.
      *        </p>
      *        </li>
      */
@@ -355,9 +420,31 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the package version with the requested asset file. The package version component that specifies
-     * its namespace depends on its type. For example:
+     * The namespace of the package version with the requested asset file. The package component that specifies its
+     * namespace depends on its type. For example:
      * </p>
+     * <note>
+     * <p>
+     * The namespace is required when requesting assets from package versions of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maven
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -366,7 +453,12 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -375,15 +467,31 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * The namespace of a generic package is its <code>namespace</code>.
-     * </p>
-     * </li>
      * </ul>
      * 
-     * @return The namespace of the package version with the requested asset file. The package version component that
-     *         specifies its namespace depends on its type. For example:</p>
+     * @return The namespace of the package version with the requested asset file. The package component that specifies
+     *         its namespace depends on its type. For example:</p> <note>
+     *         <p>
+     *         The namespace is required when requesting assets from package versions of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maven
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Swift
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         generic
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </note>
      *         <ul>
      *         <li>
      *         <p>
@@ -392,18 +500,18 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         The namespace of an npm package version is its <code>scope</code>.
+     *         The namespace of an npm or Swift package version is its <code>scope</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is its <code>namespace</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Python and NuGet package versions do not contain a corresponding component, package versions of those
      *         formats do not have a namespace.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The namespace of a generic package is its <code>namespace</code>.
      *         </p>
      *         </li>
      */
@@ -414,9 +522,31 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The namespace of the package version with the requested asset file. The package version component that specifies
-     * its namespace depends on its type. For example:
+     * The namespace of the package version with the requested asset file. The package component that specifies its
+     * namespace depends on its type. For example:
      * </p>
+     * <note>
+     * <p>
+     * The namespace is required when requesting assets from package versions of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maven
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * <ul>
      * <li>
      * <p>
@@ -425,7 +555,12 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -434,16 +569,32 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * The namespace of a generic package is its <code>namespace</code>.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package version with the requested asset file. The package version component that
-     *        specifies its namespace depends on its type. For example:</p>
+     *        The namespace of the package version with the requested asset file. The package component that specifies
+     *        its namespace depends on its type. For example:</p> <note>
+     *        <p>
+     *        The namespace is required when requesting assets from package versions of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maven
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Swift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        generic
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </note>
      *        <ul>
      *        <li>
      *        <p>
@@ -452,18 +603,18 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package version is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is its <code>namespace</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Python and NuGet package versions do not contain a corresponding component, package versions of those
      *        formats do not have a namespace.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The namespace of a generic package is its <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

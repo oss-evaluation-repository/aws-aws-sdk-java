@@ -59,10 +59,7 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * the point of view of a package manager client.
  * </p>
  * <p>
- * <b>CodeArtifact Components</b>
- * </p>
- * <p>
- * Use the information in this guide to help you work with the following CodeArtifact components:
+ * <b>CodeArtifact concepts</b>
  * </p>
  * <ul>
  * <li>
@@ -72,7 +69,8 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can
  * contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using
  * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), Python CLIs (<b>
- * <code>pip</code> </b> and <code>twine</code>), and NuGet CLIs (<code>nuget</code> and <code>dotnet</code>).
+ * <code>pip</code> </b> and <code>twine</code>), NuGet CLIs (<code>nuget</code> and <code>dotnet</code>), and the Swift
+ * package manager (<b> <code>swift</code> </b>).
  * </p>
  * </li>
  * <li>
@@ -100,8 +98,10 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * install the software. CodeArtifact supports <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, and <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a> package formats.
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>, <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-swift">Swift</a>, and <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic">generic</a> package formats.
  * </p>
  * <p>
  * In CodeArtifact, a package consists of:
@@ -131,6 +131,15 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <b>Package group</b>: A group of packages that match a specified definition. Package groups can be used to apply
+ * configuration to multiple packages that match a defined pattern using package format, package namespace, and package
+ * name. You can use package groups to more conveniently configure package origin controls for multiple packages.
+ * Package origin controls are used to block or allow ingestion or publishing of new package versions, which protects
+ * users from malicious actions known as dependency substitution attacks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <b>Package version</b>: A version of a package, such as <code>@types/node 12.6.9</code>. The version number format
  * and semantics vary for different package formats. For example, npm package versions must conform to the <a
  * href="https://semver.org/">Semantic Versioning specification</a>. In CodeArtifact, a package version consists of the
@@ -153,7 +162,7 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * CodeArtifact supports these operations:
+ * <b>CodeArtifact supported API operations</b>
  * </p>
  * <ul>
  * <li>
@@ -169,7 +178,12 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <code>CreateDomain</code>: Creates a domain
+ * <code>CreateDomain</code>: Creates a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CreatePackageGroup</code>: Creates a package group.
  * </p>
  * </li>
  * <li>
@@ -190,6 +204,12 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <li>
  * <p>
  * <code>DeletePackage</code>: Deletes a package and all associated package versions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeletePackageGroup</code>: Deletes a package group. Does not delete packages or package versions that are
+ * associated with a package group.
  * </p>
  * </li>
  * <li>
@@ -223,6 +243,13 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <code>DescribePackageGroup</code>: Returns a <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroup.html">PackageGroup</a> object
+ * that contains details about a package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DescribePackageVersion</code>: Returns a <a
  * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
  * >PackageVersionDescription</a> object that contains details about a package version.
@@ -243,6 +270,11 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <li>
  * <p>
  * <code>DisassociateExternalConnection</code>: Removes an existing external connection from a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>GetAssociatedPackageGroup</code>: Returns the most closely associated package group to the specified package.
  * </p>
  * </li>
  * <li>
@@ -275,6 +307,11 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <ul>
  * <li>
  * <p>
+ * <code>generic</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>maven</code>
  * </p>
  * </li>
@@ -293,11 +330,27 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <code>pypi</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>swift</code>
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
  * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is set on a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAllowedRepositoriesForGroup</code>: Lists the allowed repositories for a package group that has origin
+ * configuration set to <code>ALLOW_SPECIFIC_REPOSITORIES</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListAssociatedPackages</code>: Returns a list of packages associated with the requested package group.
  * </p>
  * </li>
  * <li>
@@ -309,6 +362,11 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <li>
  * <p>
  * <code>ListPackages</code>: Lists the packages in a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListPackageGroups</code>: Returns a list of package groups in the requested domain.
  * </p>
  * </li>
  * <li>
@@ -339,6 +397,11 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <code>ListSubPackageGroups</code>: Returns a list of direct children of the specified package group.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>PublishPackageVersion</code>: Creates a new package version containing one or more assets.
  * </p>
  * </li>
@@ -357,6 +420,17 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <p>
  * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository that specifies permissions to
  * access it.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroup</code>: Updates a package group. This API cannot be used to update a package group's origin
+ * configuration or pattern.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdatePackageGroupOriginConfiguration</code>: Updates the package origin configuration for a package group.
  * </p>
  * </li>
  * <li>
@@ -691,6 +765,77 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Creates a package group. For more information about creating package groups, including example CLI commands, see
+     * <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/create-package-group.html">Create a package group</a>
+     * in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param createPackageGroupRequest
+     * @return Result of the CreatePackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws ConflictException
+     *         The operation did not succeed because prerequisites are not met.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.CreatePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreatePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePackageGroupResult createPackageGroup(CreatePackageGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePackageGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreatePackageGroupResult executeCreatePackageGroup(CreatePackageGroupRequest createPackageGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPackageGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePackageGroupRequest> request = null;
+        Response<CreatePackageGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePackageGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPackageGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePackageGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePackageGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePackageGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a repository.
      * </p>
      * 
@@ -953,6 +1098,78 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<DeletePackageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePackageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a package group. Deleting a package group does not delete packages or package versions associated with
+     * the package group. When a package group is deleted, the direct child package groups will become children of the
+     * package group's direct parent package group. Therefore, if any of the child groups are inheriting any settings
+     * from the parent, those settings could change.
+     * </p>
+     * 
+     * @param deletePackageGroupRequest
+     * @return Result of the DeletePackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws ConflictException
+     *         The operation did not succeed because prerequisites are not met.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @sample AWSCodeArtifact.DeletePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeletePackageGroupResult deletePackageGroup(DeletePackageGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePackageGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeletePackageGroupResult executeDeletePackageGroup(DeletePackageGroupRequest deletePackageGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePackageGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePackageGroupRequest> request = null;
+        Response<DeletePackageGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePackageGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePackageGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePackageGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePackageGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePackageGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1318,6 +1535,73 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
     /**
      * <p>
      * Returns a <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroupDescription.html">
+     * PackageGroupDescription</a> object that contains information about the requested package group.
+     * </p>
+     * 
+     * @param describePackageGroupRequest
+     * @return Result of the DescribePackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.DescribePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribePackageGroupResult describePackageGroup(DescribePackageGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePackageGroup(request);
+    }
+
+    @SdkInternalApi
+    final DescribePackageGroupResult executeDescribePackageGroup(DescribePackageGroupRequest describePackageGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePackageGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePackageGroupRequest> request = null;
+        Response<DescribePackageGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePackageGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePackageGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackageGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePackageGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePackageGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
      * >PackageVersionDescription</a> object that contains information about the requested package version.
      * </p>
@@ -1593,6 +1877,79 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<DisposePackageVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisposePackageVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the most closely associated package group to the specified package. This API does not require that the
+     * package exist in any repository in the domain. As such, <code>GetAssociatedPackageGroup</code> can be used to see
+     * which package group's origin configuration applies to a package before that package is in a repository. This can
+     * be helpful to check if public packages are blocked without ingesting them.
+     * </p>
+     * <p>
+     * For information package group association and matching, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param getAssociatedPackageGroupRequest
+     * @return Result of the GetAssociatedPackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.GetAssociatedPackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAssociatedPackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAssociatedPackageGroupResult getAssociatedPackageGroup(GetAssociatedPackageGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAssociatedPackageGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetAssociatedPackageGroupResult executeGetAssociatedPackageGroup(GetAssociatedPackageGroupRequest getAssociatedPackageGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAssociatedPackageGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAssociatedPackageGroupRequest> request = null;
+        Response<GetAssociatedPackageGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAssociatedPackageGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAssociatedPackageGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedPackageGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAssociatedPackageGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAssociatedPackageGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1917,6 +2274,11 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * <ul>
      * <li>
      * <p>
+     * <code>generic</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>maven</code>
      * </p>
      * </li>
@@ -1933,6 +2295,11 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * <li>
      * <p>
      * <code>pypi</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>swift</code>
      * </p>
      * </li>
      * </ul>
@@ -2067,6 +2434,146 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Lists the repositories in the added repositories list of the specified restriction type for a package group. For
+     * more information about restriction types and added repository lists, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package group origin
+     * controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listAllowedRepositoriesForGroupRequest
+     * @return Result of the ListAllowedRepositoriesForGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.ListAllowedRepositoriesForGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAllowedRepositoriesForGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAllowedRepositoriesForGroupResult listAllowedRepositoriesForGroup(ListAllowedRepositoriesForGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAllowedRepositoriesForGroup(request);
+    }
+
+    @SdkInternalApi
+    final ListAllowedRepositoriesForGroupResult executeListAllowedRepositoriesForGroup(
+            ListAllowedRepositoriesForGroupRequest listAllowedRepositoriesForGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAllowedRepositoriesForGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAllowedRepositoriesForGroupRequest> request = null;
+        Response<ListAllowedRepositoriesForGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAllowedRepositoriesForGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAllowedRepositoriesForGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAllowedRepositoriesForGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAllowedRepositoriesForGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAllowedRepositoriesForGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of packages associated with the requested package group. For information package group association
+     * and matching, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listAssociatedPackagesRequest
+     * @return Result of the ListAssociatedPackages operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.ListAssociatedPackages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAssociatedPackages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAssociatedPackagesResult listAssociatedPackages(ListAssociatedPackagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociatedPackages(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociatedPackagesResult executeListAssociatedPackages(ListAssociatedPackagesRequest listAssociatedPackagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssociatedPackagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssociatedPackagesRequest> request = null;
+        Response<ListAssociatedPackagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssociatedPackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedPackagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssociatedPackages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssociatedPackagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAssociatedPackagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
      * >DomainSummary</a> objects for all domains owned by the Amazon Web Services account that makes this call. Each
@@ -2121,6 +2628,71 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDomainsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDomainsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of package groups in the requested domain.
+     * </p>
+     * 
+     * @param listPackageGroupsRequest
+     * @return Result of the ListPackageGroups operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.ListPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListPackageGroupsResult listPackageGroups(ListPackageGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPackageGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListPackageGroupsResult executeListPackageGroups(ListPackageGroupsRequest listPackageGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPackageGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPackageGroupsRequest> request = null;
+        Response<ListPackageGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPackageGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPackageGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPackageGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPackageGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPackageGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2534,6 +3106,76 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<ListRepositoriesInDomainResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListRepositoriesInDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of direct children of the specified package group.
+     * </p>
+     * <p>
+     * For information package group hierarchy, see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html"
+     * >Package group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param listSubPackageGroupsRequest
+     * @return Result of the ListSubPackageGroups operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.ListSubPackageGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListSubPackageGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSubPackageGroupsResult listSubPackageGroups(ListSubPackageGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSubPackageGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListSubPackageGroupsResult executeListSubPackageGroups(ListSubPackageGroupsRequest listSubPackageGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSubPackageGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSubPackageGroupsRequest> request = null;
+        Response<ListSubPackageGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSubPackageGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSubPackageGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubPackageGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSubPackageGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSubPackageGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3048,6 +3690,155 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a package group. This API cannot be used to update a package group's origin configuration or pattern. To
+     * update a package group's origin configuration, use <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroupOriginConfiguration.html"
+     * >UpdatePackageGroupOriginConfiguration</a>.
+     * </p>
+     * 
+     * @param updatePackageGroupRequest
+     * @return Result of the UpdatePackageGroup operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.UpdatePackageGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdatePackageGroupResult updatePackageGroup(UpdatePackageGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePackageGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePackageGroupResult executeUpdatePackageGroup(UpdatePackageGroupRequest updatePackageGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePackageGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePackageGroupRequest> request = null;
+        Response<UpdatePackageGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePackageGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePackageGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePackageGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePackageGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePackageGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the package origin configuration for a package group.
+     * </p>
+     * <p>
+     * The package origin configuration determines how new versions of a package can be added to a repository. You can
+     * allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from
+     * an external connection or upstream source. For more information about package group origin controls and
+     * configuration, see <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package group origin
+     * controls</a> in the <i>CodeArtifact User Guide</i>.
+     * </p>
+     * 
+     * @param updatePackageGroupOriginConfigurationRequest
+     * @return Result of the UpdatePackageGroupOriginConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @sample AWSCodeArtifact.UpdatePackageGroupOriginConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroupOriginConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdatePackageGroupOriginConfigurationResult updatePackageGroupOriginConfiguration(UpdatePackageGroupOriginConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePackageGroupOriginConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePackageGroupOriginConfigurationResult executeUpdatePackageGroupOriginConfiguration(
+            UpdatePackageGroupOriginConfigurationRequest updatePackageGroupOriginConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePackageGroupOriginConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePackageGroupOriginConfigurationRequest> request = null;
+        Response<UpdatePackageGroupOriginConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePackageGroupOriginConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updatePackageGroupOriginConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePackageGroupOriginConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePackageGroupOriginConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdatePackageGroupOriginConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

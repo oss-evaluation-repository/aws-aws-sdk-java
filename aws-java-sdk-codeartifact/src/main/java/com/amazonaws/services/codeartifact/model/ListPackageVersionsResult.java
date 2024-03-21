@@ -56,18 +56,23 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -276,18 +281,23 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -298,18 +308,23 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of a Maven package is its <code>groupId</code>.
+     *        The namespace of a Maven package version is its <code>groupId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *        a namespace.
+     *        The namespace of a generic package is its <code>namespace</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *        formats do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -326,18 +341,23 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -347,18 +367,23 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
      *         <ul>
      *         <li>
      *         <p>
-     *         The namespace of a Maven package is its <code>groupId</code>.
+     *         The namespace of a Maven package version is its <code>groupId</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The namespace of an npm package is its <code>scope</code>.
+     *         The namespace of an npm or Swift package version is its <code>scope</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *         a namespace.
+     *         The namespace of a generic package is its <code>namespace</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *         formats do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -375,18 +400,23 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
+     * not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -397,18 +427,23 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of a Maven package is its <code>groupId</code>.
+     *        The namespace of a Maven package version is its <code>groupId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *        a namespace.
+     *        The namespace of a generic package is its <code>namespace</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
+     *        formats do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

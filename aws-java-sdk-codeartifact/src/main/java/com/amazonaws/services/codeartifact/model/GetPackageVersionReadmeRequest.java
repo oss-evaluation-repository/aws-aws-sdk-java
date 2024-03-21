@@ -53,13 +53,45 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
     private String format;
     /**
      * <p>
-     * The namespace of the package version with the requested readme file. The package version component that specifies
-     * its namespace depends on its type. For example:
+     * The namespace of the package version with the requested readme file. The package component that specifies its
+     * namespace depends on its type. For example:
+     * </p>
+     * <note>
+     * <p>
+     * The namespace is required when requesting the readme from package versions of the following formats:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * Maven
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * The namespace of a Maven package version is its <code>groupId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -277,13 +309,45 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version with the requested readme file. The package version component that specifies
-     * its namespace depends on its type. For example:
+     * The namespace of the package version with the requested readme file. The package component that specifies its
+     * namespace depends on its type. For example:
+     * </p>
+     * <note>
+     * <p>
+     * The namespace is required when requesting the readme from package versions of the following formats:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * Maven
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * The namespace of a Maven package version is its <code>groupId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -295,12 +359,43 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package version with the requested readme file. The package version component that
-     *        specifies its namespace depends on its type. For example:</p>
+     *        The namespace of the package version with the requested readme file. The package component that specifies
+     *        its namespace depends on its type. For example:</p> <note>
+     *        <p>
+     *        The namespace is required when requesting the readme from package versions of the following formats:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of an npm package version is its <code>scope</code>.
+     *        Maven
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Swift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        generic
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The namespace of a Maven package version is its <code>groupId</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is its <code>namespace</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -317,13 +412,45 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version with the requested readme file. The package version component that specifies
-     * its namespace depends on its type. For example:
+     * The namespace of the package version with the requested readme file. The package component that specifies its
+     * namespace depends on its type. For example:
+     * </p>
+     * <note>
+     * <p>
+     * The namespace is required when requesting the readme from package versions of the following formats:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * Maven
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * The namespace of a Maven package version is its <code>groupId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -334,12 +461,43 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * </ul>
      * 
-     * @return The namespace of the package version with the requested readme file. The package version component that
-     *         specifies its namespace depends on its type. For example:</p>
+     * @return The namespace of the package version with the requested readme file. The package component that specifies
+     *         its namespace depends on its type. For example:</p> <note>
+     *         <p>
+     *         The namespace is required when requesting the readme from package versions of the following formats:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The namespace of an npm package version is its <code>scope</code>.
+     *         Maven
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Swift
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         generic
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The namespace of a Maven package version is its <code>groupId</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of an npm or Swift package version is its <code>scope</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is its <code>namespace</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -356,13 +514,45 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The namespace of the package version with the requested readme file. The package version component that specifies
-     * its namespace depends on its type. For example:
+     * The namespace of the package version with the requested readme file. The package component that specifies its
+     * namespace depends on its type. For example:
+     * </p>
+     * <note>
+     * <p>
+     * The namespace is required when requesting the readme from package versions of the following formats:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of an npm package version is its <code>scope</code>.
+     * Maven
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * generic
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <ul>
+     * <li>
+     * <p>
+     * The namespace of a Maven package version is its <code>groupId</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is its <code>namespace</code>.
      * </p>
      * </li>
      * <li>
@@ -374,12 +564,43 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @param namespace
-     *        The namespace of the package version with the requested readme file. The package version component that
-     *        specifies its namespace depends on its type. For example:</p>
+     *        The namespace of the package version with the requested readme file. The package component that specifies
+     *        its namespace depends on its type. For example:</p> <note>
+     *        <p>
+     *        The namespace is required when requesting the readme from package versions of the following formats:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of an npm package version is its <code>scope</code>.
+     *        Maven
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Swift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        generic
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </note>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The namespace of a Maven package version is its <code>groupId</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is its <code>namespace</code>.
      *        </p>
      *        </li>
      *        <li>

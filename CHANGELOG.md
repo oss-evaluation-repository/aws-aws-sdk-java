@@ -1,3 +1,8 @@
+# __1.12.685__ __2024-03-21__
+## __CodeArtifact__
+  - ### Features
+    - This release adds Package groups to CodeArtifact so you can more conveniently configure package origin controls for multiple packages.
+
 # __1.12.684__ __2024-03-20__
 ## __AWS CodeBuild__
   - ### Features
