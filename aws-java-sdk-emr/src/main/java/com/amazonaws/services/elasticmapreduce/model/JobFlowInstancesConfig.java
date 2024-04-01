@@ -82,7 +82,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
     private PlacementType placement;
     /**
      * <p>
-     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>.
+     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>.
      * For more information about configuring cluster termination, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      * Termination</a> in the <i>EMR Management Guide</i>.
@@ -578,7 +578,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>.
+     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>.
      * For more information about configuring cluster termination, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      * Termination</a> in the <i>EMR Management Guide</i>.
@@ -586,7 +586,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
      * 
      * @param keepJobFlowAliveWhenNoSteps
      *        Specifies whether the cluster should remain available after completing all steps. Defaults to
-     *        <code>true</code>. For more information about configuring cluster termination, see <a
+     *        <code>false</code>. For more information about configuring cluster termination, see <a
      *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      *        Termination</a> in the <i>EMR Management Guide</i>.
      */
@@ -597,14 +597,14 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>.
+     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>.
      * For more information about configuring cluster termination, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      * Termination</a> in the <i>EMR Management Guide</i>.
      * </p>
      * 
      * @return Specifies whether the cluster should remain available after completing all steps. Defaults to
-     *         <code>true</code>. For more information about configuring cluster termination, see <a
+     *         <code>false</code>. For more information about configuring cluster termination, see <a
      *         href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      *         Termination</a> in the <i>EMR Management Guide</i>.
      */
@@ -615,7 +615,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>.
+     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>.
      * For more information about configuring cluster termination, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      * Termination</a> in the <i>EMR Management Guide</i>.
@@ -623,7 +623,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
      * 
      * @param keepJobFlowAliveWhenNoSteps
      *        Specifies whether the cluster should remain available after completing all steps. Defaults to
-     *        <code>true</code>. For more information about configuring cluster termination, see <a
+     *        <code>false</code>. For more information about configuring cluster termination, see <a
      *        href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      *        Termination</a> in the <i>EMR Management Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -636,14 +636,14 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>true</code>.
+     * Specifies whether the cluster should remain available after completing all steps. Defaults to <code>false</code>.
      * For more information about configuring cluster termination, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      * Termination</a> in the <i>EMR Management Guide</i>.
      * </p>
      * 
      * @return Specifies whether the cluster should remain available after completing all steps. Defaults to
-     *         <code>true</code>. For more information about configuring cluster termination, see <a
+     *         <code>false</code>. For more information about configuring cluster termination, see <a
      *         href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control Cluster
      *         Termination</a> in the <i>EMR Management Guide</i>.
      */

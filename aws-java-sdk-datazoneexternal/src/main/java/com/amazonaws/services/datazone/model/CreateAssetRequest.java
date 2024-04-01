@@ -43,7 +43,11 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String domainIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The external identifier of the asset.
+     * </p>
+     */
     private String externalIdentifier;
     /**
      * <p>
@@ -209,9 +213,12 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external identifier of the asset.
+     * </p>
      * 
      * @param externalIdentifier
+     *        The external identifier of the asset.
      */
 
     public void setExternalIdentifier(String externalIdentifier) {
@@ -219,9 +226,11 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external identifier of the asset.
+     * </p>
      * 
-     * @return
+     * @return The external identifier of the asset.
      */
 
     public String getExternalIdentifier() {
@@ -229,9 +238,12 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external identifier of the asset.
+     * </p>
      * 
      * @param externalIdentifier
+     *        The external identifier of the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

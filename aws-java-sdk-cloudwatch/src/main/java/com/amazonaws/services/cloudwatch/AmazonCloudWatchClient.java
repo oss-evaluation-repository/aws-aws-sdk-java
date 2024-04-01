@@ -2198,6 +2198,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * normal values when the metric is graphed.
      * </p>
      * <p>
+     * If you have enabled unified cross-account observability, and this account is a monitoring account, the metric can
+     * be in the same account or a source account. You can specify the account ID in the object you specify in the
+     * <code>SingleMetricAnomalyDetector</code> parameter.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html"
      * >CloudWatch Anomaly Detection</a>.
@@ -2281,8 +2286,30 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * into ALARM state only when more than one of the underlying metric alarms are in ALARM state.
      * </p>
      * <p>
-     * Currently, the only alarm actions that can be taken by composite alarms are notifying SNS topics.
+     * Composite alarms can take the following actions:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Notify Amazon SNS topics.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke Lambda functions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create OpsItems in Systems Manager Ops Center.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create incidents in Systems Manager Incident Manager.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm
@@ -2722,7 +2749,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <p>
      * You can publish either individual data points in the <code>Value</code> field, or arrays of values and the number
      * of times each value occurred during the period by using the <code>Values</code> and <code>Counts</code> fields in
-     * the <code>MetricDatum</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you
+     * the <code>MetricData</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you
      * to publish up to 150 values per metric with one <code>PutMetricData</code> request, and supports retrieving
      * percentile statistics on this data.
      * </p>

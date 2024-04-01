@@ -25,23 +25,50 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies whether to publish or unpublish a listing.
+     * </p>
+     */
     private String action;
-    /** <p/> */
+    /**
+     * <p>
+     * A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
+     * </p>
+     */
     private String clientToken;
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
+     */
     private String domainIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the asset.
+     * </p>
+     */
     private String entityIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The revision of an asset.
+     * </p>
+     */
     private String entityRevision;
-    /** <p/> */
+    /**
+     * <p>
+     * The type of an entity.
+     * </p>
+     */
     private String entityType;
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether to publish or unpublish a listing.
+     * </p>
      * 
      * @param action
+     *        Specifies whether to publish or unpublish a listing.
      * @see ChangeAction
      */
 
@@ -50,9 +77,11 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether to publish or unpublish a listing.
+     * </p>
      * 
-     * @return
+     * @return Specifies whether to publish or unpublish a listing.
      * @see ChangeAction
      */
 
@@ -61,9 +90,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether to publish or unpublish a listing.
+     * </p>
      * 
      * @param action
+     *        Specifies whether to publish or unpublish a listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeAction
      */
@@ -74,9 +106,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether to publish or unpublish a listing.
+     * </p>
      * 
      * @param action
+     *        Specifies whether to publish or unpublish a listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeAction
      */
@@ -87,9 +122,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
+     * </p>
      * 
      * @param clientToken
+     *        A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -97,9 +135,11 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
+     * </p>
      * 
-     * @return
+     * @return A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
      */
 
     public String getClientToken() {
@@ -107,9 +147,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
+     * </p>
      * 
      * @param clientToken
+     *        A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,9 +162,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainIdentifier
+     *        The ID of the Amazon DataZone domain.
      */
 
     public void setDomainIdentifier(String domainIdentifier) {
@@ -129,9 +175,11 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
-     * @return
+     * @return The ID of the Amazon DataZone domain.
      */
 
     public String getDomainIdentifier() {
@@ -139,9 +187,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainIdentifier
+     *        The ID of the Amazon DataZone domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,9 +202,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the asset.
+     * </p>
      * 
      * @param entityIdentifier
+     *        The ID of the asset.
      */
 
     public void setEntityIdentifier(String entityIdentifier) {
@@ -161,9 +215,11 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the asset.
+     * </p>
      * 
-     * @return
+     * @return The ID of the asset.
      */
 
     public String getEntityIdentifier() {
@@ -171,9 +227,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the asset.
+     * </p>
      * 
      * @param entityIdentifier
+     *        The ID of the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,9 +242,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of an asset.
+     * </p>
      * 
      * @param entityRevision
+     *        The revision of an asset.
      */
 
     public void setEntityRevision(String entityRevision) {
@@ -193,9 +255,11 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of an asset.
+     * </p>
      * 
-     * @return
+     * @return The revision of an asset.
      */
 
     public String getEntityRevision() {
@@ -203,9 +267,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of an asset.
+     * </p>
      * 
      * @param entityRevision
+     *        The revision of an asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,9 +282,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The type of an entity.
+     * </p>
      * 
      * @param entityType
+     *        The type of an entity.
      * @see EntityType
      */
 
@@ -226,9 +296,11 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The type of an entity.
+     * </p>
      * 
-     * @return
+     * @return The type of an entity.
      * @see EntityType
      */
 
@@ -237,9 +309,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The type of an entity.
+     * </p>
      * 
      * @param entityType
+     *        The type of an entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityType
      */
@@ -250,9 +325,12 @@ public class CreateListingChangeSetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p/>
+     * <p>
+     * The type of an entity.
+     * </p>
      * 
      * @param entityType
+     *        The type of an entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityType
      */

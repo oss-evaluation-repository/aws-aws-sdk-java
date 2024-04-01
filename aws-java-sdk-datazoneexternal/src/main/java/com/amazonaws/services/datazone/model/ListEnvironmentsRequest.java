@@ -64,7 +64,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Integer maxResults;
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the environment.
+     * </p>
+     */
     private String name;
     /**
      * <p>
@@ -353,9 +357,12 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the environment.
+     * </p>
      * 
      * @param name
+     *        The name of the environment.
      */
 
     public void setName(String name) {
@@ -363,9 +370,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the environment.
+     * </p>
      * 
-     * @return
+     * @return The name of the environment.
      */
 
     public String getName() {
@@ -373,9 +382,12 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the environment.
+     * </p>
      * 
      * @param name
+     *        The name of the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

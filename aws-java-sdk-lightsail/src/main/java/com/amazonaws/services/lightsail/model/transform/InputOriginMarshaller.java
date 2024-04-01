@@ -33,6 +33,8 @@ public class InputOriginMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("regionName").build();
     private static final MarshallingInfo<String> PROTOCOLPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("protocolPolicy").build();
+    private static final MarshallingInfo<Integer> RESPONSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("responseTimeout").build();
 
     private static final InputOriginMarshaller instance = new InputOriginMarshaller();
 
@@ -53,6 +55,7 @@ public class InputOriginMarshaller {
             protocolMarshaller.marshall(inputOrigin.getName(), NAME_BINDING);
             protocolMarshaller.marshall(inputOrigin.getRegionName(), REGIONNAME_BINDING);
             protocolMarshaller.marshall(inputOrigin.getProtocolPolicy(), PROTOCOLPOLICY_BINDING);
+            protocolMarshaller.marshall(inputOrigin.getResponseTimeout(), RESPONSETIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

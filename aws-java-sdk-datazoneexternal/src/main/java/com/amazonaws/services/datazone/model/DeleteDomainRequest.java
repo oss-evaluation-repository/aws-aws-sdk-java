@@ -39,7 +39,7 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String identifier;
     /**
      * <p>
-     * Optional flag to delete all child entities within the domain
+     * Specifies the optional flag to delete all child entities within the domain.
      * </p>
      */
     private Boolean skipDeletionCheck;
@@ -126,11 +126,11 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Optional flag to delete all child entities within the domain
+     * Specifies the optional flag to delete all child entities within the domain.
      * </p>
      * 
      * @param skipDeletionCheck
-     *        Optional flag to delete all child entities within the domain
+     *        Specifies the optional flag to delete all child entities within the domain.
      */
 
     public void setSkipDeletionCheck(Boolean skipDeletionCheck) {
@@ -139,10 +139,10 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Optional flag to delete all child entities within the domain
+     * Specifies the optional flag to delete all child entities within the domain.
      * </p>
      * 
-     * @return Optional flag to delete all child entities within the domain
+     * @return Specifies the optional flag to delete all child entities within the domain.
      */
 
     public Boolean getSkipDeletionCheck() {
@@ -151,11 +151,11 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Optional flag to delete all child entities within the domain
+     * Specifies the optional flag to delete all child entities within the domain.
      * </p>
      * 
      * @param skipDeletionCheck
-     *        Optional flag to delete all child entities within the domain
+     *        Specifies the optional flag to delete all child entities within the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +166,10 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Optional flag to delete all child entities within the domain
+     * Specifies the optional flag to delete all child entities within the domain.
      * </p>
      * 
-     * @return Optional flag to delete all child entities within the domain
+     * @return Specifies the optional flag to delete all child entities within the domain.
      */
 
     public Boolean isSkipDeletionCheck() {

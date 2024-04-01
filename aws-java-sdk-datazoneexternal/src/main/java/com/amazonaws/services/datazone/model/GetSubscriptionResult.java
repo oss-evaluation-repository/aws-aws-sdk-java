@@ -59,7 +59,11 @@ public class GetSubscriptionResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String status;
-    /** <p/> */
+    /**
+     * <p>
+     * The details of the published asset for which the subscription grant is created.
+     * </p>
+     */
     private SubscribedListing subscribedListing;
     /**
      * <p>
@@ -358,9 +362,12 @@ public class GetSubscriptionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the published asset for which the subscription grant is created.
+     * </p>
      * 
      * @param subscribedListing
+     *        The details of the published asset for which the subscription grant is created.
      */
 
     public void setSubscribedListing(SubscribedListing subscribedListing) {
@@ -368,9 +375,11 @@ public class GetSubscriptionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the published asset for which the subscription grant is created.
+     * </p>
      * 
-     * @return
+     * @return The details of the published asset for which the subscription grant is created.
      */
 
     public SubscribedListing getSubscribedListing() {
@@ -378,9 +387,12 @@ public class GetSubscriptionResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the published asset for which the subscription grant is created.
+     * </p>
      * 
      * @param subscribedListing
+     *        The details of the published asset for which the subscription grant is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AcceptChoiceMarshaller {
 
+    private static final MarshallingInfo<String> EDITEDVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("editedValue").build();
     private static final MarshallingInfo<Integer> PREDICTIONCHOICE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("predictionChoice").build();
     private static final MarshallingInfo<String> PREDICTIONTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class AcceptChoiceMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(acceptChoice.getEditedValue(), EDITEDVALUE_BINDING);
             protocolMarshaller.marshall(acceptChoice.getPredictionChoice(), PREDICTIONCHOICE_BINDING);
             protocolMarshaller.marshall(acceptChoice.getPredictionTarget(), PREDICTIONTARGET_BINDING);
         } catch (Exception e) {

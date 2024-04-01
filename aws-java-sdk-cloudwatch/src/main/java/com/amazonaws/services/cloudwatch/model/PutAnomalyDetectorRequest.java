@@ -94,7 +94,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     * the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      * </p>
      * </li>
      * </ul>
@@ -432,7 +432,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     * the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      * </p>
      * </li>
      * </ul>
@@ -470,7 +470,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     *        the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -514,7 +514,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     * the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      * </p>
      * </li>
      * </ul>
@@ -551,7 +551,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     *         the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -595,7 +595,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     * the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      * </p>
      * </li>
      * </ul>
@@ -633,7 +633,7 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
+     *        the <code>MetricMathAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code>
      *        </p>
      *        </li>
      *        </ul>

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Error that occurred during project deletion
+ * Specifies the error message that is returned if the operation cannot be successfully completed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ProjectDeletionError" target="_top">AWS API
@@ -30,24 +30,24 @@ public class ProjectDeletionError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Project Deletion Error Code
+     * The code of the project deletion error.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * Project Deletion Error Message
+     * The message of the project deletion error.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * Project Deletion Error Code
+     * The code of the project deletion error.
      * </p>
      * 
      * @param code
-     *        Project Deletion Error Code
+     *        The code of the project deletion error.
      */
 
     public void setCode(String code) {
@@ -56,10 +56,10 @@ public class ProjectDeletionError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Project Deletion Error Code
+     * The code of the project deletion error.
      * </p>
      * 
-     * @return Project Deletion Error Code
+     * @return The code of the project deletion error.
      */
 
     public String getCode() {
@@ -68,11 +68,11 @@ public class ProjectDeletionError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Project Deletion Error Code
+     * The code of the project deletion error.
      * </p>
      * 
      * @param code
-     *        Project Deletion Error Code
+     *        The code of the project deletion error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class ProjectDeletionError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Project Deletion Error Message
+     * The message of the project deletion error.
      * </p>
      * 
      * @param message
-     *        Project Deletion Error Message
+     *        The message of the project deletion error.
      */
 
     public void setMessage(String message) {
@@ -96,10 +96,10 @@ public class ProjectDeletionError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Project Deletion Error Message
+     * The message of the project deletion error.
      * </p>
      * 
-     * @return Project Deletion Error Message
+     * @return The message of the project deletion error.
      */
 
     public String getMessage() {
@@ -108,11 +108,11 @@ public class ProjectDeletionError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Project Deletion Error Message
+     * The message of the project deletion error.
      * </p>
      * 
      * @param message
-     *        Project Deletion Error Message
+     *        The message of the project deletion error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

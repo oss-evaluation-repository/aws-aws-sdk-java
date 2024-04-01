@@ -169,6 +169,12 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The minimum TLS protocol version that the distribution can use to communicate with viewers.
+     * </p>
+     */
+    private String viewerMinimumTlsProtocolVersion;
 
     /**
      * <p>
@@ -1253,6 +1259,46 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The minimum TLS protocol version that the distribution can use to communicate with viewers.
+     * </p>
+     * 
+     * @param viewerMinimumTlsProtocolVersion
+     *        The minimum TLS protocol version that the distribution can use to communicate with viewers.
+     */
+
+    public void setViewerMinimumTlsProtocolVersion(String viewerMinimumTlsProtocolVersion) {
+        this.viewerMinimumTlsProtocolVersion = viewerMinimumTlsProtocolVersion;
+    }
+
+    /**
+     * <p>
+     * The minimum TLS protocol version that the distribution can use to communicate with viewers.
+     * </p>
+     * 
+     * @return The minimum TLS protocol version that the distribution can use to communicate with viewers.
+     */
+
+    public String getViewerMinimumTlsProtocolVersion() {
+        return this.viewerMinimumTlsProtocolVersion;
+    }
+
+    /**
+     * <p>
+     * The minimum TLS protocol version that the distribution can use to communicate with viewers.
+     * </p>
+     * 
+     * @param viewerMinimumTlsProtocolVersion
+     *        The minimum TLS protocol version that the distribution can use to communicate with viewers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LightsailDistribution withViewerMinimumTlsProtocolVersion(String viewerMinimumTlsProtocolVersion) {
+        setViewerMinimumTlsProtocolVersion(viewerMinimumTlsProtocolVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1303,7 +1349,9 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
         if (getIpAddressType() != null)
             sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getViewerMinimumTlsProtocolVersion() != null)
+            sb.append("ViewerMinimumTlsProtocolVersion: ").append(getViewerMinimumTlsProtocolVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1398,6 +1446,11 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getViewerMinimumTlsProtocolVersion() == null ^ this.getViewerMinimumTlsProtocolVersion() == null)
+            return false;
+        if (other.getViewerMinimumTlsProtocolVersion() != null
+                && other.getViewerMinimumTlsProtocolVersion().equals(this.getViewerMinimumTlsProtocolVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1426,6 +1479,7 @@ public class LightsailDistribution implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getAbleToUpdateBundle() == null) ? 0 : getAbleToUpdateBundle().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getViewerMinimumTlsProtocolVersion() == null) ? 0 : getViewerMinimumTlsProtocolVersion().hashCode());
         return hashCode;
     }
 

@@ -44,6 +44,10 @@ public class CreateDistributionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> CERTIFICATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateName").build();
+    private static final MarshallingInfo<String> VIEWERMINIMUMTLSPROTOCOLVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("viewerMinimumTlsProtocolVersion").build();
 
     private static final CreateDistributionRequestMarshaller instance = new CreateDistributionRequestMarshaller();
 
@@ -69,6 +73,8 @@ public class CreateDistributionRequestMarshaller {
             protocolMarshaller.marshall(createDistributionRequest.getBundleId(), BUNDLEID_BINDING);
             protocolMarshaller.marshall(createDistributionRequest.getIpAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(createDistributionRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDistributionRequest.getCertificateName(), CERTIFICATENAME_BINDING);
+            protocolMarshaller.marshall(createDistributionRequest.getViewerMinimumTlsProtocolVersion(), VIEWERMINIMUMTLSPROTOCOLVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

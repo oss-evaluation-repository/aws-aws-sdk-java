@@ -25,15 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteListingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
+     */
     private String domainIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the listing to be deleted.
+     * </p>
+     */
     private String identifier;
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainIdentifier
+     *        The ID of the Amazon DataZone domain.
      */
 
     public void setDomainIdentifier(String domainIdentifier) {
@@ -41,9 +52,11 @@ public class DeleteListingRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
-     * @return
+     * @return The ID of the Amazon DataZone domain.
      */
 
     public String getDomainIdentifier() {
@@ -51,9 +64,12 @@ public class DeleteListingRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainIdentifier
+     *        The ID of the Amazon DataZone domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,9 +79,12 @@ public class DeleteListingRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing to be deleted.
+     * </p>
      * 
      * @param identifier
+     *        The ID of the listing to be deleted.
      */
 
     public void setIdentifier(String identifier) {
@@ -73,9 +92,11 @@ public class DeleteListingRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing to be deleted.
+     * </p>
      * 
-     * @return
+     * @return The ID of the listing to be deleted.
      */
 
     public String getIdentifier() {
@@ -83,9 +104,12 @@ public class DeleteListingRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing to be deleted.
+     * </p>
      * 
      * @param identifier
+     *        The ID of the listing to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

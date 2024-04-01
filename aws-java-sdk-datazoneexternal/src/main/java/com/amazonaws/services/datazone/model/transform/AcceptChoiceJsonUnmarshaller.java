@@ -48,6 +48,10 @@ public class AcceptChoiceJsonUnmarshaller implements Unmarshaller<AcceptChoice, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("editedValue", targetDepth)) {
+                    context.nextToken();
+                    acceptChoice.setEditedValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("predictionChoice", targetDepth)) {
                     context.nextToken();
                     acceptChoice.setPredictionChoice(context.getUnmarshaller(Integer.class).unmarshall(context));

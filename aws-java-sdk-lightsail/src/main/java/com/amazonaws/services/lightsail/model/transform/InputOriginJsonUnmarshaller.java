@@ -60,6 +60,10 @@ public class InputOriginJsonUnmarshaller implements Unmarshaller<InputOrigin, Js
                     context.nextToken();
                     inputOrigin.setProtocolPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("responseTimeout", targetDepth)) {
+                    context.nextToken();
+                    inputOrigin.setResponseTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

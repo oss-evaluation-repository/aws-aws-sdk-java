@@ -120,7 +120,11 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private Boolean publishOnImport;
-    /** <p/> */
+    /**
+     * <p>
+     * The recommendation configuration of the data source.
+     * </p>
+     */
     private RecommendationConfiguration recommendation;
     /**
      * <p>
@@ -876,9 +880,12 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p/>
+     * <p>
+     * The recommendation configuration of the data source.
+     * </p>
      * 
      * @param recommendation
+     *        The recommendation configuration of the data source.
      */
 
     public void setRecommendation(RecommendationConfiguration recommendation) {
@@ -886,9 +893,11 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p/>
+     * <p>
+     * The recommendation configuration of the data source.
+     * </p>
      * 
-     * @return
+     * @return The recommendation configuration of the data source.
      */
 
     public RecommendationConfiguration getRecommendation() {
@@ -896,9 +905,12 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p/>
+     * <p>
+     * The recommendation configuration of the data source.
+     * </p>
      * 
      * @param recommendation
+     *        The recommendation configuration of the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

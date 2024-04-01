@@ -100,6 +100,33 @@ public interface AmazonDataZone {
 
     /**
      * <p>
+     * Cancels the metadata generation run.
+     * </p>
+     * 
+     * @param cancelMetadataGenerationRunRequest
+     * @return Result of the CancelMetadataGenerationRun operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         There is a conflict while performing this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
+     * @throws UnauthorizedException
+     *         You do not have permission to perform this action.
+     * @sample AmazonDataZone.CancelMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelMetadataGenerationRunResult cancelMetadataGenerationRun(CancelMetadataGenerationRunRequest cancelMetadataGenerationRunRequest);
+
+    /**
+     * <p>
      * Cancels the subscription to the specified asset.
      * </p>
      * 
@@ -431,7 +458,9 @@ public interface AmazonDataZone {
     CreateGroupProfileResult createGroupProfile(CreateGroupProfileRequest createGroupProfileRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog.
+     * </p>
      * 
      * @param createListingChangeSetRequest
      * @return Result of the CreateListingChangeSet operation returned by the service.
@@ -881,7 +910,9 @@ public interface AmazonDataZone {
     DeleteGlossaryTermResult deleteGlossaryTerm(DeleteGlossaryTermRequest deleteGlossaryTermRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Deletes a listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param deleteListingRequest
      * @return Result of the DeleteListing operation returned by the service.
@@ -1402,7 +1433,9 @@ public interface AmazonDataZone {
     GetIamPortalLoginUrlResult getIamPortalLoginUrl(GetIamPortalLoginUrlRequest getIamPortalLoginUrlRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Gets a listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param getListingRequest
      * @return Result of the GetListing operation returned by the service.
@@ -1423,6 +1456,31 @@ public interface AmazonDataZone {
      *      Documentation</a>
      */
     GetListingResult getListing(GetListingRequest getListingRequest);
+
+    /**
+     * <p>
+     * Gets a metadata generation run in Amazon DataZone.
+     * </p>
+     * 
+     * @param getMetadataGenerationRunRequest
+     * @return Result of the GetMetadataGenerationRun operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
+     * @throws UnauthorizedException
+     *         You do not have permission to perform this action.
+     * @sample AmazonDataZone.GetMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMetadataGenerationRunResult getMetadataGenerationRun(GetMetadataGenerationRunRequest getMetadataGenerationRunRequest);
 
     /**
      * <p>
@@ -1814,6 +1872,31 @@ public interface AmazonDataZone {
 
     /**
      * <p>
+     * Lists all metadata generation runs.
+     * </p>
+     * 
+     * @param listMetadataGenerationRunsRequest
+     * @return Result of the ListMetadataGenerationRuns operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
+     * @throws UnauthorizedException
+     *         You do not have permission to perform this action.
+     * @sample AmazonDataZone.ListMetadataGenerationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListMetadataGenerationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMetadataGenerationRunsResult listMetadataGenerationRuns(ListMetadataGenerationRunsRequest listMetadataGenerationRunsRequest);
+
+    /**
+     * <p>
      * Lists all Amazon DataZone notifications.
      * </p>
      * 
@@ -2053,6 +2136,8 @@ public interface AmazonDataZone {
      *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         There is a conflict while performing this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
      * @throws UnauthorizedException
@@ -2167,7 +2252,7 @@ public interface AmazonDataZone {
 
     /**
      * <p>
-     * Searches listings in Amazon DataZone.
+     * Searches listings (records of an asset at a given time) in Amazon DataZone.
      * </p>
      * 
      * @param searchListingsRequest
@@ -2264,6 +2349,35 @@ public interface AmazonDataZone {
      *      API Documentation</a>
      */
     StartDataSourceRunResult startDataSourceRun(StartDataSourceRunRequest startDataSourceRunRequest);
+
+    /**
+     * <p>
+     * Starts the metadata generation run.
+     * </p>
+     * 
+     * @param startMetadataGenerationRunRequest
+     * @return Result of the StartMetadataGenerationRun operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ServiceQuotaExceededException
+     *         The request has exceeded the specified service quota.
+     * @throws ConflictException
+     *         There is a conflict while performing this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
+     * @throws UnauthorizedException
+     *         You do not have permission to perform this action.
+     * @sample AmazonDataZone.StartMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMetadataGenerationRunResult startMetadataGenerationRun(StartMetadataGenerationRunRequest startMetadataGenerationRunRequest);
 
     /**
      * <p>

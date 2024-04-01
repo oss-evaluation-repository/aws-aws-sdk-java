@@ -71,7 +71,11 @@ public class CreateSubscriptionRequestResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String status;
-    /** <p/> */
+    /**
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
+     */
     private java.util.List<SubscribedListing> subscribedListings;
     /**
      * <p>
@@ -432,9 +436,11 @@ public class CreateSubscriptionRequestResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
      * 
-     * @return
+     * @return The published asset for which the subscription grant is to be created.
      */
 
     public java.util.List<SubscribedListing> getSubscribedListings() {
@@ -442,9 +448,12 @@ public class CreateSubscriptionRequestResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
      * 
      * @param subscribedListings
+     *        The published asset for which the subscription grant is to be created.
      */
 
     public void setSubscribedListings(java.util.Collection<SubscribedListing> subscribedListings) {
@@ -457,7 +466,9 @@ public class CreateSubscriptionRequestResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubscribedListings(java.util.Collection)} or {@link #withSubscribedListings(java.util.Collection)} if
@@ -465,6 +476,7 @@ public class CreateSubscriptionRequestResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param subscribedListings
+     *        The published asset for which the subscription grant is to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -479,9 +491,12 @@ public class CreateSubscriptionRequestResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
      * 
      * @param subscribedListings
+     *        The published asset for which the subscription grant is to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

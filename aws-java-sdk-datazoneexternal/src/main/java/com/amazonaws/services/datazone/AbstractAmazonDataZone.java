@@ -38,6 +38,11 @@ public class AbstractAmazonDataZone implements AmazonDataZone {
     }
 
     @Override
+    public CancelMetadataGenerationRunResult cancelMetadataGenerationRun(CancelMetadataGenerationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelSubscriptionResult cancelSubscription(CancelSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -288,6 +293,11 @@ public class AbstractAmazonDataZone implements AmazonDataZone {
     }
 
     @Override
+    public GetMetadataGenerationRunResult getMetadataGenerationRun(GetMetadataGenerationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetProjectResult getProject(GetProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -359,6 +369,11 @@ public class AbstractAmazonDataZone implements AmazonDataZone {
 
     @Override
     public ListEnvironmentsResult listEnvironments(ListEnvironmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMetadataGenerationRunsResult listMetadataGenerationRuns(ListMetadataGenerationRunsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -449,6 +464,11 @@ public class AbstractAmazonDataZone implements AmazonDataZone {
 
     @Override
     public StartDataSourceRunResult startDataSourceRun(StartDataSourceRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMetadataGenerationRunResult startMetadataGenerationRun(StartMetadataGenerationRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -43,7 +43,11 @@ public class CreateSubscriptionRequestRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String requestReason;
-    /** <p/> */
+    /**
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
+     */
     private java.util.List<SubscribedListingInput> subscribedListings;
     /**
      * <p>
@@ -173,9 +177,11 @@ public class CreateSubscriptionRequestRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * <p/>
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
      * 
-     * @return
+     * @return The published asset for which the subscription grant is to be created.
      */
 
     public java.util.List<SubscribedListingInput> getSubscribedListings() {
@@ -183,9 +189,12 @@ public class CreateSubscriptionRequestRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * <p/>
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
      * 
      * @param subscribedListings
+     *        The published asset for which the subscription grant is to be created.
      */
 
     public void setSubscribedListings(java.util.Collection<SubscribedListingInput> subscribedListings) {
@@ -198,7 +207,9 @@ public class CreateSubscriptionRequestRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * <p/>
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubscribedListings(java.util.Collection)} or {@link #withSubscribedListings(java.util.Collection)} if
@@ -206,6 +217,7 @@ public class CreateSubscriptionRequestRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param subscribedListings
+     *        The published asset for which the subscription grant is to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,9 +232,12 @@ public class CreateSubscriptionRequestRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * <p/>
+     * <p>
+     * The published asset for which the subscription grant is to be created.
+     * </p>
      * 
      * @param subscribedListings
+     *        The published asset for which the subscription grant is to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

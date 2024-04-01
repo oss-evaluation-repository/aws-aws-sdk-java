@@ -25,7 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be accepted.
+     * </p>
+     */
     private java.util.List<AcceptChoice> acceptChoices;
     /**
      * <p>
@@ -46,15 +51,27 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String domainIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The identifier of the asset.
+     * </p>
+     */
     private String identifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
+     */
     private String revision;
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be accepted.
+     * </p>
      * 
-     * @return
+     * @return Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for
+     *         example, a column name) that can be accepted.
      */
 
     public java.util.List<AcceptChoice> getAcceptChoices() {
@@ -62,9 +79,14 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be accepted.
+     * </p>
      * 
      * @param acceptChoices
+     *        Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example,
+     *        a column name) that can be accepted.
      */
 
     public void setAcceptChoices(java.util.Collection<AcceptChoice> acceptChoices) {
@@ -77,7 +99,10 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be accepted.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAcceptChoices(java.util.Collection)} or {@link #withAcceptChoices(java.util.Collection)} if you want
@@ -85,6 +110,8 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param acceptChoices
+     *        Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example,
+     *        a column name) that can be accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,9 +126,14 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be accepted.
+     * </p>
      * 
      * @param acceptChoices
+     *        Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example,
+     *        a column name) that can be accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,9 +269,12 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier of the asset.
+     * </p>
      * 
      * @param identifier
+     *        The identifier of the asset.
      */
 
     public void setIdentifier(String identifier) {
@@ -247,9 +282,11 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier of the asset.
+     * </p>
      * 
-     * @return
+     * @return The identifier of the asset.
      */
 
     public String getIdentifier() {
@@ -257,9 +294,12 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The identifier of the asset.
+     * </p>
      * 
      * @param identifier
+     *        The identifier of the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,9 +309,12 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
      * @param revision
+     *        The revision that is to be made to the asset.
      */
 
     public void setRevision(String revision) {
@@ -279,9 +322,11 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
-     * @return
+     * @return The revision that is to be made to the asset.
      */
 
     public String getRevision() {
@@ -289,9 +334,12 @@ public class AcceptPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
      * @param revision
+     *        The revision that is to be made to the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The name of the cluster.
+     * The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * </p>
      */
     private String name;
@@ -325,11 +325,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * </p>
      * 
      * @param name
-     *        The name of the cluster.
+     *        The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      */
 
     public void setName(String name) {
@@ -338,10 +338,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      */
 
     public String getName() {
@@ -350,11 +350,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * </p>
      * 
      * @param name
-     *        The name of the cluster.
+     *        The name of the cluster. This parameter can't contain the characters &lt;, &gt;, $, |, or ` (backtick).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

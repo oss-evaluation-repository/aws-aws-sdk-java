@@ -25,17 +25,32 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
+     */
     private String domainIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the listing.
+     * </p>
+     */
     private String identifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The revision of the listing.
+     * </p>
+     */
     private String listingRevision;
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainIdentifier
+     *        The ID of the Amazon DataZone domain.
      */
 
     public void setDomainIdentifier(String domainIdentifier) {
@@ -43,9 +58,11 @@ public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
-     * @return
+     * @return The ID of the Amazon DataZone domain.
      */
 
     public String getDomainIdentifier() {
@@ -53,9 +70,12 @@ public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainIdentifier
+     *        The ID of the Amazon DataZone domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,9 +85,12 @@ public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing.
+     * </p>
      * 
      * @param identifier
+     *        The ID of the listing.
      */
 
     public void setIdentifier(String identifier) {
@@ -75,9 +98,11 @@ public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing.
+     * </p>
      * 
-     * @return
+     * @return The ID of the listing.
      */
 
     public String getIdentifier() {
@@ -85,9 +110,12 @@ public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing.
+     * </p>
      * 
      * @param identifier
+     *        The ID of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,9 +125,12 @@ public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of the listing.
+     * </p>
      * 
      * @param listingRevision
+     *        The revision of the listing.
      */
 
     public void setListingRevision(String listingRevision) {
@@ -107,9 +138,11 @@ public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of the listing.
+     * </p>
      * 
-     * @return
+     * @return The revision of the listing.
      */
 
     public String getListingRevision() {
@@ -117,9 +150,12 @@ public class GetListingRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of the listing.
+     * </p>
      * 
      * @param listingRevision
+     *        The revision of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

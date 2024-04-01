@@ -54,6 +54,19 @@ public class AbstractAmazonDataZoneAsync extends AbstractAmazonDataZone implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CancelMetadataGenerationRunResult> cancelMetadataGenerationRunAsync(CancelMetadataGenerationRunRequest request) {
+
+        return cancelMetadataGenerationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMetadataGenerationRunResult> cancelMetadataGenerationRunAsync(CancelMetadataGenerationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelMetadataGenerationRunRequest, CancelMetadataGenerationRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelSubscriptionResult> cancelSubscriptionAsync(CancelSubscriptionRequest request) {
 
         return cancelSubscriptionAsync(request, null);
@@ -708,6 +721,19 @@ public class AbstractAmazonDataZoneAsync extends AbstractAmazonDataZone implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetMetadataGenerationRunResult> getMetadataGenerationRunAsync(GetMetadataGenerationRunRequest request) {
+
+        return getMetadataGenerationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetadataGenerationRunResult> getMetadataGenerationRunAsync(GetMetadataGenerationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMetadataGenerationRunRequest, GetMetadataGenerationRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProjectResult> getProjectAsync(GetProjectRequest request) {
 
         return getProjectAsync(request, null);
@@ -900,6 +926,19 @@ public class AbstractAmazonDataZoneAsync extends AbstractAmazonDataZone implemen
     @Override
     public java.util.concurrent.Future<ListEnvironmentsResult> listEnvironmentsAsync(ListEnvironmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEnvironmentsRequest, ListEnvironmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetadataGenerationRunsResult> listMetadataGenerationRunsAsync(ListMetadataGenerationRunsRequest request) {
+
+        return listMetadataGenerationRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetadataGenerationRunsResult> listMetadataGenerationRunsAsync(ListMetadataGenerationRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMetadataGenerationRunsRequest, ListMetadataGenerationRunsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1136,6 +1175,19 @@ public class AbstractAmazonDataZoneAsync extends AbstractAmazonDataZone implemen
     @Override
     public java.util.concurrent.Future<StartDataSourceRunResult> startDataSourceRunAsync(StartDataSourceRunRequest request,
             com.amazonaws.handlers.AsyncHandler<StartDataSourceRunRequest, StartDataSourceRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMetadataGenerationRunResult> startMetadataGenerationRunAsync(StartMetadataGenerationRunRequest request) {
+
+        return startMetadataGenerationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMetadataGenerationRunResult> startMetadataGenerationRunAsync(StartMetadataGenerationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMetadataGenerationRunRequest, StartMetadataGenerationRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

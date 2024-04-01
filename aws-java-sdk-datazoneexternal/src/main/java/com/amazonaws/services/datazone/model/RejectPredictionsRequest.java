@@ -43,11 +43,24 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String identifier;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be rejected.
+     * </p>
+     */
     private java.util.List<RejectChoice> rejectChoices;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the rule (or the conditions) under which a prediction can be rejected.
+     * </p>
+     */
     private RejectRule rejectRule;
-    /** <p/> */
+    /**
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
+     */
     private String revision;
 
     /**
@@ -171,9 +184,13 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be rejected.
+     * </p>
      * 
-     * @return
+     * @return Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for
+     *         example, a column name) that can be rejected.
      */
 
     public java.util.List<RejectChoice> getRejectChoices() {
@@ -181,9 +198,14 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be rejected.
+     * </p>
      * 
      * @param rejectChoices
+     *        Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example,
+     *        a column name) that can be rejected.
      */
 
     public void setRejectChoices(java.util.Collection<RejectChoice> rejectChoices) {
@@ -196,7 +218,10 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be rejected.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRejectChoices(java.util.Collection)} or {@link #withRejectChoices(java.util.Collection)} if you want
@@ -204,6 +229,8 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param rejectChoices
+     *        Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example,
+     *        a column name) that can be rejected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,9 +245,14 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a
+     * column name) that can be rejected.
+     * </p>
      * 
      * @param rejectChoices
+     *        Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example,
+     *        a column name) that can be rejected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,9 +262,12 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the rule (or the conditions) under which a prediction can be rejected.
+     * </p>
      * 
      * @param rejectRule
+     *        Specifies the rule (or the conditions) under which a prediction can be rejected.
      */
 
     public void setRejectRule(RejectRule rejectRule) {
@@ -240,9 +275,11 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the rule (or the conditions) under which a prediction can be rejected.
+     * </p>
      * 
-     * @return
+     * @return Specifies the rule (or the conditions) under which a prediction can be rejected.
      */
 
     public RejectRule getRejectRule() {
@@ -250,9 +287,12 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the rule (or the conditions) under which a prediction can be rejected.
+     * </p>
      * 
      * @param rejectRule
+     *        Specifies the rule (or the conditions) under which a prediction can be rejected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,9 +302,12 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
      * @param revision
+     *        The revision that is to be made to the asset.
      */
 
     public void setRevision(String revision) {
@@ -272,9 +315,11 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
-     * @return
+     * @return The revision that is to be made to the asset.
      */
 
     public String getRevision() {
@@ -282,9 +327,12 @@ public class RejectPredictionsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
      * @param revision
+     *        The revision that is to be made to the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

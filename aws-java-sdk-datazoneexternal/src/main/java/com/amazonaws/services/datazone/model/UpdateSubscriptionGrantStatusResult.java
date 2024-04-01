@@ -24,7 +24,11 @@ import javax.annotation.Generated;
 public class UpdateSubscriptionGrantStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The details of the asset for which the subscription grant is created.
+     * </p>
+     */
     private java.util.List<SubscribedAsset> assets;
     /**
      * <p>
@@ -88,9 +92,11 @@ public class UpdateSubscriptionGrantStatusResult extends com.amazonaws.AmazonWeb
     private String updatedBy;
 
     /**
-     * <p/>
+     * <p>
+     * The details of the asset for which the subscription grant is created.
+     * </p>
      * 
-     * @return
+     * @return The details of the asset for which the subscription grant is created.
      */
 
     public java.util.List<SubscribedAsset> getAssets() {
@@ -98,9 +104,12 @@ public class UpdateSubscriptionGrantStatusResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the asset for which the subscription grant is created.
+     * </p>
      * 
      * @param assets
+     *        The details of the asset for which the subscription grant is created.
      */
 
     public void setAssets(java.util.Collection<SubscribedAsset> assets) {
@@ -113,7 +122,9 @@ public class UpdateSubscriptionGrantStatusResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the asset for which the subscription grant is created.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAssets(java.util.Collection)} or {@link #withAssets(java.util.Collection)} if you want to override the
@@ -121,6 +132,7 @@ public class UpdateSubscriptionGrantStatusResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param assets
+     *        The details of the asset for which the subscription grant is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,9 +147,12 @@ public class UpdateSubscriptionGrantStatusResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the asset for which the subscription grant is created.
+     * </p>
      * 
      * @param assets
+     *        The details of the asset for which the subscription grant is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

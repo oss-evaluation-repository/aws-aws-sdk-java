@@ -23,7 +23,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The timestamp of when the listing was created.
+     * </p>
+     */
     private java.util.Date createdAt;
     /**
      * <p>
@@ -31,19 +35,47 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private String createdBy;
-    /** <p/> */
+    /**
+     * <p>
+     * The description of the listing.
+     * </p>
+     */
     private String description;
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
+     */
     private String domainId;
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the listing.
+     * </p>
+     */
     private String id;
-    /** <p/> */
+    /**
+     * <p>
+     * The details of a listing.
+     * </p>
+     */
     private ListingItem item;
-    /** <p/> */
+    /**
+     * <p>
+     * The revision of a listing.
+     * </p>
+     */
     private String listingRevision;
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the listing.
+     * </p>
+     */
     private String name;
-    /** <p/> */
+    /**
+     * <p>
+     * The status of the listing.
+     * </p>
+     */
     private String status;
     /**
      * <p>
@@ -59,9 +91,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String updatedBy;
 
     /**
-     * <p/>
+     * <p>
+     * The timestamp of when the listing was created.
+     * </p>
      * 
      * @param createdAt
+     *        The timestamp of when the listing was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -69,9 +104,11 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The timestamp of when the listing was created.
+     * </p>
      * 
-     * @return
+     * @return The timestamp of when the listing was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -79,9 +116,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The timestamp of when the listing was created.
+     * </p>
      * 
      * @param createdAt
+     *        The timestamp of when the listing was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,9 +171,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The description of the listing.
+     * </p>
      * 
      * @param description
+     *        The description of the listing.
      */
 
     public void setDescription(String description) {
@@ -141,9 +184,11 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The description of the listing.
+     * </p>
      * 
-     * @return
+     * @return The description of the listing.
      */
 
     public String getDescription() {
@@ -151,9 +196,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The description of the listing.
+     * </p>
      * 
      * @param description
+     *        The description of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,9 +211,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainId
+     *        The ID of the Amazon DataZone domain.
      */
 
     public void setDomainId(String domainId) {
@@ -173,9 +224,11 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
-     * @return
+     * @return The ID of the Amazon DataZone domain.
      */
 
     public String getDomainId() {
@@ -183,9 +236,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainId
+     *        The ID of the Amazon DataZone domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,9 +251,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing.
+     * </p>
      * 
      * @param id
+     *        The ID of the listing.
      */
 
     public void setId(String id) {
@@ -205,9 +264,11 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing.
+     * </p>
      * 
-     * @return
+     * @return The ID of the listing.
      */
 
     public String getId() {
@@ -215,9 +276,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing.
+     * </p>
      * 
      * @param id
+     *        The ID of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,9 +291,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of a listing.
+     * </p>
      * 
      * @param item
+     *        The details of a listing.
      */
 
     public void setItem(ListingItem item) {
@@ -237,9 +304,11 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of a listing.
+     * </p>
      * 
-     * @return
+     * @return The details of a listing.
      */
 
     public ListingItem getItem() {
@@ -247,9 +316,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of a listing.
+     * </p>
      * 
      * @param item
+     *        The details of a listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,9 +331,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of a listing.
+     * </p>
      * 
      * @param listingRevision
+     *        The revision of a listing.
      */
 
     public void setListingRevision(String listingRevision) {
@@ -269,9 +344,11 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of a listing.
+     * </p>
      * 
-     * @return
+     * @return The revision of a listing.
      */
 
     public String getListingRevision() {
@@ -279,9 +356,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of a listing.
+     * </p>
      * 
      * @param listingRevision
+     *        The revision of a listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,9 +371,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the listing.
+     * </p>
      * 
      * @param name
+     *        The name of the listing.
      */
 
     public void setName(String name) {
@@ -301,9 +384,11 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the listing.
+     * </p>
      * 
-     * @return
+     * @return The name of the listing.
      */
 
     public String getName() {
@@ -311,9 +396,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the listing.
+     * </p>
      * 
      * @param name
+     *        The name of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,9 +411,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of the listing.
+     * </p>
      * 
      * @param status
+     *        The status of the listing.
      * @see ListingStatus
      */
 
@@ -334,9 +425,11 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of the listing.
+     * </p>
      * 
-     * @return
+     * @return The status of the listing.
      * @see ListingStatus
      */
 
@@ -345,9 +438,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of the listing.
+     * </p>
      * 
      * @param status
+     *        The status of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListingStatus
      */
@@ -358,9 +454,12 @@ public class GetListingResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * <p/>
+     * <p>
+     * The status of the listing.
+     * </p>
      * 
      * @param status
+     *        The status of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListingStatus
      */

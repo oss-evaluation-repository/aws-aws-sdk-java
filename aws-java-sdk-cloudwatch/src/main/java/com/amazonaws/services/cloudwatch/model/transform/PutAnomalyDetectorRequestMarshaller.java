@@ -110,6 +110,10 @@ public class PutAnomalyDetectorRequestMarshaller implements Marshaller<Request<P
             SingleMetricAnomalyDetector singleMetricAnomalyDetector = putAnomalyDetectorRequest.getSingleMetricAnomalyDetector();
             if (singleMetricAnomalyDetector != null) {
 
+                if (singleMetricAnomalyDetector.getAccountId() != null) {
+                    request.addParameter("SingleMetricAnomalyDetector.AccountId", StringUtils.fromString(singleMetricAnomalyDetector.getAccountId()));
+                }
+
                 if (singleMetricAnomalyDetector.getNamespace() != null) {
                     request.addParameter("SingleMetricAnomalyDetector.Namespace", StringUtils.fromString(singleMetricAnomalyDetector.getNamespace()));
                 }

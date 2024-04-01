@@ -64,6 +64,10 @@ public class OriginJsonUnmarshaller implements Unmarshaller<Origin, JsonUnmarsha
                     context.nextToken();
                     origin.setProtocolPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("responseTimeout", targetDepth)) {
+                    context.nextToken();
+                    origin.setResponseTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

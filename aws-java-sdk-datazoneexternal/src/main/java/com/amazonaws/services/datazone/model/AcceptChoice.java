@@ -31,6 +31,12 @@ public class AcceptChoice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The edit of the prediction.
+     * </p>
+     */
+    private String editedValue;
+    /**
+     * <p>
      * Specifies the prediction (aka, the automatically generated piece of metadata) that can be accepted.
      * </p>
      */
@@ -41,6 +47,46 @@ public class AcceptChoice implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String predictionTarget;
+
+    /**
+     * <p>
+     * The edit of the prediction.
+     * </p>
+     * 
+     * @param editedValue
+     *        The edit of the prediction.
+     */
+
+    public void setEditedValue(String editedValue) {
+        this.editedValue = editedValue;
+    }
+
+    /**
+     * <p>
+     * The edit of the prediction.
+     * </p>
+     * 
+     * @return The edit of the prediction.
+     */
+
+    public String getEditedValue() {
+        return this.editedValue;
+    }
+
+    /**
+     * <p>
+     * The edit of the prediction.
+     * </p>
+     * 
+     * @param editedValue
+     *        The edit of the prediction.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AcceptChoice withEditedValue(String editedValue) {
+        setEditedValue(editedValue);
+        return this;
+    }
 
     /**
      * <p>
@@ -134,6 +180,8 @@ public class AcceptChoice implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEditedValue() != null)
+            sb.append("EditedValue: ").append("***Sensitive Data Redacted***").append(",");
         if (getPredictionChoice() != null)
             sb.append("PredictionChoice: ").append(getPredictionChoice()).append(",");
         if (getPredictionTarget() != null)
@@ -152,6 +200,10 @@ public class AcceptChoice implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof AcceptChoice == false)
             return false;
         AcceptChoice other = (AcceptChoice) obj;
+        if (other.getEditedValue() == null ^ this.getEditedValue() == null)
+            return false;
+        if (other.getEditedValue() != null && other.getEditedValue().equals(this.getEditedValue()) == false)
+            return false;
         if (other.getPredictionChoice() == null ^ this.getPredictionChoice() == null)
             return false;
         if (other.getPredictionChoice() != null && other.getPredictionChoice().equals(this.getPredictionChoice()) == false)
@@ -168,6 +220,7 @@ public class AcceptChoice implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEditedValue() == null) ? 0 : getEditedValue().hashCode());
         hashCode = prime * hashCode + ((getPredictionChoice() == null) ? 0 : getPredictionChoice().hashCode());
         hashCode = prime * hashCode + ((getPredictionTarget() == null) ? 0 : getPredictionTarget().hashCode());
         return hashCode;

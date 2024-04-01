@@ -46,7 +46,11 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Integer maxResults;
-    /** <p/> */
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     */
     private String name;
     /**
      * <p>
@@ -203,9 +207,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the project.
+     * </p>
      * 
      * @param name
+     *        The name of the project.
      */
 
     public void setName(String name) {
@@ -213,9 +220,11 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the project.
+     * </p>
      * 
-     * @return
+     * @return The name of the project.
      */
 
     public String getName() {
@@ -223,9 +232,12 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p/>
+     * <p>
+     * The name of the project.
+     * </p>
      * 
      * @param name
+     *        The name of the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

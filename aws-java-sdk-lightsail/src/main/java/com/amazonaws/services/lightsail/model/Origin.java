@@ -57,6 +57,14 @@ public class Origin implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String protocolPolicy;
+    /**
+     * <p>
+     * The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify
+     * otherwise) is 30 seconds.
+     * </p>
+     */
+    private Integer responseTimeout;
 
     /**
      * <p>
@@ -284,6 +292,58 @@ public class Origin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify
+     * otherwise) is 30 seconds.
+     * </p>
+     * 
+     * @param responseTimeout
+     *        The amount of time, in seconds, that the distribution waits for a response after forwarding a request to
+     *        the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
+     *        specify otherwise) is 30 seconds.
+     */
+
+    public void setResponseTimeout(Integer responseTimeout) {
+        this.responseTimeout = responseTimeout;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify
+     * otherwise) is 30 seconds.
+     * </p>
+     * 
+     * @return The amount of time, in seconds, that the distribution waits for a response after forwarding a request to
+     *         the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
+     *         specify otherwise) is 30 seconds.
+     */
+
+    public Integer getResponseTimeout() {
+        return this.responseTimeout;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in seconds, that the distribution waits for a response after forwarding a request to the
+     * origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify
+     * otherwise) is 30 seconds.
+     * </p>
+     * 
+     * @param responseTimeout
+     *        The amount of time, in seconds, that the distribution waits for a response after forwarding a request to
+     *        the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't
+     *        specify otherwise) is 30 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Origin withResponseTimeout(Integer responseTimeout) {
+        setResponseTimeout(responseTimeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -302,7 +362,9 @@ public class Origin implements Serializable, Cloneable, StructuredPojo {
         if (getRegionName() != null)
             sb.append("RegionName: ").append(getRegionName()).append(",");
         if (getProtocolPolicy() != null)
-            sb.append("ProtocolPolicy: ").append(getProtocolPolicy());
+            sb.append("ProtocolPolicy: ").append(getProtocolPolicy()).append(",");
+        if (getResponseTimeout() != null)
+            sb.append("ResponseTimeout: ").append(getResponseTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -333,6 +395,10 @@ public class Origin implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProtocolPolicy() != null && other.getProtocolPolicy().equals(this.getProtocolPolicy()) == false)
             return false;
+        if (other.getResponseTimeout() == null ^ this.getResponseTimeout() == null)
+            return false;
+        if (other.getResponseTimeout() != null && other.getResponseTimeout().equals(this.getResponseTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +411,7 @@ public class Origin implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
         hashCode = prime * hashCode + ((getProtocolPolicy() == null) ? 0 : getProtocolPolicy().hashCode());
+        hashCode = prime * hashCode + ((getResponseTimeout() == null) ? 0 : getResponseTimeout().hashCode());
         return hashCode;
     }
 

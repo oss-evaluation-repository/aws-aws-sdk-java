@@ -23,17 +23,32 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the listing (a record of an asset at a given time).
+     * </p>
+     */
     private String listingId;
-    /** <p/> */
+    /**
+     * <p>
+     * The revision of a listing.
+     * </p>
+     */
     private String listingRevision;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the status of the listing.
+     * </p>
+     */
     private String status;
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param listingId
+     *        The ID of the listing (a record of an asset at a given time).
      */
 
     public void setListingId(String listingId) {
@@ -41,9 +56,11 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing (a record of an asset at a given time).
+     * </p>
      * 
-     * @return
+     * @return The ID of the listing (a record of an asset at a given time).
      */
 
     public String getListingId() {
@@ -51,9 +68,12 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param listingId
+     *        The ID of the listing (a record of an asset at a given time).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,9 +83,12 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of a listing.
+     * </p>
      * 
      * @param listingRevision
+     *        The revision of a listing.
      */
 
     public void setListingRevision(String listingRevision) {
@@ -73,9 +96,11 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of a listing.
+     * </p>
      * 
-     * @return
+     * @return The revision of a listing.
      */
 
     public String getListingRevision() {
@@ -83,9 +108,12 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision of a listing.
+     * </p>
      * 
      * @param listingRevision
+     *        The revision of a listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,9 +123,12 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the status of the listing.
+     * </p>
      * 
      * @param status
+     *        Specifies the status of the listing.
      * @see ListingStatus
      */
 
@@ -106,9 +137,11 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the status of the listing.
+     * </p>
      * 
-     * @return
+     * @return Specifies the status of the listing.
      * @see ListingStatus
      */
 
@@ -117,9 +150,12 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the status of the listing.
+     * </p>
      * 
      * @param status
+     *        Specifies the status of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListingStatus
      */
@@ -130,9 +166,12 @@ public class CreateListingChangeSetResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the status of the listing.
+     * </p>
      * 
      * @param status
+     *        Specifies the status of the listing.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListingStatus
      */

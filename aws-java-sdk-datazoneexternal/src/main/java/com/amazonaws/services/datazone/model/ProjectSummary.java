@@ -54,7 +54,7 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
     private String domainId;
     /**
      * <p>
-     * Reasons for failed project deletion
+     * Specifies the error message that is returned if the operation cannot be successfully completed.
      * </p>
      */
     private java.util.List<ProjectDeletionError> failureReasons;
@@ -72,7 +72,7 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Status of the project
+     * The status of the project.
      * </p>
      */
     private String projectStatus;
@@ -245,10 +245,10 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reasons for failed project deletion
+     * Specifies the error message that is returned if the operation cannot be successfully completed.
      * </p>
      * 
-     * @return Reasons for failed project deletion
+     * @return Specifies the error message that is returned if the operation cannot be successfully completed.
      */
 
     public java.util.List<ProjectDeletionError> getFailureReasons() {
@@ -257,11 +257,11 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reasons for failed project deletion
+     * Specifies the error message that is returned if the operation cannot be successfully completed.
      * </p>
      * 
      * @param failureReasons
-     *        Reasons for failed project deletion
+     *        Specifies the error message that is returned if the operation cannot be successfully completed.
      */
 
     public void setFailureReasons(java.util.Collection<ProjectDeletionError> failureReasons) {
@@ -275,7 +275,7 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reasons for failed project deletion
+     * Specifies the error message that is returned if the operation cannot be successfully completed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -284,7 +284,7 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param failureReasons
-     *        Reasons for failed project deletion
+     *        Specifies the error message that is returned if the operation cannot be successfully completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,11 +300,11 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reasons for failed project deletion
+     * Specifies the error message that is returned if the operation cannot be successfully completed.
      * </p>
      * 
      * @param failureReasons
-     *        Reasons for failed project deletion
+     *        Specifies the error message that is returned if the operation cannot be successfully completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,11 +395,11 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of the project
+     * The status of the project.
      * </p>
      * 
      * @param projectStatus
-     *        Status of the project
+     *        The status of the project.
      * @see ProjectStatus
      */
 
@@ -409,10 +409,10 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of the project
+     * The status of the project.
      * </p>
      * 
-     * @return Status of the project
+     * @return The status of the project.
      * @see ProjectStatus
      */
 
@@ -422,11 +422,11 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of the project
+     * The status of the project.
      * </p>
      * 
      * @param projectStatus
-     *        Status of the project
+     *        The status of the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProjectStatus
      */
@@ -438,11 +438,11 @@ public class ProjectSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of the project
+     * The status of the project.
      * </p>
      * 
      * @param projectStatus
-     *        Status of the project
+     *        The status of the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProjectStatus
      */

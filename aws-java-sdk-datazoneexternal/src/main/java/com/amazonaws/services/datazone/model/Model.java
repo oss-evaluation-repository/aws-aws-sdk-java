@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * The model of the API.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/Model" target="_top">AWS API
  *      Documentation</a>
@@ -26,13 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Model implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Indicates the smithy model of the API.
+     * </p>
+     */
     private String smithy;
 
     /**
-     * <p/>
+     * <p>
+     * Indicates the smithy model of the API.
+     * </p>
      * 
      * @param smithy
+     *        Indicates the smithy model of the API.
      */
 
     public void setSmithy(String smithy) {
@@ -40,9 +49,11 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates the smithy model of the API.
+     * </p>
      * 
-     * @return
+     * @return Indicates the smithy model of the API.
      */
 
     public String getSmithy() {
@@ -50,9 +61,12 @@ public class Model implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates the smithy model of the API.
+     * </p>
      * 
      * @param smithy
+     *        Indicates the smithy model of the API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

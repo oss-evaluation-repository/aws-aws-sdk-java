@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * The name map for assets.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/AssetTargetNameMap" target="_top">AWS API
  *      Documentation</a>

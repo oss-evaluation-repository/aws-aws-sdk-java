@@ -143,6 +143,39 @@ public class AmazonDataZoneAsyncClient extends AmazonDataZoneClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CancelMetadataGenerationRunResult> cancelMetadataGenerationRunAsync(CancelMetadataGenerationRunRequest request) {
+
+        return cancelMetadataGenerationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMetadataGenerationRunResult> cancelMetadataGenerationRunAsync(final CancelMetadataGenerationRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelMetadataGenerationRunRequest, CancelMetadataGenerationRunResult> asyncHandler) {
+        final CancelMetadataGenerationRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelMetadataGenerationRunResult>() {
+            @Override
+            public CancelMetadataGenerationRunResult call() throws Exception {
+                CancelMetadataGenerationRunResult result = null;
+
+                try {
+                    result = executeCancelMetadataGenerationRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelSubscriptionResult> cancelSubscriptionAsync(CancelSubscriptionRequest request) {
 
         return cancelSubscriptionAsync(request, null);
@@ -1797,6 +1830,39 @@ public class AmazonDataZoneAsyncClient extends AmazonDataZoneClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetMetadataGenerationRunResult> getMetadataGenerationRunAsync(GetMetadataGenerationRunRequest request) {
+
+        return getMetadataGenerationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetadataGenerationRunResult> getMetadataGenerationRunAsync(final GetMetadataGenerationRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMetadataGenerationRunRequest, GetMetadataGenerationRunResult> asyncHandler) {
+        final GetMetadataGenerationRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMetadataGenerationRunResult>() {
+            @Override
+            public GetMetadataGenerationRunResult call() throws Exception {
+                GetMetadataGenerationRunResult result = null;
+
+                try {
+                    result = executeGetMetadataGenerationRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProjectResult> getProjectAsync(GetProjectRequest request) {
 
         return getProjectAsync(request, null);
@@ -2279,6 +2345,39 @@ public class AmazonDataZoneAsyncClient extends AmazonDataZoneClient implements A
 
                 try {
                     result = executeListEnvironments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetadataGenerationRunsResult> listMetadataGenerationRunsAsync(ListMetadataGenerationRunsRequest request) {
+
+        return listMetadataGenerationRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetadataGenerationRunsResult> listMetadataGenerationRunsAsync(final ListMetadataGenerationRunsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMetadataGenerationRunsRequest, ListMetadataGenerationRunsResult> asyncHandler) {
+        final ListMetadataGenerationRunsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMetadataGenerationRunsResult>() {
+            @Override
+            public ListMetadataGenerationRunsResult call() throws Exception {
+                ListMetadataGenerationRunsResult result = null;
+
+                try {
+                    result = executeListMetadataGenerationRuns(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2875,6 +2974,39 @@ public class AmazonDataZoneAsyncClient extends AmazonDataZoneClient implements A
 
                 try {
                     result = executeStartDataSourceRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMetadataGenerationRunResult> startMetadataGenerationRunAsync(StartMetadataGenerationRunRequest request) {
+
+        return startMetadataGenerationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMetadataGenerationRunResult> startMetadataGenerationRunAsync(final StartMetadataGenerationRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMetadataGenerationRunRequest, StartMetadataGenerationRunResult> asyncHandler) {
+        final StartMetadataGenerationRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMetadataGenerationRunResult>() {
+            @Override
+            public StartMetadataGenerationRunResult call() throws Exception {
+                StartMetadataGenerationRunResult result = null;
+
+                try {
+                    result = executeStartMetadataGenerationRun(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

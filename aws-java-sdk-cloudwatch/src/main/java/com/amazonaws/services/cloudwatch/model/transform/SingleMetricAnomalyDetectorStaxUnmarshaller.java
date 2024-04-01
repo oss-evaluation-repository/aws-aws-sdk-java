@@ -45,6 +45,11 @@ public class SingleMetricAnomalyDetectorStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AccountId", targetDepth)) {
+                    singleMetricAnomalyDetector.setAccountId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Namespace", targetDepth)) {
                     singleMetricAnomalyDetector.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

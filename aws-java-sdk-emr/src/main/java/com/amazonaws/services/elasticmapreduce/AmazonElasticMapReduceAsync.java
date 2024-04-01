@@ -2062,8 +2062,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html">graceful
-     * node replacement</a> in the <i>Amazon EMR Management Guide</i>.
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-node-replacement.html">graceful node
+     * replacement</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param setUnhealthyNodeReplacementRequest
@@ -2090,8 +2090,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html">graceful
-     * node replacement</a> in the <i>Amazon EMR Management Guide</i>.
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-node-replacement.html">graceful node
+     * replacement</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param setUnhealthyNodeReplacementRequest

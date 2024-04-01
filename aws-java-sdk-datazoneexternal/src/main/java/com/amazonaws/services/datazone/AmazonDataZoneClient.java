@@ -295,6 +295,77 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Cancels the metadata generation run.
+     * </p>
+     * 
+     * @param cancelMetadataGenerationRunRequest
+     * @return Result of the CancelMetadataGenerationRun operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         There is a conflict while performing this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
+     * @throws UnauthorizedException
+     *         You do not have permission to perform this action.
+     * @sample AmazonDataZone.CancelMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelMetadataGenerationRunResult cancelMetadataGenerationRun(CancelMetadataGenerationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelMetadataGenerationRun(request);
+    }
+
+    @SdkInternalApi
+    final CancelMetadataGenerationRunResult executeCancelMetadataGenerationRun(CancelMetadataGenerationRunRequest cancelMetadataGenerationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelMetadataGenerationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelMetadataGenerationRunRequest> request = null;
+        Response<CancelMetadataGenerationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelMetadataGenerationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelMetadataGenerationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataZone");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelMetadataGenerationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelMetadataGenerationRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelMetadataGenerationRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels the subscription to the specified asset.
      * </p>
      * 
@@ -1132,7 +1203,9 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * <p/>
+     * <p>
+     * Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog.
+     * </p>
      * 
      * @param createListingChangeSetRequest
      * @return Result of the CreateListingChangeSet operation returned by the service.
@@ -2309,7 +2382,9 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * <p/>
+     * <p>
+     * Deletes a listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param deleteListingRequest
      * @return Result of the DeleteListing operation returned by the service.
@@ -3683,7 +3758,9 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * <p/>
+     * <p>
+     * Gets a listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param getListingRequest
      * @return Result of the GetListing operation returned by the service.
@@ -3737,6 +3814,75 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetListingResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetListingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a metadata generation run in Amazon DataZone.
+     * </p>
+     * 
+     * @param getMetadataGenerationRunRequest
+     * @return Result of the GetMetadataGenerationRun operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
+     * @throws UnauthorizedException
+     *         You do not have permission to perform this action.
+     * @sample AmazonDataZone.GetMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMetadataGenerationRunResult getMetadataGenerationRun(GetMetadataGenerationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetadataGenerationRun(request);
+    }
+
+    @SdkInternalApi
+    final GetMetadataGenerationRunResult executeGetMetadataGenerationRun(GetMetadataGenerationRunRequest getMetadataGenerationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetadataGenerationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetadataGenerationRunRequest> request = null;
+        Response<GetMetadataGenerationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetadataGenerationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getMetadataGenerationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataZone");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetadataGenerationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMetadataGenerationRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetMetadataGenerationRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4778,6 +4924,75 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Lists all metadata generation runs.
+     * </p>
+     * 
+     * @param listMetadataGenerationRunsRequest
+     * @return Result of the ListMetadataGenerationRuns operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
+     * @throws UnauthorizedException
+     *         You do not have permission to perform this action.
+     * @sample AmazonDataZone.ListMetadataGenerationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListMetadataGenerationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMetadataGenerationRunsResult listMetadataGenerationRuns(ListMetadataGenerationRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMetadataGenerationRuns(request);
+    }
+
+    @SdkInternalApi
+    final ListMetadataGenerationRunsResult executeListMetadataGenerationRuns(ListMetadataGenerationRunsRequest listMetadataGenerationRunsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMetadataGenerationRunsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMetadataGenerationRunsRequest> request = null;
+        Response<ListMetadataGenerationRunsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMetadataGenerationRunsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listMetadataGenerationRunsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataZone");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMetadataGenerationRuns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMetadataGenerationRunsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMetadataGenerationRunsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all Amazon DataZone notifications.
      * </p>
      * 
@@ -5403,6 +5618,8 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
      *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         There is a conflict while performing this action.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
      * @throws UnauthorizedException
@@ -5729,7 +5946,7 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Searches listings in Amazon DataZone.
+     * Searches listings (records of an asset at a given time) in Amazon DataZone.
      * </p>
      * 
      * @param searchListingsRequest
@@ -5985,6 +6202,79 @@ public class AmazonDataZoneClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<StartDataSourceRunResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartDataSourceRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the metadata generation run.
+     * </p>
+     * 
+     * @param startMetadataGenerationRunRequest
+     * @return Result of the StartMetadataGenerationRun operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ServiceQuotaExceededException
+     *         The request has exceeded the specified service quota.
+     * @throws ConflictException
+     *         There is a conflict while performing this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the Amazon Web Services service.
+     * @throws UnauthorizedException
+     *         You do not have permission to perform this action.
+     * @sample AmazonDataZone.StartMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartMetadataGenerationRunResult startMetadataGenerationRun(StartMetadataGenerationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMetadataGenerationRun(request);
+    }
+
+    @SdkInternalApi
+    final StartMetadataGenerationRunResult executeStartMetadataGenerationRun(StartMetadataGenerationRunRequest startMetadataGenerationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMetadataGenerationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMetadataGenerationRunRequest> request = null;
+        Response<StartMetadataGenerationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMetadataGenerationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startMetadataGenerationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataZone");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMetadataGenerationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartMetadataGenerationRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartMetadataGenerationRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

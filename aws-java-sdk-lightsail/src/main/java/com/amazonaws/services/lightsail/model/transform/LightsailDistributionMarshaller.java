@@ -68,6 +68,8 @@ public class LightsailDistributionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> VIEWERMINIMUMTLSPROTOCOLVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("viewerMinimumTlsProtocolVersion").build();
 
     private static final LightsailDistributionMarshaller instance = new LightsailDistributionMarshaller();
 
@@ -105,6 +107,7 @@ public class LightsailDistributionMarshaller {
             protocolMarshaller.marshall(lightsailDistribution.getAbleToUpdateBundle(), ABLETOUPDATEBUNDLE_BINDING);
             protocolMarshaller.marshall(lightsailDistribution.getIpAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(lightsailDistribution.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(lightsailDistribution.getViewerMinimumTlsProtocolVersion(), VIEWERMINIMUMTLSPROTOCOLVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

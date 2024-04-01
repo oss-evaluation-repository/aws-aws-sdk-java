@@ -77,6 +77,10 @@ public class DeleteAnomalyDetectorRequestMarshaller implements Marshaller<Reques
             SingleMetricAnomalyDetector singleMetricAnomalyDetector = deleteAnomalyDetectorRequest.getSingleMetricAnomalyDetector();
             if (singleMetricAnomalyDetector != null) {
 
+                if (singleMetricAnomalyDetector.getAccountId() != null) {
+                    request.addParameter("SingleMetricAnomalyDetector.AccountId", StringUtils.fromString(singleMetricAnomalyDetector.getAccountId()));
+                }
+
                 if (singleMetricAnomalyDetector.getNamespace() != null) {
                     request.addParameter("SingleMetricAnomalyDetector.Namespace", StringUtils.fromString(singleMetricAnomalyDetector.getNamespace()));
                 }

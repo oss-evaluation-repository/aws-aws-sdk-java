@@ -47,7 +47,11 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String domainId;
-    /** <p/> */
+    /**
+     * <p>
+     * The external identifier of the asset.
+     * </p>
+     */
     private String externalIdentifier;
     /**
      * <p>
@@ -79,7 +83,11 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String id;
-    /** <p/> */
+    /**
+     * <p>
+     * The details of an asset published in an Amazon DataZone catalog.
+     * </p>
+     */
     private AssetListingDetails listing;
     /**
      * <p>
@@ -285,9 +293,12 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external identifier of the asset.
+     * </p>
      * 
      * @param externalIdentifier
+     *        The external identifier of the asset.
      */
 
     public void setExternalIdentifier(String externalIdentifier) {
@@ -295,9 +306,11 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external identifier of the asset.
+     * </p>
      * 
-     * @return
+     * @return The external identifier of the asset.
      */
 
     public String getExternalIdentifier() {
@@ -305,9 +318,12 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external identifier of the asset.
+     * </p>
      * 
      * @param externalIdentifier
+     *        The external identifier of the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,9 +593,12 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of an asset published in an Amazon DataZone catalog.
+     * </p>
      * 
      * @param listing
+     *        The details of an asset published in an Amazon DataZone catalog.
      */
 
     public void setListing(AssetListingDetails listing) {
@@ -587,9 +606,11 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of an asset published in an Amazon DataZone catalog.
+     * </p>
      * 
-     * @return
+     * @return The details of an asset published in an Amazon DataZone catalog.
      */
 
     public AssetListingDetails getListing() {
@@ -597,9 +618,12 @@ public class CreateAssetResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of an asset published in an Amazon DataZone catalog.
+     * </p>
      * 
      * @param listing
+     *        The details of an asset published in an Amazon DataZone catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

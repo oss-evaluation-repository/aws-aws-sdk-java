@@ -47,7 +47,11 @@ public class GetAssetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      */
     private String domainId;
-    /** <p/> */
+    /**
+     * <p>
+     * The external ID of the asset.
+     * </p>
+     */
     private String externalIdentifier;
     /**
      * <p>
@@ -79,7 +83,11 @@ public class GetAssetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      */
     private String id;
-    /** <p/> */
+    /**
+     * <p>
+     * The listing of the asset.
+     * </p>
+     */
     private AssetListingDetails listing;
     /**
      * <p>
@@ -279,9 +287,12 @@ public class GetAssetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external ID of the asset.
+     * </p>
      * 
      * @param externalIdentifier
+     *        The external ID of the asset.
      */
 
     public void setExternalIdentifier(String externalIdentifier) {
@@ -289,9 +300,11 @@ public class GetAssetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external ID of the asset.
+     * </p>
      * 
-     * @return
+     * @return The external ID of the asset.
      */
 
     public String getExternalIdentifier() {
@@ -299,9 +312,12 @@ public class GetAssetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p/>
+     * <p>
+     * The external ID of the asset.
+     * </p>
      * 
      * @param externalIdentifier
+     *        The external ID of the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -571,9 +587,12 @@ public class GetAssetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p/>
+     * <p>
+     * The listing of the asset.
+     * </p>
      * 
      * @param listing
+     *        The listing of the asset.
      */
 
     public void setListing(AssetListingDetails listing) {
@@ -581,9 +600,11 @@ public class GetAssetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p/>
+     * <p>
+     * The listing of the asset.
+     * </p>
      * 
-     * @return
+     * @return The listing of the asset.
      */
 
     public AssetListingDetails getListing() {
@@ -591,9 +612,12 @@ public class GetAssetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p/>
+     * <p>
+     * The listing of the asset.
+     * </p>
      * 
      * @param listing
+     *        The listing of the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

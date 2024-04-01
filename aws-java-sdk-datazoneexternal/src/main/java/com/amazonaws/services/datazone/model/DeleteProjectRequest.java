@@ -39,7 +39,7 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String identifier;
     /**
      * <p>
-     * Optional flag to asynchronously delete child entities within the project
+     * Specifies the optional flag to delete all child entities within the project.
      * </p>
      */
     private Boolean skipDeletionCheck;
@@ -126,11 +126,11 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional flag to asynchronously delete child entities within the project
+     * Specifies the optional flag to delete all child entities within the project.
      * </p>
      * 
      * @param skipDeletionCheck
-     *        Optional flag to asynchronously delete child entities within the project
+     *        Specifies the optional flag to delete all child entities within the project.
      */
 
     public void setSkipDeletionCheck(Boolean skipDeletionCheck) {
@@ -139,10 +139,10 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional flag to asynchronously delete child entities within the project
+     * Specifies the optional flag to delete all child entities within the project.
      * </p>
      * 
-     * @return Optional flag to asynchronously delete child entities within the project
+     * @return Specifies the optional flag to delete all child entities within the project.
      */
 
     public Boolean getSkipDeletionCheck() {
@@ -151,11 +151,11 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional flag to asynchronously delete child entities within the project
+     * Specifies the optional flag to delete all child entities within the project.
      * </p>
      * 
      * @param skipDeletionCheck
-     *        Optional flag to asynchronously delete child entities within the project
+     *        Specifies the optional flag to delete all child entities within the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +166,10 @@ public class DeleteProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional flag to asynchronously delete child entities within the project
+     * Specifies the optional flag to delete all child entities within the project.
      * </p>
      * 
-     * @return Optional flag to asynchronously delete child entities within the project
+     * @return Specifies the optional flag to delete all child entities within the project.
      */
 
     public Boolean isSkipDeletionCheck() {

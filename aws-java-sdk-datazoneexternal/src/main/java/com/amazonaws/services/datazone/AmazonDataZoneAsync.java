@@ -101,6 +101,39 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
 
     /**
      * <p>
+     * Cancels the metadata generation run.
+     * </p>
+     * 
+     * @param cancelMetadataGenerationRunRequest
+     * @return A Java Future containing the result of the CancelMetadataGenerationRun operation returned by the service.
+     * @sample AmazonDataZoneAsync.CancelMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMetadataGenerationRunResult> cancelMetadataGenerationRunAsync(
+            CancelMetadataGenerationRunRequest cancelMetadataGenerationRunRequest);
+
+    /**
+     * <p>
+     * Cancels the metadata generation run.
+     * </p>
+     * 
+     * @param cancelMetadataGenerationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelMetadataGenerationRun operation returned by the service.
+     * @sample AmazonDataZoneAsyncHandler.CancelMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMetadataGenerationRunResult> cancelMetadataGenerationRunAsync(
+            CancelMetadataGenerationRunRequest cancelMetadataGenerationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelMetadataGenerationRunRequest, CancelMetadataGenerationRunResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels the subscription to the specified asset.
      * </p>
      * 
@@ -472,7 +505,9 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
             com.amazonaws.handlers.AsyncHandler<CreateGroupProfileRequest, CreateGroupProfileResult> asyncHandler);
 
     /**
-     * <p/>
+     * <p>
+     * Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog.
+     * </p>
      * 
      * @param createListingChangeSetRequest
      * @return A Java Future containing the result of the CreateListingChangeSet operation returned by the service.
@@ -483,7 +518,9 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
     java.util.concurrent.Future<CreateListingChangeSetResult> createListingChangeSetAsync(CreateListingChangeSetRequest createListingChangeSetRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog.
+     * </p>
      * 
      * @param createListingChangeSetRequest
      * @param asyncHandler
@@ -1001,7 +1038,9 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
             com.amazonaws.handlers.AsyncHandler<DeleteGlossaryTermRequest, DeleteGlossaryTermResult> asyncHandler);
 
     /**
-     * <p/>
+     * <p>
+     * Deletes a listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param deleteListingRequest
      * @return A Java Future containing the result of the DeleteListing operation returned by the service.
@@ -1012,7 +1051,9 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
     java.util.concurrent.Future<DeleteListingResult> deleteListingAsync(DeleteListingRequest deleteListingRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Deletes a listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param deleteListingRequest
      * @param asyncHandler
@@ -1623,7 +1664,9 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
             com.amazonaws.handlers.AsyncHandler<GetIamPortalLoginUrlRequest, GetIamPortalLoginUrlResult> asyncHandler);
 
     /**
-     * <p/>
+     * <p>
+     * Gets a listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param getListingRequest
      * @return A Java Future containing the result of the GetListing operation returned by the service.
@@ -1634,7 +1677,9 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
     java.util.concurrent.Future<GetListingResult> getListingAsync(GetListingRequest getListingRequest);
 
     /**
-     * <p/>
+     * <p>
+     * Gets a listing (a record of an asset at a given time).
+     * </p>
      * 
      * @param getListingRequest
      * @param asyncHandler
@@ -1648,6 +1693,37 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
      */
     java.util.concurrent.Future<GetListingResult> getListingAsync(GetListingRequest getListingRequest,
             com.amazonaws.handlers.AsyncHandler<GetListingRequest, GetListingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a metadata generation run in Amazon DataZone.
+     * </p>
+     * 
+     * @param getMetadataGenerationRunRequest
+     * @return A Java Future containing the result of the GetMetadataGenerationRun operation returned by the service.
+     * @sample AmazonDataZoneAsync.GetMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetadataGenerationRunResult> getMetadataGenerationRunAsync(GetMetadataGenerationRunRequest getMetadataGenerationRunRequest);
+
+    /**
+     * <p>
+     * Gets a metadata generation run in Amazon DataZone.
+     * </p>
+     * 
+     * @param getMetadataGenerationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetadataGenerationRun operation returned by the service.
+     * @sample AmazonDataZoneAsyncHandler.GetMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetadataGenerationRunResult> getMetadataGenerationRunAsync(GetMetadataGenerationRunRequest getMetadataGenerationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetadataGenerationRunRequest, GetMetadataGenerationRunResult> asyncHandler);
 
     /**
      * <p>
@@ -2128,6 +2204,39 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
 
     /**
      * <p>
+     * Lists all metadata generation runs.
+     * </p>
+     * 
+     * @param listMetadataGenerationRunsRequest
+     * @return A Java Future containing the result of the ListMetadataGenerationRuns operation returned by the service.
+     * @sample AmazonDataZoneAsync.ListMetadataGenerationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListMetadataGenerationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetadataGenerationRunsResult> listMetadataGenerationRunsAsync(
+            ListMetadataGenerationRunsRequest listMetadataGenerationRunsRequest);
+
+    /**
+     * <p>
+     * Lists all metadata generation runs.
+     * </p>
+     * 
+     * @param listMetadataGenerationRunsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMetadataGenerationRuns operation returned by the service.
+     * @sample AmazonDataZoneAsyncHandler.ListMetadataGenerationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListMetadataGenerationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetadataGenerationRunsResult> listMetadataGenerationRunsAsync(
+            ListMetadataGenerationRunsRequest listMetadataGenerationRunsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMetadataGenerationRunsRequest, ListMetadataGenerationRunsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all Amazon DataZone notifications.
      * </p>
      * 
@@ -2568,7 +2677,7 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
 
     /**
      * <p>
-     * Searches listings in Amazon DataZone.
+     * Searches listings (records of an asset at a given time) in Amazon DataZone.
      * </p>
      * 
      * @param searchListingsRequest
@@ -2581,7 +2690,7 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
 
     /**
      * <p>
-     * Searches listings in Amazon DataZone.
+     * Searches listings (records of an asset at a given time) in Amazon DataZone.
      * </p>
      * 
      * @param searchListingsRequest
@@ -2689,6 +2798,39 @@ public interface AmazonDataZoneAsync extends AmazonDataZone {
      */
     java.util.concurrent.Future<StartDataSourceRunResult> startDataSourceRunAsync(StartDataSourceRunRequest startDataSourceRunRequest,
             com.amazonaws.handlers.AsyncHandler<StartDataSourceRunRequest, StartDataSourceRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the metadata generation run.
+     * </p>
+     * 
+     * @param startMetadataGenerationRunRequest
+     * @return A Java Future containing the result of the StartMetadataGenerationRun operation returned by the service.
+     * @sample AmazonDataZoneAsync.StartMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMetadataGenerationRunResult> startMetadataGenerationRunAsync(
+            StartMetadataGenerationRunRequest startMetadataGenerationRunRequest);
+
+    /**
+     * <p>
+     * Starts the metadata generation run.
+     * </p>
+     * 
+     * @param startMetadataGenerationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMetadataGenerationRun operation returned by the service.
+     * @sample AmazonDataZoneAsyncHandler.StartMetadataGenerationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartMetadataGenerationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMetadataGenerationRunResult> startMetadataGenerationRunAsync(
+            StartMetadataGenerationRunRequest startMetadataGenerationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMetadataGenerationRunRequest, StartMetadataGenerationRunResult> asyncHandler);
 
     /**
      * <p>

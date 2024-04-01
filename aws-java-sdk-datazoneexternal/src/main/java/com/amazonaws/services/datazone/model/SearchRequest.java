@@ -66,7 +66,11 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      */
     private String owningProjectIdentifier;
-    /** <p/> */
+    /**
+     * <p>
+     * The details of the search.
+     * </p>
+     */
     private java.util.List<SearchInItem> searchIn;
     /**
      * <p>
@@ -419,9 +423,11 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the search.
+     * </p>
      * 
-     * @return
+     * @return The details of the search.
      */
 
     public java.util.List<SearchInItem> getSearchIn() {
@@ -429,9 +435,12 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the search.
+     * </p>
      * 
      * @param searchIn
+     *        The details of the search.
      */
 
     public void setSearchIn(java.util.Collection<SearchInItem> searchIn) {
@@ -444,7 +453,9 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the search.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSearchIn(java.util.Collection)} or {@link #withSearchIn(java.util.Collection)} if you want to override
@@ -452,6 +463,7 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param searchIn
+     *        The details of the search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,9 +478,12 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the search.
+     * </p>
      * 
      * @param searchIn
+     *        The details of the search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

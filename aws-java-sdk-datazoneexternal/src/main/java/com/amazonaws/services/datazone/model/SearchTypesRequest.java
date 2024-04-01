@@ -37,7 +37,11 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private FilterClause filters;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies whether the search is managed.
+     * </p>
+     */
     private Boolean managed;
     /**
      * <p>
@@ -56,7 +60,11 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String nextToken;
-    /** <p/> */
+    /**
+     * <p>
+     * The details of the search.
+     * </p>
+     */
     private java.util.List<SearchInItem> searchIn;
     /**
      * <p>
@@ -158,9 +166,12 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether the search is managed.
+     * </p>
      * 
      * @param managed
+     *        Specifies whether the search is managed.
      */
 
     public void setManaged(Boolean managed) {
@@ -168,9 +179,11 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether the search is managed.
+     * </p>
      * 
-     * @return
+     * @return Specifies whether the search is managed.
      */
 
     public Boolean getManaged() {
@@ -178,9 +191,12 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether the search is managed.
+     * </p>
      * 
      * @param managed
+     *        Specifies whether the search is managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,9 +206,11 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether the search is managed.
+     * </p>
      * 
-     * @return
+     * @return Specifies whether the search is managed.
      */
 
     public Boolean isManaged() {
@@ -316,9 +334,11 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the search.
+     * </p>
      * 
-     * @return
+     * @return The details of the search.
      */
 
     public java.util.List<SearchInItem> getSearchIn() {
@@ -326,9 +346,12 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the search.
+     * </p>
      * 
      * @param searchIn
+     *        The details of the search.
      */
 
     public void setSearchIn(java.util.Collection<SearchInItem> searchIn) {
@@ -341,7 +364,9 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the search.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSearchIn(java.util.Collection)} or {@link #withSearchIn(java.util.Collection)} if you want to override
@@ -349,6 +374,7 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param searchIn
+     *        The details of the search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,9 +389,12 @@ public class SearchTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * The details of the search.
+     * </p>
      * 
      * @param searchIn
+     *        The details of the search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,17 +23,32 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the asset.
+     * </p>
+     */
     private String assetId;
-    /** <p/> */
+    /**
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
+     */
     private String assetRevision;
-    /** <p/> */
+    /**
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
+     */
     private String domainId;
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the asset.
+     * </p>
      * 
      * @param assetId
+     *        The ID of the asset.
      */
 
     public void setAssetId(String assetId) {
@@ -41,9 +56,11 @@ public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the asset.
+     * </p>
      * 
-     * @return
+     * @return The ID of the asset.
      */
 
     public String getAssetId() {
@@ -51,9 +68,12 @@ public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the asset.
+     * </p>
      * 
      * @param assetId
+     *        The ID of the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,9 +83,12 @@ public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
      * @param assetRevision
+     *        The revision that is to be made to the asset.
      */
 
     public void setAssetRevision(String assetRevision) {
@@ -73,9 +96,11 @@ public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
-     * @return
+     * @return The revision that is to be made to the asset.
      */
 
     public String getAssetRevision() {
@@ -83,9 +108,12 @@ public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p/>
+     * <p>
+     * The revision that is to be made to the asset.
+     * </p>
      * 
      * @param assetRevision
+     *        The revision that is to be made to the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,9 +123,12 @@ public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainId
+     *        The ID of the Amazon DataZone domain.
      */
 
     public void setDomainId(String domainId) {
@@ -105,9 +136,11 @@ public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
-     * @return
+     * @return The ID of the Amazon DataZone domain.
      */
 
     public String getDomainId() {
@@ -115,9 +148,12 @@ public class RejectPredictionsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p/>
+     * <p>
+     * The ID of the Amazon DataZone domain.
+     * </p>
      * 
      * @param domainId
+     *        The ID of the Amazon DataZone domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
