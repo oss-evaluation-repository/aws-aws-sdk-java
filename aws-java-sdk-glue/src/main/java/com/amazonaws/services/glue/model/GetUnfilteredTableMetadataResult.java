@@ -55,10 +55,25 @@ public class GetUnfilteredTableMetadataResult extends com.amazonaws.AmazonWebSer
     private String queryAuthorizationId;
     /**
      * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     */
+    private Boolean isMultiDialectView;
+    /**
+     * <p>
      * The resource ARN of the parent resource extracted from the request.
      * </p>
      */
     private String resourceArn;
+    /**
+     * <p>
+     * A flag that instructs the engine not to push user-provided operations into the logical plan of the view during
+     * query planning. However, if set this flag does not guarantee that the engine will comply. Refer to the engine's
+     * documentation to understand the guarantees provided, if any.
+     * </p>
+     */
+    private Boolean isProtected;
     /**
      * <p>
      * The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context
@@ -341,6 +356,66 @@ public class GetUnfilteredTableMetadataResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     * 
+     * @param isMultiDialectView
+     *        Specifies whether the view supports the SQL dialects of one or more different query engines and can
+     *        therefore be read by those engines.
+     */
+
+    public void setIsMultiDialectView(Boolean isMultiDialectView) {
+        this.isMultiDialectView = isMultiDialectView;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     * 
+     * @return Specifies whether the view supports the SQL dialects of one or more different query engines and can
+     *         therefore be read by those engines.
+     */
+
+    public Boolean getIsMultiDialectView() {
+        return this.isMultiDialectView;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     * 
+     * @param isMultiDialectView
+     *        Specifies whether the view supports the SQL dialects of one or more different query engines and can
+     *        therefore be read by those engines.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUnfilteredTableMetadataResult withIsMultiDialectView(Boolean isMultiDialectView) {
+        setIsMultiDialectView(isMultiDialectView);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     * 
+     * @return Specifies whether the view supports the SQL dialects of one or more different query engines and can
+     *         therefore be read by those engines.
+     */
+
+    public Boolean isMultiDialectView() {
+        return this.isMultiDialectView;
+    }
+
+    /**
+     * <p>
      * The resource ARN of the parent resource extracted from the request.
      * </p>
      * 
@@ -377,6 +452,74 @@ public class GetUnfilteredTableMetadataResult extends com.amazonaws.AmazonWebSer
     public GetUnfilteredTableMetadataResult withResourceArn(String resourceArn) {
         setResourceArn(resourceArn);
         return this;
+    }
+
+    /**
+     * <p>
+     * A flag that instructs the engine not to push user-provided operations into the logical plan of the view during
+     * query planning. However, if set this flag does not guarantee that the engine will comply. Refer to the engine's
+     * documentation to understand the guarantees provided, if any.
+     * </p>
+     * 
+     * @param isProtected
+     *        A flag that instructs the engine not to push user-provided operations into the logical plan of the view
+     *        during query planning. However, if set this flag does not guarantee that the engine will comply. Refer to
+     *        the engine's documentation to understand the guarantees provided, if any.
+     */
+
+    public void setIsProtected(Boolean isProtected) {
+        this.isProtected = isProtected;
+    }
+
+    /**
+     * <p>
+     * A flag that instructs the engine not to push user-provided operations into the logical plan of the view during
+     * query planning. However, if set this flag does not guarantee that the engine will comply. Refer to the engine's
+     * documentation to understand the guarantees provided, if any.
+     * </p>
+     * 
+     * @return A flag that instructs the engine not to push user-provided operations into the logical plan of the view
+     *         during query planning. However, if set this flag does not guarantee that the engine will comply. Refer to
+     *         the engine's documentation to understand the guarantees provided, if any.
+     */
+
+    public Boolean getIsProtected() {
+        return this.isProtected;
+    }
+
+    /**
+     * <p>
+     * A flag that instructs the engine not to push user-provided operations into the logical plan of the view during
+     * query planning. However, if set this flag does not guarantee that the engine will comply. Refer to the engine's
+     * documentation to understand the guarantees provided, if any.
+     * </p>
+     * 
+     * @param isProtected
+     *        A flag that instructs the engine not to push user-provided operations into the logical plan of the view
+     *        during query planning. However, if set this flag does not guarantee that the engine will comply. Refer to
+     *        the engine's documentation to understand the guarantees provided, if any.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUnfilteredTableMetadataResult withIsProtected(Boolean isProtected) {
+        setIsProtected(isProtected);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that instructs the engine not to push user-provided operations into the logical plan of the view during
+     * query planning. However, if set this flag does not guarantee that the engine will comply. Refer to the engine's
+     * documentation to understand the guarantees provided, if any.
+     * </p>
+     * 
+     * @return A flag that instructs the engine not to push user-provided operations into the logical plan of the view
+     *         during query planning. However, if set this flag does not guarantee that the engine will comply. Refer to
+     *         the engine's documentation to understand the guarantees provided, if any.
+     */
+
+    public Boolean isProtected() {
+        return this.isProtected;
     }
 
     /**
@@ -509,8 +652,12 @@ public class GetUnfilteredTableMetadataResult extends com.amazonaws.AmazonWebSer
             sb.append("CellFilters: ").append(getCellFilters()).append(",");
         if (getQueryAuthorizationId() != null)
             sb.append("QueryAuthorizationId: ").append(getQueryAuthorizationId()).append(",");
+        if (getIsMultiDialectView() != null)
+            sb.append("IsMultiDialectView: ").append(getIsMultiDialectView()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getIsProtected() != null)
+            sb.append("IsProtected: ").append(getIsProtected()).append(",");
         if (getPermissions() != null)
             sb.append("Permissions: ").append(getPermissions());
         sb.append("}");
@@ -548,9 +695,17 @@ public class GetUnfilteredTableMetadataResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getQueryAuthorizationId() != null && other.getQueryAuthorizationId().equals(this.getQueryAuthorizationId()) == false)
             return false;
+        if (other.getIsMultiDialectView() == null ^ this.getIsMultiDialectView() == null)
+            return false;
+        if (other.getIsMultiDialectView() != null && other.getIsMultiDialectView().equals(this.getIsMultiDialectView()) == false)
+            return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
+        if (other.getIsProtected() == null ^ this.getIsProtected() == null)
+            return false;
+        if (other.getIsProtected() != null && other.getIsProtected().equals(this.getIsProtected()) == false)
             return false;
         if (other.getPermissions() == null ^ this.getPermissions() == null)
             return false;
@@ -569,7 +724,9 @@ public class GetUnfilteredTableMetadataResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getIsRegisteredWithLakeFormation() == null) ? 0 : getIsRegisteredWithLakeFormation().hashCode());
         hashCode = prime * hashCode + ((getCellFilters() == null) ? 0 : getCellFilters().hashCode());
         hashCode = prime * hashCode + ((getQueryAuthorizationId() == null) ? 0 : getQueryAuthorizationId().hashCode());
+        hashCode = prime * hashCode + ((getIsMultiDialectView() == null) ? 0 : getIsMultiDialectView().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getIsProtected() == null) ? 0 : getIsProtected().hashCode());
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         return hashCode;
     }

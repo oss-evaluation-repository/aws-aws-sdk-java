@@ -70,24 +70,78 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
     private java.util.Map<String, String> affectedResources;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the API call was first observed.
+     * A timestamp that indicates when the API call was first observed.
      * </p>
      * <p>
-     * A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String firstSeen;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the API call was most recently observed.
+     * A timestamp that indicates when the API call was most recently observed.
      * </p>
      * <p>
-     * A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String lastSeen;
 
@@ -379,21 +433,75 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the API call was first observed.
+     * A timestamp that indicates when the API call was first observed.
      * </p>
      * <p>
-     * A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param firstSeen
-     *        An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+     *        A timestamp that indicates when the API call was first observed.</p>
      *        <p>
-     *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
-     *        and date and time should be separated by <code>T</code>. For more information, see <a
-     *        href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setFirstSeen(String firstSeen) {
@@ -402,20 +510,74 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the API call was first observed.
+     * A timestamp that indicates when the API call was first observed.
      * </p>
      * <p>
-     * A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+     * @return A timestamp that indicates when the API call was first observed.</p>
      *         <p>
-     *         A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
-     *         and date and time should be separated by <code>T</code>. For more information, see <a
-     *         href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>.
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getFirstSeen() {
@@ -424,21 +586,75 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the API call was first observed.
+     * A timestamp that indicates when the API call was first observed.
      * </p>
      * <p>
-     * A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param firstSeen
-     *        An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+     *        A timestamp that indicates when the API call was first observed.</p>
      *        <p>
-     *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
-     *        and date and time should be separated by <code>T</code>. For more information, see <a
-     *        href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,21 +665,75 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the API call was most recently observed.
+     * A timestamp that indicates when the API call was most recently observed.
      * </p>
      * <p>
-     * A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastSeen
-     *        An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+     *        A timestamp that indicates when the API call was most recently observed.</p>
      *        <p>
-     *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
-     *        and date and time should be separated by <code>T</code>. For more information, see <a
-     *        href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setLastSeen(String lastSeen) {
@@ -472,20 +742,74 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the API call was most recently observed.
+     * A timestamp that indicates when the API call was most recently observed.
      * </p>
      * <p>
-     * A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+     * @return A timestamp that indicates when the API call was most recently observed.</p>
      *         <p>
-     *         A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
-     *         and date and time should be separated by <code>T</code>. For more information, see <a
-     *         href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>.
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getLastSeen() {
@@ -494,21 +818,75 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the API call was most recently observed.
+     * A timestamp that indicates when the API call was most recently observed.
      * </p>
      * <p>
-     * A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastSeen
-     *        An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+     *        A timestamp that indicates when the API call was most recently observed.</p>
      *        <p>
-     *        A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
-     *        and date and time should be separated by <code>T</code>. For more information, see <a
-     *        href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,10 +28,7 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     private AwsSecurityFindingIdentifier findingIdentifier;
     /**
      * <p>
-     * An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time
-     * should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * A timestamp that indicates the start time of the requested finding history.
      * </p>
      * <p>
      * If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
@@ -45,14 +42,43 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      * timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is
      * limited to 100 results, and the maximum time period is limited to 90 days.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time
-     * should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * An ISO 8601-formatted timestamp that indicates the end time of the requested finding history.
      * </p>
      * <p>
      * If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
@@ -66,6 +92,38 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      * timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is
      * limited to 100 results, and the maximum time period is limited to 90 days.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Date endTime;
     /**
@@ -112,10 +170,7 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time
-     * should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * A timestamp that indicates the start time of the requested finding history.
      * </p>
      * <p>
      * If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
@@ -129,13 +184,41 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      * timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is
      * limited to 100 results, and the maximum time period is limited to 90 days.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startTime
-     *        An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A
-     *        correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     *        date and time should be separated by <code>T</code>. For more information, see <a
-     *        href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>.</p>
+     *        A timestamp that indicates the start time of the requested finding history.</p>
      *        <p>
      *        If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns
      *        finding history for the specified time period. If you provide a value for <code>StartTime</code> but not
@@ -147,6 +230,39 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt
      *        timestamp of the finding to the time at which the API is called. In all of these scenarios, the response
      *        is limited to 100 results, and the maximum time period is limited to 90 days.
+     *        </p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -155,10 +271,7 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time
-     * should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * A timestamp that indicates the start time of the requested finding history.
      * </p>
      * <p>
      * If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
@@ -172,12 +285,40 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      * timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is
      * limited to 100 results, and the maximum time period is limited to 90 days.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A
-     *         correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces,
-     *         and date and time should be separated by <code>T</code>. For more information, see <a
-     *         href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>.</p>
+     * @return A timestamp that indicates the start time of the requested finding history.</p>
      *         <p>
      *         If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns
      *         finding history for the specified time period. If you provide a value for <code>StartTime</code> but not
@@ -189,6 +330,39 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt
      *         timestamp of the finding to the time at which the API is called. In all of these scenarios, the response
      *         is limited to 100 results, and the maximum time period is limited to 90 days.
+     *         </p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.Date getStartTime() {
@@ -197,10 +371,7 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time
-     * should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * A timestamp that indicates the start time of the requested finding history.
      * </p>
      * <p>
      * If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
@@ -214,13 +385,41 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      * timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is
      * limited to 100 results, and the maximum time period is limited to 90 days.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param startTime
-     *        An ISO 8601-formatted timestamp that indicates the start time of the requested finding history. A
-     *        correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     *        date and time should be separated by <code>T</code>. For more information, see <a
-     *        href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>.</p>
+     *        A timestamp that indicates the start time of the requested finding history.</p>
      *        <p>
      *        If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns
      *        finding history for the specified time period. If you provide a value for <code>StartTime</code> but not
@@ -232,6 +431,39 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt
      *        timestamp of the finding to the time at which the API is called. In all of these scenarios, the response
      *        is limited to 100 results, and the maximum time period is limited to 90 days.
+     *        </p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,10 +474,7 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time
-     * should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * An ISO 8601-formatted timestamp that indicates the end time of the requested finding history.
      * </p>
      * <p>
      * If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
@@ -259,13 +488,41 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      * timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is
      * limited to 100 results, and the maximum time period is limited to 90 days.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param endTime
-     *        An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly
-     *        formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and
-     *        time should be separated by <code>T</code>. For more information, see <a
-     *        href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>.</p>
+     *        An ISO 8601-formatted timestamp that indicates the end time of the requested finding history.</p>
      *        <p>
      *        If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns
      *        finding history for the specified time period. If you provide a value for <code>StartTime</code> but not
@@ -277,6 +534,39 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt
      *        timestamp of the finding to the time at which the API is called. In all of these scenarios, the response
      *        is limited to 100 results, and the maximum time period is limited to 90 days.
+     *        </p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -285,10 +575,7 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time
-     * should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * An ISO 8601-formatted timestamp that indicates the end time of the requested finding history.
      * </p>
      * <p>
      * If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
@@ -302,12 +589,40 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      * timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is
      * limited to 100 results, and the maximum time period is limited to 90 days.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly
-     *         formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and
-     *         time should be separated by <code>T</code>. For more information, see <a
-     *         href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>.</p>
+     * @return An ISO 8601-formatted timestamp that indicates the end time of the requested finding history.</p>
      *         <p>
      *         If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns
      *         finding history for the specified time period. If you provide a value for <code>StartTime</code> but not
@@ -319,6 +634,39 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt
      *         timestamp of the finding to the time at which the API is called. In all of these scenarios, the response
      *         is limited to 100 results, and the maximum time period is limited to 90 days.
+     *         </p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.Date getEndTime() {
@@ -327,10 +675,7 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time
-     * should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.
+     * An ISO 8601-formatted timestamp that indicates the end time of the requested finding history.
      * </p>
      * <p>
      * If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
@@ -344,13 +689,41 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      * timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is
      * limited to 100 results, and the maximum time period is limited to 90 days.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param endTime
-     *        An ISO 8601-formatted timestamp that indicates the end time of the requested finding history. A correctly
-     *        formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and
-     *        time should be separated by <code>T</code>. For more information, see <a
-     *        href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>.</p>
+     *        An ISO 8601-formatted timestamp that indicates the end time of the requested finding history.</p>
      *        <p>
      *        If you provide values for both <code>StartTime</code> and <code>EndTime</code>, Security Hub returns
      *        finding history for the specified time period. If you provide a value for <code>StartTime</code> but not
@@ -362,6 +735,39 @@ public class GetFindingHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding history from the CreatedAt
      *        timestamp of the finding to the time at which the API is called. In all of these scenarios, the response
      *        is limited to 100 results, and the maximum time period is limited to 90 days.
+     *        </p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

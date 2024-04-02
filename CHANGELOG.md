@@ -1,3 +1,24 @@
+# __1.12.693__ __2024-04-02__
+## __AWS Glue__
+  - ### Features
+    - Adding View related fields to responses of read-only Table APIs.
+
+## __AWS SecurityHub__
+  - ### Features
+    - Documentation updates for AWS Security Hub
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Documentation only update for Amazon ECS.
+
+## __Amazon Interactive Video Service Chat__
+  - ### Features
+    - Doc-only update. Changed "Resources" to "Key Concepts" in docs and updated text.
+
+## __IAM Roles Anywhere__
+  - ### Features
+    - This release increases the limit on the roleArns request parameter for the *Profile APIs that support it. This parameter can now take up to 250 role ARNs.
+
 # __1.12.692__ __2024-04-01__
 ## __AWSDeadlineCloud__
   - ### Features

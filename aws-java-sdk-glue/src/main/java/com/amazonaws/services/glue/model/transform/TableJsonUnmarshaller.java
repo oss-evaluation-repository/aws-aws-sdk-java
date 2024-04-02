@@ -135,6 +135,14 @@ public class TableJsonUnmarshaller implements Unmarshaller<Table, JsonUnmarshall
                     context.nextToken();
                     table.setFederatedTable(FederatedTableJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ViewDefinition", targetDepth)) {
+                    context.nextToken();
+                    table.setViewDefinition(ViewDefinitionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IsMultiDialectView", targetDepth)) {
+                    context.nextToken();
+                    table.setIsMultiDialectView(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

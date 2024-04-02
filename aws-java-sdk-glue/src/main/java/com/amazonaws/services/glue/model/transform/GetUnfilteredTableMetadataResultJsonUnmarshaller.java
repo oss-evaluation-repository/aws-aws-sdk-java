@@ -72,9 +72,17 @@ public class GetUnfilteredTableMetadataResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     getUnfilteredTableMetadataResult.setQueryAuthorizationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IsMultiDialectView", targetDepth)) {
+                    context.nextToken();
+                    getUnfilteredTableMetadataResult.setIsMultiDialectView(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ResourceArn", targetDepth)) {
                     context.nextToken();
                     getUnfilteredTableMetadataResult.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IsProtected", targetDepth)) {
+                    context.nextToken();
+                    getUnfilteredTableMetadataResult.setIsProtected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Permissions", targetDepth)) {
                     context.nextToken();

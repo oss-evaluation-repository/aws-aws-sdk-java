@@ -123,6 +123,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
+     * The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for
+     * the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.
+     * </p>
+     * <p>
+     * The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     * </p>
+     * <p>
      * If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
      * and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
      * value and is used to define the lower limit on the number of the tasks in the service that remain in the
@@ -435,6 +444,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
+     * The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for
+     * the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.
+     * </p>
+     * <p>
+     * The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     * </p>
+     * <p>
      * If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
      * and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
      * value and is used to define the lower limit on the number of the tasks in the service that remain in the
@@ -498,6 +516,16 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     *        <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is
+     *        0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management
+     *        Console.
+     *        </p>
+     *        <p>
+     *        The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     *        <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     *        </p>
      *        <p>
      *        If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment
      *        types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set
@@ -568,6 +596,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
+     * The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for
+     * the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.
+     * </p>
+     * <p>
+     * The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     * </p>
+     * <p>
      * If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
      * and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
      * value and is used to define the lower limit on the number of the tasks in the service that remain in the
@@ -630,6 +667,16 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     *         <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is
+     *         0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management
+     *         Console.
+     *         </p>
+     *         <p>
+     *         The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by
+     *         the <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     *         </p>
      *         <p>
      *         If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
      *         deployment types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b>
@@ -700,6 +747,15 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </li>
      * </ul>
      * <p>
+     * The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is 0% for
+     * the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management Console.
+     * </p>
+     * <p>
+     * The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     * <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     * </p>
+     * <p>
      * If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types
      * and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set to the default
      * value and is used to define the lower limit on the number of the tasks in the service that remain in the
@@ -763,6 +819,16 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     *        <code>minimumHealthyPercent</code> value for a service using the <code>DAEMON</code> service schedule is
+     *        0% for the CLI, the Amazon Web Services SDKs, and the APIs and 50% for the Amazon Web Services Management
+     *        Console.
+     *        </p>
+     *        <p>
+     *        The minimum number of healthy tasks during a deployment is the <code>desiredCount</code> multiplied by the
+     *        <code>minimumHealthyPercent</code>/100, rounded up to the nearest integer value.
+     *        </p>
      *        <p>
      *        If a service is using either the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment
      *        types and is running tasks that use the EC2 launch type, the <b>minimum healthy percent</b> value is set

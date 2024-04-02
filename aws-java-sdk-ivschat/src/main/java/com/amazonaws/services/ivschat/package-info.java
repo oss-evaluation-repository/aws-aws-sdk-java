@@ -42,22 +42,17 @@
  * </li>
  * </ul>
  * <p>
- * <b>Resources</b>
- * </p>
- * <p>
- * The following resources are part of Amazon IVS Chat:
+ * <b>Key Concepts</b>
  * </p>
  * <ul>
  * <li>
  * <p>
  * <b>LoggingConfiguration</b> — A configuration that allows customers to store and record sent messages in a chat room.
- * See the Logging Configuration endpoints for more information.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Room</b> — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See
- * the Room endpoints for more information.
+ * <b>Room</b> — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages.
  * </p>
  * </li>
  * </ul>

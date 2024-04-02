@@ -30,7 +30,8 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code>
      * section of the <a href=
      * "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
-     * >CreateSession API documentation</a> page for more details.
+     * >CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the
+     * default value will be 3600.
      * </p>
      */
     private Integer durationSeconds;
@@ -82,14 +83,16 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code>
      * section of the <a href=
      * "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
-     * >CreateSession API documentation</a> page for more details.
+     * >CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the
+     * default value will be 3600.
      * </p>
      * 
      * @param durationSeconds
      *        Used to determine how long sessions vended using this profile are valid for. See the
      *        <code>Expiration</code> section of the <a href=
      *        "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
-     *        >CreateSession API documentation</a> page for more details.
+     *        >CreateSession API documentation</a> page for more details. In requests, if this value is not provided,
+     *        the default value will be 3600.
      */
 
     public void setDurationSeconds(Integer durationSeconds) {
@@ -101,13 +104,15 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code>
      * section of the <a href=
      * "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
-     * >CreateSession API documentation</a> page for more details.
+     * >CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the
+     * default value will be 3600.
      * </p>
      * 
      * @return Used to determine how long sessions vended using this profile are valid for. See the
      *         <code>Expiration</code> section of the <a href=
      *         "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
-     *         >CreateSession API documentation</a> page for more details.
+     *         >CreateSession API documentation</a> page for more details. In requests, if this value is not provided,
+     *         the default value will be 3600.
      */
 
     public Integer getDurationSeconds() {
@@ -119,14 +124,16 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Used to determine how long sessions vended using this profile are valid for. See the <code>Expiration</code>
      * section of the <a href=
      * "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
-     * >CreateSession API documentation</a> page for more details.
+     * >CreateSession API documentation</a> page for more details. In requests, if this value is not provided, the
+     * default value will be 3600.
      * </p>
      * 
      * @param durationSeconds
      *        Used to determine how long sessions vended using this profile are valid for. See the
      *        <code>Expiration</code> section of the <a href=
      *        "https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object"
-     *        >CreateSession API documentation</a> page for more details.
+     *        >CreateSession API documentation</a> page for more details. In requests, if this value is not provided,
+     *        the default value will be 3600.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
