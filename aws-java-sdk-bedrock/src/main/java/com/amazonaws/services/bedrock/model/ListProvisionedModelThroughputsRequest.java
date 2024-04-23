@@ -27,49 +27,54 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return provisioned capacities created after the specified time.
+     * A filter that returns Provisioned Throughputs created after the specified time.
      * </p>
      */
     private java.util.Date creationTimeAfter;
     /**
      * <p>
-     * Return provisioned capacities created before the specified time.
+     * A filter that returns Provisioned Throughputs created before the specified time.
      * </p>
      */
     private java.util.Date creationTimeBefore;
     /**
      * <p>
-     * Return the list of provisioned capacities that match the specified status.
+     * A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * </p>
      */
     private String statusEquals;
     /**
      * <p>
-     * Return the list of provisioned capacities where their model ARN is equal to this parameter.
+     * A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that
+     * you specify.
      * </p>
      */
     private String modelArnEquals;
     /**
      * <p>
-     * Return the list of provisioned capacities if their name contains these characters.
+     * A filter that returns Provisioned Throughputs if their name contains the expression that you specify.
      * </p>
      */
     private String nameContains;
     /**
      * <p>
-     * THe maximum number of results to return in the response.
+     * THe maximum number of results to return in the response. If there are more results than the number you specified,
+     * the response returns a <code>nextToken</code> value. To see the next batch of results, send the
+     * <code>nextToken</code> value in another list request.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Continuation token from the previous response, for Amazon Bedrock to list the next set of results.
+     * If there are more results than the number you specified in the <code>maxResults</code> field, the response
+     * returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code>
+     * value in this field.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The field to sort by in the returned list of provisioned capacities.
+     * The field by which to sort the returned list of Provisioned Throughputs.
      * </p>
      */
     private String sortBy;
@@ -82,11 +87,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return provisioned capacities created after the specified time.
+     * A filter that returns Provisioned Throughputs created after the specified time.
      * </p>
      * 
      * @param creationTimeAfter
-     *        Return provisioned capacities created after the specified time.
+     *        A filter that returns Provisioned Throughputs created after the specified time.
      */
 
     public void setCreationTimeAfter(java.util.Date creationTimeAfter) {
@@ -95,10 +100,10 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return provisioned capacities created after the specified time.
+     * A filter that returns Provisioned Throughputs created after the specified time.
      * </p>
      * 
-     * @return Return provisioned capacities created after the specified time.
+     * @return A filter that returns Provisioned Throughputs created after the specified time.
      */
 
     public java.util.Date getCreationTimeAfter() {
@@ -107,11 +112,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return provisioned capacities created after the specified time.
+     * A filter that returns Provisioned Throughputs created after the specified time.
      * </p>
      * 
      * @param creationTimeAfter
-     *        Return provisioned capacities created after the specified time.
+     *        A filter that returns Provisioned Throughputs created after the specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +127,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return provisioned capacities created before the specified time.
+     * A filter that returns Provisioned Throughputs created before the specified time.
      * </p>
      * 
      * @param creationTimeBefore
-     *        Return provisioned capacities created before the specified time.
+     *        A filter that returns Provisioned Throughputs created before the specified time.
      */
 
     public void setCreationTimeBefore(java.util.Date creationTimeBefore) {
@@ -135,10 +140,10 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return provisioned capacities created before the specified time.
+     * A filter that returns Provisioned Throughputs created before the specified time.
      * </p>
      * 
-     * @return Return provisioned capacities created before the specified time.
+     * @return A filter that returns Provisioned Throughputs created before the specified time.
      */
 
     public java.util.Date getCreationTimeBefore() {
@@ -147,11 +152,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return provisioned capacities created before the specified time.
+     * A filter that returns Provisioned Throughputs created before the specified time.
      * </p>
      * 
      * @param creationTimeBefore
-     *        Return provisioned capacities created before the specified time.
+     *        A filter that returns Provisioned Throughputs created before the specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +167,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities that match the specified status.
+     * A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * </p>
      * 
      * @param statusEquals
-     *        Return the list of provisioned capacities that match the specified status.
+     *        A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * @see ProvisionedModelStatus
      */
 
@@ -176,10 +181,10 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities that match the specified status.
+     * A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * </p>
      * 
-     * @return Return the list of provisioned capacities that match the specified status.
+     * @return A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * @see ProvisionedModelStatus
      */
 
@@ -189,11 +194,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities that match the specified status.
+     * A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * </p>
      * 
      * @param statusEquals
-     *        Return the list of provisioned capacities that match the specified status.
+     *        A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisionedModelStatus
      */
@@ -205,11 +210,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities that match the specified status.
+     * A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * </p>
      * 
      * @param statusEquals
-     *        Return the list of provisioned capacities that match the specified status.
+     *        A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisionedModelStatus
      */
@@ -221,11 +226,13 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities where their model ARN is equal to this parameter.
+     * A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that
+     * you specify.
      * </p>
      * 
      * @param modelArnEquals
-     *        Return the list of provisioned capacities where their model ARN is equal to this parameter.
+     *        A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value
+     *        that you specify.
      */
 
     public void setModelArnEquals(String modelArnEquals) {
@@ -234,10 +241,12 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities where their model ARN is equal to this parameter.
+     * A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that
+     * you specify.
      * </p>
      * 
-     * @return Return the list of provisioned capacities where their model ARN is equal to this parameter.
+     * @return A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the
+     *         value that you specify.
      */
 
     public String getModelArnEquals() {
@@ -246,11 +255,13 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities where their model ARN is equal to this parameter.
+     * A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that
+     * you specify.
      * </p>
      * 
      * @param modelArnEquals
-     *        Return the list of provisioned capacities where their model ARN is equal to this parameter.
+     *        A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value
+     *        that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,11 +272,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities if their name contains these characters.
+     * A filter that returns Provisioned Throughputs if their name contains the expression that you specify.
      * </p>
      * 
      * @param nameContains
-     *        Return the list of provisioned capacities if their name contains these characters.
+     *        A filter that returns Provisioned Throughputs if their name contains the expression that you specify.
      */
 
     public void setNameContains(String nameContains) {
@@ -274,10 +285,10 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities if their name contains these characters.
+     * A filter that returns Provisioned Throughputs if their name contains the expression that you specify.
      * </p>
      * 
-     * @return Return the list of provisioned capacities if their name contains these characters.
+     * @return A filter that returns Provisioned Throughputs if their name contains the expression that you specify.
      */
 
     public String getNameContains() {
@@ -286,11 +297,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Return the list of provisioned capacities if their name contains these characters.
+     * A filter that returns Provisioned Throughputs if their name contains the expression that you specify.
      * </p>
      * 
      * @param nameContains
-     *        Return the list of provisioned capacities if their name contains these characters.
+     *        A filter that returns Provisioned Throughputs if their name contains the expression that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,11 +312,15 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * THe maximum number of results to return in the response.
+     * THe maximum number of results to return in the response. If there are more results than the number you specified,
+     * the response returns a <code>nextToken</code> value. To see the next batch of results, send the
+     * <code>nextToken</code> value in another list request.
      * </p>
      * 
      * @param maxResults
-     *        THe maximum number of results to return in the response.
+     *        THe maximum number of results to return in the response. If there are more results than the number you
+     *        specified, the response returns a <code>nextToken</code> value. To see the next batch of results, send the
+     *        <code>nextToken</code> value in another list request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -314,10 +329,14 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * THe maximum number of results to return in the response.
+     * THe maximum number of results to return in the response. If there are more results than the number you specified,
+     * the response returns a <code>nextToken</code> value. To see the next batch of results, send the
+     * <code>nextToken</code> value in another list request.
      * </p>
      * 
-     * @return THe maximum number of results to return in the response.
+     * @return THe maximum number of results to return in the response. If there are more results than the number you
+     *         specified, the response returns a <code>nextToken</code> value. To see the next batch of results, send
+     *         the <code>nextToken</code> value in another list request.
      */
 
     public Integer getMaxResults() {
@@ -326,11 +345,15 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * THe maximum number of results to return in the response.
+     * THe maximum number of results to return in the response. If there are more results than the number you specified,
+     * the response returns a <code>nextToken</code> value. To see the next batch of results, send the
+     * <code>nextToken</code> value in another list request.
      * </p>
      * 
      * @param maxResults
-     *        THe maximum number of results to return in the response.
+     *        THe maximum number of results to return in the response. If there are more results than the number you
+     *        specified, the response returns a <code>nextToken</code> value. To see the next batch of results, send the
+     *        <code>nextToken</code> value in another list request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,11 +364,15 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Continuation token from the previous response, for Amazon Bedrock to list the next set of results.
+     * If there are more results than the number you specified in the <code>maxResults</code> field, the response
+     * returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code>
+     * value in this field.
      * </p>
      * 
      * @param nextToken
-     *        Continuation token from the previous response, for Amazon Bedrock to list the next set of results.
+     *        If there are more results than the number you specified in the <code>maxResults</code> field, the response
+     *        returns a <code>nextToken</code> value. To see the next batch of results, specify the
+     *        <code>nextToken</code> value in this field.
      */
 
     public void setNextToken(String nextToken) {
@@ -354,10 +381,14 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Continuation token from the previous response, for Amazon Bedrock to list the next set of results.
+     * If there are more results than the number you specified in the <code>maxResults</code> field, the response
+     * returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code>
+     * value in this field.
      * </p>
      * 
-     * @return Continuation token from the previous response, for Amazon Bedrock to list the next set of results.
+     * @return If there are more results than the number you specified in the <code>maxResults</code> field, the
+     *         response returns a <code>nextToken</code> value. To see the next batch of results, specify the
+     *         <code>nextToken</code> value in this field.
      */
 
     public String getNextToken() {
@@ -366,11 +397,15 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Continuation token from the previous response, for Amazon Bedrock to list the next set of results.
+     * If there are more results than the number you specified in the <code>maxResults</code> field, the response
+     * returns a <code>nextToken</code> value. To see the next batch of results, specify the <code>nextToken</code>
+     * value in this field.
      * </p>
      * 
      * @param nextToken
-     *        Continuation token from the previous response, for Amazon Bedrock to list the next set of results.
+     *        If there are more results than the number you specified in the <code>maxResults</code> field, the response
+     *        returns a <code>nextToken</code> value. To see the next batch of results, specify the
+     *        <code>nextToken</code> value in this field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,11 +416,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The field to sort by in the returned list of provisioned capacities.
+     * The field by which to sort the returned list of Provisioned Throughputs.
      * </p>
      * 
      * @param sortBy
-     *        The field to sort by in the returned list of provisioned capacities.
+     *        The field by which to sort the returned list of Provisioned Throughputs.
      * @see SortByProvisionedModels
      */
 
@@ -395,10 +430,10 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The field to sort by in the returned list of provisioned capacities.
+     * The field by which to sort the returned list of Provisioned Throughputs.
      * </p>
      * 
-     * @return The field to sort by in the returned list of provisioned capacities.
+     * @return The field by which to sort the returned list of Provisioned Throughputs.
      * @see SortByProvisionedModels
      */
 
@@ -408,11 +443,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The field to sort by in the returned list of provisioned capacities.
+     * The field by which to sort the returned list of Provisioned Throughputs.
      * </p>
      * 
      * @param sortBy
-     *        The field to sort by in the returned list of provisioned capacities.
+     *        The field by which to sort the returned list of Provisioned Throughputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortByProvisionedModels
      */
@@ -424,11 +459,11 @@ public class ListProvisionedModelThroughputsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The field to sort by in the returned list of provisioned capacities.
+     * The field by which to sort the returned list of Provisioned Throughputs.
      * </p>
      * 
      * @param sortBy
-     *        The field to sort by in the returned list of provisioned capacities.
+     *        The field by which to sort the returned list of Provisioned Throughputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortByProvisionedModels
      */

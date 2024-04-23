@@ -43,6 +43,12 @@ public class RetrieveAndGenerateConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
+     * The configuration used with the external source wrapper object in the retrieveAndGenerate function.
+     * </p>
+     */
+    private ExternalSourcesRetrieveAndGenerateConfiguration externalSourcesConfiguration;
+    /**
+     * <p>
      * Contains details about the resource being queried.
      * </p>
      */
@@ -53,6 +59,46 @@ public class RetrieveAndGenerateConfiguration implements Serializable, Cloneable
      * </p>
      */
     private String type;
+
+    /**
+     * <p>
+     * The configuration used with the external source wrapper object in the retrieveAndGenerate function.
+     * </p>
+     * 
+     * @param externalSourcesConfiguration
+     *        The configuration used with the external source wrapper object in the retrieveAndGenerate function.
+     */
+
+    public void setExternalSourcesConfiguration(ExternalSourcesRetrieveAndGenerateConfiguration externalSourcesConfiguration) {
+        this.externalSourcesConfiguration = externalSourcesConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration used with the external source wrapper object in the retrieveAndGenerate function.
+     * </p>
+     * 
+     * @return The configuration used with the external source wrapper object in the retrieveAndGenerate function.
+     */
+
+    public ExternalSourcesRetrieveAndGenerateConfiguration getExternalSourcesConfiguration() {
+        return this.externalSourcesConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration used with the external source wrapper object in the retrieveAndGenerate function.
+     * </p>
+     * 
+     * @param externalSourcesConfiguration
+     *        The configuration used with the external source wrapper object in the retrieveAndGenerate function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetrieveAndGenerateConfiguration withExternalSourcesConfiguration(ExternalSourcesRetrieveAndGenerateConfiguration externalSourcesConfiguration) {
+        setExternalSourcesConfiguration(externalSourcesConfiguration);
+        return this;
+    }
 
     /**
      * <p>
@@ -165,6 +211,8 @@ public class RetrieveAndGenerateConfiguration implements Serializable, Cloneable
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getExternalSourcesConfiguration() != null)
+            sb.append("ExternalSourcesConfiguration: ").append(getExternalSourcesConfiguration()).append(",");
         if (getKnowledgeBaseConfiguration() != null)
             sb.append("KnowledgeBaseConfiguration: ").append(getKnowledgeBaseConfiguration()).append(",");
         if (getType() != null)
@@ -183,6 +231,10 @@ public class RetrieveAndGenerateConfiguration implements Serializable, Cloneable
         if (obj instanceof RetrieveAndGenerateConfiguration == false)
             return false;
         RetrieveAndGenerateConfiguration other = (RetrieveAndGenerateConfiguration) obj;
+        if (other.getExternalSourcesConfiguration() == null ^ this.getExternalSourcesConfiguration() == null)
+            return false;
+        if (other.getExternalSourcesConfiguration() != null && other.getExternalSourcesConfiguration().equals(this.getExternalSourcesConfiguration()) == false)
+            return false;
         if (other.getKnowledgeBaseConfiguration() == null ^ this.getKnowledgeBaseConfiguration() == null)
             return false;
         if (other.getKnowledgeBaseConfiguration() != null && other.getKnowledgeBaseConfiguration().equals(this.getKnowledgeBaseConfiguration()) == false)
@@ -199,6 +251,7 @@ public class RetrieveAndGenerateConfiguration implements Serializable, Cloneable
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getExternalSourcesConfiguration() == null) ? 0 : getExternalSourcesConfiguration().hashCode());
         hashCode = prime * hashCode + ((getKnowledgeBaseConfiguration() == null) ? 0 : getKnowledgeBaseConfiguration().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

@@ -48,6 +48,11 @@ public class PortalJsonUnmarshaller implements Unmarshaller<Portal, JsonUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalEncryptionContext", targetDepth)) {
+                    context.nextToken();
+                    portal.setAdditionalEncryptionContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("authenticationType", targetDepth)) {
                     context.nextToken();
                     portal.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -64,13 +69,25 @@ public class PortalJsonUnmarshaller implements Unmarshaller<Portal, JsonUnmarsha
                     context.nextToken();
                     portal.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("customerManagedKey", targetDepth)) {
+                    context.nextToken();
+                    portal.setCustomerManagedKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
                     portal.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("instanceType", targetDepth)) {
+                    context.nextToken();
+                    portal.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ipAccessSettingsArn", targetDepth)) {
                     context.nextToken();
                     portal.setIpAccessSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("maxConcurrentSessions", targetDepth)) {
+                    context.nextToken();
+                    portal.setMaxConcurrentSessions(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("networkSettingsArn", targetDepth)) {
                     context.nextToken();

@@ -36,6 +36,12 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
     private String bucketArn;
     /**
      * <p>
+     * The account ID for the owner of the S3 bucket.
+     * </p>
+     */
+    private String bucketOwnerAccountId;
+    /**
+     * <p>
      * A list of S3 prefixes that define the object containing the data sources. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using
      * prefixes</a>.
@@ -80,6 +86,46 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
 
     public S3DataSourceConfiguration withBucketArn(String bucketArn) {
         setBucketArn(bucketArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The account ID for the owner of the S3 bucket.
+     * </p>
+     * 
+     * @param bucketOwnerAccountId
+     *        The account ID for the owner of the S3 bucket.
+     */
+
+    public void setBucketOwnerAccountId(String bucketOwnerAccountId) {
+        this.bucketOwnerAccountId = bucketOwnerAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID for the owner of the S3 bucket.
+     * </p>
+     * 
+     * @return The account ID for the owner of the S3 bucket.
+     */
+
+    public String getBucketOwnerAccountId() {
+        return this.bucketOwnerAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID for the owner of the S3 bucket.
+     * </p>
+     * 
+     * @param bucketOwnerAccountId
+     *        The account ID for the owner of the S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3DataSourceConfiguration withBucketOwnerAccountId(String bucketOwnerAccountId) {
+        setBucketOwnerAccountId(bucketOwnerAccountId);
         return this;
     }
 
@@ -183,6 +229,8 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
         sb.append("{");
         if (getBucketArn() != null)
             sb.append("BucketArn: ").append(getBucketArn()).append(",");
+        if (getBucketOwnerAccountId() != null)
+            sb.append("BucketOwnerAccountId: ").append(getBucketOwnerAccountId()).append(",");
         if (getInclusionPrefixes() != null)
             sb.append("InclusionPrefixes: ").append(getInclusionPrefixes());
         sb.append("}");
@@ -203,6 +251,10 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
             return false;
         if (other.getBucketArn() != null && other.getBucketArn().equals(this.getBucketArn()) == false)
             return false;
+        if (other.getBucketOwnerAccountId() == null ^ this.getBucketOwnerAccountId() == null)
+            return false;
+        if (other.getBucketOwnerAccountId() != null && other.getBucketOwnerAccountId().equals(this.getBucketOwnerAccountId()) == false)
+            return false;
         if (other.getInclusionPrefixes() == null ^ this.getInclusionPrefixes() == null)
             return false;
         if (other.getInclusionPrefixes() != null && other.getInclusionPrefixes().equals(this.getInclusionPrefixes()) == false)
@@ -216,6 +268,7 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBucketArn() == null) ? 0 : getBucketArn().hashCode());
+        hashCode = prime * hashCode + ((getBucketOwnerAccountId() == null) ? 0 : getBucketOwnerAccountId().hashCode());
         hashCode = prime * hashCode + ((getInclusionPrefixes() == null) ? 0 : getInclusionPrefixes().hashCode());
         return hashCode;
     }

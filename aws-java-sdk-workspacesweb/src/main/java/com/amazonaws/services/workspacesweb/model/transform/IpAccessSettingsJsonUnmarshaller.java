@@ -48,6 +48,11 @@ public class IpAccessSettingsJsonUnmarshaller implements Unmarshaller<IpAccessSe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalEncryptionContext", targetDepth)) {
+                    context.nextToken();
+                    ipAccessSettings.setAdditionalEncryptionContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("associatedPortalArns", targetDepth)) {
                     context.nextToken();
                     ipAccessSettings.setAssociatedPortalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -57,6 +62,10 @@ public class IpAccessSettingsJsonUnmarshaller implements Unmarshaller<IpAccessSe
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
                     ipAccessSettings.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("customerManagedKey", targetDepth)) {
+                    context.nextToken();
+                    ipAccessSettings.setCustomerManagedKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();

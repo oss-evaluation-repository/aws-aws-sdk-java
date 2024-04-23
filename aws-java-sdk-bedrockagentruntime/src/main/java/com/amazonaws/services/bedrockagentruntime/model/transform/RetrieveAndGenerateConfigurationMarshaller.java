@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RetrieveAndGenerateConfigurationMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> EXTERNALSOURCESCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalSourcesConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> KNOWLEDGEBASECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("knowledgeBaseConfiguration").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -48,6 +50,7 @@ public class RetrieveAndGenerateConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(retrieveAndGenerateConfiguration.getExternalSourcesConfiguration(), EXTERNALSOURCESCONFIGURATION_BINDING);
             protocolMarshaller.marshall(retrieveAndGenerateConfiguration.getKnowledgeBaseConfiguration(), KNOWLEDGEBASECONFIGURATION_BINDING);
             protocolMarshaller.marshall(retrieveAndGenerateConfiguration.getType(), TYPE_BINDING);
         } catch (Exception e) {

@@ -28,6 +28,21 @@ public class AbstractAmazonBedrock implements AmazonBedrock {
     }
 
     @Override
+    public CreateEvaluationJobResult createEvaluationJob(CreateEvaluationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGuardrailResult createGuardrail(CreateGuardrailRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGuardrailVersionResult createGuardrailVersion(CreateGuardrailVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateModelCustomizationJobResult createModelCustomizationJob(CreateModelCustomizationJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,6 +54,11 @@ public class AbstractAmazonBedrock implements AmazonBedrock {
 
     @Override
     public DeleteCustomModelResult deleteCustomModel(DeleteCustomModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteGuardrailResult deleteGuardrail(DeleteGuardrailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +78,17 @@ public class AbstractAmazonBedrock implements AmazonBedrock {
     }
 
     @Override
+    public GetEvaluationJobResult getEvaluationJob(GetEvaluationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetFoundationModelResult getFoundationModel(GetFoundationModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGuardrailResult getGuardrail(GetGuardrailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,7 +113,17 @@ public class AbstractAmazonBedrock implements AmazonBedrock {
     }
 
     @Override
+    public ListEvaluationJobsResult listEvaluationJobs(ListEvaluationJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListFoundationModelsResult listFoundationModels(ListFoundationModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListGuardrailsResult listGuardrails(ListGuardrailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,6 +148,11 @@ public class AbstractAmazonBedrock implements AmazonBedrock {
     }
 
     @Override
+    public StopEvaluationJobResult stopEvaluationJob(StopEvaluationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopModelCustomizationJobResult stopModelCustomizationJob(StopModelCustomizationJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +164,11 @@ public class AbstractAmazonBedrock implements AmazonBedrock {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGuardrailResult updateGuardrail(UpdateGuardrailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

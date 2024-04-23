@@ -37,8 +37,12 @@ public class PortalSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
     private static final MarshallingInfo<String> IPACCESSSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAccessSettingsArn").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxConcurrentSessions").build();
     private static final MarshallingInfo<String> NETWORKSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkSettingsArn").build();
     private static final MarshallingInfo<String> PORTALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -77,7 +81,9 @@ public class PortalSummaryMarshaller {
             protocolMarshaller.marshall(portalSummary.getBrowserType(), BROWSERTYPE_BINDING);
             protocolMarshaller.marshall(portalSummary.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(portalSummary.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(portalSummary.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(portalSummary.getIpAccessSettingsArn(), IPACCESSSETTINGSARN_BINDING);
+            protocolMarshaller.marshall(portalSummary.getMaxConcurrentSessions(), MAXCONCURRENTSESSIONS_BINDING);
             protocolMarshaller.marshall(portalSummary.getNetworkSettingsArn(), NETWORKSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portalSummary.getPortalArn(), PORTALARN_BINDING);
             protocolMarshaller.marshall(portalSummary.getPortalEndpoint(), PORTALENDPOINT_BINDING);

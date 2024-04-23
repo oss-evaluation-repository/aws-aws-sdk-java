@@ -27,18 +27,18 @@ public class DeleteProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN or name of the provisioned throughput.
+     * The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
      * </p>
      */
     private String provisionedModelId;
 
     /**
      * <p>
-     * The ARN or name of the provisioned throughput.
+     * The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelId
-     *        The ARN or name of the provisioned throughput.
+     *        The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
      */
 
     public void setProvisionedModelId(String provisionedModelId) {
@@ -47,10 +47,10 @@ public class DeleteProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN or name of the provisioned throughput.
+     * The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
      * </p>
      * 
-     * @return The ARN or name of the provisioned throughput.
+     * @return The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
      */
 
     public String getProvisionedModelId() {
@@ -59,11 +59,11 @@ public class DeleteProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN or name of the provisioned throughput.
+     * The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelId
-     *        The ARN or name of the provisioned throughput.
+     *        The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

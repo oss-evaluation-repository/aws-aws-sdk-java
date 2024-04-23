@@ -45,13 +45,13 @@ public class ListCustomModelsRequest extends com.amazonaws.AmazonWebServiceReque
     private String nameContains;
     /**
      * <p>
-     * Return custom models only if the base model ARN matches this parameter.
+     * Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.
      * </p>
      */
     private String baseModelArnEquals;
     /**
      * <p>
-     * Return custom models only if the foundation model ARN matches this parameter.
+     * Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.
      * </p>
      */
     private String foundationModelArnEquals;
@@ -202,11 +202,11 @@ public class ListCustomModelsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Return custom models only if the base model ARN matches this parameter.
+     * Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.
      * </p>
      * 
      * @param baseModelArnEquals
-     *        Return custom models only if the base model ARN matches this parameter.
+     *        Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.
      */
 
     public void setBaseModelArnEquals(String baseModelArnEquals) {
@@ -215,10 +215,10 @@ public class ListCustomModelsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Return custom models only if the base model ARN matches this parameter.
+     * Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.
      * </p>
      * 
-     * @return Return custom models only if the base model ARN matches this parameter.
+     * @return Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.
      */
 
     public String getBaseModelArnEquals() {
@@ -227,11 +227,11 @@ public class ListCustomModelsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Return custom models only if the base model ARN matches this parameter.
+     * Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.
      * </p>
      * 
      * @param baseModelArnEquals
-     *        Return custom models only if the base model ARN matches this parameter.
+     *        Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,11 +242,11 @@ public class ListCustomModelsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Return custom models only if the foundation model ARN matches this parameter.
+     * Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.
      * </p>
      * 
      * @param foundationModelArnEquals
-     *        Return custom models only if the foundation model ARN matches this parameter.
+     *        Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.
      */
 
     public void setFoundationModelArnEquals(String foundationModelArnEquals) {
@@ -255,10 +255,10 @@ public class ListCustomModelsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Return custom models only if the foundation model ARN matches this parameter.
+     * Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.
      * </p>
      * 
-     * @return Return custom models only if the foundation model ARN matches this parameter.
+     * @return Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.
      */
 
     public String getFoundationModelArnEquals() {
@@ -267,11 +267,11 @@ public class ListCustomModelsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Return custom models only if the foundation model ARN matches this parameter.
+     * Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.
      * </p>
      * 
      * @param foundationModelArnEquals
-     *        Return custom models only if the foundation model ARN matches this parameter.
+     *        Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

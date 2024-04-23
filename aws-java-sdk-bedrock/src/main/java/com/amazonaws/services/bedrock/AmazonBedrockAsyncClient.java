@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Describes the API operations for creating and managing Amazon Bedrock models.
+ * Describes the API operations for creating, managing, fine-turning, and evaluating Amazon Bedrock models.
  * </p>
  */
 @ThreadSafe
@@ -71,6 +71,105 @@ public class AmazonBedrockAsyncClient extends AmazonBedrockClient implements Ama
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEvaluationJobResult> createEvaluationJobAsync(CreateEvaluationJobRequest request) {
+
+        return createEvaluationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEvaluationJobResult> createEvaluationJobAsync(final CreateEvaluationJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEvaluationJobRequest, CreateEvaluationJobResult> asyncHandler) {
+        final CreateEvaluationJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEvaluationJobResult>() {
+            @Override
+            public CreateEvaluationJobResult call() throws Exception {
+                CreateEvaluationJobResult result = null;
+
+                try {
+                    result = executeCreateEvaluationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGuardrailResult> createGuardrailAsync(CreateGuardrailRequest request) {
+
+        return createGuardrailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGuardrailResult> createGuardrailAsync(final CreateGuardrailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGuardrailRequest, CreateGuardrailResult> asyncHandler) {
+        final CreateGuardrailRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGuardrailResult>() {
+            @Override
+            public CreateGuardrailResult call() throws Exception {
+                CreateGuardrailResult result = null;
+
+                try {
+                    result = executeCreateGuardrail(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGuardrailVersionResult> createGuardrailVersionAsync(CreateGuardrailVersionRequest request) {
+
+        return createGuardrailVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGuardrailVersionResult> createGuardrailVersionAsync(final CreateGuardrailVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGuardrailVersionRequest, CreateGuardrailVersionResult> asyncHandler) {
+        final CreateGuardrailVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGuardrailVersionResult>() {
+            @Override
+            public CreateGuardrailVersionResult call() throws Exception {
+                CreateGuardrailVersionResult result = null;
+
+                try {
+                    result = executeCreateGuardrailVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -159,6 +258,39 @@ public class AmazonBedrockAsyncClient extends AmazonBedrockClient implements Ama
 
                 try {
                     result = executeDeleteCustomModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGuardrailResult> deleteGuardrailAsync(DeleteGuardrailRequest request) {
+
+        return deleteGuardrailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGuardrailResult> deleteGuardrailAsync(final DeleteGuardrailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGuardrailRequest, DeleteGuardrailResult> asyncHandler) {
+        final DeleteGuardrailRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGuardrailResult>() {
+            @Override
+            public DeleteGuardrailResult call() throws Exception {
+                DeleteGuardrailResult result = null;
+
+                try {
+                    result = executeDeleteGuardrail(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -278,6 +410,39 @@ public class AmazonBedrockAsyncClient extends AmazonBedrockClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetEvaluationJobResult> getEvaluationJobAsync(GetEvaluationJobRequest request) {
+
+        return getEvaluationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEvaluationJobResult> getEvaluationJobAsync(final GetEvaluationJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEvaluationJobRequest, GetEvaluationJobResult> asyncHandler) {
+        final GetEvaluationJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEvaluationJobResult>() {
+            @Override
+            public GetEvaluationJobResult call() throws Exception {
+                GetEvaluationJobResult result = null;
+
+                try {
+                    result = executeGetEvaluationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFoundationModelResult> getFoundationModelAsync(GetFoundationModelRequest request) {
 
         return getFoundationModelAsync(request, null);
@@ -295,6 +460,39 @@ public class AmazonBedrockAsyncClient extends AmazonBedrockClient implements Ama
 
                 try {
                     result = executeGetFoundationModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGuardrailResult> getGuardrailAsync(GetGuardrailRequest request) {
+
+        return getGuardrailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGuardrailResult> getGuardrailAsync(final GetGuardrailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGuardrailRequest, GetGuardrailResult> asyncHandler) {
+        final GetGuardrailRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGuardrailResult>() {
+            @Override
+            public GetGuardrailResult call() throws Exception {
+                GetGuardrailResult result = null;
+
+                try {
+                    result = executeGetGuardrail(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -446,6 +644,39 @@ public class AmazonBedrockAsyncClient extends AmazonBedrockClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListEvaluationJobsResult> listEvaluationJobsAsync(ListEvaluationJobsRequest request) {
+
+        return listEvaluationJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEvaluationJobsResult> listEvaluationJobsAsync(final ListEvaluationJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEvaluationJobsRequest, ListEvaluationJobsResult> asyncHandler) {
+        final ListEvaluationJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEvaluationJobsResult>() {
+            @Override
+            public ListEvaluationJobsResult call() throws Exception {
+                ListEvaluationJobsResult result = null;
+
+                try {
+                    result = executeListEvaluationJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFoundationModelsResult> listFoundationModelsAsync(ListFoundationModelsRequest request) {
 
         return listFoundationModelsAsync(request, null);
@@ -463,6 +694,39 @@ public class AmazonBedrockAsyncClient extends AmazonBedrockClient implements Ama
 
                 try {
                     result = executeListFoundationModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGuardrailsResult> listGuardrailsAsync(ListGuardrailsRequest request) {
+
+        return listGuardrailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGuardrailsResult> listGuardrailsAsync(final ListGuardrailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGuardrailsRequest, ListGuardrailsResult> asyncHandler) {
+        final ListGuardrailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGuardrailsResult>() {
+            @Override
+            public ListGuardrailsResult call() throws Exception {
+                ListGuardrailsResult result = null;
+
+                try {
+                    result = executeListGuardrails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -615,6 +879,39 @@ public class AmazonBedrockAsyncClient extends AmazonBedrockClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<StopEvaluationJobResult> stopEvaluationJobAsync(StopEvaluationJobRequest request) {
+
+        return stopEvaluationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopEvaluationJobResult> stopEvaluationJobAsync(final StopEvaluationJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopEvaluationJobRequest, StopEvaluationJobResult> asyncHandler) {
+        final StopEvaluationJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopEvaluationJobResult>() {
+            @Override
+            public StopEvaluationJobResult call() throws Exception {
+                StopEvaluationJobResult result = null;
+
+                try {
+                    result = executeStopEvaluationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopModelCustomizationJobResult> stopModelCustomizationJobAsync(StopModelCustomizationJobRequest request) {
 
         return stopModelCustomizationJobAsync(request, null);
@@ -698,6 +995,39 @@ public class AmazonBedrockAsyncClient extends AmazonBedrockClient implements Ama
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGuardrailResult> updateGuardrailAsync(UpdateGuardrailRequest request) {
+
+        return updateGuardrailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGuardrailResult> updateGuardrailAsync(final UpdateGuardrailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGuardrailRequest, UpdateGuardrailResult> asyncHandler) {
+        final UpdateGuardrailRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGuardrailResult>() {
+            @Override
+            public UpdateGuardrailResult call() throws Exception {
+                UpdateGuardrailResult result = null;
+
+                try {
+                    result = executeUpdateGuardrail(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1330,6 +1330,8 @@ public interface AmazonWorkSpacesWeb {
      *         Access is denied.
      * @throws ThrottlingException
      *         There is a throttling error.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
      * @throws ValidationException
      *         There is a validation error.
      * @throws ConflictException

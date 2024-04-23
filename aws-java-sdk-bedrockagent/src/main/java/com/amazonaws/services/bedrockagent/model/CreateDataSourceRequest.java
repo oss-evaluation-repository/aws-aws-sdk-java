@@ -37,6 +37,12 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String clientToken;
     /**
      * <p>
+     * The deletion policy for the requested data source
+     * </p>
+     */
+    private String dataDeletionPolicy;
+    /**
+     * <p>
      * Contains metadata about where the data source is stored.
      * </p>
      */
@@ -133,6 +139,65 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     public CreateDataSourceRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deletion policy for the requested data source
+     * </p>
+     * 
+     * @param dataDeletionPolicy
+     *        The deletion policy for the requested data source
+     * @see DataDeletionPolicy
+     */
+
+    public void setDataDeletionPolicy(String dataDeletionPolicy) {
+        this.dataDeletionPolicy = dataDeletionPolicy;
+    }
+
+    /**
+     * <p>
+     * The deletion policy for the requested data source
+     * </p>
+     * 
+     * @return The deletion policy for the requested data source
+     * @see DataDeletionPolicy
+     */
+
+    public String getDataDeletionPolicy() {
+        return this.dataDeletionPolicy;
+    }
+
+    /**
+     * <p>
+     * The deletion policy for the requested data source
+     * </p>
+     * 
+     * @param dataDeletionPolicy
+     *        The deletion policy for the requested data source
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataDeletionPolicy
+     */
+
+    public CreateDataSourceRequest withDataDeletionPolicy(String dataDeletionPolicy) {
+        setDataDeletionPolicy(dataDeletionPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deletion policy for the requested data source
+     * </p>
+     * 
+     * @param dataDeletionPolicy
+     *        The deletion policy for the requested data source
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataDeletionPolicy
+     */
+
+    public CreateDataSourceRequest withDataDeletionPolicy(DataDeletionPolicy dataDeletionPolicy) {
+        this.dataDeletionPolicy = dataDeletionPolicy.toString();
         return this;
     }
 
@@ -390,6 +455,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getDataDeletionPolicy() != null)
+            sb.append("DataDeletionPolicy: ").append(getDataDeletionPolicy()).append(",");
         if (getDataSourceConfiguration() != null)
             sb.append("DataSourceConfiguration: ").append(getDataSourceConfiguration()).append(",");
         if (getDescription() != null)
@@ -419,6 +486,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getDataDeletionPolicy() == null ^ this.getDataDeletionPolicy() == null)
+            return false;
+        if (other.getDataDeletionPolicy() != null && other.getDataDeletionPolicy().equals(this.getDataDeletionPolicy()) == false)
             return false;
         if (other.getDataSourceConfiguration() == null ^ this.getDataSourceConfiguration() == null)
             return false;
@@ -454,6 +525,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getDataDeletionPolicy() == null) ? 0 : getDataDeletionPolicy().hashCode());
         hashCode = prime * hashCode + ((getDataSourceConfiguration() == null) ? 0 : getDataSourceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getKnowledgeBaseId() == null) ? 0 : getKnowledgeBaseId().hashCode());

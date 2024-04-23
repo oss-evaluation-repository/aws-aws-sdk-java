@@ -27,36 +27,40 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A Amazon Bedrock model provider.
+     * Return models belonging to the model provider that you specify.
      * </p>
      */
     private String byProvider;
     /**
      * <p>
-     * List by customization type.
+     * Return models that support the customization type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      */
     private String byCustomizationType;
     /**
      * <p>
-     * List by output modality type.
+     * Return models that support the output modality that you specify.
      * </p>
      */
     private String byOutputModality;
     /**
      * <p>
-     * List by inference type.
+     * Return models that support the inference type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      */
     private String byInferenceType;
 
     /**
      * <p>
-     * A Amazon Bedrock model provider.
+     * Return models belonging to the model provider that you specify.
      * </p>
      * 
      * @param byProvider
-     *        A Amazon Bedrock model provider.
+     *        Return models belonging to the model provider that you specify.
      */
 
     public void setByProvider(String byProvider) {
@@ -65,10 +69,10 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A Amazon Bedrock model provider.
+     * Return models belonging to the model provider that you specify.
      * </p>
      * 
-     * @return A Amazon Bedrock model provider.
+     * @return Return models belonging to the model provider that you specify.
      */
 
     public String getByProvider() {
@@ -77,11 +81,11 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A Amazon Bedrock model provider.
+     * Return models belonging to the model provider that you specify.
      * </p>
      * 
      * @param byProvider
-     *        A Amazon Bedrock model provider.
+     *        Return models belonging to the model provider that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +96,15 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by customization type.
+     * Return models that support the customization type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param byCustomizationType
-     *        List by customization type.
+     *        Return models that support the customization type that you specify. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the
+     *        Amazon Bedrock User Guide.
      * @see ModelCustomization
      */
 
@@ -106,10 +114,14 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by customization type.
+     * Return models that support the customization type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
-     * @return List by customization type.
+     * @return Return models that support the customization type that you specify. For more information, see <a
+     *         href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the
+     *         Amazon Bedrock User Guide.
      * @see ModelCustomization
      */
 
@@ -119,11 +131,15 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by customization type.
+     * Return models that support the customization type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param byCustomizationType
-     *        List by customization type.
+     *        Return models that support the customization type that you specify. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the
+     *        Amazon Bedrock User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelCustomization
      */
@@ -135,11 +151,15 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by customization type.
+     * Return models that support the customization type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param byCustomizationType
-     *        List by customization type.
+     *        Return models that support the customization type that you specify. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the
+     *        Amazon Bedrock User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelCustomization
      */
@@ -151,11 +171,11 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by output modality type.
+     * Return models that support the output modality that you specify.
      * </p>
      * 
      * @param byOutputModality
-     *        List by output modality type.
+     *        Return models that support the output modality that you specify.
      * @see ModelModality
      */
 
@@ -165,10 +185,10 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by output modality type.
+     * Return models that support the output modality that you specify.
      * </p>
      * 
-     * @return List by output modality type.
+     * @return Return models that support the output modality that you specify.
      * @see ModelModality
      */
 
@@ -178,11 +198,11 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by output modality type.
+     * Return models that support the output modality that you specify.
      * </p>
      * 
      * @param byOutputModality
-     *        List by output modality type.
+     *        Return models that support the output modality that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelModality
      */
@@ -194,11 +214,11 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by output modality type.
+     * Return models that support the output modality that you specify.
      * </p>
      * 
      * @param byOutputModality
-     *        List by output modality type.
+     *        Return models that support the output modality that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelModality
      */
@@ -210,11 +230,15 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by inference type.
+     * Return models that support the inference type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param byInferenceType
-     *        List by inference type.
+     *        Return models that support the inference type that you specify. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+     *        Throughput</a> in the Amazon Bedrock User Guide.
      * @see InferenceType
      */
 
@@ -224,10 +248,14 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by inference type.
+     * Return models that support the inference type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
-     * @return List by inference type.
+     * @return Return models that support the inference type that you specify. For more information, see <a
+     *         href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+     *         Throughput</a> in the Amazon Bedrock User Guide.
      * @see InferenceType
      */
 
@@ -237,11 +265,15 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by inference type.
+     * Return models that support the inference type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param byInferenceType
-     *        List by inference type.
+     *        Return models that support the inference type that you specify. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+     *        Throughput</a> in the Amazon Bedrock User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InferenceType
      */
@@ -253,11 +285,15 @@ public class ListFoundationModelsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List by inference type.
+     * Return models that support the inference type that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param byInferenceType
-     *        List by inference type.
+     *        Return models that support the inference type that you specify. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+     *        Throughput</a> in the Amazon Bedrock User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InferenceType
      */

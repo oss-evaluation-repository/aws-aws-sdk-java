@@ -3348,11 +3348,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>ipv6-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how frequently a
-     * running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values are between 140
-     * and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time is 140 seconds.
-     * If you use long-term addressing for EC2 instances, you can increase the lease time and avoid frequent lease
-     * renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
+     * <code>ipv6-address-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how
+     * frequently a running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values
+     * are between 140 and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time
+     * is 140 seconds. If you use long-term addressing for EC2 instances, you can increase the lease time and avoid
+     * frequent lease renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
      * </p>
      * </li>
      * </ul>
@@ -3419,11 +3419,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>ipv6-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how frequently a
-     * running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values are between 140
-     * and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time is 140 seconds.
-     * If you use long-term addressing for EC2 instances, you can increase the lease time and avoid frequent lease
-     * renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
+     * <code>ipv6-address-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how
+     * frequently a running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values
+     * are between 140 and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time
+     * is 140 seconds. If you use long-term addressing for EC2 instances, you can increase the lease time and avoid
+     * frequent lease renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
      * </p>
      * </li>
      * </ul>
@@ -4186,8 +4186,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * launch template</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you want to clone an existing launch template as the basis for creating a new launch template, you can use the
-     * Amazon EC2 console. The API, SDKs, and CLI do not support cloning a template. For more information, see <a href=
+     * To clone an existing launch template as the basis for a new launch template, use the Amazon EC2 console. The API,
+     * SDKs, and CLI do not support cloning a template. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template"
      * >Create a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -4213,8 +4213,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * launch template</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you want to clone an existing launch template as the basis for creating a new launch template, you can use the
-     * Amazon EC2 console. The API, SDKs, and CLI do not support cloning a template. For more information, see <a href=
+     * To clone an existing launch template as the basis for a new launch template, use the Amazon EC2 console. The API,
+     * SDKs, and CLI do not support cloning a template. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template"
      * >Create a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -4235,16 +4235,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a new version of a launch template. You can specify an existing version of launch template from which to
-     * base the new version.
+     * Creates a new version of a launch template. You must specify an existing launch template, either by name or ID.
+     * You can determine whether the new version inherits parameters from a source version, and add or overwrite
+     * parameters as needed.
      * </p>
      * <p>
-     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * Launch template versions are numbered in the order in which they are created. You can't specify, change, or
      * replace the numbering of launch template versions.
      * </p>
      * <p>
      * Launch templates are immutable; after you create a launch template, you can't modify it. Instead, you can create
-     * a new version of the launch template that includes any changes you require.
+     * a new version of the launch template that includes the changes that you require.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -4264,16 +4265,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a new version of a launch template. You can specify an existing version of launch template from which to
-     * base the new version.
+     * Creates a new version of a launch template. You must specify an existing launch template, either by name or ID.
+     * You can determine whether the new version inherits parameters from a source version, and add or overwrite
+     * parameters as needed.
      * </p>
      * <p>
-     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * Launch template versions are numbered in the order in which they are created. You can't specify, change, or
      * replace the numbering of launch template versions.
      * </p>
      * <p>
      * Launch templates are immutable; after you create a launch template, you can't modify it. Instead, you can create
-     * a new version of the launch template that includes any changes you require.
+     * a new version of the launch template that includes the changes that you require.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -12383,7 +12385,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
      * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -12411,7 +12418,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
      * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -13149,7 +13161,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * fails. If you describe instances and specify only instance IDs that are in an unaffected zone, the call works
      * normally.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -13187,7 +13204,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * fails. If you describe instances and specify only instance IDs that are in an unaffected zone, the call works
      * normally.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -14320,6 +14342,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * following filters: <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>,
      * <code>private-ip-address</code>, <code>private-dns-name</code>, <code>subnet-id</code>, or <code>vpc-id</code>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeNetworkInterfacesRequest
      *        Contains the parameters for DescribeNetworkInterfaces.
@@ -14340,6 +14368,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * following filters: <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>,
      * <code>private-ip-address</code>, <code>private-dns-name</code>, <code>subnet-id</code>, or <code>vpc-id</code>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeNetworkInterfacesRequest
      *        Contains the parameters for DescribeNetworkInterfaces.
@@ -15447,6 +15481,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the
      * <i>Amazon EBS User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeSnapshotsRequest
      * @return A Java Future containing the result of the DescribeSnapshots operation returned by the service.
@@ -15520,6 +15560,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the
      * <i>Amazon EBS User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeSnapshotsRequest
      * @param asyncHandler
@@ -16071,7 +16117,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -16095,7 +16146,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -16987,7 +17043,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon EBS volumes</a> in the <i>Amazon
      * EBS User Guide</i>.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -17016,7 +17077,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon EBS volumes</a> in the <i>Amazon
      * EBS User Guide</i>.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -18351,6 +18417,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DisableImageDeprecationResult> disableImageDeprecationAsync(DisableImageDeprecationRequest disableImageDeprecationRequest,
             com.amazonaws.handlers.AsyncHandler<DisableImageDeprecationRequest, DisableImageDeprecationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables deregistration protection for an AMI. When deregistration protection is disabled, the AMI can be
+     * deregistered.
+     * </p>
+     * <p>
+     * If you chose to include a 24-hour cooldown period when you enabled deregistration protection for the AMI, then,
+     * when you disable deregistration protection, you won’t immediately be able to deregister the AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeregistrationProtectionRequest
+     * @return A Java Future containing the result of the DisableImageDeregistrationProtection operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageDeregistrationProtectionResult> disableImageDeregistrationProtectionAsync(
+            DisableImageDeregistrationProtectionRequest disableImageDeregistrationProtectionRequest);
+
+    /**
+     * <p>
+     * Disables deregistration protection for an AMI. When deregistration protection is disabled, the AMI can be
+     * deregistered.
+     * </p>
+     * <p>
+     * If you chose to include a 24-hour cooldown period when you enabled deregistration protection for the AMI, then,
+     * when you disable deregistration protection, you won’t immediately be able to deregister the AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeregistrationProtectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableImageDeregistrationProtection operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageDeregistrationProtectionResult> disableImageDeregistrationProtectionAsync(
+            DisableImageDeregistrationProtectionRequest disableImageDeregistrationProtectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableImageDeregistrationProtectionRequest, DisableImageDeregistrationProtectionResult> asyncHandler);
 
     /**
      * <p>
@@ -19695,6 +19816,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<EnableImageDeprecationResult> enableImageDeprecationAsync(EnableImageDeprecationRequest enableImageDeprecationRequest,
             com.amazonaws.handlers.AsyncHandler<EnableImageDeprecationRequest, EnableImageDeprecationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables deregistration protection for an AMI. When deregistration protection is enabled, the AMI can't be
+     * deregistered.
+     * </p>
+     * <p>
+     * To allow the AMI to be deregistered, you must first disable deregistration protection using
+     * <a>DisableImageDeregistrationProtection</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeregistrationProtectionRequest
+     * @return A Java Future containing the result of the EnableImageDeregistrationProtection operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.EnableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageDeregistrationProtectionResult> enableImageDeregistrationProtectionAsync(
+            EnableImageDeregistrationProtectionRequest enableImageDeregistrationProtectionRequest);
+
+    /**
+     * <p>
+     * Enables deregistration protection for an AMI. When deregistration protection is enabled, the AMI can't be
+     * deregistered.
+     * </p>
+     * <p>
+     * To allow the AMI to be deregistered, you must first disable deregistration protection using
+     * <a>DisableImageDeregistrationProtection</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeregistrationProtectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableImageDeregistrationProtection operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.EnableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageDeregistrationProtectionResult> enableImageDeregistrationProtectionAsync(
+            EnableImageDeregistrationProtectionRequest enableImageDeregistrationProtectionRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableImageDeregistrationProtectionRequest, EnableImageDeregistrationProtectionResult> asyncHandler);
 
     /**
      * <p>

@@ -48,6 +48,11 @@ public class RetrieveAndGenerateConfigurationJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("externalSourcesConfiguration", targetDepth)) {
+                    context.nextToken();
+                    retrieveAndGenerateConfiguration.setExternalSourcesConfiguration(ExternalSourcesRetrieveAndGenerateConfigurationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("knowledgeBaseConfiguration", targetDepth)) {
                     context.nextToken();
                     retrieveAndGenerateConfiguration.setKnowledgeBaseConfiguration(KnowledgeBaseRetrieveAndGenerateConfigurationJsonUnmarshaller.getInstance()

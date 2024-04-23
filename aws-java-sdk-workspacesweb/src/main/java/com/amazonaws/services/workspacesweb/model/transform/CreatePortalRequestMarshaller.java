@@ -42,6 +42,10 @@ public class CreatePortalRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerManagedKey").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxConcurrentSessions").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -66,6 +70,8 @@ public class CreatePortalRequestMarshaller {
             protocolMarshaller.marshall(createPortalRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createPortalRequest.getCustomerManagedKey(), CUSTOMERMANAGEDKEY_BINDING);
             protocolMarshaller.marshall(createPortalRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(createPortalRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createPortalRequest.getMaxConcurrentSessions(), MAXCONCURRENTSESSIONS_BINDING);
             protocolMarshaller.marshall(createPortalRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

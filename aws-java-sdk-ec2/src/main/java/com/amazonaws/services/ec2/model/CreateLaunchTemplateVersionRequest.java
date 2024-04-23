@@ -42,7 +42,7 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
      * The ID of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      */
     private String launchTemplateId;
@@ -51,16 +51,23 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
      * The name of the launch template.
      * </p>
      * <p>
-     * You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      */
     private String launchTemplateName;
     /**
      * <p>
-     * The version number of the launch template version on which to base the new version. The new version inherits the
-     * same launch parameters as the source version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new
-     * version unless they are explicitly included.
+     * The version of the launch template on which to base the new version. Snapshots applied to the block device
+     * mapping are ignored when creating a new version unless they are explicitly included.
+     * </p>
+     * <p>
+     * If you specify this parameter, the new version inherits the launch parameters from the source version. If you
+     * specify additional launch parameters for the new version, they overwrite any corresponding launch parameters
+     * inherited from the source version.
+     * </p>
+     * <p>
+     * If you omit this parameter, the new version contains only the launch parameters that you specify for the new
+     * version.
      * </p>
      */
     private String sourceVersion;
@@ -164,14 +171,13 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
      * The ID of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @param launchTemplateId
      *        The ID of the launch template.</p>
      *        <p>
-     *        You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     *        both.
+     *        You must specify either the launch template ID or the launch template name, but not both.
      */
 
     public void setLaunchTemplateId(String launchTemplateId) {
@@ -183,13 +189,12 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
      * The ID of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @return The ID of the launch template.</p>
      *         <p>
-     *         You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     *         both.
+     *         You must specify either the launch template ID or the launch template name, but not both.
      */
 
     public String getLaunchTemplateId() {
@@ -201,14 +206,13 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
      * The ID of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @param launchTemplateId
      *        The ID of the launch template.</p>
      *        <p>
-     *        You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     *        both.
+     *        You must specify either the launch template ID or the launch template name, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,13 +226,13 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
      * The name of the launch template.
      * </p>
      * <p>
-     * You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @param launchTemplateName
      *        The name of the launch template.</p>
      *        <p>
-     *        You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *        You must specify either the launch template ID or the launch template name, but not both.
      */
 
     public void setLaunchTemplateName(String launchTemplateName) {
@@ -240,12 +244,12 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
      * The name of the launch template.
      * </p>
      * <p>
-     * You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @return The name of the launch template.</p>
      *         <p>
-     *         You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *         You must specify either the launch template ID or the launch template name, but not both.
      */
 
     public String getLaunchTemplateName() {
@@ -257,13 +261,13 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
      * The name of the launch template.
      * </p>
      * <p>
-     * You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @param launchTemplateName
      *        The name of the launch template.</p>
      *        <p>
-     *        You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *        You must specify either the launch template ID or the launch template name, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,17 +278,30 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version number of the launch template version on which to base the new version. The new version inherits the
-     * same launch parameters as the source version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new
-     * version unless they are explicitly included.
+     * The version of the launch template on which to base the new version. Snapshots applied to the block device
+     * mapping are ignored when creating a new version unless they are explicitly included.
+     * </p>
+     * <p>
+     * If you specify this parameter, the new version inherits the launch parameters from the source version. If you
+     * specify additional launch parameters for the new version, they overwrite any corresponding launch parameters
+     * inherited from the source version.
+     * </p>
+     * <p>
+     * If you omit this parameter, the new version contains only the launch parameters that you specify for the new
+     * version.
      * </p>
      * 
      * @param sourceVersion
-     *        The version number of the launch template version on which to base the new version. The new version
-     *        inherits the same launch parameters as the source version, except for parameters that you specify in
-     *        <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a
-     *        new version unless they are explicitly included.
+     *        The version of the launch template on which to base the new version. Snapshots applied to the block device
+     *        mapping are ignored when creating a new version unless they are explicitly included.</p>
+     *        <p>
+     *        If you specify this parameter, the new version inherits the launch parameters from the source version. If
+     *        you specify additional launch parameters for the new version, they overwrite any corresponding launch
+     *        parameters inherited from the source version.
+     *        </p>
+     *        <p>
+     *        If you omit this parameter, the new version contains only the launch parameters that you specify for the
+     *        new version.
      */
 
     public void setSourceVersion(String sourceVersion) {
@@ -293,16 +310,29 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version number of the launch template version on which to base the new version. The new version inherits the
-     * same launch parameters as the source version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new
-     * version unless they are explicitly included.
+     * The version of the launch template on which to base the new version. Snapshots applied to the block device
+     * mapping are ignored when creating a new version unless they are explicitly included.
+     * </p>
+     * <p>
+     * If you specify this parameter, the new version inherits the launch parameters from the source version. If you
+     * specify additional launch parameters for the new version, they overwrite any corresponding launch parameters
+     * inherited from the source version.
+     * </p>
+     * <p>
+     * If you omit this parameter, the new version contains only the launch parameters that you specify for the new
+     * version.
      * </p>
      * 
-     * @return The version number of the launch template version on which to base the new version. The new version
-     *         inherits the same launch parameters as the source version, except for parameters that you specify in
-     *         <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating
-     *         a new version unless they are explicitly included.
+     * @return The version of the launch template on which to base the new version. Snapshots applied to the block
+     *         device mapping are ignored when creating a new version unless they are explicitly included.</p>
+     *         <p>
+     *         If you specify this parameter, the new version inherits the launch parameters from the source version. If
+     *         you specify additional launch parameters for the new version, they overwrite any corresponding launch
+     *         parameters inherited from the source version.
+     *         </p>
+     *         <p>
+     *         If you omit this parameter, the new version contains only the launch parameters that you specify for the
+     *         new version.
      */
 
     public String getSourceVersion() {
@@ -311,17 +341,30 @@ public class CreateLaunchTemplateVersionRequest extends AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version number of the launch template version on which to base the new version. The new version inherits the
-     * same launch parameters as the source version, except for parameters that you specify in
-     * <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a new
-     * version unless they are explicitly included.
+     * The version of the launch template on which to base the new version. Snapshots applied to the block device
+     * mapping are ignored when creating a new version unless they are explicitly included.
+     * </p>
+     * <p>
+     * If you specify this parameter, the new version inherits the launch parameters from the source version. If you
+     * specify additional launch parameters for the new version, they overwrite any corresponding launch parameters
+     * inherited from the source version.
+     * </p>
+     * <p>
+     * If you omit this parameter, the new version contains only the launch parameters that you specify for the new
+     * version.
      * </p>
      * 
      * @param sourceVersion
-     *        The version number of the launch template version on which to base the new version. The new version
-     *        inherits the same launch parameters as the source version, except for parameters that you specify in
-     *        <code>LaunchTemplateData</code>. Snapshots applied to the block device mapping are ignored when creating a
-     *        new version unless they are explicitly included.
+     *        The version of the launch template on which to base the new version. Snapshots applied to the block device
+     *        mapping are ignored when creating a new version unless they are explicitly included.</p>
+     *        <p>
+     *        If you specify this parameter, the new version inherits the launch parameters from the source version. If
+     *        you specify additional launch parameters for the new version, they overwrite any corresponding launch
+     *        parameters inherited from the source version.
+     *        </p>
+     *        <p>
+     *        If you omit this parameter, the new version contains only the launch parameters that you specify for the
+     *        new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

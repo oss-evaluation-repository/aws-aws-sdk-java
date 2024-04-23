@@ -31,8 +31,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The ID of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template ID
+     * or the launch template name, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -44,8 +44,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The name of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template name
+     * or the launch template ID, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -201,8 +201,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The ID of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template ID
+     * or the launch template name, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -211,8 +211,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * @param launchTemplateId
      *        The ID of the launch template.</p>
      *        <p>
-     *        To describe one or more versions of a specified launch template, you must specify either the
-     *        <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     *        To describe one or more versions of a specified launch template, you must specify either the launch
+     *        template ID or the launch template name, but not both.
      *        </p>
      *        <p>
      *        To describe all the latest or default launch template versions in your account, you must omit this
@@ -228,8 +228,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The ID of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template ID
+     * or the launch template name, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -237,8 +237,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * 
      * @return The ID of the launch template.</p>
      *         <p>
-     *         To describe one or more versions of a specified launch template, you must specify either the
-     *         <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     *         To describe one or more versions of a specified launch template, you must specify either the launch
+     *         template ID or the launch template name, but not both.
      *         </p>
      *         <p>
      *         To describe all the latest or default launch template versions in your account, you must omit this
@@ -254,8 +254,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The ID of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template ID
+     * or the launch template name, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -264,8 +264,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * @param launchTemplateId
      *        The ID of the launch template.</p>
      *        <p>
-     *        To describe one or more versions of a specified launch template, you must specify either the
-     *        <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     *        To describe one or more versions of a specified launch template, you must specify either the launch
+     *        template ID or the launch template name, but not both.
      *        </p>
      *        <p>
      *        To describe all the latest or default launch template versions in your account, you must omit this
@@ -283,8 +283,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The name of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template name
+     * or the launch template ID, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -293,8 +293,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * @param launchTemplateName
      *        The name of the launch template.</p>
      *        <p>
-     *        To describe one or more versions of a specified launch template, you must specify either the
-     *        <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *        To describe one or more versions of a specified launch template, you must specify either the launch
+     *        template name or the launch template ID, but not both.
      *        </p>
      *        <p>
      *        To describe all the latest or default launch template versions in your account, you must omit this
@@ -310,8 +310,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The name of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template name
+     * or the launch template ID, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -319,8 +319,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * 
      * @return The name of the launch template.</p>
      *         <p>
-     *         To describe one or more versions of a specified launch template, you must specify either the
-     *         <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *         To describe one or more versions of a specified launch template, you must specify either the launch
+     *         template name or the launch template ID, but not both.
      *         </p>
      *         <p>
      *         To describe all the latest or default launch template versions in your account, you must omit this
@@ -336,8 +336,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * The name of the launch template.
      * </p>
      * <p>
-     * To describe one or more versions of a specified launch template, you must specify either the
-     * <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * To describe one or more versions of a specified launch template, you must specify either the launch template name
+     * or the launch template ID, but not both.
      * </p>
      * <p>
      * To describe all the latest or default launch template versions in your account, you must omit this parameter.
@@ -346,8 +346,8 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
      * @param launchTemplateName
      *        The name of the launch template.</p>
      *        <p>
-     *        To describe one or more versions of a specified launch template, you must specify either the
-     *        <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     *        To describe one or more versions of a specified launch template, you must specify either the launch
+     *        template name or the launch template ID, but not both.
      *        </p>
      *        <p>
      *        To describe all the latest or default launch template versions in your account, you must omit this

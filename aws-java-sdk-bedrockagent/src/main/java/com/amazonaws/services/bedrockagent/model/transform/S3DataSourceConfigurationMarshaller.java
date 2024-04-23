@@ -30,6 +30,8 @@ public class S3DataSourceConfigurationMarshaller {
 
     private static final MarshallingInfo<String> BUCKETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("bucketArn").build();
+    private static final MarshallingInfo<String> BUCKETOWNERACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketOwnerAccountId").build();
     private static final MarshallingInfo<List> INCLUSIONPREFIXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inclusionPrefixes").build();
 
@@ -50,6 +52,7 @@ public class S3DataSourceConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(s3DataSourceConfiguration.getBucketArn(), BUCKETARN_BINDING);
+            protocolMarshaller.marshall(s3DataSourceConfiguration.getBucketOwnerAccountId(), BUCKETOWNERACCOUNTID_BINDING);
             protocolMarshaller.marshall(s3DataSourceConfiguration.getInclusionPrefixes(), INCLUSIONPREFIXES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

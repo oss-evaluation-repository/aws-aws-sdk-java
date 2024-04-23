@@ -26,7 +26,7 @@ import com.amazonaws.services.bedrockruntime.model.*;
  * </p>
  * <p>
  * <p>
- * Describes the API operations for running inference using Bedrock models.
+ * Describes the API operations for running inference using Amazon Bedrock models.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,15 +34,14 @@ public interface AmazonBedrockRuntimeAsync extends AmazonBedrockRuntime {
 
     /**
      * <p>
-     * Invokes the specified Bedrock model to run inference using the input provided in the request body. You use
-     * InvokeModel to run inference for text models, image models, and embedding models.
+     * Invokes the specified Amazon Bedrock model to run inference using the prompt and inference parameters provided in
+     * the request body. You use model inference to generate text, images, and embeddings.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-     * inference</a> in the Bedrock User Guide.
+     * For example code, see <i>Invoke model code examples</i> in the <i>Amazon Bedrock User Guide</i>.
      * </p>
      * <p>
-     * For example requests, see Examples (after the Errors section).
+     * This operation requires permission for the <code>bedrock:InvokeModel</code> action.
      * </p>
      * 
      * @param invokeModelRequest
@@ -55,15 +54,14 @@ public interface AmazonBedrockRuntimeAsync extends AmazonBedrockRuntime {
 
     /**
      * <p>
-     * Invokes the specified Bedrock model to run inference using the input provided in the request body. You use
-     * InvokeModel to run inference for text models, image models, and embedding models.
+     * Invokes the specified Amazon Bedrock model to run inference using the prompt and inference parameters provided in
+     * the request body. You use model inference to generate text, images, and embeddings.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
-     * inference</a> in the Bedrock User Guide.
+     * For example code, see <i>Invoke model code examples</i> in the <i>Amazon Bedrock User Guide</i>.
      * </p>
      * <p>
-     * For example requests, see Examples (after the Errors section).
+     * This operation requires permission for the <code>bedrock:InvokeModel</code> action.
      * </p>
      * 
      * @param invokeModelRequest

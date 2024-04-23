@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified resource ARN was not found. Check the ARN and try your request again.
+ * The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and try your
+ * request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

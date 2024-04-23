@@ -30,6 +30,12 @@ public class IpAccessSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The additional encryption context of the IP access settings.
+     * </p>
+     */
+    private java.util.Map<String, String> additionalEncryptionContext;
+    /**
+     * <p>
      * A list of web portal ARNs that this IP access settings resource is associated with.
      * </p>
      */
@@ -40,6 +46,12 @@ public class IpAccessSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Date creationDate;
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the IP access settings.
+     * </p>
+     */
+    private String customerManagedKey;
     /**
      * <p>
      * The description of the IP access settings.
@@ -64,6 +76,74 @@ public class IpAccessSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<IpRule> ipRules;
+
+    /**
+     * <p>
+     * The additional encryption context of the IP access settings.
+     * </p>
+     * 
+     * @return The additional encryption context of the IP access settings.
+     */
+
+    public java.util.Map<String, String> getAdditionalEncryptionContext() {
+        return additionalEncryptionContext;
+    }
+
+    /**
+     * <p>
+     * The additional encryption context of the IP access settings.
+     * </p>
+     * 
+     * @param additionalEncryptionContext
+     *        The additional encryption context of the IP access settings.
+     */
+
+    public void setAdditionalEncryptionContext(java.util.Map<String, String> additionalEncryptionContext) {
+        this.additionalEncryptionContext = additionalEncryptionContext;
+    }
+
+    /**
+     * <p>
+     * The additional encryption context of the IP access settings.
+     * </p>
+     * 
+     * @param additionalEncryptionContext
+     *        The additional encryption context of the IP access settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpAccessSettings withAdditionalEncryptionContext(java.util.Map<String, String> additionalEncryptionContext) {
+        setAdditionalEncryptionContext(additionalEncryptionContext);
+        return this;
+    }
+
+    /**
+     * Add a single AdditionalEncryptionContext entry
+     *
+     * @see IpAccessSettings#withAdditionalEncryptionContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpAccessSettings addAdditionalEncryptionContextEntry(String key, String value) {
+        if (null == this.additionalEncryptionContext) {
+            this.additionalEncryptionContext = new java.util.HashMap<String, String>();
+        }
+        if (this.additionalEncryptionContext.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.additionalEncryptionContext.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AdditionalEncryptionContext.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpAccessSettings clearAdditionalEncryptionContextEntries() {
+        this.additionalEncryptionContext = null;
+        return this;
+    }
 
     /**
      * <p>
@@ -172,6 +252,46 @@ public class IpAccessSettings implements Serializable, Cloneable, StructuredPojo
 
     public IpAccessSettings withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the IP access settings.
+     * </p>
+     * 
+     * @param customerManagedKey
+     *        The customer managed key used to encrypt sensitive information in the IP access settings.
+     */
+
+    public void setCustomerManagedKey(String customerManagedKey) {
+        this.customerManagedKey = customerManagedKey;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the IP access settings.
+     * </p>
+     * 
+     * @return The customer managed key used to encrypt sensitive information in the IP access settings.
+     */
+
+    public String getCustomerManagedKey() {
+        return this.customerManagedKey;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the IP access settings.
+     * </p>
+     * 
+     * @param customerManagedKey
+     *        The customer managed key used to encrypt sensitive information in the IP access settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpAccessSettings withCustomerManagedKey(String customerManagedKey) {
+        setCustomerManagedKey(customerManagedKey);
         return this;
     }
 
@@ -377,10 +497,14 @@ public class IpAccessSettings implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalEncryptionContext() != null)
+            sb.append("AdditionalEncryptionContext: ").append(getAdditionalEncryptionContext()).append(",");
         if (getAssociatedPortalArns() != null)
             sb.append("AssociatedPortalArns: ").append(getAssociatedPortalArns()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getCustomerManagedKey() != null)
+            sb.append("CustomerManagedKey: ").append(getCustomerManagedKey()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getDisplayName() != null)
@@ -403,6 +527,10 @@ public class IpAccessSettings implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof IpAccessSettings == false)
             return false;
         IpAccessSettings other = (IpAccessSettings) obj;
+        if (other.getAdditionalEncryptionContext() == null ^ this.getAdditionalEncryptionContext() == null)
+            return false;
+        if (other.getAdditionalEncryptionContext() != null && other.getAdditionalEncryptionContext().equals(this.getAdditionalEncryptionContext()) == false)
+            return false;
         if (other.getAssociatedPortalArns() == null ^ this.getAssociatedPortalArns() == null)
             return false;
         if (other.getAssociatedPortalArns() != null && other.getAssociatedPortalArns().equals(this.getAssociatedPortalArns()) == false)
@@ -410,6 +538,10 @@ public class IpAccessSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getCustomerManagedKey() == null ^ this.getCustomerManagedKey() == null)
+            return false;
+        if (other.getCustomerManagedKey() != null && other.getCustomerManagedKey().equals(this.getCustomerManagedKey()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -435,8 +567,10 @@ public class IpAccessSettings implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalEncryptionContext() == null) ? 0 : getAdditionalEncryptionContext().hashCode());
         hashCode = prime * hashCode + ((getAssociatedPortalArns() == null) ? 0 : getAssociatedPortalArns().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getCustomerManagedKey() == null) ? 0 : getCustomerManagedKey().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getIpAccessSettingsArn() == null) ? 0 : getIpAccessSettingsArn().hashCode());

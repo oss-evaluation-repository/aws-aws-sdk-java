@@ -26,7 +26,7 @@ import com.amazonaws.services.bedrock.model.*;
  * </p>
  * <p>
  * <p>
- * Describes the API operations for creating and managing Amazon Bedrock models.
+ * Describes the API operations for creating, managing, fine-turning, and evaluating Amazon Bedrock models.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,13 +34,270 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
+     * API operation for creating and managing Amazon Bedrock automatic model evaluation jobs and model evaluation jobs
+     * that use human workers. To learn more about the requirements for creating a model evaluation job see, <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model evaluations</a>.
+     * </p>
+     * 
+     * @param createEvaluationJobRequest
+     * @return A Java Future containing the result of the CreateEvaluationJob operation returned by the service.
+     * @sample AmazonBedrockAsync.CreateEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEvaluationJobResult> createEvaluationJobAsync(CreateEvaluationJobRequest createEvaluationJobRequest);
+
+    /**
+     * <p>
+     * API operation for creating and managing Amazon Bedrock automatic model evaluation jobs and model evaluation jobs
+     * that use human workers. To learn more about the requirements for creating a model evaluation job see, <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model evaluations</a>.
+     * </p>
+     * 
+     * @param createEvaluationJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEvaluationJob operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.CreateEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEvaluationJobResult> createEvaluationJobAsync(CreateEvaluationJobRequest createEvaluationJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEvaluationJobRequest, CreateEvaluationJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a guardrail to block topics and to filter out harmful content.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a <code>name</code> and optional <code>description</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify messages for when the guardrail successfully blocks a prompt or a model response in the
+     * <code>blockedInputMessaging</code> and <code>blockedOutputsMessaging</code> fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify topics for the guardrail to deny in the <code>topicPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html"
+     * >GuardrailTopicConfig</a> object in the <code>topicsConfig</code> list pertains to one topic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Give a <code>name</code> and <code>description</code> so that the guardrail can properly identify the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>DENY</code> in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Provide up to five prompts that you would categorize as belonging to the topic in the
+     * <code>examples</code> list.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
+     * <code>contentPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a> object in the <code>filtersConfig</code> list pertains to a harmful category.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content filters</a>. For more
+     * information about the fields in a content filter, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify the category in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify the strength of the filter for prompts in the <code>inputStrength</code> field and for model responses in
+     * the <code>strength</code> field of the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) For security, include the ARN of a KMS key in the <code>kmsKeyId</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Attach any tags to the guardrail in the <code>tags</code> object. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createGuardrailRequest
+     * @return A Java Future containing the result of the CreateGuardrail operation returned by the service.
+     * @sample AmazonBedrockAsync.CreateGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGuardrailResult> createGuardrailAsync(CreateGuardrailRequest createGuardrailRequest);
+
+    /**
+     * <p>
+     * Creates a guardrail to block topics and to filter out harmful content.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a <code>name</code> and optional <code>description</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify messages for when the guardrail successfully blocks a prompt or a model response in the
+     * <code>blockedInputMessaging</code> and <code>blockedOutputsMessaging</code> fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify topics for the guardrail to deny in the <code>topicPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html"
+     * >GuardrailTopicConfig</a> object in the <code>topicsConfig</code> list pertains to one topic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Give a <code>name</code> and <code>description</code> so that the guardrail can properly identify the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>DENY</code> in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Provide up to five prompts that you would categorize as belonging to the topic in the
+     * <code>examples</code> list.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
+     * <code>contentPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a> object in the <code>filtersConfig</code> list pertains to a harmful category.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content filters</a>. For more
+     * information about the fields in a content filter, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify the category in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify the strength of the filter for prompts in the <code>inputStrength</code> field and for model responses in
+     * the <code>strength</code> field of the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) For security, include the ARN of a KMS key in the <code>kmsKeyId</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Attach any tags to the guardrail in the <code>tags</code> object. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createGuardrailRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGuardrail operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.CreateGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGuardrailResult> createGuardrailAsync(CreateGuardrailRequest createGuardrailRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGuardrailRequest, CreateGuardrailResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a version of the guardrail. Use this API to create a snapshot of the guardrail when you are satisfied
+     * with a configuration, or to compare the configuration with another version.
+     * </p>
+     * 
+     * @param createGuardrailVersionRequest
+     * @return A Java Future containing the result of the CreateGuardrailVersion operation returned by the service.
+     * @sample AmazonBedrockAsync.CreateGuardrailVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrailVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGuardrailVersionResult> createGuardrailVersionAsync(CreateGuardrailVersionRequest createGuardrailVersionRequest);
+
+    /**
+     * <p>
+     * Creates a version of the guardrail. Use this API to create a snapshot of the guardrail when you are satisfied
+     * with a configuration, or to compare the configuration with another version.
+     * </p>
+     * 
+     * @param createGuardrailVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGuardrailVersion operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.CreateGuardrailVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrailVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGuardrailVersionResult> createGuardrailVersionAsync(CreateGuardrailVersionRequest createGuardrailVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGuardrailVersionRequest, CreateGuardrailVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a fine-tuning job to customize a base model.
      * </p>
      * <p>
      * You specify the base foundation model and the location of the training data. After the model-customization job
-     * completes successfully, your custom model resource will be ready to use. Training data contains input and output
-     * text for each record in a JSONL format. Optionally, you can specify validation data in the same format as the
-     * training data. Amazon Bedrock returns validation loss metrics and output generations after the job completes.
+     * completes successfully, your custom model resource will be ready to use. Amazon Bedrock returns validation loss
+     * metrics and output generations after the job completes.
+     * </p>
+     * <p>
+     * For information on the format of training and validation data, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html">Prepare the
+     * datasets</a>.
      * </p>
      * <p>
      * Model-customization jobs are asynchronous and the completion time depends on the base model and the
@@ -49,8 +306,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param createModelCustomizationJobRequest
@@ -68,9 +325,13 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * </p>
      * <p>
      * You specify the base foundation model and the location of the training data. After the model-customization job
-     * completes successfully, your custom model resource will be ready to use. Training data contains input and output
-     * text for each record in a JSONL format. Optionally, you can specify validation data in the same format as the
-     * training data. Amazon Bedrock returns validation loss metrics and output generations after the job completes.
+     * completes successfully, your custom model resource will be ready to use. Amazon Bedrock returns validation loss
+     * metrics and output generations after the job completes.
+     * </p>
+     * <p>
+     * For information on the format of training and validation data, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html">Prepare the
+     * datasets</a>.
      * </p>
      * <p>
      * Model-customization jobs are asynchronous and the completion time depends on the base model and the
@@ -79,8 +340,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param createModelCustomizationJobRequest
@@ -99,12 +360,11 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * Creates a provisioned throughput with dedicated capacity for a foundation model or a fine-tuned model.
-     * </p>
-     * <p>
+     * Creates dedicated throughput for a base or custom model with the model units and for the duration that you
+     * specify. For pricing details, see <a href="http://aws.amazon.com/bedrock/pricing/">Amazon Bedrock Pricing</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param createProvisionedModelThroughputRequest
@@ -119,12 +379,11 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * Creates a provisioned throughput with dedicated capacity for a foundation model or a fine-tuned model.
-     * </p>
-     * <p>
+     * Creates dedicated throughput for a base or custom model with the model units and for the duration that you
+     * specify. For pricing details, see <a href="http://aws.amazon.com/bedrock/pricing/">Amazon Bedrock Pricing</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param createProvisionedModelThroughputRequest
@@ -145,8 +404,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Deletes a custom model that you created earlier. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param deleteCustomModelRequest
@@ -160,8 +419,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Deletes a custom model that you created earlier. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param deleteCustomModelRequest
@@ -176,6 +435,65 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      */
     java.util.concurrent.Future<DeleteCustomModelResult> deleteCustomModelAsync(DeleteCustomModelRequest deleteCustomModelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCustomModelRequest, DeleteCustomModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a guardrail.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To delete a guardrail, only specify the ARN of the guardrail in the <code>guardrailIdentifier</code> field. If
+     * you delete a guardrail, all of its versions will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete a version of a guardrail, specify the ARN of the guardrail in the <code>guardrailIdentifier</code>
+     * field and the version in the <code>guardrailVersion</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteGuardrailRequest
+     * @return A Java Future containing the result of the DeleteGuardrail operation returned by the service.
+     * @sample AmazonBedrockAsync.DeleteGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGuardrailResult> deleteGuardrailAsync(DeleteGuardrailRequest deleteGuardrailRequest);
+
+    /**
+     * <p>
+     * Deletes a guardrail.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To delete a guardrail, only specify the ARN of the guardrail in the <code>guardrailIdentifier</code> field. If
+     * you delete a guardrail, all of its versions will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete a version of a guardrail, specify the ARN of the guardrail in the <code>guardrailIdentifier</code>
+     * field and the version in the <code>guardrailVersion</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteGuardrailRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGuardrail operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.DeleteGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGuardrailResult> deleteGuardrailAsync(DeleteGuardrailRequest deleteGuardrailRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGuardrailRequest, DeleteGuardrailResult> asyncHandler);
 
     /**
      * <p>
@@ -216,9 +534,10 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * Deletes a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before the commitment term is over.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param deleteProvisionedModelThroughputRequest
@@ -233,9 +552,10 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * Deletes a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before the commitment term is over.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param deleteProvisionedModelThroughputRequest
@@ -256,7 +576,7 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Get the properties associated with a Amazon Bedrock custom model that you have created.For more information, see
-     * <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the
+     * <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
@@ -271,7 +591,7 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Get the properties associated with a Amazon Bedrock custom model that you have created.For more information, see
-     * <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the
+     * <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
@@ -287,6 +607,43 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      */
     java.util.concurrent.Future<GetCustomModelResult> getCustomModelAsync(GetCustomModelRequest getCustomModelRequest,
             com.amazonaws.handlers.AsyncHandler<GetCustomModelRequest, GetCustomModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the properties associated with a model evaluation job, including the status of the job. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model
+     * evaluations</a>.
+     * </p>
+     * 
+     * @param getEvaluationJobRequest
+     * @return A Java Future containing the result of the GetEvaluationJob operation returned by the service.
+     * @sample AmazonBedrockAsync.GetEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetEvaluationJobResult> getEvaluationJobAsync(GetEvaluationJobRequest getEvaluationJobRequest);
+
+    /**
+     * <p>
+     * Retrieves the properties associated with a model evaluation job, including the status of the job. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model
+     * evaluations</a>.
+     * </p>
+     * 
+     * @param getEvaluationJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEvaluationJob operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.GetEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetEvaluationJobResult> getEvaluationJobAsync(GetEvaluationJobRequest getEvaluationJobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEvaluationJobRequest, GetEvaluationJobResult> asyncHandler);
 
     /**
      * <p>
@@ -321,9 +678,42 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
+     * Gets details about a guardrail. If you don't specify a version, the response returns details for the
+     * <code>DRAFT</code> version.
+     * </p>
+     * 
+     * @param getGuardrailRequest
+     * @return A Java Future containing the result of the GetGuardrail operation returned by the service.
+     * @sample AmazonBedrockAsync.GetGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGuardrailResult> getGuardrailAsync(GetGuardrailRequest getGuardrailRequest);
+
+    /**
+     * <p>
+     * Gets details about a guardrail. If you don't specify a version, the response returns details for the
+     * <code>DRAFT</code> version.
+     * </p>
+     * 
+     * @param getGuardrailRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGuardrail operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.GetGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetGuardrailResult> getGuardrailAsync(GetGuardrailRequest getGuardrailRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGuardrailRequest, GetGuardrailResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the properties associated with a model-customization job, including the status of the job. For more
      * information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Bedrock User Guide.
+     * models</a> in the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param getModelCustomizationJobRequest
@@ -338,7 +728,7 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * <p>
      * Retrieves the properties associated with a model-customization job, including the status of the job. For more
      * information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Bedrock User Guide.
+     * models</a> in the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param getModelCustomizationJobRequest
@@ -391,9 +781,9 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * Get details for a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Returns details for a Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param getProvisionedModelThroughputRequest
@@ -408,9 +798,9 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * Get details for a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Returns details for a Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param getProvisionedModelThroughputRequest
@@ -435,8 +825,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param listCustomModelsRequest
@@ -454,8 +844,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param listCustomModelsRequest
@@ -473,9 +863,41 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * List of Amazon Bedrock foundation models that you can use. For more information, see <a
+     * Lists model evaluation jobs.
+     * </p>
+     * 
+     * @param listEvaluationJobsRequest
+     * @return A Java Future containing the result of the ListEvaluationJobs operation returned by the service.
+     * @sample AmazonBedrockAsync.ListEvaluationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListEvaluationJobsResult> listEvaluationJobsAsync(ListEvaluationJobsRequest listEvaluationJobsRequest);
+
+    /**
+     * <p>
+     * Lists model evaluation jobs.
+     * </p>
+     * 
+     * @param listEvaluationJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEvaluationJobs operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.ListEvaluationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListEvaluationJobsResult> listEvaluationJobsAsync(ListEvaluationJobsRequest listEvaluationJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEvaluationJobsRequest, ListEvaluationJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists Amazon Bedrock foundation models that you can use. You can filter the results with the request parameters.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation models</a> in the
-     * Bedrock User Guide.
+     * Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listFoundationModelsRequest
@@ -488,9 +910,10 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * List of Amazon Bedrock foundation models that you can use. For more information, see <a
+     * Lists Amazon Bedrock foundation models that you can use. You can filter the results with the request parameters.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation models</a> in the
-     * Bedrock User Guide.
+     * Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listFoundationModelsRequest
@@ -508,13 +931,58 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
+     * Lists details about all the guardrails in an account. To list the <code>DRAFT</code> version of all your
+     * guardrails, don't specify the <code>guardrailIdentifier</code> field. To list all versions of a guardrail,
+     * specify the ARN of the guardrail in the <code>guardrailIdentifier</code> field.
+     * </p>
+     * <p>
+     * You can set the maximum number of results to return in a response in the <code>maxResults</code> field. If there
+     * are more results than the number you set, the response returns a <code>nextToken</code> that you can send in
+     * another <code>ListGuardrails</code> request to see the next batch of results.
+     * </p>
+     * 
+     * @param listGuardrailsRequest
+     * @return A Java Future containing the result of the ListGuardrails operation returned by the service.
+     * @sample AmazonBedrockAsync.ListGuardrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListGuardrailsResult> listGuardrailsAsync(ListGuardrailsRequest listGuardrailsRequest);
+
+    /**
+     * <p>
+     * Lists details about all the guardrails in an account. To list the <code>DRAFT</code> version of all your
+     * guardrails, don't specify the <code>guardrailIdentifier</code> field. To list all versions of a guardrail,
+     * specify the ARN of the guardrail in the <code>guardrailIdentifier</code> field.
+     * </p>
+     * <p>
+     * You can set the maximum number of results to return in a response in the <code>maxResults</code> field. If there
+     * are more results than the number you set, the response returns a <code>nextToken</code> that you can send in
+     * another <code>ListGuardrails</code> request to see the next batch of results.
+     * </p>
+     * 
+     * @param listGuardrailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGuardrails operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.ListGuardrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListGuardrailsResult> listGuardrailsAsync(ListGuardrailsRequest listGuardrailsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGuardrailsRequest, ListGuardrailsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of model customization jobs that you have submitted. You can filter the jobs to return based on
      * one or more criteria.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param listModelCustomizationJobsRequest
@@ -533,8 +1001,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param listModelCustomizationJobsRequest
@@ -553,9 +1021,9 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * List the provisioned capacities. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Lists the Provisioned Throughputs in the account. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listProvisionedModelThroughputsRequest
@@ -570,9 +1038,9 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * List the provisioned capacities. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Lists the Provisioned Throughputs in the account. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listProvisionedModelThroughputsRequest
@@ -595,9 +1063,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * List the tags associated with the specified resource.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
-     * Bedrock User Guide.
+     * For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+     * resources</a> in the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -613,9 +1080,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
      * List the tags associated with the specified resource.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
-     * Bedrock User Guide.
+     * For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+     * resources</a> in the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -668,9 +1134,40 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
+     * Stops an in progress model evaluation job.
+     * </p>
+     * 
+     * @param stopEvaluationJobRequest
+     * @return A Java Future containing the result of the StopEvaluationJob operation returned by the service.
+     * @sample AmazonBedrockAsync.StopEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopEvaluationJobResult> stopEvaluationJobAsync(StopEvaluationJobRequest stopEvaluationJobRequest);
+
+    /**
+     * <p>
+     * Stops an in progress model evaluation job.
+     * </p>
+     * 
+     * @param stopEvaluationJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopEvaluationJob operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.StopEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopEvaluationJobResult> stopEvaluationJobAsync(StopEvaluationJobRequest stopEvaluationJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopEvaluationJobRequest, StopEvaluationJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops an active model customization job. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param stopModelCustomizationJobRequest
@@ -685,8 +1182,8 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Stops an active model customization job. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param stopModelCustomizationJobRequest
@@ -706,7 +1203,7 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Associate tags with a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging resources</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
@@ -721,7 +1218,7 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Associate tags with a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging resources</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
@@ -741,7 +1238,7 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Remove one or more tags from a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging resources</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
@@ -756,7 +1253,7 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
     /**
      * <p>
      * Remove one or more tags from a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging resources</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
@@ -775,9 +1272,194 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * Update a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Updates a guardrail with the values you specify.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a <code>name</code> and optional <code>description</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify messages for when the guardrail successfully blocks a prompt or a model response in the
+     * <code>blockedInputMessaging</code> and <code>blockedOutputsMessaging</code> fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify topics for the guardrail to deny in the <code>topicPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html"
+     * >GuardrailTopicConfig</a> object in the <code>topicsConfig</code> list pertains to one topic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Give a <code>name</code> and <code>description</code> so that the guardrail can properly identify the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>DENY</code> in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Provide up to five prompts that you would categorize as belonging to the topic in the
+     * <code>examples</code> list.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
+     * <code>contentPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a> object in the <code>filtersConfig</code> list pertains to a harmful category.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content filters</a>. For more
+     * information about the fields in a content filter, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify the category in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify the strength of the filter for prompts in the <code>inputStrength</code> field and for model responses in
+     * the <code>strength</code> field of the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) For security, include the ARN of a KMS key in the <code>kmsKeyId</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Attach any tags to the guardrail in the <code>tags</code> object. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateGuardrailRequest
+     * @return A Java Future containing the result of the UpdateGuardrail operation returned by the service.
+     * @sample AmazonBedrockAsync.UpdateGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGuardrailResult> updateGuardrailAsync(UpdateGuardrailRequest updateGuardrailRequest);
+
+    /**
+     * <p>
+     * Updates a guardrail with the values you specify.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a <code>name</code> and optional <code>description</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify messages for when the guardrail successfully blocks a prompt or a model response in the
+     * <code>blockedInputMessaging</code> and <code>blockedOutputsMessaging</code> fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify topics for the guardrail to deny in the <code>topicPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html"
+     * >GuardrailTopicConfig</a> object in the <code>topicsConfig</code> list pertains to one topic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Give a <code>name</code> and <code>description</code> so that the guardrail can properly identify the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>DENY</code> in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Provide up to five prompts that you would categorize as belonging to the topic in the
+     * <code>examples</code> list.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
+     * <code>contentPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a> object in the <code>filtersConfig</code> list pertains to a harmful category.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content filters</a>. For more
+     * information about the fields in a content filter, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify the category in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify the strength of the filter for prompts in the <code>inputStrength</code> field and for model responses in
+     * the <code>strength</code> field of the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) For security, include the ARN of a KMS key in the <code>kmsKeyId</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Attach any tags to the guardrail in the <code>tags</code> object. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateGuardrailRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGuardrail operation returned by the service.
+     * @sample AmazonBedrockAsyncHandler.UpdateGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGuardrailResult> updateGuardrailAsync(UpdateGuardrailRequest updateGuardrailRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGuardrailRequest, UpdateGuardrailResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the name or associated model for a Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param updateProvisionedModelThroughputRequest
@@ -792,9 +1474,9 @@ public interface AmazonBedrockAsync extends AmazonBedrock {
 
     /**
      * <p>
-     * Update a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Updates the name or associated model for a Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param updateProvisionedModelThroughputRequest

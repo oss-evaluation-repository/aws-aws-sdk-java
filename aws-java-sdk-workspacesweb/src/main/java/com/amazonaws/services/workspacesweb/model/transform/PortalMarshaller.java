@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.workspacesweb.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PortalMarshaller {
 
+    private static final MarshallingInfo<Map> ADDITIONALENCRYPTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalEncryptionContext").build();
     private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationType").build();
     private static final MarshallingInfo<String> BROWSERSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -35,10 +39,16 @@ public class PortalMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("browserType").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> CUSTOMERMANAGEDKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerManagedKey").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
     private static final MarshallingInfo<String> IPACCESSSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAccessSettingsArn").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxConcurrentSessions").build();
     private static final MarshallingInfo<String> NETWORKSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkSettingsArn").build();
     private static final MarshallingInfo<String> PORTALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -74,12 +84,16 @@ public class PortalMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(portal.getAdditionalEncryptionContext(), ADDITIONALENCRYPTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(portal.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(portal.getBrowserSettingsArn(), BROWSERSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portal.getBrowserType(), BROWSERTYPE_BINDING);
             protocolMarshaller.marshall(portal.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(portal.getCustomerManagedKey(), CUSTOMERMANAGEDKEY_BINDING);
             protocolMarshaller.marshall(portal.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(portal.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(portal.getIpAccessSettingsArn(), IPACCESSSETTINGSARN_BINDING);
+            protocolMarshaller.marshall(portal.getMaxConcurrentSessions(), MAXCONCURRENTSESSIONS_BINDING);
             protocolMarshaller.marshall(portal.getNetworkSettingsArn(), NETWORKSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portal.getPortalArn(), PORTALARN_BINDING);
             protocolMarshaller.marshall(portal.getPortalEndpoint(), PORTALENDPOINT_BINDING);

@@ -19,8 +19,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Set of fields associated with a provisioned throughput.
+ * A summary of information about a Provisioned Throughput.
  * </p>
+ * <p>
+ * This data type is used in the following API operations:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href=
+ * "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListProvisionedModelThroughputs.html#API_ListProvisionedModelThroughputs_ResponseSyntax"
+ * >ListProvisionedThroughputs response</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ProvisionedModelSummary" target="_top">AWS
  *      API Documentation</a>
@@ -30,84 +42,86 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the provisioned throughput.
+     * The name of the Provisioned Throughput.
      * </p>
      */
     private String provisionedModelName;
     /**
      * <p>
-     * The ARN of the provisioned throughput.
+     * The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * </p>
      */
     private String provisionedModelArn;
     /**
      * <p>
-     * The ARN of the model associated with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model associated with the Provisioned Throughput.
      * </p>
      */
     private String modelArn;
     /**
      * <p>
-     * Desired model ARN.
+     * The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value
+     * differs from the <code>modelArn</code> if updating hasn't completed.
      * </p>
      */
     private String desiredModelArn;
     /**
      * <p>
-     * Foundation model ARN.
+     * The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base
+     * model that the custom model for which the Provisioned Throughput was created was customized.
      * </p>
      */
     private String foundationModelArn;
     /**
      * <p>
-     * The number of model units allocated.
+     * The number of model units allocated to the Provisioned Throughput.
      * </p>
      */
     private Integer modelUnits;
     /**
      * <p>
-     * Desired model units.
+     * The number of model units that was requested to be allocated to the Provisioned Throughput.
      * </p>
      */
     private Integer desiredModelUnits;
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Commitment duration for the provisioned throughput.
+     * The duration for which the Provisioned Throughput was committed.
      * </p>
      */
     private String commitmentDuration;
     /**
      * <p>
-     * Commitment expiration time for the provisioned throughput.
+     * The timestamp for when the commitment term of the Provisioned Throughput expires.
      * </p>
      */
     private java.util.Date commitmentExpirationTime;
     /**
      * <p>
-     * The time that this provisioned throughput was created.
+     * The time that the Provisioned Throughput was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The time that this provisioned throughput was last modified.
+     * The time that the Provisioned Throughput was last modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
 
     /**
      * <p>
-     * The name of the provisioned throughput.
+     * The name of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelName
-     *        The name of the provisioned throughput.
+     *        The name of the Provisioned Throughput.
      */
 
     public void setProvisionedModelName(String provisionedModelName) {
@@ -116,10 +130,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the provisioned throughput.
+     * The name of the Provisioned Throughput.
      * </p>
      * 
-     * @return The name of the provisioned throughput.
+     * @return The name of the Provisioned Throughput.
      */
 
     public String getProvisionedModelName() {
@@ -128,11 +142,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the provisioned throughput.
+     * The name of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelName
-     *        The name of the provisioned throughput.
+     *        The name of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +157,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the provisioned throughput.
+     * The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelArn
-     *        The ARN of the provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the Provisioned Throughput.
      */
 
     public void setProvisionedModelArn(String provisionedModelArn) {
@@ -156,10 +170,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the provisioned throughput.
+     * The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * </p>
      * 
-     * @return The ARN of the provisioned throughput.
+     * @return The Amazon Resource Name (ARN) of the Provisioned Throughput.
      */
 
     public String getProvisionedModelArn() {
@@ -168,11 +182,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the provisioned throughput.
+     * The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelArn
-     *        The ARN of the provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +197,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the model associated with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model associated with the Provisioned Throughput.
      * </p>
      * 
      * @param modelArn
-     *        The ARN of the model associated with this provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the model associated with the Provisioned Throughput.
      */
 
     public void setModelArn(String modelArn) {
@@ -196,10 +210,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the model associated with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model associated with the Provisioned Throughput.
      * </p>
      * 
-     * @return The ARN of the model associated with this provisioned throughput.
+     * @return The Amazon Resource Name (ARN) of the model associated with the Provisioned Throughput.
      */
 
     public String getModelArn() {
@@ -208,11 +222,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN of the model associated with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model associated with the Provisioned Throughput.
      * </p>
      * 
      * @param modelArn
-     *        The ARN of the model associated with this provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the model associated with the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +237,13 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Desired model ARN.
+     * The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value
+     * differs from the <code>modelArn</code> if updating hasn't completed.
      * </p>
      * 
      * @param desiredModelArn
-     *        Desired model ARN.
+     *        The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput.
+     *        This value differs from the <code>modelArn</code> if updating hasn't completed.
      */
 
     public void setDesiredModelArn(String desiredModelArn) {
@@ -236,10 +252,12 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Desired model ARN.
+     * The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value
+     * differs from the <code>modelArn</code> if updating hasn't completed.
      * </p>
      * 
-     * @return Desired model ARN.
+     * @return The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput.
+     *         This value differs from the <code>modelArn</code> if updating hasn't completed.
      */
 
     public String getDesiredModelArn() {
@@ -248,11 +266,13 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Desired model ARN.
+     * The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value
+     * differs from the <code>modelArn</code> if updating hasn't completed.
      * </p>
      * 
      * @param desiredModelArn
-     *        Desired model ARN.
+     *        The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput.
+     *        This value differs from the <code>modelArn</code> if updating hasn't completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,11 +283,13 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Foundation model ARN.
+     * The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base
+     * model that the custom model for which the Provisioned Throughput was created was customized.
      * </p>
      * 
      * @param foundationModelArn
-     *        Foundation model ARN.
+     *        The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of
+     *        the base model that the custom model for which the Provisioned Throughput was created was customized.
      */
 
     public void setFoundationModelArn(String foundationModelArn) {
@@ -276,10 +298,12 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Foundation model ARN.
+     * The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base
+     * model that the custom model for which the Provisioned Throughput was created was customized.
      * </p>
      * 
-     * @return Foundation model ARN.
+     * @return The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of
+     *         the base model that the custom model for which the Provisioned Throughput was created was customized.
      */
 
     public String getFoundationModelArn() {
@@ -288,11 +312,13 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Foundation model ARN.
+     * The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base
+     * model that the custom model for which the Provisioned Throughput was created was customized.
      * </p>
      * 
      * @param foundationModelArn
-     *        Foundation model ARN.
+     *        The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of
+     *        the base model that the custom model for which the Provisioned Throughput was created was customized.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,11 +329,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The number of model units allocated.
+     * The number of model units allocated to the Provisioned Throughput.
      * </p>
      * 
      * @param modelUnits
-     *        The number of model units allocated.
+     *        The number of model units allocated to the Provisioned Throughput.
      */
 
     public void setModelUnits(Integer modelUnits) {
@@ -316,10 +342,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The number of model units allocated.
+     * The number of model units allocated to the Provisioned Throughput.
      * </p>
      * 
-     * @return The number of model units allocated.
+     * @return The number of model units allocated to the Provisioned Throughput.
      */
 
     public Integer getModelUnits() {
@@ -328,11 +354,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The number of model units allocated.
+     * The number of model units allocated to the Provisioned Throughput.
      * </p>
      * 
      * @param modelUnits
-     *        The number of model units allocated.
+     *        The number of model units allocated to the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,11 +369,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Desired model units.
+     * The number of model units that was requested to be allocated to the Provisioned Throughput.
      * </p>
      * 
      * @param desiredModelUnits
-     *        Desired model units.
+     *        The number of model units that was requested to be allocated to the Provisioned Throughput.
      */
 
     public void setDesiredModelUnits(Integer desiredModelUnits) {
@@ -356,10 +382,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Desired model units.
+     * The number of model units that was requested to be allocated to the Provisioned Throughput.
      * </p>
      * 
-     * @return Desired model units.
+     * @return The number of model units that was requested to be allocated to the Provisioned Throughput.
      */
 
     public Integer getDesiredModelUnits() {
@@ -368,11 +394,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Desired model units.
+     * The number of model units that was requested to be allocated to the Provisioned Throughput.
      * </p>
      * 
      * @param desiredModelUnits
-     *        Desired model units.
+     *        The number of model units that was requested to be allocated to the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +409,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      * 
      * @param status
-     *        Status of the provisioned throughput.
+     *        The status of the Provisioned Throughput.
      * @see ProvisionedModelStatus
      */
 
@@ -397,10 +423,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      * 
-     * @return Status of the provisioned throughput.
+     * @return The status of the Provisioned Throughput.
      * @see ProvisionedModelStatus
      */
 
@@ -410,11 +436,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      * 
      * @param status
-     *        Status of the provisioned throughput.
+     *        The status of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisionedModelStatus
      */
@@ -426,11 +452,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      * 
      * @param status
-     *        Status of the provisioned throughput.
+     *        The status of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisionedModelStatus
      */
@@ -442,11 +468,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Commitment duration for the provisioned throughput.
+     * The duration for which the Provisioned Throughput was committed.
      * </p>
      * 
      * @param commitmentDuration
-     *        Commitment duration for the provisioned throughput.
+     *        The duration for which the Provisioned Throughput was committed.
      * @see CommitmentDuration
      */
 
@@ -456,10 +482,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Commitment duration for the provisioned throughput.
+     * The duration for which the Provisioned Throughput was committed.
      * </p>
      * 
-     * @return Commitment duration for the provisioned throughput.
+     * @return The duration for which the Provisioned Throughput was committed.
      * @see CommitmentDuration
      */
 
@@ -469,11 +495,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Commitment duration for the provisioned throughput.
+     * The duration for which the Provisioned Throughput was committed.
      * </p>
      * 
      * @param commitmentDuration
-     *        Commitment duration for the provisioned throughput.
+     *        The duration for which the Provisioned Throughput was committed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommitmentDuration
      */
@@ -485,11 +511,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Commitment duration for the provisioned throughput.
+     * The duration for which the Provisioned Throughput was committed.
      * </p>
      * 
      * @param commitmentDuration
-     *        Commitment duration for the provisioned throughput.
+     *        The duration for which the Provisioned Throughput was committed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommitmentDuration
      */
@@ -501,11 +527,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Commitment expiration time for the provisioned throughput.
+     * The timestamp for when the commitment term of the Provisioned Throughput expires.
      * </p>
      * 
      * @param commitmentExpirationTime
-     *        Commitment expiration time for the provisioned throughput.
+     *        The timestamp for when the commitment term of the Provisioned Throughput expires.
      */
 
     public void setCommitmentExpirationTime(java.util.Date commitmentExpirationTime) {
@@ -514,10 +540,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Commitment expiration time for the provisioned throughput.
+     * The timestamp for when the commitment term of the Provisioned Throughput expires.
      * </p>
      * 
-     * @return Commitment expiration time for the provisioned throughput.
+     * @return The timestamp for when the commitment term of the Provisioned Throughput expires.
      */
 
     public java.util.Date getCommitmentExpirationTime() {
@@ -526,11 +552,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Commitment expiration time for the provisioned throughput.
+     * The timestamp for when the commitment term of the Provisioned Throughput expires.
      * </p>
      * 
      * @param commitmentExpirationTime
-     *        Commitment expiration time for the provisioned throughput.
+     *        The timestamp for when the commitment term of the Provisioned Throughput expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -541,11 +567,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time that this provisioned throughput was created.
+     * The time that the Provisioned Throughput was created.
      * </p>
      * 
      * @param creationTime
-     *        The time that this provisioned throughput was created.
+     *        The time that the Provisioned Throughput was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -554,10 +580,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time that this provisioned throughput was created.
+     * The time that the Provisioned Throughput was created.
      * </p>
      * 
-     * @return The time that this provisioned throughput was created.
+     * @return The time that the Provisioned Throughput was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -566,11 +592,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time that this provisioned throughput was created.
+     * The time that the Provisioned Throughput was created.
      * </p>
      * 
      * @param creationTime
-     *        The time that this provisioned throughput was created.
+     *        The time that the Provisioned Throughput was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -581,11 +607,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time that this provisioned throughput was last modified.
+     * The time that the Provisioned Throughput was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The time that this provisioned throughput was last modified.
+     *        The time that the Provisioned Throughput was last modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -594,10 +620,10 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time that this provisioned throughput was last modified.
+     * The time that the Provisioned Throughput was last modified.
      * </p>
      * 
-     * @return The time that this provisioned throughput was last modified.
+     * @return The time that the Provisioned Throughput was last modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -606,11 +632,11 @@ public class ProvisionedModelSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time that this provisioned throughput was last modified.
+     * The time that the Provisioned Throughput was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The time that this provisioned throughput was last modified.
+     *        The time that the Provisioned Throughput was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

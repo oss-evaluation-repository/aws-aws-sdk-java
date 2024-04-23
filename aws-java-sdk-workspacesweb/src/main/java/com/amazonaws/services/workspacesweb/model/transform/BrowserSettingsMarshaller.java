@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.workspacesweb.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -28,12 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class BrowserSettingsMarshaller {
 
+    private static final MarshallingInfo<Map> ADDITIONALENCRYPTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalEncryptionContext").build();
     private static final MarshallingInfo<List> ASSOCIATEDPORTALARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedPortalArns").build();
     private static final MarshallingInfo<String> BROWSERPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("browserPolicy").build();
     private static final MarshallingInfo<String> BROWSERSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("browserSettingsArn").build();
+    private static final MarshallingInfo<String> CUSTOMERMANAGEDKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerManagedKey").build();
 
     private static final BrowserSettingsMarshaller instance = new BrowserSettingsMarshaller();
 
@@ -51,9 +56,11 @@ public class BrowserSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(browserSettings.getAdditionalEncryptionContext(), ADDITIONALENCRYPTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(browserSettings.getAssociatedPortalArns(), ASSOCIATEDPORTALARNS_BINDING);
             protocolMarshaller.marshall(browserSettings.getBrowserPolicy(), BROWSERPOLICY_BINDING);
             protocolMarshaller.marshall(browserSettings.getBrowserSettingsArn(), BROWSERSETTINGSARN_BINDING);
+            protocolMarshaller.marshall(browserSettings.getCustomerManagedKey(), CUSTOMERMANAGEDKEY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

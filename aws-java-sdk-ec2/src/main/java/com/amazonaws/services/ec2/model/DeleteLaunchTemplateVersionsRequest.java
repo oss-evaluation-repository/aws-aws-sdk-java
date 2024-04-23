@@ -31,7 +31,7 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * The ID of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      */
     private String launchTemplateId;
@@ -40,7 +40,7 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * The name of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      */
     private String launchTemplateName;
@@ -57,14 +57,13 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * The ID of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @param launchTemplateId
      *        The ID of the launch template.</p>
      *        <p>
-     *        You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     *        both.
+     *        You must specify either the launch template ID or the launch template name, but not both.
      */
 
     public void setLaunchTemplateId(String launchTemplateId) {
@@ -76,13 +75,12 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * The ID of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @return The ID of the launch template.</p>
      *         <p>
-     *         You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     *         both.
+     *         You must specify either the launch template ID or the launch template name, but not both.
      */
 
     public String getLaunchTemplateId() {
@@ -94,14 +92,13 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * The ID of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @param launchTemplateId
      *        The ID of the launch template.</p>
      *        <p>
-     *        You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not
-     *        both.
+     *        You must specify either the launch template ID or the launch template name, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,14 +112,13 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * The name of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @param launchTemplateName
      *        The name of the launch template.</p>
      *        <p>
-     *        You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     *        both.
+     *        You must specify either the launch template ID or the launch template name, but not both.
      */
 
     public void setLaunchTemplateName(String launchTemplateName) {
@@ -134,13 +130,12 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * The name of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @return The name of the launch template.</p>
      *         <p>
-     *         You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     *         both.
+     *         You must specify either the launch template ID or the launch template name, but not both.
      */
 
     public String getLaunchTemplateName() {
@@ -152,14 +147,13 @@ public class DeleteLaunchTemplateVersionsRequest extends AmazonWebServiceRequest
      * The name of the launch template.
      * </p>
      * <p>
-     * You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.
+     * You must specify either the launch template ID or the launch template name, but not both.
      * </p>
      * 
      * @param launchTemplateName
      *        The name of the launch template.</p>
      *        <p>
-     *        You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not
-     *        both.
+     *        You must specify either the launch template ID or the launch template name, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -14337,6 +14337,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisableImageDeregistrationProtectionResult> disableImageDeregistrationProtectionAsync(
+            DisableImageDeregistrationProtectionRequest request) {
+
+        return disableImageDeregistrationProtectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableImageDeregistrationProtectionResult> disableImageDeregistrationProtectionAsync(
+            final DisableImageDeregistrationProtectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableImageDeregistrationProtectionRequest, DisableImageDeregistrationProtectionResult> asyncHandler) {
+        final DisableImageDeregistrationProtectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableImageDeregistrationProtectionResult>() {
+            @Override
+            public DisableImageDeregistrationProtectionResult call() throws Exception {
+                DisableImageDeregistrationProtectionResult result = null;
+
+                try {
+                    result = executeDisableImageDeregistrationProtection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableIpamOrganizationAdminAccountResult> disableIpamOrganizationAdminAccountAsync(
             DisableIpamOrganizationAdminAccountRequest request) {
 
@@ -15337,6 +15372,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeEnableImageDeprecation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableImageDeregistrationProtectionResult> enableImageDeregistrationProtectionAsync(
+            EnableImageDeregistrationProtectionRequest request) {
+
+        return enableImageDeregistrationProtectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableImageDeregistrationProtectionResult> enableImageDeregistrationProtectionAsync(
+            final EnableImageDeregistrationProtectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableImageDeregistrationProtectionRequest, EnableImageDeregistrationProtectionResult> asyncHandler) {
+        final EnableImageDeregistrationProtectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableImageDeregistrationProtectionResult>() {
+            @Override
+            public EnableImageDeregistrationProtectionResult call() throws Exception {
+                EnableImageDeregistrationProtectionResult result = null;
+
+                try {
+                    result = executeEnableImageDeregistrationProtection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

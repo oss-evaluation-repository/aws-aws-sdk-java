@@ -27,9 +27,11 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Input data in the format specified in the content-type request header. To see the format and content of this
-     * field for different models, refer to <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.
+     * The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see
+     * the format and content of the request and response bodies for different models, refer to <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For
+     * more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+     * inference</a> in the Bedrock User Guide.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -47,16 +49,85 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String accept;
     /**
      * <p>
-     * Identifier of the model.
+     * The unique identifier of the model to invoke to run inference.
      * </p>
+     * <p>
+     * The <code>modelId</code> to provide depends on the type of model that you use:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base
+     * model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned
+     * Throughput</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting
+     * provisioned model. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in
+     * Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String modelId;
+    /**
+     * <p>
+     * Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * </p>
+     */
+    private String trace;
+    /**
+     * <p>
+     * The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is
+     * applied to the invocation.
+     * </p>
+     * <p>
+     * An error will be thrown in the following situations.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in
+     * the request body.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String guardrailIdentifier;
+    /**
+     * <p>
+     * The version number for the guardrail. The value can also be <code>DRAFT</code>.
+     * </p>
+     */
+    private String guardrailVersion;
 
     /**
      * <p>
-     * Input data in the format specified in the content-type request header. To see the format and content of this
-     * field for different models, refer to <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.
+     * The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see
+     * the format and content of the request and response bodies for different models, refer to <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For
+     * more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+     * inference</a> in the Bedrock User Guide.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -70,10 +141,12 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param body
-     *        Input data in the format specified in the content-type request header. To see the format and content of
-     *        this field for different models, refer to <a
+     *        The prompt and inference parameters in the format specified in the <code>contentType</code> in the header.
+     *        To see the format and content of the request and response bodies for different models, refer to <a
      *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
-     *        parameters</a>.
+     *        parameters</a>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the
+     *        Bedrock User Guide.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -82,9 +155,11 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Input data in the format specified in the content-type request header. To see the format and content of this
-     * field for different models, refer to <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.
+     * The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see
+     * the format and content of the request and response bodies for different models, refer to <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For
+     * more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+     * inference</a> in the Bedrock User Guide.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -94,10 +169,12 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * {@code position}.
      * </p>
      * 
-     * @return Input data in the format specified in the content-type request header. To see the format and content of
-     *         this field for different models, refer to <a
-     *         href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
-     *         parameters</a>.
+     * @return The prompt and inference parameters in the format specified in the <code>contentType</code> in the
+     *         header. To see the format and content of the request and response bodies for different models, refer to
+     *         <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+     *         parameters</a>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the
+     *         Bedrock User Guide.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -106,9 +183,11 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Input data in the format specified in the content-type request header. To see the format and content of this
-     * field for different models, refer to <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>.
+     * The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. To see
+     * the format and content of the request and response bodies for different models, refer to <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For
+     * more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run
+     * inference</a> in the Bedrock User Guide.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -122,10 +201,12 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param body
-     *        Input data in the format specified in the content-type request header. To see the format and content of
-     *        this field for different models, refer to <a
+     *        The prompt and inference parameters in the format specified in the <code>contentType</code> in the header.
+     *        To see the format and content of the request and response bodies for different models, refer to <a
      *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
-     *        parameters</a>.
+     *        parameters</a>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the
+     *        Bedrock User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +300,64 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifier of the model.
+     * The unique identifier of the model to invoke to run inference.
      * </p>
+     * <p>
+     * The <code>modelId</code> to provide depends on the type of model that you use:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base
+     * model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned
+     * Throughput</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting
+     * provisioned model. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in
+     * Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param modelId
-     *        Identifier of the model.
+     *        The unique identifier of the model to invoke to run inference.</p>
+     *        <p>
+     *        The <code>modelId</code> to provide depends on the type of model that you use:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock
+     *        base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see
+     *        <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a
+     *        Provisioned Throughput</a> in the Amazon Bedrock User Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the
+     *        resulting provisioned model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom
+     *        model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+     *        </p>
+     *        </li>
      */
 
     public void setModelId(String modelId) {
@@ -232,10 +366,63 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifier of the model.
+     * The unique identifier of the model to invoke to run inference.
      * </p>
+     * <p>
+     * The <code>modelId</code> to provide depends on the type of model that you use:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base
+     * model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned
+     * Throughput</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting
+     * provisioned model. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in
+     * Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Identifier of the model.
+     * @return The unique identifier of the model to invoke to run inference.</p>
+     *         <p>
+     *         The <code>modelId</code> to provide depends on the type of model that you use:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a
+     *         href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock
+     *         base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see
+     *         <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a
+     *         Provisioned Throughput</a> in the Amazon Bedrock User Guide.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the
+     *         resulting provisioned model. For more information, see <a
+     *         href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom
+     *         model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+     *         </p>
+     *         </li>
      */
 
     public String getModelId() {
@@ -244,16 +431,337 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifier of the model.
+     * The unique identifier of the model to invoke to run inference.
      * </p>
+     * <p>
+     * The <code>modelId</code> to provide depends on the type of model that you use:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock base
+     * model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a Provisioned
+     * Throughput</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting
+     * provisioned model. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom model in
+     * Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param modelId
-     *        Identifier of the model.
+     *        The unique identifier of the model to invoke to run inference.</p>
+     *        <p>
+     *        The <code>modelId</code> to provide depends on the type of model that you use:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon Bedrock
+     *        base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see
+     *        <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run inference using a
+     *        Provisioned Throughput</a> in the Amazon Bedrock User Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the
+     *        resulting provisioned model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use a custom
+     *        model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvokeModelRequest withModelId(String modelId) {
         setModelId(modelId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * </p>
+     * 
+     * @param trace
+     *        Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * @see Trace
+     */
+
+    public void setTrace(String trace) {
+        this.trace = trace;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * </p>
+     * 
+     * @return Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * @see Trace
+     */
+
+    public String getTrace() {
+        return this.trace;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * </p>
+     * 
+     * @param trace
+     *        Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Trace
+     */
+
+    public InvokeModelRequest withTrace(String trace) {
+        setTrace(trace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * </p>
+     * 
+     * @param trace
+     *        Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Trace
+     */
+
+    public InvokeModelRequest withTrace(Trace trace) {
+        this.trace = trace.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is
+     * applied to the invocation.
+     * </p>
+     * <p>
+     * An error will be thrown in the following situations.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in
+     * the request body.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param guardrailIdentifier
+     *        The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is
+     *        applied to the invocation.</p>
+     *        <p>
+     *        An error will be thrown in the following situations.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code>
+     *        field in the request body.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.
+     *        </p>
+     *        </li>
+     */
+
+    public void setGuardrailIdentifier(String guardrailIdentifier) {
+        this.guardrailIdentifier = guardrailIdentifier;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is
+     * applied to the invocation.
+     * </p>
+     * <p>
+     * An error will be thrown in the following situations.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in
+     * the request body.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail
+     *         is applied to the invocation.</p>
+     *         <p>
+     *         An error will be thrown in the following situations.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code>
+     *         field in the request body.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.
+     *         </p>
+     *         </li>
+     */
+
+    public String getGuardrailIdentifier() {
+        return this.guardrailIdentifier;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is
+     * applied to the invocation.
+     * </p>
+     * <p>
+     * An error will be thrown in the following situations.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code> field in
+     * the request body.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param guardrailIdentifier
+     *        The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is
+     *        applied to the invocation.</p>
+     *        <p>
+     *        An error will be thrown in the following situations.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You don't provide a guardrail identifier but you specify the <code>amazon-bedrock-guardrailConfig</code>
+     *        field in the request body.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You enable the guardrail but the <code>contentType</code> isn't <code>application/json</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You provide a guardrail identifier, but <code>guardrailVersion</code> isn't specified.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeModelRequest withGuardrailIdentifier(String guardrailIdentifier) {
+        setGuardrailIdentifier(guardrailIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version number for the guardrail. The value can also be <code>DRAFT</code>.
+     * </p>
+     * 
+     * @param guardrailVersion
+     *        The version number for the guardrail. The value can also be <code>DRAFT</code>.
+     */
+
+    public void setGuardrailVersion(String guardrailVersion) {
+        this.guardrailVersion = guardrailVersion;
+    }
+
+    /**
+     * <p>
+     * The version number for the guardrail. The value can also be <code>DRAFT</code>.
+     * </p>
+     * 
+     * @return The version number for the guardrail. The value can also be <code>DRAFT</code>.
+     */
+
+    public String getGuardrailVersion() {
+        return this.guardrailVersion;
+    }
+
+    /**
+     * <p>
+     * The version number for the guardrail. The value can also be <code>DRAFT</code>.
+     * </p>
+     * 
+     * @param guardrailVersion
+     *        The version number for the guardrail. The value can also be <code>DRAFT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeModelRequest withGuardrailVersion(String guardrailVersion) {
+        setGuardrailVersion(guardrailVersion);
         return this;
     }
 
@@ -276,7 +784,13 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAccept() != null)
             sb.append("Accept: ").append(getAccept()).append(",");
         if (getModelId() != null)
-            sb.append("ModelId: ").append(getModelId());
+            sb.append("ModelId: ").append(getModelId()).append(",");
+        if (getTrace() != null)
+            sb.append("Trace: ").append(getTrace()).append(",");
+        if (getGuardrailIdentifier() != null)
+            sb.append("GuardrailIdentifier: ").append(getGuardrailIdentifier()).append(",");
+        if (getGuardrailVersion() != null)
+            sb.append("GuardrailVersion: ").append(getGuardrailVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -307,6 +821,18 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getModelId() != null && other.getModelId().equals(this.getModelId()) == false)
             return false;
+        if (other.getTrace() == null ^ this.getTrace() == null)
+            return false;
+        if (other.getTrace() != null && other.getTrace().equals(this.getTrace()) == false)
+            return false;
+        if (other.getGuardrailIdentifier() == null ^ this.getGuardrailIdentifier() == null)
+            return false;
+        if (other.getGuardrailIdentifier() != null && other.getGuardrailIdentifier().equals(this.getGuardrailIdentifier()) == false)
+            return false;
+        if (other.getGuardrailVersion() == null ^ this.getGuardrailVersion() == null)
+            return false;
+        if (other.getGuardrailVersion() != null && other.getGuardrailVersion().equals(this.getGuardrailVersion()) == false)
+            return false;
         return true;
     }
 
@@ -319,6 +845,9 @@ public class InvokeModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getAccept() == null) ? 0 : getAccept().hashCode());
         hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
+        hashCode = prime * hashCode + ((getTrace() == null) ? 0 : getTrace().hashCode());
+        hashCode = prime * hashCode + ((getGuardrailIdentifier() == null) ? 0 : getGuardrailIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getGuardrailVersion() == null) ? 0 : getGuardrailVersion().hashCode());
         return hashCode;
     }
 

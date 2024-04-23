@@ -48,6 +48,11 @@ public class BrowserSettingsJsonUnmarshaller implements Unmarshaller<BrowserSett
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalEncryptionContext", targetDepth)) {
+                    context.nextToken();
+                    browserSettings.setAdditionalEncryptionContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("associatedPortalArns", targetDepth)) {
                     context.nextToken();
                     browserSettings.setAssociatedPortalArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -61,6 +66,10 @@ public class BrowserSettingsJsonUnmarshaller implements Unmarshaller<BrowserSett
                 if (context.testExpression("browserSettingsArn", targetDepth)) {
                     context.nextToken();
                     browserSettings.setBrowserSettingsArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("customerManagedKey", targetDepth)) {
+                    context.nextToken();
+                    browserSettings.setCustomerManagedKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

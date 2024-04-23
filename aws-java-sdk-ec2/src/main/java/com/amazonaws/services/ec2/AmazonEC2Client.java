@@ -4569,11 +4569,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </li>
      * <li>
      * <p>
-     * <code>ipv6-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how frequently a
-     * running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values are between 140
-     * and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time is 140 seconds.
-     * If you use long-term addressing for EC2 instances, you can increase the lease time and avoid frequent lease
-     * renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
+     * <code>ipv6-address-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how
+     * frequently a running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values
+     * are between 140 and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time
+     * is 140 seconds. If you use long-term addressing for EC2 instances, you can increase the lease time and avoid
+     * frequent lease renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
      * </p>
      * </li>
      * </ul>
@@ -5563,8 +5563,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * launch template</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you want to clone an existing launch template as the basis for creating a new launch template, you can use the
-     * Amazon EC2 console. The API, SDKs, and CLI do not support cloning a template. For more information, see <a href=
+     * To clone an existing launch template as the basis for a new launch template, use the Amazon EC2 console. The API,
+     * SDKs, and CLI do not support cloning a template. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template"
      * >Create a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -5623,16 +5623,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a new version of a launch template. You can specify an existing version of launch template from which to
-     * base the new version.
+     * Creates a new version of a launch template. You must specify an existing launch template, either by name or ID.
+     * You can determine whether the new version inherits parameters from a source version, and add or overwrite
+     * parameters as needed.
      * </p>
      * <p>
-     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * Launch template versions are numbered in the order in which they are created. You can't specify, change, or
      * replace the numbering of launch template versions.
      * </p>
      * <p>
      * Launch templates are immutable; after you create a launch template, you can't modify it. Instead, you can create
-     * a new version of the launch template that includes any changes you require.
+     * a new version of the launch template that includes the changes that you require.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -16861,7 +16862,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
      * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -17719,7 +17725,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * fails. If you describe instances and specify only instance IDs that are in an unaffected zone, the call works
      * normally.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -19493,6 +19504,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * following filters: <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>,
      * <code>private-ip-address</code>, <code>private-dns-name</code>, <code>subnet-id</code>, or <code>vpc-id</code>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeNetworkInterfacesRequest
      *        Contains the parameters for DescribeNetworkInterfaces.
@@ -20816,6 +20833,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the
      * <i>Amazon EBS User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeSnapshotsRequest
      * @return Result of the DescribeSnapshots operation returned by the service.
@@ -21483,7 +21506,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -22817,7 +22845,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon EBS volumes</a> in the <i>Amazon
      * EBS User Guide</i>.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
      * <p>
      * The order of the elements in the response, including those within nested structures, might vary. Applications
      * should not assume the elements appear in a particular order.
@@ -24620,6 +24653,74 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableImageDeprecationResult> responseHandler = new StaxResponseHandler<DisableImageDeprecationResult>(
                     new DisableImageDeprecationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables deregistration protection for an AMI. When deregistration protection is disabled, the AMI can be
+     * deregistered.
+     * </p>
+     * <p>
+     * If you chose to include a 24-hour cooldown period when you enabled deregistration protection for the AMI, then,
+     * when you disable deregistration protection, you won’t immediately be able to deregister the AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeregistrationProtectionRequest
+     * @return Result of the DisableImageDeregistrationProtection operation returned by the service.
+     * @sample AmazonEC2.DisableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisableImageDeregistrationProtectionResult disableImageDeregistrationProtection(DisableImageDeregistrationProtectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableImageDeregistrationProtection(request);
+    }
+
+    @SdkInternalApi
+    final DisableImageDeregistrationProtectionResult executeDisableImageDeregistrationProtection(
+            DisableImageDeregistrationProtectionRequest disableImageDeregistrationProtectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableImageDeregistrationProtectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableImageDeregistrationProtectionRequest> request = null;
+        Response<DisableImageDeregistrationProtectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableImageDeregistrationProtectionRequestMarshaller().marshall(super
+                        .beforeMarshalling(disableImageDeregistrationProtectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableImageDeregistrationProtection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableImageDeregistrationProtectionResult> responseHandler = new StaxResponseHandler<DisableImageDeregistrationProtectionResult>(
+                    new DisableImageDeregistrationProtectionResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -26490,6 +26591,74 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableImageDeprecationResult> responseHandler = new StaxResponseHandler<EnableImageDeprecationResult>(
                     new EnableImageDeprecationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables deregistration protection for an AMI. When deregistration protection is enabled, the AMI can't be
+     * deregistered.
+     * </p>
+     * <p>
+     * To allow the AMI to be deregistered, you must first disable deregistration protection using
+     * <a>DisableImageDeregistrationProtection</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeregistrationProtectionRequest
+     * @return Result of the EnableImageDeregistrationProtection operation returned by the service.
+     * @sample AmazonEC2.EnableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EnableImageDeregistrationProtectionResult enableImageDeregistrationProtection(EnableImageDeregistrationProtectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableImageDeregistrationProtection(request);
+    }
+
+    @SdkInternalApi
+    final EnableImageDeregistrationProtectionResult executeEnableImageDeregistrationProtection(
+            EnableImageDeregistrationProtectionRequest enableImageDeregistrationProtectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableImageDeregistrationProtectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableImageDeregistrationProtectionRequest> request = null;
+        Response<EnableImageDeregistrationProtectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableImageDeregistrationProtectionRequestMarshaller().marshall(super
+                        .beforeMarshalling(enableImageDeregistrationProtectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableImageDeregistrationProtection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableImageDeregistrationProtectionResult> responseHandler = new StaxResponseHandler<EnableImageDeregistrationProtectionResult>(
+                    new EnableImageDeregistrationProtectionResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

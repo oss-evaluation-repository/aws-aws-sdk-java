@@ -30,13 +30,13 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the customization job.
+     * Amazon Resource Name (ARN) of the customization job.
      * </p>
      */
     private String jobArn;
     /**
      * <p>
-     * ARN of the base model.
+     * Amazon Resource Name (ARN) of the base model.
      * </p>
      */
     private String baseModelArn;
@@ -72,7 +72,7 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
     private java.util.Date endTime;
     /**
      * <p>
-     * ARN of the custom model.
+     * Amazon Resource Name (ARN) of the custom model.
      * </p>
      */
     private String customModelArn;
@@ -93,11 +93,11 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the customization job.
+     * Amazon Resource Name (ARN) of the customization job.
      * </p>
      * 
      * @param jobArn
-     *        ARN of the customization job.
+     *        Amazon Resource Name (ARN) of the customization job.
      */
 
     public void setJobArn(String jobArn) {
@@ -106,10 +106,10 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the customization job.
+     * Amazon Resource Name (ARN) of the customization job.
      * </p>
      * 
-     * @return ARN of the customization job.
+     * @return Amazon Resource Name (ARN) of the customization job.
      */
 
     public String getJobArn() {
@@ -118,11 +118,11 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the customization job.
+     * Amazon Resource Name (ARN) of the customization job.
      * </p>
      * 
      * @param jobArn
-     *        ARN of the customization job.
+     *        Amazon Resource Name (ARN) of the customization job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the base model.
+     * Amazon Resource Name (ARN) of the base model.
      * </p>
      * 
      * @param baseModelArn
-     *        ARN of the base model.
+     *        Amazon Resource Name (ARN) of the base model.
      */
 
     public void setBaseModelArn(String baseModelArn) {
@@ -146,10 +146,10 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the base model.
+     * Amazon Resource Name (ARN) of the base model.
      * </p>
      * 
-     * @return ARN of the base model.
+     * @return Amazon Resource Name (ARN) of the base model.
      */
 
     public String getBaseModelArn() {
@@ -158,11 +158,11 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the base model.
+     * Amazon Resource Name (ARN) of the base model.
      * </p>
      * 
      * @param baseModelArn
-     *        ARN of the base model.
+     *        Amazon Resource Name (ARN) of the base model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,11 +392,11 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the custom model.
+     * Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
      * @param customModelArn
-     *        ARN of the custom model.
+     *        Amazon Resource Name (ARN) of the custom model.
      */
 
     public void setCustomModelArn(String customModelArn) {
@@ -405,10 +405,10 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the custom model.
+     * Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
-     * @return ARN of the custom model.
+     * @return Amazon Resource Name (ARN) of the custom model.
      */
 
     public String getCustomModelArn() {
@@ -417,11 +417,11 @@ public class ModelCustomizationJobSummary implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ARN of the custom model.
+     * Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
      * @param customModelArn
-     *        ARN of the custom model.
+     *        Amazon Resource Name (ARN) of the custom model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

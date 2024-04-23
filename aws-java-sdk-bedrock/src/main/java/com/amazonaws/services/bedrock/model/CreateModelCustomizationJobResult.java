@@ -25,18 +25,18 @@ public class CreateModelCustomizationJobResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * ARN of the fine tuning job
+     * Amazon Resource Name (ARN) of the fine tuning job
      * </p>
      */
     private String jobArn;
 
     /**
      * <p>
-     * ARN of the fine tuning job
+     * Amazon Resource Name (ARN) of the fine tuning job
      * </p>
      * 
      * @param jobArn
-     *        ARN of the fine tuning job
+     *        Amazon Resource Name (ARN) of the fine tuning job
      */
 
     public void setJobArn(String jobArn) {
@@ -45,10 +45,10 @@ public class CreateModelCustomizationJobResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * ARN of the fine tuning job
+     * Amazon Resource Name (ARN) of the fine tuning job
      * </p>
      * 
-     * @return ARN of the fine tuning job
+     * @return Amazon Resource Name (ARN) of the fine tuning job
      */
 
     public String getJobArn() {
@@ -57,11 +57,11 @@ public class CreateModelCustomizationJobResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * ARN of the fine tuning job
+     * Amazon Resource Name (ARN) of the fine tuning job
      * </p>
      * 
      * @param jobArn
-     *        ARN of the fine tuning job
+     *        Amazon Resource Name (ARN) of the fine tuning job
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

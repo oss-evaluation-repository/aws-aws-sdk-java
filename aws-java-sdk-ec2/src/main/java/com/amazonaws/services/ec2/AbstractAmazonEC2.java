@@ -2233,6 +2233,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DisableImageDeregistrationProtectionResult disableImageDeregistrationProtection(DisableImageDeregistrationProtectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableIpamOrganizationAdminAccountResult disableIpamOrganizationAdminAccount(DisableIpamOrganizationAdminAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2380,6 +2385,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public EnableImageDeprecationResult enableImageDeprecation(EnableImageDeprecationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableImageDeregistrationProtectionResult enableImageDeregistrationProtection(EnableImageDeregistrationProtectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

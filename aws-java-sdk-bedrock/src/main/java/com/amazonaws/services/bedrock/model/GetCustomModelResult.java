@@ -25,7 +25,7 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * ARN associated with this model.
+     * Amazon Resource Name (ARN) associated with this model.
      * </p>
      */
     private String modelArn;
@@ -43,13 +43,13 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
     private String jobName;
     /**
      * <p>
-     * Job ARN associated with this model.
+     * Job Amazon Resource Name (ARN) associated with this model.
      * </p>
      */
     private String jobArn;
     /**
      * <p>
-     * ARN of the base model.
+     * Amazon Resource Name (ARN) of the base model.
      * </p>
      */
     private String baseModelArn;
@@ -67,17 +67,23 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
     private String modelKmsKeyArn;
     /**
      * <p>
-     * Hyperparameter values associated with this model.
+     * Hyperparameter values associated with this model. For details on the format for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     * hyperparameters</a>.
      * </p>
      */
     private java.util.Map<String, String> hyperParameters;
     /**
      * <p>
-     * Information about the training dataset.
+     * Contains information about the training dataset.
      * </p>
      */
     private TrainingDataConfig trainingDataConfig;
-
+    /**
+     * <p>
+     * Contains information about the validation dataset.
+     * </p>
+     */
     private ValidationDataConfig validationDataConfig;
     /**
      * <p>
@@ -87,7 +93,7 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
     private OutputDataConfig outputDataConfig;
     /**
      * <p>
-     * The training metrics from the job creation.
+     * Contains training metrics from the job creation.
      * </p>
      */
     private TrainingMetrics trainingMetrics;
@@ -106,11 +112,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * ARN associated with this model.
+     * Amazon Resource Name (ARN) associated with this model.
      * </p>
      * 
      * @param modelArn
-     *        ARN associated with this model.
+     *        Amazon Resource Name (ARN) associated with this model.
      */
 
     public void setModelArn(String modelArn) {
@@ -119,10 +125,10 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * ARN associated with this model.
+     * Amazon Resource Name (ARN) associated with this model.
      * </p>
      * 
-     * @return ARN associated with this model.
+     * @return Amazon Resource Name (ARN) associated with this model.
      */
 
     public String getModelArn() {
@@ -131,11 +137,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * ARN associated with this model.
+     * Amazon Resource Name (ARN) associated with this model.
      * </p>
      * 
      * @param modelArn
-     *        ARN associated with this model.
+     *        Amazon Resource Name (ARN) associated with this model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +232,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Job ARN associated with this model.
+     * Job Amazon Resource Name (ARN) associated with this model.
      * </p>
      * 
      * @param jobArn
-     *        Job ARN associated with this model.
+     *        Job Amazon Resource Name (ARN) associated with this model.
      */
 
     public void setJobArn(String jobArn) {
@@ -239,10 +245,10 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Job ARN associated with this model.
+     * Job Amazon Resource Name (ARN) associated with this model.
      * </p>
      * 
-     * @return Job ARN associated with this model.
+     * @return Job Amazon Resource Name (ARN) associated with this model.
      */
 
     public String getJobArn() {
@@ -251,11 +257,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Job ARN associated with this model.
+     * Job Amazon Resource Name (ARN) associated with this model.
      * </p>
      * 
      * @param jobArn
-     *        Job ARN associated with this model.
+     *        Job Amazon Resource Name (ARN) associated with this model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +272,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * ARN of the base model.
+     * Amazon Resource Name (ARN) of the base model.
      * </p>
      * 
      * @param baseModelArn
-     *        ARN of the base model.
+     *        Amazon Resource Name (ARN) of the base model.
      */
 
     public void setBaseModelArn(String baseModelArn) {
@@ -279,10 +285,10 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * ARN of the base model.
+     * Amazon Resource Name (ARN) of the base model.
      * </p>
      * 
-     * @return ARN of the base model.
+     * @return Amazon Resource Name (ARN) of the base model.
      */
 
     public String getBaseModelArn() {
@@ -291,11 +297,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * ARN of the base model.
+     * Amazon Resource Name (ARN) of the base model.
      * </p>
      * 
      * @param baseModelArn
-     *        ARN of the base model.
+     *        Amazon Resource Name (ARN) of the base model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,10 +411,14 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Hyperparameter values associated with this model.
+     * Hyperparameter values associated with this model. For details on the format for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     * hyperparameters</a>.
      * </p>
      * 
-     * @return Hyperparameter values associated with this model.
+     * @return Hyperparameter values associated with this model. For details on the format for different models, see <a
+     *         href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     *         hyperparameters</a>.
      */
 
     public java.util.Map<String, String> getHyperParameters() {
@@ -417,11 +427,15 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Hyperparameter values associated with this model.
+     * Hyperparameter values associated with this model. For details on the format for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     * hyperparameters</a>.
      * </p>
      * 
      * @param hyperParameters
-     *        Hyperparameter values associated with this model.
+     *        Hyperparameter values associated with this model. For details on the format for different models, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     *        hyperparameters</a>.
      */
 
     public void setHyperParameters(java.util.Map<String, String> hyperParameters) {
@@ -430,11 +444,15 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Hyperparameter values associated with this model.
+     * Hyperparameter values associated with this model. For details on the format for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     * hyperparameters</a>.
      * </p>
      * 
      * @param hyperParameters
-     *        Hyperparameter values associated with this model.
+     *        Hyperparameter values associated with this model. For details on the format for different models, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     *        hyperparameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,11 +491,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about the training dataset.
+     * Contains information about the training dataset.
      * </p>
      * 
      * @param trainingDataConfig
-     *        Information about the training dataset.
+     *        Contains information about the training dataset.
      */
 
     public void setTrainingDataConfig(TrainingDataConfig trainingDataConfig) {
@@ -486,10 +504,10 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about the training dataset.
+     * Contains information about the training dataset.
      * </p>
      * 
-     * @return Information about the training dataset.
+     * @return Contains information about the training dataset.
      */
 
     public TrainingDataConfig getTrainingDataConfig() {
@@ -498,11 +516,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Information about the training dataset.
+     * Contains information about the training dataset.
      * </p>
      * 
      * @param trainingDataConfig
-     *        Information about the training dataset.
+     *        Contains information about the training dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,7 +530,12 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Contains information about the validation dataset.
+     * </p>
+     * 
      * @param validationDataConfig
+     *        Contains information about the validation dataset.
      */
 
     public void setValidationDataConfig(ValidationDataConfig validationDataConfig) {
@@ -520,7 +543,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * <p>
+     * Contains information about the validation dataset.
+     * </p>
+     * 
+     * @return Contains information about the validation dataset.
      */
 
     public ValidationDataConfig getValidationDataConfig() {
@@ -528,7 +555,12 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Contains information about the validation dataset.
+     * </p>
+     * 
      * @param validationDataConfig
+     *        Contains information about the validation dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -579,11 +611,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The training metrics from the job creation.
+     * Contains training metrics from the job creation.
      * </p>
      * 
      * @param trainingMetrics
-     *        The training metrics from the job creation.
+     *        Contains training metrics from the job creation.
      */
 
     public void setTrainingMetrics(TrainingMetrics trainingMetrics) {
@@ -592,10 +624,10 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The training metrics from the job creation.
+     * Contains training metrics from the job creation.
      * </p>
      * 
-     * @return The training metrics from the job creation.
+     * @return Contains training metrics from the job creation.
      */
 
     public TrainingMetrics getTrainingMetrics() {
@@ -604,11 +636,11 @@ public class GetCustomModelResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The training metrics from the job creation.
+     * Contains training metrics from the job creation.
      * </p>
      * 
      * @param trainingMetrics
-     *        The training metrics from the job creation.
+     *        Contains training metrics from the job creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,28 +27,32 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a unique name for the fine-tuning job.
+     * A name for the fine-tuning job.
      * </p>
      */
     private String jobName;
     /**
      * <p>
-     * Enter a name for the custom model.
+     * A name for the resulting custom model.
      * </p>
      */
     private String customModelName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For
-     * example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write
-     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission.
+     * The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your
+     * behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3
+     * bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must
+     * have the <code>iam:PassRole</code> permission.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.
+     * A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token
+     * matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.
      * </p>
      */
     private String clientRequestToken;
@@ -72,13 +76,13 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
     private String customModelKmsKeyId;
     /**
      * <p>
-     * Assign tags to the job.
+     * Tags to attach to the job.
      * </p>
      */
     private java.util.List<Tag> jobTags;
     /**
      * <p>
-     * Assign tags to the custom model.
+     * Tags to attach to the resulting custom model.
      * </p>
      */
     private java.util.List<Tag> customModelTags;
@@ -102,7 +106,9 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
     private OutputDataConfig outputDataConfig;
     /**
      * <p>
-     * Parameters related to tuning the model.
+     * Parameters related to tuning the model. For details on the format for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     * hyperparameters</a>.
      * </p>
      */
     private java.util.Map<String, String> hyperParameters;
@@ -116,11 +122,11 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a unique name for the fine-tuning job.
+     * A name for the fine-tuning job.
      * </p>
      * 
      * @param jobName
-     *        Enter a unique name for the fine-tuning job.
+     *        A name for the fine-tuning job.
      */
 
     public void setJobName(String jobName) {
@@ -129,10 +135,10 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a unique name for the fine-tuning job.
+     * A name for the fine-tuning job.
      * </p>
      * 
-     * @return Enter a unique name for the fine-tuning job.
+     * @return A name for the fine-tuning job.
      */
 
     public String getJobName() {
@@ -141,11 +147,11 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a unique name for the fine-tuning job.
+     * A name for the fine-tuning job.
      * </p>
      * 
      * @param jobName
-     *        Enter a unique name for the fine-tuning job.
+     *        A name for the fine-tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +162,11 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a name for the custom model.
+     * A name for the resulting custom model.
      * </p>
      * 
      * @param customModelName
-     *        Enter a name for the custom model.
+     *        A name for the resulting custom model.
      */
 
     public void setCustomModelName(String customModelName) {
@@ -169,10 +175,10 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a name for the custom model.
+     * A name for the resulting custom model.
      * </p>
      * 
-     * @return Enter a name for the custom model.
+     * @return A name for the resulting custom model.
      */
 
     public String getCustomModelName() {
@@ -181,11 +187,11 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Enter a name for the custom model.
+     * A name for the resulting custom model.
      * </p>
      * 
      * @param customModelName
-     *        Enter a name for the custom model.
+     *        A name for the resulting custom model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,17 +202,17 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For
-     * example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write
-     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission.
+     * The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your
+     * behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3
+     * bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must
+     * have the <code>iam:PassRole</code> permission.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your
-     *        behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from
-     *        an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     *        this API must have the <code>iam:PassRole</code> permission.
+     *        The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on
+     *        your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data
+     *        from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     *        of this API must have the <code>iam:PassRole</code> permission.
      */
 
     public void setRoleArn(String roleArn) {
@@ -215,16 +221,16 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For
-     * example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write
-     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission.
+     * The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your
+     * behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3
+     * bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must
+     * have the <code>iam:PassRole</code> permission.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your
-     *         behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from
-     *         an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     *         this API must have the <code>iam:PassRole</code> permission.
+     * @return The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on
+     *         your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data
+     *         from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     *         of this API must have the <code>iam:PassRole</code> permission.
      */
 
     public String getRoleArn() {
@@ -233,17 +239,17 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your behalf. For
-     * example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write
-     * model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the
-     * <code>iam:PassRole</code> permission.
+     * The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your
+     * behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3
+     * bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must
+     * have the <code>iam:PassRole</code> permission.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform tasks on your
-     *        behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from
-     *        an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of
-     *        this API must have the <code>iam:PassRole</code> permission.
+     *        The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on
+     *        your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data
+     *        from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller
+     *        of this API must have the <code>iam:PassRole</code> permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,12 +260,19 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.
+     * A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token
+     * matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique token value that you can provide. The GetModelCustomizationJob response includes the same token
-     *        value.
+     *        A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If
+     *        this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a>.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -268,11 +281,18 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.
+     * A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token
+     * matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.
      * </p>
      * 
-     * @return Unique token value that you can provide. The GetModelCustomizationJob response includes the same token
-     *         value.
+     * @return A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If
+     *         this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         idempotency</a>.
      */
 
     public String getClientRequestToken() {
@@ -281,12 +301,19 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique token value that you can provide. The GetModelCustomizationJob response includes the same token value.
+     * A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token
+     * matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a>.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique token value that you can provide. The GetModelCustomizationJob response includes the same token
-     *        value.
+     *        A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If
+     *        this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,10 +463,10 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Assign tags to the job.
+     * Tags to attach to the job.
      * </p>
      * 
-     * @return Assign tags to the job.
+     * @return Tags to attach to the job.
      */
 
     public java.util.List<Tag> getJobTags() {
@@ -448,11 +475,11 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Assign tags to the job.
+     * Tags to attach to the job.
      * </p>
      * 
      * @param jobTags
-     *        Assign tags to the job.
+     *        Tags to attach to the job.
      */
 
     public void setJobTags(java.util.Collection<Tag> jobTags) {
@@ -466,7 +493,7 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Assign tags to the job.
+     * Tags to attach to the job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -475,7 +502,7 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param jobTags
-     *        Assign tags to the job.
+     *        Tags to attach to the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,11 +518,11 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Assign tags to the job.
+     * Tags to attach to the job.
      * </p>
      * 
      * @param jobTags
-     *        Assign tags to the job.
+     *        Tags to attach to the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,10 +533,10 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Assign tags to the custom model.
+     * Tags to attach to the resulting custom model.
      * </p>
      * 
-     * @return Assign tags to the custom model.
+     * @return Tags to attach to the resulting custom model.
      */
 
     public java.util.List<Tag> getCustomModelTags() {
@@ -518,11 +545,11 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Assign tags to the custom model.
+     * Tags to attach to the resulting custom model.
      * </p>
      * 
      * @param customModelTags
-     *        Assign tags to the custom model.
+     *        Tags to attach to the resulting custom model.
      */
 
     public void setCustomModelTags(java.util.Collection<Tag> customModelTags) {
@@ -536,7 +563,7 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Assign tags to the custom model.
+     * Tags to attach to the resulting custom model.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -545,7 +572,7 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param customModelTags
-     *        Assign tags to the custom model.
+     *        Tags to attach to the resulting custom model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -561,11 +588,11 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Assign tags to the custom model.
+     * Tags to attach to the resulting custom model.
      * </p>
      * 
      * @param customModelTags
-     *        Assign tags to the custom model.
+     *        Tags to attach to the resulting custom model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -696,10 +723,14 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Parameters related to tuning the model.
+     * Parameters related to tuning the model. For details on the format for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     * hyperparameters</a>.
      * </p>
      * 
-     * @return Parameters related to tuning the model.
+     * @return Parameters related to tuning the model. For details on the format for different models, see <a
+     *         href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     *         hyperparameters</a>.
      */
 
     public java.util.Map<String, String> getHyperParameters() {
@@ -708,11 +739,15 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Parameters related to tuning the model.
+     * Parameters related to tuning the model. For details on the format for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     * hyperparameters</a>.
      * </p>
      * 
      * @param hyperParameters
-     *        Parameters related to tuning the model.
+     *        Parameters related to tuning the model. For details on the format for different models, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     *        hyperparameters</a>.
      */
 
     public void setHyperParameters(java.util.Map<String, String> hyperParameters) {
@@ -721,11 +756,15 @@ public class CreateModelCustomizationJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Parameters related to tuning the model.
+     * Parameters related to tuning the model. For details on the format for different models, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     * hyperparameters</a>.
      * </p>
      * 
      * @param hyperParameters
-     *        Parameters related to tuning the model.
+     *        Parameters related to tuning the model. For details on the format for different models, see <a
+     *        href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom model
+     *        hyperparameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

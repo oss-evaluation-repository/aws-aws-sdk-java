@@ -27,7 +27,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the resource to untag.
+     * The Amazon Resource Name (ARN) of the resource to untag.
      * </p>
      */
     private String resourceARN;
@@ -40,11 +40,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the resource to untag.
+     * The Amazon Resource Name (ARN) of the resource to untag.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the resource to untag.
+     *        The Amazon Resource Name (ARN) of the resource to untag.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the resource to untag.
+     * The Amazon Resource Name (ARN) of the resource to untag.
      * </p>
      * 
-     * @return The ARN of the resource to untag.
+     * @return The Amazon Resource Name (ARN) of the resource to untag.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the resource to untag.
+     * The Amazon Resource Name (ARN) of the resource to untag.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the resource to untag.
+     *        The Amazon Resource Name (ARN) of the resource to untag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

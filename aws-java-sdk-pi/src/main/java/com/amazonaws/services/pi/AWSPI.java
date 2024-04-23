@@ -207,7 +207,8 @@ public interface AWSPI {
     /**
      * <p>
      * Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific
-     * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
+     * dimension groups and dimensions, and provide filtering criteria for each group. You must specify an aggregate
+     * function for each metric.
      * </p>
      * <note>
      * <p>

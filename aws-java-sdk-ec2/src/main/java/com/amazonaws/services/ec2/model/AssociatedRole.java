@@ -40,14 +40,14 @@ public class AssociatedRole implements Serializable, Cloneable {
     private String certificateS3BucketName;
     /**
      * <p>
-     * The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is
-     * stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.
+     * The key of the Amazon S3 object where the certificate, certificate chain, and encrypted private key bundle are
+     * stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * </p>
      */
     private String certificateS3ObjectKey;
     /**
      * <p>
-     * The ID of the KMS customer master key (CMK) used to encrypt the private key.
+     * The ID of the KMS key used to encrypt the private key.
      * </p>
      */
     private String encryptionKmsKeyId;
@@ -134,14 +134,13 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is
-     * stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.
+     * The key of the Amazon S3 object where the certificate, certificate chain, and encrypted private key bundle are
+     * stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * </p>
      * 
      * @param certificateS3ObjectKey
-     *        The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key
-     *        bundle is stored. The object key is formated as follows: <code>role_arn</code>/
-     *        <code>certificate_arn</code>.
+     *        The key of the Amazon S3 object where the certificate, certificate chain, and encrypted private key bundle
+     *        are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      */
 
     public void setCertificateS3ObjectKey(String certificateS3ObjectKey) {
@@ -150,12 +149,12 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is
-     * stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.
+     * The key of the Amazon S3 object where the certificate, certificate chain, and encrypted private key bundle are
+     * stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * </p>
      * 
-     * @return The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key
-     *         bundle is stored. The object key is formated as follows: <code>role_arn</code>/
+     * @return The key of the Amazon S3 object where the certificate, certificate chain, and encrypted private key
+     *         bundle are stored. The object key is formatted as follows: <code>role_arn</code>/
      *         <code>certificate_arn</code>.
      */
 
@@ -165,14 +164,13 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key bundle is
-     * stored. The object key is formated as follows: <code>role_arn</code>/<code>certificate_arn</code>.
+     * The key of the Amazon S3 object where the certificate, certificate chain, and encrypted private key bundle are
+     * stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * </p>
      * 
      * @param certificateS3ObjectKey
-     *        The key of the Amazon S3 object ey where the certificate, certificate chain, and encrypted private key
-     *        bundle is stored. The object key is formated as follows: <code>role_arn</code>/
-     *        <code>certificate_arn</code>.
+     *        The key of the Amazon S3 object where the certificate, certificate chain, and encrypted private key bundle
+     *        are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +181,11 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the KMS customer master key (CMK) used to encrypt the private key.
+     * The ID of the KMS key used to encrypt the private key.
      * </p>
      * 
      * @param encryptionKmsKeyId
-     *        The ID of the KMS customer master key (CMK) used to encrypt the private key.
+     *        The ID of the KMS key used to encrypt the private key.
      */
 
     public void setEncryptionKmsKeyId(String encryptionKmsKeyId) {
@@ -196,10 +194,10 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the KMS customer master key (CMK) used to encrypt the private key.
+     * The ID of the KMS key used to encrypt the private key.
      * </p>
      * 
-     * @return The ID of the KMS customer master key (CMK) used to encrypt the private key.
+     * @return The ID of the KMS key used to encrypt the private key.
      */
 
     public String getEncryptionKmsKeyId() {
@@ -208,11 +206,11 @@ public class AssociatedRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the KMS customer master key (CMK) used to encrypt the private key.
+     * The ID of the KMS key used to encrypt the private key.
      * </p>
      * 
      * @param encryptionKmsKeyId
-     *        The ID of the KMS customer master key (CMK) used to encrypt the private key.
+     *        The ID of the KMS key used to encrypt the private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

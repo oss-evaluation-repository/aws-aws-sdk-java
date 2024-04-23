@@ -27,7 +27,7 @@ import com.amazonaws.services.bedrock.model.*;
  * </p>
  * <p>
  * <p>
- * Describes the API operations for creating and managing Amazon Bedrock models.
+ * Describes the API operations for creating, managing, fine-turning, and evaluating Amazon Bedrock models.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,13 +43,184 @@ public interface AmazonBedrock {
 
     /**
      * <p>
+     * API operation for creating and managing Amazon Bedrock automatic model evaluation jobs and model evaluation jobs
+     * that use human workers. To learn more about the requirements for creating a model evaluation job see, <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model evaluations</a>.
+     * </p>
+     * 
+     * @param createEvaluationJobRequest
+     * @return Result of the CreateEvaluationJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws ConflictException
+     *         Error occurred because of a conflict while performing an operation.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ServiceQuotaExceededException
+     *         The number of requests exceeds the service quota. Resubmit your request later.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.CreateEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateEvaluationJobResult createEvaluationJob(CreateEvaluationJobRequest createEvaluationJobRequest);
+
+    /**
+     * <p>
+     * Creates a guardrail to block topics and to filter out harmful content.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a <code>name</code> and optional <code>description</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify messages for when the guardrail successfully blocks a prompt or a model response in the
+     * <code>blockedInputMessaging</code> and <code>blockedOutputsMessaging</code> fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify topics for the guardrail to deny in the <code>topicPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html"
+     * >GuardrailTopicConfig</a> object in the <code>topicsConfig</code> list pertains to one topic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Give a <code>name</code> and <code>description</code> so that the guardrail can properly identify the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>DENY</code> in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Provide up to five prompts that you would categorize as belonging to the topic in the
+     * <code>examples</code> list.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
+     * <code>contentPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a> object in the <code>filtersConfig</code> list pertains to a harmful category.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content filters</a>. For more
+     * information about the fields in a content filter, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify the category in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify the strength of the filter for prompts in the <code>inputStrength</code> field and for model responses in
+     * the <code>strength</code> field of the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) For security, include the ARN of a KMS key in the <code>kmsKeyId</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Attach any tags to the guardrail in the <code>tags</code> object. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createGuardrailRequest
+     * @return Result of the CreateGuardrail operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws ConflictException
+     *         Error occurred because of a conflict while performing an operation.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
+     * @throws ServiceQuotaExceededException
+     *         The number of requests exceeds the service quota. Resubmit your request later.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.CreateGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateGuardrailResult createGuardrail(CreateGuardrailRequest createGuardrailRequest);
+
+    /**
+     * <p>
+     * Creates a version of the guardrail. Use this API to create a snapshot of the guardrail when you are satisfied
+     * with a configuration, or to compare the configuration with another version.
+     * </p>
+     * 
+     * @param createGuardrailVersionRequest
+     * @return Result of the CreateGuardrailVersion operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws ConflictException
+     *         Error occurred because of a conflict while performing an operation.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ServiceQuotaExceededException
+     *         The number of requests exceeds the service quota. Resubmit your request later.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.CreateGuardrailVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrailVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateGuardrailVersionResult createGuardrailVersion(CreateGuardrailVersionRequest createGuardrailVersionRequest);
+
+    /**
+     * <p>
      * Creates a fine-tuning job to customize a base model.
      * </p>
      * <p>
      * You specify the base foundation model and the location of the training data. After the model-customization job
-     * completes successfully, your custom model resource will be ready to use. Training data contains input and output
-     * text for each record in a JSONL format. Optionally, you can specify validation data in the same format as the
-     * training data. Amazon Bedrock returns validation loss metrics and output generations after the job completes.
+     * completes successfully, your custom model resource will be ready to use. Amazon Bedrock returns validation loss
+     * metrics and output generations after the job completes.
+     * </p>
+     * <p>
+     * For information on the format of training and validation data, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html">Prepare the
+     * datasets</a>.
      * </p>
      * <p>
      * Model-customization jobs are asynchronous and the completion time depends on the base model and the
@@ -58,14 +229,15 @@ public interface AmazonBedrock {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param createModelCustomizationJobRequest
      * @return Result of the CreateModelCustomizationJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -89,18 +261,18 @@ public interface AmazonBedrock {
 
     /**
      * <p>
-     * Creates a provisioned throughput with dedicated capacity for a foundation model or a fine-tuned model.
-     * </p>
-     * <p>
+     * Creates dedicated throughput for a base or custom model with the model units and for the duration that you
+     * specify. For pricing details, see <a href="http://aws.amazon.com/bedrock/pricing/">Amazon Bedrock Pricing</a>.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param createProvisionedModelThroughputRequest
      * @return Result of the CreateProvisionedModelThroughput operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -123,14 +295,15 @@ public interface AmazonBedrock {
     /**
      * <p>
      * Deletes a custom model that you created earlier. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param deleteCustomModelRequest
      * @return Result of the DeleteCustomModel operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -146,6 +319,46 @@ public interface AmazonBedrock {
      *      Documentation</a>
      */
     DeleteCustomModelResult deleteCustomModel(DeleteCustomModelRequest deleteCustomModelRequest);
+
+    /**
+     * <p>
+     * Deletes a guardrail.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To delete a guardrail, only specify the ARN of the guardrail in the <code>guardrailIdentifier</code> field. If
+     * you delete a guardrail, all of its versions will be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete a version of a guardrail, specify the ARN of the guardrail in the <code>guardrailIdentifier</code>
+     * field and the version in the <code>guardrailVersion</code> field.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteGuardrailRequest
+     * @return Result of the DeleteGuardrail operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws ConflictException
+     *         Error occurred because of a conflict while performing an operation.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.DeleteGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteGuardrailResult deleteGuardrail(DeleteGuardrailRequest deleteGuardrailRequest);
 
     /**
      * <p>
@@ -170,15 +383,17 @@ public interface AmazonBedrock {
 
     /**
      * <p>
-     * Deletes a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before the commitment term is over.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param deleteProvisionedModelThroughputRequest
      * @return Result of the DeleteProvisionedModelThroughput operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -198,14 +413,15 @@ public interface AmazonBedrock {
     /**
      * <p>
      * Get the properties associated with a Amazon Bedrock custom model that you have created.For more information, see
-     * <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the
+     * <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
      * @param getCustomModelRequest
      * @return Result of the GetCustomModel operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -222,13 +438,41 @@ public interface AmazonBedrock {
 
     /**
      * <p>
+     * Retrieves the properties associated with a model evaluation job, including the status of the job. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/latest/userguide/model-evaluation.html">Model
+     * evaluations</a>.
+     * </p>
+     * 
+     * @param getEvaluationJobRequest
+     * @return Result of the GetEvaluationJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.GetEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetEvaluationJobResult getEvaluationJob(GetEvaluationJobRequest getEvaluationJobRequest);
+
+    /**
+     * <p>
      * Get details about a Amazon Bedrock foundation model.
      * </p>
      * 
      * @param getFoundationModelRequest
      * @return Result of the GetFoundationModel operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -245,15 +489,41 @@ public interface AmazonBedrock {
 
     /**
      * <p>
+     * Gets details about a guardrail. If you don't specify a version, the response returns details for the
+     * <code>DRAFT</code> version.
+     * </p>
+     * 
+     * @param getGuardrailRequest
+     * @return Result of the GetGuardrail operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.GetGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetGuardrailResult getGuardrail(GetGuardrailRequest getGuardrailRequest);
+
+    /**
+     * <p>
      * Retrieves the properties associated with a model-customization job, including the status of the job. For more
      * information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Bedrock User Guide.
+     * models</a> in the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param getModelCustomizationJobRequest
      * @return Result of the GetModelCustomizationJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -290,15 +560,16 @@ public interface AmazonBedrock {
 
     /**
      * <p>
-     * Get details for a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Returns details for a Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param getProvisionedModelThroughputRequest
      * @return Result of the GetProvisionedModelThroughput operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -320,8 +591,8 @@ public interface AmazonBedrock {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param listCustomModelsRequest
@@ -342,9 +613,31 @@ public interface AmazonBedrock {
 
     /**
      * <p>
-     * List of Amazon Bedrock foundation models that you can use. For more information, see <a
+     * Lists model evaluation jobs.
+     * </p>
+     * 
+     * @param listEvaluationJobsRequest
+     * @return Result of the ListEvaluationJobs operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.ListEvaluationJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListEvaluationJobsResult listEvaluationJobs(ListEvaluationJobsRequest listEvaluationJobsRequest);
+
+    /**
+     * <p>
+     * Lists Amazon Bedrock foundation models that you can use. You can filter the results with the request parameters.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Foundation models</a> in the
-     * Bedrock User Guide.
+     * Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listFoundationModelsRequest
@@ -365,13 +658,44 @@ public interface AmazonBedrock {
 
     /**
      * <p>
+     * Lists details about all the guardrails in an account. To list the <code>DRAFT</code> version of all your
+     * guardrails, don't specify the <code>guardrailIdentifier</code> field. To list all versions of a guardrail,
+     * specify the ARN of the guardrail in the <code>guardrailIdentifier</code> field.
+     * </p>
+     * <p>
+     * You can set the maximum number of results to return in a response in the <code>maxResults</code> field. If there
+     * are more results than the number you set, the response returns a <code>nextToken</code> that you can send in
+     * another <code>ListGuardrails</code> request to see the next batch of results.
+     * </p>
+     * 
+     * @param listGuardrailsRequest
+     * @return Result of the ListGuardrails operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.ListGuardrails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListGuardrailsResult listGuardrails(ListGuardrailsRequest listGuardrailsRequest);
+
+    /**
+     * <p>
      * Returns a list of model customization jobs that you have submitted. You can filter the jobs to return based on
      * one or more criteria.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param listModelCustomizationJobsRequest
@@ -392,9 +716,9 @@ public interface AmazonBedrock {
 
     /**
      * <p>
-     * List the provisioned capacities. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Lists the Provisioned Throughputs in the account. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listProvisionedModelThroughputsRequest
@@ -418,15 +742,15 @@ public interface AmazonBedrock {
      * List the tags associated with the specified resource.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
-     * Bedrock User Guide.
+     * For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+     * resources</a> in the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -465,15 +789,42 @@ public interface AmazonBedrock {
 
     /**
      * <p>
+     * Stops an in progress model evaluation job.
+     * </p>
+     * 
+     * @param stopEvaluationJobRequest
+     * @return Result of the StopEvaluationJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws ConflictException
+     *         Error occurred because of a conflict while performing an operation.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.StopEvaluationJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopEvaluationJobResult stopEvaluationJob(StopEvaluationJobRequest stopEvaluationJobRequest);
+
+    /**
+     * <p>
      * Stops an active model customization job. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Bedrock
-     * User Guide.
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom models</a> in the Amazon
+     * Bedrock User Guide.
      * </p>
      * 
      * @param stopModelCustomizationJobRequest
      * @return Result of the StopModelCustomizationJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -493,14 +844,15 @@ public interface AmazonBedrock {
     /**
      * <p>
      * Associate tags with a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging resources</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -521,14 +873,15 @@ public interface AmazonBedrock {
     /**
      * <p>
      * Remove one or more tags from a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging resources</a> in the
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging resources</a> in the Amazon
      * Bedrock User Guide.
      * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException
@@ -545,15 +898,121 @@ public interface AmazonBedrock {
 
     /**
      * <p>
-     * Update a provisioned throughput. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned throughput</a> in
-     * the Bedrock User Guide.
+     * Updates a guardrail with the values you specify.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a <code>name</code> and optional <code>description</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify messages for when the guardrail successfully blocks a prompt or a model response in the
+     * <code>blockedInputMessaging</code> and <code>blockedOutputsMessaging</code> fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify topics for the guardrail to deny in the <code>topicPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html"
+     * >GuardrailTopicConfig</a> object in the <code>topicsConfig</code> list pertains to one topic.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Give a <code>name</code> and <code>description</code> so that the guardrail can properly identify the topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>DENY</code> in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Provide up to five prompts that you would categorize as belonging to the topic in the
+     * <code>examples</code> list.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Specify filter strengths for the harmful categories defined in Amazon Bedrock in the
+     * <code>contentPolicyConfig</code> object. Each <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a> object in the <code>filtersConfig</code> list pertains to a harmful category.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-filters">Content filters</a>. For more
+     * information about the fields in a content filter, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify the category in the <code>type</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify the strength of the filter for prompts in the <code>inputStrength</code> field and for model responses in
+     * the <code>strength</code> field of the <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html"
+     * >GuardrailContentFilterConfig</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) For security, include the ARN of a KMS key in the <code>kmsKeyId</code> field.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * (Optional) Attach any tags to the guardrail in the <code>tags</code> object. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging">Tag resources</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateGuardrailRequest
+     * @return Result of the UpdateGuardrail operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
+     * @throws AccessDeniedException
+     *         The request is denied because of missing access permissions.
+     * @throws ValidationException
+     *         Input validation failed. Check your request parameters and retry the request.
+     * @throws ConflictException
+     *         Error occurred because of a conflict while performing an operation.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @throws ServiceQuotaExceededException
+     *         The number of requests exceeds the service quota. Resubmit your request later.
+     * @throws ThrottlingException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @sample AmazonBedrock.UpdateGuardrail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateGuardrail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateGuardrailResult updateGuardrail(UpdateGuardrailRequest updateGuardrailRequest);
+
+    /**
+     * <p>
+     * Updates the name or associated model for a Provisioned Throughput. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in
+     * the Amazon Bedrock User Guide.
      * </p>
      * 
      * @param updateProvisionedModelThroughputRequest
      * @return Result of the UpdateProvisionedModelThroughput operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     *         The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon Resource Name (ARN) and
+     *         try your request again.
      * @throws AccessDeniedException
      *         The request is denied because of missing access permissions.
      * @throws ValidationException

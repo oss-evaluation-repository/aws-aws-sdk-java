@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.workspacesweb.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -28,10 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class IpAccessSettingsMarshaller {
 
+    private static final MarshallingInfo<Map> ADDITIONALENCRYPTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalEncryptionContext").build();
     private static final MarshallingInfo<List> ASSOCIATEDPORTALARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedPortalArns").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> CUSTOMERMANAGEDKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerManagedKey").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,8 +62,10 @@ public class IpAccessSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(ipAccessSettings.getAdditionalEncryptionContext(), ADDITIONALENCRYPTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(ipAccessSettings.getAssociatedPortalArns(), ASSOCIATEDPORTALARNS_BINDING);
             protocolMarshaller.marshall(ipAccessSettings.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(ipAccessSettings.getCustomerManagedKey(), CUSTOMERMANAGEDKEY_BINDING);
             protocolMarshaller.marshall(ipAccessSettings.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(ipAccessSettings.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(ipAccessSettings.getIpAccessSettingsArn(), IPACCESSSETTINGSARN_BINDING);

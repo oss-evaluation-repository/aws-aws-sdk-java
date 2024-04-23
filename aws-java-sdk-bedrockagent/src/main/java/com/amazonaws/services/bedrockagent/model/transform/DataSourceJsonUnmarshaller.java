@@ -52,6 +52,10 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
                     context.nextToken();
                     dataSource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("dataDeletionPolicy", targetDepth)) {
+                    context.nextToken();
+                    dataSource.setDataDeletionPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("dataSourceConfiguration", targetDepth)) {
                     context.nextToken();
                     dataSource.setDataSourceConfiguration(DataSourceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
@@ -63,6 +67,12 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     dataSource.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("failureReasons", targetDepth)) {
+                    context.nextToken();
+                    dataSource.setFailureReasons(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("knowledgeBaseId", targetDepth)) {
                     context.nextToken();

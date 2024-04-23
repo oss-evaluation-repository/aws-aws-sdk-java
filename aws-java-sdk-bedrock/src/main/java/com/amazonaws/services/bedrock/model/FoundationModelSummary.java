@@ -30,13 +30,13 @@ public class FoundationModelSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the foundation model.
+     * The Amazon Resource Name (ARN) of the foundation model.
      * </p>
      */
     private String modelArn;
     /**
      * <p>
-     * The model Id of the foundation model.
+     * The model ID of the foundation model.
      * </p>
      */
     private String modelId;
@@ -91,11 +91,11 @@ public class FoundationModelSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the foundation model.
+     * The Amazon Resource Name (ARN) of the foundation model.
      * </p>
      * 
      * @param modelArn
-     *        The ARN of the foundation model.
+     *        The Amazon Resource Name (ARN) of the foundation model.
      */
 
     public void setModelArn(String modelArn) {
@@ -104,10 +104,10 @@ public class FoundationModelSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the foundation model.
+     * The Amazon Resource Name (ARN) of the foundation model.
      * </p>
      * 
-     * @return The ARN of the foundation model.
+     * @return The Amazon Resource Name (ARN) of the foundation model.
      */
 
     public String getModelArn() {
@@ -116,11 +116,11 @@ public class FoundationModelSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the foundation model.
+     * The Amazon Resource Name (ARN) of the foundation model.
      * </p>
      * 
      * @param modelArn
-     *        The ARN of the foundation model.
+     *        The Amazon Resource Name (ARN) of the foundation model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +131,11 @@ public class FoundationModelSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The model Id of the foundation model.
+     * The model ID of the foundation model.
      * </p>
      * 
      * @param modelId
-     *        The model Id of the foundation model.
+     *        The model ID of the foundation model.
      */
 
     public void setModelId(String modelId) {
@@ -144,10 +144,10 @@ public class FoundationModelSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The model Id of the foundation model.
+     * The model ID of the foundation model.
      * </p>
      * 
-     * @return The model Id of the foundation model.
+     * @return The model ID of the foundation model.
      */
 
     public String getModelId() {
@@ -156,11 +156,11 @@ public class FoundationModelSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The model Id of the foundation model.
+     * The model ID of the foundation model.
      * </p>
      * 
      * @param modelId
-     *        The model Id of the foundation model.
+     *        The model ID of the foundation model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

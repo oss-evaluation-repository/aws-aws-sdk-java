@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the resource to tag.
+     * The Amazon Resource Name (ARN) of the resource to tag.
      * </p>
      */
     private String resourceARN;
@@ -40,11 +40,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the resource to tag.
+     * The Amazon Resource Name (ARN) of the resource to tag.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the resource to tag.
+     *        The Amazon Resource Name (ARN) of the resource to tag.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the resource to tag.
+     * The Amazon Resource Name (ARN) of the resource to tag.
      * </p>
      * 
-     * @return The ARN of the resource to tag.
+     * @return The Amazon Resource Name (ARN) of the resource to tag.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the resource to tag.
+     * The Amazon Resource Name (ARN) of the resource to tag.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the resource to tag.
+     *        The Amazon Resource Name (ARN) of the resource to tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

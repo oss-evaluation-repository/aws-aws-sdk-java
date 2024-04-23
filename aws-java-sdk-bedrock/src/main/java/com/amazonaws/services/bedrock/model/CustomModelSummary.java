@@ -30,7 +30,7 @@ public class CustomModelSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the custom model.
+     * The Amazon Resource Name (ARN) of the custom model.
      * </p>
      */
     private String modelArn;
@@ -48,7 +48,7 @@ public class CustomModelSummary implements Serializable, Cloneable, StructuredPo
     private java.util.Date creationTime;
     /**
      * <p>
-     * The base model ARN.
+     * The base model Amazon Resource Name (ARN).
      * </p>
      */
     private String baseModelArn;
@@ -69,11 +69,11 @@ public class CustomModelSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the custom model.
+     * The Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
      * @param modelArn
-     *        The ARN of the custom model.
+     *        The Amazon Resource Name (ARN) of the custom model.
      */
 
     public void setModelArn(String modelArn) {
@@ -82,10 +82,10 @@ public class CustomModelSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the custom model.
+     * The Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
-     * @return The ARN of the custom model.
+     * @return The Amazon Resource Name (ARN) of the custom model.
      */
 
     public String getModelArn() {
@@ -94,11 +94,11 @@ public class CustomModelSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the custom model.
+     * The Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
      * @param modelArn
-     *        The ARN of the custom model.
+     *        The Amazon Resource Name (ARN) of the custom model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +189,11 @@ public class CustomModelSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The base model ARN.
+     * The base model Amazon Resource Name (ARN).
      * </p>
      * 
      * @param baseModelArn
-     *        The base model ARN.
+     *        The base model Amazon Resource Name (ARN).
      */
 
     public void setBaseModelArn(String baseModelArn) {
@@ -202,10 +202,10 @@ public class CustomModelSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The base model ARN.
+     * The base model Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The base model ARN.
+     * @return The base model Amazon Resource Name (ARN).
      */
 
     public String getBaseModelArn() {
@@ -214,11 +214,11 @@ public class CustomModelSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The base model ARN.
+     * The base model Amazon Resource Name (ARN).
      * </p>
      * 
      * @param baseModelArn
-     *        The base model ARN.
+     *        The base model Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

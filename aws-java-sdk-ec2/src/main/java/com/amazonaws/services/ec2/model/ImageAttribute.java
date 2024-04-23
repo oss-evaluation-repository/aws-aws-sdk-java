@@ -121,6 +121,12 @@ public class ImageAttribute implements Serializable, Cloneable {
      * </p>
      */
     private String imdsSupport;
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     */
+    private String deregistrationProtection;
 
     /**
      * <p>
@@ -839,6 +845,46 @@ public class ImageAttribute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @param deregistrationProtection
+     *        Indicates whether deregistration protection is enabled for the AMI.
+     */
+
+    public void setDeregistrationProtection(String deregistrationProtection) {
+        this.deregistrationProtection = deregistrationProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @return Indicates whether deregistration protection is enabled for the AMI.
+     */
+
+    public String getDeregistrationProtection() {
+        return this.deregistrationProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @param deregistrationProtection
+     *        Indicates whether deregistration protection is enabled for the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageAttribute withDeregistrationProtection(String deregistrationProtection) {
+        setDeregistrationProtection(deregistrationProtection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -875,7 +921,9 @@ public class ImageAttribute implements Serializable, Cloneable {
         if (getLastLaunchedTime() != null)
             sb.append("LastLaunchedTime: ").append(getLastLaunchedTime()).append(",");
         if (getImdsSupport() != null)
-            sb.append("ImdsSupport: ").append(getImdsSupport());
+            sb.append("ImdsSupport: ").append(getImdsSupport()).append(",");
+        if (getDeregistrationProtection() != null)
+            sb.append("DeregistrationProtection: ").append(getDeregistrationProtection());
         sb.append("}");
         return sb.toString();
     }
@@ -942,6 +990,10 @@ public class ImageAttribute implements Serializable, Cloneable {
             return false;
         if (other.getImdsSupport() != null && other.getImdsSupport().equals(this.getImdsSupport()) == false)
             return false;
+        if (other.getDeregistrationProtection() == null ^ this.getDeregistrationProtection() == null)
+            return false;
+        if (other.getDeregistrationProtection() != null && other.getDeregistrationProtection().equals(this.getDeregistrationProtection()) == false)
+            return false;
         return true;
     }
 
@@ -963,6 +1015,7 @@ public class ImageAttribute implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getUefiData() == null) ? 0 : getUefiData().hashCode());
         hashCode = prime * hashCode + ((getLastLaunchedTime() == null) ? 0 : getLastLaunchedTime().hashCode());
         hashCode = prime * hashCode + ((getImdsSupport() == null) ? 0 : getImdsSupport().hashCode());
+        hashCode = prime * hashCode + ((getDeregistrationProtection() == null) ? 0 : getDeregistrationProtection().hashCode());
         return hashCode;
     }
 

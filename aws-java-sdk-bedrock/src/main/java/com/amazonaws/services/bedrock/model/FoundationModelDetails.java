@@ -30,7 +30,7 @@ public class FoundationModelDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The model ARN.
+     * The model Amazon Resource Name (ARN).
      * </p>
      */
     private String modelArn;
@@ -48,7 +48,7 @@ public class FoundationModelDetails implements Serializable, Cloneable, Structur
     private String modelName;
     /**
      * <p>
-     * he model's provider name.
+     * The model's provider name.
      * </p>
      */
     private String providerName;
@@ -91,11 +91,11 @@ public class FoundationModelDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The model ARN.
+     * The model Amazon Resource Name (ARN).
      * </p>
      * 
      * @param modelArn
-     *        The model ARN.
+     *        The model Amazon Resource Name (ARN).
      */
 
     public void setModelArn(String modelArn) {
@@ -104,10 +104,10 @@ public class FoundationModelDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The model ARN.
+     * The model Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The model ARN.
+     * @return The model Amazon Resource Name (ARN).
      */
 
     public String getModelArn() {
@@ -116,11 +116,11 @@ public class FoundationModelDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The model ARN.
+     * The model Amazon Resource Name (ARN).
      * </p>
      * 
      * @param modelArn
-     *        The model ARN.
+     *        The model Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +211,11 @@ public class FoundationModelDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * he model's provider name.
+     * The model's provider name.
      * </p>
      * 
      * @param providerName
-     *        he model's provider name.
+     *        The model's provider name.
      */
 
     public void setProviderName(String providerName) {
@@ -224,10 +224,10 @@ public class FoundationModelDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * he model's provider name.
+     * The model's provider name.
      * </p>
      * 
-     * @return he model's provider name.
+     * @return The model's provider name.
      */
 
     public String getProviderName() {
@@ -236,11 +236,11 @@ public class FoundationModelDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * he model's provider name.
+     * The model's provider name.
      * </p>
      * 
      * @param providerName
-     *        he model's provider name.
+     *        The model's provider name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

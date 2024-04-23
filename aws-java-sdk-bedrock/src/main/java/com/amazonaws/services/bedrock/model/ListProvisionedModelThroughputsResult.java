@@ -26,24 +26,30 @@ public class ListProvisionedModelThroughputsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Continuation token for the next request to list the next set of results.
+     * If there are more results than the number you specified in the <code>maxResults</code> field, this value is
+     * returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another
+     * list request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * List of summaries, one for each provisioned throughput in the response.
+     * A list of summaries, one for each Provisioned Throughput in the response.
      * </p>
      */
     private java.util.List<ProvisionedModelSummary> provisionedModelSummaries;
 
     /**
      * <p>
-     * Continuation token for the next request to list the next set of results.
+     * If there are more results than the number you specified in the <code>maxResults</code> field, this value is
+     * returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another
+     * list request.
      * </p>
      * 
      * @param nextToken
-     *        Continuation token for the next request to list the next set of results.
+     *        If there are more results than the number you specified in the <code>maxResults</code> field, this value
+     *        is returned. To see the next batch of results, include this value in the <code>nextToken</code> field in
+     *        another list request.
      */
 
     public void setNextToken(String nextToken) {
@@ -52,10 +58,14 @@ public class ListProvisionedModelThroughputsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Continuation token for the next request to list the next set of results.
+     * If there are more results than the number you specified in the <code>maxResults</code> field, this value is
+     * returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another
+     * list request.
      * </p>
      * 
-     * @return Continuation token for the next request to list the next set of results.
+     * @return If there are more results than the number you specified in the <code>maxResults</code> field, this value
+     *         is returned. To see the next batch of results, include this value in the <code>nextToken</code> field in
+     *         another list request.
      */
 
     public String getNextToken() {
@@ -64,11 +74,15 @@ public class ListProvisionedModelThroughputsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Continuation token for the next request to list the next set of results.
+     * If there are more results than the number you specified in the <code>maxResults</code> field, this value is
+     * returned. To see the next batch of results, include this value in the <code>nextToken</code> field in another
+     * list request.
      * </p>
      * 
      * @param nextToken
-     *        Continuation token for the next request to list the next set of results.
+     *        If there are more results than the number you specified in the <code>maxResults</code> field, this value
+     *        is returned. To see the next batch of results, include this value in the <code>nextToken</code> field in
+     *        another list request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +93,10 @@ public class ListProvisionedModelThroughputsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of summaries, one for each provisioned throughput in the response.
+     * A list of summaries, one for each Provisioned Throughput in the response.
      * </p>
      * 
-     * @return List of summaries, one for each provisioned throughput in the response.
+     * @return A list of summaries, one for each Provisioned Throughput in the response.
      */
 
     public java.util.List<ProvisionedModelSummary> getProvisionedModelSummaries() {
@@ -91,11 +105,11 @@ public class ListProvisionedModelThroughputsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of summaries, one for each provisioned throughput in the response.
+     * A list of summaries, one for each Provisioned Throughput in the response.
      * </p>
      * 
      * @param provisionedModelSummaries
-     *        List of summaries, one for each provisioned throughput in the response.
+     *        A list of summaries, one for each Provisioned Throughput in the response.
      */
 
     public void setProvisionedModelSummaries(java.util.Collection<ProvisionedModelSummary> provisionedModelSummaries) {
@@ -109,7 +123,7 @@ public class ListProvisionedModelThroughputsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of summaries, one for each provisioned throughput in the response.
+     * A list of summaries, one for each Provisioned Throughput in the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -118,7 +132,7 @@ public class ListProvisionedModelThroughputsResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param provisionedModelSummaries
-     *        List of summaries, one for each provisioned throughput in the response.
+     *        A list of summaries, one for each Provisioned Throughput in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +148,11 @@ public class ListProvisionedModelThroughputsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of summaries, one for each provisioned throughput in the response.
+     * A list of summaries, one for each Provisioned Throughput in the response.
      * </p>
      * 
      * @param provisionedModelSummaries
-     *        List of summaries, one for each provisioned throughput in the response.
+     *        A list of summaries, one for each Provisioned Throughput in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

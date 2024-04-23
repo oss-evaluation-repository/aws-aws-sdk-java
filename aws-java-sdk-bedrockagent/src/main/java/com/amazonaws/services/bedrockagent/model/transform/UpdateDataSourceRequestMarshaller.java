@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateDataSourceRequestMarshaller {
 
+    private static final MarshallingInfo<String> DATADELETIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataDeletionPolicy").build();
     private static final MarshallingInfo<StructuredPojo> DATASOURCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceConfiguration").build();
     private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -58,6 +60,7 @@ public class UpdateDataSourceRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateDataSourceRequest.getDataDeletionPolicy(), DATADELETIONPOLICY_BINDING);
             protocolMarshaller.marshall(updateDataSourceRequest.getDataSourceConfiguration(), DATASOURCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateDataSourceRequest.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(updateDataSourceRequest.getDescription(), DESCRIPTION_BINDING);

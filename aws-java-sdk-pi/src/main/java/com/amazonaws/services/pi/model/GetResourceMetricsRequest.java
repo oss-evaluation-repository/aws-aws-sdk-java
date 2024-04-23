@@ -57,8 +57,11 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
     private String identifier;
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      */
     private java.util.List<MetricQuery> metricQueries;
@@ -378,12 +381,18 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      * 
-     * @return An array of one or more queries to perform. Each query must specify a Performance Insights metric, and
-     *         can optionally specify aggregation and filtering criteria.
+     * @return An array of one or more queries to perform. Each query must specify a Performance Insights metric and
+     *         specify an aggregate function, and you can provide filtering criteria. You must append the aggregate
+     *         function to the metric. For example, to find the average for the metric <code>db.load</code> you must use
+     *         <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>,
+     *         <code>.min</code>, <code>.max</code>, and <code>.sum</code>.
      */
 
     public java.util.List<MetricQuery> getMetricQueries() {
@@ -392,13 +401,19 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      * 
      * @param metricQueries
-     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     *        optionally specify aggregation and filtering criteria.
+     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric and
+     *        specify an aggregate function, and you can provide filtering criteria. You must append the aggregate
+     *        function to the metric. For example, to find the average for the metric <code>db.load</code> you must use
+     *        <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>,
+     *        <code>.min</code>, <code>.max</code>, and <code>.sum</code>.
      */
 
     public void setMetricQueries(java.util.Collection<MetricQuery> metricQueries) {
@@ -412,8 +427,11 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -422,8 +440,11 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param metricQueries
-     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     *        optionally specify aggregation and filtering criteria.
+     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric and
+     *        specify an aggregate function, and you can provide filtering criteria. You must append the aggregate
+     *        function to the metric. For example, to find the average for the metric <code>db.load</code> you must use
+     *        <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>,
+     *        <code>.min</code>, <code>.max</code>, and <code>.sum</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,13 +460,19 @@ public class GetResourceMetricsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     * optionally specify aggregation and filtering criteria.
+     * An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an
+     * aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric.
+     * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+     * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
+     * <code>.sum</code>.
      * </p>
      * 
      * @param metricQueries
-     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can
-     *        optionally specify aggregation and filtering criteria.
+     *        An array of one or more queries to perform. Each query must specify a Performance Insights metric and
+     *        specify an aggregate function, and you can provide filtering criteria. You must append the aggregate
+     *        function to the metric. For example, to find the average for the metric <code>db.load</code> you must use
+     *        <code>db.load.avg</code>. Valid values for aggregate functions include <code>.avg</code>,
+     *        <code>.min</code>, <code>.max</code>, and <code>.sum</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

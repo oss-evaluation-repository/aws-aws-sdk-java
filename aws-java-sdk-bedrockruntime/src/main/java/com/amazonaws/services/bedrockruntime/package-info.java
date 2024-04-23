@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * Describes the API operations for running inference using Bedrock models.
+ * Describes the API operations for running inference using Amazon Bedrock models.
  * </p>
  */
 package com.amazonaws.services.bedrockruntime;

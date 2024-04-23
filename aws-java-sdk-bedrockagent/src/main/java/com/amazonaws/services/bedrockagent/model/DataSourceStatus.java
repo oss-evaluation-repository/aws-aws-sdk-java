@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DataSourceStatus {
 
     AVAILABLE("AVAILABLE"),
-    DELETING("DELETING");
+    DELETING("DELETING"),
+    DELETE_UNSUCCESSFUL("DELETE_UNSUCCESSFUL");
 
     private String value;
 

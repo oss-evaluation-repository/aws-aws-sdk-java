@@ -27,18 +27,18 @@ public class GetCustomModelRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name or ARN of the custom model.
+     * Name or Amazon Resource Name (ARN) of the custom model.
      * </p>
      */
     private String modelIdentifier;
 
     /**
      * <p>
-     * Name or ARN of the custom model.
+     * Name or Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
      * @param modelIdentifier
-     *        Name or ARN of the custom model.
+     *        Name or Amazon Resource Name (ARN) of the custom model.
      */
 
     public void setModelIdentifier(String modelIdentifier) {
@@ -47,10 +47,10 @@ public class GetCustomModelRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name or ARN of the custom model.
+     * Name or Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
-     * @return Name or ARN of the custom model.
+     * @return Name or Amazon Resource Name (ARN) of the custom model.
      */
 
     public String getModelIdentifier() {
@@ -59,11 +59,11 @@ public class GetCustomModelRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Name or ARN of the custom model.
+     * Name or Amazon Resource Name (ARN) of the custom model.
      * </p>
      * 
      * @param modelIdentifier
-     *        Name or ARN of the custom model.
+     *        Name or Amazon Resource Name (ARN) of the custom model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

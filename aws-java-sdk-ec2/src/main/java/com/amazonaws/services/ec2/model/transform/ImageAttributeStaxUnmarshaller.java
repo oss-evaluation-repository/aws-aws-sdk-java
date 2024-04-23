@@ -124,6 +124,11 @@ public class ImageAttributeStaxUnmarshaller implements Unmarshaller<ImageAttribu
                     imageAttribute.setImdsSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("deregistrationProtection/value", targetDepth)) {
+                    imageAttribute.setDeregistrationProtection(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return imageAttribute;

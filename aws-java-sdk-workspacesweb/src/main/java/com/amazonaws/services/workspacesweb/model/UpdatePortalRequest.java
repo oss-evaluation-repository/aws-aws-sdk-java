@@ -36,10 +36,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * access to your web portal is controlled through your identity provider.
      * </p>
      * <p>
-     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
-     * (including external identity provider integration), plus user and group access to your web portal, can be
-     * configured in the IAM Identity Center.
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
      * </p>
      */
     private String authenticationType;
@@ -49,6 +48,18 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String displayName;
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the portal.
+     * </p>
+     */
+    private Integer maxConcurrentSessions;
     /**
      * <p>
      * The ARN of the web portal.
@@ -67,10 +78,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * access to your web portal is controlled through your identity provider.
      * </p>
      * <p>
-     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
-     * (including external identity provider integration), plus user and group access to your web portal, can be
-     * configured in the IAM Identity Center.
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
      * </p>
      * 
      * @param authenticationType
@@ -82,10 +92,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        and group access to your web portal is controlled through your identity provider.
      *        </p>
      *        <p>
-     *        <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor
-     *        to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity
-     *        sources (including external identity provider integration), plus user and group access to your web portal,
-     *        can be configured in the IAM Identity Center.
+     *        <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to
+     *        Single Sign-On). Identity sources (including external identity provider integration), plus user and group
+     *        access to your web portal, can be configured in the IAM Identity Center.
      * @see AuthenticationType
      */
 
@@ -104,10 +113,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * access to your web portal is controlled through your identity provider.
      * </p>
      * <p>
-     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
-     * (including external identity provider integration), plus user and group access to your web portal, can be
-     * configured in the IAM Identity Center.
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
      * </p>
      * 
      * @return The type of authentication integration points used when signing into the web portal. Defaults to
@@ -118,10 +126,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         and group access to your web portal is controlled through your identity provider.
      *         </p>
      *         <p>
-     *         <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor
-     *         to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity
-     *         sources (including external identity provider integration), plus user and group access to your web
-     *         portal, can be configured in the IAM Identity Center.
+     *         <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to
+     *         Single Sign-On). Identity sources (including external identity provider integration), plus user and group
+     *         access to your web portal, can be configured in the IAM Identity Center.
      * @see AuthenticationType
      */
 
@@ -140,10 +147,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * access to your web portal is controlled through your identity provider.
      * </p>
      * <p>
-     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
-     * (including external identity provider integration), plus user and group access to your web portal, can be
-     * configured in the IAM Identity Center.
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
      * </p>
      * 
      * @param authenticationType
@@ -155,10 +161,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        and group access to your web portal is controlled through your identity provider.
      *        </p>
      *        <p>
-     *        <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor
-     *        to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity
-     *        sources (including external identity provider integration), plus user and group access to your web portal,
-     *        can be configured in the IAM Identity Center.
+     *        <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to
+     *        Single Sign-On). Identity sources (including external identity provider integration), plus user and group
+     *        access to your web portal, can be configured in the IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -179,10 +184,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * access to your web portal is controlled through your identity provider.
      * </p>
      * <p>
-     * <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor to AWS
-     * Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity sources
-     * (including external identity provider integration), plus user and group access to your web portal, can be
-     * configured in the IAM Identity Center.
+     * <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to Single
+     * Sign-On). Identity sources (including external identity provider integration), plus user and group access to your
+     * web portal, can be configured in the IAM Identity Center.
      * </p>
      * 
      * @param authenticationType
@@ -194,10 +198,9 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        and group access to your web portal is controlled through your identity provider.
      *        </p>
      *        <p>
-     *        <code>IAM_Identity_Center</code> web portals are authenticated through AWS IAM Identity Center (successor
-     *        to AWS Single Sign-On). They provide additional features, such as IdP-initiated authentication. Identity
-     *        sources (including external identity provider integration), plus user and group access to your web portal,
-     *        can be configured in the IAM Identity Center.
+     *        <code>IAM Identity Center</code> web portals are authenticated through IAM Identity Center (successor to
+     *        Single Sign-On). Identity sources (including external identity provider integration), plus user and group
+     *        access to your web portal, can be configured in the IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -244,6 +247,105 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public UpdatePortalRequest withDisplayName(String displayName) {
         setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     * 
+     * @param instanceType
+     *        The type and resources of the underlying instance.
+     * @see InstanceType
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     * 
+     * @return The type and resources of the underlying instance.
+     * @see InstanceType
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     * 
+     * @param instanceType
+     *        The type and resources of the underlying instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public UpdatePortalRequest withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and resources of the underlying instance.
+     * </p>
+     * 
+     * @param instanceType
+     *        The type and resources of the underlying instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public UpdatePortalRequest withInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the portal.
+     * </p>
+     * 
+     * @param maxConcurrentSessions
+     *        The maximum number of concurrent sessions for the portal.
+     */
+
+    public void setMaxConcurrentSessions(Integer maxConcurrentSessions) {
+        this.maxConcurrentSessions = maxConcurrentSessions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the portal.
+     * </p>
+     * 
+     * @return The maximum number of concurrent sessions for the portal.
+     */
+
+    public Integer getMaxConcurrentSessions() {
+        return this.maxConcurrentSessions;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent sessions for the portal.
+     * </p>
+     * 
+     * @param maxConcurrentSessions
+     *        The maximum number of concurrent sessions for the portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePortalRequest withMaxConcurrentSessions(Integer maxConcurrentSessions) {
+        setMaxConcurrentSessions(maxConcurrentSessions);
         return this;
     }
 
@@ -303,6 +405,10 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append("***Sensitive Data Redacted***").append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getMaxConcurrentSessions() != null)
+            sb.append("MaxConcurrentSessions: ").append(getMaxConcurrentSessions()).append(",");
         if (getPortalArn() != null)
             sb.append("PortalArn: ").append(getPortalArn());
         sb.append("}");
@@ -327,6 +433,14 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getMaxConcurrentSessions() == null ^ this.getMaxConcurrentSessions() == null)
+            return false;
+        if (other.getMaxConcurrentSessions() != null && other.getMaxConcurrentSessions().equals(this.getMaxConcurrentSessions()) == false)
+            return false;
         if (other.getPortalArn() == null ^ this.getPortalArn() == null)
             return false;
         if (other.getPortalArn() != null && other.getPortalArn().equals(this.getPortalArn()) == false)
@@ -341,6 +455,8 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrentSessions() == null) ? 0 : getMaxConcurrentSessions().hashCode());
         hashCode = prime * hashCode + ((getPortalArn() == null) ? 0 : getPortalArn().hashCode());
         return hashCode;
     }

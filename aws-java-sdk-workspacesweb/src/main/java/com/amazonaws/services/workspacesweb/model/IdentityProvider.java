@@ -185,7 +185,22 @@ public class IdentityProvider implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>IDPSignout</code> <i>optional</i>
+     * <code>IDPSignout</code> (boolean) <i>optional</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EncryptedResponses</code> (boolean) <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -397,7 +412,22 @@ public class IdentityProvider implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>IDPSignout</code> <i>optional</i>
+     * <code>IDPSignout</code> (boolean) <i>optional</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EncryptedResponses</code> (boolean) <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -552,7 +582,22 @@ public class IdentityProvider implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>IDPSignout</code> <i>optional</i>
+     *         <code>IDPSignout</code> (boolean) <i>optional</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IDPInit</code> (boolean) <i>optional</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EncryptedResponses</code> (boolean) <i>optional</i>
      *         </p>
      *         </li>
      *         </ul>
@@ -714,7 +759,22 @@ public class IdentityProvider implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>IDPSignout</code> <i>optional</i>
+     * <code>IDPSignout</code> (boolean) <i>optional</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EncryptedResponses</code> (boolean) <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -870,7 +930,22 @@ public class IdentityProvider implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IDPSignout</code> <i>optional</i>
+     *        <code>IDPSignout</code> (boolean) <i>optional</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IDPInit</code> (boolean) <i>optional</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EncryptedResponses</code> (boolean) <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -1032,7 +1107,22 @@ public class IdentityProvider implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>IDPSignout</code> <i>optional</i>
+     * <code>IDPSignout</code> (boolean) <i>optional</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IDPInit</code> (boolean) <i>optional</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EncryptedResponses</code> (boolean) <i>optional</i>
      * </p>
      * </li>
      * </ul>
@@ -1188,7 +1278,22 @@ public class IdentityProvider implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IDPSignout</code> <i>optional</i>
+     *        <code>IDPSignout</code> (boolean) <i>optional</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IDPInit</code> (boolean) <i>optional</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RequestSigningAlgorithm</code> (string) <i>optional</i> - Only accepts <code>rsa-sha256</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EncryptedResponses</code> (boolean) <i>optional</i>
      *        </p>
      *        </li>
      *        </ul>

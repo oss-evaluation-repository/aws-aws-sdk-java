@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RetrieveAndGenerateType {
 
-    KNOWLEDGE_BASE("KNOWLEDGE_BASE");
+    KNOWLEDGE_BASE("KNOWLEDGE_BASE"),
+    EXTERNAL_SOURCES("EXTERNAL_SOURCES");
 
     private String value;
 

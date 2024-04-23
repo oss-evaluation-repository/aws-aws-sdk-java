@@ -238,6 +238,25 @@ public class Image implements Serializable, Cloneable {
      * </p>
      */
     private String sourceInstanceId;
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     */
+    private String deregistrationProtection;
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was
+     * last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before
+     * that usage is reported.
+     * </p>
+     * <note>
+     * <p>
+     * <code>lastLaunchedTime</code> data is available starting April 2017.
+     * </p>
+     * </note>
+     */
+    private String lastLaunchedTime;
 
     /**
      * <p>
@@ -2142,6 +2161,122 @@ public class Image implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @param deregistrationProtection
+     *        Indicates whether deregistration protection is enabled for the AMI.
+     */
+
+    public void setDeregistrationProtection(String deregistrationProtection) {
+        this.deregistrationProtection = deregistrationProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @return Indicates whether deregistration protection is enabled for the AMI.
+     */
+
+    public String getDeregistrationProtection() {
+        return this.deregistrationProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @param deregistrationProtection
+     *        Indicates whether deregistration protection is enabled for the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withDeregistrationProtection(String deregistrationProtection) {
+        setDeregistrationProtection(deregistrationProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was
+     * last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before
+     * that usage is reported.
+     * </p>
+     * <note>
+     * <p>
+     * <code>lastLaunchedTime</code> data is available starting April 2017.
+     * </p>
+     * </note>
+     * 
+     * @param lastLaunchedTime
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI
+     *        was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour
+     *        delay before that usage is reported.</p> <note>
+     *        <p>
+     *        <code>lastLaunchedTime</code> data is available starting April 2017.
+     *        </p>
+     */
+
+    public void setLastLaunchedTime(String lastLaunchedTime) {
+        this.lastLaunchedTime = lastLaunchedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was
+     * last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before
+     * that usage is reported.
+     * </p>
+     * <note>
+     * <p>
+     * <code>lastLaunchedTime</code> data is available starting April 2017.
+     * </p>
+     * </note>
+     * 
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *         AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a
+     *         24-hour delay before that usage is reported.</p> <note>
+     *         <p>
+     *         <code>lastLaunchedTime</code> data is available starting April 2017.
+     *         </p>
+     */
+
+    public String getLastLaunchedTime() {
+        return this.lastLaunchedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was
+     * last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before
+     * that usage is reported.
+     * </p>
+     * <note>
+     * <p>
+     * <code>lastLaunchedTime</code> data is available starting April 2017.
+     * </p>
+     * </note>
+     * 
+     * @param lastLaunchedTime
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI
+     *        was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour
+     *        delay before that usage is reported.</p> <note>
+     *        <p>
+     *        <code>lastLaunchedTime</code> data is available starting April 2017.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withLastLaunchedTime(String lastLaunchedTime) {
+        setLastLaunchedTime(lastLaunchedTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2214,7 +2349,11 @@ public class Image implements Serializable, Cloneable {
         if (getImdsSupport() != null)
             sb.append("ImdsSupport: ").append(getImdsSupport()).append(",");
         if (getSourceInstanceId() != null)
-            sb.append("SourceInstanceId: ").append(getSourceInstanceId());
+            sb.append("SourceInstanceId: ").append(getSourceInstanceId()).append(",");
+        if (getDeregistrationProtection() != null)
+            sb.append("DeregistrationProtection: ").append(getDeregistrationProtection()).append(",");
+        if (getLastLaunchedTime() != null)
+            sb.append("LastLaunchedTime: ").append(getLastLaunchedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -2353,6 +2492,14 @@ public class Image implements Serializable, Cloneable {
             return false;
         if (other.getSourceInstanceId() != null && other.getSourceInstanceId().equals(this.getSourceInstanceId()) == false)
             return false;
+        if (other.getDeregistrationProtection() == null ^ this.getDeregistrationProtection() == null)
+            return false;
+        if (other.getDeregistrationProtection() != null && other.getDeregistrationProtection().equals(this.getDeregistrationProtection()) == false)
+            return false;
+        if (other.getLastLaunchedTime() == null ^ this.getLastLaunchedTime() == null)
+            return false;
+        if (other.getLastLaunchedTime() != null && other.getLastLaunchedTime().equals(this.getLastLaunchedTime()) == false)
+            return false;
         return true;
     }
 
@@ -2392,6 +2539,8 @@ public class Image implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeprecationTime() == null) ? 0 : getDeprecationTime().hashCode());
         hashCode = prime * hashCode + ((getImdsSupport() == null) ? 0 : getImdsSupport().hashCode());
         hashCode = prime * hashCode + ((getSourceInstanceId() == null) ? 0 : getSourceInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getDeregistrationProtection() == null) ? 0 : getDeregistrationProtection().hashCode());
+        hashCode = prime * hashCode + ((getLastLaunchedTime() == null) ? 0 : getLastLaunchedTime().hashCode());
         return hashCode;
     }
 

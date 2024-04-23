@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      */
     private String resourceARN;
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource.
      */
 
     public String getResourceARN() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) of the resource.
      * </p>
      * 
      * @param resourceARN
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

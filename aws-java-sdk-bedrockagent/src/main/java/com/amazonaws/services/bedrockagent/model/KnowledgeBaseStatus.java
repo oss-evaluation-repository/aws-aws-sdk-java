@@ -24,7 +24,8 @@ public enum KnowledgeBaseStatus {
     ACTIVE("ACTIVE"),
     DELETING("DELETING"),
     UPDATING("UPDATING"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    DELETE_UNSUCCESSFUL("DELETE_UNSUCCESSFUL");
 
     private String value;
 

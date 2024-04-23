@@ -32,6 +32,8 @@ public class CreateDataSourceRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> DATADELETIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataDeletionPolicy").build();
     private static final MarshallingInfo<StructuredPojo> DATASOURCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceConfiguration").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,7 @@ public class CreateDataSourceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createDataSourceRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createDataSourceRequest.getDataDeletionPolicy(), DATADELETIONPOLICY_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getDataSourceConfiguration(), DATASOURCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getKnowledgeBaseId(), KNOWLEDGEBASEID_BINDING);

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration fields for invokation logging.
+ * Configuration fields for invocation logging.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/LoggingConfig" target="_top">AWS API

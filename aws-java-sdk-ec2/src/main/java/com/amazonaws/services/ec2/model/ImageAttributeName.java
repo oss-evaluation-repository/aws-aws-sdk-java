@@ -31,7 +31,8 @@ public enum ImageAttributeName {
     TpmSupport("tpmSupport"),
     UefiData("uefiData"),
     LastLaunchedTime("lastLaunchedTime"),
-    ImdsSupport("imdsSupport");
+    ImdsSupport("imdsSupport"),
+    DeregistrationProtection("deregistrationProtection");
 
     private String value;
 

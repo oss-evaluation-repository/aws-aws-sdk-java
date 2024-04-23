@@ -52,6 +52,10 @@ public class S3DataSourceConfigurationJsonUnmarshaller implements Unmarshaller<S
                     context.nextToken();
                     s3DataSourceConfiguration.setBucketArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("bucketOwnerAccountId", targetDepth)) {
+                    context.nextToken();
+                    s3DataSourceConfiguration.setBucketOwnerAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("inclusionPrefixes", targetDepth)) {
                     context.nextToken();
                     s3DataSourceConfiguration.setInclusionPrefixes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

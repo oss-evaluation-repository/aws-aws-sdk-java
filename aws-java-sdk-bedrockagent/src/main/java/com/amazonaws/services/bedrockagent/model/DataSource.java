@@ -36,6 +36,12 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
+     * The deletion policy for the data source.
+     * </p>
+     */
+    private String dataDeletionPolicy;
+    /**
+     * <p>
      * Contains details about how the data source is stored.
      * </p>
      */
@@ -52,6 +58,12 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The details of the failure reasons related to the data source.
+     * </p>
+     */
+    private java.util.List<String> failureReasons;
     /**
      * <p>
      * The unique identifier of the knowledge base to which the data source belongs.
@@ -138,6 +150,65 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     public DataSource withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deletion policy for the data source.
+     * </p>
+     * 
+     * @param dataDeletionPolicy
+     *        The deletion policy for the data source.
+     * @see DataDeletionPolicy
+     */
+
+    public void setDataDeletionPolicy(String dataDeletionPolicy) {
+        this.dataDeletionPolicy = dataDeletionPolicy;
+    }
+
+    /**
+     * <p>
+     * The deletion policy for the data source.
+     * </p>
+     * 
+     * @return The deletion policy for the data source.
+     * @see DataDeletionPolicy
+     */
+
+    public String getDataDeletionPolicy() {
+        return this.dataDeletionPolicy;
+    }
+
+    /**
+     * <p>
+     * The deletion policy for the data source.
+     * </p>
+     * 
+     * @param dataDeletionPolicy
+     *        The deletion policy for the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataDeletionPolicy
+     */
+
+    public DataSource withDataDeletionPolicy(String dataDeletionPolicy) {
+        setDataDeletionPolicy(dataDeletionPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deletion policy for the data source.
+     * </p>
+     * 
+     * @param dataDeletionPolicy
+     *        The deletion policy for the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataDeletionPolicy
+     */
+
+    public DataSource withDataDeletionPolicy(DataDeletionPolicy dataDeletionPolicy) {
+        this.dataDeletionPolicy = dataDeletionPolicy.toString();
         return this;
     }
 
@@ -258,6 +329,76 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     public DataSource withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the failure reasons related to the data source.
+     * </p>
+     * 
+     * @return The details of the failure reasons related to the data source.
+     */
+
+    public java.util.List<String> getFailureReasons() {
+        return failureReasons;
+    }
+
+    /**
+     * <p>
+     * The details of the failure reasons related to the data source.
+     * </p>
+     * 
+     * @param failureReasons
+     *        The details of the failure reasons related to the data source.
+     */
+
+    public void setFailureReasons(java.util.Collection<String> failureReasons) {
+        if (failureReasons == null) {
+            this.failureReasons = null;
+            return;
+        }
+
+        this.failureReasons = new java.util.ArrayList<String>(failureReasons);
+    }
+
+    /**
+     * <p>
+     * The details of the failure reasons related to the data source.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFailureReasons(java.util.Collection)} or {@link #withFailureReasons(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param failureReasons
+     *        The details of the failure reasons related to the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSource withFailureReasons(String... failureReasons) {
+        if (this.failureReasons == null) {
+            setFailureReasons(new java.util.ArrayList<String>(failureReasons.length));
+        }
+        for (String ele : failureReasons) {
+            this.failureReasons.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the failure reasons related to the data source.
+     * </p>
+     * 
+     * @param failureReasons
+     *        The details of the failure reasons related to the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSource withFailureReasons(java.util.Collection<String> failureReasons) {
+        setFailureReasons(failureReasons);
         return this;
     }
 
@@ -626,12 +767,16 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getDataDeletionPolicy() != null)
+            sb.append("DataDeletionPolicy: ").append(getDataDeletionPolicy()).append(",");
         if (getDataSourceConfiguration() != null)
             sb.append("DataSourceConfiguration: ").append(getDataSourceConfiguration()).append(",");
         if (getDataSourceId() != null)
             sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getFailureReasons() != null)
+            sb.append("FailureReasons: ").append(getFailureReasons()).append(",");
         if (getKnowledgeBaseId() != null)
             sb.append("KnowledgeBaseId: ").append(getKnowledgeBaseId()).append(",");
         if (getName() != null)
@@ -662,6 +807,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getDataDeletionPolicy() == null ^ this.getDataDeletionPolicy() == null)
+            return false;
+        if (other.getDataDeletionPolicy() != null && other.getDataDeletionPolicy().equals(this.getDataDeletionPolicy()) == false)
+            return false;
         if (other.getDataSourceConfiguration() == null ^ this.getDataSourceConfiguration() == null)
             return false;
         if (other.getDataSourceConfiguration() != null && other.getDataSourceConfiguration().equals(this.getDataSourceConfiguration()) == false)
@@ -673,6 +822,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getFailureReasons() == null ^ this.getFailureReasons() == null)
+            return false;
+        if (other.getFailureReasons() != null && other.getFailureReasons().equals(this.getFailureReasons()) == false)
             return false;
         if (other.getKnowledgeBaseId() == null ^ this.getKnowledgeBaseId() == null)
             return false;
@@ -708,9 +861,11 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getDataDeletionPolicy() == null) ? 0 : getDataDeletionPolicy().hashCode());
         hashCode = prime * hashCode + ((getDataSourceConfiguration() == null) ? 0 : getDataSourceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getFailureReasons() == null) ? 0 : getFailureReasons().hashCode());
         hashCode = prime * hashCode + ((getKnowledgeBaseId() == null) ? 0 : getKnowledgeBaseId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());

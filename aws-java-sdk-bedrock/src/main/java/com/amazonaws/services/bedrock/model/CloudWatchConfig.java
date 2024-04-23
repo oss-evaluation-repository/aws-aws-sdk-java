@@ -36,7 +36,7 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
     private String logGroupName;
     /**
      * <p>
-     * The role ARN.
+     * The role Amazon Resource Name (ARN).
      * </p>
      */
     private String roleArn;
@@ -89,11 +89,11 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The role ARN.
+     * The role Amazon Resource Name (ARN).
      * </p>
      * 
      * @param roleArn
-     *        The role ARN.
+     *        The role Amazon Resource Name (ARN).
      */
 
     public void setRoleArn(String roleArn) {
@@ -102,10 +102,10 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The role ARN.
+     * The role Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The role ARN.
+     * @return The role Amazon Resource Name (ARN).
      */
 
     public String getRoleArn() {
@@ -114,11 +114,11 @@ public class CloudWatchConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The role ARN.
+     * The role Amazon Resource Name (ARN).
      * </p>
      * 
      * @param roleArn
-     *        The role ARN.
+     *        The role Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

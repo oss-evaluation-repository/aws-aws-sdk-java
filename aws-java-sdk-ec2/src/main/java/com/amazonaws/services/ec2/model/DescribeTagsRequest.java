@@ -42,15 +42,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -109,16 +102,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *        <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *        <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *        <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *        <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *        <code>vpn-gateway</code>).
+     *        <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *        >TagSpecification</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -154,15 +140,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -192,16 +171,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         </li>
      *         <li>
      *         <p>
-     *         <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *         <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *         <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *         <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *         <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *         <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *         <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *         <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *         <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *         <code>vpn-gateway</code>).
+     *         <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *         >TagSpecification</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -241,15 +213,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -280,16 +245,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *        <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *        <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *        <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *        <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *        <code>vpn-gateway</code>).
+     *        <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *        >TagSpecification</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -331,15 +289,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -375,16 +326,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *        <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *        <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *        <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *        <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *        <code>vpn-gateway</code>).
+     *        <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *        >TagSpecification</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -428,15 +372,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -467,16 +404,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *        <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *        <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *        <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *        <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *        <code>vpn-gateway</code>).
+     *        <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *        >TagSpecification</a>.
      *        </p>
      *        </li>
      *        <li>

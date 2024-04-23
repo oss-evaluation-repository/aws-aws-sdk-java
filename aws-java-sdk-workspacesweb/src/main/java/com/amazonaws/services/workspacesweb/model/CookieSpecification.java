@@ -180,11 +180,11 @@ public class CookieSpecification implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: ").append(getDomain()).append(",");
+            sb.append("Domain: ").append("***Sensitive Data Redacted***").append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getPath() != null)
-            sb.append("Path: ").append(getPath());
+            sb.append("Path: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

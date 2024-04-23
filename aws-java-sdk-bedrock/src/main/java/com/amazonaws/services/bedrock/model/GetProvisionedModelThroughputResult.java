@@ -26,90 +26,93 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The current number of model units requested to be available for this provisioned throughput.
+     * The number of model units allocated to this Provisioned Throughput.
      * </p>
      */
     private Integer modelUnits;
     /**
      * <p>
-     * The desired number of model units that was requested to be available for this provisioned throughput.
+     * The number of model units that was requested for this Provisioned Throughput.
      * </p>
      */
     private Integer desiredModelUnits;
     /**
      * <p>
-     * The name of the provisioned throughput.
+     * The name of the Provisioned Throughput.
      * </p>
      */
     private String provisionedModelName;
     /**
      * <p>
-     * The ARN of the provisioned throughput.
+     * The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * </p>
      */
     private String provisionedModelArn;
     /**
      * <p>
-     * The ARN or name of the model associated with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.
      * </p>
      */
     private String modelArn;
     /**
      * <p>
-     * The ARN of the new model to asssociate with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value
+     * differs from the <code>modelArn</code> if updating hasn't completed.
      * </p>
      */
     private String desiredModelArn;
     /**
      * <p>
-     * ARN of the foundation model.
+     * The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base
+     * model that the custom model for which the Provisioned Throughput was created was customized.
      * </p>
      */
     private String foundationModelArn;
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The timestamp of the creation time for this provisioned throughput.
+     * The timestamp of the creation time for this Provisioned Throughput.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The timestamp of the last modified time of this provisioned throughput.
+     * The timestamp of the last time that this Provisioned Throughput was modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * Failure message for any issues that the create operation encounters.
+     * A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned
+     * Throughput.
      * </p>
      */
     private String failureMessage;
     /**
      * <p>
-     * Commitment duration of the provisioned throughput.
+     * Commitment duration of the Provisioned Throughput.
      * </p>
      */
     private String commitmentDuration;
     /**
      * <p>
-     * Commitment expiration time for the provisioned throughput.
+     * The timestamp for when the commitment term for the Provisioned Throughput expires.
      * </p>
      */
     private java.util.Date commitmentExpirationTime;
 
     /**
      * <p>
-     * The current number of model units requested to be available for this provisioned throughput.
+     * The number of model units allocated to this Provisioned Throughput.
      * </p>
      * 
      * @param modelUnits
-     *        The current number of model units requested to be available for this provisioned throughput.
+     *        The number of model units allocated to this Provisioned Throughput.
      */
 
     public void setModelUnits(Integer modelUnits) {
@@ -118,10 +121,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The current number of model units requested to be available for this provisioned throughput.
+     * The number of model units allocated to this Provisioned Throughput.
      * </p>
      * 
-     * @return The current number of model units requested to be available for this provisioned throughput.
+     * @return The number of model units allocated to this Provisioned Throughput.
      */
 
     public Integer getModelUnits() {
@@ -130,11 +133,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The current number of model units requested to be available for this provisioned throughput.
+     * The number of model units allocated to this Provisioned Throughput.
      * </p>
      * 
      * @param modelUnits
-     *        The current number of model units requested to be available for this provisioned throughput.
+     *        The number of model units allocated to this Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +148,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The desired number of model units that was requested to be available for this provisioned throughput.
+     * The number of model units that was requested for this Provisioned Throughput.
      * </p>
      * 
      * @param desiredModelUnits
-     *        The desired number of model units that was requested to be available for this provisioned throughput.
+     *        The number of model units that was requested for this Provisioned Throughput.
      */
 
     public void setDesiredModelUnits(Integer desiredModelUnits) {
@@ -158,10 +161,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The desired number of model units that was requested to be available for this provisioned throughput.
+     * The number of model units that was requested for this Provisioned Throughput.
      * </p>
      * 
-     * @return The desired number of model units that was requested to be available for this provisioned throughput.
+     * @return The number of model units that was requested for this Provisioned Throughput.
      */
 
     public Integer getDesiredModelUnits() {
@@ -170,11 +173,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The desired number of model units that was requested to be available for this provisioned throughput.
+     * The number of model units that was requested for this Provisioned Throughput.
      * </p>
      * 
      * @param desiredModelUnits
-     *        The desired number of model units that was requested to be available for this provisioned throughput.
+     *        The number of model units that was requested for this Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +188,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the provisioned throughput.
+     * The name of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelName
-     *        The name of the provisioned throughput.
+     *        The name of the Provisioned Throughput.
      */
 
     public void setProvisionedModelName(String provisionedModelName) {
@@ -198,10 +201,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the provisioned throughput.
+     * The name of the Provisioned Throughput.
      * </p>
      * 
-     * @return The name of the provisioned throughput.
+     * @return The name of the Provisioned Throughput.
      */
 
     public String getProvisionedModelName() {
@@ -210,11 +213,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the provisioned throughput.
+     * The name of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelName
-     *        The name of the provisioned throughput.
+     *        The name of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,11 +228,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the provisioned throughput.
+     * The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelArn
-     *        The ARN of the provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the Provisioned Throughput.
      */
 
     public void setProvisionedModelArn(String provisionedModelArn) {
@@ -238,10 +241,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the provisioned throughput.
+     * The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * </p>
      * 
-     * @return The ARN of the provisioned throughput.
+     * @return The Amazon Resource Name (ARN) of the Provisioned Throughput.
      */
 
     public String getProvisionedModelArn() {
@@ -250,11 +253,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the provisioned throughput.
+     * The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelArn
-     *        The ARN of the provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +268,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN or name of the model associated with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.
      * </p>
      * 
      * @param modelArn
-     *        The ARN or name of the model associated with this provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.
      */
 
     public void setModelArn(String modelArn) {
@@ -278,10 +281,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN or name of the model associated with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.
      * </p>
      * 
-     * @return The ARN or name of the model associated with this provisioned throughput.
+     * @return The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.
      */
 
     public String getModelArn() {
@@ -290,11 +293,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN or name of the model associated with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.
      * </p>
      * 
      * @param modelArn
-     *        The ARN or name of the model associated with this provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the model associated with this Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +308,13 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the new model to asssociate with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value
+     * differs from the <code>modelArn</code> if updating hasn't completed.
      * </p>
      * 
      * @param desiredModelArn
-     *        The ARN of the new model to asssociate with this provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput.
+     *        This value differs from the <code>modelArn</code> if updating hasn't completed.
      */
 
     public void setDesiredModelArn(String desiredModelArn) {
@@ -318,10 +323,12 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the new model to asssociate with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value
+     * differs from the <code>modelArn</code> if updating hasn't completed.
      * </p>
      * 
-     * @return The ARN of the new model to asssociate with this provisioned throughput.
+     * @return The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput.
+     *         This value differs from the <code>modelArn</code> if updating hasn't completed.
      */
 
     public String getDesiredModelArn() {
@@ -330,11 +337,13 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the new model to asssociate with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput. This value
+     * differs from the <code>modelArn</code> if updating hasn't completed.
      * </p>
      * 
      * @param desiredModelArn
-     *        The ARN of the new model to asssociate with this provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the model requested to be associated to this Provisioned Throughput.
+     *        This value differs from the <code>modelArn</code> if updating hasn't completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,11 +354,13 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * ARN of the foundation model.
+     * The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base
+     * model that the custom model for which the Provisioned Throughput was created was customized.
      * </p>
      * 
      * @param foundationModelArn
-     *        ARN of the foundation model.
+     *        The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of
+     *        the base model that the custom model for which the Provisioned Throughput was created was customized.
      */
 
     public void setFoundationModelArn(String foundationModelArn) {
@@ -358,10 +369,12 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * ARN of the foundation model.
+     * The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base
+     * model that the custom model for which the Provisioned Throughput was created was customized.
      * </p>
      * 
-     * @return ARN of the foundation model.
+     * @return The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of
+     *         the base model that the custom model for which the Provisioned Throughput was created was customized.
      */
 
     public String getFoundationModelArn() {
@@ -370,11 +383,13 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * ARN of the foundation model.
+     * The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of the base
+     * model that the custom model for which the Provisioned Throughput was created was customized.
      * </p>
      * 
      * @param foundationModelArn
-     *        ARN of the foundation model.
+     *        The Amazon Resource Name (ARN) of the base model for which the Provisioned Throughput was created, or of
+     *        the base model that the custom model for which the Provisioned Throughput was created was customized.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,11 +400,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      * 
      * @param status
-     *        Status of the provisioned throughput.
+     *        The status of the Provisioned Throughput.
      * @see ProvisionedModelStatus
      */
 
@@ -399,10 +414,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      * 
-     * @return Status of the provisioned throughput.
+     * @return The status of the Provisioned Throughput.
      * @see ProvisionedModelStatus
      */
 
@@ -412,11 +427,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      * 
      * @param status
-     *        Status of the provisioned throughput.
+     *        The status of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisionedModelStatus
      */
@@ -428,11 +443,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Status of the provisioned throughput.
+     * The status of the Provisioned Throughput.
      * </p>
      * 
      * @param status
-     *        Status of the provisioned throughput.
+     *        The status of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisionedModelStatus
      */
@@ -444,11 +459,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The timestamp of the creation time for this provisioned throughput.
+     * The timestamp of the creation time for this Provisioned Throughput.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp of the creation time for this provisioned throughput.
+     *        The timestamp of the creation time for this Provisioned Throughput.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -457,10 +472,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The timestamp of the creation time for this provisioned throughput.
+     * The timestamp of the creation time for this Provisioned Throughput.
      * </p>
      * 
-     * @return The timestamp of the creation time for this provisioned throughput.
+     * @return The timestamp of the creation time for this Provisioned Throughput.
      */
 
     public java.util.Date getCreationTime() {
@@ -469,11 +484,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The timestamp of the creation time for this provisioned throughput.
+     * The timestamp of the creation time for this Provisioned Throughput.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp of the creation time for this provisioned throughput.
+     *        The timestamp of the creation time for this Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,11 +499,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The timestamp of the last modified time of this provisioned throughput.
+     * The timestamp of the last time that this Provisioned Throughput was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The timestamp of the last modified time of this provisioned throughput.
+     *        The timestamp of the last time that this Provisioned Throughput was modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -497,10 +512,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The timestamp of the last modified time of this provisioned throughput.
+     * The timestamp of the last time that this Provisioned Throughput was modified.
      * </p>
      * 
-     * @return The timestamp of the last modified time of this provisioned throughput.
+     * @return The timestamp of the last time that this Provisioned Throughput was modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -509,11 +524,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The timestamp of the last modified time of this provisioned throughput.
+     * The timestamp of the last time that this Provisioned Throughput was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The timestamp of the last modified time of this provisioned throughput.
+     *        The timestamp of the last time that this Provisioned Throughput was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,11 +539,13 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Failure message for any issues that the create operation encounters.
+     * A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned
+     * Throughput.
      * </p>
      * 
      * @param failureMessage
-     *        Failure message for any issues that the create operation encounters.
+     *        A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned
+     *        Throughput.
      */
 
     public void setFailureMessage(String failureMessage) {
@@ -537,10 +554,12 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Failure message for any issues that the create operation encounters.
+     * A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned
+     * Throughput.
      * </p>
      * 
-     * @return Failure message for any issues that the create operation encounters.
+     * @return A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned
+     *         Throughput.
      */
 
     public String getFailureMessage() {
@@ -549,11 +568,13 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Failure message for any issues that the create operation encounters.
+     * A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned
+     * Throughput.
      * </p>
      * 
      * @param failureMessage
-     *        Failure message for any issues that the create operation encounters.
+     *        A failure message for any issues that occurred during creation, updating, or deletion of the Provisioned
+     *        Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,11 +585,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Commitment duration of the provisioned throughput.
+     * Commitment duration of the Provisioned Throughput.
      * </p>
      * 
      * @param commitmentDuration
-     *        Commitment duration of the provisioned throughput.
+     *        Commitment duration of the Provisioned Throughput.
      * @see CommitmentDuration
      */
 
@@ -578,10 +599,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Commitment duration of the provisioned throughput.
+     * Commitment duration of the Provisioned Throughput.
      * </p>
      * 
-     * @return Commitment duration of the provisioned throughput.
+     * @return Commitment duration of the Provisioned Throughput.
      * @see CommitmentDuration
      */
 
@@ -591,11 +612,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Commitment duration of the provisioned throughput.
+     * Commitment duration of the Provisioned Throughput.
      * </p>
      * 
      * @param commitmentDuration
-     *        Commitment duration of the provisioned throughput.
+     *        Commitment duration of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommitmentDuration
      */
@@ -607,11 +628,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Commitment duration of the provisioned throughput.
+     * Commitment duration of the Provisioned Throughput.
      * </p>
      * 
      * @param commitmentDuration
-     *        Commitment duration of the provisioned throughput.
+     *        Commitment duration of the Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommitmentDuration
      */
@@ -623,11 +644,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Commitment expiration time for the provisioned throughput.
+     * The timestamp for when the commitment term for the Provisioned Throughput expires.
      * </p>
      * 
      * @param commitmentExpirationTime
-     *        Commitment expiration time for the provisioned throughput.
+     *        The timestamp for when the commitment term for the Provisioned Throughput expires.
      */
 
     public void setCommitmentExpirationTime(java.util.Date commitmentExpirationTime) {
@@ -636,10 +657,10 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Commitment expiration time for the provisioned throughput.
+     * The timestamp for when the commitment term for the Provisioned Throughput expires.
      * </p>
      * 
-     * @return Commitment expiration time for the provisioned throughput.
+     * @return The timestamp for when the commitment term for the Provisioned Throughput expires.
      */
 
     public java.util.Date getCommitmentExpirationTime() {
@@ -648,11 +669,11 @@ public class GetProvisionedModelThroughputResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Commitment expiration time for the provisioned throughput.
+     * The timestamp for when the commitment term for the Provisioned Throughput expires.
      * </p>
      * 
      * @param commitmentExpirationTime
-     *        Commitment expiration time for the provisioned throughput.
+     *        The timestamp for when the commitment term for the Provisioned Throughput expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

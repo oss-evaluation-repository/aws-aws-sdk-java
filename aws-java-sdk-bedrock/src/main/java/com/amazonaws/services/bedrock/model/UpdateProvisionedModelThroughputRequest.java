@@ -27,30 +27,46 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN or name of the provisioned throughput to update.
+     * The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
      * </p>
      */
     private String provisionedModelId;
     /**
      * <p>
-     * The new name for this provisioned throughput.
+     * The new name for this Provisioned Throughput.
      * </p>
      */
     private String desiredProvisionedModelName;
     /**
      * <p>
-     * The ARN of the new model to associate with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify
+     * this field if this Provisioned Throughput is associated with a base model.
      * </p>
+     * <p>
+     * If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The base model from which the custom model was customized.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Another custom model that was customized from the same base model as the custom model.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String desiredModelId;
 
     /**
      * <p>
-     * The ARN or name of the provisioned throughput to update.
+     * The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
      * </p>
      * 
      * @param provisionedModelId
-     *        The ARN or name of the provisioned throughput to update.
+     *        The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
      */
 
     public void setProvisionedModelId(String provisionedModelId) {
@@ -59,10 +75,10 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN or name of the provisioned throughput to update.
+     * The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
      * </p>
      * 
-     * @return The ARN or name of the provisioned throughput to update.
+     * @return The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
      */
 
     public String getProvisionedModelId() {
@@ -71,11 +87,11 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN or name of the provisioned throughput to update.
+     * The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
      * </p>
      * 
      * @param provisionedModelId
-     *        The ARN or name of the provisioned throughput to update.
+     *        The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +102,11 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The new name for this provisioned throughput.
+     * The new name for this Provisioned Throughput.
      * </p>
      * 
      * @param desiredProvisionedModelName
-     *        The new name for this provisioned throughput.
+     *        The new name for this Provisioned Throughput.
      */
 
     public void setDesiredProvisionedModelName(String desiredProvisionedModelName) {
@@ -99,10 +115,10 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The new name for this provisioned throughput.
+     * The new name for this Provisioned Throughput.
      * </p>
      * 
-     * @return The new name for this provisioned throughput.
+     * @return The new name for this Provisioned Throughput.
      */
 
     public String getDesiredProvisionedModelName() {
@@ -111,11 +127,11 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The new name for this provisioned throughput.
+     * The new name for this Provisioned Throughput.
      * </p>
      * 
      * @param desiredProvisionedModelName
-     *        The new name for this provisioned throughput.
+     *        The new name for this Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +142,43 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the new model to associate with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify
+     * this field if this Provisioned Throughput is associated with a base model.
      * </p>
+     * <p>
+     * If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The base model from which the custom model was customized.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Another custom model that was customized from the same base model as the custom model.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param desiredModelId
-     *        The ARN of the new model to associate with this provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't
+     *        specify this field if this Provisioned Throughput is associated with a base model.</p>
+     *        <p>
+     *        If this Provisioned Throughput is associated with a custom model, you can specify one of the following
+     *        options:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The base model from which the custom model was customized.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Another custom model that was customized from the same base model as the custom model.
+     *        </p>
+     *        </li>
      */
 
     public void setDesiredModelId(String desiredModelId) {
@@ -139,10 +187,42 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the new model to associate with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify
+     * this field if this Provisioned Throughput is associated with a base model.
      * </p>
+     * <p>
+     * If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The base model from which the custom model was customized.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Another custom model that was customized from the same base model as the custom model.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ARN of the new model to associate with this provisioned throughput.
+     * @return The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't
+     *         specify this field if this Provisioned Throughput is associated with a base model.</p>
+     *         <p>
+     *         If this Provisioned Throughput is associated with a custom model, you can specify one of the following
+     *         options:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The base model from which the custom model was customized.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Another custom model that was customized from the same base model as the custom model.
+     *         </p>
+     *         </li>
      */
 
     public String getDesiredModelId() {
@@ -151,11 +231,43 @@ public class UpdateProvisionedModelThroughputRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the new model to associate with this provisioned throughput.
+     * The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify
+     * this field if this Provisioned Throughput is associated with a base model.
      * </p>
+     * <p>
+     * If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The base model from which the custom model was customized.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Another custom model that was customized from the same base model as the custom model.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param desiredModelId
-     *        The ARN of the new model to associate with this provisioned throughput.
+     *        The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't
+     *        specify this field if this Provisioned Throughput is associated with a base model.</p>
+     *        <p>
+     *        If this Provisioned Throughput is associated with a custom model, you can specify one of the following
+     *        options:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The base model from which the custom model was customized.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Another custom model that was customized from the same base model as the custom model.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

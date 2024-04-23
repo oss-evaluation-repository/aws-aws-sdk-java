@@ -25,7 +25,7 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NetworkInterface> networkInterfaces;
@@ -39,10 +39,10 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      * 
-     * @return Information about one or more network interfaces.
+     * @return Information about the network interfaces.
      */
 
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
@@ -54,11 +54,11 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      * 
      * @param networkInterfaces
-     *        Information about one or more network interfaces.
+     *        Information about the network interfaces.
      */
 
     public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
@@ -72,7 +72,7 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param networkInterfaces
-     *        Information about one or more network interfaces.
+     *        Information about the network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more network interfaces.
+     * Information about the network interfaces.
      * </p>
      * 
      * @param networkInterfaces
-     *        Information about one or more network interfaces.
+     *        Information about the network interfaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

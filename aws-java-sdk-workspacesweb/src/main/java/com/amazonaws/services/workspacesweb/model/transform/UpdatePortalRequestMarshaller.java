@@ -31,6 +31,10 @@ public class UpdatePortalRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationType").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxConcurrentSessions").build();
     private static final MarshallingInfo<String> PORTALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.GREEDY_PATH).marshallLocationName("portalArn").build();
 
@@ -52,6 +56,8 @@ public class UpdatePortalRequestMarshaller {
         try {
             protocolMarshaller.marshall(updatePortalRequest.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(updatePortalRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(updatePortalRequest.getMaxConcurrentSessions(), MAXCONCURRENTSESSIONS_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getPortalArn(), PORTALARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

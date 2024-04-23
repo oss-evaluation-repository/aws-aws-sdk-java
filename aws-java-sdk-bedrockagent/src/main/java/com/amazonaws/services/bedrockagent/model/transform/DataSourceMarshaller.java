@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.bedrockagent.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,12 +30,16 @@ public class DataSourceMarshaller {
 
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> DATADELETIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataDeletionPolicy").build();
     private static final MarshallingInfo<StructuredPojo> DATASOURCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceConfiguration").build();
     private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> FAILUREREASONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReasons").build();
     private static final MarshallingInfo<String> KNOWLEDGEBASEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("knowledgeBaseId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,9 +70,11 @@ public class DataSourceMarshaller {
 
         try {
             protocolMarshaller.marshall(dataSource.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(dataSource.getDataDeletionPolicy(), DATADELETIONPOLICY_BINDING);
             protocolMarshaller.marshall(dataSource.getDataSourceConfiguration(), DATASOURCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSource.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(dataSource.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(dataSource.getFailureReasons(), FAILUREREASONS_BINDING);
             protocolMarshaller.marshall(dataSource.getKnowledgeBaseId(), KNOWLEDGEBASEID_BINDING);
             protocolMarshaller.marshall(dataSource.getName(), NAME_BINDING);
             protocolMarshaller.marshall(dataSource.getServerSideEncryptionConfiguration(), SERVERSIDEENCRYPTIONCONFIGURATION_BINDING);

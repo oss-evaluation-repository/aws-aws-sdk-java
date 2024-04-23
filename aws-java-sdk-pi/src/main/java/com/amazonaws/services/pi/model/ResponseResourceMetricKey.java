@@ -53,6 +53,13 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      * >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The counter metrics listed in <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     * >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the number of active sessions is less than an internal Performance Insights threshold,
@@ -96,6 +103,13 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      * >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The counter metrics listed in <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     * >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the number of active sessions is less than an internal Performance Insights threshold,
@@ -128,6 +142,13 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      *        The counter metrics listed in <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
      *        >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The counter metrics listed in <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     *        >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -169,6 +190,13 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      * >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The counter metrics listed in <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     * >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the number of active sessions is less than an internal Performance Insights threshold,
@@ -200,6 +228,13 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      *         The counter metrics listed in <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
      *         >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The counter metrics listed in <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     *         >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -241,6 +276,13 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      * >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The counter metrics listed in <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     * >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the number of active sessions is less than an internal Performance Insights threshold,
@@ -273,6 +315,13 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      *        The counter metrics listed in <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
      *        >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The counter metrics listed in <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     *        >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        </li>
      *        </ul>

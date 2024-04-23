@@ -946,7 +946,11 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
      * >GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all
-     * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
+     * member accounts.
+     * </p>
+     * <p>
+     * Hourly granularity is only available for EC2-Instances (Elastic Compute Cloud) resource-level data. All other
+     * resource-level data is available at daily granularity.
      * </p>
      * <note>
      * <p>

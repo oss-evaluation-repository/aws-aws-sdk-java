@@ -28,6 +28,45 @@ public class AbstractAmazonBedrockAsync extends AbstractAmazonBedrock implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEvaluationJobResult> createEvaluationJobAsync(CreateEvaluationJobRequest request) {
+
+        return createEvaluationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEvaluationJobResult> createEvaluationJobAsync(CreateEvaluationJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEvaluationJobRequest, CreateEvaluationJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGuardrailResult> createGuardrailAsync(CreateGuardrailRequest request) {
+
+        return createGuardrailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGuardrailResult> createGuardrailAsync(CreateGuardrailRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGuardrailRequest, CreateGuardrailResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGuardrailVersionResult> createGuardrailVersionAsync(CreateGuardrailVersionRequest request) {
+
+        return createGuardrailVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGuardrailVersionResult> createGuardrailVersionAsync(CreateGuardrailVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGuardrailVersionRequest, CreateGuardrailVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelCustomizationJobResult> createModelCustomizationJobAsync(CreateModelCustomizationJobRequest request) {
 
         return createModelCustomizationJobAsync(request, null);
@@ -64,6 +103,19 @@ public class AbstractAmazonBedrockAsync extends AbstractAmazonBedrock implements
     @Override
     public java.util.concurrent.Future<DeleteCustomModelResult> deleteCustomModelAsync(DeleteCustomModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCustomModelRequest, DeleteCustomModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGuardrailResult> deleteGuardrailAsync(DeleteGuardrailRequest request) {
+
+        return deleteGuardrailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGuardrailResult> deleteGuardrailAsync(DeleteGuardrailRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGuardrailRequest, DeleteGuardrailResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -112,6 +164,19 @@ public class AbstractAmazonBedrockAsync extends AbstractAmazonBedrock implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetEvaluationJobResult> getEvaluationJobAsync(GetEvaluationJobRequest request) {
+
+        return getEvaluationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEvaluationJobResult> getEvaluationJobAsync(GetEvaluationJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetEvaluationJobRequest, GetEvaluationJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFoundationModelResult> getFoundationModelAsync(GetFoundationModelRequest request) {
 
         return getFoundationModelAsync(request, null);
@@ -120,6 +185,19 @@ public class AbstractAmazonBedrockAsync extends AbstractAmazonBedrock implements
     @Override
     public java.util.concurrent.Future<GetFoundationModelResult> getFoundationModelAsync(GetFoundationModelRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFoundationModelRequest, GetFoundationModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGuardrailResult> getGuardrailAsync(GetGuardrailRequest request) {
+
+        return getGuardrailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGuardrailResult> getGuardrailAsync(GetGuardrailRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGuardrailRequest, GetGuardrailResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +257,19 @@ public class AbstractAmazonBedrockAsync extends AbstractAmazonBedrock implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListEvaluationJobsResult> listEvaluationJobsAsync(ListEvaluationJobsRequest request) {
+
+        return listEvaluationJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEvaluationJobsResult> listEvaluationJobsAsync(ListEvaluationJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEvaluationJobsRequest, ListEvaluationJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFoundationModelsResult> listFoundationModelsAsync(ListFoundationModelsRequest request) {
 
         return listFoundationModelsAsync(request, null);
@@ -187,6 +278,19 @@ public class AbstractAmazonBedrockAsync extends AbstractAmazonBedrock implements
     @Override
     public java.util.concurrent.Future<ListFoundationModelsResult> listFoundationModelsAsync(ListFoundationModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFoundationModelsRequest, ListFoundationModelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGuardrailsResult> listGuardrailsAsync(ListGuardrailsRequest request) {
+
+        return listGuardrailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGuardrailsResult> listGuardrailsAsync(ListGuardrailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGuardrailsRequest, ListGuardrailsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -248,6 +352,19 @@ public class AbstractAmazonBedrockAsync extends AbstractAmazonBedrock implements
     }
 
     @Override
+    public java.util.concurrent.Future<StopEvaluationJobResult> stopEvaluationJobAsync(StopEvaluationJobRequest request) {
+
+        return stopEvaluationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopEvaluationJobResult> stopEvaluationJobAsync(StopEvaluationJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopEvaluationJobRequest, StopEvaluationJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopModelCustomizationJobResult> stopModelCustomizationJobAsync(StopModelCustomizationJobRequest request) {
 
         return stopModelCustomizationJobAsync(request, null);
@@ -282,6 +399,19 @@ public class AbstractAmazonBedrockAsync extends AbstractAmazonBedrock implements
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGuardrailResult> updateGuardrailAsync(UpdateGuardrailRequest request) {
+
+        return updateGuardrailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGuardrailResult> updateGuardrailAsync(UpdateGuardrailRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateGuardrailRequest, UpdateGuardrailResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

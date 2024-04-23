@@ -35,6 +35,12 @@ public class InvokeModelRequestMarshaller {
             .marshallLocationName("Accept").build();
     private static final MarshallingInfo<String> MODELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("modelId").build();
+    private static final MarshallingInfo<String> TRACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("X-Amzn-Bedrock-Trace").build();
+    private static final MarshallingInfo<String> GUARDRAILIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-Bedrock-GuardrailIdentifier").build();
+    private static final MarshallingInfo<String> GUARDRAILVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-Bedrock-GuardrailVersion").build();
 
     private static final InvokeModelRequestMarshaller instance = new InvokeModelRequestMarshaller();
 
@@ -56,6 +62,9 @@ public class InvokeModelRequestMarshaller {
             protocolMarshaller.marshall(invokeModelRequest.getContentType(), CONTENTTYPE_BINDING);
             protocolMarshaller.marshall(invokeModelRequest.getAccept(), ACCEPT_BINDING);
             protocolMarshaller.marshall(invokeModelRequest.getModelId(), MODELID_BINDING);
+            protocolMarshaller.marshall(invokeModelRequest.getTrace(), TRACE_BINDING);
+            protocolMarshaller.marshall(invokeModelRequest.getGuardrailIdentifier(), GUARDRAILIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(invokeModelRequest.getGuardrailVersion(), GUARDRAILVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

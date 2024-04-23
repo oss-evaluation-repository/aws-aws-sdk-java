@@ -26,18 +26,18 @@ public class CreateProvisionedModelThroughputResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN for this provisioned throughput.
+     * The Amazon Resource Name (ARN) for this Provisioned Throughput.
      * </p>
      */
     private String provisionedModelArn;
 
     /**
      * <p>
-     * The ARN for this provisioned throughput.
+     * The Amazon Resource Name (ARN) for this Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelArn
-     *        The ARN for this provisioned throughput.
+     *        The Amazon Resource Name (ARN) for this Provisioned Throughput.
      */
 
     public void setProvisionedModelArn(String provisionedModelArn) {
@@ -46,10 +46,10 @@ public class CreateProvisionedModelThroughputResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN for this provisioned throughput.
+     * The Amazon Resource Name (ARN) for this Provisioned Throughput.
      * </p>
      * 
-     * @return The ARN for this provisioned throughput.
+     * @return The Amazon Resource Name (ARN) for this Provisioned Throughput.
      */
 
     public String getProvisionedModelArn() {
@@ -58,11 +58,11 @@ public class CreateProvisionedModelThroughputResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN for this provisioned throughput.
+     * The Amazon Resource Name (ARN) for this Provisioned Throughput.
      * </p>
      * 
      * @param provisionedModelArn
-     *        The ARN for this provisioned throughput.
+     *        The Amazon Resource Name (ARN) for this Provisioned Throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
