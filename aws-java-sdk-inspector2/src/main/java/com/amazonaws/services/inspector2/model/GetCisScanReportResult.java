@@ -31,7 +31,7 @@ public class GetCisScanReportResult extends com.amazonaws.AmazonWebServiceResult
     private String status;
     /**
      * <p>
-     * The URL where the CIS scan report PDF can be downloaded.
+     * The URL where a PDF of the CIS scan report can be downloaded.
      * </p>
      */
     private String url;
@@ -97,11 +97,11 @@ public class GetCisScanReportResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The URL where the CIS scan report PDF can be downloaded.
+     * The URL where a PDF of the CIS scan report can be downloaded.
      * </p>
      * 
      * @param url
-     *        The URL where the CIS scan report PDF can be downloaded.
+     *        The URL where a PDF of the CIS scan report can be downloaded.
      */
 
     public void setUrl(String url) {
@@ -110,10 +110,10 @@ public class GetCisScanReportResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The URL where the CIS scan report PDF can be downloaded.
+     * The URL where a PDF of the CIS scan report can be downloaded.
      * </p>
      * 
-     * @return The URL where the CIS scan report PDF can be downloaded.
+     * @return The URL where a PDF of the CIS scan report can be downloaded.
      */
 
     public String getUrl() {
@@ -122,11 +122,11 @@ public class GetCisScanReportResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The URL where the CIS scan report PDF can be downloaded.
+     * The URL where a PDF of the CIS scan report can be downloaded.
      * </p>
      * 
      * @param url
-     *        The URL where the CIS scan report PDF can be downloaded.
+     *        The URL where a PDF of the CIS scan report can be downloaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

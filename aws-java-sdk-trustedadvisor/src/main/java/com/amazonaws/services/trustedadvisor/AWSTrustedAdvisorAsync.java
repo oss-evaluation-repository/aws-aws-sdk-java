@@ -34,6 +34,43 @@ public interface AWSTrustedAdvisorAsync extends AWSTrustedAdvisor {
 
     /**
      * <p>
+     * Update one or more exclusion status for a list of recommendation resources
+     * </p>
+     * 
+     * @param batchUpdateRecommendationResourceExclusionRequest
+     * @return A Java Future containing the result of the BatchUpdateRecommendationResourceExclusion operation returned
+     *         by the service.
+     * @sample AWSTrustedAdvisorAsync.BatchUpdateRecommendationResourceExclusion
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateRecommendationResourceExclusionResult> batchUpdateRecommendationResourceExclusionAsync(
+            BatchUpdateRecommendationResourceExclusionRequest batchUpdateRecommendationResourceExclusionRequest);
+
+    /**
+     * <p>
+     * Update one or more exclusion status for a list of recommendation resources
+     * </p>
+     * 
+     * @param batchUpdateRecommendationResourceExclusionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchUpdateRecommendationResourceExclusion operation returned
+     *         by the service.
+     * @sample AWSTrustedAdvisorAsyncHandler.BatchUpdateRecommendationResourceExclusion
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateRecommendationResourceExclusionResult> batchUpdateRecommendationResourceExclusionAsync(
+            BatchUpdateRecommendationResourceExclusionRequest batchUpdateRecommendationResourceExclusionRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateRecommendationResourceExclusionRequest, BatchUpdateRecommendationResourceExclusionResult> asyncHandler);
+
+    /**
+     * <p>
      * Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized
      * recommendations.
      * </p>
@@ -310,7 +347,7 @@ public interface AWSTrustedAdvisorAsync extends AWSTrustedAdvisor {
 
     /**
      * <p>
-     * Update the lifecyle of a Recommendation within an Organization. This API only supports prioritized
+     * Update the lifecycle of a Recommendation within an Organization. This API only supports prioritized
      * recommendations.
      * </p>
      * 
@@ -327,7 +364,7 @@ public interface AWSTrustedAdvisorAsync extends AWSTrustedAdvisor {
 
     /**
      * <p>
-     * Update the lifecyle of a Recommendation within an Organization. This API only supports prioritized
+     * Update the lifecycle of a Recommendation within an Organization. This API only supports prioritized
      * recommendations.
      * </p>
      * 

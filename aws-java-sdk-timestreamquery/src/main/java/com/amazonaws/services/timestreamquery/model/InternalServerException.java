@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Timestream was unable to fully process this request because of an internal server error.
+ * The service was unable to fully process this request because of an internal server error.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

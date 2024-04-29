@@ -29,6 +29,8 @@ public class ListOrganizationRecommendationResourcesRequestMarshaller {
 
     private static final MarshallingInfo<String> AFFECTEDACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("affectedAccountId").build();
+    private static final MarshallingInfo<String> EXCLUSIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("exclusionStatus").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +59,7 @@ public class ListOrganizationRecommendationResourcesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listOrganizationRecommendationResourcesRequest.getAffectedAccountId(), AFFECTEDACCOUNTID_BINDING);
+            protocolMarshaller.marshall(listOrganizationRecommendationResourcesRequest.getExclusionStatus(), EXCLUSIONSTATUS_BINDING);
             protocolMarshaller.marshall(listOrganizationRecommendationResourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listOrganizationRecommendationResourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listOrganizationRecommendationResourcesRequest.getOrganizationRecommendationIdentifier(),

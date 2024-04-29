@@ -56,6 +56,10 @@ public class CallAnalyticsJobJsonUnmarshaller implements Unmarshaller<CallAnalyt
                     context.nextToken();
                     callAnalyticsJob.setCallAnalyticsJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CallAnalyticsJobDetails", targetDepth)) {
+                    context.nextToken();
+                    callAnalyticsJob.setCallAnalyticsJobDetails(CallAnalyticsJobDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("LanguageCode", targetDepth)) {
                     context.nextToken();
                     callAnalyticsJob.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));

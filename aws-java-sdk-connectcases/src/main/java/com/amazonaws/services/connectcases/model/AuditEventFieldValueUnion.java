@@ -21,11 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Object to store union of Field values.
  * </p>
- * <important>
- * <p>
- * This data type is a UNION, so only one of the following members can be specified when used or returned.
- * </p>
- * </important>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/AuditEventFieldValueUnion"
  *      target="_top">AWS API Documentation</a>

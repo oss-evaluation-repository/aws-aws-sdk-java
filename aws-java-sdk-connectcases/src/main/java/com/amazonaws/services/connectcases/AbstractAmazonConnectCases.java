@@ -73,6 +73,21 @@ public class AbstractAmazonConnectCases implements AmazonConnectCases {
     }
 
     @Override
+    public DeleteFieldResult deleteField(DeleteFieldRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLayoutResult deleteLayout(DeleteLayoutRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTemplateResult deleteTemplate(DeleteTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCaseResult getCase(GetCaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

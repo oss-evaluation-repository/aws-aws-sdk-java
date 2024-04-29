@@ -459,6 +459,257 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
 
     /**
      * <p>
+     * Deletes a field from a cases template. You can delete up to 100 fields per domain.
+     * </p>
+     * <p>
+     * After a field is deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can still retrieve the field by calling <code>BatchGetField</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot update a deleted field by calling <code>UpdateField</code>; it throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted fields are not included in the <code>ListFields</code> response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>CreateCase</code> with a deleted field throws a <code>ValidationException</code> denoting which
+     * field IDs in the request have been deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCase</code> with a deleted field ID returns the deleted field's value if one exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>UpdateCase</code> with a deleted field ID throws a <code>ValidationException</code> if the case
+     * does not already contain a value for the deleted field. Otherwise it succeeds, allowing you to update or remove
+     * (using <code>emptyValue: {}</code>) the field's value from the case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetTemplate</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetLayout</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with the deleted field ID as a filter returns any cases that have a value for
+     * the deleted field that matches the filter criteria.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with a <code>searchTerm</code> value that matches a deleted field's value on a
+     * case returns the case in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>BatchPutFieldOptions</code> with a deleted field ID throw a <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCaseEventConfiguration</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteFieldRequest
+     * @return A Java Future containing the result of the DeleteField operation returned by the service.
+     * @sample AmazonConnectCasesAsync.DeleteField
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteField" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(DeleteFieldRequest deleteFieldRequest);
+
+    /**
+     * <p>
+     * Deletes a field from a cases template. You can delete up to 100 fields per domain.
+     * </p>
+     * <p>
+     * After a field is deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can still retrieve the field by calling <code>BatchGetField</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot update a deleted field by calling <code>UpdateField</code>; it throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted fields are not included in the <code>ListFields</code> response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>CreateCase</code> with a deleted field throws a <code>ValidationException</code> denoting which
+     * field IDs in the request have been deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCase</code> with a deleted field ID returns the deleted field's value if one exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>UpdateCase</code> with a deleted field ID throws a <code>ValidationException</code> if the case
+     * does not already contain a value for the deleted field. Otherwise it succeeds, allowing you to update or remove
+     * (using <code>emptyValue: {}</code>) the field's value from the case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetTemplate</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetLayout</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with the deleted field ID as a filter returns any cases that have a value for
+     * the deleted field that matches the filter criteria.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with a <code>searchTerm</code> value that matches a deleted field's value on a
+     * case returns the case in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>BatchPutFieldOptions</code> with a deleted field ID throw a <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCaseEventConfiguration</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteFieldRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteField operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.DeleteField
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteField" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(DeleteFieldRequest deleteFieldRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFieldRequest, DeleteFieldResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a layout from a cases template. You can delete up to 100 layouts per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a layout is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the layout by calling &lt;code&gt;GetLayout&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update a deleted layout by calling &lt;code&gt;UpdateLayout&lt;/code&gt;; it throws a &lt;code&gt;ValidationException&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted layouts are not included in the &lt;code&gt;ListLayouts&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteLayoutRequest
+     * @return A Java Future containing the result of the DeleteLayout operation returned by the service.
+     * @sample AmazonConnectCasesAsync.DeleteLayout
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteLayout" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(DeleteLayoutRequest deleteLayoutRequest);
+
+    /**
+     * <p>
+     * Deletes a layout from a cases template. You can delete up to 100 layouts per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a layout is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the layout by calling &lt;code&gt;GetLayout&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update a deleted layout by calling &lt;code&gt;UpdateLayout&lt;/code&gt;; it throws a &lt;code&gt;ValidationException&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted layouts are not included in the &lt;code&gt;ListLayouts&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteLayoutRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLayout operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.DeleteLayout
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteLayout" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(DeleteLayoutRequest deleteLayoutRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLayoutRequest, DeleteLayoutResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a cases template. You can delete up to 100 templates per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a cases template is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the template by calling &lt;code&gt;GetTemplate&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update the template. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot create a case by using the deleted template.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted templates are not included in the &lt;code&gt;ListTemplates&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteTemplateRequest
+     * @return A Java Future containing the result of the DeleteTemplate operation returned by the service.
+     * @sample AmazonConnectCasesAsync.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest deleteTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a cases template. You can delete up to 100 templates per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a cases template is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the template by calling &lt;code&gt;GetTemplate&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update the template. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot create a case by using the deleted template.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted templates are not included in the &lt;code&gt;ListTemplates&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTemplate operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest deleteTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a specific case if it exists.
      * </p>
      * 

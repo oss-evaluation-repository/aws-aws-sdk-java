@@ -37362,7 +37362,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "maxResults",
-        "c2jShape" : "MaxResults",
+        "c2jShape" : "MaxResultsForListApps",
         "deprecated" : false,
         "documentation" : "<p>The maximum number of records to list in a single response. </p>",
         "endpointDiscoveryId" : false,
@@ -37433,7 +37433,7 @@
       "membersAsMap" : {
         "MaxResults" : {
           "c2jName" : "maxResults",
-          "c2jShape" : "MaxResults",
+          "c2jShape" : "MaxResultsForListApps",
           "deprecated" : false,
           "documentation" : "<p>The maximum number of records to list in a single response. </p>",
           "endpointDiscoveryId" : false,

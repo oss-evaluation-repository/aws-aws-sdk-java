@@ -62,6 +62,12 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
     private String callAnalyticsJobStatus;
     /**
      * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     */
+    private CallAnalyticsJobDetails callAnalyticsJobDetails;
+    /**
+     * <p>
      * The language code used to create your Call Analytics job. For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
@@ -368,6 +374,49 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     public CallAnalyticsJob withCallAnalyticsJobStatus(CallAnalyticsJobStatus callAnalyticsJobStatus) {
         this.callAnalyticsJobStatus = callAnalyticsJobStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @param callAnalyticsJobDetails
+     *        Provides detailed information about a call analytics job, including information about skipped analytics
+     *        features.
+     */
+
+    public void setCallAnalyticsJobDetails(CallAnalyticsJobDetails callAnalyticsJobDetails) {
+        this.callAnalyticsJobDetails = callAnalyticsJobDetails;
+    }
+
+    /**
+     * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @return Provides detailed information about a call analytics job, including information about skipped analytics
+     *         features.
+     */
+
+    public CallAnalyticsJobDetails getCallAnalyticsJobDetails() {
+        return this.callAnalyticsJobDetails;
+    }
+
+    /**
+     * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @param callAnalyticsJobDetails
+     *        Provides detailed information about a call analytics job, including information about skipped analytics
+     *        features.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CallAnalyticsJob withCallAnalyticsJobDetails(CallAnalyticsJobDetails callAnalyticsJobDetails) {
+        setCallAnalyticsJobDetails(callAnalyticsJobDetails);
         return this;
     }
 
@@ -1498,6 +1547,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
             sb.append("CallAnalyticsJobName: ").append(getCallAnalyticsJobName()).append(",");
         if (getCallAnalyticsJobStatus() != null)
             sb.append("CallAnalyticsJobStatus: ").append(getCallAnalyticsJobStatus()).append(",");
+        if (getCallAnalyticsJobDetails() != null)
+            sb.append("CallAnalyticsJobDetails: ").append(getCallAnalyticsJobDetails()).append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getMediaSampleRateHertz() != null)
@@ -1545,6 +1596,10 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
         if (other.getCallAnalyticsJobStatus() == null ^ this.getCallAnalyticsJobStatus() == null)
             return false;
         if (other.getCallAnalyticsJobStatus() != null && other.getCallAnalyticsJobStatus().equals(this.getCallAnalyticsJobStatus()) == false)
+            return false;
+        if (other.getCallAnalyticsJobDetails() == null ^ this.getCallAnalyticsJobDetails() == null)
+            return false;
+        if (other.getCallAnalyticsJobDetails() != null && other.getCallAnalyticsJobDetails().equals(this.getCallAnalyticsJobDetails()) == false)
             return false;
         if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
             return false;
@@ -1608,6 +1663,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getCallAnalyticsJobName() == null) ? 0 : getCallAnalyticsJobName().hashCode());
         hashCode = prime * hashCode + ((getCallAnalyticsJobStatus() == null) ? 0 : getCallAnalyticsJobStatus().hashCode());
+        hashCode = prime * hashCode + ((getCallAnalyticsJobDetails() == null) ? 0 : getCallAnalyticsJobDetails().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getMediaSampleRateHertz() == null) ? 0 : getMediaSampleRateHertz().hashCode());
         hashCode = prime * hashCode + ((getMediaFormat() == null) ? 0 : getMediaFormat().hashCode());

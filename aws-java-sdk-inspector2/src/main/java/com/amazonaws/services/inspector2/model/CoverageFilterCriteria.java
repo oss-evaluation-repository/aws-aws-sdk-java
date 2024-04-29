@@ -99,6 +99,13 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
     private java.util.List<CoverageStringFilter> resourceType;
     /**
      * <p>
+     * The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     * <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     * </p>
+     */
+    private java.util.List<CoverageStringFilter> scanMode;
+    /**
+     * <p>
      * The scan status code to filter on. Valid values are: <code>ValidationException</code>,
      * <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>,
      * and <code>ThrottlingException</code>.
@@ -914,6 +921,84 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     * <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     * </p>
+     * 
+     * @return The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     *         <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     */
+
+    public java.util.List<CoverageStringFilter> getScanMode() {
+        return scanMode;
+    }
+
+    /**
+     * <p>
+     * The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     * <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     * </p>
+     * 
+     * @param scanMode
+     *        The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     *        <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     */
+
+    public void setScanMode(java.util.Collection<CoverageStringFilter> scanMode) {
+        if (scanMode == null) {
+            this.scanMode = null;
+            return;
+        }
+
+        this.scanMode = new java.util.ArrayList<CoverageStringFilter>(scanMode);
+    }
+
+    /**
+     * <p>
+     * The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     * <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScanMode(java.util.Collection)} or {@link #withScanMode(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param scanMode
+     *        The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     *        <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoverageFilterCriteria withScanMode(CoverageStringFilter... scanMode) {
+        if (this.scanMode == null) {
+            setScanMode(new java.util.ArrayList<CoverageStringFilter>(scanMode.length));
+        }
+        for (CoverageStringFilter ele : scanMode) {
+            this.scanMode.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     * <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     * </p>
+     * 
+     * @param scanMode
+     *        The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
+     *        <code>EC2_SSM_AGENT_BASED</code> and <code>EC2_HYBRID</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoverageFilterCriteria withScanMode(java.util.Collection<CoverageStringFilter> scanMode) {
+        setScanMode(scanMode);
+        return this;
+    }
+
+    /**
+     * <p>
      * The scan status code to filter on. Valid values are: <code>ValidationException</code>,
      * <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>,
      * and <code>ThrottlingException</code>.
@@ -1172,6 +1257,8 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getScanMode() != null)
+            sb.append("ScanMode: ").append(getScanMode()).append(",");
         if (getScanStatusCode() != null)
             sb.append("ScanStatusCode: ").append(getScanStatusCode()).append(",");
         if (getScanStatusReason() != null)
@@ -1236,6 +1323,10 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getScanMode() == null ^ this.getScanMode() == null)
+            return false;
+        if (other.getScanMode() != null && other.getScanMode().equals(this.getScanMode()) == false)
+            return false;
         if (other.getScanStatusCode() == null ^ this.getScanStatusCode() == null)
             return false;
         if (other.getScanStatusCode() != null && other.getScanStatusCode().equals(this.getScanStatusCode()) == false)
@@ -1267,6 +1358,7 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getLastScannedAt() == null) ? 0 : getLastScannedAt().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getScanMode() == null) ? 0 : getScanMode().hashCode());
         hashCode = prime * hashCode + ((getScanStatusCode() == null) ? 0 : getScanStatusCode().hashCode());
         hashCode = prime * hashCode + ((getScanStatusReason() == null) ? 0 : getScanStatusReason().hashCode());
         hashCode = prime * hashCode + ((getScanType() == null) ? 0 : getScanType().hashCode());

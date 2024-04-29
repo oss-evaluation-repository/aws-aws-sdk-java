@@ -33,6 +33,8 @@ public class ExecutionStatsMarshaller {
             .marshallLocationName("DataWrites").build();
     private static final MarshallingInfo<Long> BYTESMETERED_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("BytesMetered").build();
+    private static final MarshallingInfo<Long> CUMULATIVEBYTESSCANNED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CumulativeBytesScanned").build();
     private static final MarshallingInfo<Long> RECORDSINGESTED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecordsIngested").build();
     private static final MarshallingInfo<Long> QUERYRESULTROWS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -57,6 +59,7 @@ public class ExecutionStatsMarshaller {
             protocolMarshaller.marshall(executionStats.getExecutionTimeInMillis(), EXECUTIONTIMEINMILLIS_BINDING);
             protocolMarshaller.marshall(executionStats.getDataWrites(), DATAWRITES_BINDING);
             protocolMarshaller.marshall(executionStats.getBytesMetered(), BYTESMETERED_BINDING);
+            protocolMarshaller.marshall(executionStats.getCumulativeBytesScanned(), CUMULATIVEBYTESSCANNED_BINDING);
             protocolMarshaller.marshall(executionStats.getRecordsIngested(), RECORDSINGESTED_BINDING);
             protocolMarshaller.marshall(executionStats.getQueryResultRows(), QUERYRESULTROWS_BINDING);
         } catch (Exception e) {

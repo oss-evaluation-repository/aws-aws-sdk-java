@@ -48,6 +48,10 @@ public class GetConfigurationResultJsonUnmarshaller implements Unmarshaller<GetC
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ec2Configuration", targetDepth)) {
+                    context.nextToken();
+                    getConfigurationResult.setEc2Configuration(Ec2ConfigurationStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ecrConfiguration", targetDepth)) {
                     context.nextToken();
                     getConfigurationResult.setEcrConfiguration(EcrConfigurationStateJsonUnmarshaller.getInstance().unmarshall(context));

@@ -60,6 +60,10 @@ public class ExecutionStatsJsonUnmarshaller implements Unmarshaller<ExecutionSta
                     context.nextToken();
                     executionStats.setBytesMetered(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("CumulativeBytesScanned", targetDepth)) {
+                    context.nextToken();
+                    executionStats.setCumulativeBytesScanned(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("RecordsIngested", targetDepth)) {
                     context.nextToken();
                     executionStats.setRecordsIngested(context.getUnmarshaller(Long.class).unmarshall(context));

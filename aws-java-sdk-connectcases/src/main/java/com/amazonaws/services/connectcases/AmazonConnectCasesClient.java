@@ -863,6 +863,299 @@ public class AmazonConnectCasesClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Deletes a field from a cases template. You can delete up to 100 fields per domain.
+     * </p>
+     * <p>
+     * After a field is deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can still retrieve the field by calling <code>BatchGetField</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot update a deleted field by calling <code>UpdateField</code>; it throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted fields are not included in the <code>ListFields</code> response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>CreateCase</code> with a deleted field throws a <code>ValidationException</code> denoting which
+     * field IDs in the request have been deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCase</code> with a deleted field ID returns the deleted field's value if one exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>UpdateCase</code> with a deleted field ID throws a <code>ValidationException</code> if the case
+     * does not already contain a value for the deleted field. Otherwise it succeeds, allowing you to update or remove
+     * (using <code>emptyValue: {}</code>) the field's value from the case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetTemplate</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetLayout</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with the deleted field ID as a filter returns any cases that have a value for
+     * the deleted field that matches the filter criteria.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with a <code>searchTerm</code> value that matches a deleted field's value on a
+     * case returns the case in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>BatchPutFieldOptions</code> with a deleted field ID throw a <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCaseEventConfiguration</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteFieldRequest
+     * @return Result of the DeleteField operation returned by the service.
+     * @throws InternalServerException
+     *         We couldn't process your request because of an issue with the server. Try again later.
+     * @throws ResourceNotFoundException
+     *         We couldn't find the requested resource. Check that your resources exists and were created in the same
+     *         Amazon Web Services Region as your request, and try your request again.
+     * @throws ValidationException
+     *         The request isn't valid. Check the syntax and try again.
+     * @throws ThrottlingException
+     *         The rate has been exceeded for this API. Please try again after a few minutes.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request. See the accompanying error message
+     *         for details.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded. For a list of service quotas, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+     *         Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * @sample AmazonConnectCases.DeleteField
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteField" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFieldResult deleteField(DeleteFieldRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteField(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFieldResult executeDeleteField(DeleteFieldRequest deleteFieldRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFieldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFieldRequest> request = null;
+        Response<DeleteFieldResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFieldRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFieldRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectCases");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteField");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFieldResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFieldResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a layout from a cases template. You can delete up to 100 layouts per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a layout is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the layout by calling &lt;code&gt;GetLayout&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update a deleted layout by calling &lt;code&gt;UpdateLayout&lt;/code&gt;; it throws a &lt;code&gt;ValidationException&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted layouts are not included in the &lt;code&gt;ListLayouts&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteLayoutRequest
+     * @return Result of the DeleteLayout operation returned by the service.
+     * @throws InternalServerException
+     *         We couldn't process your request because of an issue with the server. Try again later.
+     * @throws ResourceNotFoundException
+     *         We couldn't find the requested resource. Check that your resources exists and were created in the same
+     *         Amazon Web Services Region as your request, and try your request again.
+     * @throws ValidationException
+     *         The request isn't valid. Check the syntax and try again.
+     * @throws ThrottlingException
+     *         The rate has been exceeded for this API. Please try again after a few minutes.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request. See the accompanying error message
+     *         for details.
+     * @sample AmazonConnectCases.DeleteLayout
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteLayout" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteLayoutResult deleteLayout(DeleteLayoutRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLayout(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLayoutResult executeDeleteLayout(DeleteLayoutRequest deleteLayoutRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLayoutRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLayoutRequest> request = null;
+        Response<DeleteLayoutResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLayoutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLayoutRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectCases");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLayout");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLayoutResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLayoutResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a cases template. You can delete up to 100 templates per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a cases template is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the template by calling &lt;code&gt;GetTemplate&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update the template. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot create a case by using the deleted template.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted templates are not included in the &lt;code&gt;ListTemplates&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteTemplateRequest
+     * @return Result of the DeleteTemplate operation returned by the service.
+     * @throws InternalServerException
+     *         We couldn't process your request because of an issue with the server. Try again later.
+     * @throws ResourceNotFoundException
+     *         We couldn't find the requested resource. Check that your resources exists and were created in the same
+     *         Amazon Web Services Region as your request, and try your request again.
+     * @throws ValidationException
+     *         The request isn't valid. Check the syntax and try again.
+     * @throws ThrottlingException
+     *         The rate has been exceeded for this API. Please try again after a few minutes.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request. See the accompanying error message
+     *         for details.
+     * @sample AmazonConnectCases.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteTemplateResult deleteTemplate(DeleteTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTemplateResult executeDeleteTemplate(DeleteTemplateRequest deleteTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTemplateRequest> request = null;
+        Response<DeleteTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectCases");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a specific case if it exists.
      * </p>
      * 

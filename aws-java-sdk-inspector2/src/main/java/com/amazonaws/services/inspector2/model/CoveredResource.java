@@ -60,6 +60,12 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
     private String resourceType;
     /**
      * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     */
+    private String scanMode;
+    /**
+     * <p>
      * The status of the scan covering the resource.
      * </p>
      */
@@ -292,6 +298,65 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     * 
+     * @param scanMode
+     *        The scan method that is applied to the instance.
+     * @see ScanMode
+     */
+
+    public void setScanMode(String scanMode) {
+        this.scanMode = scanMode;
+    }
+
+    /**
+     * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     * 
+     * @return The scan method that is applied to the instance.
+     * @see ScanMode
+     */
+
+    public String getScanMode() {
+        return this.scanMode;
+    }
+
+    /**
+     * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     * 
+     * @param scanMode
+     *        The scan method that is applied to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScanMode
+     */
+
+    public CoveredResource withScanMode(String scanMode) {
+        setScanMode(scanMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scan method that is applied to the instance.
+     * </p>
+     * 
+     * @param scanMode
+     *        The scan method that is applied to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScanMode
+     */
+
+    public CoveredResource withScanMode(ScanMode scanMode) {
+        this.scanMode = scanMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the scan covering the resource.
      * </p>
      * 
@@ -411,6 +476,8 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
             sb.append("ResourceMetadata: ").append(getResourceMetadata()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getScanMode() != null)
+            sb.append("ScanMode: ").append(getScanMode()).append(",");
         if (getScanStatus() != null)
             sb.append("ScanStatus: ").append(getScanStatus()).append(",");
         if (getScanType() != null)
@@ -449,6 +516,10 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getScanMode() == null ^ this.getScanMode() == null)
+            return false;
+        if (other.getScanMode() != null && other.getScanMode().equals(this.getScanMode()) == false)
+            return false;
         if (other.getScanStatus() == null ^ this.getScanStatus() == null)
             return false;
         if (other.getScanStatus() != null && other.getScanStatus().equals(this.getScanStatus()) == false)
@@ -470,6 +541,7 @@ public class CoveredResource implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceMetadata() == null) ? 0 : getResourceMetadata().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getScanMode() == null) ? 0 : getScanMode().hashCode());
         hashCode = prime * hashCode + ((getScanStatus() == null) ? 0 : getScanStatus().hashCode());
         hashCode = prime * hashCode + ((getScanType() == null) ? 0 : getScanType().hashCode());
         return hashCode;

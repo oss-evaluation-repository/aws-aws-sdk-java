@@ -49,6 +49,12 @@ public class OrganizationRecommendationResourceSummary implements Serializable, 
     private String awsResourceId;
     /**
      * <p>
+     * The exclusion status of the Recommendation Resource
+     * </p>
+     */
+    private String exclusionStatus;
+    /**
+     * <p>
      * The ID of the Recommendation Resource
      * </p>
      */
@@ -201,6 +207,65 @@ public class OrganizationRecommendationResourceSummary implements Serializable, 
 
     public OrganizationRecommendationResourceSummary withAwsResourceId(String awsResourceId) {
         setAwsResourceId(awsResourceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the Recommendation Resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the Recommendation Resource
+     * @see ExclusionStatus
+     */
+
+    public void setExclusionStatus(String exclusionStatus) {
+        this.exclusionStatus = exclusionStatus;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the Recommendation Resource
+     * </p>
+     * 
+     * @return The exclusion status of the Recommendation Resource
+     * @see ExclusionStatus
+     */
+
+    public String getExclusionStatus() {
+        return this.exclusionStatus;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the Recommendation Resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the Recommendation Resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExclusionStatus
+     */
+
+    public OrganizationRecommendationResourceSummary withExclusionStatus(String exclusionStatus) {
+        setExclusionStatus(exclusionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the Recommendation Resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the Recommendation Resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExclusionStatus
+     */
+
+    public OrganizationRecommendationResourceSummary withExclusionStatus(ExclusionStatus exclusionStatus) {
+        this.exclusionStatus = exclusionStatus.toString();
         return this;
     }
 
@@ -509,6 +574,8 @@ public class OrganizationRecommendationResourceSummary implements Serializable, 
             sb.append("Arn: ").append(getArn()).append(",");
         if (getAwsResourceId() != null)
             sb.append("AwsResourceId: ").append(getAwsResourceId()).append(",");
+        if (getExclusionStatus() != null)
+            sb.append("ExclusionStatus: ").append(getExclusionStatus()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getLastUpdatedAt() != null)
@@ -547,6 +614,10 @@ public class OrganizationRecommendationResourceSummary implements Serializable, 
             return false;
         if (other.getAwsResourceId() != null && other.getAwsResourceId().equals(this.getAwsResourceId()) == false)
             return false;
+        if (other.getExclusionStatus() == null ^ this.getExclusionStatus() == null)
+            return false;
+        if (other.getExclusionStatus() != null && other.getExclusionStatus().equals(this.getExclusionStatus()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -582,6 +653,7 @@ public class OrganizationRecommendationResourceSummary implements Serializable, 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAwsResourceId() == null) ? 0 : getAwsResourceId().hashCode());
+        hashCode = prime * hashCode + ((getExclusionStatus() == null) ? 0 : getExclusionStatus().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());

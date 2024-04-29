@@ -1,3 +1,28 @@
+# __1.12.711__ __2024-04-29__
+## __AWS Amplify__
+  - ### Features
+    - Updating max results limit for listing any resources (Job, Artifacts, Branch, BackendResources, DomainAssociation) to 50 with the exception of list apps that where max results can be up to 100.
+
+## __Amazon Connect Cases__
+  - ### Features
+    - This feature releases DeleteField, DeletedLayout, and DeleteTemplate API's
+
+## __Amazon Timestream Query__
+  - ### Features
+    - This change allows users to update and describe account settings associated with their accounts.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - This update provides error messaging for generative call summarization in Transcribe Call Analytics
+
+## __Inspector2__
+  - ### Features
+    - Update Inspector2 to include new Agentless API parameters.
+
+## __TrustedAdvisor Public API__
+  - ### Features
+    - This release adds the BatchUpdateRecommendationResourceExclusion API to support batch updates of Recommendation Resource exclusion statuses and introduces a new exclusion status filter to the ListRecommendationResources and ListOrganizationRecommendationResources APIs.
+
 # __1.12.710__ __2024-04-26__
 ## __AWS CodePipeline__
   - ### Features

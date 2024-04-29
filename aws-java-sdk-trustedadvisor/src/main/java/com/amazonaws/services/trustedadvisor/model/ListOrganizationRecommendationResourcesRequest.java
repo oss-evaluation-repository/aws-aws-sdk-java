@@ -34,6 +34,12 @@ public class ListOrganizationRecommendationResourcesRequest extends com.amazonaw
     private String affectedAccountId;
     /**
      * <p>
+     * The exclusion status of the resource
+     * </p>
+     */
+    private String exclusionStatus;
+    /**
+     * <p>
      * The maximum number of results to return per page.
      * </p>
      */
@@ -101,6 +107,65 @@ public class ListOrganizationRecommendationResourcesRequest extends com.amazonaw
 
     public ListOrganizationRecommendationResourcesRequest withAffectedAccountId(String affectedAccountId) {
         setAffectedAccountId(affectedAccountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the resource
+     * @see ExclusionStatus
+     */
+
+    public void setExclusionStatus(String exclusionStatus) {
+        this.exclusionStatus = exclusionStatus;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the resource
+     * </p>
+     * 
+     * @return The exclusion status of the resource
+     * @see ExclusionStatus
+     */
+
+    public String getExclusionStatus() {
+        return this.exclusionStatus;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExclusionStatus
+     */
+
+    public ListOrganizationRecommendationResourcesRequest withExclusionStatus(String exclusionStatus) {
+        setExclusionStatus(exclusionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExclusionStatus
+     */
+
+    public ListOrganizationRecommendationResourcesRequest withExclusionStatus(ExclusionStatus exclusionStatus) {
+        this.exclusionStatus = exclusionStatus.toString();
         return this;
     }
 
@@ -343,6 +408,8 @@ public class ListOrganizationRecommendationResourcesRequest extends com.amazonaw
         sb.append("{");
         if (getAffectedAccountId() != null)
             sb.append("AffectedAccountId: ").append(getAffectedAccountId()).append(",");
+        if (getExclusionStatus() != null)
+            sb.append("ExclusionStatus: ").append(getExclusionStatus()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -370,6 +437,10 @@ public class ListOrganizationRecommendationResourcesRequest extends com.amazonaw
         if (other.getAffectedAccountId() == null ^ this.getAffectedAccountId() == null)
             return false;
         if (other.getAffectedAccountId() != null && other.getAffectedAccountId().equals(this.getAffectedAccountId()) == false)
+            return false;
+        if (other.getExclusionStatus() == null ^ this.getExclusionStatus() == null)
+            return false;
+        if (other.getExclusionStatus() != null && other.getExclusionStatus().equals(this.getExclusionStatus()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -401,6 +472,7 @@ public class ListOrganizationRecommendationResourcesRequest extends com.amazonaw
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAffectedAccountId() == null) ? 0 : getAffectedAccountId().hashCode());
+        hashCode = prime * hashCode + ((getExclusionStatus() == null) ? 0 : getExclusionStatus().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRecommendationIdentifier() == null) ? 0 : getOrganizationRecommendationIdentifier().hashCode());

@@ -28,6 +28,11 @@ public class AbstractAWSTrustedAdvisor implements AWSTrustedAdvisor {
     }
 
     @Override
+    public BatchUpdateRecommendationResourceExclusionResult batchUpdateRecommendationResourceExclusion(BatchUpdateRecommendationResourceExclusionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetOrganizationRecommendationResult getOrganizationRecommendation(GetOrganizationRecommendationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

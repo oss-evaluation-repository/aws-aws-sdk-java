@@ -56,6 +56,10 @@ public class RecommendationResourceSummaryJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     recommendationResourceSummary.setAwsResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("exclusionStatus", targetDepth)) {
+                    context.nextToken();
+                    recommendationResourceSummary.setExclusionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     recommendationResourceSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));

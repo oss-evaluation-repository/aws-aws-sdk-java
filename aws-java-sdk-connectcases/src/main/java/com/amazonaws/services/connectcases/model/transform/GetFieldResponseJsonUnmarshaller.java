@@ -48,6 +48,14 @@ public class GetFieldResponseJsonUnmarshaller implements Unmarshaller<GetFieldRe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("createdTime", targetDepth)) {
+                    context.nextToken();
+                    getFieldResponse.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("deleted", targetDepth)) {
+                    context.nextToken();
+                    getFieldResponse.setDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     getFieldResponse.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,6 +67,10 @@ public class GetFieldResponseJsonUnmarshaller implements Unmarshaller<GetFieldRe
                 if (context.testExpression("fieldId", targetDepth)) {
                     context.nextToken();
                     getFieldResponse.setFieldId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    getFieldResponse.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

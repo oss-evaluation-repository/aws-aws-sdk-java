@@ -48,6 +48,12 @@ public class ExecutionStats implements Serializable, Cloneable, StructuredPojo {
     private Long bytesMetered;
     /**
      * <p>
+     * Bytes scanned for a single scheduled query run.
+     * </p>
+     */
+    private Long cumulativeBytesScanned;
+    /**
+     * <p>
      * The number of records ingested for a single scheduled query run.
      * </p>
      */
@@ -181,6 +187,46 @@ public class ExecutionStats implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Bytes scanned for a single scheduled query run.
+     * </p>
+     * 
+     * @param cumulativeBytesScanned
+     *        Bytes scanned for a single scheduled query run.
+     */
+
+    public void setCumulativeBytesScanned(Long cumulativeBytesScanned) {
+        this.cumulativeBytesScanned = cumulativeBytesScanned;
+    }
+
+    /**
+     * <p>
+     * Bytes scanned for a single scheduled query run.
+     * </p>
+     * 
+     * @return Bytes scanned for a single scheduled query run.
+     */
+
+    public Long getCumulativeBytesScanned() {
+        return this.cumulativeBytesScanned;
+    }
+
+    /**
+     * <p>
+     * Bytes scanned for a single scheduled query run.
+     * </p>
+     * 
+     * @param cumulativeBytesScanned
+     *        Bytes scanned for a single scheduled query run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionStats withCumulativeBytesScanned(Long cumulativeBytesScanned) {
+        setCumulativeBytesScanned(cumulativeBytesScanned);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of records ingested for a single scheduled query run.
      * </p>
      * 
@@ -277,6 +323,8 @@ public class ExecutionStats implements Serializable, Cloneable, StructuredPojo {
             sb.append("DataWrites: ").append(getDataWrites()).append(",");
         if (getBytesMetered() != null)
             sb.append("BytesMetered: ").append(getBytesMetered()).append(",");
+        if (getCumulativeBytesScanned() != null)
+            sb.append("CumulativeBytesScanned: ").append(getCumulativeBytesScanned()).append(",");
         if (getRecordsIngested() != null)
             sb.append("RecordsIngested: ").append(getRecordsIngested()).append(",");
         if (getQueryResultRows() != null)
@@ -307,6 +355,10 @@ public class ExecutionStats implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBytesMetered() != null && other.getBytesMetered().equals(this.getBytesMetered()) == false)
             return false;
+        if (other.getCumulativeBytesScanned() == null ^ this.getCumulativeBytesScanned() == null)
+            return false;
+        if (other.getCumulativeBytesScanned() != null && other.getCumulativeBytesScanned().equals(this.getCumulativeBytesScanned()) == false)
+            return false;
         if (other.getRecordsIngested() == null ^ this.getRecordsIngested() == null)
             return false;
         if (other.getRecordsIngested() != null && other.getRecordsIngested().equals(this.getRecordsIngested()) == false)
@@ -326,6 +378,7 @@ public class ExecutionStats implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExecutionTimeInMillis() == null) ? 0 : getExecutionTimeInMillis().hashCode());
         hashCode = prime * hashCode + ((getDataWrites() == null) ? 0 : getDataWrites().hashCode());
         hashCode = prime * hashCode + ((getBytesMetered() == null) ? 0 : getBytesMetered().hashCode());
+        hashCode = prime * hashCode + ((getCumulativeBytesScanned() == null) ? 0 : getCumulativeBytesScanned().hashCode());
         hashCode = prime * hashCode + ((getRecordsIngested() == null) ? 0 : getRecordsIngested().hashCode());
         hashCode = prime * hashCode + ((getQueryResultRows() == null) ? 0 : getQueryResultRows().hashCode());
         return hashCode;

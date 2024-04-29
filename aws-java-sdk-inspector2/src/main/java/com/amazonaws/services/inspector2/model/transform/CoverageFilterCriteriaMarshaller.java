@@ -50,6 +50,8 @@ public class CoverageFilterCriteriaMarshaller {
             .marshallLocationName("resourceId").build();
     private static final MarshallingInfo<List> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> SCANMODE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("scanMode").build();
     private static final MarshallingInfo<List> SCANSTATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanStatusCode").build();
     private static final MarshallingInfo<List> SCANSTATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -84,6 +86,7 @@ public class CoverageFilterCriteriaMarshaller {
             protocolMarshaller.marshall(coverageFilterCriteria.getLastScannedAt(), LASTSCANNEDAT_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getScanMode(), SCANMODE_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getScanStatusCode(), SCANSTATUSCODE_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getScanStatusReason(), SCANSTATUSREASON_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getScanType(), SCANTYPE_BINDING);

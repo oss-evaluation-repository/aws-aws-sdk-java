@@ -32,6 +32,8 @@ public class CallAnalyticsJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CallAnalyticsJobName").build();
     private static final MarshallingInfo<String> CALLANALYTICSJOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CallAnalyticsJobStatus").build();
+    private static final MarshallingInfo<StructuredPojo> CALLANALYTICSJOBDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CallAnalyticsJobDetails").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
     private static final MarshallingInfo<Integer> MEDIASAMPLERATEHERTZ_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -77,6 +79,7 @@ public class CallAnalyticsJobMarshaller {
         try {
             protocolMarshaller.marshall(callAnalyticsJob.getCallAnalyticsJobName(), CALLANALYTICSJOBNAME_BINDING);
             protocolMarshaller.marshall(callAnalyticsJob.getCallAnalyticsJobStatus(), CALLANALYTICSJOBSTATUS_BINDING);
+            protocolMarshaller.marshall(callAnalyticsJob.getCallAnalyticsJobDetails(), CALLANALYTICSJOBDETAILS_BINDING);
             protocolMarshaller.marshall(callAnalyticsJob.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(callAnalyticsJob.getMediaSampleRateHertz(), MEDIASAMPLERATEHERTZ_BINDING);
             protocolMarshaller.marshall(callAnalyticsJob.getMediaFormat(), MEDIAFORMAT_BINDING);

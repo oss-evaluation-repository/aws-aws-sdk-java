@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateConfigurationRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> EC2CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2Configuration").build();
     private static final MarshallingInfo<StructuredPojo> ECRCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrConfiguration").build();
 
@@ -46,6 +48,7 @@ public class UpdateConfigurationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateConfigurationRequest.getEc2Configuration(), EC2CONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateConfigurationRequest.getEcrConfiguration(), ECRCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -72,6 +72,10 @@ public class CallAnalyticsJobSummaryJsonUnmarshaller implements Unmarshaller<Cal
                     context.nextToken();
                     callAnalyticsJobSummary.setCallAnalyticsJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CallAnalyticsJobDetails", targetDepth)) {
+                    context.nextToken();
+                    callAnalyticsJobSummary.setCallAnalyticsJobDetails(CallAnalyticsJobDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     callAnalyticsJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));

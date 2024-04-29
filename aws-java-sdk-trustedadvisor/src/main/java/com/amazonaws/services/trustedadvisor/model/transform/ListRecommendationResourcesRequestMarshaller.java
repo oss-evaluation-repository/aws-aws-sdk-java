@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListRecommendationResourcesRequestMarshaller {
 
+    private static final MarshallingInfo<String> EXCLUSIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("exclusionStatus").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class ListRecommendationResourcesRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listRecommendationResourcesRequest.getExclusionStatus(), EXCLUSIONSTATUS_BINDING);
             protocolMarshaller.marshall(listRecommendationResourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listRecommendationResourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listRecommendationResourcesRequest.getRecommendationIdentifier(), RECOMMENDATIONIDENTIFIER_BINDING);

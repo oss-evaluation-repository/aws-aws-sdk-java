@@ -52,6 +52,18 @@ public class GetLayoutResultJsonUnmarshaller implements Unmarshaller<GetLayoutRe
                     context.nextToken();
                     getLayoutResult.setContent(LayoutContentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("createdTime", targetDepth)) {
+                    context.nextToken();
+                    getLayoutResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("deleted", targetDepth)) {
+                    context.nextToken();
+                    getLayoutResult.setDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    getLayoutResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("layoutArn", targetDepth)) {
                     context.nextToken();
                     getLayoutResult.setLayoutArn(context.getUnmarshaller(String.class).unmarshall(context));

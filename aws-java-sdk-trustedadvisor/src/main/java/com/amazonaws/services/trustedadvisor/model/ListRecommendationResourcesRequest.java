@@ -27,6 +27,12 @@ public class ListRecommendationResourcesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * The exclusion status of the resource
+     * </p>
+     */
+    private String exclusionStatus;
+    /**
+     * <p>
      * The maximum number of results to return per page.
      * </p>
      */
@@ -56,6 +62,65 @@ public class ListRecommendationResourcesRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String status;
+
+    /**
+     * <p>
+     * The exclusion status of the resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the resource
+     * @see ExclusionStatus
+     */
+
+    public void setExclusionStatus(String exclusionStatus) {
+        this.exclusionStatus = exclusionStatus;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the resource
+     * </p>
+     * 
+     * @return The exclusion status of the resource
+     * @see ExclusionStatus
+     */
+
+    public String getExclusionStatus() {
+        return this.exclusionStatus;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExclusionStatus
+     */
+
+    public ListRecommendationResourcesRequest withExclusionStatus(String exclusionStatus) {
+        setExclusionStatus(exclusionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The exclusion status of the resource
+     * </p>
+     * 
+     * @param exclusionStatus
+     *        The exclusion status of the resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExclusionStatus
+     */
+
+    public ListRecommendationResourcesRequest withExclusionStatus(ExclusionStatus exclusionStatus) {
+        this.exclusionStatus = exclusionStatus.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -294,6 +359,8 @@ public class ListRecommendationResourcesRequest extends com.amazonaws.AmazonWebS
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getExclusionStatus() != null)
+            sb.append("ExclusionStatus: ").append(getExclusionStatus()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -318,6 +385,10 @@ public class ListRecommendationResourcesRequest extends com.amazonaws.AmazonWebS
         if (obj instanceof ListRecommendationResourcesRequest == false)
             return false;
         ListRecommendationResourcesRequest other = (ListRecommendationResourcesRequest) obj;
+        if (other.getExclusionStatus() == null ^ this.getExclusionStatus() == null)
+            return false;
+        if (other.getExclusionStatus() != null && other.getExclusionStatus().equals(this.getExclusionStatus()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -346,6 +417,7 @@ public class ListRecommendationResourcesRequest extends com.amazonaws.AmazonWebS
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getExclusionStatus() == null) ? 0 : getExclusionStatus().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getRecommendationIdentifier() == null) ? 0 : getRecommendationIdentifier().hashCode());

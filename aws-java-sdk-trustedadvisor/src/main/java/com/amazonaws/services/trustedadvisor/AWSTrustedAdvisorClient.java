@@ -82,20 +82,20 @@ public class AWSTrustedAdvisorClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.trustedadvisor.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.trustedadvisor.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.trustedadvisor.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.trustedadvisor.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.trustedadvisor.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.trustedadvisor.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.trustedadvisor.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.trustedadvisor.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.trustedadvisor.model.AWSTrustedAdvisorException.class));
 
     public static AWSTrustedAdvisorClientBuilder builder() {
@@ -142,6 +142,75 @@ public class AWSTrustedAdvisorClient extends AmazonWebServiceClient implements A
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/trustedadvisor/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/trustedadvisor/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Update one or more exclusion status for a list of recommendation resources
+     * </p>
+     * 
+     * @param batchUpdateRecommendationResourceExclusionRequest
+     * @return Result of the BatchUpdateRecommendationResourceExclusion operation returned by the service.
+     * @throws AccessDeniedException
+     *         Exception that access has been denied due to insufficient access
+     * @throws ConflictException
+     *         Exception that the request was denied due to conflictions in state
+     * @throws InternalServerException
+     *         Exception to notify that an unexpected internal error occurred during processing of the request
+     * @throws ValidationException
+     *         Exception that the request failed to satisfy service constraints
+     * @throws ThrottlingException
+     *         Exception to notify that requests are being throttled
+     * @sample AWSTrustedAdvisor.BatchUpdateRecommendationResourceExclusion
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchUpdateRecommendationResourceExclusionResult batchUpdateRecommendationResourceExclusion(BatchUpdateRecommendationResourceExclusionRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchUpdateRecommendationResourceExclusion(request);
+    }
+
+    @SdkInternalApi
+    final BatchUpdateRecommendationResourceExclusionResult executeBatchUpdateRecommendationResourceExclusion(
+            BatchUpdateRecommendationResourceExclusionRequest batchUpdateRecommendationResourceExclusionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchUpdateRecommendationResourceExclusionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchUpdateRecommendationResourceExclusionRequest> request = null;
+        Response<BatchUpdateRecommendationResourceExclusionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchUpdateRecommendationResourceExclusionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchUpdateRecommendationResourceExclusionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "TrustedAdvisor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateRecommendationResourceExclusion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchUpdateRecommendationResourceExclusionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new BatchUpdateRecommendationResourceExclusionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -678,7 +747,7 @@ public class AWSTrustedAdvisorClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Update the lifecyle of a Recommendation within an Organization. This API only supports prioritized
+     * Update the lifecycle of a Recommendation within an Organization. This API only supports prioritized
      * recommendations.
      * </p>
      * 

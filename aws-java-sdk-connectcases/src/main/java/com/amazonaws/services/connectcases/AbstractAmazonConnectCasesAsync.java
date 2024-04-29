@@ -145,6 +145,45 @@ public class AbstractAmazonConnectCasesAsync extends AbstractAmazonConnectCases 
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(DeleteFieldRequest request) {
+
+        return deleteFieldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(DeleteFieldRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFieldRequest, DeleteFieldResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(DeleteLayoutRequest request) {
+
+        return deleteLayoutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(DeleteLayoutRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLayoutRequest, DeleteLayoutResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest request) {
+
+        return deleteTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCaseResult> getCaseAsync(GetCaseRequest request) {
 
         return getCaseAsync(request, null);

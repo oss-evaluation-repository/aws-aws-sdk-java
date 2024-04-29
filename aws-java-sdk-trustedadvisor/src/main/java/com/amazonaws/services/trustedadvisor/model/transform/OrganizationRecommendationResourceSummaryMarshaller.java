@@ -35,6 +35,8 @@ public class OrganizationRecommendationResourceSummaryMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> AWSRESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsResourceId").build();
+    private static final MarshallingInfo<String> EXCLUSIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exclusionStatus").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -67,6 +69,7 @@ public class OrganizationRecommendationResourceSummaryMarshaller {
             protocolMarshaller.marshall(organizationRecommendationResourceSummary.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(organizationRecommendationResourceSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(organizationRecommendationResourceSummary.getAwsResourceId(), AWSRESOURCEID_BINDING);
+            protocolMarshaller.marshall(organizationRecommendationResourceSummary.getExclusionStatus(), EXCLUSIONSTATUS_BINDING);
             protocolMarshaller.marshall(organizationRecommendationResourceSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(organizationRecommendationResourceSummary.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(organizationRecommendationResourceSummary.getMetadata(), METADATA_BINDING);

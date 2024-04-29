@@ -115,6 +115,12 @@ public class CoverageFilterCriteriaJsonUnmarshaller implements Unmarshaller<Cove
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("scanMode", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setScanMode(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("scanStatusCode", targetDepth)) {
                     context.nextToken();
                     coverageFilterCriteria.setScanStatusCode(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())

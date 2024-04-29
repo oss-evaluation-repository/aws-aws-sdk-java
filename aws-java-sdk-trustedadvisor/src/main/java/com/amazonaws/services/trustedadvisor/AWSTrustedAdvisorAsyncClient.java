@@ -76,6 +76,41 @@ public class AWSTrustedAdvisorAsyncClient extends AWSTrustedAdvisorClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationResourceExclusionResult> batchUpdateRecommendationResourceExclusionAsync(
+            BatchUpdateRecommendationResourceExclusionRequest request) {
+
+        return batchUpdateRecommendationResourceExclusionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationResourceExclusionResult> batchUpdateRecommendationResourceExclusionAsync(
+            final BatchUpdateRecommendationResourceExclusionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchUpdateRecommendationResourceExclusionRequest, BatchUpdateRecommendationResourceExclusionResult> asyncHandler) {
+        final BatchUpdateRecommendationResourceExclusionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchUpdateRecommendationResourceExclusionResult>() {
+            @Override
+            public BatchUpdateRecommendationResourceExclusionResult call() throws Exception {
+                BatchUpdateRecommendationResourceExclusionResult result = null;
+
+                try {
+                    result = executeBatchUpdateRecommendationResourceExclusion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOrganizationRecommendationResult> getOrganizationRecommendationAsync(GetOrganizationRecommendationRequest request) {
 
         return getOrganizationRecommendationAsync(request, null);

@@ -375,6 +375,105 @@ public class AmazonConnectCasesAsyncClient extends AmazonConnectCasesClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(DeleteFieldRequest request) {
+
+        return deleteFieldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(final DeleteFieldRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFieldRequest, DeleteFieldResult> asyncHandler) {
+        final DeleteFieldRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFieldResult>() {
+            @Override
+            public DeleteFieldResult call() throws Exception {
+                DeleteFieldResult result = null;
+
+                try {
+                    result = executeDeleteField(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(DeleteLayoutRequest request) {
+
+        return deleteLayoutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(final DeleteLayoutRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLayoutRequest, DeleteLayoutResult> asyncHandler) {
+        final DeleteLayoutRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLayoutResult>() {
+            @Override
+            public DeleteLayoutResult call() throws Exception {
+                DeleteLayoutResult result = null;
+
+                try {
+                    result = executeDeleteLayout(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest request) {
+
+        return deleteTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(final DeleteTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResult> asyncHandler) {
+        final DeleteTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTemplateResult>() {
+            @Override
+            public DeleteTemplateResult call() throws Exception {
+                DeleteTemplateResult result = null;
+
+                try {
+                    result = executeDeleteTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCaseResult> getCaseAsync(GetCaseRequest request) {
 
         return getCaseAsync(request, null);

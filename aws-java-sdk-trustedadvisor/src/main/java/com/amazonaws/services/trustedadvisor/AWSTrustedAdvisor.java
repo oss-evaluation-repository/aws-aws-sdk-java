@@ -43,6 +43,31 @@ public interface AWSTrustedAdvisor {
 
     /**
      * <p>
+     * Update one or more exclusion status for a list of recommendation resources
+     * </p>
+     * 
+     * @param batchUpdateRecommendationResourceExclusionRequest
+     * @return Result of the BatchUpdateRecommendationResourceExclusion operation returned by the service.
+     * @throws AccessDeniedException
+     *         Exception that access has been denied due to insufficient access
+     * @throws ConflictException
+     *         Exception that the request was denied due to conflictions in state
+     * @throws InternalServerException
+     *         Exception to notify that an unexpected internal error occurred during processing of the request
+     * @throws ValidationException
+     *         Exception that the request failed to satisfy service constraints
+     * @throws ThrottlingException
+     *         Exception to notify that requests are being throttled
+     * @sample AWSTrustedAdvisor.BatchUpdateRecommendationResourceExclusion
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchUpdateRecommendationResourceExclusionResult batchUpdateRecommendationResourceExclusion(
+            BatchUpdateRecommendationResourceExclusionRequest batchUpdateRecommendationResourceExclusionRequest);
+
+    /**
+     * <p>
      * Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized
      * recommendations.
      * </p>
@@ -228,7 +253,7 @@ public interface AWSTrustedAdvisor {
 
     /**
      * <p>
-     * Update the lifecyle of a Recommendation within an Organization. This API only supports prioritized
+     * Update the lifecycle of a Recommendation within an Organization. This API only supports prioritized
      * recommendations.
      * </p>
      * 

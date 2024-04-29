@@ -33,6 +33,8 @@ public class RecommendationResourceSummaryMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> AWSRESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsResourceId").build();
+    private static final MarshallingInfo<String> EXCLUSIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exclusionStatus").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -64,6 +66,7 @@ public class RecommendationResourceSummaryMarshaller {
         try {
             protocolMarshaller.marshall(recommendationResourceSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(recommendationResourceSummary.getAwsResourceId(), AWSRESOURCEID_BINDING);
+            protocolMarshaller.marshall(recommendationResourceSummary.getExclusionStatus(), EXCLUSIONSTATUS_BINDING);
             protocolMarshaller.marshall(recommendationResourceSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(recommendationResourceSummary.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(recommendationResourceSummary.getMetadata(), METADATA_BINDING);

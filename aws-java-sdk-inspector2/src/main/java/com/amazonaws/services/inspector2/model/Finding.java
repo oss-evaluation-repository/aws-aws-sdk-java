@@ -98,7 +98,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private InspectorScoreDetails inspectorScoreDetails;
     /**
      * <p>
-     * The date and time that the finding was last observed.
+     * The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding
+     * is updated.
      * </p>
      */
     private java.util.Date lastObservedAt;
@@ -662,11 +663,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the finding was last observed.
+     * The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding
+     * is updated.
      * </p>
      * 
      * @param lastObservedAt
-     *        The date and time that the finding was last observed.
+     *        The date and time the finding was last observed. This timestamp for this field remains unchanged until a
+     *        finding is updated.
      */
 
     public void setLastObservedAt(java.util.Date lastObservedAt) {
@@ -675,10 +678,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the finding was last observed.
+     * The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding
+     * is updated.
      * </p>
      * 
-     * @return The date and time that the finding was last observed.
+     * @return The date and time the finding was last observed. This timestamp for this field remains unchanged until a
+     *         finding is updated.
      */
 
     public java.util.Date getLastObservedAt() {
@@ -687,11 +692,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that the finding was last observed.
+     * The date and time the finding was last observed. This timestamp for this field remains unchanged until a finding
+     * is updated.
      * </p>
      * 
      * @param lastObservedAt
-     *        The date and time that the finding was last observed.
+     *        The date and time the finding was last observed. This timestamp for this field remains unchanged until a
+     *        finding is updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

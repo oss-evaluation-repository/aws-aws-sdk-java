@@ -48,9 +48,21 @@ public class GetTemplateResultJsonUnmarshaller implements Unmarshaller<GetTempla
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("createdTime", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("deleted", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     getTemplateResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    getTemplateResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("layoutConfiguration", targetDepth)) {
                     context.nextToken();

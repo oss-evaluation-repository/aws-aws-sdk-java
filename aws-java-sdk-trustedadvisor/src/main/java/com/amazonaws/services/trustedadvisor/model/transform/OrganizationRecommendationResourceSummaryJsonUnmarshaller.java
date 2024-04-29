@@ -61,6 +61,10 @@ public class OrganizationRecommendationResourceSummaryJsonUnmarshaller implement
                     context.nextToken();
                     organizationRecommendationResourceSummary.setAwsResourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("exclusionStatus", targetDepth)) {
+                    context.nextToken();
+                    organizationRecommendationResourceSummary.setExclusionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     organizationRecommendationResourceSummary.setId(context.getUnmarshaller(String.class).unmarshall(context));

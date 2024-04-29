@@ -37,6 +37,8 @@ public class CoveredResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceMetadata").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<String> SCANMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("scanMode").build();
     private static final MarshallingInfo<StructuredPojo> SCANSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanStatus").build();
     private static final MarshallingInfo<String> SCANTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class CoveredResourceMarshaller {
             protocolMarshaller.marshall(coveredResource.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(coveredResource.getResourceMetadata(), RESOURCEMETADATA_BINDING);
             protocolMarshaller.marshall(coveredResource.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(coveredResource.getScanMode(), SCANMODE_BINDING);
             protocolMarshaller.marshall(coveredResource.getScanStatus(), SCANSTATUS_BINDING);
             protocolMarshaller.marshall(coveredResource.getScanType(), SCANTYPE_BINDING);
         } catch (Exception e) {

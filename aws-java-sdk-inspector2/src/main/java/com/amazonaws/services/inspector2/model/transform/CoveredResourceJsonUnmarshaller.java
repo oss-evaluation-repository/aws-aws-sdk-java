@@ -68,6 +68,10 @@ public class CoveredResourceJsonUnmarshaller implements Unmarshaller<CoveredReso
                     context.nextToken();
                     coveredResource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scanMode", targetDepth)) {
+                    context.nextToken();
+                    coveredResource.setScanMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scanStatus", targetDepth)) {
                     context.nextToken();
                     coveredResource.setScanStatus(ScanStatusJsonUnmarshaller.getInstance().unmarshall(context));

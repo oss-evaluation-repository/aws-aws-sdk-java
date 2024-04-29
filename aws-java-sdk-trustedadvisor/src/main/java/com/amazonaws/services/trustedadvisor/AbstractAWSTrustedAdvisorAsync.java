@@ -28,6 +28,21 @@ public class AbstractAWSTrustedAdvisorAsync extends AbstractAWSTrustedAdvisor im
     }
 
     @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationResourceExclusionResult> batchUpdateRecommendationResourceExclusionAsync(
+            BatchUpdateRecommendationResourceExclusionRequest request) {
+
+        return batchUpdateRecommendationResourceExclusionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateRecommendationResourceExclusionResult> batchUpdateRecommendationResourceExclusionAsync(
+            BatchUpdateRecommendationResourceExclusionRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateRecommendationResourceExclusionRequest, BatchUpdateRecommendationResourceExclusionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOrganizationRecommendationResult> getOrganizationRecommendationAsync(GetOrganizationRecommendationRequest request) {
 
         return getOrganizationRecommendationAsync(request, null);
