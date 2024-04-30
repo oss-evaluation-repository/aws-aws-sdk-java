@@ -74,6 +74,10 @@ public class ConfigurationSetInformationJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     configurationSetInformation.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("ProtectConfigurationId", targetDepth)) {
+                    context.nextToken();
+                    configurationSetInformation.setProtectConfigurationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

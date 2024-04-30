@@ -36,16 +36,16 @@ public class Retriever implements Serializable, Cloneable, StructuredPojo {
     private String applicationId;
     /**
      * <p>
-     * The name of your retriever.
-     * </p>
-     */
-    private String displayName;
-    /**
-     * <p>
      * The identifier of the retriever used by your Amazon Q Business application.
      * </p>
      */
     private String retrieverId;
+    /**
+     * <p>
+     * The type of your retriever.
+     * </p>
+     */
+    private String type;
     /**
      * <p>
      * The status of your retriever.
@@ -54,10 +54,10 @@ public class Retriever implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The type of your retriever.
+     * The name of your retriever.
      * </p>
      */
-    private String type;
+    private String displayName;
 
     /**
      * <p>
@@ -101,46 +101,6 @@ public class Retriever implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your retriever.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of your retriever.
-     */
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    /**
-     * <p>
-     * The name of your retriever.
-     * </p>
-     * 
-     * @return The name of your retriever.
-     */
-
-    public String getDisplayName() {
-        return this.displayName;
-    }
-
-    /**
-     * <p>
-     * The name of your retriever.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of your retriever.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Retriever withDisplayName(String displayName) {
-        setDisplayName(displayName);
-        return this;
-    }
-
-    /**
-     * <p>
      * The identifier of the retriever used by your Amazon Q Business application.
      * </p>
      * 
@@ -176,6 +136,65 @@ public class Retriever implements Serializable, Cloneable, StructuredPojo {
 
     public Retriever withRetrieverId(String retrieverId) {
         setRetrieverId(retrieverId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of your retriever.
+     * </p>
+     * 
+     * @param type
+     *        The type of your retriever.
+     * @see RetrieverType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of your retriever.
+     * </p>
+     * 
+     * @return The type of your retriever.
+     * @see RetrieverType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of your retriever.
+     * </p>
+     * 
+     * @param type
+     *        The type of your retriever.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RetrieverType
+     */
+
+    public Retriever withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of your retriever.
+     * </p>
+     * 
+     * @param type
+     *        The type of your retriever.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RetrieverType
+     */
+
+    public Retriever withType(RetrieverType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -240,60 +259,41 @@ public class Retriever implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of your retriever.
+     * The name of your retriever.
      * </p>
      * 
-     * @param type
-     *        The type of your retriever.
-     * @see RetrieverType
+     * @param displayName
+     *        The name of your retriever.
      */
 
-    public void setType(String type) {
-        this.type = type;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     /**
      * <p>
-     * The type of your retriever.
+     * The name of your retriever.
      * </p>
      * 
-     * @return The type of your retriever.
-     * @see RetrieverType
+     * @return The name of your retriever.
      */
 
-    public String getType() {
-        return this.type;
+    public String getDisplayName() {
+        return this.displayName;
     }
 
     /**
      * <p>
-     * The type of your retriever.
+     * The name of your retriever.
      * </p>
      * 
-     * @param type
-     *        The type of your retriever.
+     * @param displayName
+     *        The name of your retriever.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RetrieverType
      */
 
-    public Retriever withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of your retriever.
-     * </p>
-     * 
-     * @param type
-     *        The type of your retriever.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RetrieverType
-     */
-
-    public Retriever withType(RetrieverType type) {
-        this.type = type.toString();
+    public Retriever withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -311,14 +311,14 @@ public class Retriever implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getRetrieverId() != null)
             sb.append("RetrieverId: ").append(getRetrieverId()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType());
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName());
         sb.append("}");
         return sb.toString();
     }
@@ -337,21 +337,21 @@ public class Retriever implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
-            return false;
-        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
-            return false;
         if (other.getRetrieverId() == null ^ this.getRetrieverId() == null)
             return false;
         if (other.getRetrieverId() != null && other.getRetrieverId().equals(this.getRetrieverId()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         return true;
     }
@@ -362,10 +362,10 @@ public class Retriever implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getRetrieverId() == null) ? 0 : getRetrieverId().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         return hashCode;
     }
 

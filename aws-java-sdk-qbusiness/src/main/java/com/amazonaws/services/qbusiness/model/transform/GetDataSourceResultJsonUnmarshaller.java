@@ -52,41 +52,41 @@ public class GetDataSourceResultJsonUnmarshaller implements Unmarshaller<GetData
                     context.nextToken();
                     getDataSourceResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("createdAt", targetDepth)) {
+                if (context.testExpression("indexId", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("dataSourceArn", targetDepth)) {
-                    context.nextToken();
-                    getDataSourceResult.setDataSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    getDataSourceResult.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSourceId", targetDepth)) {
                     context.nextToken();
                     getDataSourceResult.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("description", targetDepth)) {
+                if (context.testExpression("dataSourceArn", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                    getDataSourceResult.setDataSourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
                     getDataSourceResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("documentEnrichmentConfiguration", targetDepth)) {
+                if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setDocumentEnrichmentConfiguration(DocumentEnrichmentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                    getDataSourceResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("error", targetDepth)) {
+                if (context.testExpression("vpcConfiguration", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                    getDataSourceResult.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("indexId", targetDepth)) {
+                if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getDataSourceResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
-                if (context.testExpression("roleArn", targetDepth)) {
+                if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    getDataSourceResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    getDataSourceResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -96,17 +96,17 @@ public class GetDataSourceResultJsonUnmarshaller implements Unmarshaller<GetData
                     context.nextToken();
                     getDataSourceResult.setSyncSchedule(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("type", targetDepth)) {
+                if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                    getDataSourceResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("updatedAt", targetDepth)) {
+                if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    getDataSourceResult.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("vpcConfiguration", targetDepth)) {
+                if (context.testExpression("documentEnrichmentConfiguration", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setVpcConfiguration(DataSourceVpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                    getDataSourceResult.setDocumentEnrichmentConfiguration(DocumentEnrichmentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

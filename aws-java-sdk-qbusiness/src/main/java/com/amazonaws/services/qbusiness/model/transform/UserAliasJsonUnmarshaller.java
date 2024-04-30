@@ -48,13 +48,13 @@ public class UserAliasJsonUnmarshaller implements Unmarshaller<UserAlias, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("dataSourceId", targetDepth)) {
-                    context.nextToken();
-                    userAlias.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("indexId", targetDepth)) {
                     context.nextToken();
                     userAlias.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("dataSourceId", targetDepth)) {
+                    context.nextToken();
+                    userAlias.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("userId", targetDepth)) {
                     context.nextToken();

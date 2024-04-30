@@ -6413,6 +6413,41 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Updates the SPICE capacity configuration for a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param updateSPICECapacityConfigurationRequest
+     * @return A Java Future containing the result of the UpdateSPICECapacityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.UpdateSPICECapacityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSPICECapacityConfigurationResult> updateSPICECapacityConfigurationAsync(
+            UpdateSPICECapacityConfigurationRequest updateSPICECapacityConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the SPICE capacity configuration for a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param updateSPICECapacityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSPICECapacityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateSPICECapacityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSPICECapacityConfigurationResult> updateSPICECapacityConfigurationAsync(
+            UpdateSPICECapacityConfigurationRequest updateSPICECapacityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSPICECapacityConfigurationRequest, UpdateSPICECapacityConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a template from an existing Amazon QuickSight analysis or another template.
      * </p>
      * 

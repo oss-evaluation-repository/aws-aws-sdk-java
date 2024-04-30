@@ -32,19 +32,19 @@ public class CreateRetrieverRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
-    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
-    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("type").build();
 
     private static final CreateRetrieverRequestMarshaller instance = new CreateRetrieverRequestMarshaller();
 
@@ -63,12 +63,12 @@ public class CreateRetrieverRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createRetrieverRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(createRetrieverRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createRetrieverRequest.getConfiguration(), CONFIGURATION_BINDING);
-            protocolMarshaller.marshall(createRetrieverRequest.getDisplayName(), DISPLAYNAME_BINDING);
-            protocolMarshaller.marshall(createRetrieverRequest.getRoleArn(), ROLEARN_BINDING);
-            protocolMarshaller.marshall(createRetrieverRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createRetrieverRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createRetrieverRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(createRetrieverRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createRetrieverRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createRetrieverRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createRetrieverRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

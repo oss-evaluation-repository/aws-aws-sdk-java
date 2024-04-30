@@ -29,12 +29,12 @@ public class ListConversationsRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListConversationsRequestMarshaller instance = new ListConversationsRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class ListConversationsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listConversationsRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(listConversationsRequest.getMaxResults(), MAXRESULTS_BINDING);
-            protocolMarshaller.marshall(listConversationsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listConversationsRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(listConversationsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listConversationsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

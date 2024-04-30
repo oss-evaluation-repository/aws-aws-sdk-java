@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AccessControlMarshaller {
 
-    private static final MarshallingInfo<String> MEMBERRELATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("memberRelation").build();
     private static final MarshallingInfo<List> PRINCIPALS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("principals").build();
+    private static final MarshallingInfo<String> MEMBERRELATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("memberRelation").build();
 
     private static final AccessControlMarshaller instance = new AccessControlMarshaller();
 
@@ -49,8 +49,8 @@ public class AccessControlMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(accessControl.getMemberRelation(), MEMBERRELATION_BINDING);
             protocolMarshaller.marshall(accessControl.getPrincipals(), PRINCIPALS_BINDING);
+            protocolMarshaller.marshall(accessControl.getMemberRelation(), MEMBERRELATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

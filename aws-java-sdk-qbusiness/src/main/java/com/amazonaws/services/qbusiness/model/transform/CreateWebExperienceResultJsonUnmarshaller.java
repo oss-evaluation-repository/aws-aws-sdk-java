@@ -48,13 +48,13 @@ public class CreateWebExperienceResultJsonUnmarshaller implements Unmarshaller<C
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("webExperienceArn", targetDepth)) {
-                    context.nextToken();
-                    createWebExperienceResult.setWebExperienceArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("webExperienceId", targetDepth)) {
                     context.nextToken();
                     createWebExperienceResult.setWebExperienceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("webExperienceArn", targetDepth)) {
+                    context.nextToken();
+                    createWebExperienceResult.setWebExperienceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

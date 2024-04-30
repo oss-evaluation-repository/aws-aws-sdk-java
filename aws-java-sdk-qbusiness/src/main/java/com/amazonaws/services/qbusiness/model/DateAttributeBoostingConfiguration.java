@@ -35,56 +35,16 @@ public class DateAttributeBoostingConfiguration implements Serializable, Cloneab
 
     /**
      * <p>
-     * Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
-     * </p>
-     */
-    private Long boostingDurationInSeconds;
-    /**
-     * <p>
      * Specifies how much a document attribute is boosted.
      * </p>
      */
     private String boostingLevel;
-
     /**
      * <p>
      * Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
      * </p>
-     * 
-     * @param boostingDurationInSeconds
-     *        Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
      */
-
-    public void setBoostingDurationInSeconds(Long boostingDurationInSeconds) {
-        this.boostingDurationInSeconds = boostingDurationInSeconds;
-    }
-
-    /**
-     * <p>
-     * Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
-     * </p>
-     * 
-     * @return Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
-     */
-
-    public Long getBoostingDurationInSeconds() {
-        return this.boostingDurationInSeconds;
-    }
-
-    /**
-     * <p>
-     * Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
-     * </p>
-     * 
-     * @param boostingDurationInSeconds
-     *        Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DateAttributeBoostingConfiguration withBoostingDurationInSeconds(Long boostingDurationInSeconds) {
-        setBoostingDurationInSeconds(boostingDurationInSeconds);
-        return this;
-    }
+    private Long boostingDurationInSeconds;
 
     /**
      * <p>
@@ -146,6 +106,46 @@ public class DateAttributeBoostingConfiguration implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
+     * </p>
+     * 
+     * @param boostingDurationInSeconds
+     *        Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
+     */
+
+    public void setBoostingDurationInSeconds(Long boostingDurationInSeconds) {
+        this.boostingDurationInSeconds = boostingDurationInSeconds;
+    }
+
+    /**
+     * <p>
+     * Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
+     * </p>
+     * 
+     * @return Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
+     */
+
+    public Long getBoostingDurationInSeconds() {
+        return this.boostingDurationInSeconds;
+    }
+
+    /**
+     * <p>
+     * Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
+     * </p>
+     * 
+     * @param boostingDurationInSeconds
+     *        Specifies the duration, in seconds, of a boost applies to a <code>DATE</code> type document attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DateAttributeBoostingConfiguration withBoostingDurationInSeconds(Long boostingDurationInSeconds) {
+        setBoostingDurationInSeconds(boostingDurationInSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -157,10 +157,10 @@ public class DateAttributeBoostingConfiguration implements Serializable, Cloneab
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getBoostingDurationInSeconds() != null)
-            sb.append("BoostingDurationInSeconds: ").append(getBoostingDurationInSeconds()).append(",");
         if (getBoostingLevel() != null)
-            sb.append("BoostingLevel: ").append(getBoostingLevel());
+            sb.append("BoostingLevel: ").append(getBoostingLevel()).append(",");
+        if (getBoostingDurationInSeconds() != null)
+            sb.append("BoostingDurationInSeconds: ").append(getBoostingDurationInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -175,13 +175,13 @@ public class DateAttributeBoostingConfiguration implements Serializable, Cloneab
         if (obj instanceof DateAttributeBoostingConfiguration == false)
             return false;
         DateAttributeBoostingConfiguration other = (DateAttributeBoostingConfiguration) obj;
-        if (other.getBoostingDurationInSeconds() == null ^ this.getBoostingDurationInSeconds() == null)
-            return false;
-        if (other.getBoostingDurationInSeconds() != null && other.getBoostingDurationInSeconds().equals(this.getBoostingDurationInSeconds()) == false)
-            return false;
         if (other.getBoostingLevel() == null ^ this.getBoostingLevel() == null)
             return false;
         if (other.getBoostingLevel() != null && other.getBoostingLevel().equals(this.getBoostingLevel()) == false)
+            return false;
+        if (other.getBoostingDurationInSeconds() == null ^ this.getBoostingDurationInSeconds() == null)
+            return false;
+        if (other.getBoostingDurationInSeconds() != null && other.getBoostingDurationInSeconds().equals(this.getBoostingDurationInSeconds()) == false)
             return false;
         return true;
     }
@@ -191,8 +191,8 @@ public class DateAttributeBoostingConfiguration implements Serializable, Cloneab
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getBoostingDurationInSeconds() == null) ? 0 : getBoostingDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getBoostingLevel() == null) ? 0 : getBoostingLevel().hashCode());
+        hashCode = prime * hashCode + ((getBoostingDurationInSeconds() == null) ? 0 : getBoostingDurationInSeconds().hashCode());
         return hashCode;
     }
 

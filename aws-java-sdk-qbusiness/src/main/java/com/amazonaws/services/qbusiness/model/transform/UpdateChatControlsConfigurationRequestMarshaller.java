@@ -32,19 +32,19 @@ public class UpdateChatControlsConfigurationRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<StructuredPojo> BLOCKEDPHRASESCONFIGURATIONUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blockedPhrasesConfigurationUpdate").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<StructuredPojo> CREATORMODECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creatorModeConfiguration").build();
     private static final MarshallingInfo<String> RESPONSESCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("responseScope").build();
+    private static final MarshallingInfo<StructuredPojo> BLOCKEDPHRASESCONFIGURATIONUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blockedPhrasesConfigurationUpdate").build();
     private static final MarshallingInfo<List> TOPICCONFIGURATIONSTOCREATEORUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("topicConfigurationsToCreateOrUpdate").build();
     private static final MarshallingInfo<List> TOPICCONFIGURATIONSTODELETE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("topicConfigurationsToDelete").build();
+    private static final MarshallingInfo<StructuredPojo> CREATORMODECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creatorModeConfiguration").build();
 
     private static final UpdateChatControlsConfigurationRequestMarshaller instance = new UpdateChatControlsConfigurationRequestMarshaller();
 
@@ -63,14 +63,14 @@ public class UpdateChatControlsConfigurationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getResponseScope(), RESPONSESCOPE_BINDING);
             protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getBlockedPhrasesConfigurationUpdate(),
                     BLOCKEDPHRASESCONFIGURATIONUPDATE_BINDING);
-            protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getCreatorModeConfiguration(), CREATORMODECONFIGURATION_BINDING);
-            protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getResponseScope(), RESPONSESCOPE_BINDING);
             protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getTopicConfigurationsToCreateOrUpdate(),
                     TOPICCONFIGURATIONSTOCREATEORUPDATE_BINDING);
             protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getTopicConfigurationsToDelete(), TOPICCONFIGURATIONSTODELETE_BINDING);
+            protocolMarshaller.marshall(updateChatControlsConfigurationRequest.getCreatorModeConfiguration(), CREATORMODECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

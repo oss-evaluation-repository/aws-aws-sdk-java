@@ -29,10 +29,10 @@ public class ListPluginsRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListPluginsRequestMarshaller instance = new ListPluginsRequestMarshaller();
 
@@ -51,8 +51,8 @@ public class ListPluginsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listPluginsRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(listPluginsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listPluginsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listPluginsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

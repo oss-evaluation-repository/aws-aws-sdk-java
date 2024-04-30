@@ -33,10 +33,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String applicationId;
     /**
      * <p>
-     * The user aliases attached to the user id that are to be deleted.
+     * The email id attached to the user.
      * </p>
      */
-    private java.util.List<UserAlias> userAliasesToDelete;
+    private String userId;
     /**
      * <p>
      * The user aliases attached to the user id that are to be updated.
@@ -45,10 +45,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<UserAlias> userAliasesToUpdate;
     /**
      * <p>
-     * The email id attached to the user.
+     * The user aliases attached to the user id that are to be deleted.
      * </p>
      */
-    private String userId;
+    private java.util.List<UserAlias> userAliasesToDelete;
 
     /**
      * <p>
@@ -92,71 +92,41 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The user aliases attached to the user id that are to be deleted.
+     * The email id attached to the user.
      * </p>
      * 
-     * @return The user aliases attached to the user id that are to be deleted.
+     * @param userId
+     *        The email id attached to the user.
      */
 
-    public java.util.List<UserAlias> getUserAliasesToDelete() {
-        return userAliasesToDelete;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     /**
      * <p>
-     * The user aliases attached to the user id that are to be deleted.
+     * The email id attached to the user.
      * </p>
      * 
-     * @param userAliasesToDelete
-     *        The user aliases attached to the user id that are to be deleted.
+     * @return The email id attached to the user.
      */
 
-    public void setUserAliasesToDelete(java.util.Collection<UserAlias> userAliasesToDelete) {
-        if (userAliasesToDelete == null) {
-            this.userAliasesToDelete = null;
-            return;
-        }
-
-        this.userAliasesToDelete = new java.util.ArrayList<UserAlias>(userAliasesToDelete);
+    public String getUserId() {
+        return this.userId;
     }
 
     /**
      * <p>
-     * The user aliases attached to the user id that are to be deleted.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setUserAliasesToDelete(java.util.Collection)} or {@link #withUserAliasesToDelete(java.util.Collection)}
-     * if you want to override the existing values.
+     * The email id attached to the user.
      * </p>
      * 
-     * @param userAliasesToDelete
-     *        The user aliases attached to the user id that are to be deleted.
+     * @param userId
+     *        The email id attached to the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateUserRequest withUserAliasesToDelete(UserAlias... userAliasesToDelete) {
-        if (this.userAliasesToDelete == null) {
-            setUserAliasesToDelete(new java.util.ArrayList<UserAlias>(userAliasesToDelete.length));
-        }
-        for (UserAlias ele : userAliasesToDelete) {
-            this.userAliasesToDelete.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The user aliases attached to the user id that are to be deleted.
-     * </p>
-     * 
-     * @param userAliasesToDelete
-     *        The user aliases attached to the user id that are to be deleted.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateUserRequest withUserAliasesToDelete(java.util.Collection<UserAlias> userAliasesToDelete) {
-        setUserAliasesToDelete(userAliasesToDelete);
+    public UpdateUserRequest withUserId(String userId) {
+        setUserId(userId);
         return this;
     }
 
@@ -232,41 +202,71 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The email id attached to the user.
+     * The user aliases attached to the user id that are to be deleted.
      * </p>
      * 
-     * @param userId
-     *        The email id attached to the user.
+     * @return The user aliases attached to the user id that are to be deleted.
      */
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public java.util.List<UserAlias> getUserAliasesToDelete() {
+        return userAliasesToDelete;
     }
 
     /**
      * <p>
-     * The email id attached to the user.
+     * The user aliases attached to the user id that are to be deleted.
      * </p>
      * 
-     * @return The email id attached to the user.
+     * @param userAliasesToDelete
+     *        The user aliases attached to the user id that are to be deleted.
      */
 
-    public String getUserId() {
-        return this.userId;
+    public void setUserAliasesToDelete(java.util.Collection<UserAlias> userAliasesToDelete) {
+        if (userAliasesToDelete == null) {
+            this.userAliasesToDelete = null;
+            return;
+        }
+
+        this.userAliasesToDelete = new java.util.ArrayList<UserAlias>(userAliasesToDelete);
     }
 
     /**
      * <p>
-     * The email id attached to the user.
+     * The user aliases attached to the user id that are to be deleted.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserAliasesToDelete(java.util.Collection)} or {@link #withUserAliasesToDelete(java.util.Collection)}
+     * if you want to override the existing values.
      * </p>
      * 
-     * @param userId
-     *        The email id attached to the user.
+     * @param userAliasesToDelete
+     *        The user aliases attached to the user id that are to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateUserRequest withUserId(String userId) {
-        setUserId(userId);
+    public UpdateUserRequest withUserAliasesToDelete(UserAlias... userAliasesToDelete) {
+        if (this.userAliasesToDelete == null) {
+            setUserAliasesToDelete(new java.util.ArrayList<UserAlias>(userAliasesToDelete.length));
+        }
+        for (UserAlias ele : userAliasesToDelete) {
+            this.userAliasesToDelete.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user aliases attached to the user id that are to be deleted.
+     * </p>
+     * 
+     * @param userAliasesToDelete
+     *        The user aliases attached to the user id that are to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withUserAliasesToDelete(java.util.Collection<UserAlias> userAliasesToDelete) {
+        setUserAliasesToDelete(userAliasesToDelete);
         return this;
     }
 
@@ -284,12 +284,12 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getUserAliasesToDelete() != null)
-            sb.append("UserAliasesToDelete: ").append(getUserAliasesToDelete()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getUserAliasesToUpdate() != null)
             sb.append("UserAliasesToUpdate: ").append(getUserAliasesToUpdate()).append(",");
-        if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+        if (getUserAliasesToDelete() != null)
+            sb.append("UserAliasesToDelete: ").append(getUserAliasesToDelete());
         sb.append("}");
         return sb.toString();
     }
@@ -308,17 +308,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getUserAliasesToDelete() == null ^ this.getUserAliasesToDelete() == null)
+        if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
-        if (other.getUserAliasesToDelete() != null && other.getUserAliasesToDelete().equals(this.getUserAliasesToDelete()) == false)
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
         if (other.getUserAliasesToUpdate() == null ^ this.getUserAliasesToUpdate() == null)
             return false;
         if (other.getUserAliasesToUpdate() != null && other.getUserAliasesToUpdate().equals(this.getUserAliasesToUpdate()) == false)
             return false;
-        if (other.getUserId() == null ^ this.getUserId() == null)
+        if (other.getUserAliasesToDelete() == null ^ this.getUserAliasesToDelete() == null)
             return false;
-        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+        if (other.getUserAliasesToDelete() != null && other.getUserAliasesToDelete().equals(this.getUserAliasesToDelete()) == false)
             return false;
         return true;
     }
@@ -329,9 +329,9 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getUserAliasesToDelete() == null) ? 0 : getUserAliasesToDelete().hashCode());
-        hashCode = prime * hashCode + ((getUserAliasesToUpdate() == null) ? 0 : getUserAliasesToUpdate().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getUserAliasesToUpdate() == null) ? 0 : getUserAliasesToUpdate().hashCode());
+        hashCode = prime * hashCode + ((getUserAliasesToDelete() == null) ? 0 : getUserAliasesToDelete().hashCode());
         return hashCode;
     }
 

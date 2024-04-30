@@ -25,17 +25,63 @@ public class ListConversationsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of summary information on the configuration of one or more Amazon Q Business web experiences.
-     * </p>
-     */
-    private java.util.List<Conversation> conversations;
-    /**
-     * <p>
      * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
      * the next set of messages.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * An array of summary information on the configuration of one or more Amazon Q Business web experiences.
+     * </p>
+     */
+    private java.util.List<Conversation> conversations;
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
+     * the next set of messages.
+     * </p>
+     * 
+     * @param nextToken
+     *        If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
+     *        to list the next set of messages.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
+     * the next set of messages.
+     * </p>
+     * 
+     * @return If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
+     *         to list the next set of messages.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
+     * the next set of messages.
+     * </p>
+     * 
+     * @param nextToken
+     *        If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
+     *        to list the next set of messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListConversationsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -108,52 +154,6 @@ public class ListConversationsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
-     * the next set of messages.
-     * </p>
-     * 
-     * @param nextToken
-     *        If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
-     *        to list the next set of messages.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
-     * the next set of messages.
-     * </p>
-     * 
-     * @return If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
-     *         to list the next set of messages.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
-     * the next set of messages.
-     * </p>
-     * 
-     * @param nextToken
-     *        If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
-     *        to list the next set of messages.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListConversationsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,10 +165,10 @@ public class ListConversationsResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getConversations() != null)
-            sb.append("Conversations: ").append(getConversations()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getConversations() != null)
+            sb.append("Conversations: ").append(getConversations());
         sb.append("}");
         return sb.toString();
     }
@@ -183,13 +183,13 @@ public class ListConversationsResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof ListConversationsResult == false)
             return false;
         ListConversationsResult other = (ListConversationsResult) obj;
-        if (other.getConversations() == null ^ this.getConversations() == null)
-            return false;
-        if (other.getConversations() != null && other.getConversations().equals(this.getConversations()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getConversations() == null ^ this.getConversations() == null)
+            return false;
+        if (other.getConversations() != null && other.getConversations().equals(this.getConversations()) == false)
             return false;
         return true;
     }
@@ -199,8 +199,8 @@ public class ListConversationsResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getConversations() == null) ? 0 : getConversations().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getConversations() == null) ? 0 : getConversations().hashCode());
         return hashCode;
     }
 

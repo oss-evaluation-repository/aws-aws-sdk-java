@@ -30,6 +30,12 @@ public class PrincipalGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of the group.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * Provides information about whether to allow or deny access to the principal.
      * </p>
      */
@@ -40,12 +46,46 @@ public class PrincipalGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String membershipType;
+
     /**
      * <p>
      * The name of the group.
      * </p>
+     * 
+     * @param name
+     *        The name of the group.
      */
-    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the group.
+     * </p>
+     * 
+     * @return The name of the group.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the group.
+     * </p>
+     * 
+     * @param name
+     *        The name of the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrincipalGroup withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -166,46 +206,6 @@ public class PrincipalGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The name of the group.
-     * </p>
-     * 
-     * @param name
-     *        The name of the group.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The name of the group.
-     * </p>
-     * 
-     * @return The name of the group.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The name of the group.
-     * </p>
-     * 
-     * @param name
-     *        The name of the group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PrincipalGroup withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -217,12 +217,12 @@ public class PrincipalGroup implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getAccess() != null)
             sb.append("Access: ").append(getAccess()).append(",");
         if (getMembershipType() != null)
-            sb.append("MembershipType: ").append(getMembershipType()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("MembershipType: ").append(getMembershipType());
         sb.append("}");
         return sb.toString();
     }
@@ -237,6 +237,10 @@ public class PrincipalGroup implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof PrincipalGroup == false)
             return false;
         PrincipalGroup other = (PrincipalGroup) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getAccess() == null ^ this.getAccess() == null)
             return false;
         if (other.getAccess() != null && other.getAccess().equals(this.getAccess()) == false)
@@ -244,10 +248,6 @@ public class PrincipalGroup implements Serializable, Cloneable, StructuredPojo {
         if (other.getMembershipType() == null ^ this.getMembershipType() == null)
             return false;
         if (other.getMembershipType() != null && other.getMembershipType().equals(this.getMembershipType()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -257,9 +257,9 @@ public class PrincipalGroup implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getAccess() == null) ? 0 : getAccess().hashCode());
         hashCode = prime * hashCode + ((getMembershipType() == null) ? 0 : getMembershipType().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

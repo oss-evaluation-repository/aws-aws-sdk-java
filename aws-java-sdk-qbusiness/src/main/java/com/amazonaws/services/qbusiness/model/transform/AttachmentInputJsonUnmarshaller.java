@@ -48,13 +48,13 @@ public class AttachmentInputJsonUnmarshaller implements Unmarshaller<AttachmentI
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("data", targetDepth)) {
-                    context.nextToken();
-                    attachmentInput.setData(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
-                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     attachmentInput.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("data", targetDepth)) {
+                    context.nextToken();
+                    attachmentInput.setData(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

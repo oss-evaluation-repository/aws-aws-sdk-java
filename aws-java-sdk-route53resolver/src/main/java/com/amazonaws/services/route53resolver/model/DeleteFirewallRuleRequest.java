@@ -107,6 +107,13 @@ public class DeleteFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * TXT: Verifies email senders and application-specific values.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String qtype;
@@ -261,6 +268,13 @@ public class DeleteFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * TXT: Verifies email senders and application-specific values.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param qtype
@@ -329,6 +343,13 @@ public class DeleteFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        TXT: Verifies email senders and application-specific values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *        TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
      *        </p>
      *        </li>
      */
@@ -407,6 +428,13 @@ public class DeleteFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * TXT: Verifies email senders and application-specific values.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The DNS query type that the rule you are deleting evaluates. Allowed values are; </p>
@@ -474,6 +502,13 @@ public class DeleteFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         TXT: Verifies email senders and application-specific values.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *         TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *         href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
      *         </p>
      *         </li>
      */
@@ -552,6 +587,13 @@ public class DeleteFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * TXT: Verifies email senders and application-specific values.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param qtype
@@ -620,6 +662,13 @@ public class DeleteFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        TXT: Verifies email senders and application-specific values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *        TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

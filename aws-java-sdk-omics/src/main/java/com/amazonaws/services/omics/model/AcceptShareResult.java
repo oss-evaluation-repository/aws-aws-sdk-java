@@ -25,18 +25,18 @@ public class AcceptShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of an analytics store share.
+     * The status of the resource share.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The status of an analytics store share.
+     * The status of the resource share.
      * </p>
      * 
      * @param status
-     *        The status of an analytics store share.
+     *        The status of the resource share.
      * @see ShareStatus
      */
 
@@ -46,10 +46,10 @@ public class AcceptShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of an analytics store share.
+     * The status of the resource share.
      * </p>
      * 
-     * @return The status of an analytics store share.
+     * @return The status of the resource share.
      * @see ShareStatus
      */
 
@@ -59,11 +59,11 @@ public class AcceptShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of an analytics store share.
+     * The status of the resource share.
      * </p>
      * 
      * @param status
-     *        The status of an analytics store share.
+     *        The status of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */
@@ -75,11 +75,11 @@ public class AcceptShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of an analytics store share.
+     * The status of the resource share.
      * </p>
      * 
      * @param status
-     *        The status of an analytics store share.
+     *        The status of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */

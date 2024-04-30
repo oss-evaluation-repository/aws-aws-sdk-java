@@ -30,86 +30,16 @@ public class UsersAndGroups implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user groups associated with a topic control rule.
-     * </p>
-     */
-    private java.util.List<String> userGroups;
-    /**
-     * <p>
      * The user ids associated with a topic control rule.
      * </p>
      */
     private java.util.List<String> userIds;
-
     /**
      * <p>
      * The user groups associated with a topic control rule.
      * </p>
-     * 
-     * @return The user groups associated with a topic control rule.
      */
-
-    public java.util.List<String> getUserGroups() {
-        return userGroups;
-    }
-
-    /**
-     * <p>
-     * The user groups associated with a topic control rule.
-     * </p>
-     * 
-     * @param userGroups
-     *        The user groups associated with a topic control rule.
-     */
-
-    public void setUserGroups(java.util.Collection<String> userGroups) {
-        if (userGroups == null) {
-            this.userGroups = null;
-            return;
-        }
-
-        this.userGroups = new java.util.ArrayList<String>(userGroups);
-    }
-
-    /**
-     * <p>
-     * The user groups associated with a topic control rule.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setUserGroups(java.util.Collection)} or {@link #withUserGroups(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param userGroups
-     *        The user groups associated with a topic control rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UsersAndGroups withUserGroups(String... userGroups) {
-        if (this.userGroups == null) {
-            setUserGroups(new java.util.ArrayList<String>(userGroups.length));
-        }
-        for (String ele : userGroups) {
-            this.userGroups.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The user groups associated with a topic control rule.
-     * </p>
-     * 
-     * @param userGroups
-     *        The user groups associated with a topic control rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UsersAndGroups withUserGroups(java.util.Collection<String> userGroups) {
-        setUserGroups(userGroups);
-        return this;
-    }
+    private java.util.List<String> userGroups;
 
     /**
      * <p>
@@ -182,6 +112,76 @@ public class UsersAndGroups implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The user groups associated with a topic control rule.
+     * </p>
+     * 
+     * @return The user groups associated with a topic control rule.
+     */
+
+    public java.util.List<String> getUserGroups() {
+        return userGroups;
+    }
+
+    /**
+     * <p>
+     * The user groups associated with a topic control rule.
+     * </p>
+     * 
+     * @param userGroups
+     *        The user groups associated with a topic control rule.
+     */
+
+    public void setUserGroups(java.util.Collection<String> userGroups) {
+        if (userGroups == null) {
+            this.userGroups = null;
+            return;
+        }
+
+        this.userGroups = new java.util.ArrayList<String>(userGroups);
+    }
+
+    /**
+     * <p>
+     * The user groups associated with a topic control rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserGroups(java.util.Collection)} or {@link #withUserGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userGroups
+     *        The user groups associated with a topic control rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsersAndGroups withUserGroups(String... userGroups) {
+        if (this.userGroups == null) {
+            setUserGroups(new java.util.ArrayList<String>(userGroups.length));
+        }
+        for (String ele : userGroups) {
+            this.userGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user groups associated with a topic control rule.
+     * </p>
+     * 
+     * @param userGroups
+     *        The user groups associated with a topic control rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsersAndGroups withUserGroups(java.util.Collection<String> userGroups) {
+        setUserGroups(userGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -193,10 +193,10 @@ public class UsersAndGroups implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUserGroups() != null)
-            sb.append("UserGroups: ").append(getUserGroups()).append(",");
         if (getUserIds() != null)
-            sb.append("UserIds: ").append(getUserIds());
+            sb.append("UserIds: ").append(getUserIds()).append(",");
+        if (getUserGroups() != null)
+            sb.append("UserGroups: ").append(getUserGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -211,13 +211,13 @@ public class UsersAndGroups implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof UsersAndGroups == false)
             return false;
         UsersAndGroups other = (UsersAndGroups) obj;
-        if (other.getUserGroups() == null ^ this.getUserGroups() == null)
-            return false;
-        if (other.getUserGroups() != null && other.getUserGroups().equals(this.getUserGroups()) == false)
-            return false;
         if (other.getUserIds() == null ^ this.getUserIds() == null)
             return false;
         if (other.getUserIds() != null && other.getUserIds().equals(this.getUserIds()) == false)
+            return false;
+        if (other.getUserGroups() == null ^ this.getUserGroups() == null)
+            return false;
+        if (other.getUserGroups() != null && other.getUserGroups().equals(this.getUserGroups()) == false)
             return false;
         return true;
     }
@@ -227,8 +227,8 @@ public class UsersAndGroups implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getUserGroups() == null) ? 0 : getUserGroups().hashCode());
         hashCode = prime * hashCode + ((getUserIds() == null) ? 0 : getUserIds().hashCode());
+        hashCode = prime * hashCode + ((getUserGroups() == null) ? 0 : getUserGroups().hashCode());
         return hashCode;
     }
 

@@ -48,13 +48,6 @@ public class ActionReviewPayloadFieldJsonUnmarshaller implements Unmarshaller<Ac
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("allowedValues", targetDepth)) {
-                    context.nextToken();
-                    actionReviewPayloadField.setAllowedValues(new ListUnmarshaller<ActionReviewPayloadFieldAllowedValue>(
-                            ActionReviewPayloadFieldAllowedValueJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
                     actionReviewPayloadField.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,13 +56,28 @@ public class ActionReviewPayloadFieldJsonUnmarshaller implements Unmarshaller<Ac
                     context.nextToken();
                     actionReviewPayloadField.setDisplayOrder(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
-                if (context.testExpression("required", targetDepth)) {
+                if (context.testExpression("displayDescription", targetDepth)) {
                     context.nextToken();
-                    actionReviewPayloadField.setRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    actionReviewPayloadField.setDisplayDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     actionReviewPayloadField.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("allowedValues", targetDepth)) {
+                    context.nextToken();
+                    actionReviewPayloadField.setAllowedValues(new ListUnmarshaller<ActionReviewPayloadFieldAllowedValue>(
+                            ActionReviewPayloadFieldAllowedValueJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("allowedFormat", targetDepth)) {
+                    context.nextToken();
+                    actionReviewPayloadField.setAllowedFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("required", targetDepth)) {
+                    context.nextToken();
+                    actionReviewPayloadField.setRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

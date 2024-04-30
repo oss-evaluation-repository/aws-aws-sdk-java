@@ -33,16 +33,16 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String applicationId;
     /**
      * <p>
+     * The identifier of the user giving the feedback.
+     * </p>
+     */
+    private String userId;
+    /**
+     * <p>
      * The identifier of the conversation the feedback is attached to.
      * </p>
      */
     private String conversationId;
-    /**
-     * <p>
-     * The timestamp for when the feedback was recorded.
-     * </p>
-     */
-    private java.util.Date messageCopiedAt;
     /**
      * <p>
      * The identifier of the chat message that the feedback was given for.
@@ -51,16 +51,16 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String messageId;
     /**
      * <p>
+     * The timestamp for when the feedback was recorded.
+     * </p>
+     */
+    private java.util.Date messageCopiedAt;
+    /**
+     * <p>
      * The feedback usefulness value given by the user to the chat message.
      * </p>
      */
     private MessageUsefulnessFeedback messageUsefulness;
-    /**
-     * <p>
-     * The identifier of the user giving the feedback.
-     * </p>
-     */
-    private String userId;
 
     /**
      * <p>
@@ -99,6 +99,46 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public PutFeedbackRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the user giving the feedback.
+     * </p>
+     * 
+     * @param userId
+     *        The identifier of the user giving the feedback.
+     */
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the user giving the feedback.
+     * </p>
+     * 
+     * @return The identifier of the user giving the feedback.
+     */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the user giving the feedback.
+     * </p>
+     * 
+     * @param userId
+     *        The identifier of the user giving the feedback.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutFeedbackRequest withUserId(String userId) {
+        setUserId(userId);
         return this;
     }
 
@@ -144,46 +184,6 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The timestamp for when the feedback was recorded.
-     * </p>
-     * 
-     * @param messageCopiedAt
-     *        The timestamp for when the feedback was recorded.
-     */
-
-    public void setMessageCopiedAt(java.util.Date messageCopiedAt) {
-        this.messageCopiedAt = messageCopiedAt;
-    }
-
-    /**
-     * <p>
-     * The timestamp for when the feedback was recorded.
-     * </p>
-     * 
-     * @return The timestamp for when the feedback was recorded.
-     */
-
-    public java.util.Date getMessageCopiedAt() {
-        return this.messageCopiedAt;
-    }
-
-    /**
-     * <p>
-     * The timestamp for when the feedback was recorded.
-     * </p>
-     * 
-     * @param messageCopiedAt
-     *        The timestamp for when the feedback was recorded.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutFeedbackRequest withMessageCopiedAt(java.util.Date messageCopiedAt) {
-        setMessageCopiedAt(messageCopiedAt);
-        return this;
-    }
-
-    /**
-     * <p>
      * The identifier of the chat message that the feedback was given for.
      * </p>
      * 
@@ -219,6 +219,46 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public PutFeedbackRequest withMessageId(String messageId) {
         setMessageId(messageId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the feedback was recorded.
+     * </p>
+     * 
+     * @param messageCopiedAt
+     *        The timestamp for when the feedback was recorded.
+     */
+
+    public void setMessageCopiedAt(java.util.Date messageCopiedAt) {
+        this.messageCopiedAt = messageCopiedAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the feedback was recorded.
+     * </p>
+     * 
+     * @return The timestamp for when the feedback was recorded.
+     */
+
+    public java.util.Date getMessageCopiedAt() {
+        return this.messageCopiedAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the feedback was recorded.
+     * </p>
+     * 
+     * @param messageCopiedAt
+     *        The timestamp for when the feedback was recorded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutFeedbackRequest withMessageCopiedAt(java.util.Date messageCopiedAt) {
+        setMessageCopiedAt(messageCopiedAt);
         return this;
     }
 
@@ -263,46 +303,6 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p>
-     * The identifier of the user giving the feedback.
-     * </p>
-     * 
-     * @param userId
-     *        The identifier of the user giving the feedback.
-     */
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the user giving the feedback.
-     * </p>
-     * 
-     * @return The identifier of the user giving the feedback.
-     */
-
-    public String getUserId() {
-        return this.userId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the user giving the feedback.
-     * </p>
-     * 
-     * @param userId
-     *        The identifier of the user giving the feedback.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutFeedbackRequest withUserId(String userId) {
-        setUserId(userId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -316,16 +316,16 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getConversationId() != null)
             sb.append("ConversationId: ").append(getConversationId()).append(",");
-        if (getMessageCopiedAt() != null)
-            sb.append("MessageCopiedAt: ").append(getMessageCopiedAt()).append(",");
         if (getMessageId() != null)
             sb.append("MessageId: ").append(getMessageId()).append(",");
+        if (getMessageCopiedAt() != null)
+            sb.append("MessageCopiedAt: ").append(getMessageCopiedAt()).append(",");
         if (getMessageUsefulness() != null)
-            sb.append("MessageUsefulness: ").append(getMessageUsefulness()).append(",");
-        if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+            sb.append("MessageUsefulness: ").append(getMessageUsefulness());
         sb.append("}");
         return sb.toString();
     }
@@ -344,25 +344,25 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
+        if (other.getUserId() == null ^ this.getUserId() == null)
+            return false;
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+            return false;
         if (other.getConversationId() == null ^ this.getConversationId() == null)
             return false;
         if (other.getConversationId() != null && other.getConversationId().equals(this.getConversationId()) == false)
-            return false;
-        if (other.getMessageCopiedAt() == null ^ this.getMessageCopiedAt() == null)
-            return false;
-        if (other.getMessageCopiedAt() != null && other.getMessageCopiedAt().equals(this.getMessageCopiedAt()) == false)
             return false;
         if (other.getMessageId() == null ^ this.getMessageId() == null)
             return false;
         if (other.getMessageId() != null && other.getMessageId().equals(this.getMessageId()) == false)
             return false;
+        if (other.getMessageCopiedAt() == null ^ this.getMessageCopiedAt() == null)
+            return false;
+        if (other.getMessageCopiedAt() != null && other.getMessageCopiedAt().equals(this.getMessageCopiedAt()) == false)
+            return false;
         if (other.getMessageUsefulness() == null ^ this.getMessageUsefulness() == null)
             return false;
         if (other.getMessageUsefulness() != null && other.getMessageUsefulness().equals(this.getMessageUsefulness()) == false)
-            return false;
-        if (other.getUserId() == null ^ this.getUserId() == null)
-            return false;
-        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
         return true;
     }
@@ -373,11 +373,11 @@ public class PutFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getConversationId() == null) ? 0 : getConversationId().hashCode());
-        hashCode = prime * hashCode + ((getMessageCopiedAt() == null) ? 0 : getMessageCopiedAt().hashCode());
-        hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
-        hashCode = prime * hashCode + ((getMessageUsefulness() == null) ? 0 : getMessageUsefulness().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getConversationId() == null) ? 0 : getConversationId().hashCode());
+        hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
+        hashCode = prime * hashCode + ((getMessageCopiedAt() == null) ? 0 : getMessageCopiedAt().hashCode());
+        hashCode = prime * hashCode + ((getMessageUsefulness() == null) ? 0 : getMessageUsefulness().hashCode());
         return hashCode;
     }
 

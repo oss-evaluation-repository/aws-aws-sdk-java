@@ -30,6 +30,12 @@ public class TopicConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * A name for your topic control configuration.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * A description for your topic control configuration. Use this to outline how the large language model (LLM) should
      * use this topic control configuration.
      * </p>
@@ -43,16 +49,50 @@ public class TopicConfiguration implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> exampleChatMessages;
     /**
      * <p>
-     * A name for your topic control configuration.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * Rules defined for a topic configuration.
      * </p>
      */
     private java.util.List<Rule> rules;
+
+    /**
+     * <p>
+     * A name for your topic control configuration.
+     * </p>
+     * 
+     * @param name
+     *        A name for your topic control configuration.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * A name for your topic control configuration.
+     * </p>
+     * 
+     * @return A name for your topic control configuration.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * A name for your topic control configuration.
+     * </p>
+     * 
+     * @param name
+     *        A name for your topic control configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TopicConfiguration withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -172,46 +212,6 @@ public class TopicConfiguration implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A name for your topic control configuration.
-     * </p>
-     * 
-     * @param name
-     *        A name for your topic control configuration.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * A name for your topic control configuration.
-     * </p>
-     * 
-     * @return A name for your topic control configuration.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * A name for your topic control configuration.
-     * </p>
-     * 
-     * @param name
-     *        A name for your topic control configuration.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TopicConfiguration withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
      * Rules defined for a topic configuration.
      * </p>
      * 
@@ -292,12 +292,12 @@ public class TopicConfiguration implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getExampleChatMessages() != null)
             sb.append("ExampleChatMessages: ").append(getExampleChatMessages()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getRules() != null)
             sb.append("Rules: ").append(getRules());
         sb.append("}");
@@ -314,6 +314,10 @@ public class TopicConfiguration implements Serializable, Cloneable, StructuredPo
         if (obj instanceof TopicConfiguration == false)
             return false;
         TopicConfiguration other = (TopicConfiguration) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -321,10 +325,6 @@ public class TopicConfiguration implements Serializable, Cloneable, StructuredPo
         if (other.getExampleChatMessages() == null ^ this.getExampleChatMessages() == null)
             return false;
         if (other.getExampleChatMessages() != null && other.getExampleChatMessages().equals(this.getExampleChatMessages()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getRules() == null ^ this.getRules() == null)
             return false;
@@ -338,9 +338,9 @@ public class TopicConfiguration implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getExampleChatMessages() == null) ? 0 : getExampleChatMessages().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         return hashCode;
     }

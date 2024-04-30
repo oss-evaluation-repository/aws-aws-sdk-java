@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DocumentAttributeTargetMarshaller {
 
-    private static final MarshallingInfo<String> ATTRIBUTEVALUEOPERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributeValueOperator").build();
     private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("key").build();
     private static final MarshallingInfo<StructuredPojo> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("value").build();
+    private static final MarshallingInfo<String> ATTRIBUTEVALUEOPERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributeValueOperator").build();
 
     private static final DocumentAttributeTargetMarshaller instance = new DocumentAttributeTargetMarshaller();
 
@@ -50,9 +50,9 @@ public class DocumentAttributeTargetMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(documentAttributeTarget.getAttributeValueOperator(), ATTRIBUTEVALUEOPERATOR_BINDING);
             protocolMarshaller.marshall(documentAttributeTarget.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(documentAttributeTarget.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(documentAttributeTarget.getAttributeValueOperator(), ATTRIBUTEVALUEOPERATOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

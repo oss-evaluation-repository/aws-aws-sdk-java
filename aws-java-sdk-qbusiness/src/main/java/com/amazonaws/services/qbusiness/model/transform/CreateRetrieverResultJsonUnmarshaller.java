@@ -48,13 +48,13 @@ public class CreateRetrieverResultJsonUnmarshaller implements Unmarshaller<Creat
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("retrieverArn", targetDepth)) {
-                    context.nextToken();
-                    createRetrieverResult.setRetrieverArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("retrieverId", targetDepth)) {
                     context.nextToken();
                     createRetrieverResult.setRetrieverId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("retrieverArn", targetDepth)) {
+                    context.nextToken();
+                    createRetrieverResult.setRetrieverArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -30,12 +30,16 @@ public class AttributeFilterMarshaller {
 
     private static final MarshallingInfo<List> ANDALLFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("andAllFilters").build();
+    private static final MarshallingInfo<List> ORALLFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("orAllFilters").build();
+    private static final MarshallingInfo<StructuredPojo> NOTFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notFilter").build();
+    private static final MarshallingInfo<StructuredPojo> EQUALSTO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("equalsTo").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINSALL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containsAll").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINSANY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containsAny").build();
-    private static final MarshallingInfo<StructuredPojo> EQUALSTO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("equalsTo").build();
     private static final MarshallingInfo<StructuredPojo> GREATERTHAN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("greaterThan").build();
     private static final MarshallingInfo<StructuredPojo> GREATERTHANOREQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -44,10 +48,6 @@ public class AttributeFilterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lessThan").build();
     private static final MarshallingInfo<StructuredPojo> LESSTHANOREQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lessThanOrEquals").build();
-    private static final MarshallingInfo<StructuredPojo> NOTFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notFilter").build();
-    private static final MarshallingInfo<List> ORALLFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("orAllFilters").build();
 
     private static final AttributeFilterMarshaller instance = new AttributeFilterMarshaller();
 
@@ -66,15 +66,15 @@ public class AttributeFilterMarshaller {
 
         try {
             protocolMarshaller.marshall(attributeFilter.getAndAllFilters(), ANDALLFILTERS_BINDING);
+            protocolMarshaller.marshall(attributeFilter.getOrAllFilters(), ORALLFILTERS_BINDING);
+            protocolMarshaller.marshall(attributeFilter.getNotFilter(), NOTFILTER_BINDING);
+            protocolMarshaller.marshall(attributeFilter.getEqualsTo(), EQUALSTO_BINDING);
             protocolMarshaller.marshall(attributeFilter.getContainsAll(), CONTAINSALL_BINDING);
             protocolMarshaller.marshall(attributeFilter.getContainsAny(), CONTAINSANY_BINDING);
-            protocolMarshaller.marshall(attributeFilter.getEqualsTo(), EQUALSTO_BINDING);
             protocolMarshaller.marshall(attributeFilter.getGreaterThan(), GREATERTHAN_BINDING);
             protocolMarshaller.marshall(attributeFilter.getGreaterThanOrEquals(), GREATERTHANOREQUALS_BINDING);
             protocolMarshaller.marshall(attributeFilter.getLessThan(), LESSTHAN_BINDING);
             protocolMarshaller.marshall(attributeFilter.getLessThanOrEquals(), LESSTHANOREQUALS_BINDING);
-            protocolMarshaller.marshall(attributeFilter.getNotFilter(), NOTFILTER_BINDING);
-            protocolMarshaller.marshall(attributeFilter.getOrAllFilters(), ORALLFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -48,6 +48,10 @@ public class PrincipalGroupJsonUnmarshaller implements Unmarshaller<PrincipalGro
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    principalGroup.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("access", targetDepth)) {
                     context.nextToken();
                     principalGroup.setAccess(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,10 +59,6 @@ public class PrincipalGroupJsonUnmarshaller implements Unmarshaller<PrincipalGro
                 if (context.testExpression("membershipType", targetDepth)) {
                     context.nextToken();
                     principalGroup.setMembershipType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    principalGroup.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

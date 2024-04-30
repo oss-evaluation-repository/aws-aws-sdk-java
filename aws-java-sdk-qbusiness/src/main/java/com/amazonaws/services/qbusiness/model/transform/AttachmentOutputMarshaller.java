@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AttachmentOutputMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("error").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<StructuredPojo> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("error").build();
 
     private static final AttachmentOutputMarshaller instance = new AttachmentOutputMarshaller();
 
@@ -50,9 +50,9 @@ public class AttachmentOutputMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(attachmentOutput.getError(), ERROR_BINDING);
             protocolMarshaller.marshall(attachmentOutput.getName(), NAME_BINDING);
             protocolMarshaller.marshall(attachmentOutput.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(attachmentOutput.getError(), ERROR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

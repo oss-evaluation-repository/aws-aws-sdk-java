@@ -36,6 +36,27 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<AttributeFilter> andAllFilters;
     /**
      * <p>
+     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * </p>
+     */
+    private java.util.List<AttributeFilter> orAllFilters;
+    /**
+     * <p>
+     * Performs a logical <code>NOT</code> operation on all supplied filters.
+     * </p>
+     */
+    private AttributeFilter notFilter;
+    /**
+     * <p>
+     * Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and
+     * <code>stringValue</code>.
+     * </p>
+     */
+    private DocumentAttribute equalsTo;
+    /**
+     * <p>
      * Returns <code>true</code> when a document contains all the specified document attributes or metadata fields.
      * Supported for the following <a
      * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
@@ -53,15 +74,6 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private DocumentAttribute containsAny;
-    /**
-     * <p>
-     * Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and
-     * <code>stringValue</code>.
-     * </p>
-     */
-    private DocumentAttribute equalsTo;
     /**
      * <p>
      * Performs a greater than operation on two document attributes or metadata fields. Supported for the following <a
@@ -96,18 +108,6 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private DocumentAttribute lessThanOrEquals;
-    /**
-     * <p>
-     * Performs a logical <code>NOT</code> operation on all supplied filters.
-     * </p>
-     */
-    private AttributeFilter notFilter;
-    /**
-     * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
-     * </p>
-     */
-    private java.util.List<AttributeFilter> orAllFilters;
 
     /**
      * <p>
@@ -176,6 +176,174 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     public AttributeFilter withAndAllFilters(java.util.Collection<AttributeFilter> andAllFilters) {
         setAndAllFilters(andAllFilters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * </p>
+     * 
+     * @return Performs a logical <code>OR</code> operation on all supplied filters.
+     */
+
+    public java.util.List<AttributeFilter> getOrAllFilters() {
+        return orAllFilters;
+    }
+
+    /**
+     * <p>
+     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * </p>
+     * 
+     * @param orAllFilters
+     *        Performs a logical <code>OR</code> operation on all supplied filters.
+     */
+
+    public void setOrAllFilters(java.util.Collection<AttributeFilter> orAllFilters) {
+        if (orAllFilters == null) {
+            this.orAllFilters = null;
+            return;
+        }
+
+        this.orAllFilters = new java.util.ArrayList<AttributeFilter>(orAllFilters);
+    }
+
+    /**
+     * <p>
+     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOrAllFilters(java.util.Collection)} or {@link #withOrAllFilters(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param orAllFilters
+     *        Performs a logical <code>OR</code> operation on all supplied filters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttributeFilter withOrAllFilters(AttributeFilter... orAllFilters) {
+        if (this.orAllFilters == null) {
+            setOrAllFilters(new java.util.ArrayList<AttributeFilter>(orAllFilters.length));
+        }
+        for (AttributeFilter ele : orAllFilters) {
+            this.orAllFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * </p>
+     * 
+     * @param orAllFilters
+     *        Performs a logical <code>OR</code> operation on all supplied filters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttributeFilter withOrAllFilters(java.util.Collection<AttributeFilter> orAllFilters) {
+        setOrAllFilters(orAllFilters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Performs a logical <code>NOT</code> operation on all supplied filters.
+     * </p>
+     * 
+     * @param notFilter
+     *        Performs a logical <code>NOT</code> operation on all supplied filters.
+     */
+
+    public void setNotFilter(AttributeFilter notFilter) {
+        this.notFilter = notFilter;
+    }
+
+    /**
+     * <p>
+     * Performs a logical <code>NOT</code> operation on all supplied filters.
+     * </p>
+     * 
+     * @return Performs a logical <code>NOT</code> operation on all supplied filters.
+     */
+
+    public AttributeFilter getNotFilter() {
+        return this.notFilter;
+    }
+
+    /**
+     * <p>
+     * Performs a logical <code>NOT</code> operation on all supplied filters.
+     * </p>
+     * 
+     * @param notFilter
+     *        Performs a logical <code>NOT</code> operation on all supplied filters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttributeFilter withNotFilter(AttributeFilter notFilter) {
+        setNotFilter(notFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and
+     * <code>stringValue</code>.
+     * </p>
+     * 
+     * @param equalsTo
+     *        Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
+     *        href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     *        attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code>
+     *        and <code>stringValue</code>.
+     */
+
+    public void setEqualsTo(DocumentAttribute equalsTo) {
+        this.equalsTo = equalsTo;
+    }
+
+    /**
+     * <p>
+     * Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and
+     * <code>stringValue</code>.
+     * </p>
+     * 
+     * @return Performs an equals operation on two document attributes or metadata fields. Supported for the following
+     *         <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">
+     *         document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
+     *         <code>stringListValue</code> and <code>stringValue</code>.
+     */
+
+    public DocumentAttribute getEqualsTo() {
+        return this.equalsTo;
+    }
+
+    /**
+     * <p>
+     * Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
+     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and
+     * <code>stringValue</code>.
+     * </p>
+     * 
+     * @param equalsTo
+     *        Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
+     *        href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+     *        attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code>
+     *        and <code>stringValue</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttributeFilter withEqualsTo(DocumentAttribute equalsTo) {
+        setEqualsTo(equalsTo);
         return this;
     }
 
@@ -298,64 +466,6 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     public AttributeFilter withContainsAny(DocumentAttribute containsAny) {
         setContainsAny(containsAny);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and
-     * <code>stringValue</code>.
-     * </p>
-     * 
-     * @param equalsTo
-     *        Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
-     *        href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     *        attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code>
-     *        and <code>stringValue</code>.
-     */
-
-    public void setEqualsTo(DocumentAttribute equalsTo) {
-        this.equalsTo = equalsTo;
-    }
-
-    /**
-     * <p>
-     * Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and
-     * <code>stringValue</code>.
-     * </p>
-     * 
-     * @return Performs an equals operation on two document attributes or metadata fields. Supported for the following
-     *         <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">
-     *         document attribute value types</a>: <code>dateValue</code>, <code>longValue</code>,
-     *         <code>stringListValue</code> and <code>stringValue</code>.
-     */
-
-    public DocumentAttribute getEqualsTo() {
-        return this.equalsTo;
-    }
-
-    /**
-     * <p>
-     * Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
-     * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     * attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code> and
-     * <code>stringValue</code>.
-     * </p>
-     * 
-     * @param equalsTo
-     *        Performs an equals operation on two document attributes or metadata fields. Supported for the following <a
-     *        href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
-     *        attribute value types</a>: <code>dateValue</code>, <code>longValue</code>, <code>stringListValue</code>
-     *        and <code>stringValue</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AttributeFilter withEqualsTo(DocumentAttribute equalsTo) {
-        setEqualsTo(equalsTo);
         return this;
     }
 
@@ -585,116 +695,6 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * Performs a logical <code>NOT</code> operation on all supplied filters.
-     * </p>
-     * 
-     * @param notFilter
-     *        Performs a logical <code>NOT</code> operation on all supplied filters.
-     */
-
-    public void setNotFilter(AttributeFilter notFilter) {
-        this.notFilter = notFilter;
-    }
-
-    /**
-     * <p>
-     * Performs a logical <code>NOT</code> operation on all supplied filters.
-     * </p>
-     * 
-     * @return Performs a logical <code>NOT</code> operation on all supplied filters.
-     */
-
-    public AttributeFilter getNotFilter() {
-        return this.notFilter;
-    }
-
-    /**
-     * <p>
-     * Performs a logical <code>NOT</code> operation on all supplied filters.
-     * </p>
-     * 
-     * @param notFilter
-     *        Performs a logical <code>NOT</code> operation on all supplied filters.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AttributeFilter withNotFilter(AttributeFilter notFilter) {
-        setNotFilter(notFilter);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
-     * </p>
-     * 
-     * @return Performs a logical <code>OR</code> operation on all supplied filters.
-     */
-
-    public java.util.List<AttributeFilter> getOrAllFilters() {
-        return orAllFilters;
-    }
-
-    /**
-     * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
-     * </p>
-     * 
-     * @param orAllFilters
-     *        Performs a logical <code>OR</code> operation on all supplied filters.
-     */
-
-    public void setOrAllFilters(java.util.Collection<AttributeFilter> orAllFilters) {
-        if (orAllFilters == null) {
-            this.orAllFilters = null;
-            return;
-        }
-
-        this.orAllFilters = new java.util.ArrayList<AttributeFilter>(orAllFilters);
-    }
-
-    /**
-     * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setOrAllFilters(java.util.Collection)} or {@link #withOrAllFilters(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param orAllFilters
-     *        Performs a logical <code>OR</code> operation on all supplied filters.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AttributeFilter withOrAllFilters(AttributeFilter... orAllFilters) {
-        if (this.orAllFilters == null) {
-            setOrAllFilters(new java.util.ArrayList<AttributeFilter>(orAllFilters.length));
-        }
-        for (AttributeFilter ele : orAllFilters) {
-            this.orAllFilters.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
-     * </p>
-     * 
-     * @param orAllFilters
-     *        Performs a logical <code>OR</code> operation on all supplied filters.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AttributeFilter withOrAllFilters(java.util.Collection<AttributeFilter> orAllFilters) {
-        setOrAllFilters(orAllFilters);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -708,12 +708,16 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getAndAllFilters() != null)
             sb.append("AndAllFilters: ").append(getAndAllFilters()).append(",");
+        if (getOrAllFilters() != null)
+            sb.append("OrAllFilters: ").append(getOrAllFilters()).append(",");
+        if (getNotFilter() != null)
+            sb.append("NotFilter: ").append(getNotFilter()).append(",");
+        if (getEqualsTo() != null)
+            sb.append("EqualsTo: ").append(getEqualsTo()).append(",");
         if (getContainsAll() != null)
             sb.append("ContainsAll: ").append(getContainsAll()).append(",");
         if (getContainsAny() != null)
             sb.append("ContainsAny: ").append(getContainsAny()).append(",");
-        if (getEqualsTo() != null)
-            sb.append("EqualsTo: ").append(getEqualsTo()).append(",");
         if (getGreaterThan() != null)
             sb.append("GreaterThan: ").append(getGreaterThan()).append(",");
         if (getGreaterThanOrEquals() != null)
@@ -721,11 +725,7 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
         if (getLessThan() != null)
             sb.append("LessThan: ").append(getLessThan()).append(",");
         if (getLessThanOrEquals() != null)
-            sb.append("LessThanOrEquals: ").append(getLessThanOrEquals()).append(",");
-        if (getNotFilter() != null)
-            sb.append("NotFilter: ").append(getNotFilter()).append(",");
-        if (getOrAllFilters() != null)
-            sb.append("OrAllFilters: ").append(getOrAllFilters());
+            sb.append("LessThanOrEquals: ").append(getLessThanOrEquals());
         sb.append("}");
         return sb.toString();
     }
@@ -744,6 +744,18 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAndAllFilters() != null && other.getAndAllFilters().equals(this.getAndAllFilters()) == false)
             return false;
+        if (other.getOrAllFilters() == null ^ this.getOrAllFilters() == null)
+            return false;
+        if (other.getOrAllFilters() != null && other.getOrAllFilters().equals(this.getOrAllFilters()) == false)
+            return false;
+        if (other.getNotFilter() == null ^ this.getNotFilter() == null)
+            return false;
+        if (other.getNotFilter() != null && other.getNotFilter().equals(this.getNotFilter()) == false)
+            return false;
+        if (other.getEqualsTo() == null ^ this.getEqualsTo() == null)
+            return false;
+        if (other.getEqualsTo() != null && other.getEqualsTo().equals(this.getEqualsTo()) == false)
+            return false;
         if (other.getContainsAll() == null ^ this.getContainsAll() == null)
             return false;
         if (other.getContainsAll() != null && other.getContainsAll().equals(this.getContainsAll()) == false)
@@ -751,10 +763,6 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
         if (other.getContainsAny() == null ^ this.getContainsAny() == null)
             return false;
         if (other.getContainsAny() != null && other.getContainsAny().equals(this.getContainsAny()) == false)
-            return false;
-        if (other.getEqualsTo() == null ^ this.getEqualsTo() == null)
-            return false;
-        if (other.getEqualsTo() != null && other.getEqualsTo().equals(this.getEqualsTo()) == false)
             return false;
         if (other.getGreaterThan() == null ^ this.getGreaterThan() == null)
             return false;
@@ -772,14 +780,6 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLessThanOrEquals() != null && other.getLessThanOrEquals().equals(this.getLessThanOrEquals()) == false)
             return false;
-        if (other.getNotFilter() == null ^ this.getNotFilter() == null)
-            return false;
-        if (other.getNotFilter() != null && other.getNotFilter().equals(this.getNotFilter()) == false)
-            return false;
-        if (other.getOrAllFilters() == null ^ this.getOrAllFilters() == null)
-            return false;
-        if (other.getOrAllFilters() != null && other.getOrAllFilters().equals(this.getOrAllFilters()) == false)
-            return false;
         return true;
     }
 
@@ -789,15 +789,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAndAllFilters() == null) ? 0 : getAndAllFilters().hashCode());
+        hashCode = prime * hashCode + ((getOrAllFilters() == null) ? 0 : getOrAllFilters().hashCode());
+        hashCode = prime * hashCode + ((getNotFilter() == null) ? 0 : getNotFilter().hashCode());
+        hashCode = prime * hashCode + ((getEqualsTo() == null) ? 0 : getEqualsTo().hashCode());
         hashCode = prime * hashCode + ((getContainsAll() == null) ? 0 : getContainsAll().hashCode());
         hashCode = prime * hashCode + ((getContainsAny() == null) ? 0 : getContainsAny().hashCode());
-        hashCode = prime * hashCode + ((getEqualsTo() == null) ? 0 : getEqualsTo().hashCode());
         hashCode = prime * hashCode + ((getGreaterThan() == null) ? 0 : getGreaterThan().hashCode());
         hashCode = prime * hashCode + ((getGreaterThanOrEquals() == null) ? 0 : getGreaterThanOrEquals().hashCode());
         hashCode = prime * hashCode + ((getLessThan() == null) ? 0 : getLessThan().hashCode());
         hashCode = prime * hashCode + ((getLessThanOrEquals() == null) ? 0 : getLessThanOrEquals().hashCode());
-        hashCode = prime * hashCode + ((getNotFilter() == null) ? 0 : getNotFilter().hashCode());
-        hashCode = prime * hashCode + ((getOrAllFilters() == null) ? 0 : getOrAllFilters().hashCode());
         return hashCode;
     }
 

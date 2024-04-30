@@ -33,6 +33,8 @@ public class TopicSummaryMarshaller {
             .marshallLocationName("TopicId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> USEREXPERIENCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserExperienceVersion").build();
 
     private static final TopicSummaryMarshaller instance = new TopicSummaryMarshaller();
 
@@ -53,6 +55,7 @@ public class TopicSummaryMarshaller {
             protocolMarshaller.marshall(topicSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(topicSummary.getTopicId(), TOPICID_BINDING);
             protocolMarshaller.marshall(topicSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(topicSummary.getUserExperienceVersion(), USEREXPERIENCEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

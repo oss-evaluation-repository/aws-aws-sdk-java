@@ -48,21 +48,21 @@ public class MessageUsefulnessFeedbackJsonUnmarshaller implements Unmarshaller<M
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("comment", targetDepth)) {
+                if (context.testExpression("usefulness", targetDepth)) {
                     context.nextToken();
-                    messageUsefulnessFeedback.setComment(context.getUnmarshaller(String.class).unmarshall(context));
+                    messageUsefulnessFeedback.setUsefulness(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
                     context.nextToken();
                     messageUsefulnessFeedback.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("comment", targetDepth)) {
+                    context.nextToken();
+                    messageUsefulnessFeedback.setComment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("submittedAt", targetDepth)) {
                     context.nextToken();
                     messageUsefulnessFeedback.setSubmittedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("usefulness", targetDepth)) {
-                    context.nextToken();
-                    messageUsefulnessFeedback.setUsefulness(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

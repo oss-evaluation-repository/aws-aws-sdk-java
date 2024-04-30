@@ -25,17 +25,63 @@ public class ListIndicesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of information on the items in one or more indexes.
-     * </p>
-     */
-    private java.util.List<Index> indices;
-    /**
-     * <p>
      * If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to
      * retrieve the next set of indexes.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * An array of information on the items in one or more indexes.
+     * </p>
+     */
+    private java.util.List<Index> indices;
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to
+     * retrieve the next set of indexes.
+     * </p>
+     * 
+     * @param nextToken
+     *        If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent
+     *        request to retrieve the next set of indexes.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to
+     * retrieve the next set of indexes.
+     * </p>
+     * 
+     * @return If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent
+     *         request to retrieve the next set of indexes.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to
+     * retrieve the next set of indexes.
+     * </p>
+     * 
+     * @param nextToken
+     *        If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent
+     *        request to retrieve the next set of indexes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListIndicesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -108,52 +154,6 @@ public class ListIndicesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to
-     * retrieve the next set of indexes.
-     * </p>
-     * 
-     * @param nextToken
-     *        If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent
-     *        request to retrieve the next set of indexes.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to
-     * retrieve the next set of indexes.
-     * </p>
-     * 
-     * @return If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent
-     *         request to retrieve the next set of indexes.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent request to
-     * retrieve the next set of indexes.
-     * </p>
-     * 
-     * @param nextToken
-     *        If the response is truncated, Amazon Q Business returns this token that you can use in the subsequent
-     *        request to retrieve the next set of indexes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListIndicesResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,10 +165,10 @@ public class ListIndicesResult extends com.amazonaws.AmazonWebServiceResult<com.
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIndices() != null)
-            sb.append("Indices: ").append(getIndices()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getIndices() != null)
+            sb.append("Indices: ").append(getIndices());
         sb.append("}");
         return sb.toString();
     }
@@ -183,13 +183,13 @@ public class ListIndicesResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (obj instanceof ListIndicesResult == false)
             return false;
         ListIndicesResult other = (ListIndicesResult) obj;
-        if (other.getIndices() == null ^ this.getIndices() == null)
-            return false;
-        if (other.getIndices() != null && other.getIndices().equals(this.getIndices()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getIndices() == null ^ this.getIndices() == null)
+            return false;
+        if (other.getIndices() != null && other.getIndices().equals(this.getIndices()) == false)
             return false;
         return true;
     }
@@ -199,8 +199,8 @@ public class ListIndicesResult extends com.amazonaws.AmazonWebServiceResult<com.
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIndices() == null) ? 0 : getIndices().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getIndices() == null) ? 0 : getIndices().hashCode());
         return hashCode;
     }
 

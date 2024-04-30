@@ -52,13 +52,13 @@ public class ConversationJsonUnmarshaller implements Unmarshaller<Conversation, 
                     context.nextToken();
                     conversation.setConversationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("startTime", targetDepth)) {
-                    context.nextToken();
-                    conversation.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("title", targetDepth)) {
                     context.nextToken();
                     conversation.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("startTime", targetDepth)) {
+                    context.nextToken();
+                    conversation.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

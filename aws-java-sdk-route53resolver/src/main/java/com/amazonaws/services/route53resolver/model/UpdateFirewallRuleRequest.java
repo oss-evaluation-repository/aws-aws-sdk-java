@@ -129,6 +129,21 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
     private String name;
     /**
      * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot
+     * ALIAS.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * </p>
+     */
+    private String firewallDomainRedirectionAction;
+    /**
+     * <p>
      * The DNS query type you want the rule to evaluate. Allowed values are;
      * </p>
      * <ul>
@@ -195,6 +210,13 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
      * </p>
      * </li>
      * </ul>
@@ -983,6 +1005,133 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot
+     * ALIAS.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * </p>
+     * 
+     * @param firewallDomainRedirectionAction
+     *        How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME,
+     *        ot ALIAS. </p>
+     *        <p>
+     *        <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The
+     *        individual domains in the redirection chain must be added to the allow domain list.
+     *        </p>
+     *        <p>
+     *        <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't
+     *        need to add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * @see FirewallDomainRedirectionAction
+     */
+
+    public void setFirewallDomainRedirectionAction(String firewallDomainRedirectionAction) {
+        this.firewallDomainRedirectionAction = firewallDomainRedirectionAction;
+    }
+
+    /**
+     * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot
+     * ALIAS.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * </p>
+     * 
+     * @return How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME,
+     *         ot ALIAS. </p>
+     *         <p>
+     *         <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The
+     *         individual domains in the redirection chain must be added to the allow domain list.
+     *         </p>
+     *         <p>
+     *         <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't
+     *         need to add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * @see FirewallDomainRedirectionAction
+     */
+
+    public String getFirewallDomainRedirectionAction() {
+        return this.firewallDomainRedirectionAction;
+    }
+
+    /**
+     * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot
+     * ALIAS.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * </p>
+     * 
+     * @param firewallDomainRedirectionAction
+     *        How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME,
+     *        ot ALIAS. </p>
+     *        <p>
+     *        <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The
+     *        individual domains in the redirection chain must be added to the allow domain list.
+     *        </p>
+     *        <p>
+     *        <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't
+     *        need to add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FirewallDomainRedirectionAction
+     */
+
+    public UpdateFirewallRuleRequest withFirewallDomainRedirectionAction(String firewallDomainRedirectionAction) {
+        setFirewallDomainRedirectionAction(firewallDomainRedirectionAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME, ot
+     * ALIAS.
+     * </p>
+     * <p>
+     * <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The individual
+     * domains in the redirection chain must be added to the allow domain list.
+     * </p>
+     * <p>
+     * <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't need to
+     * add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * </p>
+     * 
+     * @param firewallDomainRedirectionAction
+     *        How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME, DNAME,
+     *        ot ALIAS. </p>
+     *        <p>
+     *        <code>Inspect_Redirection_Domain </code>(Default) inspects all domains in the redirection chain. The
+     *        individual domains in the redirection chain must be added to the allow domain list.
+     *        </p>
+     *        <p>
+     *        <code>Trust_Redirection_Domain </code> inspects only the first domain in the redirection chain. You don't
+     *        need to add the subsequent domains in the domain in the redirection list to the domain alloww list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FirewallDomainRedirectionAction
+     */
+
+    public UpdateFirewallRuleRequest withFirewallDomainRedirectionAction(FirewallDomainRedirectionAction firewallDomainRedirectionAction) {
+        this.firewallDomainRedirectionAction = firewallDomainRedirectionAction.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The DNS query type you want the rule to evaluate. Allowed values are;
      * </p>
      * <ul>
@@ -1049,6 +1198,13 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * TXT: Verifies email senders and application-specific values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
      * </p>
      * </li>
      * </ul>
@@ -1119,6 +1275,13 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        TXT: Verifies email senders and application-specific values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *        TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
      *        </p>
      *        </li>
      */
@@ -1197,6 +1360,13 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * TXT: Verifies email senders and application-specific values.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The DNS query type you want the rule to evaluate. Allowed values are; </p>
@@ -1264,6 +1434,13 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         TXT: Verifies email senders and application-specific values.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *         TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *         href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
      *         </p>
      *         </li>
      */
@@ -1342,6 +1519,13 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * TXT: Verifies email senders and application-specific values.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     * TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param qtype
@@ -1412,6 +1596,13 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        TXT: Verifies email senders and application-specific values.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as
+     *        TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1450,6 +1641,8 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("BlockOverrideTtl: ").append(getBlockOverrideTtl()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getFirewallDomainRedirectionAction() != null)
+            sb.append("FirewallDomainRedirectionAction: ").append(getFirewallDomainRedirectionAction()).append(",");
         if (getQtype() != null)
             sb.append("Qtype: ").append(getQtype());
         sb.append("}");
@@ -1502,6 +1695,11 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getFirewallDomainRedirectionAction() == null ^ this.getFirewallDomainRedirectionAction() == null)
+            return false;
+        if (other.getFirewallDomainRedirectionAction() != null
+                && other.getFirewallDomainRedirectionAction().equals(this.getFirewallDomainRedirectionAction()) == false)
+            return false;
         if (other.getQtype() == null ^ this.getQtype() == null)
             return false;
         if (other.getQtype() != null && other.getQtype().equals(this.getQtype()) == false)
@@ -1523,6 +1721,7 @@ public class UpdateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getBlockOverrideDnsType() == null) ? 0 : getBlockOverrideDnsType().hashCode());
         hashCode = prime * hashCode + ((getBlockOverrideTtl() == null) ? 0 : getBlockOverrideTtl().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getFirewallDomainRedirectionAction() == null) ? 0 : getFirewallDomainRedirectionAction().hashCode());
         hashCode = prime * hashCode + ((getQtype() == null) ? 0 : getQtype().hashCode());
         return hashCode;
     }

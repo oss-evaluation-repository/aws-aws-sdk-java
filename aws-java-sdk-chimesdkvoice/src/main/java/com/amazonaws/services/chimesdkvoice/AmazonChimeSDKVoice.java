@@ -138,8 +138,15 @@ public interface AmazonChimeSDKVoice {
 
     /**
      * <p>
-     * Updates one or more phone numbers.
+     * Updates phone number product types, calling names, or phone number names. You can update one attribute at a time
+     * for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type, the calling
+     * name, or phone name.
      * </p>
+     * <note>
+     * <p>
+     * You cannot have a duplicate <code>phoneNumberId</code> in a request.
+     * </p>
+     * </note>
      * 
      * @param batchUpdatePhoneNumberRequest
      * @return Result of the BatchUpdatePhoneNumber operation returned by the service.
@@ -1116,6 +1123,13 @@ public interface AmazonChimeSDKVoice {
      * <p>
      * Gets the Alexa Skill configuration for the SIP media application.
      * </p>
+     * <important>
+     * <p>
+     * Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information,
+     * refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa Smart Properties</a>
+     * page.
+     * </p>
+     * </important>
      * 
      * @param getSipMediaApplicationAlexaSkillConfigurationRequest
      * @return Result of the GetSipMediaApplicationAlexaSkillConfiguration operation returned by the service.
@@ -1138,6 +1152,7 @@ public interface AmazonChimeSDKVoice {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetSipMediaApplicationAlexaSkillConfigurationResult getSipMediaApplicationAlexaSkillConfiguration(
             GetSipMediaApplicationAlexaSkillConfigurationRequest getSipMediaApplicationAlexaSkillConfigurationRequest);
 
@@ -1921,6 +1936,13 @@ public interface AmazonChimeSDKVoice {
      * <p>
      * Updates the Alexa Skill configuration for the SIP media application.
      * </p>
+     * <important>
+     * <p>
+     * Due to changes made by the Amazon Alexa service, this API is no longer available for use. For more information,
+     * refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa Smart Properties</a>
+     * page.
+     * </p>
+     * </important>
      * 
      * @param putSipMediaApplicationAlexaSkillConfigurationRequest
      * @return Result of the PutSipMediaApplicationAlexaSkillConfiguration operation returned by the service.
@@ -1943,6 +1965,7 @@ public interface AmazonChimeSDKVoice {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     PutSipMediaApplicationAlexaSkillConfigurationResult putSipMediaApplicationAlexaSkillConfiguration(
             PutSipMediaApplicationAlexaSkillConfigurationRequest putSipMediaApplicationAlexaSkillConfigurationRequest);
 
@@ -2469,9 +2492,9 @@ public interface AmazonChimeSDKVoice {
 
     /**
      * <p>
-     * Updates phone number details, such as product type or calling name, for the specified phone number ID. You can
-     * update one phone number detail at a time. For example, you can update either the product type or the calling name
-     * in one action.
+     * Updates phone number details, such as product type, calling name, or phone number name for the specified phone
+     * number ID. You can update one phone number detail at a time. For example, you can update either the product type,
+     * calling name, or phone number name in one action.
      * </p>
      * <p>
      * For numbers outside the U.S., you must use the Amazon Chime SDK SIP Media Application Dial-In product type.

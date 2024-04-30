@@ -25,10 +25,10 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * The name of the Amazon Q Business application.
      * </p>
      */
-    private String applicationArn;
+    private String displayName;
     /**
      * <p>
      * The identifier of the Amazon Q Business application.
@@ -37,42 +37,10 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     private String applicationId;
     /**
      * <p>
-     * Settings for whether end users can upload files directly during chat.
+     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
      * </p>
      */
-    private AppliedAttachmentsConfiguration attachmentsConfiguration;
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * The name of the Amazon Q Business application.
-     * </p>
-     */
-    private String displayName;
-    /**
-     * <p>
-     * The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't
-     * support asymmetric keys.
-     * </p>
-     */
-    private EncryptionConfiguration encryptionConfiguration;
-    /**
-     * <p>
-     * If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a
-     * description of the error that caused the synchronization to fail.
-     * </p>
-     */
-    private ErrorDetail error;
+    private String applicationArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the AWS IAM Identity Center instance attached to your Amazon Q Business
@@ -94,48 +62,80 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     private String status;
     /**
      * <p>
+     * A description for the Amazon Q Business application.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't
+     * support asymmetric keys.
+     * </p>
+     */
+    private EncryptionConfiguration encryptionConfiguration;
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
      * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
+    /**
+     * <p>
+     * If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a
+     * description of the error that caused the synchronization to fail.
+     * </p>
+     */
+    private ErrorDetail error;
+    /**
+     * <p>
+     * Settings for whether end users can upload files directly during chat.
+     * </p>
+     */
+    private AppliedAttachmentsConfiguration attachmentsConfiguration;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * The name of the Amazon Q Business application.
      * </p>
      * 
-     * @param applicationArn
-     *        The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * @param displayName
+     *        The name of the Amazon Q Business application.
      */
 
-    public void setApplicationArn(String applicationArn) {
-        this.applicationArn = applicationArn;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * The name of the Amazon Q Business application.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * @return The name of the Amazon Q Business application.
      */
 
-    public String getApplicationArn() {
-        return this.applicationArn;
+    public String getDisplayName() {
+        return this.displayName;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * The name of the Amazon Q Business application.
      * </p>
      * 
-     * @param applicationArn
-     *        The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * @param displayName
+     *        The name of the Amazon Q Business application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetApplicationResult withApplicationArn(String applicationArn) {
-        setApplicationArn(applicationArn);
+    public GetApplicationResult withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -181,253 +181,41 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Settings for whether end users can upload files directly during chat.
+     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
      * </p>
      * 
-     * @param attachmentsConfiguration
-     *        Settings for whether end users can upload files directly during chat.
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the Amazon Q Business application.
      */
 
-    public void setAttachmentsConfiguration(AppliedAttachmentsConfiguration attachmentsConfiguration) {
-        this.attachmentsConfiguration = attachmentsConfiguration;
+    public void setApplicationArn(String applicationArn) {
+        this.applicationArn = applicationArn;
     }
 
     /**
      * <p>
-     * Settings for whether end users can upload files directly during chat.
+     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
      * </p>
      * 
-     * @return Settings for whether end users can upload files directly during chat.
+     * @return The Amazon Resource Name (ARN) of the Amazon Q Business application.
      */
 
-    public AppliedAttachmentsConfiguration getAttachmentsConfiguration() {
-        return this.attachmentsConfiguration;
+    public String getApplicationArn() {
+        return this.applicationArn;
     }
 
     /**
      * <p>
-     * Settings for whether end users can upload files directly during chat.
+     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
      * </p>
      * 
-     * @param attachmentsConfiguration
-     *        Settings for whether end users can upload files directly during chat.
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the Amazon Q Business application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetApplicationResult withAttachmentsConfiguration(AppliedAttachmentsConfiguration attachmentsConfiguration) {
-        setAttachmentsConfiguration(attachmentsConfiguration);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @param createdAt
-     *        The Unix timestamp when the Amazon Q Business application was last updated.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @return The Unix timestamp when the Amazon Q Business application was last updated.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @param createdAt
-     *        The Unix timestamp when the Amazon Q Business application was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetApplicationResult withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @param description
-     *        A description for the Amazon Q Business application.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @return A description for the Amazon Q Business application.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @param description
-     *        A description for the Amazon Q Business application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetApplicationResult withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the Amazon Q Business application.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of the Amazon Q Business application.
-     */
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    /**
-     * <p>
-     * The name of the Amazon Q Business application.
-     * </p>
-     * 
-     * @return The name of the Amazon Q Business application.
-     */
-
-    public String getDisplayName() {
-        return this.displayName;
-    }
-
-    /**
-     * <p>
-     * The name of the Amazon Q Business application.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of the Amazon Q Business application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetApplicationResult withDisplayName(String displayName) {
-        setDisplayName(displayName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't
-     * support asymmetric keys.
-     * </p>
-     * 
-     * @param encryptionConfiguration
-     *        The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business
-     *        doesn't support asymmetric keys.
-     */
-
-    public void setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
-        this.encryptionConfiguration = encryptionConfiguration;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't
-     * support asymmetric keys.
-     * </p>
-     * 
-     * @return The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business
-     *         doesn't support asymmetric keys.
-     */
-
-    public EncryptionConfiguration getEncryptionConfiguration() {
-        return this.encryptionConfiguration;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't
-     * support asymmetric keys.
-     * </p>
-     * 
-     * @param encryptionConfiguration
-     *        The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business
-     *        doesn't support asymmetric keys.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetApplicationResult withEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
-        setEncryptionConfiguration(encryptionConfiguration);
-        return this;
-    }
-
-    /**
-     * <p>
-     * If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a
-     * description of the error that caused the synchronization to fail.
-     * </p>
-     * 
-     * @param error
-     *        If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field
-     *        contains a description of the error that caused the synchronization to fail.
-     */
-
-    public void setError(ErrorDetail error) {
-        this.error = error;
-    }
-
-    /**
-     * <p>
-     * If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a
-     * description of the error that caused the synchronization to fail.
-     * </p>
-     * 
-     * @return If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field
-     *         contains a description of the error that caused the synchronization to fail.
-     */
-
-    public ErrorDetail getError() {
-        return this.error;
-    }
-
-    /**
-     * <p>
-     * If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a
-     * description of the error that caused the synchronization to fail.
-     * </p>
-     * 
-     * @param error
-     *        If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field
-     *        contains a description of the error that caused the synchronization to fail.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetApplicationResult withError(ErrorDetail error) {
-        setError(error);
+    public GetApplicationResult withApplicationArn(String applicationArn) {
+        setApplicationArn(applicationArn);
         return this;
     }
 
@@ -578,6 +366,132 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * A description for the Amazon Q Business application.
+     * </p>
+     * 
+     * @param description
+     *        A description for the Amazon Q Business application.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the Amazon Q Business application.
+     * </p>
+     * 
+     * @return A description for the Amazon Q Business application.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the Amazon Q Business application.
+     * </p>
+     * 
+     * @param description
+     *        A description for the Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't
+     * support asymmetric keys.
+     * </p>
+     * 
+     * @param encryptionConfiguration
+     *        The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business
+     *        doesn't support asymmetric keys.
+     */
+
+    public void setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        this.encryptionConfiguration = encryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't
+     * support asymmetric keys.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business
+     *         doesn't support asymmetric keys.
+     */
+
+    public EncryptionConfiguration getEncryptionConfiguration() {
+        return this.encryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business doesn't
+     * support asymmetric keys.
+     * </p>
+     * 
+     * @param encryptionConfiguration
+     *        The identifier of the Amazon Web Services KMS key that is used to encrypt your data. Amazon Q Business
+     *        doesn't support asymmetric keys.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult withEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        setEncryptionConfiguration(encryptionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
+     * 
+     * @param createdAt
+     *        The Unix timestamp when the Amazon Q Business application was last updated.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
+     * 
+     * @return The Unix timestamp when the Amazon Q Business application was last updated.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
+     * 
+     * @param createdAt
+     *        The Unix timestamp when the Amazon Q Business application was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      * 
@@ -617,6 +531,92 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a
+     * description of the error that caused the synchronization to fail.
+     * </p>
+     * 
+     * @param error
+     *        If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field
+     *        contains a description of the error that caused the synchronization to fail.
+     */
+
+    public void setError(ErrorDetail error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a
+     * description of the error that caused the synchronization to fail.
+     * </p>
+     * 
+     * @return If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field
+     *         contains a description of the error that caused the synchronization to fail.
+     */
+
+    public ErrorDetail getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field contains a
+     * description of the error that caused the synchronization to fail.
+     * </p>
+     * 
+     * @param error
+     *        If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code> field
+     *        contains a description of the error that caused the synchronization to fail.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult withError(ErrorDetail error) {
+        setError(error);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings for whether end users can upload files directly during chat.
+     * </p>
+     * 
+     * @param attachmentsConfiguration
+     *        Settings for whether end users can upload files directly during chat.
+     */
+
+    public void setAttachmentsConfiguration(AppliedAttachmentsConfiguration attachmentsConfiguration) {
+        this.attachmentsConfiguration = attachmentsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Settings for whether end users can upload files directly during chat.
+     * </p>
+     * 
+     * @return Settings for whether end users can upload files directly during chat.
+     */
+
+    public AppliedAttachmentsConfiguration getAttachmentsConfiguration() {
+        return this.attachmentsConfiguration;
+    }
+
+    /**
+     * <p>
+     * Settings for whether end users can upload files directly during chat.
+     * </p>
+     * 
+     * @param attachmentsConfiguration
+     *        Settings for whether end users can upload files directly during chat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult withAttachmentsConfiguration(AppliedAttachmentsConfiguration attachmentsConfiguration) {
+        setAttachmentsConfiguration(attachmentsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -628,30 +628,30 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplicationArn() != null)
-            sb.append("ApplicationArn: ").append(getApplicationArn()).append(",");
-        if (getApplicationId() != null)
-            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getAttachmentsConfiguration() != null)
-            sb.append("AttachmentsConfiguration: ").append(getAttachmentsConfiguration()).append(",");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
-        if (getEncryptionConfiguration() != null)
-            sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration()).append(",");
-        if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
+        if (getApplicationId() != null)
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getApplicationArn() != null)
+            sb.append("ApplicationArn: ").append(getApplicationArn()).append(",");
         if (getIdentityCenterApplicationArn() != null)
             sb.append("IdentityCenterApplicationArn: ").append(getIdentityCenterApplicationArn()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getEncryptionConfiguration() != null)
+            sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError()).append(",");
+        if (getAttachmentsConfiguration() != null)
+            sb.append("AttachmentsConfiguration: ").append(getAttachmentsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -666,37 +666,17 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof GetApplicationResult == false)
             return false;
         GetApplicationResult other = (GetApplicationResult) obj;
-        if (other.getApplicationArn() == null ^ this.getApplicationArn() == null)
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
-        if (other.getApplicationArn() != null && other.getApplicationArn().equals(this.getApplicationArn()) == false)
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getAttachmentsConfiguration() == null ^ this.getAttachmentsConfiguration() == null)
+        if (other.getApplicationArn() == null ^ this.getApplicationArn() == null)
             return false;
-        if (other.getAttachmentsConfiguration() != null && other.getAttachmentsConfiguration().equals(this.getAttachmentsConfiguration()) == false)
-            return false;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
-            return false;
-        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
-            return false;
-        if (other.getEncryptionConfiguration() == null ^ this.getEncryptionConfiguration() == null)
-            return false;
-        if (other.getEncryptionConfiguration() != null && other.getEncryptionConfiguration().equals(this.getEncryptionConfiguration()) == false)
-            return false;
-        if (other.getError() == null ^ this.getError() == null)
-            return false;
-        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+        if (other.getApplicationArn() != null && other.getApplicationArn().equals(this.getApplicationArn()) == false)
             return false;
         if (other.getIdentityCenterApplicationArn() == null ^ this.getIdentityCenterApplicationArn() == null)
             return false;
@@ -710,9 +690,29 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getEncryptionConfiguration() == null ^ this.getEncryptionConfiguration() == null)
+            return false;
+        if (other.getEncryptionConfiguration() != null && other.getEncryptionConfiguration().equals(this.getEncryptionConfiguration()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
+        if (other.getAttachmentsConfiguration() == null ^ this.getAttachmentsConfiguration() == null)
+            return false;
+        if (other.getAttachmentsConfiguration() != null && other.getAttachmentsConfiguration().equals(this.getAttachmentsConfiguration()) == false)
             return false;
         return true;
     }
@@ -722,18 +722,18 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
-        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getAttachmentsConfiguration() == null) ? 0 : getAttachmentsConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
-        hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getIdentityCenterApplicationArn() == null) ? 0 : getIdentityCenterApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentsConfiguration() == null) ? 0 : getAttachmentsConfiguration().hashCode());
         return hashCode;
     }
 

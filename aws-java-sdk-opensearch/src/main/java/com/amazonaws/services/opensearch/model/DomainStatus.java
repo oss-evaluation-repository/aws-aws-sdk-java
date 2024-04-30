@@ -76,12 +76,30 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
     private String endpointV2;
     /**
      * <p>
-     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example
-     * <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Map<String, String> endpoints;
+    /**
+     * <p>
+     * The DualStack Hosted Zone Id for the domain.
+     * </p>
+     */
+    private String domainEndpointV2HostedZoneId;
     /**
      * <p>
      * The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if
@@ -577,14 +595,37 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example
-     * <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example
-     *         <code>key, value</code>:
-     *         <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * @return The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>IPv4 IP addresses</b> -
+     *         <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Dual stack IP addresses</b> -
+     *         <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getEndpoints() {
@@ -593,15 +634,38 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example
-     * <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param endpoints
-     *        The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example
-     *        <code>key, value</code>:
-     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     *        The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>IPv4 IP addresses</b> -
+     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Dual stack IP addresses</b> -
+     *        <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEndpoints(java.util.Map<String, String> endpoints) {
@@ -610,15 +674,38 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example
-     * <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param endpoints
-     *        The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example
-     *        <code>key, value</code>:
-     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     *        The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>IPv4 IP addresses</b> -
+     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Dual stack IP addresses</b> -
+     *        <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -652,6 +739,46 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     public DomainStatus clearEndpointsEntries() {
         this.endpoints = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The DualStack Hosted Zone Id for the domain.
+     * </p>
+     * 
+     * @param domainEndpointV2HostedZoneId
+     *        The DualStack Hosted Zone Id for the domain.
+     */
+
+    public void setDomainEndpointV2HostedZoneId(String domainEndpointV2HostedZoneId) {
+        this.domainEndpointV2HostedZoneId = domainEndpointV2HostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The DualStack Hosted Zone Id for the domain.
+     * </p>
+     * 
+     * @return The DualStack Hosted Zone Id for the domain.
+     */
+
+    public String getDomainEndpointV2HostedZoneId() {
+        return this.domainEndpointV2HostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The DualStack Hosted Zone Id for the domain.
+     * </p>
+     * 
+     * @param domainEndpointV2HostedZoneId
+     *        The DualStack Hosted Zone Id for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withDomainEndpointV2HostedZoneId(String domainEndpointV2HostedZoneId) {
+        setDomainEndpointV2HostedZoneId(domainEndpointV2HostedZoneId);
         return this;
     }
 
@@ -1779,6 +1906,8 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             sb.append("EndpointV2: ").append(getEndpointV2()).append(",");
         if (getEndpoints() != null)
             sb.append("Endpoints: ").append(getEndpoints()).append(",");
+        if (getDomainEndpointV2HostedZoneId() != null)
+            sb.append("DomainEndpointV2HostedZoneId: ").append(getDomainEndpointV2HostedZoneId()).append(",");
         if (getProcessing() != null)
             sb.append("Processing: ").append(getProcessing()).append(",");
         if (getUpgradeProcessing() != null)
@@ -1870,6 +1999,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         if (other.getEndpoints() == null ^ this.getEndpoints() == null)
             return false;
         if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
+            return false;
+        if (other.getDomainEndpointV2HostedZoneId() == null ^ this.getDomainEndpointV2HostedZoneId() == null)
+            return false;
+        if (other.getDomainEndpointV2HostedZoneId() != null && other.getDomainEndpointV2HostedZoneId().equals(this.getDomainEndpointV2HostedZoneId()) == false)
             return false;
         if (other.getProcessing() == null ^ this.getProcessing() == null)
             return false;
@@ -1979,6 +2112,7 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getEndpointV2() == null) ? 0 : getEndpointV2().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getDomainEndpointV2HostedZoneId() == null) ? 0 : getDomainEndpointV2HostedZoneId().hashCode());
         hashCode = prime * hashCode + ((getProcessing() == null) ? 0 : getProcessing().hashCode());
         hashCode = prime * hashCode + ((getUpgradeProcessing() == null) ? 0 : getUpgradeProcessing().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());

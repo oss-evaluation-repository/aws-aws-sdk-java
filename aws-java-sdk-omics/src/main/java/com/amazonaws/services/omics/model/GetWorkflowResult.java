@@ -91,7 +91,7 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.Map<String, WorkflowParameter> parameterTemplate;
     /**
      * <p>
-     * The workflow's storage capacity in gigabytes.
+     * The workflow's storage capacity in gibibytes.
      * </p>
      */
     private Integer storageCapacity;
@@ -653,11 +653,11 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's storage capacity in gigabytes.
+     * The workflow's storage capacity in gibibytes.
      * </p>
      * 
      * @param storageCapacity
-     *        The workflow's storage capacity in gigabytes.
+     *        The workflow's storage capacity in gibibytes.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -666,10 +666,10 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's storage capacity in gigabytes.
+     * The workflow's storage capacity in gibibytes.
      * </p>
      * 
-     * @return The workflow's storage capacity in gigabytes.
+     * @return The workflow's storage capacity in gibibytes.
      */
 
     public Integer getStorageCapacity() {
@@ -678,11 +678,11 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's storage capacity in gigabytes.
+     * The workflow's storage capacity in gibibytes.
      * </p>
      * 
      * @param storageCapacity
-     *        The workflow's storage capacity in gigabytes.
+     *        The workflow's storage capacity in gibibytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

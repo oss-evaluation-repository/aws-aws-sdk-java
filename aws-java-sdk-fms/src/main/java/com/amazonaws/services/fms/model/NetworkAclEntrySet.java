@@ -38,6 +38,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * for you, in the network ACLs that it creates.
      * </p>
      * </note>
+     * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
      */
     private java.util.List<NetworkAclEntry> firstEntries;
     /**
@@ -63,6 +66,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * for you, in the network ACLs that it creates.
      * </p>
      * </note>
+     * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
      */
     private java.util.List<NetworkAclEntry> lastEntries;
     /**
@@ -89,12 +95,18 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * for you, in the network ACLs that it creates.
      * </p>
      * </note>
+     * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
      * 
      * @return The rules that you want to run first in the Firewall Manager managed network ACLs. </p> <note>
      *         <p>
      *         Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule
      *         numbers for you, in the network ACLs that it creates.
      *         </p>
+     *         </note>
+     *         <p>
+     *         You must specify at least one first entry or one last entry in any network ACL policy.
      */
 
     public java.util.List<NetworkAclEntry> getFirstEntries() {
@@ -111,6 +123,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * for you, in the network ACLs that it creates.
      * </p>
      * </note>
+     * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
      * 
      * @param firstEntries
      *        The rules that you want to run first in the Firewall Manager managed network ACLs. </p> <note>
@@ -118,6 +133,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      *        Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule
      *        numbers for you, in the network ACLs that it creates.
      *        </p>
+     *        </note>
+     *        <p>
+     *        You must specify at least one first entry or one last entry in any network ACL policy.
      */
 
     public void setFirstEntries(java.util.Collection<NetworkAclEntry> firstEntries) {
@@ -140,6 +158,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * </p>
      * </note>
      * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFirstEntries(java.util.Collection)} or {@link #withFirstEntries(java.util.Collection)} if you want to
      * override the existing values.
@@ -151,6 +172,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      *        Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule
      *        numbers for you, in the network ACLs that it creates.
      *        </p>
+     *        </note>
+     *        <p>
+     *        You must specify at least one first entry or one last entry in any network ACL policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,6 +198,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * for you, in the network ACLs that it creates.
      * </p>
      * </note>
+     * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
      * 
      * @param firstEntries
      *        The rules that you want to run first in the Firewall Manager managed network ACLs. </p> <note>
@@ -181,6 +208,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      *        Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule
      *        numbers for you, in the network ACLs that it creates.
      *        </p>
+     *        </note>
+     *        <p>
+     *        You must specify at least one first entry or one last entry in any network ACL policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,12 +337,18 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * for you, in the network ACLs that it creates.
      * </p>
      * </note>
+     * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
      * 
      * @return The rules that you want to run last in the Firewall Manager managed network ACLs. </p> <note>
      *         <p>
      *         Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule
      *         numbers for you, in the network ACLs that it creates.
      *         </p>
+     *         </note>
+     *         <p>
+     *         You must specify at least one first entry or one last entry in any network ACL policy.
      */
 
     public java.util.List<NetworkAclEntry> getLastEntries() {
@@ -329,6 +365,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * for you, in the network ACLs that it creates.
      * </p>
      * </note>
+     * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
      * 
      * @param lastEntries
      *        The rules that you want to run last in the Firewall Manager managed network ACLs. </p> <note>
@@ -336,6 +375,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      *        Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule
      *        numbers for you, in the network ACLs that it creates.
      *        </p>
+     *        </note>
+     *        <p>
+     *        You must specify at least one first entry or one last entry in any network ACL policy.
      */
 
     public void setLastEntries(java.util.Collection<NetworkAclEntry> lastEntries) {
@@ -358,6 +400,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * </p>
      * </note>
      * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLastEntries(java.util.Collection)} or {@link #withLastEntries(java.util.Collection)} if you want to
      * override the existing values.
@@ -369,6 +414,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      *        Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule
      *        numbers for you, in the network ACLs that it creates.
      *        </p>
+     *        </note>
+     *        <p>
+     *        You must specify at least one first entry or one last entry in any network ACL policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,6 +440,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      * for you, in the network ACLs that it creates.
      * </p>
      * </note>
+     * <p>
+     * You must specify at least one first entry or one last entry in any network ACL policy.
+     * </p>
      * 
      * @param lastEntries
      *        The rules that you want to run last in the Firewall Manager managed network ACLs. </p> <note>
@@ -399,6 +450,9 @@ public class NetworkAclEntrySet implements Serializable, Cloneable, StructuredPo
      *        Provide these in the order in which you want them to run. Firewall Manager will assign the specific rule
      *        numbers for you, in the network ACLs that it creates.
      *        </p>
+     *        </note>
+     *        <p>
+     *        You must specify at least one first entry or one last entry in any network ACL policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,13 +55,13 @@ public class DocumentEnrichmentConfigurationJsonUnmarshaller implements Unmarsha
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("postExtractionHookConfiguration", targetDepth)) {
-                    context.nextToken();
-                    documentEnrichmentConfiguration.setPostExtractionHookConfiguration(HookConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("preExtractionHookConfiguration", targetDepth)) {
                     context.nextToken();
                     documentEnrichmentConfiguration.setPreExtractionHookConfiguration(HookConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("postExtractionHookConfiguration", targetDepth)) {
+                    context.nextToken();
+                    documentEnrichmentConfiguration.setPostExtractionHookConfiguration(HookConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

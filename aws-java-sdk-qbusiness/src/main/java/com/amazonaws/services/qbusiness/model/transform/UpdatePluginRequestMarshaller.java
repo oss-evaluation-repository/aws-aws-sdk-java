@@ -29,16 +29,18 @@ public class UpdatePluginRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<StructuredPojo> AUTHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authConfiguration").build();
-    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
     private static final MarshallingInfo<String> PLUGINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("pluginId").build();
-    private static final MarshallingInfo<String> SERVERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("serverUrl").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
+    private static final MarshallingInfo<String> SERVERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("serverUrl").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMPLUGINCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customPluginConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> AUTHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authConfiguration").build();
 
     private static final UpdatePluginRequestMarshaller instance = new UpdatePluginRequestMarshaller();
 
@@ -57,11 +59,12 @@ public class UpdatePluginRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updatePluginRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(updatePluginRequest.getAuthConfiguration(), AUTHCONFIGURATION_BINDING);
-            protocolMarshaller.marshall(updatePluginRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(updatePluginRequest.getPluginId(), PLUGINID_BINDING);
-            protocolMarshaller.marshall(updatePluginRequest.getServerUrl(), SERVERURL_BINDING);
+            protocolMarshaller.marshall(updatePluginRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(updatePluginRequest.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(updatePluginRequest.getServerUrl(), SERVERURL_BINDING);
+            protocolMarshaller.marshall(updatePluginRequest.getCustomPluginConfiguration(), CUSTOMPLUGINCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updatePluginRequest.getAuthConfiguration(), AUTHCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -48,13 +48,13 @@ public class ErrorDetailJsonUnmarshaller implements Unmarshaller<ErrorDetail, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("errorCode", targetDepth)) {
-                    context.nextToken();
-                    errorDetail.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("errorMessage", targetDepth)) {
                     context.nextToken();
                     errorDetail.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("errorCode", targetDepth)) {
+                    context.nextToken();
+                    errorDetail.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

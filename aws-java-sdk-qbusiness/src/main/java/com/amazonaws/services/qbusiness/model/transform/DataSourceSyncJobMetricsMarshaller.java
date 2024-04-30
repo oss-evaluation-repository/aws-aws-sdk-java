@@ -29,12 +29,12 @@ public class DataSourceSyncJobMetricsMarshaller {
 
     private static final MarshallingInfo<String> DOCUMENTSADDED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentsAdded").build();
+    private static final MarshallingInfo<String> DOCUMENTSMODIFIED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentsModified").build();
     private static final MarshallingInfo<String> DOCUMENTSDELETED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentsDeleted").build();
     private static final MarshallingInfo<String> DOCUMENTSFAILED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentsFailed").build();
-    private static final MarshallingInfo<String> DOCUMENTSMODIFIED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentsModified").build();
     private static final MarshallingInfo<String> DOCUMENTSSCANNED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentsScanned").build();
 
@@ -55,9 +55,9 @@ public class DataSourceSyncJobMetricsMarshaller {
 
         try {
             protocolMarshaller.marshall(dataSourceSyncJobMetrics.getDocumentsAdded(), DOCUMENTSADDED_BINDING);
+            protocolMarshaller.marshall(dataSourceSyncJobMetrics.getDocumentsModified(), DOCUMENTSMODIFIED_BINDING);
             protocolMarshaller.marshall(dataSourceSyncJobMetrics.getDocumentsDeleted(), DOCUMENTSDELETED_BINDING);
             protocolMarshaller.marshall(dataSourceSyncJobMetrics.getDocumentsFailed(), DOCUMENTSFAILED_BINDING);
-            protocolMarshaller.marshall(dataSourceSyncJobMetrics.getDocumentsModified(), DOCUMENTSMODIFIED_BINDING);
             protocolMarshaller.marshall(dataSourceSyncJobMetrics.getDocumentsScanned(), DOCUMENTSSCANNED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -45,6 +45,8 @@ public class DomainStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointV2").build();
     private static final MarshallingInfo<Map> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Endpoints").build();
+    private static final MarshallingInfo<String> DOMAINENDPOINTV2HOSTEDZONEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainEndpointV2HostedZoneId").build();
     private static final MarshallingInfo<Boolean> PROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Processing").build();
     private static final MarshallingInfo<Boolean> UPGRADEPROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -116,6 +118,7 @@ public class DomainStatusMarshaller {
             protocolMarshaller.marshall(domainStatus.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(domainStatus.getEndpointV2(), ENDPOINTV2_BINDING);
             protocolMarshaller.marshall(domainStatus.getEndpoints(), ENDPOINTS_BINDING);
+            protocolMarshaller.marshall(domainStatus.getDomainEndpointV2HostedZoneId(), DOMAINENDPOINTV2HOSTEDZONEID_BINDING);
             protocolMarshaller.marshall(domainStatus.getProcessing(), PROCESSING_BINDING);
             protocolMarshaller.marshall(domainStatus.getUpgradeProcessing(), UPGRADEPROCESSING_BINDING);
             protocolMarshaller.marshall(domainStatus.getEngineVersion(), ENGINEVERSION_BINDING);

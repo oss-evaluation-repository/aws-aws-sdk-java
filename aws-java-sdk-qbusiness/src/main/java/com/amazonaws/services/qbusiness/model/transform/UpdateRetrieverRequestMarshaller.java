@@ -29,12 +29,12 @@ public class UpdateRetrieverRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
+    private static final MarshallingInfo<String> RETRIEVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("retrieverId").build();
     private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
-    private static final MarshallingInfo<String> RETRIEVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("retrieverId").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
 
@@ -55,9 +55,9 @@ public class UpdateRetrieverRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateRetrieverRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(updateRetrieverRequest.getRetrieverId(), RETRIEVERID_BINDING);
             protocolMarshaller.marshall(updateRetrieverRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateRetrieverRequest.getDisplayName(), DISPLAYNAME_BINDING);
-            protocolMarshaller.marshall(updateRetrieverRequest.getRetrieverId(), RETRIEVERID_BINDING);
             protocolMarshaller.marshall(updateRetrieverRequest.getRoleArn(), ROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

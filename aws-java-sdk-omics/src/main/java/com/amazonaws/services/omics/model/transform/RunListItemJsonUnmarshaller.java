@@ -88,6 +88,10 @@ public class RunListItemJsonUnmarshaller implements Unmarshaller<RunListItem, Js
                     context.nextToken();
                     runListItem.setStopTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("storageType", targetDepth)) {
+                    context.nextToken();
+                    runListItem.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

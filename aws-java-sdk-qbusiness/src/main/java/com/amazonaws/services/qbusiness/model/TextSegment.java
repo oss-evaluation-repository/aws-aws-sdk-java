@@ -40,6 +40,13 @@ public class TextSegment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer endOffset;
+    /**
+     * <p>
+     * The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business
+     * chat response.
+     * </p>
+     */
+    private SnippetExcerpt snippetExcerpt;
 
     /**
      * <p>
@@ -122,6 +129,52 @@ public class TextSegment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business
+     * chat response.
+     * </p>
+     * 
+     * @param snippetExcerpt
+     *        The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q
+     *        Business chat response.
+     */
+
+    public void setSnippetExcerpt(SnippetExcerpt snippetExcerpt) {
+        this.snippetExcerpt = snippetExcerpt;
+    }
+
+    /**
+     * <p>
+     * The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business
+     * chat response.
+     * </p>
+     * 
+     * @return The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q
+     *         Business chat response.
+     */
+
+    public SnippetExcerpt getSnippetExcerpt() {
+        return this.snippetExcerpt;
+    }
+
+    /**
+     * <p>
+     * The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business
+     * chat response.
+     * </p>
+     * 
+     * @param snippetExcerpt
+     *        The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q
+     *        Business chat response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TextSegment withSnippetExcerpt(SnippetExcerpt snippetExcerpt) {
+        setSnippetExcerpt(snippetExcerpt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +189,9 @@ public class TextSegment implements Serializable, Cloneable, StructuredPojo {
         if (getBeginOffset() != null)
             sb.append("BeginOffset: ").append(getBeginOffset()).append(",");
         if (getEndOffset() != null)
-            sb.append("EndOffset: ").append(getEndOffset());
+            sb.append("EndOffset: ").append(getEndOffset()).append(",");
+        if (getSnippetExcerpt() != null)
+            sb.append("SnippetExcerpt: ").append(getSnippetExcerpt());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +214,10 @@ public class TextSegment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndOffset() != null && other.getEndOffset().equals(this.getEndOffset()) == false)
             return false;
+        if (other.getSnippetExcerpt() == null ^ this.getSnippetExcerpt() == null)
+            return false;
+        if (other.getSnippetExcerpt() != null && other.getSnippetExcerpt().equals(this.getSnippetExcerpt()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +228,7 @@ public class TextSegment implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getBeginOffset() == null) ? 0 : getBeginOffset().hashCode());
         hashCode = prime * hashCode + ((getEndOffset() == null) ? 0 : getEndOffset().hashCode());
+        hashCode = prime * hashCode + ((getSnippetExcerpt() == null) ? 0 : getSnippetExcerpt().hashCode());
         return hashCode;
     }
 

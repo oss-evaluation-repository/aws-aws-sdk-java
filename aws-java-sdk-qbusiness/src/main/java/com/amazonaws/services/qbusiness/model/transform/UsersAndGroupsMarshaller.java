@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UsersAndGroupsMarshaller {
 
-    private static final MarshallingInfo<List> USERGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("userGroups").build();
     private static final MarshallingInfo<List> USERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("userIds").build();
+    private static final MarshallingInfo<List> USERGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("userGroups").build();
 
     private static final UsersAndGroupsMarshaller instance = new UsersAndGroupsMarshaller();
 
@@ -49,8 +49,8 @@ public class UsersAndGroupsMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(usersAndGroups.getUserGroups(), USERGROUPS_BINDING);
             protocolMarshaller.marshall(usersAndGroups.getUserIds(), USERIDS_BINDING);
+            protocolMarshaller.marshall(usersAndGroups.getUserGroups(), USERGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -31,76 +31,17 @@ public class AccessControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the member relation within a principal list.
-     * </p>
-     */
-    private String memberRelation;
-    /**
-     * <p>
      * Contains a list of principals, where a principal can be either a <code>USER</code> or a <code>GROUP</code>. Each
      * principal can be have the following type of document access: <code>ALLOW</code> or <code>DENY</code>.
      * </p>
      */
     private java.util.List<Principal> principals;
-
     /**
      * <p>
      * Describes the member relation within a principal list.
      * </p>
-     * 
-     * @param memberRelation
-     *        Describes the member relation within a principal list.
-     * @see MemberRelation
      */
-
-    public void setMemberRelation(String memberRelation) {
-        this.memberRelation = memberRelation;
-    }
-
-    /**
-     * <p>
-     * Describes the member relation within a principal list.
-     * </p>
-     * 
-     * @return Describes the member relation within a principal list.
-     * @see MemberRelation
-     */
-
-    public String getMemberRelation() {
-        return this.memberRelation;
-    }
-
-    /**
-     * <p>
-     * Describes the member relation within a principal list.
-     * </p>
-     * 
-     * @param memberRelation
-     *        Describes the member relation within a principal list.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see MemberRelation
-     */
-
-    public AccessControl withMemberRelation(String memberRelation) {
-        setMemberRelation(memberRelation);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Describes the member relation within a principal list.
-     * </p>
-     * 
-     * @param memberRelation
-     *        Describes the member relation within a principal list.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see MemberRelation
-     */
-
-    public AccessControl withMemberRelation(MemberRelation memberRelation) {
-        this.memberRelation = memberRelation.toString();
-        return this;
-    }
+    private String memberRelation;
 
     /**
      * <p>
@@ -185,6 +126,65 @@ public class AccessControl implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the member relation within a principal list.
+     * </p>
+     * 
+     * @param memberRelation
+     *        Describes the member relation within a principal list.
+     * @see MemberRelation
+     */
+
+    public void setMemberRelation(String memberRelation) {
+        this.memberRelation = memberRelation;
+    }
+
+    /**
+     * <p>
+     * Describes the member relation within a principal list.
+     * </p>
+     * 
+     * @return Describes the member relation within a principal list.
+     * @see MemberRelation
+     */
+
+    public String getMemberRelation() {
+        return this.memberRelation;
+    }
+
+    /**
+     * <p>
+     * Describes the member relation within a principal list.
+     * </p>
+     * 
+     * @param memberRelation
+     *        Describes the member relation within a principal list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MemberRelation
+     */
+
+    public AccessControl withMemberRelation(String memberRelation) {
+        setMemberRelation(memberRelation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the member relation within a principal list.
+     * </p>
+     * 
+     * @param memberRelation
+     *        Describes the member relation within a principal list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MemberRelation
+     */
+
+    public AccessControl withMemberRelation(MemberRelation memberRelation) {
+        this.memberRelation = memberRelation.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -196,10 +196,10 @@ public class AccessControl implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMemberRelation() != null)
-            sb.append("MemberRelation: ").append(getMemberRelation()).append(",");
         if (getPrincipals() != null)
-            sb.append("Principals: ").append(getPrincipals());
+            sb.append("Principals: ").append(getPrincipals()).append(",");
+        if (getMemberRelation() != null)
+            sb.append("MemberRelation: ").append(getMemberRelation());
         sb.append("}");
         return sb.toString();
     }
@@ -214,13 +214,13 @@ public class AccessControl implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof AccessControl == false)
             return false;
         AccessControl other = (AccessControl) obj;
-        if (other.getMemberRelation() == null ^ this.getMemberRelation() == null)
-            return false;
-        if (other.getMemberRelation() != null && other.getMemberRelation().equals(this.getMemberRelation()) == false)
-            return false;
         if (other.getPrincipals() == null ^ this.getPrincipals() == null)
             return false;
         if (other.getPrincipals() != null && other.getPrincipals().equals(this.getPrincipals()) == false)
+            return false;
+        if (other.getMemberRelation() == null ^ this.getMemberRelation() == null)
+            return false;
+        if (other.getMemberRelation() != null && other.getMemberRelation().equals(this.getMemberRelation()) == false)
             return false;
         return true;
     }
@@ -230,8 +230,8 @@ public class AccessControl implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMemberRelation() == null) ? 0 : getMemberRelation().hashCode());
         hashCode = prime * hashCode + ((getPrincipals() == null) ? 0 : getPrincipals().hashCode());
+        hashCode = prime * hashCode + ((getMemberRelation() == null) ? 0 : getMemberRelation().hashCode());
         return hashCode;
     }
 

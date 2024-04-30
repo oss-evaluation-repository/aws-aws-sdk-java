@@ -26,11 +26,6 @@ import com.amazonaws.services.qbusiness.model.*;
  * {@link com.amazonaws.services.qbusiness.AbstractAWSQBusiness} instead.
  * </p>
  * <p>
- * <note>
- * <p>
- * Amazon Q is in preview release and is subject to change.
- * </p>
- * </note>
  * <p>
  * This is the <i>Amazon Q Business</i> API Reference. Amazon Q Business is a fully managed, generative-AI powered
  * enterprise chat assistant that you can deploy within your organization. Amazon Q Business enhances employee
@@ -252,6 +247,14 @@ public interface AWSQBusiness {
      * <p>
      * Creates an Amazon Q Business application.
      * </p>
+     * <note>
+     * <p>
+     * There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro are also available in Amazon
+     * Q Business Lite. For information on what's included in Amazon Q Business Lite and what's included in Amazon Q
+     * Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon Q
+     * Business tiers</a>. You must use the Amazon Q Business console to assign subscription tiers to users.
+     * </p>
+     * </note>
      * 
      * @param createApplicationRequest
      * @return Result of the CreateApplication operation returned by the service.

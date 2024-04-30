@@ -33,6 +33,8 @@ public class AnonymousUserEmbeddingExperienceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashboardVisual").build();
     private static final MarshallingInfo<StructuredPojo> QSEARCHBAR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QSearchBar").build();
+    private static final MarshallingInfo<StructuredPojo> GENERATIVEQNA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenerativeQnA").build();
 
     private static final AnonymousUserEmbeddingExperienceConfigurationMarshaller instance = new AnonymousUserEmbeddingExperienceConfigurationMarshaller();
 
@@ -53,6 +55,7 @@ public class AnonymousUserEmbeddingExperienceConfigurationMarshaller {
             protocolMarshaller.marshall(anonymousUserEmbeddingExperienceConfiguration.getDashboard(), DASHBOARD_BINDING);
             protocolMarshaller.marshall(anonymousUserEmbeddingExperienceConfiguration.getDashboardVisual(), DASHBOARDVISUAL_BINDING);
             protocolMarshaller.marshall(anonymousUserEmbeddingExperienceConfiguration.getQSearchBar(), QSEARCHBAR_BINDING);
+            protocolMarshaller.marshall(anonymousUserEmbeddingExperienceConfiguration.getGenerativeQnA(), GENERATIVEQNA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

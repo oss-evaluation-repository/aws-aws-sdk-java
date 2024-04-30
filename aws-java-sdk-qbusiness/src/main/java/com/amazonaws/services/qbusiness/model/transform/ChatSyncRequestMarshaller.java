@@ -32,8 +32,20 @@ public class ChatSyncRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
+    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userId").build();
+    private static final MarshallingInfo<List> USERGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userGroups").build();
+    private static final MarshallingInfo<String> USERMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userMessage").build();
     private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("attachments").build();
+    private static final MarshallingInfo<StructuredPojo> AUTHCHALLENGERESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authChallengeResponse").build();
+    private static final MarshallingInfo<String> CONVERSATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversationId").build();
+    private static final MarshallingInfo<String> PARENTMESSAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parentMessageId").build();
     private static final MarshallingInfo<StructuredPojo> ATTRIBUTEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributeFilter").build();
     private static final MarshallingInfo<String> CHATMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -43,16 +55,6 @@ public class ChatSyncRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> CONVERSATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversationId").build();
-    private static final MarshallingInfo<String> PARENTMESSAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parentMessageId").build();
-    private static final MarshallingInfo<List> USERGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userGroups").build();
-    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userId").build();
-    private static final MarshallingInfo<String> USERMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userMessage").build();
 
     private static final ChatSyncRequestMarshaller instance = new ChatSyncRequestMarshaller();
 
@@ -71,16 +73,17 @@ public class ChatSyncRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(chatSyncRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(chatSyncRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(chatSyncRequest.getUserGroups(), USERGROUPS_BINDING);
+            protocolMarshaller.marshall(chatSyncRequest.getUserMessage(), USERMESSAGE_BINDING);
             protocolMarshaller.marshall(chatSyncRequest.getAttachments(), ATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(chatSyncRequest.getAuthChallengeResponse(), AUTHCHALLENGERESPONSE_BINDING);
+            protocolMarshaller.marshall(chatSyncRequest.getConversationId(), CONVERSATIONID_BINDING);
+            protocolMarshaller.marshall(chatSyncRequest.getParentMessageId(), PARENTMESSAGEID_BINDING);
             protocolMarshaller.marshall(chatSyncRequest.getAttributeFilter(), ATTRIBUTEFILTER_BINDING);
             protocolMarshaller.marshall(chatSyncRequest.getChatMode(), CHATMODE_BINDING);
             protocolMarshaller.marshall(chatSyncRequest.getChatModeConfiguration(), CHATMODECONFIGURATION_BINDING);
             protocolMarshaller.marshall(chatSyncRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(chatSyncRequest.getConversationId(), CONVERSATIONID_BINDING);
-            protocolMarshaller.marshall(chatSyncRequest.getParentMessageId(), PARENTMESSAGEID_BINDING);
-            protocolMarshaller.marshall(chatSyncRequest.getUserGroups(), USERGROUPS_BINDING);
-            protocolMarshaller.marshall(chatSyncRequest.getUserId(), USERID_BINDING);
-            protocolMarshaller.marshall(chatSyncRequest.getUserMessage(), USERMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

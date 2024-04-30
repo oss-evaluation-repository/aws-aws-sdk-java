@@ -48,13 +48,13 @@ public class MemberUserJsonUnmarshaller implements Unmarshaller<MemberUser, Json
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("type", targetDepth)) {
-                    context.nextToken();
-                    memberUser.setType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("userId", targetDepth)) {
                     context.nextToken();
                     memberUser.setUserId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    memberUser.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

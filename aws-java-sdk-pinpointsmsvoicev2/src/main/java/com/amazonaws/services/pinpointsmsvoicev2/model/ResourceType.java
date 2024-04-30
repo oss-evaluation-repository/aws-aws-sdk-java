@@ -31,7 +31,8 @@ public enum ResourceType {
     OptedOutNumber("opted-out-number"),
     Registration("registration"),
     RegistrationAttachment("registration-attachment"),
-    VerifiedDestinationNumber("verified-destination-number");
+    VerifiedDestinationNumber("verified-destination-number"),
+    ProtectConfiguration("protect-configuration");
 
     private String value;
 

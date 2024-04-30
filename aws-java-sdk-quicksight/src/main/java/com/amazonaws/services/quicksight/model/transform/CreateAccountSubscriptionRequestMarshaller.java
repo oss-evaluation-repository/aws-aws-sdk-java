@@ -50,6 +50,12 @@ public class CreateAccountSubscriptionRequestMarshaller {
             .marshallLocationName("AuthorGroup").build();
     private static final MarshallingInfo<List> READERGROUP_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ReaderGroup").build();
+    private static final MarshallingInfo<List> ADMINPROGROUP_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AdminProGroup").build();
+    private static final MarshallingInfo<List> AUTHORPROGROUP_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthorProGroup").build();
+    private static final MarshallingInfo<List> READERPROGROUP_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReaderProGroup").build();
     private static final MarshallingInfo<String> FIRSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FirstName").build();
     private static final MarshallingInfo<String> LASTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -88,6 +94,9 @@ public class CreateAccountSubscriptionRequestMarshaller {
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getAdminGroup(), ADMINGROUP_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getAuthorGroup(), AUTHORGROUP_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getReaderGroup(), READERGROUP_BINDING);
+            protocolMarshaller.marshall(createAccountSubscriptionRequest.getAdminProGroup(), ADMINPROGROUP_BINDING);
+            protocolMarshaller.marshall(createAccountSubscriptionRequest.getAuthorProGroup(), AUTHORPROGROUP_BINDING);
+            protocolMarshaller.marshall(createAccountSubscriptionRequest.getReaderProGroup(), READERPROGROUP_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getFirstName(), FIRSTNAME_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getLastName(), LASTNAME_BINDING);
             protocolMarshaller.marshall(createAccountSubscriptionRequest.getEmailAddress(), EMAILADDRESS_BINDING);

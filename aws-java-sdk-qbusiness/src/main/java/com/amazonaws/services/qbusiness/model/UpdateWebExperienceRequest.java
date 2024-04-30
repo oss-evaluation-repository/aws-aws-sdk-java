@@ -33,22 +33,24 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
     private String applicationId;
     /**
      * <p>
+     * The identifier of the Amazon Q Business web experience.
+     * </p>
+     */
+    private String webExperienceId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience and
+     * required resources.
+     * </p>
+     */
+    private String roleArn;
+    /**
+     * <p>
      * The authentication configuration of the Amazon Q Business web experience.
      * </p>
      */
+    @Deprecated
     private WebExperienceAuthConfiguration authenticationConfiguration;
-    /**
-     * <p>
-     * Determines whether sample prompts are enabled in the web experience for an end user.
-     * </p>
-     */
-    private String samplePromptsControlMode;
-    /**
-     * <p>
-     * The subtitle of the Amazon Q Business web experience.
-     * </p>
-     */
-    private String subtitle;
     /**
      * <p>
      * The title of the Amazon Q Business web experience.
@@ -57,16 +59,22 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
     private String title;
     /**
      * <p>
-     * The identifier of the Amazon Q Business web experience.
+     * The subtitle of the Amazon Q Business web experience.
      * </p>
      */
-    private String webExperienceId;
+    private String subtitle;
     /**
      * <p>
      * A customized welcome message for an end user in an Amazon Q Business web experience.
      * </p>
      */
     private String welcomeMessage;
+    /**
+     * <p>
+     * Determines whether sample prompts are enabled in the web experience for an end user.
+     * </p>
+     */
+    private String samplePromptsControlMode;
 
     /**
      * <p>
@@ -110,13 +118,99 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The identifier of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param webExperienceId
+     *        The identifier of the Amazon Q Business web experience.
+     */
+
+    public void setWebExperienceId(String webExperienceId) {
+        this.webExperienceId = webExperienceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Q Business web experience.
+     */
+
+    public String getWebExperienceId() {
+        return this.webExperienceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param webExperienceId
+     *        The identifier of the Amazon Q Business web experience.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWebExperienceRequest withWebExperienceId(String webExperienceId) {
+        setWebExperienceId(webExperienceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience and
+     * required resources.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience
+     *        and required resources.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience and
+     * required resources.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience
+     *         and required resources.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience and
+     * required resources.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role with permission to access the Amazon Q Business web experience
+     *        and required resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWebExperienceRequest withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The authentication configuration of the Amazon Q Business web experience.
      * </p>
      * 
      * @param authenticationConfiguration
      *        The authentication configuration of the Amazon Q Business web experience.
      */
-
+    @Deprecated
     public void setAuthenticationConfiguration(WebExperienceAuthConfiguration authenticationConfiguration) {
         this.authenticationConfiguration = authenticationConfiguration;
     }
@@ -128,7 +222,7 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return The authentication configuration of the Amazon Q Business web experience.
      */
-
+    @Deprecated
     public WebExperienceAuthConfiguration getAuthenticationConfiguration() {
         return this.authenticationConfiguration;
     }
@@ -142,9 +236,129 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
      *        The authentication configuration of the Amazon Q Business web experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateWebExperienceRequest withAuthenticationConfiguration(WebExperienceAuthConfiguration authenticationConfiguration) {
         setAuthenticationConfiguration(authenticationConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The title of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param title
+     *        The title of the Amazon Q Business web experience.
+     */
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * <p>
+     * The title of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @return The title of the Amazon Q Business web experience.
+     */
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    /**
+     * <p>
+     * The title of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param title
+     *        The title of the Amazon Q Business web experience.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWebExperienceRequest withTitle(String title) {
+        setTitle(title);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subtitle of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param subtitle
+     *        The subtitle of the Amazon Q Business web experience.
+     */
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+    }
+
+    /**
+     * <p>
+     * The subtitle of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @return The subtitle of the Amazon Q Business web experience.
+     */
+
+    public String getSubtitle() {
+        return this.subtitle;
+    }
+
+    /**
+     * <p>
+     * The subtitle of the Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param subtitle
+     *        The subtitle of the Amazon Q Business web experience.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWebExperienceRequest withSubtitle(String subtitle) {
+        setSubtitle(subtitle);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A customized welcome message for an end user in an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param welcomeMessage
+     *        A customized welcome message for an end user in an Amazon Q Business web experience.
+     */
+
+    public void setWelcomeMessage(String welcomeMessage) {
+        this.welcomeMessage = welcomeMessage;
+    }
+
+    /**
+     * <p>
+     * A customized welcome message for an end user in an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @return A customized welcome message for an end user in an Amazon Q Business web experience.
+     */
+
+    public String getWelcomeMessage() {
+        return this.welcomeMessage;
+    }
+
+    /**
+     * <p>
+     * A customized welcome message for an end user in an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param welcomeMessage
+     *        A customized welcome message for an end user in an Amazon Q Business web experience.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWebExperienceRequest withWelcomeMessage(String welcomeMessage) {
+        setWelcomeMessage(welcomeMessage);
         return this;
     }
 
@@ -208,166 +422,6 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * The subtitle of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param subtitle
-     *        The subtitle of the Amazon Q Business web experience.
-     */
-
-    public void setSubtitle(String subtitle) {
-        this.subtitle = subtitle;
-    }
-
-    /**
-     * <p>
-     * The subtitle of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @return The subtitle of the Amazon Q Business web experience.
-     */
-
-    public String getSubtitle() {
-        return this.subtitle;
-    }
-
-    /**
-     * <p>
-     * The subtitle of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param subtitle
-     *        The subtitle of the Amazon Q Business web experience.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateWebExperienceRequest withSubtitle(String subtitle) {
-        setSubtitle(subtitle);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The title of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param title
-     *        The title of the Amazon Q Business web experience.
-     */
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * <p>
-     * The title of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @return The title of the Amazon Q Business web experience.
-     */
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    /**
-     * <p>
-     * The title of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param title
-     *        The title of the Amazon Q Business web experience.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateWebExperienceRequest withTitle(String title) {
-        setTitle(title);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param webExperienceId
-     *        The identifier of the Amazon Q Business web experience.
-     */
-
-    public void setWebExperienceId(String webExperienceId) {
-        this.webExperienceId = webExperienceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @return The identifier of the Amazon Q Business web experience.
-     */
-
-    public String getWebExperienceId() {
-        return this.webExperienceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param webExperienceId
-     *        The identifier of the Amazon Q Business web experience.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateWebExperienceRequest withWebExperienceId(String webExperienceId) {
-        setWebExperienceId(webExperienceId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A customized welcome message for an end user in an Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param welcomeMessage
-     *        A customized welcome message for an end user in an Amazon Q Business web experience.
-     */
-
-    public void setWelcomeMessage(String welcomeMessage) {
-        this.welcomeMessage = welcomeMessage;
-    }
-
-    /**
-     * <p>
-     * A customized welcome message for an end user in an Amazon Q Business web experience.
-     * </p>
-     * 
-     * @return A customized welcome message for an end user in an Amazon Q Business web experience.
-     */
-
-    public String getWelcomeMessage() {
-        return this.welcomeMessage;
-    }
-
-    /**
-     * <p>
-     * A customized welcome message for an end user in an Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param welcomeMessage
-     *        A customized welcome message for an end user in an Amazon Q Business web experience.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateWebExperienceRequest withWelcomeMessage(String welcomeMessage) {
-        setWelcomeMessage(welcomeMessage);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -381,18 +435,20 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getAuthenticationConfiguration() != null)
-            sb.append("AuthenticationConfiguration: ").append(getAuthenticationConfiguration()).append(",");
-        if (getSamplePromptsControlMode() != null)
-            sb.append("SamplePromptsControlMode: ").append(getSamplePromptsControlMode()).append(",");
-        if (getSubtitle() != null)
-            sb.append("Subtitle: ").append(getSubtitle()).append(",");
-        if (getTitle() != null)
-            sb.append("Title: ").append(getTitle()).append(",");
         if (getWebExperienceId() != null)
             sb.append("WebExperienceId: ").append(getWebExperienceId()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getAuthenticationConfiguration() != null)
+            sb.append("AuthenticationConfiguration: ").append(getAuthenticationConfiguration()).append(",");
+        if (getTitle() != null)
+            sb.append("Title: ").append(getTitle()).append(",");
+        if (getSubtitle() != null)
+            sb.append("Subtitle: ").append(getSubtitle()).append(",");
         if (getWelcomeMessage() != null)
-            sb.append("WelcomeMessage: ").append(getWelcomeMessage());
+            sb.append("WelcomeMessage: ").append(getWelcomeMessage()).append(",");
+        if (getSamplePromptsControlMode() != null)
+            sb.append("SamplePromptsControlMode: ").append(getSamplePromptsControlMode());
         sb.append("}");
         return sb.toString();
     }
@@ -411,29 +467,33 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
+        if (other.getWebExperienceId() == null ^ this.getWebExperienceId() == null)
+            return false;
+        if (other.getWebExperienceId() != null && other.getWebExperienceId().equals(this.getWebExperienceId()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         if (other.getAuthenticationConfiguration() == null ^ this.getAuthenticationConfiguration() == null)
             return false;
         if (other.getAuthenticationConfiguration() != null && other.getAuthenticationConfiguration().equals(this.getAuthenticationConfiguration()) == false)
-            return false;
-        if (other.getSamplePromptsControlMode() == null ^ this.getSamplePromptsControlMode() == null)
-            return false;
-        if (other.getSamplePromptsControlMode() != null && other.getSamplePromptsControlMode().equals(this.getSamplePromptsControlMode()) == false)
-            return false;
-        if (other.getSubtitle() == null ^ this.getSubtitle() == null)
-            return false;
-        if (other.getSubtitle() != null && other.getSubtitle().equals(this.getSubtitle()) == false)
             return false;
         if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
         if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
             return false;
-        if (other.getWebExperienceId() == null ^ this.getWebExperienceId() == null)
+        if (other.getSubtitle() == null ^ this.getSubtitle() == null)
             return false;
-        if (other.getWebExperienceId() != null && other.getWebExperienceId().equals(this.getWebExperienceId()) == false)
+        if (other.getSubtitle() != null && other.getSubtitle().equals(this.getSubtitle()) == false)
             return false;
         if (other.getWelcomeMessage() == null ^ this.getWelcomeMessage() == null)
             return false;
         if (other.getWelcomeMessage() != null && other.getWelcomeMessage().equals(this.getWelcomeMessage()) == false)
+            return false;
+        if (other.getSamplePromptsControlMode() == null ^ this.getSamplePromptsControlMode() == null)
+            return false;
+        if (other.getSamplePromptsControlMode() != null && other.getSamplePromptsControlMode().equals(this.getSamplePromptsControlMode()) == false)
             return false;
         return true;
     }
@@ -444,12 +504,13 @@ public class UpdateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getAuthenticationConfiguration() == null) ? 0 : getAuthenticationConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getSamplePromptsControlMode() == null) ? 0 : getSamplePromptsControlMode().hashCode());
-        hashCode = prime * hashCode + ((getSubtitle() == null) ? 0 : getSubtitle().hashCode());
-        hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         hashCode = prime * hashCode + ((getWebExperienceId() == null) ? 0 : getWebExperienceId().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationConfiguration() == null) ? 0 : getAuthenticationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
+        hashCode = prime * hashCode + ((getSubtitle() == null) ? 0 : getSubtitle().hashCode());
         hashCode = prime * hashCode + ((getWelcomeMessage() == null) ? 0 : getWelcomeMessage().hashCode());
+        hashCode = prime * hashCode + ((getSamplePromptsControlMode() == null) ? 0 : getSamplePromptsControlMode().hashCode());
         return hashCode;
     }
 

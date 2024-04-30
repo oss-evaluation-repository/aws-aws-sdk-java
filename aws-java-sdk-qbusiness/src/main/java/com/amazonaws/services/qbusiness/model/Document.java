@@ -30,10 +30,10 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Configuration information for access permission to a document.
+     * The identifier of the document.
      * </p>
      */
-    private AccessConfiguration accessConfiguration;
+    private String id;
     /**
      * <p>
      * Custom attributes to apply to the document for refining Amazon Q Business web experience responses.
@@ -58,60 +58,60 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
     private String contentType;
     /**
      * <p>
-     * The configuration information for altering document metadata and content during the document ingestion process.
-     * </p>
-     */
-    private DocumentEnrichmentConfiguration documentEnrichmentConfiguration;
-    /**
-     * <p>
-     * The identifier of the document.
-     * </p>
-     */
-    private String id;
-    /**
-     * <p>
      * The title of the document.
      * </p>
      */
     private String title;
-
     /**
      * <p>
      * Configuration information for access permission to a document.
      * </p>
+     */
+    private AccessConfiguration accessConfiguration;
+    /**
+     * <p>
+     * The configuration information for altering document metadata and content during the document ingestion process.
+     * </p>
+     */
+    private DocumentEnrichmentConfiguration documentEnrichmentConfiguration;
+
+    /**
+     * <p>
+     * The identifier of the document.
+     * </p>
      * 
-     * @param accessConfiguration
-     *        Configuration information for access permission to a document.
+     * @param id
+     *        The identifier of the document.
      */
 
-    public void setAccessConfiguration(AccessConfiguration accessConfiguration) {
-        this.accessConfiguration = accessConfiguration;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
      * <p>
-     * Configuration information for access permission to a document.
+     * The identifier of the document.
      * </p>
      * 
-     * @return Configuration information for access permission to a document.
+     * @return The identifier of the document.
      */
 
-    public AccessConfiguration getAccessConfiguration() {
-        return this.accessConfiguration;
+    public String getId() {
+        return this.id;
     }
 
     /**
      * <p>
-     * Configuration information for access permission to a document.
+     * The identifier of the document.
      * </p>
      * 
-     * @param accessConfiguration
-     *        Configuration information for access permission to a document.
+     * @param id
+     *        The identifier of the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Document withAccessConfiguration(AccessConfiguration accessConfiguration) {
-        setAccessConfiguration(accessConfiguration);
+    public Document withId(String id) {
+        setId(id);
         return this;
     }
 
@@ -318,6 +318,86 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The title of the document.
+     * </p>
+     * 
+     * @param title
+     *        The title of the document.
+     */
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * <p>
+     * The title of the document.
+     * </p>
+     * 
+     * @return The title of the document.
+     */
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    /**
+     * <p>
+     * The title of the document.
+     * </p>
+     * 
+     * @param title
+     *        The title of the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Document withTitle(String title) {
+        setTitle(title);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for access permission to a document.
+     * </p>
+     * 
+     * @param accessConfiguration
+     *        Configuration information for access permission to a document.
+     */
+
+    public void setAccessConfiguration(AccessConfiguration accessConfiguration) {
+        this.accessConfiguration = accessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for access permission to a document.
+     * </p>
+     * 
+     * @return Configuration information for access permission to a document.
+     */
+
+    public AccessConfiguration getAccessConfiguration() {
+        return this.accessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information for access permission to a document.
+     * </p>
+     * 
+     * @param accessConfiguration
+     *        Configuration information for access permission to a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Document withAccessConfiguration(AccessConfiguration accessConfiguration) {
+        setAccessConfiguration(accessConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration information for altering document metadata and content during the document ingestion process.
      * </p>
      * 
@@ -360,86 +440,6 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The identifier of the document.
-     * </p>
-     * 
-     * @param id
-     *        The identifier of the document.
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * <p>
-     * The identifier of the document.
-     * </p>
-     * 
-     * @return The identifier of the document.
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * <p>
-     * The identifier of the document.
-     * </p>
-     * 
-     * @param id
-     *        The identifier of the document.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Document withId(String id) {
-        setId(id);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The title of the document.
-     * </p>
-     * 
-     * @param title
-     *        The title of the document.
-     */
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * <p>
-     * The title of the document.
-     * </p>
-     * 
-     * @return The title of the document.
-     */
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    /**
-     * <p>
-     * The title of the document.
-     * </p>
-     * 
-     * @param title
-     *        The title of the document.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Document withTitle(String title) {
-        setTitle(title);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -451,20 +451,20 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccessConfiguration() != null)
-            sb.append("AccessConfiguration: ").append(getAccessConfiguration()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getContent() != null)
             sb.append("Content: ").append(getContent()).append(",");
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType()).append(",");
-        if (getDocumentEnrichmentConfiguration() != null)
-            sb.append("DocumentEnrichmentConfiguration: ").append(getDocumentEnrichmentConfiguration()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
         if (getTitle() != null)
-            sb.append("Title: ").append(getTitle());
+            sb.append("Title: ").append(getTitle()).append(",");
+        if (getAccessConfiguration() != null)
+            sb.append("AccessConfiguration: ").append(getAccessConfiguration()).append(",");
+        if (getDocumentEnrichmentConfiguration() != null)
+            sb.append("DocumentEnrichmentConfiguration: ").append(getDocumentEnrichmentConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -479,9 +479,9 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Document == false)
             return false;
         Document other = (Document) obj;
-        if (other.getAccessConfiguration() == null ^ this.getAccessConfiguration() == null)
+        if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getAccessConfiguration() != null && other.getAccessConfiguration().equals(this.getAccessConfiguration()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
@@ -495,18 +495,18 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
             return false;
+        if (other.getTitle() == null ^ this.getTitle() == null)
+            return false;
+        if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
+            return false;
+        if (other.getAccessConfiguration() == null ^ this.getAccessConfiguration() == null)
+            return false;
+        if (other.getAccessConfiguration() != null && other.getAccessConfiguration().equals(this.getAccessConfiguration()) == false)
+            return false;
         if (other.getDocumentEnrichmentConfiguration() == null ^ this.getDocumentEnrichmentConfiguration() == null)
             return false;
         if (other.getDocumentEnrichmentConfiguration() != null
                 && other.getDocumentEnrichmentConfiguration().equals(this.getDocumentEnrichmentConfiguration()) == false)
-            return false;
-        if (other.getId() == null ^ this.getId() == null)
-            return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getTitle() == null ^ this.getTitle() == null)
-            return false;
-        if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
             return false;
         return true;
     }
@@ -516,13 +516,13 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAccessConfiguration() == null) ? 0 : getAccessConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
-        hashCode = prime * hashCode + ((getDocumentEnrichmentConfiguration() == null) ? 0 : getDocumentEnrichmentConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
+        hashCode = prime * hashCode + ((getAccessConfiguration() == null) ? 0 : getAccessConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDocumentEnrichmentConfiguration() == null) ? 0 : getDocumentEnrichmentConfiguration().hashCode());
         return hashCode;
     }
 

@@ -23,7 +23,8 @@ public enum PluginType {
     SERVICE_NOW("SERVICE_NOW"),
     SALESFORCE("SALESFORCE"),
     JIRA("JIRA"),
-    ZENDESK("ZENDESK");
+    ZENDESK("ZENDESK"),
+    CUSTOM("CUSTOM");
 
     private String value;
 

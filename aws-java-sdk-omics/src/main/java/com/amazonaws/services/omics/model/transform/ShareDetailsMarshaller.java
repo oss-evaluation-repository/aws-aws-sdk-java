@@ -31,6 +31,8 @@ public class ShareDetailsMarshaller {
             .marshallLocationName("shareId").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceId").build();
     private static final MarshallingInfo<String> PRINCIPALSUBSCRIBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("principalSubscriber").build();
     private static final MarshallingInfo<String> OWNERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class ShareDetailsMarshaller {
         try {
             protocolMarshaller.marshall(shareDetails.getShareId(), SHAREID_BINDING);
             protocolMarshaller.marshall(shareDetails.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(shareDetails.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(shareDetails.getPrincipalSubscriber(), PRINCIPALSUBSCRIBER_BINDING);
             protocolMarshaller.marshall(shareDetails.getOwnerId(), OWNERID_BINDING);
             protocolMarshaller.marshall(shareDetails.getStatus(), STATUS_BINDING);

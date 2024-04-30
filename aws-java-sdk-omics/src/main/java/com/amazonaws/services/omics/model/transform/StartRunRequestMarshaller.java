@@ -57,6 +57,10 @@ public class StartRunRequestMarshaller {
             .marshallLocationName("requestId").defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> RETENTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionMode").build();
+    private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageType").build();
+    private static final MarshallingInfo<String> WORKFLOWOWNERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowOwnerId").build();
 
     private static final StartRunRequestMarshaller instance = new StartRunRequestMarshaller();
 
@@ -87,6 +91,8 @@ public class StartRunRequestMarshaller {
             protocolMarshaller.marshall(startRunRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(startRunRequest.getRequestId(), REQUESTID_BINDING);
             protocolMarshaller.marshall(startRunRequest.getRetentionMode(), RETENTIONMODE_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getStorageType(), STORAGETYPE_BINDING);
+            protocolMarshaller.marshall(startRunRequest.getWorkflowOwnerId(), WORKFLOWOWNERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

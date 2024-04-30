@@ -48,29 +48,29 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("createdAt", targetDepth)) {
+                if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
-                    dataSource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    dataSource.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataSourceId", targetDepth)) {
                     context.nextToken();
                     dataSource.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("displayName", targetDepth)) {
-                    context.nextToken();
-                    dataSource.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    dataSource.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     dataSource.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    dataSource.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
                     dataSource.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    dataSource.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

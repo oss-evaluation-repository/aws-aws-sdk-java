@@ -23,7 +23,8 @@ public enum ConfigurationSetFilterName {
     EventDestinationName("event-destination-name"),
     MatchingEventTypes("matching-event-types"),
     DefaultMessageType("default-message-type"),
-    DefaultSenderId("default-sender-id");
+    DefaultSenderId("default-sender-id"),
+    ProtectConfigurationId("protect-configuration-id");
 
     private String value;
 

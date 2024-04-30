@@ -33,11 +33,16 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String applicationId;
     /**
      * <p>
-     * The storage capacity units you want to provision for your Amazon Q Business index. You can add and remove
-     * capacity to fit your usage needs.
+     * The identifier of the Amazon Q Business index.
      * </p>
      */
-    private IndexCapacityConfiguration capacityConfiguration;
+    private String indexId;
+    /**
+     * <p>
+     * The name of the Amazon Q Business index.
+     * </p>
+     */
+    private String displayName;
     /**
      * <p>
      * The description of the Amazon Q Business index.
@@ -46,10 +51,11 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The name of the Amazon Q Business index.
+     * The storage capacity units you want to provision for your Amazon Q Business index. You can add and remove
+     * capacity to fit your usage needs.
      * </p>
      */
-    private String displayName;
+    private IndexCapacityConfiguration capacityConfiguration;
     /**
      * <p>
      * Configuration information for document metadata or fields. Document metadata are fields or attributes associated
@@ -60,12 +66,6 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<DocumentAttributeConfiguration> documentAttributeConfigurations;
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index.
-     * </p>
-     */
-    private String indexId;
 
     /**
      * <p>
@@ -104,6 +104,126 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public UpdateIndexRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business index.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier of the Amazon Q Business index.
+     */
+
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business index.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Q Business index.
+     */
+
+    public String getIndexId() {
+        return this.indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business index.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier of the Amazon Q Business index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIndexRequest withIndexId(String indexId) {
+        setIndexId(indexId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Q Business index.
+     * </p>
+     * 
+     * @param displayName
+     *        The name of the Amazon Q Business index.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Q Business index.
+     * </p>
+     * 
+     * @return The name of the Amazon Q Business index.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Q Business index.
+     * </p>
+     * 
+     * @param displayName
+     *        The name of the Amazon Q Business index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIndexRequest withDisplayName(String displayName) {
+        setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the Amazon Q Business index.
+     * </p>
+     * 
+     * @param description
+     *        The description of the Amazon Q Business index.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the Amazon Q Business index.
+     * </p>
+     * 
+     * @return The description of the Amazon Q Business index.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the Amazon Q Business index.
+     * </p>
+     * 
+     * @param description
+     *        The description of the Amazon Q Business index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIndexRequest withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -150,86 +270,6 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public UpdateIndexRequest withCapacityConfiguration(IndexCapacityConfiguration capacityConfiguration) {
         setCapacityConfiguration(capacityConfiguration);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The description of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param description
-     *        The description of the Amazon Q Business index.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The description of the Amazon Q Business index.
-     * </p>
-     * 
-     * @return The description of the Amazon Q Business index.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The description of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param description
-     *        The description of the Amazon Q Business index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateIndexRequest withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of the Amazon Q Business index.
-     */
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    /**
-     * <p>
-     * The name of the Amazon Q Business index.
-     * </p>
-     * 
-     * @return The name of the Amazon Q Business index.
-     */
-
-    public String getDisplayName() {
-        return this.displayName;
-    }
-
-    /**
-     * <p>
-     * The name of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of the Amazon Q Business index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateIndexRequest withDisplayName(String displayName) {
-        setDisplayName(displayName);
         return this;
     }
 
@@ -336,46 +376,6 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p>
-     * The identifier of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the Amazon Q Business index.
-     */
-
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index.
-     * </p>
-     * 
-     * @return The identifier of the Amazon Q Business index.
-     */
-
-    public String getIndexId() {
-        return this.indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the Amazon Q Business index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateIndexRequest withIndexId(String indexId) {
-        setIndexId(indexId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -389,16 +389,16 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getCapacityConfiguration() != null)
-            sb.append("CapacityConfiguration: ").append(getCapacityConfiguration()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+        if (getIndexId() != null)
+            sb.append("IndexId: ").append(getIndexId()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getCapacityConfiguration() != null)
+            sb.append("CapacityConfiguration: ").append(getCapacityConfiguration()).append(",");
         if (getDocumentAttributeConfigurations() != null)
-            sb.append("DocumentAttributeConfigurations: ").append(getDocumentAttributeConfigurations()).append(",");
-        if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId());
+            sb.append("DocumentAttributeConfigurations: ").append(getDocumentAttributeConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -417,26 +417,26 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getCapacityConfiguration() == null ^ this.getCapacityConfiguration() == null)
+        if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
-        if (other.getCapacityConfiguration() != null && other.getCapacityConfiguration().equals(this.getCapacityConfiguration()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getCapacityConfiguration() == null ^ this.getCapacityConfiguration() == null)
+            return false;
+        if (other.getCapacityConfiguration() != null && other.getCapacityConfiguration().equals(this.getCapacityConfiguration()) == false)
+            return false;
         if (other.getDocumentAttributeConfigurations() == null ^ this.getDocumentAttributeConfigurations() == null)
             return false;
         if (other.getDocumentAttributeConfigurations() != null
                 && other.getDocumentAttributeConfigurations().equals(this.getDocumentAttributeConfigurations()) == false)
-            return false;
-        if (other.getIndexId() == null ^ this.getIndexId() == null)
-            return false;
-        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
         return true;
     }
@@ -447,11 +447,11 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getCapacityConfiguration() == null) ? 0 : getCapacityConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
-        hashCode = prime * hashCode + ((getDocumentAttributeConfigurations() == null) ? 0 : getDocumentAttributeConfigurations().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCapacityConfiguration() == null) ? 0 : getCapacityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDocumentAttributeConfigurations() == null) ? 0 : getDocumentAttributeConfigurations().hashCode());
         return hashCode;
     }
 

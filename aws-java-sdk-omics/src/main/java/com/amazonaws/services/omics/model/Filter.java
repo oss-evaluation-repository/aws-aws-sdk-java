@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use filters to focus the returned annotation store versions on a specific parameter, such as the status of the
- * annotation store.
+ * Use filters to return a subset of resources. You can define filters for specific parameters, such as the resource
+ * status.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/Filter" target="_top">AWS API Documentation</a>
@@ -30,23 +30,29 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Number (Arn) for an analytics store.
+     * Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      * </p>
      */
     private java.util.List<String> resourceArns;
     /**
      * <p>
-     * The status of an annotation store version.
+     * Filter based on the resource status. You can specify up to 10 values.
      * </p>
      */
     private java.util.List<String> status;
+    /**
+     * <p>
+     * The type of resources to be filtered. You can specify one or more of the resource types.
+     * </p>
+     */
+    private java.util.List<String> type;
 
     /**
      * <p>
-     * The Amazon Resource Number (Arn) for an analytics store.
+     * Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      * </p>
      * 
-     * @return The Amazon Resource Number (Arn) for an analytics store.
+     * @return Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -55,11 +61,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Number (Arn) for an analytics store.
+     * Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Number (Arn) for an analytics store.
+     *        Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -73,7 +79,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Number (Arn) for an analytics store.
+     * Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +88,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Number (Arn) for an analytics store.
+     *        Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +104,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Number (Arn) for an analytics store.
+     * Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      * </p>
      * 
      * @param resourceArns
-     *        The Amazon Resource Number (Arn) for an analytics store.
+     *        Filter based on the Amazon Resource Number (ARN) of the resource. You can specify up to 10 values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +119,10 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of an annotation store version.
+     * Filter based on the resource status. You can specify up to 10 values.
      * </p>
      * 
-     * @return The status of an annotation store version.
+     * @return Filter based on the resource status. You can specify up to 10 values.
      * @see ShareStatus
      */
 
@@ -126,11 +132,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of an annotation store version.
+     * Filter based on the resource status. You can specify up to 10 values.
      * </p>
      * 
      * @param status
-     *        The status of an annotation store version.
+     *        Filter based on the resource status. You can specify up to 10 values.
      * @see ShareStatus
      */
 
@@ -145,7 +151,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of an annotation store version.
+     * Filter based on the resource status. You can specify up to 10 values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -154,7 +160,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param status
-     *        The status of an annotation store version.
+     *        Filter based on the resource status. You can specify up to 10 values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */
@@ -171,11 +177,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of an annotation store version.
+     * Filter based on the resource status. You can specify up to 10 values.
      * </p>
      * 
      * @param status
-     *        The status of an annotation store version.
+     *        Filter based on the resource status. You can specify up to 10 values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */
@@ -187,11 +193,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of an annotation store version.
+     * Filter based on the resource status. You can specify up to 10 values.
      * </p>
      * 
      * @param status
-     *        The status of an annotation store version.
+     *        Filter based on the resource status. You can specify up to 10 values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */
@@ -205,6 +211,104 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
             setStatus(statusCopy);
         } else {
             getStatus().addAll(statusCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of resources to be filtered. You can specify one or more of the resource types.
+     * </p>
+     * 
+     * @return The type of resources to be filtered. You can specify one or more of the resource types.
+     * @see ShareResourceType
+     */
+
+    public java.util.List<String> getType() {
+        return type;
+    }
+
+    /**
+     * <p>
+     * The type of resources to be filtered. You can specify one or more of the resource types.
+     * </p>
+     * 
+     * @param type
+     *        The type of resources to be filtered. You can specify one or more of the resource types.
+     * @see ShareResourceType
+     */
+
+    public void setType(java.util.Collection<String> type) {
+        if (type == null) {
+            this.type = null;
+            return;
+        }
+
+        this.type = new java.util.ArrayList<String>(type);
+    }
+
+    /**
+     * <p>
+     * The type of resources to be filtered. You can specify one or more of the resource types.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setType(java.util.Collection)} or {@link #withType(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param type
+     *        The type of resources to be filtered. You can specify one or more of the resource types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareResourceType
+     */
+
+    public Filter withType(String... type) {
+        if (this.type == null) {
+            setType(new java.util.ArrayList<String>(type.length));
+        }
+        for (String ele : type) {
+            this.type.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of resources to be filtered. You can specify one or more of the resource types.
+     * </p>
+     * 
+     * @param type
+     *        The type of resources to be filtered. You can specify one or more of the resource types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareResourceType
+     */
+
+    public Filter withType(java.util.Collection<String> type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of resources to be filtered. You can specify one or more of the resource types.
+     * </p>
+     * 
+     * @param type
+     *        The type of resources to be filtered. You can specify one or more of the resource types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ShareResourceType
+     */
+
+    public Filter withType(ShareResourceType... type) {
+        java.util.ArrayList<String> typeCopy = new java.util.ArrayList<String>(type.length);
+        for (ShareResourceType value : type) {
+            typeCopy.add(value.toString());
+        }
+        if (getType() == null) {
+            setType(typeCopy);
+        } else {
+            getType().addAll(typeCopy);
         }
         return this;
     }
@@ -224,7 +328,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
         if (getResourceArns() != null)
             sb.append("ResourceArns: ").append(getResourceArns()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +353,10 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -257,6 +367,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getResourceArns() == null) ? 0 : getResourceArns().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

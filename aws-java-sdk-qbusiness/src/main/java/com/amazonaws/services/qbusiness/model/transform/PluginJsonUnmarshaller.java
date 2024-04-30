@@ -48,17 +48,17 @@ public class PluginJsonUnmarshaller implements Unmarshaller<Plugin, JsonUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("createdAt", targetDepth)) {
+                if (context.testExpression("pluginId", targetDepth)) {
                     context.nextToken();
-                    plugin.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    plugin.setPluginId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
                     plugin.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("pluginId", targetDepth)) {
+                if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    plugin.setPluginId(context.getUnmarshaller(String.class).unmarshall(context));
+                    plugin.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serverUrl", targetDepth)) {
                     context.nextToken();
@@ -68,9 +68,13 @@ public class PluginJsonUnmarshaller implements Unmarshaller<Plugin, JsonUnmarsha
                     context.nextToken();
                     plugin.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("type", targetDepth)) {
+                if (context.testExpression("buildStatus", targetDepth)) {
                     context.nextToken();
-                    plugin.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                    plugin.setBuildStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    plugin.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();

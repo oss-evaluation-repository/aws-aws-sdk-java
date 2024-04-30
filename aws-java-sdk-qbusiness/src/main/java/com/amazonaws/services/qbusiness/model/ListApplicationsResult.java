@@ -25,17 +25,63 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of summary information on the configuration of one or more Amazon Q Business applications.
-     * </p>
-     */
-    private java.util.List<Application> applications;
-    /**
-     * <p>
      * If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
      * request to retrieve the next set of applications.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * An array of summary information on the configuration of one or more Amazon Q Business applications.
+     * </p>
+     */
+    private java.util.List<Application> applications;
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
+     * request to retrieve the next set of applications.
+     * </p>
+     * 
+     * @param nextToken
+     *        If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
+     *        request to retrieve the next set of applications.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
+     * request to retrieve the next set of applications.
+     * </p>
+     * 
+     * @return If the response is truncated, Amazon Q Business returns this token. You can use this token in a
+     *         subsequent request to retrieve the next set of applications.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
+     * request to retrieve the next set of applications.
+     * </p>
+     * 
+     * @param nextToken
+     *        If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
+     *        request to retrieve the next set of applications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -108,52 +154,6 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
-     * request to retrieve the next set of applications.
-     * </p>
-     * 
-     * @param nextToken
-     *        If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
-     *        request to retrieve the next set of applications.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
-     * request to retrieve the next set of applications.
-     * </p>
-     * 
-     * @return If the response is truncated, Amazon Q Business returns this token. You can use this token in a
-     *         subsequent request to retrieve the next set of applications.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
-     * request to retrieve the next set of applications.
-     * </p>
-     * 
-     * @param nextToken
-     *        If the response is truncated, Amazon Q Business returns this token. You can use this token in a subsequent
-     *        request to retrieve the next set of applications.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListApplicationsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,10 +165,10 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplications() != null)
-            sb.append("Applications: ").append(getApplications()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getApplications() != null)
+            sb.append("Applications: ").append(getApplications());
         sb.append("}");
         return sb.toString();
     }
@@ -183,13 +183,13 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
         if (obj instanceof ListApplicationsResult == false)
             return false;
         ListApplicationsResult other = (ListApplicationsResult) obj;
-        if (other.getApplications() == null ^ this.getApplications() == null)
-            return false;
-        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getApplications() == null ^ this.getApplications() == null)
+            return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
             return false;
         return true;
     }
@@ -199,8 +199,8 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         return hashCode;
     }
 

@@ -60,6 +60,12 @@ public class GaugeChartConfiguration implements Serializable, Cloneable, Structu
     private VisualPalette visualPalette;
     /**
      * <p>
+     * The color configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     */
+    private GaugeChartColorConfiguration colorConfiguration;
+    /**
+     * <p>
      * The general visual interactions setup for a visual.
      * </p>
      */
@@ -267,6 +273,46 @@ public class GaugeChartConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The color configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @param colorConfiguration
+     *        The color configuration of a <code>GaugeChartVisual</code>.
+     */
+
+    public void setColorConfiguration(GaugeChartColorConfiguration colorConfiguration) {
+        this.colorConfiguration = colorConfiguration;
+    }
+
+    /**
+     * <p>
+     * The color configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @return The color configuration of a <code>GaugeChartVisual</code>.
+     */
+
+    public GaugeChartColorConfiguration getColorConfiguration() {
+        return this.colorConfiguration;
+    }
+
+    /**
+     * <p>
+     * The color configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @param colorConfiguration
+     *        The color configuration of a <code>GaugeChartVisual</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GaugeChartConfiguration withColorConfiguration(GaugeChartColorConfiguration colorConfiguration) {
+        setColorConfiguration(colorConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The general visual interactions setup for a visual.
      * </p>
      * 
@@ -327,6 +373,8 @@ public class GaugeChartConfiguration implements Serializable, Cloneable, Structu
             sb.append("TooltipOptions: ").append(getTooltipOptions()).append(",");
         if (getVisualPalette() != null)
             sb.append("VisualPalette: ").append(getVisualPalette()).append(",");
+        if (getColorConfiguration() != null)
+            sb.append("ColorConfiguration: ").append(getColorConfiguration()).append(",");
         if (getInteractions() != null)
             sb.append("Interactions: ").append(getInteractions());
         sb.append("}");
@@ -363,6 +411,10 @@ public class GaugeChartConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getVisualPalette() != null && other.getVisualPalette().equals(this.getVisualPalette()) == false)
             return false;
+        if (other.getColorConfiguration() == null ^ this.getColorConfiguration() == null)
+            return false;
+        if (other.getColorConfiguration() != null && other.getColorConfiguration().equals(this.getColorConfiguration()) == false)
+            return false;
         if (other.getInteractions() == null ^ this.getInteractions() == null)
             return false;
         if (other.getInteractions() != null && other.getInteractions().equals(this.getInteractions()) == false)
@@ -380,6 +432,7 @@ public class GaugeChartConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getDataLabels() == null) ? 0 : getDataLabels().hashCode());
         hashCode = prime * hashCode + ((getTooltipOptions() == null) ? 0 : getTooltipOptions().hashCode());
         hashCode = prime * hashCode + ((getVisualPalette() == null) ? 0 : getVisualPalette().hashCode());
+        hashCode = prime * hashCode + ((getColorConfiguration() == null) ? 0 : getColorConfiguration().hashCode());
         hashCode = prime * hashCode + ((getInteractions() == null) ? 0 : getInteractions().hashCode());
         return hashCode;
     }

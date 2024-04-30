@@ -48,37 +48,17 @@ public class GetApplicationResultJsonUnmarshaller implements Unmarshaller<GetApp
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("applicationArn", targetDepth)) {
+                if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
-                    getApplicationResult.setApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    getApplicationResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("applicationId", targetDepth)) {
                     context.nextToken();
                     getApplicationResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("attachmentsConfiguration", targetDepth)) {
+                if (context.testExpression("applicationArn", targetDepth)) {
                     context.nextToken();
-                    getApplicationResult.setAttachmentsConfiguration(AppliedAttachmentsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    getApplicationResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    getApplicationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("displayName", targetDepth)) {
-                    context.nextToken();
-                    getApplicationResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("encryptionConfiguration", targetDepth)) {
-                    context.nextToken();
-                    getApplicationResult.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("error", targetDepth)) {
-                    context.nextToken();
-                    getApplicationResult.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                    getApplicationResult.setApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("identityCenterApplicationArn", targetDepth)) {
                     context.nextToken();
@@ -92,9 +72,29 @@ public class GetApplicationResultJsonUnmarshaller implements Unmarshaller<GetApp
                     context.nextToken();
                     getApplicationResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    getApplicationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("encryptionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getApplicationResult.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    getApplicationResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
                     getApplicationResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("error", targetDepth)) {
+                    context.nextToken();
+                    getApplicationResult.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("attachmentsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getApplicationResult.setAttachmentsConfiguration(AppliedAttachmentsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

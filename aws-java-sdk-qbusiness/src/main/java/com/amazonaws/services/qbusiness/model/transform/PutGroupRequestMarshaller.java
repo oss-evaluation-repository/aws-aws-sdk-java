@@ -29,16 +29,16 @@ public class PutGroupRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
-    private static final MarshallingInfo<StructuredPojo> GROUPMEMBERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("groupMembers").build();
-    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("groupName").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
+    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("groupName").build();
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<StructuredPojo> GROUPMEMBERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("groupMembers").build();
 
     private static final PutGroupRequestMarshaller instance = new PutGroupRequestMarshaller();
 
@@ -57,11 +57,11 @@ public class PutGroupRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putGroupRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(putGroupRequest.getDataSourceId(), DATASOURCEID_BINDING);
-            protocolMarshaller.marshall(putGroupRequest.getGroupMembers(), GROUPMEMBERS_BINDING);
-            protocolMarshaller.marshall(putGroupRequest.getGroupName(), GROUPNAME_BINDING);
             protocolMarshaller.marshall(putGroupRequest.getIndexId(), INDEXID_BINDING);
+            protocolMarshaller.marshall(putGroupRequest.getGroupName(), GROUPNAME_BINDING);
+            protocolMarshaller.marshall(putGroupRequest.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(putGroupRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(putGroupRequest.getGroupMembers(), GROUPMEMBERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

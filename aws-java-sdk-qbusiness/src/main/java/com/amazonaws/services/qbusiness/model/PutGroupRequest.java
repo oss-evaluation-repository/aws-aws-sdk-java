@@ -33,16 +33,10 @@ public class PutGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String applicationId;
     /**
      * <p>
-     * The identifier of the data source for which you want to map users to their groups. This is useful if a group is
-     * tied to multiple data sources, but you only want the group to access documents of a certain data source. For
-     * example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents
-     * stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to
-     * customer-related documents stored in Salesforce.
+     * The identifier of the index in which you want to map users to their groups.
      * </p>
      */
-    private String dataSourceId;
-
-    private GroupMembers groupMembers;
+    private String indexId;
     /**
      * <p>
      * The list that contains your users or sub groups that belong the same group. For example, the group "Company"
@@ -57,16 +51,22 @@ public class PutGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String groupName;
     /**
      * <p>
-     * The identifier of the index in which you want to map users to their groups.
+     * The identifier of the data source for which you want to map users to their groups. This is useful if a group is
+     * tied to multiple data sources, but you only want the group to access documents of a certain data source. For
+     * example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents
+     * stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to
+     * customer-related documents stored in Salesforce.
      * </p>
      */
-    private String indexId;
+    private String dataSourceId;
     /**
      * <p>
      * The type of the group.
      * </p>
      */
     private String type;
+
+    private GroupMembers groupMembers;
 
     /**
      * <p>
@@ -110,91 +110,41 @@ public class PutGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The identifier of the data source for which you want to map users to their groups. This is useful if a group is
-     * tied to multiple data sources, but you only want the group to access documents of a certain data source. For
-     * example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents
-     * stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to
-     * customer-related documents stored in Salesforce.
+     * The identifier of the index in which you want to map users to their groups.
      * </p>
      * 
-     * @param dataSourceId
-     *        The identifier of the data source for which you want to map users to their groups. This is useful if a
-     *        group is tied to multiple data sources, but you only want the group to access documents of a certain data
-     *        source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     *        company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing"
-     *        team only needs access to customer-related documents stored in Salesforce.
+     * @param indexId
+     *        The identifier of the index in which you want to map users to their groups.
      */
 
-    public void setDataSourceId(String dataSourceId) {
-        this.dataSourceId = dataSourceId;
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
     }
 
     /**
      * <p>
-     * The identifier of the data source for which you want to map users to their groups. This is useful if a group is
-     * tied to multiple data sources, but you only want the group to access documents of a certain data source. For
-     * example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents
-     * stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to
-     * customer-related documents stored in Salesforce.
+     * The identifier of the index in which you want to map users to their groups.
      * </p>
      * 
-     * @return The identifier of the data source for which you want to map users to their groups. This is useful if a
-     *         group is tied to multiple data sources, but you only want the group to access documents of a certain data
-     *         source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     *         company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing"
-     *         team only needs access to customer-related documents stored in Salesforce.
+     * @return The identifier of the index in which you want to map users to their groups.
      */
 
-    public String getDataSourceId() {
-        return this.dataSourceId;
+    public String getIndexId() {
+        return this.indexId;
     }
 
     /**
      * <p>
-     * The identifier of the data source for which you want to map users to their groups. This is useful if a group is
-     * tied to multiple data sources, but you only want the group to access documents of a certain data source. For
-     * example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents
-     * stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to
-     * customer-related documents stored in Salesforce.
+     * The identifier of the index in which you want to map users to their groups.
      * </p>
      * 
-     * @param dataSourceId
-     *        The identifier of the data source for which you want to map users to their groups. This is useful if a
-     *        group is tied to multiple data sources, but you only want the group to access documents of a certain data
-     *        source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
-     *        company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing"
-     *        team only needs access to customer-related documents stored in Salesforce.
+     * @param indexId
+     *        The identifier of the index in which you want to map users to their groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutGroupRequest withDataSourceId(String dataSourceId) {
-        setDataSourceId(dataSourceId);
-        return this;
-    }
-
-    /**
-     * @param groupMembers
-     */
-
-    public void setGroupMembers(GroupMembers groupMembers) {
-        this.groupMembers = groupMembers;
-    }
-
-    /**
-     * @return
-     */
-
-    public GroupMembers getGroupMembers() {
-        return this.groupMembers;
-    }
-
-    /**
-     * @param groupMembers
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutGroupRequest withGroupMembers(GroupMembers groupMembers) {
-        setGroupMembers(groupMembers);
+    public PutGroupRequest withIndexId(String indexId) {
+        setIndexId(indexId);
         return this;
     }
 
@@ -276,41 +226,65 @@ public class PutGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The identifier of the index in which you want to map users to their groups.
+     * The identifier of the data source for which you want to map users to their groups. This is useful if a group is
+     * tied to multiple data sources, but you only want the group to access documents of a certain data source. For
+     * example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents
+     * stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to
+     * customer-related documents stored in Salesforce.
      * </p>
      * 
-     * @param indexId
-     *        The identifier of the index in which you want to map users to their groups.
+     * @param dataSourceId
+     *        The identifier of the data source for which you want to map users to their groups. This is useful if a
+     *        group is tied to multiple data sources, but you only want the group to access documents of a certain data
+     *        source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     *        company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing"
+     *        team only needs access to customer-related documents stored in Salesforce.
      */
 
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
     }
 
     /**
      * <p>
-     * The identifier of the index in which you want to map users to their groups.
+     * The identifier of the data source for which you want to map users to their groups. This is useful if a group is
+     * tied to multiple data sources, but you only want the group to access documents of a certain data source. For
+     * example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents
+     * stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to
+     * customer-related documents stored in Salesforce.
      * </p>
      * 
-     * @return The identifier of the index in which you want to map users to their groups.
+     * @return The identifier of the data source for which you want to map users to their groups. This is useful if a
+     *         group is tied to multiple data sources, but you only want the group to access documents of a certain data
+     *         source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     *         company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing"
+     *         team only needs access to customer-related documents stored in Salesforce.
      */
 
-    public String getIndexId() {
-        return this.indexId;
+    public String getDataSourceId() {
+        return this.dataSourceId;
     }
 
     /**
      * <p>
-     * The identifier of the index in which you want to map users to their groups.
+     * The identifier of the data source for which you want to map users to their groups. This is useful if a group is
+     * tied to multiple data sources, but you only want the group to access documents of a certain data source. For
+     * example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents
+     * stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to
+     * customer-related documents stored in Salesforce.
      * </p>
      * 
-     * @param indexId
-     *        The identifier of the index in which you want to map users to their groups.
+     * @param dataSourceId
+     *        The identifier of the data source for which you want to map users to their groups. This is useful if a
+     *        group is tied to multiple data sources, but you only want the group to access documents of a certain data
+     *        source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the
+     *        company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing"
+     *        team only needs access to customer-related documents stored in Salesforce.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutGroupRequest withIndexId(String indexId) {
-        setIndexId(indexId);
+    public PutGroupRequest withDataSourceId(String dataSourceId) {
+        setDataSourceId(dataSourceId);
         return this;
     }
 
@@ -374,6 +348,32 @@ public class PutGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * @param groupMembers
+     */
+
+    public void setGroupMembers(GroupMembers groupMembers) {
+        this.groupMembers = groupMembers;
+    }
+
+    /**
+     * @return
+     */
+
+    public GroupMembers getGroupMembers() {
+        return this.groupMembers;
+    }
+
+    /**
+     * @param groupMembers
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutGroupRequest withGroupMembers(GroupMembers groupMembers) {
+        setGroupMembers(groupMembers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -387,16 +387,16 @@ public class PutGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDataSourceId() != null)
-            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
-        if (getGroupMembers() != null)
-            sb.append("GroupMembers: ").append(getGroupMembers()).append(",");
-        if (getGroupName() != null)
-            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId()).append(",");
+        if (getGroupName() != null)
+            sb.append("GroupName: ").append(getGroupName()).append(",");
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getGroupMembers() != null)
+            sb.append("GroupMembers: ").append(getGroupMembers());
         sb.append("}");
         return sb.toString();
     }
@@ -415,25 +415,25 @@ public class PutGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+        if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
-            return false;
-        if (other.getGroupMembers() == null ^ this.getGroupMembers() == null)
-            return false;
-        if (other.getGroupMembers() != null && other.getGroupMembers().equals(this.getGroupMembers()) == false)
+        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
-        if (other.getIndexId() == null ^ this.getIndexId() == null)
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
             return false;
-        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getGroupMembers() == null ^ this.getGroupMembers() == null)
+            return false;
+        if (other.getGroupMembers() != null && other.getGroupMembers().equals(this.getGroupMembers()) == false)
             return false;
         return true;
     }
@@ -444,11 +444,11 @@ public class PutGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
-        hashCode = prime * hashCode + ((getGroupMembers() == null) ? 0 : getGroupMembers().hashCode());
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getGroupMembers() == null) ? 0 : getGroupMembers().hashCode());
         return hashCode;
     }
 

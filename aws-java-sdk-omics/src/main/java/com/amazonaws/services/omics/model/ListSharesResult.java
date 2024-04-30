@@ -25,7 +25,7 @@ public class ListSharesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The shares available and their meta details.
+     * The shares available and their metadata details.
      * </p>
      */
     private java.util.List<ShareDetails> shares;
@@ -38,10 +38,10 @@ public class ListSharesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The shares available and their meta details.
+     * The shares available and their metadata details.
      * </p>
      * 
-     * @return The shares available and their meta details.
+     * @return The shares available and their metadata details.
      */
 
     public java.util.List<ShareDetails> getShares() {
@@ -50,11 +50,11 @@ public class ListSharesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The shares available and their meta details.
+     * The shares available and their metadata details.
      * </p>
      * 
      * @param shares
-     *        The shares available and their meta details.
+     *        The shares available and their metadata details.
      */
 
     public void setShares(java.util.Collection<ShareDetails> shares) {
@@ -68,7 +68,7 @@ public class ListSharesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The shares available and their meta details.
+     * The shares available and their metadata details.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListSharesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param shares
-     *        The shares available and their meta details.
+     *        The shares available and their metadata details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListSharesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The shares available and their meta details.
+     * The shares available and their metadata details.
      * </p>
      * 
      * @param shares
-     *        The shares available and their meta details.
+     *        The shares available and their metadata details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

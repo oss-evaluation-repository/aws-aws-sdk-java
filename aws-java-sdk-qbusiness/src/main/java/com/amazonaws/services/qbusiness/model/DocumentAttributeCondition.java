@@ -65,7 +65,8 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      * associated with the documents.
      * </p>
      * <p>
-     * Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.
+     * Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
+     * condition.
      * </p>
      */
     private String operator;
@@ -166,7 +167,8 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      * associated with the documents.
      * </p>
      * <p>
-     * Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.
+     * Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
+     * condition.
      * </p>
      * 
      * @param operator
@@ -176,7 +178,7 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      *        URIs associated with the documents.
      *        </p>
      *        <p>
-     *        Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the
+     *        Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
      *        condition.
      * @see DocumentEnrichmentConditionOperator
      */
@@ -194,7 +196,8 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      * associated with the documents.
      * </p>
      * <p>
-     * Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.
+     * Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
+     * condition.
      * </p>
      * 
      * @return The identifier of the document attribute used for the condition.</p>
@@ -203,7 +206,7 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      *         URIs associated with the documents.
      *         </p>
      *         <p>
-     *         Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the
+     *         Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
      *         condition.
      * @see DocumentEnrichmentConditionOperator
      */
@@ -221,7 +224,8 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      * associated with the documents.
      * </p>
      * <p>
-     * Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.
+     * Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
+     * condition.
      * </p>
      * 
      * @param operator
@@ -231,7 +235,7 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      *        URIs associated with the documents.
      *        </p>
      *        <p>
-     *        Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the
+     *        Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
      *        condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentEnrichmentConditionOperator
@@ -251,7 +255,8 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      * associated with the documents.
      * </p>
      * <p>
-     * Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the condition.
+     * Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
+     * condition.
      * </p>
      * 
      * @param operator
@@ -261,7 +266,7 @@ public class DocumentAttributeCondition implements Serializable, Cloneable, Stru
      *        URIs associated with the documents.
      *        </p>
      *        <p>
-     *        Amazon Kendra currently does not support <code>_document_body</code> as an attribute key used for the
+     *        Amazon Q Business currently does not support <code>_document_body</code> as an attribute key used for the
      *        condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentEnrichmentConditionOperator

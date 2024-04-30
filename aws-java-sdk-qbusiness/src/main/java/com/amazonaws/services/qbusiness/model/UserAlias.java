@@ -30,62 +30,22 @@ public class UserAlias implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the data source that the user aliases are associated with.
-     * </p>
-     */
-    private String dataSourceId;
-    /**
-     * <p>
      * The identifier of the index that the user aliases are associated with.
      * </p>
      */
     private String indexId;
     /**
      * <p>
+     * The identifier of the data source that the user aliases are associated with.
+     * </p>
+     */
+    private String dataSourceId;
+    /**
+     * <p>
      * The identifier of the user id associated with the user aliases.
      * </p>
      */
     private String userId;
-
-    /**
-     * <p>
-     * The identifier of the data source that the user aliases are associated with.
-     * </p>
-     * 
-     * @param dataSourceId
-     *        The identifier of the data source that the user aliases are associated with.
-     */
-
-    public void setDataSourceId(String dataSourceId) {
-        this.dataSourceId = dataSourceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source that the user aliases are associated with.
-     * </p>
-     * 
-     * @return The identifier of the data source that the user aliases are associated with.
-     */
-
-    public String getDataSourceId() {
-        return this.dataSourceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source that the user aliases are associated with.
-     * </p>
-     * 
-     * @param dataSourceId
-     *        The identifier of the data source that the user aliases are associated with.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UserAlias withDataSourceId(String dataSourceId) {
-        setDataSourceId(dataSourceId);
-        return this;
-    }
 
     /**
      * <p>
@@ -124,6 +84,46 @@ public class UserAlias implements Serializable, Cloneable, StructuredPojo {
 
     public UserAlias withIndexId(String indexId) {
         setIndexId(indexId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source that the user aliases are associated with.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source that the user aliases are associated with.
+     */
+
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source that the user aliases are associated with.
+     * </p>
+     * 
+     * @return The identifier of the data source that the user aliases are associated with.
+     */
+
+    public String getDataSourceId() {
+        return this.dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source that the user aliases are associated with.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source that the user aliases are associated with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserAlias withDataSourceId(String dataSourceId) {
+        setDataSourceId(dataSourceId);
         return this;
     }
 
@@ -179,10 +179,10 @@ public class UserAlias implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDataSourceId() != null)
-            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId()).append(",");
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getUserId() != null)
             sb.append("UserId: ").append(getUserId());
         sb.append("}");
@@ -199,13 +199,13 @@ public class UserAlias implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof UserAlias == false)
             return false;
         UserAlias other = (UserAlias) obj;
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
-            return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
-            return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+            return false;
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+            return false;
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
         if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
@@ -219,8 +219,8 @@ public class UserAlias implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         return hashCode;
     }

@@ -33,16 +33,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String applicationId;
     /**
      * <p>
-     * An option to allow end users to upload files directly during chat.
+     * The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting
+     * to—your Amazon Q Business application.
      * </p>
      */
-    private AttachmentsConfiguration attachmentsConfiguration;
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     */
-    private String description;
+    private String identityCenterInstanceArn;
     /**
      * <p>
      * A name for the Amazon Q Business application.
@@ -51,11 +46,23 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String displayName;
     /**
      * <p>
+     * A description for the Amazon Q Business application.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q Business permission to
      * access Amazon CloudWatch logs and metrics.
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * An option to allow end users to upload files directly during chat.
+     * </p>
+     */
+    private AttachmentsConfiguration attachmentsConfiguration;
 
     /**
      * <p>
@@ -99,81 +106,47 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An option to allow end users to upload files directly during chat.
+     * The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting
+     * to—your Amazon Q Business application.
      * </p>
      * 
-     * @param attachmentsConfiguration
-     *        An option to allow end users to upload files directly during chat.
+     * @param identityCenterInstanceArn
+     *        The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or
+     *        connecting to—your Amazon Q Business application.
      */
 
-    public void setAttachmentsConfiguration(AttachmentsConfiguration attachmentsConfiguration) {
-        this.attachmentsConfiguration = attachmentsConfiguration;
+    public void setIdentityCenterInstanceArn(String identityCenterInstanceArn) {
+        this.identityCenterInstanceArn = identityCenterInstanceArn;
     }
 
     /**
      * <p>
-     * An option to allow end users to upload files directly during chat.
+     * The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting
+     * to—your Amazon Q Business application.
      * </p>
      * 
-     * @return An option to allow end users to upload files directly during chat.
+     * @return The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or
+     *         connecting to—your Amazon Q Business application.
      */
 
-    public AttachmentsConfiguration getAttachmentsConfiguration() {
-        return this.attachmentsConfiguration;
+    public String getIdentityCenterInstanceArn() {
+        return this.identityCenterInstanceArn;
     }
 
     /**
      * <p>
-     * An option to allow end users to upload files directly during chat.
+     * The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting
+     * to—your Amazon Q Business application.
      * </p>
      * 
-     * @param attachmentsConfiguration
-     *        An option to allow end users to upload files directly during chat.
+     * @param identityCenterInstanceArn
+     *        The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or
+     *        connecting to—your Amazon Q Business application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateApplicationRequest withAttachmentsConfiguration(AttachmentsConfiguration attachmentsConfiguration) {
-        setAttachmentsConfiguration(attachmentsConfiguration);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @param description
-     *        A description for the Amazon Q Business application.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @return A description for the Amazon Q Business application.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @param description
-     *        A description for the Amazon Q Business application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateApplicationRequest withDescription(String description) {
-        setDescription(description);
+    public UpdateApplicationRequest withIdentityCenterInstanceArn(String identityCenterInstanceArn) {
+        setIdentityCenterInstanceArn(identityCenterInstanceArn);
         return this;
     }
 
@@ -214,6 +187,46 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public UpdateApplicationRequest withDisplayName(String displayName) {
         setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description for the Amazon Q Business application.
+     * </p>
+     * 
+     * @param description
+     *        A description for the Amazon Q Business application.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the Amazon Q Business application.
+     * </p>
+     * 
+     * @return A description for the Amazon Q Business application.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the Amazon Q Business application.
+     * </p>
+     * 
+     * @param description
+     *        A description for the Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -264,6 +277,46 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * An option to allow end users to upload files directly during chat.
+     * </p>
+     * 
+     * @param attachmentsConfiguration
+     *        An option to allow end users to upload files directly during chat.
+     */
+
+    public void setAttachmentsConfiguration(AttachmentsConfiguration attachmentsConfiguration) {
+        this.attachmentsConfiguration = attachmentsConfiguration;
+    }
+
+    /**
+     * <p>
+     * An option to allow end users to upload files directly during chat.
+     * </p>
+     * 
+     * @return An option to allow end users to upload files directly during chat.
+     */
+
+    public AttachmentsConfiguration getAttachmentsConfiguration() {
+        return this.attachmentsConfiguration;
+    }
+
+    /**
+     * <p>
+     * An option to allow end users to upload files directly during chat.
+     * </p>
+     * 
+     * @param attachmentsConfiguration
+     *        An option to allow end users to upload files directly during chat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest withAttachmentsConfiguration(AttachmentsConfiguration attachmentsConfiguration) {
+        setAttachmentsConfiguration(attachmentsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -277,14 +330,16 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getAttachmentsConfiguration() != null)
-            sb.append("AttachmentsConfiguration: ").append(getAttachmentsConfiguration()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+        if (getIdentityCenterInstanceArn() != null)
+            sb.append("IdentityCenterInstanceArn: ").append(getIdentityCenterInstanceArn()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getAttachmentsConfiguration() != null)
+            sb.append("AttachmentsConfiguration: ").append(getAttachmentsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -303,21 +358,25 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getAttachmentsConfiguration() == null ^ this.getAttachmentsConfiguration() == null)
+        if (other.getIdentityCenterInstanceArn() == null ^ this.getIdentityCenterInstanceArn() == null)
             return false;
-        if (other.getAttachmentsConfiguration() != null && other.getAttachmentsConfiguration().equals(this.getAttachmentsConfiguration()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getIdentityCenterInstanceArn() != null && other.getIdentityCenterInstanceArn().equals(this.getIdentityCenterInstanceArn()) == false)
             return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getAttachmentsConfiguration() == null ^ this.getAttachmentsConfiguration() == null)
+            return false;
+        if (other.getAttachmentsConfiguration() != null && other.getAttachmentsConfiguration().equals(this.getAttachmentsConfiguration()) == false)
             return false;
         return true;
     }
@@ -328,10 +387,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getAttachmentsConfiguration() == null) ? 0 : getAttachmentsConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getIdentityCenterInstanceArn() == null) ? 0 : getIdentityCenterInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentsConfiguration() == null) ? 0 : getAttachmentsConfiguration().hashCode());
         return hashCode;
     }
 

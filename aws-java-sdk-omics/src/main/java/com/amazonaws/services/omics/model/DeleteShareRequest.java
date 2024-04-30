@@ -27,18 +27,18 @@ public class DeleteShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID for the share request to be deleted.
+     * The ID for the resource share to be deleted.
      * </p>
      */
     private String shareId;
 
     /**
      * <p>
-     * The ID for the share request to be deleted.
+     * The ID for the resource share to be deleted.
      * </p>
      * 
      * @param shareId
-     *        The ID for the share request to be deleted.
+     *        The ID for the resource share to be deleted.
      */
 
     public void setShareId(String shareId) {
@@ -47,10 +47,10 @@ public class DeleteShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID for the share request to be deleted.
+     * The ID for the resource share to be deleted.
      * </p>
      * 
-     * @return The ID for the share request to be deleted.
+     * @return The ID for the resource share to be deleted.
      */
 
     public String getShareId() {
@@ -59,11 +59,11 @@ public class DeleteShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID for the share request to be deleted.
+     * The ID for the resource share to be deleted.
      * </p>
      * 
      * @param shareId
-     *        The ID for the share request to be deleted.
+     *        The ID for the resource share to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

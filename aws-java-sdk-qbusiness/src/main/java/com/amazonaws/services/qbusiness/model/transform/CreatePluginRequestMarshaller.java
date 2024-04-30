@@ -32,19 +32,21 @@ public class CreatePluginRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<StructuredPojo> AUTHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authConfiguration").build();
+    private static final MarshallingInfo<String> SERVERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("serverUrl").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMPLUGINCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customPluginConfiguration").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
-    private static final MarshallingInfo<String> SERVERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("serverUrl").build();
-    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("type").build();
 
     private static final CreatePluginRequestMarshaller instance = new CreatePluginRequestMarshaller();
 
@@ -63,12 +65,13 @@ public class CreatePluginRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createPluginRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(createPluginRequest.getAuthConfiguration(), AUTHCONFIGURATION_BINDING);
-            protocolMarshaller.marshall(createPluginRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createPluginRequest.getDisplayName(), DISPLAYNAME_BINDING);
-            protocolMarshaller.marshall(createPluginRequest.getServerUrl(), SERVERURL_BINDING);
-            protocolMarshaller.marshall(createPluginRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createPluginRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createPluginRequest.getAuthConfiguration(), AUTHCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createPluginRequest.getServerUrl(), SERVERURL_BINDING);
+            protocolMarshaller.marshall(createPluginRequest.getCustomPluginConfiguration(), CUSTOMPLUGINCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createPluginRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createPluginRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

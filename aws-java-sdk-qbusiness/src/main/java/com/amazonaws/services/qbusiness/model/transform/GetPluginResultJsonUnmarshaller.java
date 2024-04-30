@@ -52,37 +52,45 @@ public class GetPluginResultJsonUnmarshaller implements Unmarshaller<GetPluginRe
                     context.nextToken();
                     getPluginResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("authConfiguration", targetDepth)) {
+                if (context.testExpression("pluginId", targetDepth)) {
                     context.nextToken();
-                    getPluginResult.setAuthConfiguration(PluginAuthConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    getPluginResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    getPluginResult.setPluginId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
                     getPluginResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("pluginArn", targetDepth)) {
+                if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    getPluginResult.setPluginArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("pluginId", targetDepth)) {
-                    context.nextToken();
-                    getPluginResult.setPluginId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getPluginResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("serverUrl", targetDepth)) {
                     context.nextToken();
                     getPluginResult.setServerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("authConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getPluginResult.setAuthConfiguration(PluginAuthConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("customPluginConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getPluginResult.setCustomPluginConfiguration(CustomPluginConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("buildStatus", targetDepth)) {
+                    context.nextToken();
+                    getPluginResult.setBuildStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("pluginArn", targetDepth)) {
+                    context.nextToken();
+                    getPluginResult.setPluginArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
                     getPluginResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("type", targetDepth)) {
+                if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    getPluginResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                    getPluginResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();

@@ -31,10 +31,10 @@ public class SamlConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metadataXML").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
-    private static final MarshallingInfo<String> USERGROUPATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userGroupAttribute").build();
     private static final MarshallingInfo<String> USERIDATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userIdAttribute").build();
+    private static final MarshallingInfo<String> USERGROUPATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userGroupAttribute").build();
 
     private static final SamlConfigurationMarshaller instance = new SamlConfigurationMarshaller();
 
@@ -54,8 +54,8 @@ public class SamlConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(samlConfiguration.getMetadataXML(), METADATAXML_BINDING);
             protocolMarshaller.marshall(samlConfiguration.getRoleArn(), ROLEARN_BINDING);
-            protocolMarshaller.marshall(samlConfiguration.getUserGroupAttribute(), USERGROUPATTRIBUTE_BINDING);
             protocolMarshaller.marshall(samlConfiguration.getUserIdAttribute(), USERIDATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(samlConfiguration.getUserGroupAttribute(), USERGROUPATTRIBUTE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DocumentAttributeValueMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> DATEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateValue").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<Long> LONGVALUE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("longValue").build();
-    private static final MarshallingInfo<List> STRINGLISTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stringListValue").build();
     private static final MarshallingInfo<String> STRINGVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stringValue").build();
+    private static final MarshallingInfo<List> STRINGLISTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stringListValue").build();
+    private static final MarshallingInfo<Long> LONGVALUE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("longValue").build();
+    private static final MarshallingInfo<java.util.Date> DATEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateValue").timestampFormat("unixTimestamp").build();
 
     private static final DocumentAttributeValueMarshaller instance = new DocumentAttributeValueMarshaller();
 
@@ -53,10 +53,10 @@ public class DocumentAttributeValueMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(documentAttributeValue.getDateValue(), DATEVALUE_BINDING);
-            protocolMarshaller.marshall(documentAttributeValue.getLongValue(), LONGVALUE_BINDING);
-            protocolMarshaller.marshall(documentAttributeValue.getStringListValue(), STRINGLISTVALUE_BINDING);
             protocolMarshaller.marshall(documentAttributeValue.getStringValue(), STRINGVALUE_BINDING);
+            protocolMarshaller.marshall(documentAttributeValue.getStringListValue(), STRINGLISTVALUE_BINDING);
+            protocolMarshaller.marshall(documentAttributeValue.getLongValue(), LONGVALUE_BINDING);
+            protocolMarshaller.marshall(documentAttributeValue.getDateValue(), DATEVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

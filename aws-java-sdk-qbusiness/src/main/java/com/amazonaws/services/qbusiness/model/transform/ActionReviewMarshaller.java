@@ -29,14 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ActionReviewMarshaller {
 
-    private static final MarshallingInfo<Map> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("payload").build();
-    private static final MarshallingInfo<String> PAYLOADFIELDNAMESEPARATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payloadFieldNameSeparator").build();
     private static final MarshallingInfo<String> PLUGINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("pluginId").build();
     private static final MarshallingInfo<String> PLUGINTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pluginType").build();
+    private static final MarshallingInfo<Map> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("payload").build();
+    private static final MarshallingInfo<String> PAYLOADFIELDNAMESEPARATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payloadFieldNameSeparator").build();
 
     private static final ActionReviewMarshaller instance = new ActionReviewMarshaller();
 
@@ -54,10 +54,10 @@ public class ActionReviewMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(actionReview.getPayload(), PAYLOAD_BINDING);
-            protocolMarshaller.marshall(actionReview.getPayloadFieldNameSeparator(), PAYLOADFIELDNAMESEPARATOR_BINDING);
             protocolMarshaller.marshall(actionReview.getPluginId(), PLUGINID_BINDING);
             protocolMarshaller.marshall(actionReview.getPluginType(), PLUGINTYPE_BINDING);
+            protocolMarshaller.marshall(actionReview.getPayload(), PAYLOAD_BINDING);
+            protocolMarshaller.marshall(actionReview.getPayloadFieldNameSeparator(), PAYLOADFIELDNAMESEPARATOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

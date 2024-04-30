@@ -30,64 +30,18 @@ public class BasicAuthConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a
-     * Secrets Manager secret.
-     * </p>
-     */
-    private String roleArn;
-    /**
-     * <p>
      * The ARN of the Secrets Manager secret that stores the basic authentication credentials used for plugin
      * configuration..
      * </p>
      */
     private String secretArn;
-
     /**
      * <p>
      * The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a
      * Secrets Manager secret.
      * </p>
-     * 
-     * @param roleArn
-     *        The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in
-     *        a Secrets Manager secret.
      */
-
-    public void setRoleArn(String roleArn) {
-        this.roleArn = roleArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a
-     * Secrets Manager secret.
-     * </p>
-     * 
-     * @return The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in
-     *         a Secrets Manager secret.
-     */
-
-    public String getRoleArn() {
-        return this.roleArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a
-     * Secrets Manager secret.
-     * </p>
-     * 
-     * @param roleArn
-     *        The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in
-     *        a Secrets Manager secret.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BasicAuthConfiguration withRoleArn(String roleArn) {
-        setRoleArn(roleArn);
-        return this;
-    }
+    private String roleArn;
 
     /**
      * <p>
@@ -136,6 +90,52 @@ public class BasicAuthConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a
+     * Secrets Manager secret.
+     * </p>
+     * 
+     * @param roleArn
+     *        The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in
+     *        a Secrets Manager secret.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a
+     * Secrets Manager secret.
+     * </p>
+     * 
+     * @return The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in
+     *         a Secrets Manager secret.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a
+     * Secrets Manager secret.
+     * </p>
+     * 
+     * @param roleArn
+     *        The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in
+     *        a Secrets Manager secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BasicAuthConfiguration withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -147,10 +147,10 @@ public class BasicAuthConfiguration implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSecretArn() != null)
-            sb.append("SecretArn: ").append(getSecretArn());
+            sb.append("SecretArn: ").append(getSecretArn()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -165,13 +165,13 @@ public class BasicAuthConfiguration implements Serializable, Cloneable, Structur
         if (obj instanceof BasicAuthConfiguration == false)
             return false;
         BasicAuthConfiguration other = (BasicAuthConfiguration) obj;
-        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
-            return false;
-        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
-            return false;
         if (other.getSecretArn() == null ^ this.getSecretArn() == null)
             return false;
         if (other.getSecretArn() != null && other.getSecretArn().equals(this.getSecretArn()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         return true;
     }
@@ -181,8 +181,8 @@ public class BasicAuthConfiguration implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }
 

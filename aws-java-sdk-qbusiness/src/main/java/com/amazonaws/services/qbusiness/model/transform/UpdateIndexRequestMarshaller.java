@@ -30,16 +30,16 @@ public class UpdateIndexRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<StructuredPojo> CAPACITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityConfiguration").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
-    private static final MarshallingInfo<List> DOCUMENTATTRIBUTECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentAttributeConfigurations").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<StructuredPojo> CAPACITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityConfiguration").build();
+    private static final MarshallingInfo<List> DOCUMENTATTRIBUTECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentAttributeConfigurations").build();
 
     private static final UpdateIndexRequestMarshaller instance = new UpdateIndexRequestMarshaller();
 
@@ -58,11 +58,11 @@ public class UpdateIndexRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateIndexRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(updateIndexRequest.getCapacityConfiguration(), CAPACITYCONFIGURATION_BINDING);
-            protocolMarshaller.marshall(updateIndexRequest.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(updateIndexRequest.getDisplayName(), DISPLAYNAME_BINDING);
-            protocolMarshaller.marshall(updateIndexRequest.getDocumentAttributeConfigurations(), DOCUMENTATTRIBUTECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(updateIndexRequest.getIndexId(), INDEXID_BINDING);
+            protocolMarshaller.marshall(updateIndexRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(updateIndexRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateIndexRequest.getCapacityConfiguration(), CAPACITYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateIndexRequest.getDocumentAttributeConfigurations(), DOCUMENTATTRIBUTECONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

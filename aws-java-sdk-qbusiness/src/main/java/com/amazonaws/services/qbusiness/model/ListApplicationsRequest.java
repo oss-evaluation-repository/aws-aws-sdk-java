@@ -27,58 +27,18 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of Amazon Q Business applications to return.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
      * If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business
      * returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon
      * Q Business applications.
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
      * The maximum number of Amazon Q Business applications to return.
      * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of Amazon Q Business applications to return.
      */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of Amazon Q Business applications to return.
-     * </p>
-     * 
-     * @return The maximum number of Amazon Q Business applications to return.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of Amazon Q Business applications to return.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of Amazon Q Business applications to return.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListApplicationsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
+    private Integer maxResults;
 
     /**
      * <p>
@@ -133,6 +93,46 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The maximum number of Amazon Q Business applications to return.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of Amazon Q Business applications to return.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of Amazon Q Business applications to return.
+     * </p>
+     * 
+     * @return The maximum number of Amazon Q Business applications to return.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of Amazon Q Business applications to return.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of Amazon Q Business applications to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListApplicationsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -144,10 +144,10 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -162,13 +162,13 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof ListApplicationsRequest == false)
             return false;
         ListApplicationsRequest other = (ListApplicationsRequest) obj;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -178,8 +178,8 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

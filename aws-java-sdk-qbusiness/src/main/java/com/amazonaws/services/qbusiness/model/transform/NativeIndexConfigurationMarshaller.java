@@ -29,10 +29,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class NativeIndexConfigurationMarshaller {
 
-    private static final MarshallingInfo<Map> BOOSTINGOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("boostingOverride").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("indexId").build();
+    private static final MarshallingInfo<Map> BOOSTINGOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("boostingOverride").build();
 
     private static final NativeIndexConfigurationMarshaller instance = new NativeIndexConfigurationMarshaller();
 
@@ -50,8 +50,8 @@ public class NativeIndexConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(nativeIndexConfiguration.getBoostingOverride(), BOOSTINGOVERRIDE_BINDING);
             protocolMarshaller.marshall(nativeIndexConfiguration.getIndexId(), INDEXID_BINDING);
+            protocolMarshaller.marshall(nativeIndexConfiguration.getBoostingOverride(), BOOSTINGOVERRIDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

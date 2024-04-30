@@ -54,6 +54,20 @@ public class AttributeFilterJsonUnmarshaller implements Unmarshaller<AttributeFi
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("orAllFilters", targetDepth)) {
+                    context.nextToken();
+                    attributeFilter.setOrAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("notFilter", targetDepth)) {
+                    context.nextToken();
+                    attributeFilter.setNotFilter(AttributeFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("equalsTo", targetDepth)) {
+                    context.nextToken();
+                    attributeFilter.setEqualsTo(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("containsAll", targetDepth)) {
                     context.nextToken();
                     attributeFilter.setContainsAll(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
@@ -61,10 +75,6 @@ public class AttributeFilterJsonUnmarshaller implements Unmarshaller<AttributeFi
                 if (context.testExpression("containsAny", targetDepth)) {
                     context.nextToken();
                     attributeFilter.setContainsAny(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("equalsTo", targetDepth)) {
-                    context.nextToken();
-                    attributeFilter.setEqualsTo(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("greaterThan", targetDepth)) {
                     context.nextToken();
@@ -81,16 +91,6 @@ public class AttributeFilterJsonUnmarshaller implements Unmarshaller<AttributeFi
                 if (context.testExpression("lessThanOrEquals", targetDepth)) {
                     context.nextToken();
                     attributeFilter.setLessThanOrEquals(DocumentAttributeJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("notFilter", targetDepth)) {
-                    context.nextToken();
-                    attributeFilter.setNotFilter(AttributeFilterJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("orAllFilters", targetDepth)) {
-                    context.nextToken();
-                    attributeFilter.setOrAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -29,10 +29,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StringAttributeBoostingConfigurationMarshaller {
 
-    private static final MarshallingInfo<Map> ATTRIBUTEVALUEBOOSTING_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributeValueBoosting").build();
     private static final MarshallingInfo<String> BOOSTINGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("boostingLevel").build();
+    private static final MarshallingInfo<Map> ATTRIBUTEVALUEBOOSTING_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributeValueBoosting").build();
 
     private static final StringAttributeBoostingConfigurationMarshaller instance = new StringAttributeBoostingConfigurationMarshaller();
 
@@ -50,8 +50,8 @@ public class StringAttributeBoostingConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(stringAttributeBoostingConfiguration.getAttributeValueBoosting(), ATTRIBUTEVALUEBOOSTING_BINDING);
             protocolMarshaller.marshall(stringAttributeBoostingConfiguration.getBoostingLevel(), BOOSTINGLEVEL_BINDING);
+            protocolMarshaller.marshall(stringAttributeBoostingConfiguration.getAttributeValueBoosting(), ATTRIBUTEVALUEBOOSTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

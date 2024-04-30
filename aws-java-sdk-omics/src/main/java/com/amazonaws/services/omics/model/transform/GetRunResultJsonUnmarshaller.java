@@ -162,6 +162,14 @@ public class GetRunResultJsonUnmarshaller implements Unmarshaller<GetRunResult, 
                     context.nextToken();
                     getRunResult.setRunOutputUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("storageType", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setStorageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workflowOwnerId", targetDepth)) {
+                    context.nextToken();
+                    getRunResult.setWorkflowOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

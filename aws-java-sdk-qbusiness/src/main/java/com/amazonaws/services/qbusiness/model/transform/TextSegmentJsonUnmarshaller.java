@@ -56,6 +56,10 @@ public class TextSegmentJsonUnmarshaller implements Unmarshaller<TextSegment, Js
                     context.nextToken();
                     textSegment.setEndOffset(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("snippetExcerpt", targetDepth)) {
+                    context.nextToken();
+                    textSegment.setSnippetExcerpt(SnippetExcerptJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

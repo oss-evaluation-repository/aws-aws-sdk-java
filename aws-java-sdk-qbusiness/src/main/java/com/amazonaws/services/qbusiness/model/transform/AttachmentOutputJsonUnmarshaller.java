@@ -48,10 +48,6 @@ public class AttachmentOutputJsonUnmarshaller implements Unmarshaller<Attachment
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("error", targetDepth)) {
-                    context.nextToken();
-                    attachmentOutput.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     attachmentOutput.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,6 +55,10 @@ public class AttachmentOutputJsonUnmarshaller implements Unmarshaller<Attachment
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     attachmentOutput.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("error", targetDepth)) {
+                    context.nextToken();
+                    attachmentOutput.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

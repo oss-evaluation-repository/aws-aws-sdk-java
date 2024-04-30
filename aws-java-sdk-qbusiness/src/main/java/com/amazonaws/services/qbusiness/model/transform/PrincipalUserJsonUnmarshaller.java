@@ -48,13 +48,13 @@ public class PrincipalUserJsonUnmarshaller implements Unmarshaller<PrincipalUser
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("access", targetDepth)) {
-                    context.nextToken();
-                    principalUser.setAccess(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
                     principalUser.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("access", targetDepth)) {
+                    context.nextToken();
+                    principalUser.setAccess(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("membershipType", targetDepth)) {
                     context.nextToken();

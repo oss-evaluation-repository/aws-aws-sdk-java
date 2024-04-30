@@ -33,10 +33,10 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String applicationId;
     /**
      * <p>
-     * The authentication configuration the plugin is using.
+     * The identifier of the plugin.
      * </p>
      */
-    private PluginAuthConfiguration authConfiguration;
+    private String pluginId;
     /**
      * <p>
      * The name of the plugin.
@@ -45,10 +45,10 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String displayName;
     /**
      * <p>
-     * The identifier of the plugin.
+     * The status of the plugin.
      * </p>
      */
-    private String pluginId;
+    private String state;
     /**
      * <p>
      * The source URL used for plugin configuration.
@@ -57,10 +57,16 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String serverUrl;
     /**
      * <p>
-     * The status of the plugin.
+     * The configuration for a custom plugin.
      * </p>
      */
-    private String state;
+    private CustomPluginConfiguration customPluginConfiguration;
+    /**
+     * <p>
+     * The authentication configuration the plugin is using.
+     * </p>
+     */
+    private PluginAuthConfiguration authConfiguration;
 
     /**
      * <p>
@@ -99,86 +105,6 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public UpdatePluginRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The authentication configuration the plugin is using.
-     * </p>
-     * 
-     * @param authConfiguration
-     *        The authentication configuration the plugin is using.
-     */
-
-    public void setAuthConfiguration(PluginAuthConfiguration authConfiguration) {
-        this.authConfiguration = authConfiguration;
-    }
-
-    /**
-     * <p>
-     * The authentication configuration the plugin is using.
-     * </p>
-     * 
-     * @return The authentication configuration the plugin is using.
-     */
-
-    public PluginAuthConfiguration getAuthConfiguration() {
-        return this.authConfiguration;
-    }
-
-    /**
-     * <p>
-     * The authentication configuration the plugin is using.
-     * </p>
-     * 
-     * @param authConfiguration
-     *        The authentication configuration the plugin is using.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdatePluginRequest withAuthConfiguration(PluginAuthConfiguration authConfiguration) {
-        setAuthConfiguration(authConfiguration);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the plugin.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of the plugin.
-     */
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    /**
-     * <p>
-     * The name of the plugin.
-     * </p>
-     * 
-     * @return The name of the plugin.
-     */
-
-    public String getDisplayName() {
-        return this.displayName;
-    }
-
-    /**
-     * <p>
-     * The name of the plugin.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of the plugin.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdatePluginRequest withDisplayName(String displayName) {
-        setDisplayName(displayName);
         return this;
     }
 
@@ -224,41 +150,41 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The source URL used for plugin configuration.
+     * The name of the plugin.
      * </p>
      * 
-     * @param serverUrl
-     *        The source URL used for plugin configuration.
+     * @param displayName
+     *        The name of the plugin.
      */
 
-    public void setServerUrl(String serverUrl) {
-        this.serverUrl = serverUrl;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     /**
      * <p>
-     * The source URL used for plugin configuration.
+     * The name of the plugin.
      * </p>
      * 
-     * @return The source URL used for plugin configuration.
+     * @return The name of the plugin.
      */
 
-    public String getServerUrl() {
-        return this.serverUrl;
+    public String getDisplayName() {
+        return this.displayName;
     }
 
     /**
      * <p>
-     * The source URL used for plugin configuration.
+     * The name of the plugin.
      * </p>
      * 
-     * @param serverUrl
-     *        The source URL used for plugin configuration.
+     * @param displayName
+     *        The name of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdatePluginRequest withServerUrl(String serverUrl) {
-        setServerUrl(serverUrl);
+    public UpdatePluginRequest withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -322,6 +248,126 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The source URL used for plugin configuration.
+     * </p>
+     * 
+     * @param serverUrl
+     *        The source URL used for plugin configuration.
+     */
+
+    public void setServerUrl(String serverUrl) {
+        this.serverUrl = serverUrl;
+    }
+
+    /**
+     * <p>
+     * The source URL used for plugin configuration.
+     * </p>
+     * 
+     * @return The source URL used for plugin configuration.
+     */
+
+    public String getServerUrl() {
+        return this.serverUrl;
+    }
+
+    /**
+     * <p>
+     * The source URL used for plugin configuration.
+     * </p>
+     * 
+     * @param serverUrl
+     *        The source URL used for plugin configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePluginRequest withServerUrl(String serverUrl) {
+        setServerUrl(serverUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for a custom plugin.
+     * </p>
+     * 
+     * @param customPluginConfiguration
+     *        The configuration for a custom plugin.
+     */
+
+    public void setCustomPluginConfiguration(CustomPluginConfiguration customPluginConfiguration) {
+        this.customPluginConfiguration = customPluginConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for a custom plugin.
+     * </p>
+     * 
+     * @return The configuration for a custom plugin.
+     */
+
+    public CustomPluginConfiguration getCustomPluginConfiguration() {
+        return this.customPluginConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for a custom plugin.
+     * </p>
+     * 
+     * @param customPluginConfiguration
+     *        The configuration for a custom plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePluginRequest withCustomPluginConfiguration(CustomPluginConfiguration customPluginConfiguration) {
+        setCustomPluginConfiguration(customPluginConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The authentication configuration the plugin is using.
+     * </p>
+     * 
+     * @param authConfiguration
+     *        The authentication configuration the plugin is using.
+     */
+
+    public void setAuthConfiguration(PluginAuthConfiguration authConfiguration) {
+        this.authConfiguration = authConfiguration;
+    }
+
+    /**
+     * <p>
+     * The authentication configuration the plugin is using.
+     * </p>
+     * 
+     * @return The authentication configuration the plugin is using.
+     */
+
+    public PluginAuthConfiguration getAuthConfiguration() {
+        return this.authConfiguration;
+    }
+
+    /**
+     * <p>
+     * The authentication configuration the plugin is using.
+     * </p>
+     * 
+     * @param authConfiguration
+     *        The authentication configuration the plugin is using.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePluginRequest withAuthConfiguration(PluginAuthConfiguration authConfiguration) {
+        setAuthConfiguration(authConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -335,16 +381,18 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getAuthConfiguration() != null)
-            sb.append("AuthConfiguration: ").append(getAuthConfiguration()).append(",");
-        if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getPluginId() != null)
             sb.append("PluginId: ").append(getPluginId()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
         if (getServerUrl() != null)
             sb.append("ServerUrl: ").append(getServerUrl()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState());
+        if (getCustomPluginConfiguration() != null)
+            sb.append("CustomPluginConfiguration: ").append(getCustomPluginConfiguration()).append(",");
+        if (getAuthConfiguration() != null)
+            sb.append("AuthConfiguration: ").append(getAuthConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -363,25 +411,29 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getAuthConfiguration() == null ^ this.getAuthConfiguration() == null)
+        if (other.getPluginId() == null ^ this.getPluginId() == null)
             return false;
-        if (other.getAuthConfiguration() != null && other.getAuthConfiguration().equals(this.getAuthConfiguration()) == false)
+        if (other.getPluginId() != null && other.getPluginId().equals(this.getPluginId()) == false)
             return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
-        if (other.getPluginId() == null ^ this.getPluginId() == null)
+        if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getPluginId() != null && other.getPluginId().equals(this.getPluginId()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getServerUrl() == null ^ this.getServerUrl() == null)
             return false;
         if (other.getServerUrl() != null && other.getServerUrl().equals(this.getServerUrl()) == false)
             return false;
-        if (other.getState() == null ^ this.getState() == null)
+        if (other.getCustomPluginConfiguration() == null ^ this.getCustomPluginConfiguration() == null)
             return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+        if (other.getCustomPluginConfiguration() != null && other.getCustomPluginConfiguration().equals(this.getCustomPluginConfiguration()) == false)
+            return false;
+        if (other.getAuthConfiguration() == null ^ this.getAuthConfiguration() == null)
+            return false;
+        if (other.getAuthConfiguration() != null && other.getAuthConfiguration().equals(this.getAuthConfiguration()) == false)
             return false;
         return true;
     }
@@ -392,11 +444,12 @@ public class UpdatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getAuthConfiguration() == null) ? 0 : getAuthConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getPluginId() == null) ? 0 : getPluginId().hashCode());
-        hashCode = prime * hashCode + ((getServerUrl() == null) ? 0 : getServerUrl().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getServerUrl() == null) ? 0 : getServerUrl().hashCode());
+        hashCode = prime * hashCode + ((getCustomPluginConfiguration() == null) ? 0 : getCustomPluginConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAuthConfiguration() == null) ? 0 : getAuthConfiguration().hashCode());
         return hashCode;
     }
 

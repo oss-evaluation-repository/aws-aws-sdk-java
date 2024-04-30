@@ -48,21 +48,21 @@ public class RuleJsonUnmarshaller implements Unmarshaller<Rule, JsonUnmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("excludedUsersAndGroups", targetDepth)) {
-                    context.nextToken();
-                    rule.setExcludedUsersAndGroups(UsersAndGroupsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("includedUsersAndGroups", targetDepth)) {
                     context.nextToken();
                     rule.setIncludedUsersAndGroups(UsersAndGroupsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("ruleConfiguration", targetDepth)) {
+                if (context.testExpression("excludedUsersAndGroups", targetDepth)) {
                     context.nextToken();
-                    rule.setRuleConfiguration(RuleConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                    rule.setExcludedUsersAndGroups(UsersAndGroupsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ruleType", targetDepth)) {
                     context.nextToken();
                     rule.setRuleType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ruleConfiguration", targetDepth)) {
+                    context.nextToken();
+                    rule.setRuleConfiguration(RuleConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

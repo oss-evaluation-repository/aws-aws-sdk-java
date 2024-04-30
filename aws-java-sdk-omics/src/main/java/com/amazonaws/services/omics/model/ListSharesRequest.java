@@ -27,13 +27,13 @@ public class ListSharesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The account that owns the analytics store shared.
+     * The account that owns the resource shares.
      * </p>
      */
     private String resourceOwner;
     /**
      * <p>
-     * Attributes used to filter for a specific subset of shares.
+     * Attributes that you use to filter for a specific subset of resource shares.
      * </p>
      */
     private Filter filter;
@@ -53,11 +53,11 @@ public class ListSharesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The account that owns the analytics store shared.
+     * The account that owns the resource shares.
      * </p>
      * 
      * @param resourceOwner
-     *        The account that owns the analytics store shared.
+     *        The account that owns the resource shares.
      * @see ResourceOwner
      */
 
@@ -67,10 +67,10 @@ public class ListSharesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The account that owns the analytics store shared.
+     * The account that owns the resource shares.
      * </p>
      * 
-     * @return The account that owns the analytics store shared.
+     * @return The account that owns the resource shares.
      * @see ResourceOwner
      */
 
@@ -80,11 +80,11 @@ public class ListSharesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The account that owns the analytics store shared.
+     * The account that owns the resource shares.
      * </p>
      * 
      * @param resourceOwner
-     *        The account that owns the analytics store shared.
+     *        The account that owns the resource shares.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceOwner
      */
@@ -96,11 +96,11 @@ public class ListSharesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The account that owns the analytics store shared.
+     * The account that owns the resource shares.
      * </p>
      * 
      * @param resourceOwner
-     *        The account that owns the analytics store shared.
+     *        The account that owns the resource shares.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceOwner
      */
@@ -112,11 +112,11 @@ public class ListSharesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Attributes used to filter for a specific subset of shares.
+     * Attributes that you use to filter for a specific subset of resource shares.
      * </p>
      * 
      * @param filter
-     *        Attributes used to filter for a specific subset of shares.
+     *        Attributes that you use to filter for a specific subset of resource shares.
      */
 
     public void setFilter(Filter filter) {
@@ -125,10 +125,10 @@ public class ListSharesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Attributes used to filter for a specific subset of shares.
+     * Attributes that you use to filter for a specific subset of resource shares.
      * </p>
      * 
-     * @return Attributes used to filter for a specific subset of shares.
+     * @return Attributes that you use to filter for a specific subset of resource shares.
      */
 
     public Filter getFilter() {
@@ -137,11 +137,11 @@ public class ListSharesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Attributes used to filter for a specific subset of shares.
+     * Attributes that you use to filter for a specific subset of resource shares.
      * </p>
      * 
      * @param filter
-     *        Attributes used to filter for a specific subset of shares.
+     *        Attributes that you use to filter for a specific subset of resource shares.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

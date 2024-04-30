@@ -23,15 +23,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * content when ingesting documents into Amazon Q Business.
  * </p>
  * <p>
- * You can configure your Lambda function using <a
- * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html"
- * >PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents.
+ * You can configure your Lambda function using the <code>PreExtractionHookConfiguration</code> parameter if you want to
+ * apply advanced alterations on the original or raw documents.
  * </p>
  * <p>
  * If you want to apply advanced alterations on the Amazon Q Business structured documents, you must configure your
- * Lambda function using <a
- * href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html"
- * >PostExtractionHookConfiguration</a>.
+ * Lambda function using <code>PostExtractionHookConfiguration</code>.
  * </p>
  * <p>
  * You can only invoke one Lambda function. However, this function can invoke other functions it requires.
@@ -69,14 +66,6 @@ public class HookConfiguration implements Serializable, Cloneable, StructuredPoj
     private String lambdaArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document
-     * ingestion process.
-     * </p>
-     */
-    private String roleArn;
-    /**
-     * <p>
      * Stores the original, raw documents or the structured, parsed documents before and after altering them. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/cde-lambda-operations.html#cde-lambda-operations-data-contracts"
@@ -84,6 +73,14 @@ public class HookConfiguration implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String s3BucketName;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document
+     * ingestion process.
+     * </p>
+     */
+    private String roleArn;
 
     /**
      * <p>
@@ -206,58 +203,6 @@ public class HookConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document
-     * ingestion process.
-     * </p>
-     * 
-     * @param roleArn
-     *        The Amazon Resource Name (ARN) of a role with permission to run
-     *        <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering
-     *        document metadata and content during the document ingestion process.
-     */
-
-    public void setRoleArn(String roleArn) {
-        this.roleArn = roleArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document
-     * ingestion process.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of a role with permission to run
-     *         <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering
-     *         document metadata and content during the document ingestion process.
-     */
-
-    public String getRoleArn() {
-        return this.roleArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and
-     * <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document
-     * ingestion process.
-     * </p>
-     * 
-     * @param roleArn
-     *        The Amazon Resource Name (ARN) of a role with permission to run
-     *        <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering
-     *        document metadata and content during the document ingestion process.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public HookConfiguration withRoleArn(String roleArn) {
-        setRoleArn(roleArn);
-        return this;
-    }
-
-    /**
-     * <p>
      * Stores the original, raw documents or the structured, parsed documents before and after altering them. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/amazonq/latest/business-use-dg/cde-lambda-operations.html#cde-lambda-operations-data-contracts"
@@ -315,6 +260,58 @@ public class HookConfiguration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document
+     * ingestion process.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of a role with permission to run
+     *        <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering
+     *        document metadata and content during the document ingestion process.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document
+     * ingestion process.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a role with permission to run
+     *         <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering
+     *         document metadata and content during the document ingestion process.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and
+     * <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document
+     * ingestion process.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of a role with permission to run
+     *        <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering
+     *        document metadata and content during the document ingestion process.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HookConfiguration withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -330,10 +327,10 @@ public class HookConfiguration implements Serializable, Cloneable, StructuredPoj
             sb.append("InvocationCondition: ").append(getInvocationCondition()).append(",");
         if (getLambdaArn() != null)
             sb.append("LambdaArn: ").append(getLambdaArn()).append(",");
-        if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getS3BucketName() != null)
-            sb.append("S3BucketName: ").append(getS3BucketName());
+            sb.append("S3BucketName: ").append(getS3BucketName()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -356,13 +353,13 @@ public class HookConfiguration implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getLambdaArn() != null && other.getLambdaArn().equals(this.getLambdaArn()) == false)
             return false;
-        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
-            return false;
-        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
-            return false;
         if (other.getS3BucketName() == null ^ this.getS3BucketName() == null)
             return false;
         if (other.getS3BucketName() != null && other.getS3BucketName().equals(this.getS3BucketName()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         return true;
     }
@@ -374,8 +371,8 @@ public class HookConfiguration implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getInvocationCondition() == null) ? 0 : getInvocationCondition().hashCode());
         hashCode = prime * hashCode + ((getLambdaArn() == null) ? 0 : getLambdaArn().hashCode());
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getS3BucketName() == null) ? 0 : getS3BucketName().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }
 

@@ -57,6 +57,10 @@ public class PluginAuthConfigurationJsonUnmarshaller implements Unmarshaller<Plu
                     pluginAuthConfiguration.setOAuth2ClientCredentialConfiguration(OAuth2ClientCredentialConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("noAuthConfiguration", targetDepth)) {
+                    context.nextToken();
+                    pluginAuthConfiguration.setNoAuthConfiguration(NoAuthConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

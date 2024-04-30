@@ -45,7 +45,7 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
     private String callingName;
     /**
      * <p>
-     * Specifies the name assigned to one or more phone numbers.
+     * Specifies the updated name assigned to one or more phone numbers.
      * </p>
      */
     private String name;
@@ -191,11 +191,11 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the name assigned to one or more phone numbers.
+     * Specifies the updated name assigned to one or more phone numbers.
      * </p>
      * 
      * @param name
-     *        Specifies the name assigned to one or more phone numbers.
+     *        Specifies the updated name assigned to one or more phone numbers.
      */
 
     public void setName(String name) {
@@ -204,10 +204,10 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the name assigned to one or more phone numbers.
+     * Specifies the updated name assigned to one or more phone numbers.
      * </p>
      * 
-     * @return Specifies the name assigned to one or more phone numbers.
+     * @return Specifies the updated name assigned to one or more phone numbers.
      */
 
     public String getName() {
@@ -216,11 +216,11 @@ public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the name assigned to one or more phone numbers.
+     * Specifies the updated name assigned to one or more phone numbers.
      * </p>
      * 
      * @param name
-     *        Specifies the name assigned to one or more phone numbers.
+     *        Specifies the updated name assigned to one or more phone numbers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

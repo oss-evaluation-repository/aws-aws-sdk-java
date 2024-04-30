@@ -48,9 +48,20 @@ public class GetChatControlsConfigurationResultJsonUnmarshaller implements Unmar
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("responseScope", targetDepth)) {
+                    context.nextToken();
+                    getChatControlsConfigurationResult.setResponseScope(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("blockedPhrases", targetDepth)) {
                     context.nextToken();
                     getChatControlsConfigurationResult.setBlockedPhrases(BlockedPhrasesConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("topicConfigurations", targetDepth)) {
+                    context.nextToken();
+                    getChatControlsConfigurationResult.setTopicConfigurations(new ListUnmarshaller<TopicConfiguration>(TopicConfigurationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creatorModeConfiguration", targetDepth)) {
                     context.nextToken();
@@ -60,17 +71,6 @@ public class GetChatControlsConfigurationResultJsonUnmarshaller implements Unmar
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
                     getChatControlsConfigurationResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("responseScope", targetDepth)) {
-                    context.nextToken();
-                    getChatControlsConfigurationResult.setResponseScope(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("topicConfigurations", targetDepth)) {
-                    context.nextToken();
-                    getChatControlsConfigurationResult.setTopicConfigurations(new ListUnmarshaller<TopicConfiguration>(TopicConfigurationJsonUnmarshaller
-                            .getInstance())
-
-                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

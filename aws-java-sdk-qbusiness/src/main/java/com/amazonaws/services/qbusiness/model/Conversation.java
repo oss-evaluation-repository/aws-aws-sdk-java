@@ -36,16 +36,16 @@ public class Conversation implements Serializable, Cloneable, StructuredPojo {
     private String conversationId;
     /**
      * <p>
-     * The start time of the conversation.
-     * </p>
-     */
-    private java.util.Date startTime;
-    /**
-     * <p>
      * The title of the conversation.
      * </p>
      */
     private String title;
+    /**
+     * <p>
+     * The start time of the conversation.
+     * </p>
+     */
+    private java.util.Date startTime;
 
     /**
      * <p>
@@ -84,46 +84,6 @@ public class Conversation implements Serializable, Cloneable, StructuredPojo {
 
     public Conversation withConversationId(String conversationId) {
         setConversationId(conversationId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The start time of the conversation.
-     * </p>
-     * 
-     * @param startTime
-     *        The start time of the conversation.
-     */
-
-    public void setStartTime(java.util.Date startTime) {
-        this.startTime = startTime;
-    }
-
-    /**
-     * <p>
-     * The start time of the conversation.
-     * </p>
-     * 
-     * @return The start time of the conversation.
-     */
-
-    public java.util.Date getStartTime() {
-        return this.startTime;
-    }
-
-    /**
-     * <p>
-     * The start time of the conversation.
-     * </p>
-     * 
-     * @param startTime
-     *        The start time of the conversation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Conversation withStartTime(java.util.Date startTime) {
-        setStartTime(startTime);
         return this;
     }
 
@@ -168,6 +128,46 @@ public class Conversation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The start time of the conversation.
+     * </p>
+     * 
+     * @param startTime
+     *        The start time of the conversation.
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The start time of the conversation.
+     * </p>
+     * 
+     * @return The start time of the conversation.
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The start time of the conversation.
+     * </p>
+     * 
+     * @param startTime
+     *        The start time of the conversation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Conversation withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,10 +181,10 @@ public class Conversation implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getConversationId() != null)
             sb.append("ConversationId: ").append(getConversationId()).append(",");
-        if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getTitle() != null)
-            sb.append("Title: ").append(getTitle());
+            sb.append("Title: ").append(getTitle()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime());
         sb.append("}");
         return sb.toString();
     }
@@ -203,13 +203,13 @@ public class Conversation implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConversationId() != null && other.getConversationId().equals(this.getConversationId()) == false)
             return false;
-        if (other.getStartTime() == null ^ this.getStartTime() == null)
-            return false;
-        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
-            return false;
         if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
         if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         return true;
     }
@@ -220,8 +220,8 @@ public class Conversation implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConversationId() == null) ? 0 : getConversationId().hashCode());
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         return hashCode;
     }
 

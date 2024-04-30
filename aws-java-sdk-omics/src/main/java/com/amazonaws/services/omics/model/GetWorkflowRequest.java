@@ -43,6 +43,12 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<String> export;
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     */
+    private String workflowOwnerId;
 
     /**
      * <p>
@@ -242,6 +248,46 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @param workflowOwnerId
+     *        The ID of the workflow owner.
+     */
+
+    public void setWorkflowOwnerId(String workflowOwnerId) {
+        this.workflowOwnerId = workflowOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @return The ID of the workflow owner.
+     */
+
+    public String getWorkflowOwnerId() {
+        return this.workflowOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @param workflowOwnerId
+     *        The ID of the workflow owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetWorkflowRequest withWorkflowOwnerId(String workflowOwnerId) {
+        setWorkflowOwnerId(workflowOwnerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -258,7 +304,9 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getExport() != null)
-            sb.append("Export: ").append(getExport());
+            sb.append("Export: ").append(getExport()).append(",");
+        if (getWorkflowOwnerId() != null)
+            sb.append("WorkflowOwnerId: ").append(getWorkflowOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -285,6 +333,10 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getExport() != null && other.getExport().equals(this.getExport()) == false)
             return false;
+        if (other.getWorkflowOwnerId() == null ^ this.getWorkflowOwnerId() == null)
+            return false;
+        if (other.getWorkflowOwnerId() != null && other.getWorkflowOwnerId().equals(this.getWorkflowOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -296,6 +348,7 @@ public class GetWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getExport() == null) ? 0 : getExport().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowOwnerId() == null) ? 0 : getWorkflowOwnerId().hashCode());
         return hashCode;
     }
 

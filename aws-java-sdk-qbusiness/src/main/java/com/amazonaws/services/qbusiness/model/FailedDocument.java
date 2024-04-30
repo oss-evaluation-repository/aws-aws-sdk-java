@@ -31,10 +31,10 @@ public class FailedDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business data source connector that contains the failed document.
+     * The identifier of the document that couldn't be removed from the Amazon Q Business index.
      * </p>
      */
-    private String dataSourceId;
+    private String id;
     /**
      * <p>
      * An explanation for why the document couldn't be removed from the index.
@@ -43,48 +43,48 @@ public class FailedDocument implements Serializable, Cloneable, StructuredPojo {
     private ErrorDetail error;
     /**
      * <p>
+     * The identifier of the Amazon Q Business data source connector that contains the failed document.
+     * </p>
+     */
+    private String dataSourceId;
+
+    /**
+     * <p>
      * The identifier of the document that couldn't be removed from the Amazon Q Business index.
      * </p>
-     */
-    private String id;
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business data source connector that contains the failed document.
-     * </p>
      * 
-     * @param dataSourceId
-     *        The identifier of the Amazon Q Business data source connector that contains the failed document.
+     * @param id
+     *        The identifier of the document that couldn't be removed from the Amazon Q Business index.
      */
 
-    public void setDataSourceId(String dataSourceId) {
-        this.dataSourceId = dataSourceId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business data source connector that contains the failed document.
+     * The identifier of the document that couldn't be removed from the Amazon Q Business index.
      * </p>
      * 
-     * @return The identifier of the Amazon Q Business data source connector that contains the failed document.
+     * @return The identifier of the document that couldn't be removed from the Amazon Q Business index.
      */
 
-    public String getDataSourceId() {
-        return this.dataSourceId;
+    public String getId() {
+        return this.id;
     }
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business data source connector that contains the failed document.
+     * The identifier of the document that couldn't be removed from the Amazon Q Business index.
      * </p>
      * 
-     * @param dataSourceId
-     *        The identifier of the Amazon Q Business data source connector that contains the failed document.
+     * @param id
+     *        The identifier of the document that couldn't be removed from the Amazon Q Business index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FailedDocument withDataSourceId(String dataSourceId) {
-        setDataSourceId(dataSourceId);
+    public FailedDocument withId(String id) {
+        setId(id);
         return this;
     }
 
@@ -130,41 +130,41 @@ public class FailedDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the document that couldn't be removed from the Amazon Q Business index.
+     * The identifier of the Amazon Q Business data source connector that contains the failed document.
      * </p>
      * 
-     * @param id
-     *        The identifier of the document that couldn't be removed from the Amazon Q Business index.
+     * @param dataSourceId
+     *        The identifier of the Amazon Q Business data source connector that contains the failed document.
      */
 
-    public void setId(String id) {
-        this.id = id;
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
     }
 
     /**
      * <p>
-     * The identifier of the document that couldn't be removed from the Amazon Q Business index.
+     * The identifier of the Amazon Q Business data source connector that contains the failed document.
      * </p>
      * 
-     * @return The identifier of the document that couldn't be removed from the Amazon Q Business index.
+     * @return The identifier of the Amazon Q Business data source connector that contains the failed document.
      */
 
-    public String getId() {
-        return this.id;
+    public String getDataSourceId() {
+        return this.dataSourceId;
     }
 
     /**
      * <p>
-     * The identifier of the document that couldn't be removed from the Amazon Q Business index.
+     * The identifier of the Amazon Q Business data source connector that contains the failed document.
      * </p>
      * 
-     * @param id
-     *        The identifier of the document that couldn't be removed from the Amazon Q Business index.
+     * @param dataSourceId
+     *        The identifier of the Amazon Q Business data source connector that contains the failed document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FailedDocument withId(String id) {
-        setId(id);
+    public FailedDocument withDataSourceId(String dataSourceId) {
+        setDataSourceId(dataSourceId);
         return this;
     }
 
@@ -180,12 +180,12 @@ public class FailedDocument implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDataSourceId() != null)
-            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
         if (getError() != null)
             sb.append("Error: ").append(getError()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId());
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -200,17 +200,17 @@ public class FailedDocument implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FailedDocument == false)
             return false;
         FailedDocument other = (FailedDocument) obj;
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+        if (other.getId() == null ^ this.getId() == null)
             return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
         if (other.getError() == null ^ this.getError() == null)
             return false;
         if (other.getError() != null && other.getError().equals(this.getError()) == false)
             return false;
-        if (other.getId() == null ^ this.getId() == null)
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
             return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
         return true;
     }
@@ -220,9 +220,9 @@ public class FailedDocument implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         return hashCode;
     }
 

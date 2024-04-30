@@ -31,6 +31,8 @@ public class TextSegmentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("beginOffset").build();
     private static final MarshallingInfo<Integer> ENDOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endOffset").build();
+    private static final MarshallingInfo<StructuredPojo> SNIPPETEXCERPT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("snippetExcerpt").build();
 
     private static final TextSegmentMarshaller instance = new TextSegmentMarshaller();
 
@@ -50,6 +52,7 @@ public class TextSegmentMarshaller {
         try {
             protocolMarshaller.marshall(textSegment.getBeginOffset(), BEGINOFFSET_BINDING);
             protocolMarshaller.marshall(textSegment.getEndOffset(), ENDOFFSET_BINDING);
+            protocolMarshaller.marshall(textSegment.getSnippetExcerpt(), SNIPPETEXCERPT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

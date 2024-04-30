@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UserAliasMarshaller {
 
-    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("indexId").build();
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("userId").build();
 
@@ -50,8 +50,8 @@ public class UserAliasMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(userAlias.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(userAlias.getIndexId(), INDEXID_BINDING);
+            protocolMarshaller.marshall(userAlias.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(userAlias.getUserId(), USERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

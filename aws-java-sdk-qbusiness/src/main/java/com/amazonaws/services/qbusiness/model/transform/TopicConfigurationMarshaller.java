@@ -28,12 +28,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TopicConfigurationMarshaller {
 
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> EXAMPLECHATMESSAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exampleChatMessages").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
     private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rules").build();
 
@@ -53,9 +53,9 @@ public class TopicConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(topicConfiguration.getName(), NAME_BINDING);
             protocolMarshaller.marshall(topicConfiguration.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(topicConfiguration.getExampleChatMessages(), EXAMPLECHATMESSAGES_BINDING);
-            protocolMarshaller.marshall(topicConfiguration.getName(), NAME_BINDING);
             protocolMarshaller.marshall(topicConfiguration.getRules(), RULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

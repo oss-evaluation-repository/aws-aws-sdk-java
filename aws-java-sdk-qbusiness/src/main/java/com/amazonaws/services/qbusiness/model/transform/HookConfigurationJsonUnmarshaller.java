@@ -56,13 +56,13 @@ public class HookConfigurationJsonUnmarshaller implements Unmarshaller<HookConfi
                     context.nextToken();
                     hookConfiguration.setLambdaArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("roleArn", targetDepth)) {
-                    context.nextToken();
-                    hookConfiguration.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("s3BucketName", targetDepth)) {
                     context.nextToken();
                     hookConfiguration.setS3BucketName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    hookConfiguration.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -27,18 +27,18 @@ public class GetShareRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The generated ID for a share.
+     * The ID of the share.
      * </p>
      */
     private String shareId;
 
     /**
      * <p>
-     * The generated ID for a share.
+     * The ID of the share.
      * </p>
      * 
      * @param shareId
-     *        The generated ID for a share.
+     *        The ID of the share.
      */
 
     public void setShareId(String shareId) {
@@ -47,10 +47,10 @@ public class GetShareRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The generated ID for a share.
+     * The ID of the share.
      * </p>
      * 
-     * @return The generated ID for a share.
+     * @return The ID of the share.
      */
 
     public String getShareId() {
@@ -59,11 +59,11 @@ public class GetShareRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The generated ID for a share.
+     * The ID of the share.
      * </p>
      * 
      * @param shareId
-     *        The generated ID for a share.
+     *        The ID of the share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

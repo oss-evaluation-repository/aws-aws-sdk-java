@@ -48,29 +48,13 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("actionReview", targetDepth)) {
-                    context.nextToken();
-                    message.setActionReview(ActionReviewJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("attachments", targetDepth)) {
-                    context.nextToken();
-                    message.setAttachments(new ListUnmarshaller<AttachmentOutput>(AttachmentOutputJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("body", targetDepth)) {
-                    context.nextToken();
-                    message.setBody(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("messageId", targetDepth)) {
                     context.nextToken();
                     message.setMessageId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("sourceAttribution", targetDepth)) {
+                if (context.testExpression("body", targetDepth)) {
                     context.nextToken();
-                    message.setSourceAttribution(new ListUnmarshaller<SourceAttribution>(SourceAttributionJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
+                    message.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("time", targetDepth)) {
                     context.nextToken();
@@ -79,6 +63,22 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     message.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("attachments", targetDepth)) {
+                    context.nextToken();
+                    message.setAttachments(new ListUnmarshaller<AttachmentOutput>(AttachmentOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("sourceAttribution", targetDepth)) {
+                    context.nextToken();
+                    message.setSourceAttribution(new ListUnmarshaller<SourceAttribution>(SourceAttributionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("actionReview", targetDepth)) {
+                    context.nextToken();
+                    message.setActionReview(ActionReviewJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

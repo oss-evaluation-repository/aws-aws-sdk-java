@@ -25,6 +25,7 @@ public enum PackageFormat {
     Maven("maven"),
     Nuget("nuget"),
     Generic("generic"),
+    Ruby("ruby"),
     Swift("swift");
 
     private String value;

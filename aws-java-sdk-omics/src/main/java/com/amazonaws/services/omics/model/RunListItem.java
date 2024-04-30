@@ -66,7 +66,8 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
     private Integer priority;
     /**
      * <p>
-     * The run's storage capacity.
+     * The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the
+     * maximum amount of storage used during the run.
      * </p>
      */
     private Integer storageCapacity;
@@ -88,6 +89,12 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date stopTime;
+    /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     */
+    private String storageType;
 
     /**
      * <p>
@@ -350,11 +357,13 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The run's storage capacity.
+     * The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the
+     * maximum amount of storage used during the run.
      * </p>
      * 
      * @param storageCapacity
-     *        The run's storage capacity.
+     *        The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is
+     *        the maximum amount of storage used during the run.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -363,10 +372,12 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The run's storage capacity.
+     * The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the
+     * maximum amount of storage used during the run.
      * </p>
      * 
-     * @return The run's storage capacity.
+     * @return The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is
+     *         the maximum amount of storage used during the run.
      */
 
     public Integer getStorageCapacity() {
@@ -375,11 +386,13 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The run's storage capacity.
+     * The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the
+     * maximum amount of storage used during the run.
      * </p>
      * 
      * @param storageCapacity
-     *        The run's storage capacity.
+     *        The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is
+     *        the maximum amount of storage used during the run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,6 +522,65 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type.
+     * @see StorageType
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     * 
+     * @return The run's storage type.
+     * @see StorageType
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public RunListItem withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public RunListItem withStorageType(StorageType storageType) {
+        this.storageType = storageType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -539,7 +611,9 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getStopTime() != null)
-            sb.append("StopTime: ").append(getStopTime());
+            sb.append("StopTime: ").append(getStopTime()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -594,6 +668,10 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStopTime() != null && other.getStopTime().equals(this.getStopTime()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -612,6 +690,7 @@ public class RunListItem implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getStopTime() == null) ? 0 : getStopTime().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

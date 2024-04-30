@@ -33,6 +33,11 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public AssociateProtectConfigurationResult associateProtectConfiguration(AssociateProtectConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,6 +54,11 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
 
     @Override
     public CreatePoolResult createPool(CreatePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProtectConfigurationResult createProtectConfiguration(CreateProtectConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,6 +88,11 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public DeleteAccountDefaultProtectConfigurationResult deleteAccountDefaultProtectConfiguration(DeleteAccountDefaultProtectConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,6 +118,11 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public DeleteMediaMessageSpendLimitOverrideResult deleteMediaMessageSpendLimitOverride(DeleteMediaMessageSpendLimitOverrideRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteOptOutListResult deleteOptOutList(DeleteOptOutListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +134,11 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
 
     @Override
     public DeletePoolResult deletePool(DeletePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProtectConfigurationResult deleteProtectConfiguration(DeleteProtectConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,6 +213,11 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public DescribeProtectConfigurationsResult describeProtectConfigurations(DescribeProtectConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRegistrationAttachmentsResult describeRegistrationAttachments(DescribeRegistrationAttachmentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -243,7 +273,17 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public DisassociateProtectConfigurationResult disassociateProtectConfiguration(DisassociateProtectConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DiscardRegistrationVersionResult discardRegistrationVersion(DiscardRegistrationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetProtectConfigurationCountryRuleSetResult getProtectConfigurationCountryRuleSet(GetProtectConfigurationCountryRuleSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -303,6 +343,11 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public SendMediaMessageResult sendMediaMessage(SendMediaMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendTextMessageResult sendTextMessage(SendTextMessageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -313,12 +358,22 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public SetAccountDefaultProtectConfigurationResult setAccountDefaultProtectConfiguration(SetAccountDefaultProtectConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetDefaultMessageTypeResult setDefaultMessageType(SetDefaultMessageTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public SetDefaultSenderIdResult setDefaultSenderId(SetDefaultSenderIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetMediaMessageSpendLimitOverrideResult setMediaMessageSpendLimitOverride(SetMediaMessageSpendLimitOverrideRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -359,6 +414,16 @@ public class AbstractAmazonPinpointSMSVoiceV2 implements AmazonPinpointSMSVoiceV
 
     @Override
     public UpdatePoolResult updatePool(UpdatePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProtectConfigurationResult updateProtectConfiguration(UpdateProtectConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProtectConfigurationCountryRuleSetResult updateProtectConfigurationCountryRuleSet(UpdateProtectConfigurationCountryRuleSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

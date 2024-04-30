@@ -30,96 +30,18 @@ public class DataSourceVpcConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
-     * Business to connect to the data source.
-     * </p>
-     */
-    private java.util.List<String> securityGroupIds;
-    /**
-     * <p>
      * A list of identifiers for subnets within your Amazon VPC. The subnets should be able to connect to each other in
      * the VPC, and they should have outgoing access to the Internet through a NAT device.
      * </p>
      */
     private java.util.List<String> subnetIds;
-
     /**
      * <p>
      * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
      * Business to connect to the data source.
      * </p>
-     * 
-     * @return A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon
-     *         Q Business to connect to the data source.
      */
-
-    public java.util.List<String> getSecurityGroupIds() {
-        return securityGroupIds;
-    }
-
-    /**
-     * <p>
-     * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
-     * Business to connect to the data source.
-     * </p>
-     * 
-     * @param securityGroupIds
-     *        A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon
-     *        Q Business to connect to the data source.
-     */
-
-    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
-        if (securityGroupIds == null) {
-            this.securityGroupIds = null;
-            return;
-        }
-
-        this.securityGroupIds = new java.util.ArrayList<String>(securityGroupIds);
-    }
-
-    /**
-     * <p>
-     * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
-     * Business to connect to the data source.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
-     * want to override the existing values.
-     * </p>
-     * 
-     * @param securityGroupIds
-     *        A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon
-     *        Q Business to connect to the data source.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataSourceVpcConfiguration withSecurityGroupIds(String... securityGroupIds) {
-        if (this.securityGroupIds == null) {
-            setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
-        }
-        for (String ele : securityGroupIds) {
-            this.securityGroupIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
-     * Business to connect to the data source.
-     * </p>
-     * 
-     * @param securityGroupIds
-     *        A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon
-     *        Q Business to connect to the data source.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataSourceVpcConfiguration withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
-        setSecurityGroupIds(securityGroupIds);
-        return this;
-    }
+    private java.util.List<String> securityGroupIds;
 
     /**
      * <p>
@@ -200,6 +122,84 @@ public class DataSourceVpcConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
+     * Business to connect to the data source.
+     * </p>
+     * 
+     * @return A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon
+     *         Q Business to connect to the data source.
+     */
+
+    public java.util.List<String> getSecurityGroupIds() {
+        return securityGroupIds;
+    }
+
+    /**
+     * <p>
+     * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
+     * Business to connect to the data source.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon
+     *        Q Business to connect to the data source.
+     */
+
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
+        }
+
+        this.securityGroupIds = new java.util.ArrayList<String>(securityGroupIds);
+    }
+
+    /**
+     * <p>
+     * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
+     * Business to connect to the data source.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon
+     *        Q Business to connect to the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceVpcConfiguration withSecurityGroupIds(String... securityGroupIds) {
+        if (this.securityGroupIds == null) {
+            setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
+        }
+        for (String ele : securityGroupIds) {
+            this.securityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon Q
+     * Business to connect to the data source.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        A list of identifiers of security groups within your Amazon VPC. The security groups should enable Amazon
+     *        Q Business to connect to the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceVpcConfiguration withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        setSecurityGroupIds(securityGroupIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -211,10 +211,10 @@ public class DataSourceVpcConfiguration implements Serializable, Cloneable, Stru
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: ").append(getSubnetIds());
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
+        if (getSecurityGroupIds() != null)
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -229,13 +229,13 @@ public class DataSourceVpcConfiguration implements Serializable, Cloneable, Stru
         if (obj instanceof DataSourceVpcConfiguration == false)
             return false;
         DataSourceVpcConfiguration other = (DataSourceVpcConfiguration) obj;
-        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
-            return false;
-        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
-            return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
         if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
+            return false;
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
+            return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
         return true;
     }
@@ -245,8 +245,8 @@ public class DataSourceVpcConfiguration implements Serializable, Cloneable, Stru
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         return hashCode;
     }
 

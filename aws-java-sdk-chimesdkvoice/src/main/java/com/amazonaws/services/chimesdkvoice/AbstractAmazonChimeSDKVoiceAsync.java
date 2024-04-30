@@ -501,6 +501,7 @@ public class AbstractAmazonChimeSDKVoiceAsync extends AbstractAmazonChimeSDKVoic
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetSipMediaApplicationAlexaSkillConfigurationResult> getSipMediaApplicationAlexaSkillConfigurationAsync(
             GetSipMediaApplicationAlexaSkillConfigurationRequest request) {
 
@@ -508,6 +509,7 @@ public class AbstractAmazonChimeSDKVoiceAsync extends AbstractAmazonChimeSDKVoic
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetSipMediaApplicationAlexaSkillConfigurationResult> getSipMediaApplicationAlexaSkillConfigurationAsync(
             GetSipMediaApplicationAlexaSkillConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSipMediaApplicationAlexaSkillConfigurationRequest, GetSipMediaApplicationAlexaSkillConfigurationResult> asyncHandler) {
@@ -896,6 +898,7 @@ public class AbstractAmazonChimeSDKVoiceAsync extends AbstractAmazonChimeSDKVoic
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutSipMediaApplicationAlexaSkillConfigurationResult> putSipMediaApplicationAlexaSkillConfigurationAsync(
             PutSipMediaApplicationAlexaSkillConfigurationRequest request) {
 
@@ -903,6 +906,7 @@ public class AbstractAmazonChimeSDKVoiceAsync extends AbstractAmazonChimeSDKVoic
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutSipMediaApplicationAlexaSkillConfigurationResult> putSipMediaApplicationAlexaSkillConfigurationAsync(
             PutSipMediaApplicationAlexaSkillConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<PutSipMediaApplicationAlexaSkillConfigurationRequest, PutSipMediaApplicationAlexaSkillConfigurationResult> asyncHandler) {

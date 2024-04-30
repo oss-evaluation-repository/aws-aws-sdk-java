@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PrincipalGroupMarshaller {
 
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> ACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("access").build();
     private static final MarshallingInfo<String> MEMBERSHIPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("membershipType").build();
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("name").build();
 
     private static final PrincipalGroupMarshaller instance = new PrincipalGroupMarshaller();
 
@@ -50,9 +50,9 @@ public class PrincipalGroupMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(principalGroup.getName(), NAME_BINDING);
             protocolMarshaller.marshall(principalGroup.getAccess(), ACCESS_BINDING);
             protocolMarshaller.marshall(principalGroup.getMembershipType(), MEMBERSHIPTYPE_BINDING);
-            protocolMarshaller.marshall(principalGroup.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

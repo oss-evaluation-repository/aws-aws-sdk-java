@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AccountAttributeName {
 
-    ACCOUNT_TIER("ACCOUNT_TIER");
+    ACCOUNT_TIER("ACCOUNT_TIER"),
+    DEFAULT_PROTECT_CONFIGURATION_ID("DEFAULT_PROTECT_CONFIGURATION_ID");
 
     private String value;
 

@@ -5380,6 +5380,41 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSPICECapacityConfigurationResult> updateSPICECapacityConfigurationAsync(
+            UpdateSPICECapacityConfigurationRequest request) {
+
+        return updateSPICECapacityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSPICECapacityConfigurationResult> updateSPICECapacityConfigurationAsync(
+            final UpdateSPICECapacityConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSPICECapacityConfigurationRequest, UpdateSPICECapacityConfigurationResult> asyncHandler) {
+        final UpdateSPICECapacityConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSPICECapacityConfigurationResult>() {
+            @Override
+            public UpdateSPICECapacityConfigurationResult call() throws Exception {
+                UpdateSPICECapacityConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateSPICECapacityConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(UpdateTemplateRequest request) {
 
         return updateTemplateAsync(request, null);

@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartDataSourceSyncJobRequestMarshaller {
 
-    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("dataSourceId").build();
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
 
@@ -50,8 +50,8 @@ public class StartDataSourceSyncJobRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(startDataSourceSyncJobRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(startDataSourceSyncJobRequest.getDataSourceId(), DATASOURCEID_BINDING);
+            protocolMarshaller.marshall(startDataSourceSyncJobRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(startDataSourceSyncJobRequest.getIndexId(), INDEXID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

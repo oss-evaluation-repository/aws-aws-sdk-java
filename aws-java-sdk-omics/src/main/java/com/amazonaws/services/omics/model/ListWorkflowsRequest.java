@@ -27,13 +27,13 @@ public class ListWorkflowsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The workflows' type.
+     * Filter the list by workflow type.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The workflows' name.
+     * Filter the list by workflow name.
      * </p>
      */
     private String name;
@@ -52,11 +52,11 @@ public class ListWorkflowsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The workflows' type.
+     * Filter the list by workflow type.
      * </p>
      * 
      * @param type
-     *        The workflows' type.
+     *        Filter the list by workflow type.
      * @see WorkflowType
      */
 
@@ -66,10 +66,10 @@ public class ListWorkflowsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The workflows' type.
+     * Filter the list by workflow type.
      * </p>
      * 
-     * @return The workflows' type.
+     * @return Filter the list by workflow type.
      * @see WorkflowType
      */
 
@@ -79,11 +79,11 @@ public class ListWorkflowsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The workflows' type.
+     * Filter the list by workflow type.
      * </p>
      * 
      * @param type
-     *        The workflows' type.
+     *        Filter the list by workflow type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkflowType
      */
@@ -95,11 +95,11 @@ public class ListWorkflowsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The workflows' type.
+     * Filter the list by workflow type.
      * </p>
      * 
      * @param type
-     *        The workflows' type.
+     *        Filter the list by workflow type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkflowType
      */
@@ -111,11 +111,11 @@ public class ListWorkflowsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The workflows' name.
+     * Filter the list by workflow name.
      * </p>
      * 
      * @param name
-     *        The workflows' name.
+     *        Filter the list by workflow name.
      */
 
     public void setName(String name) {
@@ -124,10 +124,10 @@ public class ListWorkflowsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The workflows' name.
+     * Filter the list by workflow name.
      * </p>
      * 
-     * @return The workflows' name.
+     * @return Filter the list by workflow name.
      */
 
     public String getName() {
@@ -136,11 +136,11 @@ public class ListWorkflowsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The workflows' name.
+     * Filter the list by workflow name.
      * </p>
      * 
      * @param name
-     *        The workflows' name.
+     *        Filter the list by workflow name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

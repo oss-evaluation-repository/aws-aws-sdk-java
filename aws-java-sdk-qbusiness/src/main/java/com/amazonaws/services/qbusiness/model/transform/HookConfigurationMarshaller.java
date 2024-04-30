@@ -31,10 +31,10 @@ public class HookConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invocationCondition").build();
     private static final MarshallingInfo<String> LAMBDAARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("lambdaArn").build();
-    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> S3BUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3BucketName").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
 
     private static final HookConfigurationMarshaller instance = new HookConfigurationMarshaller();
 
@@ -54,8 +54,8 @@ public class HookConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(hookConfiguration.getInvocationCondition(), INVOCATIONCONDITION_BINDING);
             protocolMarshaller.marshall(hookConfiguration.getLambdaArn(), LAMBDAARN_BINDING);
-            protocolMarshaller.marshall(hookConfiguration.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(hookConfiguration.getS3BucketName(), S3BUCKETNAME_BINDING);
+            protocolMarshaller.marshall(hookConfiguration.getRoleArn(), ROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

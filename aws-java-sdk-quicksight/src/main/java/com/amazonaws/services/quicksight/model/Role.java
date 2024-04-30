@@ -22,7 +22,10 @@ public enum Role {
 
     ADMIN("ADMIN"),
     AUTHOR("AUTHOR"),
-    READER("READER");
+    READER("READER"),
+    ADMIN_PRO("ADMIN_PRO"),
+    AUTHOR_PRO("AUTHOR_PRO"),
+    READER_PRO("READER_PRO");
 
     private String value;
 

@@ -25,56 +25,16 @@ public class CreateRetrieverResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
-     * </p>
-     */
-    private String retrieverArn;
-    /**
-     * <p>
      * The identifier of the retriever you are using.
      * </p>
      */
     private String retrieverId;
-
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
      * </p>
-     * 
-     * @param retrieverArn
-     *        The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
      */
-
-    public void setRetrieverArn(String retrieverArn) {
-        this.retrieverArn = retrieverArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
-     */
-
-    public String getRetrieverArn() {
-        return this.retrieverArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
-     * </p>
-     * 
-     * @param retrieverArn
-     *        The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateRetrieverResult withRetrieverArn(String retrieverArn) {
-        setRetrieverArn(retrieverArn);
-        return this;
-    }
+    private String retrieverArn;
 
     /**
      * <p>
@@ -117,6 +77,46 @@ public class CreateRetrieverResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
+     * </p>
+     * 
+     * @param retrieverArn
+     *        The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
+     */
+
+    public void setRetrieverArn(String retrieverArn) {
+        this.retrieverArn = retrieverArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
+     */
+
+    public String getRetrieverArn() {
+        return this.retrieverArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
+     * </p>
+     * 
+     * @param retrieverArn
+     *        The Amazon Resource Name (ARN) of an IAM role associated with a retriever.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRetrieverResult withRetrieverArn(String retrieverArn) {
+        setRetrieverArn(retrieverArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -128,10 +128,10 @@ public class CreateRetrieverResult extends com.amazonaws.AmazonWebServiceResult<
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRetrieverArn() != null)
-            sb.append("RetrieverArn: ").append(getRetrieverArn()).append(",");
         if (getRetrieverId() != null)
-            sb.append("RetrieverId: ").append(getRetrieverId());
+            sb.append("RetrieverId: ").append(getRetrieverId()).append(",");
+        if (getRetrieverArn() != null)
+            sb.append("RetrieverArn: ").append(getRetrieverArn());
         sb.append("}");
         return sb.toString();
     }
@@ -146,13 +146,13 @@ public class CreateRetrieverResult extends com.amazonaws.AmazonWebServiceResult<
         if (obj instanceof CreateRetrieverResult == false)
             return false;
         CreateRetrieverResult other = (CreateRetrieverResult) obj;
-        if (other.getRetrieverArn() == null ^ this.getRetrieverArn() == null)
-            return false;
-        if (other.getRetrieverArn() != null && other.getRetrieverArn().equals(this.getRetrieverArn()) == false)
-            return false;
         if (other.getRetrieverId() == null ^ this.getRetrieverId() == null)
             return false;
         if (other.getRetrieverId() != null && other.getRetrieverId().equals(this.getRetrieverId()) == false)
+            return false;
+        if (other.getRetrieverArn() == null ^ this.getRetrieverArn() == null)
+            return false;
+        if (other.getRetrieverArn() != null && other.getRetrieverArn().equals(this.getRetrieverArn()) == false)
             return false;
         return true;
     }
@@ -162,8 +162,8 @@ public class CreateRetrieverResult extends com.amazonaws.AmazonWebServiceResult<
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRetrieverArn() == null) ? 0 : getRetrieverArn().hashCode());
         hashCode = prime * hashCode + ((getRetrieverId() == null) ? 0 : getRetrieverId().hashCode());
+        hashCode = prime * hashCode + ((getRetrieverArn() == null) ? 0 : getRetrieverArn().hashCode());
         return hashCode;
     }
 

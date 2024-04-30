@@ -46,6 +46,12 @@ public class TopicSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The user experience version of the topic.
+     * </p>
+     */
+    private String userExperienceVersion;
 
     /**
      * <p>
@@ -171,6 +177,65 @@ public class TopicSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The user experience version of the topic.
+     * </p>
+     * 
+     * @param userExperienceVersion
+     *        The user experience version of the topic.
+     * @see TopicUserExperienceVersion
+     */
+
+    public void setUserExperienceVersion(String userExperienceVersion) {
+        this.userExperienceVersion = userExperienceVersion;
+    }
+
+    /**
+     * <p>
+     * The user experience version of the topic.
+     * </p>
+     * 
+     * @return The user experience version of the topic.
+     * @see TopicUserExperienceVersion
+     */
+
+    public String getUserExperienceVersion() {
+        return this.userExperienceVersion;
+    }
+
+    /**
+     * <p>
+     * The user experience version of the topic.
+     * </p>
+     * 
+     * @param userExperienceVersion
+     *        The user experience version of the topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TopicUserExperienceVersion
+     */
+
+    public TopicSummary withUserExperienceVersion(String userExperienceVersion) {
+        setUserExperienceVersion(userExperienceVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user experience version of the topic.
+     * </p>
+     * 
+     * @param userExperienceVersion
+     *        The user experience version of the topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TopicUserExperienceVersion
+     */
+
+    public TopicSummary withUserExperienceVersion(TopicUserExperienceVersion userExperienceVersion) {
+        this.userExperienceVersion = userExperienceVersion.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -187,7 +252,9 @@ public class TopicSummary implements Serializable, Cloneable, StructuredPojo {
         if (getTopicId() != null)
             sb.append("TopicId: ").append(getTopicId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getUserExperienceVersion() != null)
+            sb.append("UserExperienceVersion: ").append(getUserExperienceVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -214,6 +281,10 @@ public class TopicSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getUserExperienceVersion() == null ^ this.getUserExperienceVersion() == null)
+            return false;
+        if (other.getUserExperienceVersion() != null && other.getUserExperienceVersion().equals(this.getUserExperienceVersion()) == false)
+            return false;
         return true;
     }
 
@@ -225,6 +296,7 @@ public class TopicSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getTopicId() == null) ? 0 : getTopicId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getUserExperienceVersion() == null) ? 0 : getUserExperienceVersion().hashCode());
         return hashCode;
     }
 

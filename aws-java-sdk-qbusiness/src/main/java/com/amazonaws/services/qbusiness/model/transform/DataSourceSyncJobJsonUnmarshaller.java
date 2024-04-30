@@ -48,33 +48,33 @@ public class DataSourceSyncJobJsonUnmarshaller implements Unmarshaller<DataSourc
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("dataSourceErrorCode", targetDepth)) {
-                    context.nextToken();
-                    dataSourceSyncJob.setDataSourceErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("endTime", targetDepth)) {
-                    context.nextToken();
-                    dataSourceSyncJob.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("error", targetDepth)) {
-                    context.nextToken();
-                    dataSourceSyncJob.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("executionId", targetDepth)) {
                     context.nextToken();
                     dataSourceSyncJob.setExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("metrics", targetDepth)) {
-                    context.nextToken();
-                    dataSourceSyncJob.setMetrics(DataSourceSyncJobMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
                     dataSourceSyncJob.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("endTime", targetDepth)) {
+                    context.nextToken();
+                    dataSourceSyncJob.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     dataSourceSyncJob.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("error", targetDepth)) {
+                    context.nextToken();
+                    dataSourceSyncJob.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("dataSourceErrorCode", targetDepth)) {
+                    context.nextToken();
+                    dataSourceSyncJob.setDataSourceErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("metrics", targetDepth)) {
+                    context.nextToken();
+                    dataSourceSyncJob.setMetrics(DataSourceSyncJobMetricsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

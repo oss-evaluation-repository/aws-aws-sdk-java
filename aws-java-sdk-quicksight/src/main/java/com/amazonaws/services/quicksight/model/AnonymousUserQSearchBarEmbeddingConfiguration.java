@@ -31,35 +31,36 @@ public class AnonymousUserQSearchBarEmbeddingConfiguration implements Serializab
 
     /**
      * <p>
-     * The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the
-     * output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic
-     * pre-selected.
+     * The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user to see first. This ID is
+     * included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with
+     * this legacy topic pre-selected.
      * </p>
      * <p>
-     * The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code>
-     * parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.
+     * The Amazon Resource Name (ARN) of this Q legacy topic must be included in the <code>AuthorizedResourceArns</code>
+     * parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.
      * </p>
      */
     private String initialTopicId;
 
     /**
      * <p>
-     * The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the
-     * output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic
-     * pre-selected.
+     * The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user to see first. This ID is
+     * included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with
+     * this legacy topic pre-selected.
      * </p>
      * <p>
-     * The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code>
-     * parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.
+     * The Amazon Resource Name (ARN) of this Q legacy topic must be included in the <code>AuthorizedResourceArns</code>
+     * parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.
      * </p>
      * 
      * @param initialTopicId
-     *        The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included
-     *        in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with
-     *        this topic pre-selected.</p>
+     *        The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user to see first. This
+     *        ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q
+     *        search bar with this legacy topic pre-selected.</p>
      *        <p>
-     *        The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code>
-     *        parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.
+     *        The Amazon Resource Name (ARN) of this Q legacy topic must be included in the
+     *        <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails with an
+     *        <code>InvalidParameterValueException</code> error.
      */
 
     public void setInitialTopicId(String initialTopicId) {
@@ -68,22 +69,22 @@ public class AnonymousUserQSearchBarEmbeddingConfiguration implements Serializab
 
     /**
      * <p>
-     * The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the
-     * output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic
-     * pre-selected.
+     * The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user to see first. This ID is
+     * included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with
+     * this legacy topic pre-selected.
      * </p>
      * <p>
-     * The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code>
-     * parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.
+     * The Amazon Resource Name (ARN) of this Q legacy topic must be included in the <code>AuthorizedResourceArns</code>
+     * parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.
      * </p>
      * 
-     * @return The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included
-     *         in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with
-     *         this topic pre-selected.</p>
+     * @return The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user to see first. This
+     *         ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q
+     *         search bar with this legacy topic pre-selected.</p>
      *         <p>
-     *         The Amazon Resource Name (ARN) of this Q topic must be included in the
-     *         <code>AuthorizedResourceArns</code> parameter. Otherwise, the request will fail with
-     *         <code>InvalidParameterValueException</code>.
+     *         The Amazon Resource Name (ARN) of this Q legacy topic must be included in the
+     *         <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails with an
+     *         <code>InvalidParameterValueException</code> error.
      */
 
     public String getInitialTopicId() {
@@ -92,22 +93,23 @@ public class AnonymousUserQSearchBarEmbeddingConfiguration implements Serializab
 
     /**
      * <p>
-     * The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included in the
-     * output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with this topic
-     * pre-selected.
+     * The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user to see first. This ID is
+     * included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with
+     * this legacy topic pre-selected.
      * </p>
      * <p>
-     * The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code>
-     * parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.
+     * The Amazon Resource Name (ARN) of this Q legacy topic must be included in the <code>AuthorizedResourceArns</code>
+     * parameter. Otherwise, the request fails with an <code>InvalidParameterValueException</code> error.
      * </p>
      * 
      * @param initialTopicId
-     *        The QuickSight Q topic ID of the topic that you want the anonymous user to see first. This ID is included
-     *        in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q search bar with
-     *        this topic pre-selected.</p>
+     *        The Amazon QuickSight Q topic ID of the legacy topic that you want the anonymous user to see first. This
+     *        ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders the Q
+     *        search bar with this legacy topic pre-selected.</p>
      *        <p>
-     *        The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code>
-     *        parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.
+     *        The Amazon Resource Name (ARN) of this Q legacy topic must be included in the
+     *        <code>AuthorizedResourceArns</code> parameter. Otherwise, the request fails with an
+     *        <code>InvalidParameterValueException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

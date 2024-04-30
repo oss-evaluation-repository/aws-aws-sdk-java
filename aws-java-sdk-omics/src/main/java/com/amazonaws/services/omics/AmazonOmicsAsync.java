@@ -69,7 +69,7 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Accepts a share for an analytics store.
+     * Accept a resource share request.
      * </p>
      * 
      * @param acceptShareRequest
@@ -82,7 +82,7 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Accepts a share for an analytics store.
+     * Accept a resource share request.
      * </p>
      * 
      * @param acceptShareRequest
@@ -455,9 +455,29 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Creates a share offer that can be accepted outside the account by a subscriber. The share is created by the owner
-     * and accepted by the principal subscriber.
+     * Creates a cross-account shared resource. The resource owner makes an offer to share the resource with the
+     * principal subscriber (an AWS user with a different account than the resource owner).
      * </p>
+     * <p>
+     * The following resources support cross-account sharing:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Healthomics variant stores
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Healthomics annotation stores
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Private workflows
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createShareRequest
      * @return A Java Future containing the result of the CreateShare operation returned by the service.
@@ -469,9 +489,29 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Creates a share offer that can be accepted outside the account by a subscriber. The share is created by the owner
-     * and accepted by the principal subscriber.
+     * Creates a cross-account shared resource. The resource owner makes an offer to share the resource with the
+     * principal subscriber (an AWS user with a different account than the resource owner).
      * </p>
+     * <p>
+     * The following resources support cross-account sharing:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Healthomics variant stores
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Healthomics annotation stores
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Private workflows
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createShareRequest
      * @param asyncHandler
@@ -771,7 +811,8 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Deletes a share of an analytics store.
+     * Deletes a resource share. If you are the resource owner, the subscriber will no longer have access to the shared
+     * resource. If you are the subscriber, this operation deletes your access to the share.
      * </p>
      * 
      * @param deleteShareRequest
@@ -784,7 +825,8 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Deletes a share of an analytics store.
+     * Deletes a resource share. If you are the resource owner, the subscriber will no longer have access to the shared
+     * resource. If you are the subscriber, this operation deletes your access to the share.
      * </p>
      * 
      * @param deleteShareRequest
@@ -1240,6 +1282,9 @@ public interface AmazonOmicsAsync extends AmazonOmics {
      * <p>
      * Gets information about a workflow run.
      * </p>
+     * <p>
+     * If a workflow is shared with you, you cannot export information about the run.
+     * </p>
      * 
      * @param getRunRequest
      * @return A Java Future containing the result of the GetRun operation returned by the service.
@@ -1252,6 +1297,9 @@ public interface AmazonOmicsAsync extends AmazonOmics {
     /**
      * <p>
      * Gets information about a workflow run.
+     * </p>
+     * <p>
+     * If a workflow is shared with you, you cannot export information about the run.
      * </p>
      * 
      * @param getRunRequest
@@ -1362,7 +1410,7 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Retrieves the metadata for a share.
+     * Retrieves the metadata for the specified resource share.
      * </p>
      * 
      * @param getShareRequest
@@ -1375,7 +1423,7 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Retrieves the metadata for a share.
+     * Retrieves the metadata for the specified resource share.
      * </p>
      * 
      * @param getShareRequest
@@ -1457,6 +1505,9 @@ public interface AmazonOmicsAsync extends AmazonOmics {
      * <p>
      * Gets information about a workflow.
      * </p>
+     * <p>
+     * If a workflow is shared with you, you cannot export the workflow.
+     * </p>
      * 
      * @param getWorkflowRequest
      * @return A Java Future containing the result of the GetWorkflow operation returned by the service.
@@ -1469,6 +1520,9 @@ public interface AmazonOmicsAsync extends AmazonOmics {
     /**
      * <p>
      * Gets information about a workflow.
+     * </p>
+     * <p>
+     * If a workflow is shared with you, you cannot export the workflow.
      * </p>
      * 
      * @param getWorkflowRequest
@@ -1990,7 +2044,8 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Lists all shares associated with an account.
+     * Retrieves the resource shares associated with an account. Use the filter parameter to retrieve a specific subset
+     * of the shares.
      * </p>
      * 
      * @param listSharesRequest
@@ -2003,7 +2058,8 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Lists all shares associated with an account.
+     * Retrieves the resource shares associated with an account. Use the filter parameter to retrieve a specific subset
+     * of the shares.
      * </p>
      * 
      * @param listSharesRequest
@@ -2306,9 +2362,19 @@ public interface AmazonOmicsAsync extends AmazonOmics {
      * copied from the previous run.
      * </p>
      * <p>
+     * StartRun will not support re-run for a workflow that is shared with you.
+     * </p>
+     * <p>
      * The total number of runs in your account is subject to a quota per Region. To avoid needing to delete runs
      * manually, you can set the retention mode to <code>REMOVE</code>. Runs with this setting are deleted automatically
      * when the run quoata is exceeded.
+     * </p>
+     * <p>
+     * By default, the run uses STATIC storage. For STATIC storage, set the <code>storageCapacity</code> field. You can
+     * set the storage type to DYNAMIC. You do not set <code>storageCapacity</code>, because HealthOmics dynamically
+     * scales the storage up or down as required. For more information about static and dynamic storage, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>AWS
+     * HealthOmics User Guide</i>.
      * </p>
      * 
      * @param startRunRequest
@@ -2325,9 +2391,19 @@ public interface AmazonOmicsAsync extends AmazonOmics {
      * copied from the previous run.
      * </p>
      * <p>
+     * StartRun will not support re-run for a workflow that is shared with you.
+     * </p>
+     * <p>
      * The total number of runs in your account is subject to a quota per Region. To avoid needing to delete runs
      * manually, you can set the retention mode to <code>REMOVE</code>. Runs with this setting are deleted automatically
      * when the run quoata is exceeded.
+     * </p>
+     * <p>
+     * By default, the run uses STATIC storage. For STATIC storage, set the <code>storageCapacity</code> field. You can
+     * set the storage type to DYNAMIC. You do not set <code>storageCapacity</code>, because HealthOmics dynamically
+     * scales the storage up or down as required. For more information about static and dynamic storage, see <a
+     * href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running workflows</a> in the <i>AWS
+     * HealthOmics User Guide</i>.
      * </p>
      * 
      * @param startRunRequest

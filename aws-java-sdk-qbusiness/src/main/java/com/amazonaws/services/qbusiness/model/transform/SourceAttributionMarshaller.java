@@ -28,18 +28,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SourceAttributionMarshaller {
 
-    private static final MarshallingInfo<Integer> CITATIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("citationNumber").build();
-    private static final MarshallingInfo<String> SNIPPET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("snippet").build();
-    private static final MarshallingInfo<List> TEXTMESSAGESEGMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("textMessageSegments").build();
     private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("title").build();
-    private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> SNIPPET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("snippet").build();
     private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("url").build();
+    private static final MarshallingInfo<Integer> CITATIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("citationNumber").build();
+    private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> TEXTMESSAGESEGMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("textMessageSegments").build();
 
     private static final SourceAttributionMarshaller instance = new SourceAttributionMarshaller();
 
@@ -57,12 +57,12 @@ public class SourceAttributionMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(sourceAttribution.getCitationNumber(), CITATIONNUMBER_BINDING);
-            protocolMarshaller.marshall(sourceAttribution.getSnippet(), SNIPPET_BINDING);
-            protocolMarshaller.marshall(sourceAttribution.getTextMessageSegments(), TEXTMESSAGESEGMENTS_BINDING);
             protocolMarshaller.marshall(sourceAttribution.getTitle(), TITLE_BINDING);
-            protocolMarshaller.marshall(sourceAttribution.getUpdatedAt(), UPDATEDAT_BINDING);
+            protocolMarshaller.marshall(sourceAttribution.getSnippet(), SNIPPET_BINDING);
             protocolMarshaller.marshall(sourceAttribution.getUrl(), URL_BINDING);
+            protocolMarshaller.marshall(sourceAttribution.getCitationNumber(), CITATIONNUMBER_BINDING);
+            protocolMarshaller.marshall(sourceAttribution.getUpdatedAt(), UPDATEDAT_BINDING);
+            protocolMarshaller.marshall(sourceAttribution.getTextMessageSegments(), TEXTMESSAGESEGMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

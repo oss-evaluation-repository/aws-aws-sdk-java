@@ -48,13 +48,9 @@ public class DocumentAttributeValueJsonUnmarshaller implements Unmarshaller<Docu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("dateValue", targetDepth)) {
+                if (context.testExpression("stringValue", targetDepth)) {
                     context.nextToken();
-                    documentAttributeValue.setDateValue(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("longValue", targetDepth)) {
-                    context.nextToken();
-                    documentAttributeValue.setLongValue(context.getUnmarshaller(Long.class).unmarshall(context));
+                    documentAttributeValue.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stringListValue", targetDepth)) {
                     context.nextToken();
@@ -62,9 +58,13 @@ public class DocumentAttributeValueJsonUnmarshaller implements Unmarshaller<Docu
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("stringValue", targetDepth)) {
+                if (context.testExpression("longValue", targetDepth)) {
                     context.nextToken();
-                    documentAttributeValue.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
+                    documentAttributeValue.setLongValue(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("dateValue", targetDepth)) {
+                    context.nextToken();
+                    documentAttributeValue.setDateValue(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

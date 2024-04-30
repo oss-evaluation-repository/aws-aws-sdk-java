@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteConversationRequestMarshaller {
 
-    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<String> CONVERSATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("conversationId").build();
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userId").build();
 
@@ -50,8 +50,8 @@ public class DeleteConversationRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteConversationRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(deleteConversationRequest.getConversationId(), CONVERSATIONID_BINDING);
+            protocolMarshaller.marshall(deleteConversationRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(deleteConversationRequest.getUserId(), USERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -1304,6 +1304,12 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
      * </li>
      * <li>
      * <p>
+     * You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region signing isn't
+     * supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * You must also specify a request token that identifies your request to Signer.
      * </p>
      * </li>

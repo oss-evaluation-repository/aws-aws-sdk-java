@@ -52,37 +52,37 @@ public class GetRetrieverResultJsonUnmarshaller implements Unmarshaller<GetRetri
                     context.nextToken();
                     getRetrieverResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("configuration", targetDepth)) {
+                if (context.testExpression("retrieverId", targetDepth)) {
                     context.nextToken();
-                    getRetrieverResult.setConfiguration(RetrieverConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    getRetrieverResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("displayName", targetDepth)) {
-                    context.nextToken();
-                    getRetrieverResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRetrieverResult.setRetrieverId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("retrieverArn", targetDepth)) {
                     context.nextToken();
                     getRetrieverResult.setRetrieverArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("retrieverId", targetDepth)) {
+                if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    getRetrieverResult.setRetrieverId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("roleArn", targetDepth)) {
-                    context.nextToken();
-                    getRetrieverResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRetrieverResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     getRetrieverResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("type", targetDepth)) {
+                if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
-                    getRetrieverResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                    getRetrieverResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("configuration", targetDepth)) {
+                    context.nextToken();
+                    getRetrieverResult.setConfiguration(RetrieverConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    getRetrieverResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    getRetrieverResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();

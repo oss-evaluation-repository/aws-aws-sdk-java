@@ -69,7 +69,7 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.Map<String, WorkflowParameter> parameterTemplate;
     /**
      * <p>
-     * A storage capacity for the workflow in gibibytes.
+     * The storage capacity for the workflow in gibibytes.
      * </p>
      */
     private Integer storageCapacity;
@@ -448,11 +448,11 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A storage capacity for the workflow in gibibytes.
+     * The storage capacity for the workflow in gibibytes.
      * </p>
      * 
      * @param storageCapacity
-     *        A storage capacity for the workflow in gibibytes.
+     *        The storage capacity for the workflow in gibibytes.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -461,10 +461,10 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A storage capacity for the workflow in gibibytes.
+     * The storage capacity for the workflow in gibibytes.
      * </p>
      * 
-     * @return A storage capacity for the workflow in gibibytes.
+     * @return The storage capacity for the workflow in gibibytes.
      */
 
     public Integer getStorageCapacity() {
@@ -473,11 +473,11 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A storage capacity for the workflow in gibibytes.
+     * The storage capacity for the workflow in gibibytes.
      * </p>
      * 
      * @param storageCapacity
-     *        A storage capacity for the workflow in gibibytes.
+     *        The storage capacity for the workflow in gibibytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

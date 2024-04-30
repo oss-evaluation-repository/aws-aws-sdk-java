@@ -30,14 +30,14 @@ public class ListDocumentsRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<List> DATASOURCEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("dataSourceIds").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<List> DATASOURCEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("dataSourceIds").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListDocumentsRequestMarshaller instance = new ListDocumentsRequestMarshaller();
 
@@ -56,10 +56,10 @@ public class ListDocumentsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listDocumentsRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(listDocumentsRequest.getDataSourceIds(), DATASOURCEIDS_BINDING);
             protocolMarshaller.marshall(listDocumentsRequest.getIndexId(), INDEXID_BINDING);
-            protocolMarshaller.marshall(listDocumentsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listDocumentsRequest.getDataSourceIds(), DATASOURCEIDS_BINDING);
             protocolMarshaller.marshall(listDocumentsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listDocumentsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

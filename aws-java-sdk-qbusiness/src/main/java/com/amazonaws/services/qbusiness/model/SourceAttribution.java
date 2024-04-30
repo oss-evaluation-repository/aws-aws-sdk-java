@@ -30,10 +30,10 @@ public class SourceAttribution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number attached to a citation in an Amazon Q Business generated response.
+     * The title of the document which is the source for the Amazon Q Business generated response.
      * </p>
      */
-    private Integer citationNumber;
+    private String title;
     /**
      * <p>
      * The content extract from the document on which the generated response is based.
@@ -42,16 +42,16 @@ public class SourceAttribution implements Serializable, Cloneable, StructuredPoj
     private String snippet;
     /**
      * <p>
-     * A text extract from a source document that is used for source attribution.
+     * The URL of the document which is the source for the Amazon Q Business generated response.
      * </p>
      */
-    private java.util.List<TextSegment> textMessageSegments;
+    private String url;
     /**
      * <p>
-     * The title of the document which is the source for the Amazon Q Business generated response.
+     * The number attached to a citation in an Amazon Q Business generated response.
      * </p>
      */
-    private String title;
+    private Integer citationNumber;
     /**
      * <p>
      * The Unix timestamp when the Amazon Q Business application was last updated.
@@ -60,10 +60,130 @@ public class SourceAttribution implements Serializable, Cloneable, StructuredPoj
     private java.util.Date updatedAt;
     /**
      * <p>
-     * The URL of the document which is the source for the Amazon Q Business generated response.
+     * A text extract from a source document that is used for source attribution.
      * </p>
      */
-    private String url;
+    private java.util.List<TextSegment> textMessageSegments;
+
+    /**
+     * <p>
+     * The title of the document which is the source for the Amazon Q Business generated response.
+     * </p>
+     * 
+     * @param title
+     *        The title of the document which is the source for the Amazon Q Business generated response.
+     */
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * <p>
+     * The title of the document which is the source for the Amazon Q Business generated response.
+     * </p>
+     * 
+     * @return The title of the document which is the source for the Amazon Q Business generated response.
+     */
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    /**
+     * <p>
+     * The title of the document which is the source for the Amazon Q Business generated response.
+     * </p>
+     * 
+     * @param title
+     *        The title of the document which is the source for the Amazon Q Business generated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceAttribution withTitle(String title) {
+        setTitle(title);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The content extract from the document on which the generated response is based.
+     * </p>
+     * 
+     * @param snippet
+     *        The content extract from the document on which the generated response is based.
+     */
+
+    public void setSnippet(String snippet) {
+        this.snippet = snippet;
+    }
+
+    /**
+     * <p>
+     * The content extract from the document on which the generated response is based.
+     * </p>
+     * 
+     * @return The content extract from the document on which the generated response is based.
+     */
+
+    public String getSnippet() {
+        return this.snippet;
+    }
+
+    /**
+     * <p>
+     * The content extract from the document on which the generated response is based.
+     * </p>
+     * 
+     * @param snippet
+     *        The content extract from the document on which the generated response is based.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceAttribution withSnippet(String snippet) {
+        setSnippet(snippet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL of the document which is the source for the Amazon Q Business generated response.
+     * </p>
+     * 
+     * @param url
+     *        The URL of the document which is the source for the Amazon Q Business generated response.
+     */
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    /**
+     * <p>
+     * The URL of the document which is the source for the Amazon Q Business generated response.
+     * </p>
+     * 
+     * @return The URL of the document which is the source for the Amazon Q Business generated response.
+     */
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    /**
+     * <p>
+     * The URL of the document which is the source for the Amazon Q Business generated response.
+     * </p>
+     * 
+     * @param url
+     *        The URL of the document which is the source for the Amazon Q Business generated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceAttribution withUrl(String url) {
+        setUrl(url);
+        return this;
+    }
 
     /**
      * <p>
@@ -107,41 +227,41 @@ public class SourceAttribution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The content extract from the document on which the generated response is based.
+     * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      * 
-     * @param snippet
-     *        The content extract from the document on which the generated response is based.
+     * @param updatedAt
+     *        The Unix timestamp when the Amazon Q Business application was last updated.
      */
 
-    public void setSnippet(String snippet) {
-        this.snippet = snippet;
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     /**
      * <p>
-     * The content extract from the document on which the generated response is based.
+     * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      * 
-     * @return The content extract from the document on which the generated response is based.
+     * @return The Unix timestamp when the Amazon Q Business application was last updated.
      */
 
-    public String getSnippet() {
-        return this.snippet;
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
     }
 
     /**
      * <p>
-     * The content extract from the document on which the generated response is based.
+     * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      * 
-     * @param snippet
-     *        The content extract from the document on which the generated response is based.
+     * @param updatedAt
+     *        The Unix timestamp when the Amazon Q Business application was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SourceAttribution withSnippet(String snippet) {
-        setSnippet(snippet);
+    public SourceAttribution withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
         return this;
     }
 
@@ -216,126 +336,6 @@ public class SourceAttribution implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p>
-     * The title of the document which is the source for the Amazon Q Business generated response.
-     * </p>
-     * 
-     * @param title
-     *        The title of the document which is the source for the Amazon Q Business generated response.
-     */
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * <p>
-     * The title of the document which is the source for the Amazon Q Business generated response.
-     * </p>
-     * 
-     * @return The title of the document which is the source for the Amazon Q Business generated response.
-     */
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    /**
-     * <p>
-     * The title of the document which is the source for the Amazon Q Business generated response.
-     * </p>
-     * 
-     * @param title
-     *        The title of the document which is the source for the Amazon Q Business generated response.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SourceAttribution withTitle(String title) {
-        setTitle(title);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when the Amazon Q Business application was last updated.
-     */
-
-    public void setUpdatedAt(java.util.Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @return The Unix timestamp when the Amazon Q Business application was last updated.
-     */
-
-    public java.util.Date getUpdatedAt() {
-        return this.updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when the Amazon Q Business application was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SourceAttribution withUpdatedAt(java.util.Date updatedAt) {
-        setUpdatedAt(updatedAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The URL of the document which is the source for the Amazon Q Business generated response.
-     * </p>
-     * 
-     * @param url
-     *        The URL of the document which is the source for the Amazon Q Business generated response.
-     */
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    /**
-     * <p>
-     * The URL of the document which is the source for the Amazon Q Business generated response.
-     * </p>
-     * 
-     * @return The URL of the document which is the source for the Amazon Q Business generated response.
-     */
-
-    public String getUrl() {
-        return this.url;
-    }
-
-    /**
-     * <p>
-     * The URL of the document which is the source for the Amazon Q Business generated response.
-     * </p>
-     * 
-     * @param url
-     *        The URL of the document which is the source for the Amazon Q Business generated response.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SourceAttribution withUrl(String url) {
-        setUrl(url);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -347,18 +347,18 @@ public class SourceAttribution implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCitationNumber() != null)
-            sb.append("CitationNumber: ").append(getCitationNumber()).append(",");
-        if (getSnippet() != null)
-            sb.append("Snippet: ").append(getSnippet()).append(",");
-        if (getTextMessageSegments() != null)
-            sb.append("TextMessageSegments: ").append(getTextMessageSegments()).append(",");
         if (getTitle() != null)
             sb.append("Title: ").append(getTitle()).append(",");
+        if (getSnippet() != null)
+            sb.append("Snippet: ").append(getSnippet()).append(",");
+        if (getUrl() != null)
+            sb.append("Url: ").append(getUrl()).append(",");
+        if (getCitationNumber() != null)
+            sb.append("CitationNumber: ").append(getCitationNumber()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
-        if (getUrl() != null)
-            sb.append("Url: ").append(getUrl());
+        if (getTextMessageSegments() != null)
+            sb.append("TextMessageSegments: ").append(getTextMessageSegments());
         sb.append("}");
         return sb.toString();
     }
@@ -373,29 +373,29 @@ public class SourceAttribution implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof SourceAttribution == false)
             return false;
         SourceAttribution other = (SourceAttribution) obj;
-        if (other.getCitationNumber() == null ^ this.getCitationNumber() == null)
+        if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
-        if (other.getCitationNumber() != null && other.getCitationNumber().equals(this.getCitationNumber()) == false)
+        if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
             return false;
         if (other.getSnippet() == null ^ this.getSnippet() == null)
             return false;
         if (other.getSnippet() != null && other.getSnippet().equals(this.getSnippet()) == false)
             return false;
-        if (other.getTextMessageSegments() == null ^ this.getTextMessageSegments() == null)
+        if (other.getUrl() == null ^ this.getUrl() == null)
             return false;
-        if (other.getTextMessageSegments() != null && other.getTextMessageSegments().equals(this.getTextMessageSegments()) == false)
+        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
             return false;
-        if (other.getTitle() == null ^ this.getTitle() == null)
+        if (other.getCitationNumber() == null ^ this.getCitationNumber() == null)
             return false;
-        if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
+        if (other.getCitationNumber() != null && other.getCitationNumber().equals(this.getCitationNumber()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
-        if (other.getUrl() == null ^ this.getUrl() == null)
+        if (other.getTextMessageSegments() == null ^ this.getTextMessageSegments() == null)
             return false;
-        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
+        if (other.getTextMessageSegments() != null && other.getTextMessageSegments().equals(this.getTextMessageSegments()) == false)
             return false;
         return true;
     }
@@ -405,12 +405,12 @@ public class SourceAttribution implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCitationNumber() == null) ? 0 : getCitationNumber().hashCode());
-        hashCode = prime * hashCode + ((getSnippet() == null) ? 0 : getSnippet().hashCode());
-        hashCode = prime * hashCode + ((getTextMessageSegments() == null) ? 0 : getTextMessageSegments().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
-        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getSnippet() == null) ? 0 : getSnippet().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
+        hashCode = prime * hashCode + ((getCitationNumber() == null) ? 0 : getCitationNumber().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getTextMessageSegments() == null) ? 0 : getTextMessageSegments().hashCode());
         return hashCode;
     }
 

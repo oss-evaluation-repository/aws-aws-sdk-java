@@ -56,6 +56,10 @@ public class ShareDetailsJsonUnmarshaller implements Unmarshaller<ShareDetails, 
                     context.nextToken();
                     shareDetails.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("resourceId", targetDepth)) {
+                    context.nextToken();
+                    shareDetails.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("principalSubscriber", targetDepth)) {
                     context.nextToken();
                     shareDetails.setPrincipalSubscriber(context.getUnmarshaller(String.class).unmarshall(context));

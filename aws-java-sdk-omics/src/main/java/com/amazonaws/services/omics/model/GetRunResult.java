@@ -96,7 +96,8 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private String digest;
     /**
      * <p>
-     * The run's storage capacity in gigabytes.
+     * The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the
+     * maximum amount of storage used during the run.
      * </p>
      */
     private Integer storageCapacity;
@@ -190,6 +191,18 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private String runOutputUri;
+    /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     */
+    private String storageType;
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     */
+    private String workflowOwnerId;
 
     /**
      * <p>
@@ -711,11 +724,13 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run's storage capacity in gigabytes.
+     * The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the
+     * maximum amount of storage used during the run.
      * </p>
      * 
      * @param storageCapacity
-     *        The run's storage capacity in gigabytes.
+     *        The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is
+     *        the maximum amount of storage used during the run.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -724,10 +739,12 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run's storage capacity in gigabytes.
+     * The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the
+     * maximum amount of storage used during the run.
      * </p>
      * 
-     * @return The run's storage capacity in gigabytes.
+     * @return The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is
+     *         the maximum amount of storage used during the run.
      */
 
     public Integer getStorageCapacity() {
@@ -736,11 +753,13 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run's storage capacity in gigabytes.
+     * The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is the
+     * maximum amount of storage used during the run.
      * </p>
      * 
      * @param storageCapacity
-     *        The run's storage capacity in gigabytes.
+     *        The run's storage capacity in gibibytes. For dynamic storage, after the run has completed, this value is
+     *        the maximum amount of storage used during the run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1463,6 +1482,105 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type.
+     * @see StorageType
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     * 
+     * @return The run's storage type.
+     * @see StorageType
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public GetRunResult withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's storage type.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public GetRunResult withStorageType(StorageType storageType) {
+        this.storageType = storageType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @param workflowOwnerId
+     *        The ID of the workflow owner.
+     */
+
+    public void setWorkflowOwnerId(String workflowOwnerId) {
+        this.workflowOwnerId = workflowOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @return The ID of the workflow owner.
+     */
+
+    public String getWorkflowOwnerId() {
+        return this.workflowOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @param workflowOwnerId
+     *        The ID of the workflow owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRunResult withWorkflowOwnerId(String workflowOwnerId) {
+        setWorkflowOwnerId(workflowOwnerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1529,7 +1647,11 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getUuid() != null)
             sb.append("Uuid: ").append(getUuid()).append(",");
         if (getRunOutputUri() != null)
-            sb.append("RunOutputUri: ").append(getRunOutputUri());
+            sb.append("RunOutputUri: ").append(getRunOutputUri()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType()).append(",");
+        if (getWorkflowOwnerId() != null)
+            sb.append("WorkflowOwnerId: ").append(getWorkflowOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -1656,6 +1778,14 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getRunOutputUri() != null && other.getRunOutputUri().equals(this.getRunOutputUri()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
+        if (other.getWorkflowOwnerId() == null ^ this.getWorkflowOwnerId() == null)
+            return false;
+        if (other.getWorkflowOwnerId() != null && other.getWorkflowOwnerId().equals(this.getWorkflowOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -1692,6 +1822,8 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getLogLocation() == null) ? 0 : getLogLocation().hashCode());
         hashCode = prime * hashCode + ((getUuid() == null) ? 0 : getUuid().hashCode());
         hashCode = prime * hashCode + ((getRunOutputUri() == null) ? 0 : getRunOutputUri().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowOwnerId() == null) ? 0 : getWorkflowOwnerId().hashCode());
         return hashCode;
     }
 

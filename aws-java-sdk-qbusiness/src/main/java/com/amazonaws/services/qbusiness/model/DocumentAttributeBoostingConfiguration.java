@@ -48,12 +48,6 @@ public class DocumentAttributeBoostingConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * Provides information on boosting <code>DATE</code> type document attributes.
-     * </p>
-     */
-    private DateAttributeBoostingConfiguration dateConfiguration;
-    /**
-     * <p>
      * Provides information on boosting <code>NUMBER</code> type document attributes.
      * </p>
      */
@@ -66,50 +60,16 @@ public class DocumentAttributeBoostingConfiguration implements Serializable, Clo
     private StringAttributeBoostingConfiguration stringConfiguration;
     /**
      * <p>
+     * Provides information on boosting <code>DATE</code> type document attributes.
+     * </p>
+     */
+    private DateAttributeBoostingConfiguration dateConfiguration;
+    /**
+     * <p>
      * Provides information on boosting <code>STRING_LIST</code> type document attributes.
      * </p>
      */
     private StringListAttributeBoostingConfiguration stringListConfiguration;
-
-    /**
-     * <p>
-     * Provides information on boosting <code>DATE</code> type document attributes.
-     * </p>
-     * 
-     * @param dateConfiguration
-     *        Provides information on boosting <code>DATE</code> type document attributes.
-     */
-
-    public void setDateConfiguration(DateAttributeBoostingConfiguration dateConfiguration) {
-        this.dateConfiguration = dateConfiguration;
-    }
-
-    /**
-     * <p>
-     * Provides information on boosting <code>DATE</code> type document attributes.
-     * </p>
-     * 
-     * @return Provides information on boosting <code>DATE</code> type document attributes.
-     */
-
-    public DateAttributeBoostingConfiguration getDateConfiguration() {
-        return this.dateConfiguration;
-    }
-
-    /**
-     * <p>
-     * Provides information on boosting <code>DATE</code> type document attributes.
-     * </p>
-     * 
-     * @param dateConfiguration
-     *        Provides information on boosting <code>DATE</code> type document attributes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DocumentAttributeBoostingConfiguration withDateConfiguration(DateAttributeBoostingConfiguration dateConfiguration) {
-        setDateConfiguration(dateConfiguration);
-        return this;
-    }
 
     /**
      * <p>
@@ -193,6 +153,46 @@ public class DocumentAttributeBoostingConfiguration implements Serializable, Clo
 
     /**
      * <p>
+     * Provides information on boosting <code>DATE</code> type document attributes.
+     * </p>
+     * 
+     * @param dateConfiguration
+     *        Provides information on boosting <code>DATE</code> type document attributes.
+     */
+
+    public void setDateConfiguration(DateAttributeBoostingConfiguration dateConfiguration) {
+        this.dateConfiguration = dateConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information on boosting <code>DATE</code> type document attributes.
+     * </p>
+     * 
+     * @return Provides information on boosting <code>DATE</code> type document attributes.
+     */
+
+    public DateAttributeBoostingConfiguration getDateConfiguration() {
+        return this.dateConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information on boosting <code>DATE</code> type document attributes.
+     * </p>
+     * 
+     * @param dateConfiguration
+     *        Provides information on boosting <code>DATE</code> type document attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentAttributeBoostingConfiguration withDateConfiguration(DateAttributeBoostingConfiguration dateConfiguration) {
+        setDateConfiguration(dateConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides information on boosting <code>STRING_LIST</code> type document attributes.
      * </p>
      * 
@@ -243,12 +243,12 @@ public class DocumentAttributeBoostingConfiguration implements Serializable, Clo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDateConfiguration() != null)
-            sb.append("DateConfiguration: ").append(getDateConfiguration()).append(",");
         if (getNumberConfiguration() != null)
             sb.append("NumberConfiguration: ").append(getNumberConfiguration()).append(",");
         if (getStringConfiguration() != null)
             sb.append("StringConfiguration: ").append(getStringConfiguration()).append(",");
+        if (getDateConfiguration() != null)
+            sb.append("DateConfiguration: ").append(getDateConfiguration()).append(",");
         if (getStringListConfiguration() != null)
             sb.append("StringListConfiguration: ").append(getStringListConfiguration());
         sb.append("}");
@@ -265,10 +265,6 @@ public class DocumentAttributeBoostingConfiguration implements Serializable, Clo
         if (obj instanceof DocumentAttributeBoostingConfiguration == false)
             return false;
         DocumentAttributeBoostingConfiguration other = (DocumentAttributeBoostingConfiguration) obj;
-        if (other.getDateConfiguration() == null ^ this.getDateConfiguration() == null)
-            return false;
-        if (other.getDateConfiguration() != null && other.getDateConfiguration().equals(this.getDateConfiguration()) == false)
-            return false;
         if (other.getNumberConfiguration() == null ^ this.getNumberConfiguration() == null)
             return false;
         if (other.getNumberConfiguration() != null && other.getNumberConfiguration().equals(this.getNumberConfiguration()) == false)
@@ -276,6 +272,10 @@ public class DocumentAttributeBoostingConfiguration implements Serializable, Clo
         if (other.getStringConfiguration() == null ^ this.getStringConfiguration() == null)
             return false;
         if (other.getStringConfiguration() != null && other.getStringConfiguration().equals(this.getStringConfiguration()) == false)
+            return false;
+        if (other.getDateConfiguration() == null ^ this.getDateConfiguration() == null)
+            return false;
+        if (other.getDateConfiguration() != null && other.getDateConfiguration().equals(this.getDateConfiguration()) == false)
             return false;
         if (other.getStringListConfiguration() == null ^ this.getStringListConfiguration() == null)
             return false;
@@ -289,9 +289,9 @@ public class DocumentAttributeBoostingConfiguration implements Serializable, Clo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDateConfiguration() == null) ? 0 : getDateConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNumberConfiguration() == null) ? 0 : getNumberConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStringConfiguration() == null) ? 0 : getStringConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDateConfiguration() == null) ? 0 : getDateConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStringListConfiguration() == null) ? 0 : getStringListConfiguration().hashCode());
         return hashCode;
     }

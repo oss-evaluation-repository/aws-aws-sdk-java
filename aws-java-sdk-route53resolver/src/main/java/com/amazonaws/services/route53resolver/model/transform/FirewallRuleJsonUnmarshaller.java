@@ -96,6 +96,10 @@ public class FirewallRuleJsonUnmarshaller implements Unmarshaller<FirewallRule, 
                     context.nextToken();
                     firewallRule.setModificationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FirewallDomainRedirectionAction", targetDepth)) {
+                    context.nextToken();
+                    firewallRule.setFirewallDomainRedirectionAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Qtype", targetDepth)) {
                     context.nextToken();
                     firewallRule.setQtype(context.getUnmarshaller(String.class).unmarshall(context));

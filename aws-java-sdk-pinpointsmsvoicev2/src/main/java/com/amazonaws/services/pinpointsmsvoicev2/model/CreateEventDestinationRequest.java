@@ -52,7 +52,7 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<String> matchingEventTypes;
     /**
      * <p>
-     * An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * </p>
      */
     private CloudWatchLogsDestination cloudWatchLogsDestination;
@@ -313,11 +313,11 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param cloudWatchLogsDestination
-     *        An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     *        An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      */
 
     public void setCloudWatchLogsDestination(CloudWatchLogsDestination cloudWatchLogsDestination) {
@@ -326,10 +326,10 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * </p>
      * 
-     * @return An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * @return An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      */
 
     public CloudWatchLogsDestination getCloudWatchLogsDestination() {
@@ -338,11 +338,11 @@ public class CreateEventDestinationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     * An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param cloudWatchLogsDestination
-     *        An object that contains information about an event destination for logging to Amazon CloudWatch logs.
+     *        An object that contains information about an event destination for logging to Amazon CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

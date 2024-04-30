@@ -27,30 +27,30 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource ARN for the analytics store to be shared.
+     * The ARN of the resource to be shared.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The principal subscriber is the account being given access to the analytics store data through the share offer.
+     * The principal subscriber is the account being offered shared access to the resource.
      * </p>
      */
     private String principalSubscriber;
     /**
      * <p>
-     * A name given to the share.
+     * A name that the owner defines for the share.
      * </p>
      */
     private String shareName;
 
     /**
      * <p>
-     * The resource ARN for the analytics store to be shared.
+     * The ARN of the resource to be shared.
      * </p>
      * 
      * @param resourceArn
-     *        The resource ARN for the analytics store to be shared.
+     *        The ARN of the resource to be shared.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -59,10 +59,10 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource ARN for the analytics store to be shared.
+     * The ARN of the resource to be shared.
      * </p>
      * 
-     * @return The resource ARN for the analytics store to be shared.
+     * @return The ARN of the resource to be shared.
      */
 
     public String getResourceArn() {
@@ -71,11 +71,11 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource ARN for the analytics store to be shared.
+     * The ARN of the resource to be shared.
      * </p>
      * 
      * @param resourceArn
-     *        The resource ARN for the analytics store to be shared.
+     *        The ARN of the resource to be shared.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,12 +86,11 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The principal subscriber is the account being given access to the analytics store data through the share offer.
+     * The principal subscriber is the account being offered shared access to the resource.
      * </p>
      * 
      * @param principalSubscriber
-     *        The principal subscriber is the account being given access to the analytics store data through the share
-     *        offer.
+     *        The principal subscriber is the account being offered shared access to the resource.
      */
 
     public void setPrincipalSubscriber(String principalSubscriber) {
@@ -100,11 +99,10 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The principal subscriber is the account being given access to the analytics store data through the share offer.
+     * The principal subscriber is the account being offered shared access to the resource.
      * </p>
      * 
-     * @return The principal subscriber is the account being given access to the analytics store data through the share
-     *         offer.
+     * @return The principal subscriber is the account being offered shared access to the resource.
      */
 
     public String getPrincipalSubscriber() {
@@ -113,12 +111,11 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The principal subscriber is the account being given access to the analytics store data through the share offer.
+     * The principal subscriber is the account being offered shared access to the resource.
      * </p>
      * 
      * @param principalSubscriber
-     *        The principal subscriber is the account being given access to the analytics store data through the share
-     *        offer.
+     *        The principal subscriber is the account being offered shared access to the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +126,11 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A name given to the share.
+     * A name that the owner defines for the share.
      * </p>
      * 
      * @param shareName
-     *        A name given to the share.
+     *        A name that the owner defines for the share.
      */
 
     public void setShareName(String shareName) {
@@ -142,10 +139,10 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A name given to the share.
+     * A name that the owner defines for the share.
      * </p>
      * 
-     * @return A name given to the share.
+     * @return A name that the owner defines for the share.
      */
 
     public String getShareName() {
@@ -154,11 +151,11 @@ public class CreateShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A name given to the share.
+     * A name that the owner defines for the share.
      * </p>
      * 
      * @param shareName
-     *        A name given to the share.
+     *        A name that the owner defines for the share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

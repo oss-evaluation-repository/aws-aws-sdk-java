@@ -29,18 +29,20 @@ public class UpdateWebExperienceRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<StructuredPojo> AUTHENTICATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationConfiguration").build();
-    private static final MarshallingInfo<String> SAMPLEPROMPTSCONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("samplePromptsControlMode").build();
-    private static final MarshallingInfo<String> SUBTITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("subtitle").build();
-    private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("title").build();
     private static final MarshallingInfo<String> WEBEXPERIENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("webExperienceId").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<StructuredPojo> AUTHENTICATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationConfiguration").build();
+    private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("title").build();
+    private static final MarshallingInfo<String> SUBTITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("subtitle").build();
     private static final MarshallingInfo<String> WELCOMEMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("welcomeMessage").build();
+    private static final MarshallingInfo<String> SAMPLEPROMPTSCONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("samplePromptsControlMode").build();
 
     private static final UpdateWebExperienceRequestMarshaller instance = new UpdateWebExperienceRequestMarshaller();
 
@@ -59,12 +61,13 @@ public class UpdateWebExperienceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateWebExperienceRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(updateWebExperienceRequest.getAuthenticationConfiguration(), AUTHENTICATIONCONFIGURATION_BINDING);
-            protocolMarshaller.marshall(updateWebExperienceRequest.getSamplePromptsControlMode(), SAMPLEPROMPTSCONTROLMODE_BINDING);
-            protocolMarshaller.marshall(updateWebExperienceRequest.getSubtitle(), SUBTITLE_BINDING);
-            protocolMarshaller.marshall(updateWebExperienceRequest.getTitle(), TITLE_BINDING);
             protocolMarshaller.marshall(updateWebExperienceRequest.getWebExperienceId(), WEBEXPERIENCEID_BINDING);
+            protocolMarshaller.marshall(updateWebExperienceRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(updateWebExperienceRequest.getAuthenticationConfiguration(), AUTHENTICATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateWebExperienceRequest.getTitle(), TITLE_BINDING);
+            protocolMarshaller.marshall(updateWebExperienceRequest.getSubtitle(), SUBTITLE_BINDING);
             protocolMarshaller.marshall(updateWebExperienceRequest.getWelcomeMessage(), WELCOMEMESSAGE_BINDING);
+            protocolMarshaller.marshall(updateWebExperienceRequest.getSamplePromptsControlMode(), SAMPLEPROMPTSCONTROLMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

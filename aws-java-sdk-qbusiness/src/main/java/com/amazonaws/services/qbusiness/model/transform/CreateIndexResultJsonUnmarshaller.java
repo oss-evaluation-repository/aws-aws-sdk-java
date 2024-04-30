@@ -48,13 +48,13 @@ public class CreateIndexResultJsonUnmarshaller implements Unmarshaller<CreateInd
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("indexArn", targetDepth)) {
-                    context.nextToken();
-                    createIndexResult.setIndexArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("indexId", targetDepth)) {
                     context.nextToken();
                     createIndexResult.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("indexArn", targetDepth)) {
+                    context.nextToken();
+                    createIndexResult.setIndexArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

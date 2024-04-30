@@ -236,6 +236,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private InfraCheckConfig infraCheckConfig;
+    /**
+     * <p>
+     * Contains information about attribute-based access control (ABAC) for the training job.
+     * </p>
+     */
+    private SessionChainingConfig sessionChainingConfig;
 
     /**
      * <p>
@@ -1914,6 +1920,46 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Contains information about attribute-based access control (ABAC) for the training job.
+     * </p>
+     * 
+     * @param sessionChainingConfig
+     *        Contains information about attribute-based access control (ABAC) for the training job.
+     */
+
+    public void setSessionChainingConfig(SessionChainingConfig sessionChainingConfig) {
+        this.sessionChainingConfig = sessionChainingConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about attribute-based access control (ABAC) for the training job.
+     * </p>
+     * 
+     * @return Contains information about attribute-based access control (ABAC) for the training job.
+     */
+
+    public SessionChainingConfig getSessionChainingConfig() {
+        return this.sessionChainingConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about attribute-based access control (ABAC) for the training job.
+     * </p>
+     * 
+     * @param sessionChainingConfig
+     *        Contains information about attribute-based access control (ABAC) for the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withSessionChainingConfig(SessionChainingConfig sessionChainingConfig) {
+        setSessionChainingConfig(sessionChainingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1972,7 +2018,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getRemoteDebugConfig() != null)
             sb.append("RemoteDebugConfig: ").append(getRemoteDebugConfig()).append(",");
         if (getInfraCheckConfig() != null)
-            sb.append("InfraCheckConfig: ").append(getInfraCheckConfig());
+            sb.append("InfraCheckConfig: ").append(getInfraCheckConfig()).append(",");
+        if (getSessionChainingConfig() != null)
+            sb.append("SessionChainingConfig: ").append(getSessionChainingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -2084,6 +2132,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getInfraCheckConfig() != null && other.getInfraCheckConfig().equals(this.getInfraCheckConfig()) == false)
             return false;
+        if (other.getSessionChainingConfig() == null ^ this.getSessionChainingConfig() == null)
+            return false;
+        if (other.getSessionChainingConfig() != null && other.getSessionChainingConfig().equals(this.getSessionChainingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -2116,6 +2168,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getRemoteDebugConfig() == null) ? 0 : getRemoteDebugConfig().hashCode());
         hashCode = prime * hashCode + ((getInfraCheckConfig() == null) ? 0 : getInfraCheckConfig().hashCode());
+        hashCode = prime * hashCode + ((getSessionChainingConfig() == null) ? 0 : getSessionChainingConfig().hashCode());
         return hashCode;
     }
 

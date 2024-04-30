@@ -52,13 +52,13 @@ public class InlineDocumentEnrichmentConfigurationJsonUnmarshaller implements Un
                     context.nextToken();
                     inlineDocumentEnrichmentConfiguration.setCondition(DocumentAttributeConditionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("documentContentOperator", targetDepth)) {
-                    context.nextToken();
-                    inlineDocumentEnrichmentConfiguration.setDocumentContentOperator(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("target", targetDepth)) {
                     context.nextToken();
                     inlineDocumentEnrichmentConfiguration.setTarget(DocumentAttributeTargetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("documentContentOperator", targetDepth)) {
+                    context.nextToken();
+                    inlineDocumentEnrichmentConfiguration.setDocumentContentOperator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

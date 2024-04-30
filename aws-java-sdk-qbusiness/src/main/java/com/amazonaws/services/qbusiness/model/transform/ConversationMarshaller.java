@@ -29,10 +29,10 @@ public class ConversationMarshaller {
 
     private static final MarshallingInfo<String> CONVERSATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversationId").build();
-    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("title").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
 
     private static final ConversationMarshaller instance = new ConversationMarshaller();
 
@@ -51,8 +51,8 @@ public class ConversationMarshaller {
 
         try {
             protocolMarshaller.marshall(conversation.getConversationId(), CONVERSATIONID_BINDING);
-            protocolMarshaller.marshall(conversation.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(conversation.getTitle(), TITLE_BINDING);
+            protocolMarshaller.marshall(conversation.getStartTime(), STARTTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

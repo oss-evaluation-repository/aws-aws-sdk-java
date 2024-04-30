@@ -25,10 +25,24 @@ public class GetChatControlsConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * The response scope configured for a Amazon Q Business application. This determines whether your application uses
+     * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in chat.
+     * </p>
+     */
+    private String responseScope;
+    /**
+     * <p>
      * The phrases blocked from chat by your chat control configuration.
      * </p>
      */
     private BlockedPhrasesConfiguration blockedPhrases;
+    /**
+     * <p>
+     * The topic specific controls configured for a Amazon Q Business application.
+     * </p>
+     */
+    private java.util.List<TopicConfiguration> topicConfigurations;
     /**
      * <p>
      * The configuration details for <code>CREATOR_MODE</code>.
@@ -43,20 +57,85 @@ public class GetChatControlsConfigurationResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String nextToken;
+
     /**
      * <p>
      * The response scope configured for a Amazon Q Business application. This determines whether your application uses
      * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
      * the large language models (LLM) knowledge to respons to end user questions in chat.
      * </p>
+     * 
+     * @param responseScope
+     *        The response scope configured for a Amazon Q Business application. This determines whether your
+     *        application uses its retrieval augmented generation (RAG) system to generate answers only from your
+     *        enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions
+     *        in chat.
+     * @see ResponseScope
      */
-    private String responseScope;
+
+    public void setResponseScope(String responseScope) {
+        this.responseScope = responseScope;
+    }
+
     /**
      * <p>
-     * The topic specific controls configured for a Amazon Q Business application.
+     * The response scope configured for a Amazon Q Business application. This determines whether your application uses
+     * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in chat.
      * </p>
+     * 
+     * @return The response scope configured for a Amazon Q Business application. This determines whether your
+     *         application uses its retrieval augmented generation (RAG) system to generate answers only from your
+     *         enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions
+     *         in chat.
+     * @see ResponseScope
      */
-    private java.util.List<TopicConfiguration> topicConfigurations;
+
+    public String getResponseScope() {
+        return this.responseScope;
+    }
+
+    /**
+     * <p>
+     * The response scope configured for a Amazon Q Business application. This determines whether your application uses
+     * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in chat.
+     * </p>
+     * 
+     * @param responseScope
+     *        The response scope configured for a Amazon Q Business application. This determines whether your
+     *        application uses its retrieval augmented generation (RAG) system to generate answers only from your
+     *        enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions
+     *        in chat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResponseScope
+     */
+
+    public GetChatControlsConfigurationResult withResponseScope(String responseScope) {
+        setResponseScope(responseScope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The response scope configured for a Amazon Q Business application. This determines whether your application uses
+     * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
+     * the large language models (LLM) knowledge to respons to end user questions in chat.
+     * </p>
+     * 
+     * @param responseScope
+     *        The response scope configured for a Amazon Q Business application. This determines whether your
+     *        application uses its retrieval augmented generation (RAG) system to generate answers only from your
+     *        enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions
+     *        in chat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResponseScope
+     */
+
+    public GetChatControlsConfigurationResult withResponseScope(ResponseScope responseScope) {
+        this.responseScope = responseScope.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -95,6 +174,76 @@ public class GetChatControlsConfigurationResult extends com.amazonaws.AmazonWebS
 
     public GetChatControlsConfigurationResult withBlockedPhrases(BlockedPhrasesConfiguration blockedPhrases) {
         setBlockedPhrases(blockedPhrases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The topic specific controls configured for a Amazon Q Business application.
+     * </p>
+     * 
+     * @return The topic specific controls configured for a Amazon Q Business application.
+     */
+
+    public java.util.List<TopicConfiguration> getTopicConfigurations() {
+        return topicConfigurations;
+    }
+
+    /**
+     * <p>
+     * The topic specific controls configured for a Amazon Q Business application.
+     * </p>
+     * 
+     * @param topicConfigurations
+     *        The topic specific controls configured for a Amazon Q Business application.
+     */
+
+    public void setTopicConfigurations(java.util.Collection<TopicConfiguration> topicConfigurations) {
+        if (topicConfigurations == null) {
+            this.topicConfigurations = null;
+            return;
+        }
+
+        this.topicConfigurations = new java.util.ArrayList<TopicConfiguration>(topicConfigurations);
+    }
+
+    /**
+     * <p>
+     * The topic specific controls configured for a Amazon Q Business application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTopicConfigurations(java.util.Collection)} or {@link #withTopicConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param topicConfigurations
+     *        The topic specific controls configured for a Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetChatControlsConfigurationResult withTopicConfigurations(TopicConfiguration... topicConfigurations) {
+        if (this.topicConfigurations == null) {
+            setTopicConfigurations(new java.util.ArrayList<TopicConfiguration>(topicConfigurations.length));
+        }
+        for (TopicConfiguration ele : topicConfigurations) {
+            this.topicConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The topic specific controls configured for a Amazon Q Business application.
+     * </p>
+     * 
+     * @param topicConfigurations
+     *        The topic specific controls configured for a Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetChatControlsConfigurationResult withTopicConfigurations(java.util.Collection<TopicConfiguration> topicConfigurations) {
+        setTopicConfigurations(topicConfigurations);
         return this;
     }
 
@@ -191,155 +340,6 @@ public class GetChatControlsConfigurationResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * <p>
-     * The response scope configured for a Amazon Q Business application. This determines whether your application uses
-     * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
-     * the large language models (LLM) knowledge to respons to end user questions in chat.
-     * </p>
-     * 
-     * @param responseScope
-     *        The response scope configured for a Amazon Q Business application. This determines whether your
-     *        application uses its retrieval augmented generation (RAG) system to generate answers only from your
-     *        enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions
-     *        in chat.
-     * @see ResponseScope
-     */
-
-    public void setResponseScope(String responseScope) {
-        this.responseScope = responseScope;
-    }
-
-    /**
-     * <p>
-     * The response scope configured for a Amazon Q Business application. This determines whether your application uses
-     * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
-     * the large language models (LLM) knowledge to respons to end user questions in chat.
-     * </p>
-     * 
-     * @return The response scope configured for a Amazon Q Business application. This determines whether your
-     *         application uses its retrieval augmented generation (RAG) system to generate answers only from your
-     *         enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions
-     *         in chat.
-     * @see ResponseScope
-     */
-
-    public String getResponseScope() {
-        return this.responseScope;
-    }
-
-    /**
-     * <p>
-     * The response scope configured for a Amazon Q Business application. This determines whether your application uses
-     * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
-     * the large language models (LLM) knowledge to respons to end user questions in chat.
-     * </p>
-     * 
-     * @param responseScope
-     *        The response scope configured for a Amazon Q Business application. This determines whether your
-     *        application uses its retrieval augmented generation (RAG) system to generate answers only from your
-     *        enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions
-     *        in chat.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResponseScope
-     */
-
-    public GetChatControlsConfigurationResult withResponseScope(String responseScope) {
-        setResponseScope(responseScope);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The response scope configured for a Amazon Q Business application. This determines whether your application uses
-     * its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses
-     * the large language models (LLM) knowledge to respons to end user questions in chat.
-     * </p>
-     * 
-     * @param responseScope
-     *        The response scope configured for a Amazon Q Business application. This determines whether your
-     *        application uses its retrieval augmented generation (RAG) system to generate answers only from your
-     *        enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions
-     *        in chat.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ResponseScope
-     */
-
-    public GetChatControlsConfigurationResult withResponseScope(ResponseScope responseScope) {
-        this.responseScope = responseScope.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The topic specific controls configured for a Amazon Q Business application.
-     * </p>
-     * 
-     * @return The topic specific controls configured for a Amazon Q Business application.
-     */
-
-    public java.util.List<TopicConfiguration> getTopicConfigurations() {
-        return topicConfigurations;
-    }
-
-    /**
-     * <p>
-     * The topic specific controls configured for a Amazon Q Business application.
-     * </p>
-     * 
-     * @param topicConfigurations
-     *        The topic specific controls configured for a Amazon Q Business application.
-     */
-
-    public void setTopicConfigurations(java.util.Collection<TopicConfiguration> topicConfigurations) {
-        if (topicConfigurations == null) {
-            this.topicConfigurations = null;
-            return;
-        }
-
-        this.topicConfigurations = new java.util.ArrayList<TopicConfiguration>(topicConfigurations);
-    }
-
-    /**
-     * <p>
-     * The topic specific controls configured for a Amazon Q Business application.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setTopicConfigurations(java.util.Collection)} or {@link #withTopicConfigurations(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param topicConfigurations
-     *        The topic specific controls configured for a Amazon Q Business application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetChatControlsConfigurationResult withTopicConfigurations(TopicConfiguration... topicConfigurations) {
-        if (this.topicConfigurations == null) {
-            setTopicConfigurations(new java.util.ArrayList<TopicConfiguration>(topicConfigurations.length));
-        }
-        for (TopicConfiguration ele : topicConfigurations) {
-            this.topicConfigurations.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The topic specific controls configured for a Amazon Q Business application.
-     * </p>
-     * 
-     * @param topicConfigurations
-     *        The topic specific controls configured for a Amazon Q Business application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetChatControlsConfigurationResult withTopicConfigurations(java.util.Collection<TopicConfiguration> topicConfigurations) {
-        setTopicConfigurations(topicConfigurations);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -351,16 +351,16 @@ public class GetChatControlsConfigurationResult extends com.amazonaws.AmazonWebS
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getResponseScope() != null)
+            sb.append("ResponseScope: ").append(getResponseScope()).append(",");
         if (getBlockedPhrases() != null)
             sb.append("BlockedPhrases: ").append(getBlockedPhrases()).append(",");
+        if (getTopicConfigurations() != null)
+            sb.append("TopicConfigurations: ").append(getTopicConfigurations()).append(",");
         if (getCreatorModeConfiguration() != null)
             sb.append("CreatorModeConfiguration: ").append(getCreatorModeConfiguration()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getResponseScope() != null)
-            sb.append("ResponseScope: ").append(getResponseScope()).append(",");
-        if (getTopicConfigurations() != null)
-            sb.append("TopicConfigurations: ").append(getTopicConfigurations());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -375,9 +375,17 @@ public class GetChatControlsConfigurationResult extends com.amazonaws.AmazonWebS
         if (obj instanceof GetChatControlsConfigurationResult == false)
             return false;
         GetChatControlsConfigurationResult other = (GetChatControlsConfigurationResult) obj;
+        if (other.getResponseScope() == null ^ this.getResponseScope() == null)
+            return false;
+        if (other.getResponseScope() != null && other.getResponseScope().equals(this.getResponseScope()) == false)
+            return false;
         if (other.getBlockedPhrases() == null ^ this.getBlockedPhrases() == null)
             return false;
         if (other.getBlockedPhrases() != null && other.getBlockedPhrases().equals(this.getBlockedPhrases()) == false)
+            return false;
+        if (other.getTopicConfigurations() == null ^ this.getTopicConfigurations() == null)
+            return false;
+        if (other.getTopicConfigurations() != null && other.getTopicConfigurations().equals(this.getTopicConfigurations()) == false)
             return false;
         if (other.getCreatorModeConfiguration() == null ^ this.getCreatorModeConfiguration() == null)
             return false;
@@ -387,14 +395,6 @@ public class GetChatControlsConfigurationResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getResponseScope() == null ^ this.getResponseScope() == null)
-            return false;
-        if (other.getResponseScope() != null && other.getResponseScope().equals(this.getResponseScope()) == false)
-            return false;
-        if (other.getTopicConfigurations() == null ^ this.getTopicConfigurations() == null)
-            return false;
-        if (other.getTopicConfigurations() != null && other.getTopicConfigurations().equals(this.getTopicConfigurations()) == false)
-            return false;
         return true;
     }
 
@@ -403,11 +403,11 @@ public class GetChatControlsConfigurationResult extends com.amazonaws.AmazonWebS
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getResponseScope() == null) ? 0 : getResponseScope().hashCode());
         hashCode = prime * hashCode + ((getBlockedPhrases() == null) ? 0 : getBlockedPhrases().hashCode());
+        hashCode = prime * hashCode + ((getTopicConfigurations() == null) ? 0 : getTopicConfigurations().hashCode());
         hashCode = prime * hashCode + ((getCreatorModeConfiguration() == null) ? 0 : getCreatorModeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getResponseScope() == null) ? 0 : getResponseScope().hashCode());
-        hashCode = prime * hashCode + ((getTopicConfigurations() == null) ? 0 : getTopicConfigurations().hashCode());
         return hashCode;
     }
 

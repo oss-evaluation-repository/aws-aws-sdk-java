@@ -48,31 +48,31 @@ public class SourceAttributionJsonUnmarshaller implements Unmarshaller<SourceAtt
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("citationNumber", targetDepth)) {
+                if (context.testExpression("title", targetDepth)) {
                     context.nextToken();
-                    sourceAttribution.setCitationNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    sourceAttribution.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("snippet", targetDepth)) {
                     context.nextToken();
                     sourceAttribution.setSnippet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("url", targetDepth)) {
+                    context.nextToken();
+                    sourceAttribution.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("citationNumber", targetDepth)) {
+                    context.nextToken();
+                    sourceAttribution.setCitationNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("updatedAt", targetDepth)) {
+                    context.nextToken();
+                    sourceAttribution.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("textMessageSegments", targetDepth)) {
                     context.nextToken();
                     sourceAttribution.setTextMessageSegments(new ListUnmarshaller<TextSegment>(TextSegmentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("title", targetDepth)) {
-                    context.nextToken();
-                    sourceAttribution.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("updatedAt", targetDepth)) {
-                    context.nextToken();
-                    sourceAttribution.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("url", targetDepth)) {
-                    context.nextToken();
-                    sourceAttribution.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

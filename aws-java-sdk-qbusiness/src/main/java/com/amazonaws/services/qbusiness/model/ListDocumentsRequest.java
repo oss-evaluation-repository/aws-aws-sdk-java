@@ -33,22 +33,16 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String applicationId;
     /**
      * <p>
-     * The identifier of the data sources the documents are attached to.
-     * </p>
-     */
-    private java.util.List<String> dataSourceIds;
-    /**
-     * <p>
      * The identifier of the index the documents are attached to.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The maximum number of documents to return.
+     * The identifier of the data sources the documents are attached to.
      * </p>
      */
-    private Integer maxResults;
+    private java.util.List<String> dataSourceIds;
     /**
      * <p>
      * If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business
@@ -57,6 +51,12 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The maximum number of documents to return.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -95,6 +95,46 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public ListDocumentsRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the index the documents are attached to.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier of the index the documents are attached to.
+     */
+
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the index the documents are attached to.
+     * </p>
+     * 
+     * @return The identifier of the index the documents are attached to.
+     */
+
+    public String getIndexId() {
+        return this.indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the index the documents are attached to.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier of the index the documents are attached to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDocumentsRequest withIndexId(String indexId) {
+        setIndexId(indexId);
         return this;
     }
 
@@ -170,86 +210,6 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the index the documents are attached to.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the index the documents are attached to.
-     */
-
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the index the documents are attached to.
-     * </p>
-     * 
-     * @return The identifier of the index the documents are attached to.
-     */
-
-    public String getIndexId() {
-        return this.indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the index the documents are attached to.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the index the documents are attached to.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListDocumentsRequest withIndexId(String indexId) {
-        setIndexId(indexId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The maximum number of documents to return.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of documents to return.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of documents to return.
-     * </p>
-     * 
-     * @return The maximum number of documents to return.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of documents to return.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of documents to return.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListDocumentsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
      * If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business
      * returns a pagination token in the response. You can use this pagination token to retrieve the next set of
      * documents.
@@ -301,6 +261,46 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The maximum number of documents to return.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of documents to return.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of documents to return.
+     * </p>
+     * 
+     * @return The maximum number of documents to return.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of documents to return.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of documents to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDocumentsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -314,14 +314,14 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDataSourceIds() != null)
-            sb.append("DataSourceIds: ").append(getDataSourceIds()).append(",");
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getDataSourceIds() != null)
+            sb.append("DataSourceIds: ").append(getDataSourceIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -340,21 +340,21 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDataSourceIds() == null ^ this.getDataSourceIds() == null)
-            return false;
-        if (other.getDataSourceIds() != null && other.getDataSourceIds().equals(this.getDataSourceIds()) == false)
-            return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getDataSourceIds() == null ^ this.getDataSourceIds() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getDataSourceIds() != null && other.getDataSourceIds().equals(this.getDataSourceIds()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -365,10 +365,10 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDataSourceIds() == null) ? 0 : getDataSourceIds().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceIds() == null) ? 0 : getDataSourceIds().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

@@ -48,11 +48,6 @@ public class DocumentAttributeBoostingConfigurationJsonUnmarshaller implements U
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("dateConfiguration", targetDepth)) {
-                    context.nextToken();
-                    documentAttributeBoostingConfiguration.setDateConfiguration(DateAttributeBoostingConfigurationJsonUnmarshaller.getInstance().unmarshall(
-                            context));
-                }
                 if (context.testExpression("numberConfiguration", targetDepth)) {
                     context.nextToken();
                     documentAttributeBoostingConfiguration.setNumberConfiguration(NumberAttributeBoostingConfigurationJsonUnmarshaller.getInstance()
@@ -62,6 +57,11 @@ public class DocumentAttributeBoostingConfigurationJsonUnmarshaller implements U
                     context.nextToken();
                     documentAttributeBoostingConfiguration.setStringConfiguration(StringAttributeBoostingConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
+                }
+                if (context.testExpression("dateConfiguration", targetDepth)) {
+                    context.nextToken();
+                    documentAttributeBoostingConfiguration.setDateConfiguration(DateAttributeBoostingConfigurationJsonUnmarshaller.getInstance().unmarshall(
+                            context));
                 }
                 if (context.testExpression("stringListConfiguration", targetDepth)) {
                     context.nextToken();

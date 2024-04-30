@@ -48,17 +48,17 @@ public class GroupStatusDetailJsonUnmarshaller implements Unmarshaller<GroupStat
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("errorDetail", targetDepth)) {
+                if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    groupStatusDetail.setErrorDetail(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                    groupStatusDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
                     groupStatusDetail.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
-                if (context.testExpression("status", targetDepth)) {
+                if (context.testExpression("errorDetail", targetDepth)) {
                     context.nextToken();
-                    groupStatusDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    groupStatusDetail.setErrorDetail(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

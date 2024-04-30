@@ -30,12 +30,6 @@ public class AttachmentOutput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An error associated with a file uploaded during chat.
-     * </p>
-     */
-    private ErrorDetail error;
-    /**
-     * <p>
      * The name of a file uploaded during chat.
      * </p>
      */
@@ -46,46 +40,12 @@ public class AttachmentOutput implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String status;
-
     /**
      * <p>
      * An error associated with a file uploaded during chat.
      * </p>
-     * 
-     * @param error
-     *        An error associated with a file uploaded during chat.
      */
-
-    public void setError(ErrorDetail error) {
-        this.error = error;
-    }
-
-    /**
-     * <p>
-     * An error associated with a file uploaded during chat.
-     * </p>
-     * 
-     * @return An error associated with a file uploaded during chat.
-     */
-
-    public ErrorDetail getError() {
-        return this.error;
-    }
-
-    /**
-     * <p>
-     * An error associated with a file uploaded during chat.
-     * </p>
-     * 
-     * @param error
-     *        An error associated with a file uploaded during chat.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AttachmentOutput withError(ErrorDetail error) {
-        setError(error);
-        return this;
-    }
+    private ErrorDetail error;
 
     /**
      * <p>
@@ -187,6 +147,46 @@ public class AttachmentOutput implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * An error associated with a file uploaded during chat.
+     * </p>
+     * 
+     * @param error
+     *        An error associated with a file uploaded during chat.
+     */
+
+    public void setError(ErrorDetail error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * An error associated with a file uploaded during chat.
+     * </p>
+     * 
+     * @return An error associated with a file uploaded during chat.
+     */
+
+    public ErrorDetail getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * An error associated with a file uploaded during chat.
+     * </p>
+     * 
+     * @param error
+     *        An error associated with a file uploaded during chat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttachmentOutput withError(ErrorDetail error) {
+        setError(error);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,12 +198,12 @@ public class AttachmentOutput implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError());
         sb.append("}");
         return sb.toString();
     }
@@ -218,10 +218,6 @@ public class AttachmentOutput implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof AttachmentOutput == false)
             return false;
         AttachmentOutput other = (AttachmentOutput) obj;
-        if (other.getError() == null ^ this.getError() == null)
-            return false;
-        if (other.getError() != null && other.getError().equals(this.getError()) == false)
-            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -229,6 +225,10 @@ public class AttachmentOutput implements Serializable, Cloneable, StructuredPojo
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
             return false;
         return true;
     }
@@ -238,9 +238,9 @@ public class AttachmentOutput implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         return hashCode;
     }
 

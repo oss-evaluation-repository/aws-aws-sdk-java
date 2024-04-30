@@ -28,16 +28,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ActionReviewPayloadFieldMarshaller {
 
-    private static final MarshallingInfo<List> ALLOWEDVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("allowedValues").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
     private static final MarshallingInfo<Integer> DISPLAYORDER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayOrder").build();
-    private static final MarshallingInfo<Boolean> REQUIRED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("required").build();
+    private static final MarshallingInfo<String> DISPLAYDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayDescription").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<List> ALLOWEDVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("allowedValues").build();
+    private static final MarshallingInfo<String> ALLOWEDFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowedFormat").build();
+    private static final MarshallingInfo<Boolean> REQUIRED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("required").build();
 
     private static final ActionReviewPayloadFieldMarshaller instance = new ActionReviewPayloadFieldMarshaller();
 
@@ -55,11 +59,13 @@ public class ActionReviewPayloadFieldMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(actionReviewPayloadField.getAllowedValues(), ALLOWEDVALUES_BINDING);
             protocolMarshaller.marshall(actionReviewPayloadField.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(actionReviewPayloadField.getDisplayOrder(), DISPLAYORDER_BINDING);
-            protocolMarshaller.marshall(actionReviewPayloadField.getRequired(), REQUIRED_BINDING);
+            protocolMarshaller.marshall(actionReviewPayloadField.getDisplayDescription(), DISPLAYDESCRIPTION_BINDING);
             protocolMarshaller.marshall(actionReviewPayloadField.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(actionReviewPayloadField.getAllowedValues(), ALLOWEDVALUES_BINDING);
+            protocolMarshaller.marshall(actionReviewPayloadField.getAllowedFormat(), ALLOWEDFORMAT_BINDING);
+            protocolMarshaller.marshall(actionReviewPayloadField.getRequired(), REQUIRED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

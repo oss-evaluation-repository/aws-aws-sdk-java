@@ -48,6 +48,14 @@ public class ActionReviewJsonUnmarshaller implements Unmarshaller<ActionReview, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("pluginId", targetDepth)) {
+                    context.nextToken();
+                    actionReview.setPluginId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("pluginType", targetDepth)) {
+                    context.nextToken();
+                    actionReview.setPluginType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("payload", targetDepth)) {
                     context.nextToken();
                     actionReview.setPayload(new MapUnmarshaller<String, ActionReviewPayloadField>(context.getUnmarshaller(String.class),
@@ -56,14 +64,6 @@ public class ActionReviewJsonUnmarshaller implements Unmarshaller<ActionReview, 
                 if (context.testExpression("payloadFieldNameSeparator", targetDepth)) {
                     context.nextToken();
                     actionReview.setPayloadFieldNameSeparator(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("pluginId", targetDepth)) {
-                    context.nextToken();
-                    actionReview.setPluginId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("pluginType", targetDepth)) {
-                    context.nextToken();
-                    actionReview.setPluginType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

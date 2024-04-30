@@ -30,16 +30,56 @@ public class AttachmentInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The data contained within the uploaded file.
-     * </p>
-     */
-    private java.nio.ByteBuffer data;
-    /**
-     * <p>
      * The name of the file.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The data contained within the uploaded file.
+     * </p>
+     */
+    private java.nio.ByteBuffer data;
+
+    /**
+     * <p>
+     * The name of the file.
+     * </p>
+     * 
+     * @param name
+     *        The name of the file.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the file.
+     * </p>
+     * 
+     * @return The name of the file.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the file.
+     * </p>
+     * 
+     * @param name
+     *        The name of the file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttachmentInput withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -109,46 +149,6 @@ public class AttachmentInput implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The name of the file.
-     * </p>
-     * 
-     * @param name
-     *        The name of the file.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The name of the file.
-     * </p>
-     * 
-     * @return The name of the file.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The name of the file.
-     * </p>
-     * 
-     * @param name
-     *        The name of the file.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AttachmentInput withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -160,10 +160,10 @@ public class AttachmentInput implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getData() != null)
-            sb.append("Data: ").append(getData()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getData() != null)
+            sb.append("Data: ").append(getData());
         sb.append("}");
         return sb.toString();
     }
@@ -178,13 +178,13 @@ public class AttachmentInput implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof AttachmentInput == false)
             return false;
         AttachmentInput other = (AttachmentInput) obj;
-        if (other.getData() == null ^ this.getData() == null)
-            return false;
-        if (other.getData() != null && other.getData().equals(this.getData()) == false)
-            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getData() == null ^ this.getData() == null)
+            return false;
+        if (other.getData() != null && other.getData().equals(this.getData()) == false)
             return false;
         return true;
     }
@@ -194,8 +194,8 @@ public class AttachmentInput implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
         return hashCode;
     }
 

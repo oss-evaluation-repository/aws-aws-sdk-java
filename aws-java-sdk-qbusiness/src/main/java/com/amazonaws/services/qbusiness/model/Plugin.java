@@ -30,10 +30,10 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp for when the plugin was created.
+     * The identifier of the plugin.
      * </p>
      */
-    private java.util.Date createdAt;
+    private String pluginId;
     /**
      * <p>
      * The name of the plugin.
@@ -42,10 +42,10 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
     private String displayName;
     /**
      * <p>
-     * The identifier of the plugin.
+     * The type of the plugin.
      * </p>
      */
-    private String pluginId;
+    private String type;
     /**
      * <p>
      * The plugin server URL used for configuration.
@@ -60,10 +60,16 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * The type of the plugin.
+     * The status of the plugin.
      * </p>
      */
-    private String type;
+    private String buildStatus;
+    /**
+     * <p>
+     * The timestamp for when the plugin was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
     /**
      * <p>
      * The timestamp for when the plugin was last updated.
@@ -73,41 +79,41 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp for when the plugin was created.
+     * The identifier of the plugin.
      * </p>
      * 
-     * @param createdAt
-     *        The timestamp for when the plugin was created.
+     * @param pluginId
+     *        The identifier of the plugin.
      */
 
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
+    public void setPluginId(String pluginId) {
+        this.pluginId = pluginId;
     }
 
     /**
      * <p>
-     * The timestamp for when the plugin was created.
+     * The identifier of the plugin.
      * </p>
      * 
-     * @return The timestamp for when the plugin was created.
+     * @return The identifier of the plugin.
      */
 
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
+    public String getPluginId() {
+        return this.pluginId;
     }
 
     /**
      * <p>
-     * The timestamp for when the plugin was created.
+     * The identifier of the plugin.
      * </p>
      * 
-     * @param createdAt
-     *        The timestamp for when the plugin was created.
+     * @param pluginId
+     *        The identifier of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Plugin withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
+    public Plugin withPluginId(String pluginId) {
+        setPluginId(pluginId);
         return this;
     }
 
@@ -153,41 +159,60 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the plugin.
+     * The type of the plugin.
      * </p>
      * 
-     * @param pluginId
-     *        The identifier of the plugin.
+     * @param type
+     *        The type of the plugin.
+     * @see PluginType
      */
 
-    public void setPluginId(String pluginId) {
-        this.pluginId = pluginId;
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
      * <p>
-     * The identifier of the plugin.
+     * The type of the plugin.
      * </p>
      * 
-     * @return The identifier of the plugin.
+     * @return The type of the plugin.
+     * @see PluginType
      */
 
-    public String getPluginId() {
-        return this.pluginId;
+    public String getType() {
+        return this.type;
     }
 
     /**
      * <p>
-     * The identifier of the plugin.
+     * The type of the plugin.
      * </p>
      * 
-     * @param pluginId
-     *        The identifier of the plugin.
+     * @param type
+     *        The type of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginType
      */
 
-    public Plugin withPluginId(String pluginId) {
-        setPluginId(pluginId);
+    public Plugin withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the plugin.
+     * </p>
+     * 
+     * @param type
+     *        The type of the plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginType
+     */
+
+    public Plugin withType(PluginType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -292,60 +317,100 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the plugin.
+     * The status of the plugin.
      * </p>
      * 
-     * @param type
-     *        The type of the plugin.
-     * @see PluginType
+     * @param buildStatus
+     *        The status of the plugin.
+     * @see PluginBuildStatus
      */
 
-    public void setType(String type) {
-        this.type = type;
+    public void setBuildStatus(String buildStatus) {
+        this.buildStatus = buildStatus;
     }
 
     /**
      * <p>
-     * The type of the plugin.
+     * The status of the plugin.
      * </p>
      * 
-     * @return The type of the plugin.
-     * @see PluginType
+     * @return The status of the plugin.
+     * @see PluginBuildStatus
      */
 
-    public String getType() {
-        return this.type;
+    public String getBuildStatus() {
+        return this.buildStatus;
     }
 
     /**
      * <p>
-     * The type of the plugin.
+     * The status of the plugin.
      * </p>
      * 
-     * @param type
-     *        The type of the plugin.
+     * @param buildStatus
+     *        The status of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PluginType
+     * @see PluginBuildStatus
      */
 
-    public Plugin withType(String type) {
-        setType(type);
+    public Plugin withBuildStatus(String buildStatus) {
+        setBuildStatus(buildStatus);
         return this;
     }
 
     /**
      * <p>
-     * The type of the plugin.
+     * The status of the plugin.
      * </p>
      * 
-     * @param type
-     *        The type of the plugin.
+     * @param buildStatus
+     *        The status of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PluginType
+     * @see PluginBuildStatus
      */
 
-    public Plugin withType(PluginType type) {
-        this.type = type.toString();
+    public Plugin withBuildStatus(PluginBuildStatus buildStatus) {
+        this.buildStatus = buildStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the plugin was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The timestamp for when the plugin was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the plugin was created.
+     * </p>
+     * 
+     * @return The timestamp for when the plugin was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the plugin was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The timestamp for when the plugin was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Plugin withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -401,18 +466,20 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getPluginId() != null)
             sb.append("PluginId: ").append(getPluginId()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getServerUrl() != null)
             sb.append("ServerUrl: ").append(getServerUrl()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
+        if (getBuildStatus() != null)
+            sb.append("BuildStatus: ").append(getBuildStatus()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
@@ -429,17 +496,17 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Plugin == false)
             return false;
         Plugin other = (Plugin) obj;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+        if (other.getPluginId() == null ^ this.getPluginId() == null)
             return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getPluginId() != null && other.getPluginId().equals(this.getPluginId()) == false)
             return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
-        if (other.getPluginId() == null ^ this.getPluginId() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getPluginId() != null && other.getPluginId().equals(this.getPluginId()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getServerUrl() == null ^ this.getServerUrl() == null)
             return false;
@@ -449,9 +516,13 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getBuildStatus() == null ^ this.getBuildStatus() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getBuildStatus() != null && other.getBuildStatus().equals(this.getBuildStatus()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
@@ -465,12 +536,13 @@ public class Plugin implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getPluginId() == null) ? 0 : getPluginId().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getServerUrl() == null) ? 0 : getServerUrl().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getBuildStatus() == null) ? 0 : getBuildStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }

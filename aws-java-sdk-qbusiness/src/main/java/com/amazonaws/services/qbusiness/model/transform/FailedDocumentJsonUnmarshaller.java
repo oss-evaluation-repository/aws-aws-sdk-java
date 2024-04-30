@@ -48,17 +48,17 @@ public class FailedDocumentJsonUnmarshaller implements Unmarshaller<FailedDocume
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("dataSourceId", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    failedDocument.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    failedDocument.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
                     failedDocument.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("id", targetDepth)) {
+                if (context.testExpression("dataSourceId", targetDepth)) {
                     context.nextToken();
-                    failedDocument.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                    failedDocument.setDataSourceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

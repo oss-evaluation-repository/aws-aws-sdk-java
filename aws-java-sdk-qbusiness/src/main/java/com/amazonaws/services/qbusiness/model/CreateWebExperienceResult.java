@@ -25,56 +25,16 @@ public class CreateWebExperienceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
-     * </p>
-     */
-    private String webExperienceArn;
-    /**
-     * <p>
      * The identifier of the Amazon Q Business web experience.
      * </p>
      */
     private String webExperienceId;
-
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
      * </p>
-     * 
-     * @param webExperienceArn
-     *        The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
      */
-
-    public void setWebExperienceArn(String webExperienceArn) {
-        this.webExperienceArn = webExperienceArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
-     */
-
-    public String getWebExperienceArn() {
-        return this.webExperienceArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param webExperienceArn
-     *        The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateWebExperienceResult withWebExperienceArn(String webExperienceArn) {
-        setWebExperienceArn(webExperienceArn);
-        return this;
-    }
+    private String webExperienceArn;
 
     /**
      * <p>
@@ -117,6 +77,46 @@ public class CreateWebExperienceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param webExperienceArn
+     *        The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
+     */
+
+    public void setWebExperienceArn(String webExperienceArn) {
+        this.webExperienceArn = webExperienceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
+     */
+
+    public String getWebExperienceArn() {
+        return this.webExperienceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param webExperienceArn
+     *        The Amazon Resource Name (ARN) of an Amazon Q Business web experience.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebExperienceResult withWebExperienceArn(String webExperienceArn) {
+        setWebExperienceArn(webExperienceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -128,10 +128,10 @@ public class CreateWebExperienceResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getWebExperienceArn() != null)
-            sb.append("WebExperienceArn: ").append(getWebExperienceArn()).append(",");
         if (getWebExperienceId() != null)
-            sb.append("WebExperienceId: ").append(getWebExperienceId());
+            sb.append("WebExperienceId: ").append(getWebExperienceId()).append(",");
+        if (getWebExperienceArn() != null)
+            sb.append("WebExperienceArn: ").append(getWebExperienceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -146,13 +146,13 @@ public class CreateWebExperienceResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof CreateWebExperienceResult == false)
             return false;
         CreateWebExperienceResult other = (CreateWebExperienceResult) obj;
-        if (other.getWebExperienceArn() == null ^ this.getWebExperienceArn() == null)
-            return false;
-        if (other.getWebExperienceArn() != null && other.getWebExperienceArn().equals(this.getWebExperienceArn()) == false)
-            return false;
         if (other.getWebExperienceId() == null ^ this.getWebExperienceId() == null)
             return false;
         if (other.getWebExperienceId() != null && other.getWebExperienceId().equals(this.getWebExperienceId()) == false)
+            return false;
+        if (other.getWebExperienceArn() == null ^ this.getWebExperienceArn() == null)
+            return false;
+        if (other.getWebExperienceArn() != null && other.getWebExperienceArn().equals(this.getWebExperienceArn()) == false)
             return false;
         return true;
     }
@@ -162,8 +162,8 @@ public class CreateWebExperienceResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getWebExperienceArn() == null) ? 0 : getWebExperienceArn().hashCode());
         hashCode = prime * hashCode + ((getWebExperienceId() == null) ? 0 : getWebExperienceId().hashCode());
+        hashCode = prime * hashCode + ((getWebExperienceArn() == null) ? 0 : getWebExperienceArn().hashCode());
         return hashCode;
     }
 

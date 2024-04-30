@@ -29,16 +29,16 @@ public class PutFeedbackRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<String> CONVERSATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("conversationId").build();
-    private static final MarshallingInfo<java.util.Date> MESSAGECOPIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("messageCopiedAt").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> MESSAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("messageId").build();
-    private static final MarshallingInfo<StructuredPojo> MESSAGEUSEFULNESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("messageUsefulness").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userId").build();
+    private static final MarshallingInfo<String> CONVERSATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("conversationId").build();
+    private static final MarshallingInfo<String> MESSAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("messageId").build();
+    private static final MarshallingInfo<java.util.Date> MESSAGECOPIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("messageCopiedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> MESSAGEUSEFULNESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("messageUsefulness").build();
 
     private static final PutFeedbackRequestMarshaller instance = new PutFeedbackRequestMarshaller();
 
@@ -57,11 +57,11 @@ public class PutFeedbackRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putFeedbackRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(putFeedbackRequest.getConversationId(), CONVERSATIONID_BINDING);
-            protocolMarshaller.marshall(putFeedbackRequest.getMessageCopiedAt(), MESSAGECOPIEDAT_BINDING);
-            protocolMarshaller.marshall(putFeedbackRequest.getMessageId(), MESSAGEID_BINDING);
-            protocolMarshaller.marshall(putFeedbackRequest.getMessageUsefulness(), MESSAGEUSEFULNESS_BINDING);
             protocolMarshaller.marshall(putFeedbackRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(putFeedbackRequest.getConversationId(), CONVERSATIONID_BINDING);
+            protocolMarshaller.marshall(putFeedbackRequest.getMessageId(), MESSAGEID_BINDING);
+            protocolMarshaller.marshall(putFeedbackRequest.getMessageCopiedAt(), MESSAGECOPIEDAT_BINDING);
+            protocolMarshaller.marshall(putFeedbackRequest.getMessageUsefulness(), MESSAGEUSEFULNESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,11 +25,6 @@ import java.util.concurrent.ExecutorService;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
- * <note>
- * <p>
- * Amazon Q is in preview release and is subject to change.
- * </p>
- * </note>
  * <p>
  * This is the <i>Amazon Q Business</i> API Reference. Amazon Q Business is a fully managed, generative-AI powered
  * enterprise chat assistant that you can deploy within your organization. Amazon Q Business enhances employee

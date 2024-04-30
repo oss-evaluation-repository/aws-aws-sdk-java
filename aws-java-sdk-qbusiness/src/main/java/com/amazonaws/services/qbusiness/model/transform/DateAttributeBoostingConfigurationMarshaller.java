@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DateAttributeBoostingConfigurationMarshaller {
 
-    private static final MarshallingInfo<Long> BOOSTINGDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("boostingDurationInSeconds").build();
     private static final MarshallingInfo<String> BOOSTINGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("boostingLevel").build();
+    private static final MarshallingInfo<Long> BOOSTINGDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("boostingDurationInSeconds").build();
 
     private static final DateAttributeBoostingConfigurationMarshaller instance = new DateAttributeBoostingConfigurationMarshaller();
 
@@ -48,8 +48,8 @@ public class DateAttributeBoostingConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(dateAttributeBoostingConfiguration.getBoostingDurationInSeconds(), BOOSTINGDURATIONINSECONDS_BINDING);
             protocolMarshaller.marshall(dateAttributeBoostingConfiguration.getBoostingLevel(), BOOSTINGLEVEL_BINDING);
+            protocolMarshaller.marshall(dateAttributeBoostingConfiguration.getBoostingDurationInSeconds(), BOOSTINGDURATIONINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -48,6 +48,10 @@ public class TopicConfigurationJsonUnmarshaller implements Unmarshaller<TopicCon
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("name", targetDepth)) {
+                    context.nextToken();
+                    topicConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     topicConfiguration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
@@ -57,10 +61,6 @@ public class TopicConfigurationJsonUnmarshaller implements Unmarshaller<TopicCon
                     topicConfiguration.setExampleChatMessages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    topicConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("rules", targetDepth)) {
                     context.nextToken();

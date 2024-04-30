@@ -28,10 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DataSourceVpcConfigurationMarshaller {
 
-    private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroupIds").build();
     private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("subnetIds").build();
+    private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroupIds").build();
 
     private static final DataSourceVpcConfigurationMarshaller instance = new DataSourceVpcConfigurationMarshaller();
 
@@ -49,8 +49,8 @@ public class DataSourceVpcConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(dataSourceVpcConfiguration.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(dataSourceVpcConfiguration.getSubnetIds(), SUBNETIDS_BINDING);
+            protocolMarshaller.marshall(dataSourceVpcConfiguration.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

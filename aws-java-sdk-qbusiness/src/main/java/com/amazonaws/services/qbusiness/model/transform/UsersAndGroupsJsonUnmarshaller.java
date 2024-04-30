@@ -48,15 +48,15 @@ public class UsersAndGroupsJsonUnmarshaller implements Unmarshaller<UsersAndGrou
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("userGroups", targetDepth)) {
-                    context.nextToken();
-                    usersAndGroups.setUserGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("userIds", targetDepth)) {
                     context.nextToken();
                     usersAndGroups.setUserIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("userGroups", targetDepth)) {
+                    context.nextToken();
+                    usersAndGroups.setUserGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }

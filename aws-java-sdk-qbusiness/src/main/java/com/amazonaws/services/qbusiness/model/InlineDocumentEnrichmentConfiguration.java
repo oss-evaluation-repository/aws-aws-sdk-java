@@ -40,14 +40,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class InlineDocumentEnrichmentConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     private DocumentAttributeCondition condition;
+
+    private DocumentAttributeTarget target;
     /**
      * <p>
      * <code>TRUE</code> to delete content if the condition used for the target attribute is met.
      * </p>
      */
     private String documentContentOperator;
-
-    private DocumentAttributeTarget target;
 
     /**
      * @param condition
@@ -72,6 +72,32 @@ public class InlineDocumentEnrichmentConfiguration implements Serializable, Clon
 
     public InlineDocumentEnrichmentConfiguration withCondition(DocumentAttributeCondition condition) {
         setCondition(condition);
+        return this;
+    }
+
+    /**
+     * @param target
+     */
+
+    public void setTarget(DocumentAttributeTarget target) {
+        this.target = target;
+    }
+
+    /**
+     * @return
+     */
+
+    public DocumentAttributeTarget getTarget() {
+        return this.target;
+    }
+
+    /**
+     * @param target
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InlineDocumentEnrichmentConfiguration withTarget(DocumentAttributeTarget target) {
+        setTarget(target);
         return this;
     }
 
@@ -135,32 +161,6 @@ public class InlineDocumentEnrichmentConfiguration implements Serializable, Clon
     }
 
     /**
-     * @param target
-     */
-
-    public void setTarget(DocumentAttributeTarget target) {
-        this.target = target;
-    }
-
-    /**
-     * @return
-     */
-
-    public DocumentAttributeTarget getTarget() {
-        return this.target;
-    }
-
-    /**
-     * @param target
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InlineDocumentEnrichmentConfiguration withTarget(DocumentAttributeTarget target) {
-        setTarget(target);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -174,10 +174,10 @@ public class InlineDocumentEnrichmentConfiguration implements Serializable, Clon
         sb.append("{");
         if (getCondition() != null)
             sb.append("Condition: ").append(getCondition()).append(",");
-        if (getDocumentContentOperator() != null)
-            sb.append("DocumentContentOperator: ").append(getDocumentContentOperator()).append(",");
         if (getTarget() != null)
-            sb.append("Target: ").append(getTarget());
+            sb.append("Target: ").append(getTarget()).append(",");
+        if (getDocumentContentOperator() != null)
+            sb.append("DocumentContentOperator: ").append(getDocumentContentOperator());
         sb.append("}");
         return sb.toString();
     }
@@ -196,13 +196,13 @@ public class InlineDocumentEnrichmentConfiguration implements Serializable, Clon
             return false;
         if (other.getCondition() != null && other.getCondition().equals(this.getCondition()) == false)
             return false;
-        if (other.getDocumentContentOperator() == null ^ this.getDocumentContentOperator() == null)
-            return false;
-        if (other.getDocumentContentOperator() != null && other.getDocumentContentOperator().equals(this.getDocumentContentOperator()) == false)
-            return false;
         if (other.getTarget() == null ^ this.getTarget() == null)
             return false;
         if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
+            return false;
+        if (other.getDocumentContentOperator() == null ^ this.getDocumentContentOperator() == null)
+            return false;
+        if (other.getDocumentContentOperator() != null && other.getDocumentContentOperator().equals(this.getDocumentContentOperator()) == false)
             return false;
         return true;
     }
@@ -213,8 +213,8 @@ public class InlineDocumentEnrichmentConfiguration implements Serializable, Clon
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
-        hashCode = prime * hashCode + ((getDocumentContentOperator() == null) ? 0 : getDocumentContentOperator().hashCode());
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
+        hashCode = prime * hashCode + ((getDocumentContentOperator() == null) ? 0 : getDocumentContentOperator().hashCode());
         return hashCode;
     }
 

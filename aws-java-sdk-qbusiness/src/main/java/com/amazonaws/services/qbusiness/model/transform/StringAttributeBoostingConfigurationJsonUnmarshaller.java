@@ -48,14 +48,14 @@ public class StringAttributeBoostingConfigurationJsonUnmarshaller implements Unm
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("boostingLevel", targetDepth)) {
+                    context.nextToken();
+                    stringAttributeBoostingConfiguration.setBoostingLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("attributeValueBoosting", targetDepth)) {
                     context.nextToken();
                     stringAttributeBoostingConfiguration.setAttributeValueBoosting(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class),
                             context.getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("boostingLevel", targetDepth)) {
-                    context.nextToken();
-                    stringAttributeBoostingConfiguration.setBoostingLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

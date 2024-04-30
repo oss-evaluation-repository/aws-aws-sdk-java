@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum NumberCapability {
 
     SMS("SMS"),
-    VOICE("VOICE");
+    VOICE("VOICE"),
+    MMS("MMS");
 
     private String value;
 

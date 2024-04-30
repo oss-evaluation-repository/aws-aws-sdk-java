@@ -37,6 +37,8 @@ public class GaugeChartConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TooltipOptions").build();
     private static final MarshallingInfo<StructuredPojo> VISUALPALETTE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisualPalette").build();
+    private static final MarshallingInfo<StructuredPojo> COLORCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColorConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> INTERACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Interactions").build();
 
@@ -61,6 +63,7 @@ public class GaugeChartConfigurationMarshaller {
             protocolMarshaller.marshall(gaugeChartConfiguration.getDataLabels(), DATALABELS_BINDING);
             protocolMarshaller.marshall(gaugeChartConfiguration.getTooltipOptions(), TOOLTIPOPTIONS_BINDING);
             protocolMarshaller.marshall(gaugeChartConfiguration.getVisualPalette(), VISUALPALETTE_BINDING);
+            protocolMarshaller.marshall(gaugeChartConfiguration.getColorConfiguration(), COLORCONFIGURATION_BINDING);
             protocolMarshaller.marshall(gaugeChartConfiguration.getInteractions(), INTERACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

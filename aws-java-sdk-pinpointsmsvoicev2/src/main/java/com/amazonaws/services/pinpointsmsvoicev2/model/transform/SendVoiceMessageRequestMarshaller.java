@@ -49,6 +49,8 @@ public class SendVoiceMessageRequestMarshaller {
             .marshallLocationName("Context").build();
     private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DryRun").build();
+    private static final MarshallingInfo<String> PROTECTCONFIGURATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProtectConfigurationId").build();
 
     private static final SendVoiceMessageRequestMarshaller instance = new SendVoiceMessageRequestMarshaller();
 
@@ -76,6 +78,7 @@ public class SendVoiceMessageRequestMarshaller {
             protocolMarshaller.marshall(sendVoiceMessageRequest.getTimeToLive(), TIMETOLIVE_BINDING);
             protocolMarshaller.marshall(sendVoiceMessageRequest.getContext(), CONTEXT_BINDING);
             protocolMarshaller.marshall(sendVoiceMessageRequest.getDryRun(), DRYRUN_BINDING);
+            protocolMarshaller.marshall(sendVoiceMessageRequest.getProtectConfigurationId(), PROTECTCONFIGURATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

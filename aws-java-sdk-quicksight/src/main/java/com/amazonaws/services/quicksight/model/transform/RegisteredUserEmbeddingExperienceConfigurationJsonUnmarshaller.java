@@ -69,6 +69,11 @@ public class RegisteredUserEmbeddingExperienceConfigurationJsonUnmarshaller impl
                     registeredUserEmbeddingExperienceConfiguration.setDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfigurationJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("GenerativeQnA", targetDepth)) {
+                    context.nextToken();
+                    registeredUserEmbeddingExperienceConfiguration.setGenerativeQnA(RegisteredUserGenerativeQnAEmbeddingConfigurationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

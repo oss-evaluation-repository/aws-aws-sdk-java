@@ -48,21 +48,21 @@ public class DocumentDetailsJsonUnmarshaller implements Unmarshaller<DocumentDet
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    documentDetails.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("documentId", targetDepth)) {
                     context.nextToken();
                     documentDetails.setDocumentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    documentDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("error", targetDepth)) {
                     context.nextToken();
                     documentDetails.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("status", targetDepth)) {
+                if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    documentDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    documentDetails.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();

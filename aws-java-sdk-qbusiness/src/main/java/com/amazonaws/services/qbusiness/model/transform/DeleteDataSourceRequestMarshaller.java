@@ -29,10 +29,10 @@ public class DeleteDataSourceRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("dataSourceId").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("dataSourceId").build();
 
     private static final DeleteDataSourceRequestMarshaller instance = new DeleteDataSourceRequestMarshaller();
 
@@ -51,8 +51,8 @@ public class DeleteDataSourceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteDataSourceRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(deleteDataSourceRequest.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(deleteDataSourceRequest.getIndexId(), INDEXID_BINDING);
+            protocolMarshaller.marshall(deleteDataSourceRequest.getDataSourceId(), DATASOURCEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

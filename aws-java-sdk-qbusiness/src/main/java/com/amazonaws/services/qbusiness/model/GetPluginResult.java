@@ -29,26 +29,6 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String applicationId;
-
-    private PluginAuthConfiguration authConfiguration;
-    /**
-     * <p>
-     * The timestamp for when the plugin was created.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
-     * The name of the plugin.
-     * </p>
-     */
-    private String displayName;
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.
-     * </p>
-     */
-    private String pluginArn;
     /**
      * <p>
      * The identifier of the plugin.
@@ -57,10 +37,42 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String pluginId;
     /**
      * <p>
+     * The name of the plugin.
+     * </p>
+     */
+    private String displayName;
+    /**
+     * <p>
+     * The type of the plugin.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * The source URL used for plugin configuration.
      * </p>
      */
     private String serverUrl;
+
+    private PluginAuthConfiguration authConfiguration;
+    /**
+     * <p>
+     * Configuration information required to create a custom plugin.
+     * </p>
+     */
+    private CustomPluginConfiguration customPluginConfiguration;
+    /**
+     * <p>
+     * The current status of a plugin. A plugin is modified asynchronously.
+     * </p>
+     */
+    private String buildStatus;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.
+     * </p>
+     */
+    private String pluginArn;
     /**
      * <p>
      * The current state of the plugin.
@@ -69,10 +81,10 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String state;
     /**
      * <p>
-     * The type of the plugin.
+     * The timestamp for when the plugin was created.
      * </p>
      */
-    private String type;
+    private java.util.Date createdAt;
     /**
      * <p>
      * The timestamp for when the plugin was last updated.
@@ -121,155 +133,6 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * @param authConfiguration
-     */
-
-    public void setAuthConfiguration(PluginAuthConfiguration authConfiguration) {
-        this.authConfiguration = authConfiguration;
-    }
-
-    /**
-     * @return
-     */
-
-    public PluginAuthConfiguration getAuthConfiguration() {
-        return this.authConfiguration;
-    }
-
-    /**
-     * @param authConfiguration
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPluginResult withAuthConfiguration(PluginAuthConfiguration authConfiguration) {
-        setAuthConfiguration(authConfiguration);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The timestamp for when the plugin was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The timestamp for when the plugin was created.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The timestamp for when the plugin was created.
-     * </p>
-     * 
-     * @return The timestamp for when the plugin was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The timestamp for when the plugin was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The timestamp for when the plugin was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPluginResult withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the plugin.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of the plugin.
-     */
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    /**
-     * <p>
-     * The name of the plugin.
-     * </p>
-     * 
-     * @return The name of the plugin.
-     */
-
-    public String getDisplayName() {
-        return this.displayName;
-    }
-
-    /**
-     * <p>
-     * The name of the plugin.
-     * </p>
-     * 
-     * @param displayName
-     *        The name of the plugin.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPluginResult withDisplayName(String displayName) {
-        setDisplayName(displayName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.
-     * </p>
-     * 
-     * @param pluginArn
-     *        The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the
-     *        plugin.
-     */
-
-    public void setPluginArn(String pluginArn) {
-        this.pluginArn = pluginArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the
-     *         plugin.
-     */
-
-    public String getPluginArn() {
-        return this.pluginArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.
-     * </p>
-     * 
-     * @param pluginArn
-     *        The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the
-     *        plugin.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPluginResult withPluginArn(String pluginArn) {
-        setPluginArn(pluginArn);
-        return this;
-    }
-
-    /**
      * <p>
      * The identifier of the plugin.
      * </p>
@@ -311,100 +174,41 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The source URL used for plugin configuration.
+     * The name of the plugin.
      * </p>
      * 
-     * @param serverUrl
-     *        The source URL used for plugin configuration.
+     * @param displayName
+     *        The name of the plugin.
      */
 
-    public void setServerUrl(String serverUrl) {
-        this.serverUrl = serverUrl;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     /**
      * <p>
-     * The source URL used for plugin configuration.
+     * The name of the plugin.
      * </p>
      * 
-     * @return The source URL used for plugin configuration.
+     * @return The name of the plugin.
      */
 
-    public String getServerUrl() {
-        return this.serverUrl;
+    public String getDisplayName() {
+        return this.displayName;
     }
 
     /**
      * <p>
-     * The source URL used for plugin configuration.
+     * The name of the plugin.
      * </p>
      * 
-     * @param serverUrl
-     *        The source URL used for plugin configuration.
+     * @param displayName
+     *        The name of the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetPluginResult withServerUrl(String serverUrl) {
-        setServerUrl(serverUrl);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The current state of the plugin.
-     * </p>
-     * 
-     * @param state
-     *        The current state of the plugin.
-     * @see PluginState
-     */
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    /**
-     * <p>
-     * The current state of the plugin.
-     * </p>
-     * 
-     * @return The current state of the plugin.
-     * @see PluginState
-     */
-
-    public String getState() {
-        return this.state;
-    }
-
-    /**
-     * <p>
-     * The current state of the plugin.
-     * </p>
-     * 
-     * @param state
-     *        The current state of the plugin.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PluginState
-     */
-
-    public GetPluginResult withState(String state) {
-        setState(state);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The current state of the plugin.
-     * </p>
-     * 
-     * @param state
-     *        The current state of the plugin.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PluginState
-     */
-
-    public GetPluginResult withState(PluginState state) {
-        this.state = state.toString();
+    public GetPluginResult withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -469,6 +273,313 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
+     * The source URL used for plugin configuration.
+     * </p>
+     * 
+     * @param serverUrl
+     *        The source URL used for plugin configuration.
+     */
+
+    public void setServerUrl(String serverUrl) {
+        this.serverUrl = serverUrl;
+    }
+
+    /**
+     * <p>
+     * The source URL used for plugin configuration.
+     * </p>
+     * 
+     * @return The source URL used for plugin configuration.
+     */
+
+    public String getServerUrl() {
+        return this.serverUrl;
+    }
+
+    /**
+     * <p>
+     * The source URL used for plugin configuration.
+     * </p>
+     * 
+     * @param serverUrl
+     *        The source URL used for plugin configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPluginResult withServerUrl(String serverUrl) {
+        setServerUrl(serverUrl);
+        return this;
+    }
+
+    /**
+     * @param authConfiguration
+     */
+
+    public void setAuthConfiguration(PluginAuthConfiguration authConfiguration) {
+        this.authConfiguration = authConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public PluginAuthConfiguration getAuthConfiguration() {
+        return this.authConfiguration;
+    }
+
+    /**
+     * @param authConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPluginResult withAuthConfiguration(PluginAuthConfiguration authConfiguration) {
+        setAuthConfiguration(authConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information required to create a custom plugin.
+     * </p>
+     * 
+     * @param customPluginConfiguration
+     *        Configuration information required to create a custom plugin.
+     */
+
+    public void setCustomPluginConfiguration(CustomPluginConfiguration customPluginConfiguration) {
+        this.customPluginConfiguration = customPluginConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information required to create a custom plugin.
+     * </p>
+     * 
+     * @return Configuration information required to create a custom plugin.
+     */
+
+    public CustomPluginConfiguration getCustomPluginConfiguration() {
+        return this.customPluginConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information required to create a custom plugin.
+     * </p>
+     * 
+     * @param customPluginConfiguration
+     *        Configuration information required to create a custom plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPluginResult withCustomPluginConfiguration(CustomPluginConfiguration customPluginConfiguration) {
+        setCustomPluginConfiguration(customPluginConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of a plugin. A plugin is modified asynchronously.
+     * </p>
+     * 
+     * @param buildStatus
+     *        The current status of a plugin. A plugin is modified asynchronously.
+     * @see PluginBuildStatus
+     */
+
+    public void setBuildStatus(String buildStatus) {
+        this.buildStatus = buildStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of a plugin. A plugin is modified asynchronously.
+     * </p>
+     * 
+     * @return The current status of a plugin. A plugin is modified asynchronously.
+     * @see PluginBuildStatus
+     */
+
+    public String getBuildStatus() {
+        return this.buildStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of a plugin. A plugin is modified asynchronously.
+     * </p>
+     * 
+     * @param buildStatus
+     *        The current status of a plugin. A plugin is modified asynchronously.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginBuildStatus
+     */
+
+    public GetPluginResult withBuildStatus(String buildStatus) {
+        setBuildStatus(buildStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of a plugin. A plugin is modified asynchronously.
+     * </p>
+     * 
+     * @param buildStatus
+     *        The current status of a plugin. A plugin is modified asynchronously.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginBuildStatus
+     */
+
+    public GetPluginResult withBuildStatus(PluginBuildStatus buildStatus) {
+        this.buildStatus = buildStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.
+     * </p>
+     * 
+     * @param pluginArn
+     *        The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the
+     *        plugin.
+     */
+
+    public void setPluginArn(String pluginArn) {
+        this.pluginArn = pluginArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the
+     *         plugin.
+     */
+
+    public String getPluginArn() {
+        return this.pluginArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the plugin.
+     * </p>
+     * 
+     * @param pluginArn
+     *        The Amazon Resource Name (ARN) of the role with permission to access resources needed to create the
+     *        plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPluginResult withPluginArn(String pluginArn) {
+        setPluginArn(pluginArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the plugin.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the plugin.
+     * @see PluginState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The current state of the plugin.
+     * </p>
+     * 
+     * @return The current state of the plugin.
+     * @see PluginState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The current state of the plugin.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginState
+     */
+
+    public GetPluginResult withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the plugin.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginState
+     */
+
+    public GetPluginResult withState(PluginState state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the plugin was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The timestamp for when the plugin was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the plugin was created.
+     * </p>
+     * 
+     * @return The timestamp for when the plugin was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the plugin was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The timestamp for when the plugin was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPluginResult withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp for when the plugin was last updated.
      * </p>
      * 
@@ -521,22 +632,26 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getAuthConfiguration() != null)
-            sb.append("AuthConfiguration: ").append(getAuthConfiguration()).append(",");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
-        if (getPluginArn() != null)
-            sb.append("PluginArn: ").append(getPluginArn()).append(",");
         if (getPluginId() != null)
             sb.append("PluginId: ").append(getPluginId()).append(",");
-        if (getServerUrl() != null)
-            sb.append("ServerUrl: ").append(getServerUrl()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getServerUrl() != null)
+            sb.append("ServerUrl: ").append(getServerUrl()).append(",");
+        if (getAuthConfiguration() != null)
+            sb.append("AuthConfiguration: ").append(getAuthConfiguration()).append(",");
+        if (getCustomPluginConfiguration() != null)
+            sb.append("CustomPluginConfiguration: ").append(getCustomPluginConfiguration()).append(",");
+        if (getBuildStatus() != null)
+            sb.append("BuildStatus: ").append(getBuildStatus()).append(",");
+        if (getPluginArn() != null)
+            sb.append("PluginArn: ").append(getPluginArn()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
@@ -557,37 +672,45 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getAuthConfiguration() == null ^ this.getAuthConfiguration() == null)
+        if (other.getPluginId() == null ^ this.getPluginId() == null)
             return false;
-        if (other.getAuthConfiguration() != null && other.getAuthConfiguration().equals(this.getAuthConfiguration()) == false)
-            return false;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getPluginId() != null && other.getPluginId().equals(this.getPluginId()) == false)
             return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
-        if (other.getPluginArn() == null ^ this.getPluginArn() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getPluginArn() != null && other.getPluginArn().equals(this.getPluginArn()) == false)
-            return false;
-        if (other.getPluginId() == null ^ this.getPluginId() == null)
-            return false;
-        if (other.getPluginId() != null && other.getPluginId().equals(this.getPluginId()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getServerUrl() == null ^ this.getServerUrl() == null)
             return false;
         if (other.getServerUrl() != null && other.getServerUrl().equals(this.getServerUrl()) == false)
             return false;
+        if (other.getAuthConfiguration() == null ^ this.getAuthConfiguration() == null)
+            return false;
+        if (other.getAuthConfiguration() != null && other.getAuthConfiguration().equals(this.getAuthConfiguration()) == false)
+            return false;
+        if (other.getCustomPluginConfiguration() == null ^ this.getCustomPluginConfiguration() == null)
+            return false;
+        if (other.getCustomPluginConfiguration() != null && other.getCustomPluginConfiguration().equals(this.getCustomPluginConfiguration()) == false)
+            return false;
+        if (other.getBuildStatus() == null ^ this.getBuildStatus() == null)
+            return false;
+        if (other.getBuildStatus() != null && other.getBuildStatus().equals(this.getBuildStatus()) == false)
+            return false;
+        if (other.getPluginArn() == null ^ this.getPluginArn() == null)
+            return false;
+        if (other.getPluginArn() != null && other.getPluginArn().equals(this.getPluginArn()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
@@ -602,14 +725,16 @@ public class GetPluginResult extends com.amazonaws.AmazonWebServiceResult<com.am
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getAuthConfiguration() == null) ? 0 : getAuthConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
-        hashCode = prime * hashCode + ((getPluginArn() == null) ? 0 : getPluginArn().hashCode());
         hashCode = prime * hashCode + ((getPluginId() == null) ? 0 : getPluginId().hashCode());
-        hashCode = prime * hashCode + ((getServerUrl() == null) ? 0 : getServerUrl().hashCode());
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getServerUrl() == null) ? 0 : getServerUrl().hashCode());
+        hashCode = prime * hashCode + ((getAuthConfiguration() == null) ? 0 : getAuthConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCustomPluginConfiguration() == null) ? 0 : getCustomPluginConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getBuildStatus() == null) ? 0 : getBuildStatus().hashCode());
+        hashCode = prime * hashCode + ((getPluginArn() == null) ? 0 : getPluginArn().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }

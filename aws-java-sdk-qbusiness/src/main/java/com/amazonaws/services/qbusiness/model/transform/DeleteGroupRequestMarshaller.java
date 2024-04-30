@@ -29,12 +29,12 @@ public class DeleteGroupRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("dataSourceId").build();
-    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("groupName").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
+    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("groupName").build();
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("dataSourceId").build();
 
     private static final DeleteGroupRequestMarshaller instance = new DeleteGroupRequestMarshaller();
 
@@ -53,9 +53,9 @@ public class DeleteGroupRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteGroupRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(deleteGroupRequest.getDataSourceId(), DATASOURCEID_BINDING);
-            protocolMarshaller.marshall(deleteGroupRequest.getGroupName(), GROUPNAME_BINDING);
             protocolMarshaller.marshall(deleteGroupRequest.getIndexId(), INDEXID_BINDING);
+            protocolMarshaller.marshall(deleteGroupRequest.getGroupName(), GROUPNAME_BINDING);
+            protocolMarshaller.marshall(deleteGroupRequest.getDataSourceId(), DATASOURCEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListMessagesRequestMarshaller {
 
-    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<String> CONVERSATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("conversationId").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("userId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListMessagesRequestMarshaller instance = new ListMessagesRequestMarshaller();
 
@@ -54,11 +54,11 @@ public class ListMessagesRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listMessagesRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(listMessagesRequest.getConversationId(), CONVERSATIONID_BINDING);
-            protocolMarshaller.marshall(listMessagesRequest.getMaxResults(), MAXRESULTS_BINDING);
-            protocolMarshaller.marshall(listMessagesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listMessagesRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(listMessagesRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(listMessagesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listMessagesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -46,6 +46,14 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
      * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
+     * <p>
+     * Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your target name server. For inbound
+     * resolver endpoint, it can bring down the overall maximum queries per second per IP address to as low as 1500. To
+     * avoid connection tracking caused by security group, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     * >Untracked connections</a>.
+     * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
@@ -273,12 +281,27 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
      * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
+     * <p>
+     * Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your target name server. For inbound
+     * resolver endpoint, it can bring down the overall maximum queries per second per IP address to as low as 1500. To
+     * avoid connection tracking caused by security group, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     * >Untracked connections</a>.
+     * </p>
      * 
      * @return The ID of one or more security groups that you want to use to control access to this VPC. The security
      *         group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or
      *         outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP
      *         access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS
-     *         queries on your network.
+     *         queries on your network.</p>
+     *         <p>
+     *         Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it
+     *         can potentially impact the maximum queries per second from outbound endpoint to your target name server.
+     *         For inbound resolver endpoint, it can bring down the overall maximum queries per second per IP address to
+     *         as low as 1500. To avoid connection tracking caused by security group, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     *         >Untracked connections</a>.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -292,13 +315,28 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
      * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
+     * <p>
+     * Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your target name server. For inbound
+     * resolver endpoint, it can bring down the overall maximum queries per second per IP address to as low as 1500. To
+     * avoid connection tracking caused by security group, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     * >Untracked connections</a>.
+     * </p>
      * 
      * @param securityGroupIds
      *        The ID of one or more security groups that you want to use to control access to this VPC. The security
      *        group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound
      *        rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For
      *        inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your
-     *        network.
+     *        network.</p>
+     *        <p>
+     *        Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it can
+     *        potentially impact the maximum queries per second from outbound endpoint to your target name server. For
+     *        inbound resolver endpoint, it can bring down the overall maximum queries per second per IP address to as
+     *        low as 1500. To avoid connection tracking caused by security group, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     *        >Untracked connections</a>.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -318,6 +356,14 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
      * <p>
+     * Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your target name server. For inbound
+     * resolver endpoint, it can bring down the overall maximum queries per second per IP address to as low as 1500. To
+     * avoid connection tracking caused by security group, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     * >Untracked connections</a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
      * want to override the existing values.
@@ -328,7 +374,14 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      *        group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound
      *        rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For
      *        inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your
-     *        network.
+     *        network.</p>
+     *        <p>
+     *        Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it can
+     *        potentially impact the maximum queries per second from outbound endpoint to your target name server. For
+     *        inbound resolver endpoint, it can bring down the overall maximum queries per second per IP address to as
+     *        low as 1500. To avoid connection tracking caused by security group, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     *        >Untracked connections</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,13 +402,28 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
      * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
+     * <p>
+     * Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it can
+     * potentially impact the maximum queries per second from outbound endpoint to your target name server. For inbound
+     * resolver endpoint, it can bring down the overall maximum queries per second per IP address to as low as 1500. To
+     * avoid connection tracking caused by security group, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     * >Untracked connections</a>.
+     * </p>
      * 
      * @param securityGroupIds
      *        The ID of one or more security groups that you want to use to control access to this VPC. The security
      *        group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound
      *        rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For
      *        inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your
-     *        network.
+     *        network.</p>
+     *        <p>
+     *        Some security group rules will cause your connection to be tracked. For outbound resolver endpoint, it can
+     *        potentially impact the maximum queries per second from outbound endpoint to your target name server. For
+     *        inbound resolver endpoint, it can bring down the overall maximum queries per second per IP address to as
+     *        low as 1500. To avoid connection tracking caused by security group, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl"
+     *        >Untracked connections</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

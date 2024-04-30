@@ -48,13 +48,6 @@ public class DocumentAttributeTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
-     * a target value and set this to <code>TRUE</code>.
-     * </p>
-     */
-    private String attributeValueOperator;
-    /**
-     * <p>
      * The identifier of the target document attribute or metadata field. For example, 'Department' could be an
      * identifier for the target attribute or metadata field that includes the department names associated with the
      * documents.
@@ -63,73 +56,13 @@ public class DocumentAttributeTarget implements Serializable, Cloneable, Structu
     private String key;
 
     private DocumentAttributeValue value;
-
     /**
      * <p>
      * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
      * a target value and set this to <code>TRUE</code>.
      * </p>
-     * 
-     * @param attributeValueOperator
-     *        <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot
-     *        create a target value and set this to <code>TRUE</code>.
-     * @see AttributeValueOperator
      */
-
-    public void setAttributeValueOperator(String attributeValueOperator) {
-        this.attributeValueOperator = attributeValueOperator;
-    }
-
-    /**
-     * <p>
-     * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
-     * a target value and set this to <code>TRUE</code>.
-     * </p>
-     * 
-     * @return <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot
-     *         create a target value and set this to <code>TRUE</code>.
-     * @see AttributeValueOperator
-     */
-
-    public String getAttributeValueOperator() {
-        return this.attributeValueOperator;
-    }
-
-    /**
-     * <p>
-     * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
-     * a target value and set this to <code>TRUE</code>.
-     * </p>
-     * 
-     * @param attributeValueOperator
-     *        <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot
-     *        create a target value and set this to <code>TRUE</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AttributeValueOperator
-     */
-
-    public DocumentAttributeTarget withAttributeValueOperator(String attributeValueOperator) {
-        setAttributeValueOperator(attributeValueOperator);
-        return this;
-    }
-
-    /**
-     * <p>
-     * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
-     * a target value and set this to <code>TRUE</code>.
-     * </p>
-     * 
-     * @param attributeValueOperator
-     *        <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot
-     *        create a target value and set this to <code>TRUE</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AttributeValueOperator
-     */
-
-    public DocumentAttributeTarget withAttributeValueOperator(AttributeValueOperator attributeValueOperator) {
-        this.attributeValueOperator = attributeValueOperator.toString();
-        return this;
-    }
+    private String attributeValueOperator;
 
     /**
      * <p>
@@ -210,6 +143,73 @@ public class DocumentAttributeTarget implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
+     * a target value and set this to <code>TRUE</code>.
+     * </p>
+     * 
+     * @param attributeValueOperator
+     *        <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot
+     *        create a target value and set this to <code>TRUE</code>.
+     * @see AttributeValueOperator
+     */
+
+    public void setAttributeValueOperator(String attributeValueOperator) {
+        this.attributeValueOperator = attributeValueOperator;
+    }
+
+    /**
+     * <p>
+     * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
+     * a target value and set this to <code>TRUE</code>.
+     * </p>
+     * 
+     * @return <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot
+     *         create a target value and set this to <code>TRUE</code>.
+     * @see AttributeValueOperator
+     */
+
+    public String getAttributeValueOperator() {
+        return this.attributeValueOperator;
+    }
+
+    /**
+     * <p>
+     * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
+     * a target value and set this to <code>TRUE</code>.
+     * </p>
+     * 
+     * @param attributeValueOperator
+     *        <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot
+     *        create a target value and set this to <code>TRUE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AttributeValueOperator
+     */
+
+    public DocumentAttributeTarget withAttributeValueOperator(String attributeValueOperator) {
+        setAttributeValueOperator(attributeValueOperator);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot create
+     * a target value and set this to <code>TRUE</code>.
+     * </p>
+     * 
+     * @param attributeValueOperator
+     *        <code>TRUE</code> to delete the existing target value for your specified target attribute key. You cannot
+     *        create a target value and set this to <code>TRUE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AttributeValueOperator
+     */
+
+    public DocumentAttributeTarget withAttributeValueOperator(AttributeValueOperator attributeValueOperator) {
+        this.attributeValueOperator = attributeValueOperator.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -221,12 +221,12 @@ public class DocumentAttributeTarget implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAttributeValueOperator() != null)
-            sb.append("AttributeValueOperator: ").append(getAttributeValueOperator()).append(",");
         if (getKey() != null)
             sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getAttributeValueOperator() != null)
+            sb.append("AttributeValueOperator: ").append(getAttributeValueOperator());
         sb.append("}");
         return sb.toString();
     }
@@ -241,10 +241,6 @@ public class DocumentAttributeTarget implements Serializable, Cloneable, Structu
         if (obj instanceof DocumentAttributeTarget == false)
             return false;
         DocumentAttributeTarget other = (DocumentAttributeTarget) obj;
-        if (other.getAttributeValueOperator() == null ^ this.getAttributeValueOperator() == null)
-            return false;
-        if (other.getAttributeValueOperator() != null && other.getAttributeValueOperator().equals(this.getAttributeValueOperator()) == false)
-            return false;
         if (other.getKey() == null ^ this.getKey() == null)
             return false;
         if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
@@ -252,6 +248,10 @@ public class DocumentAttributeTarget implements Serializable, Cloneable, Structu
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
+            return false;
+        if (other.getAttributeValueOperator() == null ^ this.getAttributeValueOperator() == null)
+            return false;
+        if (other.getAttributeValueOperator() != null && other.getAttributeValueOperator().equals(this.getAttributeValueOperator()) == false)
             return false;
         return true;
     }
@@ -261,9 +261,9 @@ public class DocumentAttributeTarget implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAttributeValueOperator() == null) ? 0 : getAttributeValueOperator().hashCode());
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getAttributeValueOperator() == null) ? 0 : getAttributeValueOperator().hashCode());
         return hashCode;
     }
 

@@ -30,8 +30,8 @@ public class CloudWatchLogsDestination implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event
-     * data to an Amazon CloudWatch destination.
+     * The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to write event data to an
+     * Amazon CloudWatch destination.
      * </p>
      */
     private String iamRoleArn;
@@ -44,13 +44,13 @@ public class CloudWatchLogsDestination implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event
-     * data to an Amazon CloudWatch destination.
+     * The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to write event data to an
+     * Amazon CloudWatch destination.
      * </p>
      * 
      * @param iamRoleArn
-     *        The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to
-     *        write event data to an Amazon CloudWatch destination.
+     *        The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to write event data
+     *        to an Amazon CloudWatch destination.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -59,12 +59,12 @@ public class CloudWatchLogsDestination implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event
-     * data to an Amazon CloudWatch destination.
+     * The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to write event data to an
+     * Amazon CloudWatch destination.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to
-     *         write event data to an Amazon CloudWatch destination.
+     * @return The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to write event data
+     *         to an Amazon CloudWatch destination.
      */
 
     public String getIamRoleArn() {
@@ -73,13 +73,13 @@ public class CloudWatchLogsDestination implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event
-     * data to an Amazon CloudWatch destination.
+     * The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to write event data to an
+     * Amazon CloudWatch destination.
      * </p>
      * 
      * @param iamRoleArn
-     *        The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to
-     *        write event data to an Amazon CloudWatch destination.
+     *        The Amazon Resource Name (ARN) of an Identity and Access Management role that is able to write event data
+     *        to an Amazon CloudWatch destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FailedDocumentMarshaller {
 
-    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
-    private static final MarshallingInfo<StructuredPojo> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("error").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<StructuredPojo> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("error").build();
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
 
     private static final FailedDocumentMarshaller instance = new FailedDocumentMarshaller();
 
@@ -50,9 +50,9 @@ public class FailedDocumentMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(failedDocument.getDataSourceId(), DATASOURCEID_BINDING);
-            protocolMarshaller.marshall(failedDocument.getError(), ERROR_BINDING);
             protocolMarshaller.marshall(failedDocument.getId(), ID_BINDING);
+            protocolMarshaller.marshall(failedDocument.getError(), ERROR_BINDING);
+            protocolMarshaller.marshall(failedDocument.getDataSourceId(), DATASOURCEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

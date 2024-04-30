@@ -40,6 +40,12 @@ public class PluginAuthConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private OAuth2ClientCredentialConfiguration oAuth2ClientCredentialConfiguration;
+    /**
+     * <p>
+     * Information about invoking a custom plugin without any authentication.
+     * </p>
+     */
+    private NoAuthConfiguration noAuthConfiguration;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class PluginAuthConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Information about invoking a custom plugin without any authentication.
+     * </p>
+     * 
+     * @param noAuthConfiguration
+     *        Information about invoking a custom plugin without any authentication.
+     */
+
+    public void setNoAuthConfiguration(NoAuthConfiguration noAuthConfiguration) {
+        this.noAuthConfiguration = noAuthConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about invoking a custom plugin without any authentication.
+     * </p>
+     * 
+     * @return Information about invoking a custom plugin without any authentication.
+     */
+
+    public NoAuthConfiguration getNoAuthConfiguration() {
+        return this.noAuthConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about invoking a custom plugin without any authentication.
+     * </p>
+     * 
+     * @param noAuthConfiguration
+     *        Information about invoking a custom plugin without any authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PluginAuthConfiguration withNoAuthConfiguration(NoAuthConfiguration noAuthConfiguration) {
+        setNoAuthConfiguration(noAuthConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class PluginAuthConfiguration implements Serializable, Cloneable, Structu
         if (getBasicAuthConfiguration() != null)
             sb.append("BasicAuthConfiguration: ").append(getBasicAuthConfiguration()).append(",");
         if (getOAuth2ClientCredentialConfiguration() != null)
-            sb.append("OAuth2ClientCredentialConfiguration: ").append(getOAuth2ClientCredentialConfiguration());
+            sb.append("OAuth2ClientCredentialConfiguration: ").append(getOAuth2ClientCredentialConfiguration()).append(",");
+        if (getNoAuthConfiguration() != null)
+            sb.append("NoAuthConfiguration: ").append(getNoAuthConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -160,6 +208,10 @@ public class PluginAuthConfiguration implements Serializable, Cloneable, Structu
         if (other.getOAuth2ClientCredentialConfiguration() != null
                 && other.getOAuth2ClientCredentialConfiguration().equals(this.getOAuth2ClientCredentialConfiguration()) == false)
             return false;
+        if (other.getNoAuthConfiguration() == null ^ this.getNoAuthConfiguration() == null)
+            return false;
+        if (other.getNoAuthConfiguration() != null && other.getNoAuthConfiguration().equals(this.getNoAuthConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -170,6 +222,7 @@ public class PluginAuthConfiguration implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getBasicAuthConfiguration() == null) ? 0 : getBasicAuthConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOAuth2ClientCredentialConfiguration() == null) ? 0 : getOAuth2ClientCredentialConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNoAuthConfiguration() == null) ? 0 : getNoAuthConfiguration().hashCode());
         return hashCode;
     }
 

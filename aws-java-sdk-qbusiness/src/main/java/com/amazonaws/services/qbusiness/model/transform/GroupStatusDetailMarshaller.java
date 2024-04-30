@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GroupStatusDetailMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ERRORDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorDetail").build();
-    private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> ERRORDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorDetail").build();
 
     private static final GroupStatusDetailMarshaller instance = new GroupStatusDetailMarshaller();
 
@@ -50,9 +50,9 @@ public class GroupStatusDetailMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(groupStatusDetail.getErrorDetail(), ERRORDETAIL_BINDING);
-            protocolMarshaller.marshall(groupStatusDetail.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(groupStatusDetail.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(groupStatusDetail.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
+            protocolMarshaller.marshall(groupStatusDetail.getErrorDetail(), ERRORDETAIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

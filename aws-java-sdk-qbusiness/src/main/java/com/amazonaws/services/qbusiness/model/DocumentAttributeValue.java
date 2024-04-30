@@ -30,6 +30,24 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * A string.
+     * </p>
+     */
+    private String stringValue;
+    /**
+     * <p>
+     * A list of strings.
+     * </p>
+     */
+    private java.util.List<String> stringListValue;
+    /**
+     * <p>
+     * A long integer value.
+     * </p>
+     */
+    private Long longValue;
+    /**
+     * <p>
      * A date expressed as an ISO 8601 string.
      * </p>
      * <p>
@@ -39,129 +57,44 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Date dateValue;
-    /**
-     * <p>
-     * A long integer value.
-     * </p>
-     */
-    private Long longValue;
-    /**
-     * <p>
-     * A list of strings.
-     * </p>
-     */
-    private java.util.List<String> stringListValue;
+
     /**
      * <p>
      * A string.
      * </p>
-     */
-    private String stringValue;
-
-    /**
-     * <p>
-     * A date expressed as an ISO 8601 string.
-     * </p>
-     * <p>
-     * It's important for the time zone to be included in the ISO 8601 date-time format. For example,
-     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in
-     * Central European Time.
-     * </p>
      * 
-     * @param dateValue
-     *        A date expressed as an ISO 8601 string.</p>
-     *        <p>
-     *        It's important for the time zone to be included in the ISO 8601 date-time format. For example,
-     *        2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10
-     *        seconds) in Central European Time.
+     * @param stringValue
+     *        A string.
      */
 
-    public void setDateValue(java.util.Date dateValue) {
-        this.dateValue = dateValue;
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
     }
 
     /**
      * <p>
-     * A date expressed as an ISO 8601 string.
-     * </p>
-     * <p>
-     * It's important for the time zone to be included in the ISO 8601 date-time format. For example,
-     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in
-     * Central European Time.
+     * A string.
      * </p>
      * 
-     * @return A date expressed as an ISO 8601 string.</p>
-     *         <p>
-     *         It's important for the time zone to be included in the ISO 8601 date-time format. For example,
-     *         2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10
-     *         seconds) in Central European Time.
+     * @return A string.
      */
 
-    public java.util.Date getDateValue() {
-        return this.dateValue;
+    public String getStringValue() {
+        return this.stringValue;
     }
 
     /**
      * <p>
-     * A date expressed as an ISO 8601 string.
-     * </p>
-     * <p>
-     * It's important for the time zone to be included in the ISO 8601 date-time format. For example,
-     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in
-     * Central European Time.
+     * A string.
      * </p>
      * 
-     * @param dateValue
-     *        A date expressed as an ISO 8601 string.</p>
-     *        <p>
-     *        It's important for the time zone to be included in the ISO 8601 date-time format. For example,
-     *        2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10
-     *        seconds) in Central European Time.
+     * @param stringValue
+     *        A string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DocumentAttributeValue withDateValue(java.util.Date dateValue) {
-        setDateValue(dateValue);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A long integer value.
-     * </p>
-     * 
-     * @param longValue
-     *        A long integer value.
-     */
-
-    public void setLongValue(Long longValue) {
-        this.longValue = longValue;
-    }
-
-    /**
-     * <p>
-     * A long integer value.
-     * </p>
-     * 
-     * @return A long integer value.
-     */
-
-    public Long getLongValue() {
-        return this.longValue;
-    }
-
-    /**
-     * <p>
-     * A long integer value.
-     * </p>
-     * 
-     * @param longValue
-     *        A long integer value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DocumentAttributeValue withLongValue(Long longValue) {
-        setLongValue(longValue);
+    public DocumentAttributeValue withStringValue(String stringValue) {
+        setStringValue(stringValue);
         return this;
     }
 
@@ -237,41 +170,108 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A string.
+     * A long integer value.
      * </p>
      * 
-     * @param stringValue
-     *        A string.
+     * @param longValue
+     *        A long integer value.
      */
 
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
+    public void setLongValue(Long longValue) {
+        this.longValue = longValue;
     }
 
     /**
      * <p>
-     * A string.
+     * A long integer value.
      * </p>
      * 
-     * @return A string.
+     * @return A long integer value.
      */
 
-    public String getStringValue() {
-        return this.stringValue;
+    public Long getLongValue() {
+        return this.longValue;
     }
 
     /**
      * <p>
-     * A string.
+     * A long integer value.
      * </p>
      * 
-     * @param stringValue
-     *        A string.
+     * @param longValue
+     *        A long integer value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DocumentAttributeValue withStringValue(String stringValue) {
-        setStringValue(stringValue);
+    public DocumentAttributeValue withLongValue(Long longValue) {
+        setLongValue(longValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A date expressed as an ISO 8601 string.
+     * </p>
+     * <p>
+     * It's important for the time zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in
+     * Central European Time.
+     * </p>
+     * 
+     * @param dateValue
+     *        A date expressed as an ISO 8601 string.</p>
+     *        <p>
+     *        It's important for the time zone to be included in the ISO 8601 date-time format. For example,
+     *        2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10
+     *        seconds) in Central European Time.
+     */
+
+    public void setDateValue(java.util.Date dateValue) {
+        this.dateValue = dateValue;
+    }
+
+    /**
+     * <p>
+     * A date expressed as an ISO 8601 string.
+     * </p>
+     * <p>
+     * It's important for the time zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in
+     * Central European Time.
+     * </p>
+     * 
+     * @return A date expressed as an ISO 8601 string.</p>
+     *         <p>
+     *         It's important for the time zone to be included in the ISO 8601 date-time format. For example,
+     *         2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10
+     *         seconds) in Central European Time.
+     */
+
+    public java.util.Date getDateValue() {
+        return this.dateValue;
+    }
+
+    /**
+     * <p>
+     * A date expressed as an ISO 8601 string.
+     * </p>
+     * <p>
+     * It's important for the time zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10 seconds) in
+     * Central European Time.
+     * </p>
+     * 
+     * @param dateValue
+     *        A date expressed as an ISO 8601 string.</p>
+     *        <p>
+     *        It's important for the time zone to be included in the ISO 8601 date-time format. For example,
+     *        2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012 at 12:30PM (plus 10
+     *        seconds) in Central European Time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentAttributeValue withDateValue(java.util.Date dateValue) {
+        setDateValue(dateValue);
         return this;
     }
 
@@ -287,14 +287,14 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDateValue() != null)
-            sb.append("DateValue: ").append(getDateValue()).append(",");
-        if (getLongValue() != null)
-            sb.append("LongValue: ").append(getLongValue()).append(",");
+        if (getStringValue() != null)
+            sb.append("StringValue: ").append(getStringValue()).append(",");
         if (getStringListValue() != null)
             sb.append("StringListValue: ").append(getStringListValue()).append(",");
-        if (getStringValue() != null)
-            sb.append("StringValue: ").append(getStringValue());
+        if (getLongValue() != null)
+            sb.append("LongValue: ").append(getLongValue()).append(",");
+        if (getDateValue() != null)
+            sb.append("DateValue: ").append(getDateValue());
         sb.append("}");
         return sb.toString();
     }
@@ -309,21 +309,21 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
         if (obj instanceof DocumentAttributeValue == false)
             return false;
         DocumentAttributeValue other = (DocumentAttributeValue) obj;
-        if (other.getDateValue() == null ^ this.getDateValue() == null)
+        if (other.getStringValue() == null ^ this.getStringValue() == null)
             return false;
-        if (other.getDateValue() != null && other.getDateValue().equals(this.getDateValue()) == false)
-            return false;
-        if (other.getLongValue() == null ^ this.getLongValue() == null)
-            return false;
-        if (other.getLongValue() != null && other.getLongValue().equals(this.getLongValue()) == false)
+        if (other.getStringValue() != null && other.getStringValue().equals(this.getStringValue()) == false)
             return false;
         if (other.getStringListValue() == null ^ this.getStringListValue() == null)
             return false;
         if (other.getStringListValue() != null && other.getStringListValue().equals(this.getStringListValue()) == false)
             return false;
-        if (other.getStringValue() == null ^ this.getStringValue() == null)
+        if (other.getLongValue() == null ^ this.getLongValue() == null)
             return false;
-        if (other.getStringValue() != null && other.getStringValue().equals(this.getStringValue()) == false)
+        if (other.getLongValue() != null && other.getLongValue().equals(this.getLongValue()) == false)
+            return false;
+        if (other.getDateValue() == null ^ this.getDateValue() == null)
+            return false;
+        if (other.getDateValue() != null && other.getDateValue().equals(this.getDateValue()) == false)
             return false;
         return true;
     }
@@ -333,10 +333,10 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDateValue() == null) ? 0 : getDateValue().hashCode());
-        hashCode = prime * hashCode + ((getLongValue() == null) ? 0 : getLongValue().hashCode());
-        hashCode = prime * hashCode + ((getStringListValue() == null) ? 0 : getStringListValue().hashCode());
         hashCode = prime * hashCode + ((getStringValue() == null) ? 0 : getStringValue().hashCode());
+        hashCode = prime * hashCode + ((getStringListValue() == null) ? 0 : getStringListValue().hashCode());
+        hashCode = prime * hashCode + ((getLongValue() == null) ? 0 : getLongValue().hashCode());
+        hashCode = prime * hashCode + ((getDateValue() == null) ? 0 : getDateValue().hashCode());
         return hashCode;
     }
 

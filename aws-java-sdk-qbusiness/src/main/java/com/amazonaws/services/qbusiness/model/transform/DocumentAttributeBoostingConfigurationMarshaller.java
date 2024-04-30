@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DocumentAttributeBoostingConfigurationMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> DATECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> NUMBERCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> STRINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stringConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> DATECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> STRINGLISTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stringListConfiguration").build();
 
@@ -52,9 +52,9 @@ public class DocumentAttributeBoostingConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(documentAttributeBoostingConfiguration.getDateConfiguration(), DATECONFIGURATION_BINDING);
             protocolMarshaller.marshall(documentAttributeBoostingConfiguration.getNumberConfiguration(), NUMBERCONFIGURATION_BINDING);
             protocolMarshaller.marshall(documentAttributeBoostingConfiguration.getStringConfiguration(), STRINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(documentAttributeBoostingConfiguration.getDateConfiguration(), DATECONFIGURATION_BINDING);
             protocolMarshaller.marshall(documentAttributeBoostingConfiguration.getStringListConfiguration(), STRINGLISTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -28,20 +28,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MessageMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ACTIONREVIEW_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionReview").build();
-    private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("attachments").build();
-    private static final MarshallingInfo<String> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("body").build();
     private static final MarshallingInfo<String> MESSAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("messageId").build();
-    private static final MarshallingInfo<List> SOURCEATTRIBUTION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceAttribution").build();
+    private static final MarshallingInfo<String> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("body").build();
     private static final MarshallingInfo<java.util.Date> TIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("time").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attachments").build();
+    private static final MarshallingInfo<List> SOURCEATTRIBUTION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceAttribution").build();
+    private static final MarshallingInfo<StructuredPojo> ACTIONREVIEW_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionReview").build();
 
     private static final MessageMarshaller instance = new MessageMarshaller();
 
@@ -59,13 +59,13 @@ public class MessageMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(message.getActionReview(), ACTIONREVIEW_BINDING);
-            protocolMarshaller.marshall(message.getAttachments(), ATTACHMENTS_BINDING);
-            protocolMarshaller.marshall(message.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(message.getMessageId(), MESSAGEID_BINDING);
-            protocolMarshaller.marshall(message.getSourceAttribution(), SOURCEATTRIBUTION_BINDING);
+            protocolMarshaller.marshall(message.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(message.getTime(), TIME_BINDING);
             protocolMarshaller.marshall(message.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(message.getAttachments(), ATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(message.getSourceAttribution(), SOURCEATTRIBUTION_BINDING);
+            protocolMarshaller.marshall(message.getActionReview(), ACTIONREVIEW_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

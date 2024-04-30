@@ -1252,6 +1252,7 @@ public class AmazonChimeSDKVoiceAsyncClient extends AmazonChimeSDKVoiceClient im
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetSipMediaApplicationAlexaSkillConfigurationResult> getSipMediaApplicationAlexaSkillConfigurationAsync(
             GetSipMediaApplicationAlexaSkillConfigurationRequest request) {
 
@@ -1259,6 +1260,7 @@ public class AmazonChimeSDKVoiceAsyncClient extends AmazonChimeSDKVoiceClient im
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetSipMediaApplicationAlexaSkillConfigurationResult> getSipMediaApplicationAlexaSkillConfigurationAsync(
             final GetSipMediaApplicationAlexaSkillConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetSipMediaApplicationAlexaSkillConfigurationRequest, GetSipMediaApplicationAlexaSkillConfigurationResult> asyncHandler) {
@@ -2227,6 +2229,7 @@ public class AmazonChimeSDKVoiceAsyncClient extends AmazonChimeSDKVoiceClient im
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutSipMediaApplicationAlexaSkillConfigurationResult> putSipMediaApplicationAlexaSkillConfigurationAsync(
             PutSipMediaApplicationAlexaSkillConfigurationRequest request) {
 
@@ -2234,6 +2237,7 @@ public class AmazonChimeSDKVoiceAsyncClient extends AmazonChimeSDKVoiceClient im
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutSipMediaApplicationAlexaSkillConfigurationResult> putSipMediaApplicationAlexaSkillConfigurationAsync(
             final PutSipMediaApplicationAlexaSkillConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutSipMediaApplicationAlexaSkillConfigurationRequest, PutSipMediaApplicationAlexaSkillConfigurationResult> asyncHandler) {

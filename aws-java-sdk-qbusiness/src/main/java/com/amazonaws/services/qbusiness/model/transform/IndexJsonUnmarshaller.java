@@ -48,10 +48,6 @@ public class IndexJsonUnmarshaller implements Unmarshaller<Index, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    index.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
                     index.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -60,13 +56,17 @@ public class IndexJsonUnmarshaller implements Unmarshaller<Index, JsonUnmarshall
                     context.nextToken();
                     index.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("status", targetDepth)) {
+                if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    index.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    index.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
                     index.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    index.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

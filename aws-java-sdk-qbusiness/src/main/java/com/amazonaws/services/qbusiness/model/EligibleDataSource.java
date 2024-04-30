@@ -30,56 +30,16 @@ public class EligibleDataSource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The identifier of the data source.
-     * </p>
-     */
-    private String dataSourceId;
-    /**
-     * <p>
      * The identifier of the index the data source is attached to.
      * </p>
      */
     private String indexId;
-
     /**
      * <p>
      * The identifier of the data source.
      * </p>
-     * 
-     * @param dataSourceId
-     *        The identifier of the data source.
      */
-
-    public void setDataSourceId(String dataSourceId) {
-        this.dataSourceId = dataSourceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source.
-     * </p>
-     * 
-     * @return The identifier of the data source.
-     */
-
-    public String getDataSourceId() {
-        return this.dataSourceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source.
-     * </p>
-     * 
-     * @param dataSourceId
-     *        The identifier of the data source.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EligibleDataSource withDataSourceId(String dataSourceId) {
-        setDataSourceId(dataSourceId);
-        return this;
-    }
+    private String dataSourceId;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class EligibleDataSource implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The identifier of the data source.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source.
+     */
+
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source.
+     * </p>
+     * 
+     * @return The identifier of the data source.
+     */
+
+    public String getDataSourceId() {
+        return this.dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EligibleDataSource withDataSourceId(String dataSourceId) {
+        setDataSourceId(dataSourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class EligibleDataSource implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDataSourceId() != null)
-            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId());
+            sb.append("IndexId: ").append(getIndexId()).append(",");
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class EligibleDataSource implements Serializable, Cloneable, StructuredPo
         if (obj instanceof EligibleDataSource == false)
             return false;
         EligibleDataSource other = (EligibleDataSource) obj;
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
-            return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
-            return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+            return false;
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+            return false;
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class EligibleDataSource implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         return hashCode;
     }
 

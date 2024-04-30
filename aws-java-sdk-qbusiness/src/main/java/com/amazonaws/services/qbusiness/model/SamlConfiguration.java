@@ -45,16 +45,16 @@ public class SamlConfiguration implements Serializable, Cloneable, StructuredPoj
     private String roleArn;
     /**
      * <p>
-     * The group attribute name in your IdP that maps to user groups.
-     * </p>
-     */
-    private String userGroupAttribute;
-    /**
-     * <p>
      * The user attribute name in your IdP that maps to the user email.
      * </p>
      */
     private String userIdAttribute;
+    /**
+     * <p>
+     * The group attribute name in your IdP that maps to user groups.
+     * </p>
+     */
+    private String userGroupAttribute;
 
     /**
      * <p>
@@ -150,46 +150,6 @@ public class SamlConfiguration implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The group attribute name in your IdP that maps to user groups.
-     * </p>
-     * 
-     * @param userGroupAttribute
-     *        The group attribute name in your IdP that maps to user groups.
-     */
-
-    public void setUserGroupAttribute(String userGroupAttribute) {
-        this.userGroupAttribute = userGroupAttribute;
-    }
-
-    /**
-     * <p>
-     * The group attribute name in your IdP that maps to user groups.
-     * </p>
-     * 
-     * @return The group attribute name in your IdP that maps to user groups.
-     */
-
-    public String getUserGroupAttribute() {
-        return this.userGroupAttribute;
-    }
-
-    /**
-     * <p>
-     * The group attribute name in your IdP that maps to user groups.
-     * </p>
-     * 
-     * @param userGroupAttribute
-     *        The group attribute name in your IdP that maps to user groups.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SamlConfiguration withUserGroupAttribute(String userGroupAttribute) {
-        setUserGroupAttribute(userGroupAttribute);
-        return this;
-    }
-
-    /**
-     * <p>
      * The user attribute name in your IdP that maps to the user email.
      * </p>
      * 
@@ -229,6 +189,46 @@ public class SamlConfiguration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The group attribute name in your IdP that maps to user groups.
+     * </p>
+     * 
+     * @param userGroupAttribute
+     *        The group attribute name in your IdP that maps to user groups.
+     */
+
+    public void setUserGroupAttribute(String userGroupAttribute) {
+        this.userGroupAttribute = userGroupAttribute;
+    }
+
+    /**
+     * <p>
+     * The group attribute name in your IdP that maps to user groups.
+     * </p>
+     * 
+     * @return The group attribute name in your IdP that maps to user groups.
+     */
+
+    public String getUserGroupAttribute() {
+        return this.userGroupAttribute;
+    }
+
+    /**
+     * <p>
+     * The group attribute name in your IdP that maps to user groups.
+     * </p>
+     * 
+     * @param userGroupAttribute
+     *        The group attribute name in your IdP that maps to user groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SamlConfiguration withUserGroupAttribute(String userGroupAttribute) {
+        setUserGroupAttribute(userGroupAttribute);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -244,10 +244,10 @@ public class SamlConfiguration implements Serializable, Cloneable, StructuredPoj
             sb.append("MetadataXML: ").append(getMetadataXML()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
-        if (getUserGroupAttribute() != null)
-            sb.append("UserGroupAttribute: ").append(getUserGroupAttribute()).append(",");
         if (getUserIdAttribute() != null)
-            sb.append("UserIdAttribute: ").append(getUserIdAttribute());
+            sb.append("UserIdAttribute: ").append(getUserIdAttribute()).append(",");
+        if (getUserGroupAttribute() != null)
+            sb.append("UserGroupAttribute: ").append(getUserGroupAttribute());
         sb.append("}");
         return sb.toString();
     }
@@ -270,13 +270,13 @@ public class SamlConfiguration implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
-        if (other.getUserGroupAttribute() == null ^ this.getUserGroupAttribute() == null)
-            return false;
-        if (other.getUserGroupAttribute() != null && other.getUserGroupAttribute().equals(this.getUserGroupAttribute()) == false)
-            return false;
         if (other.getUserIdAttribute() == null ^ this.getUserIdAttribute() == null)
             return false;
         if (other.getUserIdAttribute() != null && other.getUserIdAttribute().equals(this.getUserIdAttribute()) == false)
+            return false;
+        if (other.getUserGroupAttribute() == null ^ this.getUserGroupAttribute() == null)
+            return false;
+        if (other.getUserGroupAttribute() != null && other.getUserGroupAttribute().equals(this.getUserGroupAttribute()) == false)
             return false;
         return true;
     }
@@ -288,8 +288,8 @@ public class SamlConfiguration implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getMetadataXML() == null) ? 0 : getMetadataXML().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime * hashCode + ((getUserGroupAttribute() == null) ? 0 : getUserGroupAttribute().hashCode());
         hashCode = prime * hashCode + ((getUserIdAttribute() == null) ? 0 : getUserIdAttribute().hashCode());
+        hashCode = prime * hashCode + ((getUserGroupAttribute() == null) ? 0 : getUserGroupAttribute().hashCode());
         return hashCode;
     }
 

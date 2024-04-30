@@ -30,22 +30,62 @@ public class PrincipalUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides information about whether to allow or deny access to the principal.
-     * </p>
-     */
-    private String access;
-    /**
-     * <p>
      * The identifier of the user.
      * </p>
      */
     private String id;
     /**
      * <p>
+     * Provides information about whether to allow or deny access to the principal.
+     * </p>
+     */
+    private String access;
+    /**
+     * <p>
      * The type of group.
      * </p>
      */
     private String membershipType;
+
+    /**
+     * <p>
+     * The identifier of the user.
+     * </p>
+     * 
+     * @param id
+     *        The identifier of the user.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The identifier of the user.
+     * </p>
+     * 
+     * @return The identifier of the user.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The identifier of the user.
+     * </p>
+     * 
+     * @param id
+     *        The identifier of the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrincipalUser withId(String id) {
+        setId(id);
+        return this;
+    }
 
     /**
      * <p>
@@ -103,46 +143,6 @@ public class PrincipalUser implements Serializable, Cloneable, StructuredPojo {
 
     public PrincipalUser withAccess(ReadAccessType access) {
         this.access = access.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the user.
-     * </p>
-     * 
-     * @param id
-     *        The identifier of the user.
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * <p>
-     * The identifier of the user.
-     * </p>
-     * 
-     * @return The identifier of the user.
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * <p>
-     * The identifier of the user.
-     * </p>
-     * 
-     * @param id
-     *        The identifier of the user.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PrincipalUser withId(String id) {
-        setId(id);
         return this;
     }
 
@@ -217,10 +217,10 @@ public class PrincipalUser implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAccess() != null)
-            sb.append("Access: ").append(getAccess()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getAccess() != null)
+            sb.append("Access: ").append(getAccess()).append(",");
         if (getMembershipType() != null)
             sb.append("MembershipType: ").append(getMembershipType());
         sb.append("}");
@@ -237,13 +237,13 @@ public class PrincipalUser implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof PrincipalUser == false)
             return false;
         PrincipalUser other = (PrincipalUser) obj;
-        if (other.getAccess() == null ^ this.getAccess() == null)
-            return false;
-        if (other.getAccess() != null && other.getAccess().equals(this.getAccess()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getAccess() == null ^ this.getAccess() == null)
+            return false;
+        if (other.getAccess() != null && other.getAccess().equals(this.getAccess()) == false)
             return false;
         if (other.getMembershipType() == null ^ this.getMembershipType() == null)
             return false;
@@ -257,8 +257,8 @@ public class PrincipalUser implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAccess() == null) ? 0 : getAccess().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getAccess() == null) ? 0 : getAccess().hashCode());
         hashCode = prime * hashCode + ((getMembershipType() == null) ? 0 : getMembershipType().hashCode());
         return hashCode;
     }

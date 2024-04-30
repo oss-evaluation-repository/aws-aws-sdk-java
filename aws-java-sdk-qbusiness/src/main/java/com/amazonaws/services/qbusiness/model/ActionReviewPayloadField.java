@@ -30,13 +30,6 @@ public class ActionReviewPayloadField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
-     * to perform the requested plugin action.
-     * </p>
-     */
-    private java.util.List<ActionReviewPayloadFieldAllowedValue> allowedValues;
-    /**
-     * <p>
      * The name of the field.
      * </p>
      */
@@ -49,94 +42,38 @@ public class ActionReviewPayloadField implements Serializable, Cloneable, Struct
     private Integer displayOrder;
     /**
      * <p>
-     * Information about whether the field is required.
+     * The field level description of each action review input field. This could be an explanation of the field. In the
+     * Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users
+     * understand the field.
      * </p>
      */
-    private Boolean required;
+    private String displayDescription;
     /**
      * <p>
      * The type of field.
      * </p>
      */
     private String type;
-
     /**
      * <p>
      * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
      * to perform the requested plugin action.
      * </p>
-     * 
-     * @return Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q
-     *         Business to perform the requested plugin action.
      */
-
-    public java.util.List<ActionReviewPayloadFieldAllowedValue> getAllowedValues() {
-        return allowedValues;
-    }
-
+    private java.util.List<ActionReviewPayloadFieldAllowedValue> allowedValues;
     /**
      * <p>
-     * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
-     * to perform the requested plugin action.
+     * The expected data format for the action review input field value. For example, in PTO request, <code>from</code>
+     * and <code>to</code> would be of <code>datetime</code> allowed format.
      * </p>
-     * 
-     * @param allowedValues
-     *        Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q
-     *        Business to perform the requested plugin action.
      */
-
-    public void setAllowedValues(java.util.Collection<ActionReviewPayloadFieldAllowedValue> allowedValues) {
-        if (allowedValues == null) {
-            this.allowedValues = null;
-            return;
-        }
-
-        this.allowedValues = new java.util.ArrayList<ActionReviewPayloadFieldAllowedValue>(allowedValues);
-    }
-
+    private String allowedFormat;
     /**
      * <p>
-     * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
-     * to perform the requested plugin action.
+     * Information about whether the field is required.
      * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setAllowedValues(java.util.Collection)} or {@link #withAllowedValues(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param allowedValues
-     *        Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q
-     *        Business to perform the requested plugin action.
-     * @return Returns a reference to this object so that method calls can be chained together.
      */
-
-    public ActionReviewPayloadField withAllowedValues(ActionReviewPayloadFieldAllowedValue... allowedValues) {
-        if (this.allowedValues == null) {
-            setAllowedValues(new java.util.ArrayList<ActionReviewPayloadFieldAllowedValue>(allowedValues.length));
-        }
-        for (ActionReviewPayloadFieldAllowedValue ele : allowedValues) {
-            this.allowedValues.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
-     * to perform the requested plugin action.
-     * </p>
-     * 
-     * @param allowedValues
-     *        Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q
-     *        Business to perform the requested plugin action.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ActionReviewPayloadField withAllowedValues(java.util.Collection<ActionReviewPayloadFieldAllowedValue> allowedValues) {
-        setAllowedValues(allowedValues);
-        return this;
-    }
+    private Boolean required;
 
     /**
      * <p>
@@ -220,54 +157,54 @@ public class ActionReviewPayloadField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about whether the field is required.
+     * The field level description of each action review input field. This could be an explanation of the field. In the
+     * Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users
+     * understand the field.
      * </p>
      * 
-     * @param required
-     *        Information about whether the field is required.
+     * @param displayDescription
+     *        The field level description of each action review input field. This could be an explanation of the field.
+     *        In the Amazon Q Business web experience, these descriptions could be used to display as tool tips to help
+     *        users understand the field.
      */
 
-    public void setRequired(Boolean required) {
-        this.required = required;
+    public void setDisplayDescription(String displayDescription) {
+        this.displayDescription = displayDescription;
     }
 
     /**
      * <p>
-     * Information about whether the field is required.
+     * The field level description of each action review input field. This could be an explanation of the field. In the
+     * Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users
+     * understand the field.
      * </p>
      * 
-     * @return Information about whether the field is required.
+     * @return The field level description of each action review input field. This could be an explanation of the field.
+     *         In the Amazon Q Business web experience, these descriptions could be used to display as tool tips to help
+     *         users understand the field.
      */
 
-    public Boolean getRequired() {
-        return this.required;
+    public String getDisplayDescription() {
+        return this.displayDescription;
     }
 
     /**
      * <p>
-     * Information about whether the field is required.
+     * The field level description of each action review input field. This could be an explanation of the field. In the
+     * Amazon Q Business web experience, these descriptions could be used to display as tool tips to help users
+     * understand the field.
      * </p>
      * 
-     * @param required
-     *        Information about whether the field is required.
+     * @param displayDescription
+     *        The field level description of each action review input field. This could be an explanation of the field.
+     *        In the Amazon Q Business web experience, these descriptions could be used to display as tool tips to help
+     *        users understand the field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ActionReviewPayloadField withRequired(Boolean required) {
-        setRequired(required);
+    public ActionReviewPayloadField withDisplayDescription(String displayDescription) {
+        setDisplayDescription(displayDescription);
         return this;
-    }
-
-    /**
-     * <p>
-     * Information about whether the field is required.
-     * </p>
-     * 
-     * @return Information about whether the field is required.
-     */
-
-    public Boolean isRequired() {
-        return this.required;
     }
 
     /**
@@ -330,6 +267,182 @@ public class ActionReviewPayloadField implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
+     * to perform the requested plugin action.
+     * </p>
+     * 
+     * @return Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q
+     *         Business to perform the requested plugin action.
+     */
+
+    public java.util.List<ActionReviewPayloadFieldAllowedValue> getAllowedValues() {
+        return allowedValues;
+    }
+
+    /**
+     * <p>
+     * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
+     * to perform the requested plugin action.
+     * </p>
+     * 
+     * @param allowedValues
+     *        Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q
+     *        Business to perform the requested plugin action.
+     */
+
+    public void setAllowedValues(java.util.Collection<ActionReviewPayloadFieldAllowedValue> allowedValues) {
+        if (allowedValues == null) {
+            this.allowedValues = null;
+            return;
+        }
+
+        this.allowedValues = new java.util.ArrayList<ActionReviewPayloadFieldAllowedValue>(allowedValues);
+    }
+
+    /**
+     * <p>
+     * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
+     * to perform the requested plugin action.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowedValues(java.util.Collection)} or {@link #withAllowedValues(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param allowedValues
+     *        Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q
+     *        Business to perform the requested plugin action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionReviewPayloadField withAllowedValues(ActionReviewPayloadFieldAllowedValue... allowedValues) {
+        if (this.allowedValues == null) {
+            setAllowedValues(new java.util.ArrayList<ActionReviewPayloadFieldAllowedValue>(allowedValues.length));
+        }
+        for (ActionReviewPayloadFieldAllowedValue ele : allowedValues) {
+            this.allowedValues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business
+     * to perform the requested plugin action.
+     * </p>
+     * 
+     * @param allowedValues
+     *        Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q
+     *        Business to perform the requested plugin action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionReviewPayloadField withAllowedValues(java.util.Collection<ActionReviewPayloadFieldAllowedValue> allowedValues) {
+        setAllowedValues(allowedValues);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The expected data format for the action review input field value. For example, in PTO request, <code>from</code>
+     * and <code>to</code> would be of <code>datetime</code> allowed format.
+     * </p>
+     * 
+     * @param allowedFormat
+     *        The expected data format for the action review input field value. For example, in PTO request,
+     *        <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.
+     */
+
+    public void setAllowedFormat(String allowedFormat) {
+        this.allowedFormat = allowedFormat;
+    }
+
+    /**
+     * <p>
+     * The expected data format for the action review input field value. For example, in PTO request, <code>from</code>
+     * and <code>to</code> would be of <code>datetime</code> allowed format.
+     * </p>
+     * 
+     * @return The expected data format for the action review input field value. For example, in PTO request,
+     *         <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.
+     */
+
+    public String getAllowedFormat() {
+        return this.allowedFormat;
+    }
+
+    /**
+     * <p>
+     * The expected data format for the action review input field value. For example, in PTO request, <code>from</code>
+     * and <code>to</code> would be of <code>datetime</code> allowed format.
+     * </p>
+     * 
+     * @param allowedFormat
+     *        The expected data format for the action review input field value. For example, in PTO request,
+     *        <code>from</code> and <code>to</code> would be of <code>datetime</code> allowed format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionReviewPayloadField withAllowedFormat(String allowedFormat) {
+        setAllowedFormat(allowedFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about whether the field is required.
+     * </p>
+     * 
+     * @param required
+     *        Information about whether the field is required.
+     */
+
+    public void setRequired(Boolean required) {
+        this.required = required;
+    }
+
+    /**
+     * <p>
+     * Information about whether the field is required.
+     * </p>
+     * 
+     * @return Information about whether the field is required.
+     */
+
+    public Boolean getRequired() {
+        return this.required;
+    }
+
+    /**
+     * <p>
+     * Information about whether the field is required.
+     * </p>
+     * 
+     * @param required
+     *        Information about whether the field is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionReviewPayloadField withRequired(Boolean required) {
+        setRequired(required);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about whether the field is required.
+     * </p>
+     * 
+     * @return Information about whether the field is required.
+     */
+
+    public Boolean isRequired() {
+        return this.required;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -341,16 +454,20 @@ public class ActionReviewPayloadField implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAllowedValues() != null)
-            sb.append("AllowedValues: ").append(getAllowedValues()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getDisplayOrder() != null)
             sb.append("DisplayOrder: ").append(getDisplayOrder()).append(",");
-        if (getRequired() != null)
-            sb.append("Required: ").append(getRequired()).append(",");
+        if (getDisplayDescription() != null)
+            sb.append("DisplayDescription: ").append(getDisplayDescription()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getAllowedValues() != null)
+            sb.append("AllowedValues: ").append(getAllowedValues()).append(",");
+        if (getAllowedFormat() != null)
+            sb.append("AllowedFormat: ").append(getAllowedFormat()).append(",");
+        if (getRequired() != null)
+            sb.append("Required: ").append(getRequired());
         sb.append("}");
         return sb.toString();
     }
@@ -365,10 +482,6 @@ public class ActionReviewPayloadField implements Serializable, Cloneable, Struct
         if (obj instanceof ActionReviewPayloadField == false)
             return false;
         ActionReviewPayloadField other = (ActionReviewPayloadField) obj;
-        if (other.getAllowedValues() == null ^ this.getAllowedValues() == null)
-            return false;
-        if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false)
-            return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
@@ -377,13 +490,25 @@ public class ActionReviewPayloadField implements Serializable, Cloneable, Struct
             return false;
         if (other.getDisplayOrder() != null && other.getDisplayOrder().equals(this.getDisplayOrder()) == false)
             return false;
-        if (other.getRequired() == null ^ this.getRequired() == null)
+        if (other.getDisplayDescription() == null ^ this.getDisplayDescription() == null)
             return false;
-        if (other.getRequired() != null && other.getRequired().equals(this.getRequired()) == false)
+        if (other.getDisplayDescription() != null && other.getDisplayDescription().equals(this.getDisplayDescription()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getAllowedValues() == null ^ this.getAllowedValues() == null)
+            return false;
+        if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false)
+            return false;
+        if (other.getAllowedFormat() == null ^ this.getAllowedFormat() == null)
+            return false;
+        if (other.getAllowedFormat() != null && other.getAllowedFormat().equals(this.getAllowedFormat()) == false)
+            return false;
+        if (other.getRequired() == null ^ this.getRequired() == null)
+            return false;
+        if (other.getRequired() != null && other.getRequired().equals(this.getRequired()) == false)
             return false;
         return true;
     }
@@ -393,11 +518,13 @@ public class ActionReviewPayloadField implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getDisplayOrder() == null) ? 0 : getDisplayOrder().hashCode());
-        hashCode = prime * hashCode + ((getRequired() == null) ? 0 : getRequired().hashCode());
+        hashCode = prime * hashCode + ((getDisplayDescription() == null) ? 0 : getDisplayDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode());
+        hashCode = prime * hashCode + ((getAllowedFormat() == null) ? 0 : getAllowedFormat().hashCode());
+        hashCode = prime * hashCode + ((getRequired() == null) ? 0 : getRequired().hashCode());
         return hashCode;
     }
 

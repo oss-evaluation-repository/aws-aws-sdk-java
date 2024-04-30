@@ -32,13 +32,13 @@ public class CreateUserRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
+    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("userId").build();
+    private static final MarshallingInfo<List> USERALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("userAliases").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<List> USERALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("userAliases").build();
-    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("userId").build();
 
     private static final CreateUserRequestMarshaller instance = new CreateUserRequestMarshaller();
 
@@ -57,9 +57,9 @@ public class CreateUserRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createUserRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(createUserRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createUserRequest.getUserAliases(), USERALIASES_BINDING);
             protocolMarshaller.marshall(createUserRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getUserAliases(), USERALIASES_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -52,6 +52,10 @@ public class DataSourceSyncJobMetricsJsonUnmarshaller implements Unmarshaller<Da
                     context.nextToken();
                     dataSourceSyncJobMetrics.setDocumentsAdded(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("documentsModified", targetDepth)) {
+                    context.nextToken();
+                    dataSourceSyncJobMetrics.setDocumentsModified(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("documentsDeleted", targetDepth)) {
                     context.nextToken();
                     dataSourceSyncJobMetrics.setDocumentsDeleted(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,10 +63,6 @@ public class DataSourceSyncJobMetricsJsonUnmarshaller implements Unmarshaller<Da
                 if (context.testExpression("documentsFailed", targetDepth)) {
                     context.nextToken();
                     dataSourceSyncJobMetrics.setDocumentsFailed(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("documentsModified", targetDepth)) {
-                    context.nextToken();
-                    dataSourceSyncJobMetrics.setDocumentsModified(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("documentsScanned", targetDepth)) {
                     context.nextToken();

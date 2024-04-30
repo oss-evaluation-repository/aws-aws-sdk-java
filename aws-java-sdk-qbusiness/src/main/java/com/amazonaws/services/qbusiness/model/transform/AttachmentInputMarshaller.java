@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AttachmentInputMarshaller {
 
-    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> DATA_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("data").build();
 
     private static final AttachmentInputMarshaller instance = new AttachmentInputMarshaller();
 
@@ -48,8 +48,8 @@ public class AttachmentInputMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(attachmentInput.getData(), DATA_BINDING);
             protocolMarshaller.marshall(attachmentInput.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(attachmentInput.getData(), DATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

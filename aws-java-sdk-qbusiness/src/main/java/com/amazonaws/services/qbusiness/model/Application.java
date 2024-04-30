@@ -30,6 +30,12 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of the Amazon Q Business application.
+     * </p>
+     */
+    private String displayName;
+    /**
+     * <p>
      * The identifier for the Amazon Q Business application.
      * </p>
      */
@@ -42,10 +48,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The name of the Amazon Q Business application.
+     * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      */
-    private String displayName;
+    private java.util.Date updatedAt;
     /**
      * <p>
      * The status of the Amazon Q Business application. The application is ready to use when the status is
@@ -53,12 +59,46 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String status;
+
     /**
      * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
+     * The name of the Amazon Q Business application.
      * </p>
+     * 
+     * @param displayName
+     *        The name of the Amazon Q Business application.
      */
-    private java.util.Date updatedAt;
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Q Business application.
+     * </p>
+     * 
+     * @return The name of the Amazon Q Business application.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Q Business application.
+     * </p>
+     * 
+     * @param displayName
+     *        The name of the Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application withDisplayName(String displayName) {
+        setDisplayName(displayName);
+        return this;
+    }
 
     /**
      * <p>
@@ -142,41 +182,41 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon Q Business application.
+     * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      * 
-     * @param displayName
-     *        The name of the Amazon Q Business application.
+     * @param updatedAt
+     *        The Unix timestamp when the Amazon Q Business application was last updated.
      */
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     /**
      * <p>
-     * The name of the Amazon Q Business application.
+     * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      * 
-     * @return The name of the Amazon Q Business application.
+     * @return The Unix timestamp when the Amazon Q Business application was last updated.
      */
 
-    public String getDisplayName() {
-        return this.displayName;
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
     }
 
     /**
      * <p>
-     * The name of the Amazon Q Business application.
+     * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      * 
-     * @param displayName
-     *        The name of the Amazon Q Business application.
+     * @param updatedAt
+     *        The Unix timestamp when the Amazon Q Business application was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Application withDisplayName(String displayName) {
-        setDisplayName(displayName);
+    public Application withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
         return this;
     }
 
@@ -248,46 +288,6 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when the Amazon Q Business application was last updated.
-     */
-
-    public void setUpdatedAt(java.util.Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @return The Unix timestamp when the Amazon Q Business application was last updated.
-     */
-
-    public java.util.Date getUpdatedAt() {
-        return this.updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when the Amazon Q Business application was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Application withUpdatedAt(java.util.Date updatedAt) {
-        setUpdatedAt(updatedAt);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -299,16 +299,16 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -323,6 +323,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Application == false)
             return false;
         Application other = (Application) obj;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
@@ -331,17 +335,13 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
-        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
-        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
-            return false;
-        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
         return true;
     }
@@ -351,11 +351,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

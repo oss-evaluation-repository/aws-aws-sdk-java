@@ -33,22 +33,23 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String applicationId;
     /**
      * <p>
-     * The identifier of the data source for getting a list of groups mapped to users.
-     * </p>
-     */
-    private String dataSourceId;
-    /**
-     * <p>
      * The identifier of the index for getting a list of groups mapped to users.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The maximum number of returned groups that are mapped to users.
+     * The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.
      * </p>
      */
-    private Integer maxResults;
+    private java.util.Date updatedEarlierThan;
+    /**
+     * <p>
+     * The identifier of the data source for getting a list of groups mapped to users.
+     * </p>
+     */
+    private String dataSourceId;
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Q Business returns a
@@ -59,11 +60,10 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String nextToken;
     /**
      * <p>
-     * The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to
-     * their groups.
+     * The maximum number of returned groups that are mapped to users.
      * </p>
      */
-    private java.util.Date updatedEarlierThan;
+    private Integer maxResults;
 
     /**
      * <p>
@@ -102,46 +102,6 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public ListGroupsRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source for getting a list of groups mapped to users.
-     * </p>
-     * 
-     * @param dataSourceId
-     *        The identifier of the data source for getting a list of groups mapped to users.
-     */
-
-    public void setDataSourceId(String dataSourceId) {
-        this.dataSourceId = dataSourceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source for getting a list of groups mapped to users.
-     * </p>
-     * 
-     * @return The identifier of the data source for getting a list of groups mapped to users.
-     */
-
-    public String getDataSourceId() {
-        return this.dataSourceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source for getting a list of groups mapped to users.
-     * </p>
-     * 
-     * @param dataSourceId
-     *        The identifier of the data source for getting a list of groups mapped to users.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListGroupsRequest withDataSourceId(String dataSourceId) {
-        setDataSourceId(dataSourceId);
         return this;
     }
 
@@ -187,41 +147,87 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of returned groups that are mapped to users.
+     * The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of returned groups that are mapped to users.
+     * @param updatedEarlierThan
+     *        The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping
+     *        users to their groups.
      */
 
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public void setUpdatedEarlierThan(java.util.Date updatedEarlierThan) {
+        this.updatedEarlierThan = updatedEarlierThan;
     }
 
     /**
      * <p>
-     * The maximum number of returned groups that are mapped to users.
+     * The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.
      * </p>
      * 
-     * @return The maximum number of returned groups that are mapped to users.
+     * @return The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping
+     *         users to their groups.
      */
 
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public java.util.Date getUpdatedEarlierThan() {
+        return this.updatedEarlierThan;
     }
 
     /**
      * <p>
-     * The maximum number of returned groups that are mapped to users.
+     * The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of returned groups that are mapped to users.
+     * @param updatedEarlierThan
+     *        The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping
+     *        users to their groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListGroupsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
+    public ListGroupsRequest withUpdatedEarlierThan(java.util.Date updatedEarlierThan) {
+        setUpdatedEarlierThan(updatedEarlierThan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source for getting a list of groups mapped to users.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source for getting a list of groups mapped to users.
+     */
+
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source for getting a list of groups mapped to users.
+     * </p>
+     * 
+     * @return The identifier of the data source for getting a list of groups mapped to users.
+     */
+
+    public String getDataSourceId() {
+        return this.dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source for getting a list of groups mapped to users.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source for getting a list of groups mapped to users.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListGroupsRequest withDataSourceId(String dataSourceId) {
+        setDataSourceId(dataSourceId);
         return this;
     }
 
@@ -279,47 +285,41 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to
-     * their groups.
+     * The maximum number of returned groups that are mapped to users.
      * </p>
      * 
-     * @param updatedEarlierThan
-     *        The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping
-     *        users to their groups.
+     * @param maxResults
+     *        The maximum number of returned groups that are mapped to users.
      */
 
-    public void setUpdatedEarlierThan(java.util.Date updatedEarlierThan) {
-        this.updatedEarlierThan = updatedEarlierThan;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to
-     * their groups.
+     * The maximum number of returned groups that are mapped to users.
      * </p>
      * 
-     * @return The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping
-     *         users to their groups.
+     * @return The maximum number of returned groups that are mapped to users.
      */
 
-    public java.util.Date getUpdatedEarlierThan() {
-        return this.updatedEarlierThan;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to
-     * their groups.
+     * The maximum number of returned groups that are mapped to users.
      * </p>
      * 
-     * @param updatedEarlierThan
-     *        The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping
-     *        users to their groups.
+     * @param maxResults
+     *        The maximum number of returned groups that are mapped to users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListGroupsRequest withUpdatedEarlierThan(java.util.Date updatedEarlierThan) {
-        setUpdatedEarlierThan(updatedEarlierThan);
+    public ListGroupsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -337,16 +337,16 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDataSourceId() != null)
-            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getUpdatedEarlierThan() != null)
+            sb.append("UpdatedEarlierThan: ").append(getUpdatedEarlierThan()).append(",");
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getUpdatedEarlierThan() != null)
-            sb.append("UpdatedEarlierThan: ").append(getUpdatedEarlierThan());
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -365,25 +365,25 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
-            return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
-            return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getUpdatedEarlierThan() == null ^ this.getUpdatedEarlierThan() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getUpdatedEarlierThan() != null && other.getUpdatedEarlierThan().equals(this.getUpdatedEarlierThan()) == false)
+            return false;
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+            return false;
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getUpdatedEarlierThan() == null ^ this.getUpdatedEarlierThan() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getUpdatedEarlierThan() != null && other.getUpdatedEarlierThan().equals(this.getUpdatedEarlierThan()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -394,11 +394,11 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getUpdatedEarlierThan() == null) ? 0 : getUpdatedEarlierThan().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

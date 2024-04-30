@@ -33,6 +33,18 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String applicationId;
     /**
      * <p>
+     * The identifier of the index you want to delete the group from.
+     * </p>
+     */
+    private String indexId;
+    /**
+     * <p>
+     * The name of the group you want to delete.
+     * </p>
+     */
+    private String groupName;
+    /**
+     * <p>
      * The identifier of the data source linked to the group
      * </p>
      * <p>
@@ -44,18 +56,6 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String dataSourceId;
-    /**
-     * <p>
-     * The name of the group you want to delete.
-     * </p>
-     */
-    private String groupName;
-    /**
-     * <p>
-     * The identifier of the index you want to delete the group from.
-     * </p>
-     */
-    private String indexId;
 
     /**
      * <p>
@@ -94,6 +94,86 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public DeleteGroupRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the index you want to delete the group from.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier of the index you want to delete the group from.
+     */
+
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the index you want to delete the group from.
+     * </p>
+     * 
+     * @return The identifier of the index you want to delete the group from.
+     */
+
+    public String getIndexId() {
+        return this.indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the index you want to delete the group from.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier of the index you want to delete the group from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteGroupRequest withIndexId(String indexId) {
+        setIndexId(indexId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the group you want to delete.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the group you want to delete.
+     */
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the group you want to delete.
+     * </p>
+     * 
+     * @return The name of the group you want to delete.
+     */
+
+    public String getGroupName() {
+        return this.groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the group you want to delete.
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the group you want to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteGroupRequest withGroupName(String groupName) {
+        setGroupName(groupName);
         return this;
     }
 
@@ -180,86 +260,6 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p>
-     * The name of the group you want to delete.
-     * </p>
-     * 
-     * @param groupName
-     *        The name of the group you want to delete.
-     */
-
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
-    }
-
-    /**
-     * <p>
-     * The name of the group you want to delete.
-     * </p>
-     * 
-     * @return The name of the group you want to delete.
-     */
-
-    public String getGroupName() {
-        return this.groupName;
-    }
-
-    /**
-     * <p>
-     * The name of the group you want to delete.
-     * </p>
-     * 
-     * @param groupName
-     *        The name of the group you want to delete.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteGroupRequest withGroupName(String groupName) {
-        setGroupName(groupName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the index you want to delete the group from.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the index you want to delete the group from.
-     */
-
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the index you want to delete the group from.
-     * </p>
-     * 
-     * @return The identifier of the index you want to delete the group from.
-     */
-
-    public String getIndexId() {
-        return this.indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the index you want to delete the group from.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the index you want to delete the group from.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteGroupRequest withIndexId(String indexId) {
-        setIndexId(indexId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -273,12 +273,12 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDataSourceId() != null)
-            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
+        if (getIndexId() != null)
+            sb.append("IndexId: ").append(getIndexId()).append(",");
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
-        if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId());
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -297,17 +297,17 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+        if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
+        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
-        if (other.getIndexId() == null ^ this.getIndexId() == null)
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
             return false;
-        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
         return true;
     }
@@ -318,9 +318,9 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         return hashCode;
     }
 

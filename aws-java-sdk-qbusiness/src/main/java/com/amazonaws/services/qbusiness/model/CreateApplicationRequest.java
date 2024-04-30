@@ -27,35 +27,16 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An option to allow end users to upload files directly during chat.
-     * </p>
-     */
-    private AttachmentsConfiguration attachmentsConfiguration;
-    /**
-     * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business application.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * A name for the Amazon Q Business application.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric
-     * keys.
+     * The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.
      * </p>
      */
-    private EncryptionConfiguration encryptionConfiguration;
+    private String roleArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either creating for—or connecting
@@ -65,10 +46,17 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String identityCenterInstanceArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.
+     * A description for the Amazon Q Business application.
      * </p>
      */
-    private String roleArn;
+    private String description;
+    /**
+     * <p>
+     * The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric
+     * keys.
+     * </p>
+     */
+    private EncryptionConfiguration encryptionConfiguration;
     /**
      * <p>
      * A list of key-value pairs that identify or categorize your Amazon Q Business application. You can also use tags
@@ -77,126 +65,18 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<Tag> tags;
-
-    /**
-     * <p>
-     * An option to allow end users to upload files directly during chat.
-     * </p>
-     * 
-     * @param attachmentsConfiguration
-     *        An option to allow end users to upload files directly during chat.
-     */
-
-    public void setAttachmentsConfiguration(AttachmentsConfiguration attachmentsConfiguration) {
-        this.attachmentsConfiguration = attachmentsConfiguration;
-    }
-
-    /**
-     * <p>
-     * An option to allow end users to upload files directly during chat.
-     * </p>
-     * 
-     * @return An option to allow end users to upload files directly during chat.
-     */
-
-    public AttachmentsConfiguration getAttachmentsConfiguration() {
-        return this.attachmentsConfiguration;
-    }
-
-    /**
-     * <p>
-     * An option to allow end users to upload files directly during chat.
-     * </p>
-     * 
-     * @param attachmentsConfiguration
-     *        An option to allow end users to upload files directly during chat.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateApplicationRequest withAttachmentsConfiguration(AttachmentsConfiguration attachmentsConfiguration) {
-        setAttachmentsConfiguration(attachmentsConfiguration);
-        return this;
-    }
-
     /**
      * <p>
      * A token that you provide to identify the request to create your Amazon Q Business application.
      * </p>
-     * 
-     * @param clientToken
-     *        A token that you provide to identify the request to create your Amazon Q Business application.
      */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
+    private String clientToken;
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business application.
+     * An option to allow end users to upload files directly during chat.
      * </p>
-     * 
-     * @return A token that you provide to identify the request to create your Amazon Q Business application.
      */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business application.
-     * </p>
-     * 
-     * @param clientToken
-     *        A token that you provide to identify the request to create your Amazon Q Business application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateApplicationRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @param description
-     *        A description for the Amazon Q Business application.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @return A description for the Amazon Q Business application.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description for the Amazon Q Business application.
-     * </p>
-     * 
-     * @param description
-     *        A description for the Amazon Q Business application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateApplicationRequest withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
+    private AttachmentsConfiguration attachmentsConfiguration;
 
     /**
      * <p>
@@ -240,47 +120,44 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric
-     * keys.
+     * The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.
      * </p>
      * 
-     * @param encryptionConfiguration
-     *        The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support
-     *        asymmetric keys.
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and
+     *        metrics.
      */
 
-    public void setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
-        this.encryptionConfiguration = encryptionConfiguration;
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
     }
 
     /**
      * <p>
-     * The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric
-     * keys.
+     * The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.
      * </p>
      * 
-     * @return The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support
-     *         asymmetric keys.
+     * @return The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and
+     *         metrics.
      */
 
-    public EncryptionConfiguration getEncryptionConfiguration() {
-        return this.encryptionConfiguration;
+    public String getRoleArn() {
+        return this.roleArn;
     }
 
     /**
      * <p>
-     * The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric
-     * keys.
+     * The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.
      * </p>
      * 
-     * @param encryptionConfiguration
-     *        The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support
-     *        asymmetric keys.
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and
+     *        metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateApplicationRequest withEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
-        setEncryptionConfiguration(encryptionConfiguration);
+    public CreateApplicationRequest withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
         return this;
     }
 
@@ -332,44 +209,87 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.
+     * A description for the Amazon Q Business application.
      * </p>
      * 
-     * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and
-     *        metrics.
+     * @param description
+     *        A description for the Amazon Q Business application.
      */
 
-    public void setRoleArn(String roleArn) {
-        this.roleArn = roleArn;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.
+     * A description for the Amazon Q Business application.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and
-     *         metrics.
+     * @return A description for the Amazon Q Business application.
      */
 
-    public String getRoleArn() {
-        return this.roleArn;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.
+     * A description for the Amazon Q Business application.
      * </p>
      * 
-     * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and
-     *        metrics.
+     * @param description
+     *        A description for the Amazon Q Business application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateApplicationRequest withRoleArn(String roleArn) {
-        setRoleArn(roleArn);
+    public CreateApplicationRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric
+     * keys.
+     * </p>
+     * 
+     * @param encryptionConfiguration
+     *        The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support
+     *        asymmetric keys.
+     */
+
+    public void setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        this.encryptionConfiguration = encryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric
+     * keys.
+     * </p>
+     * 
+     * @return The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support
+     *         asymmetric keys.
+     */
+
+    public EncryptionConfiguration getEncryptionConfiguration() {
+        return this.encryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support asymmetric
+     * keys.
+     * </p>
+     * 
+     * @param encryptionConfiguration
+     *        The identifier of the KMS key that is used to encrypt your data. Amazon Q Business doesn't support
+     *        asymmetric keys.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        setEncryptionConfiguration(encryptionConfiguration);
         return this;
     }
 
@@ -460,6 +380,86 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * A token that you provide to identify the request to create your Amazon Q Business application.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create your Amazon Q Business application.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create your Amazon Q Business application.
+     * </p>
+     * 
+     * @return A token that you provide to identify the request to create your Amazon Q Business application.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create your Amazon Q Business application.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create your Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An option to allow end users to upload files directly during chat.
+     * </p>
+     * 
+     * @param attachmentsConfiguration
+     *        An option to allow end users to upload files directly during chat.
+     */
+
+    public void setAttachmentsConfiguration(AttachmentsConfiguration attachmentsConfiguration) {
+        this.attachmentsConfiguration = attachmentsConfiguration;
+    }
+
+    /**
+     * <p>
+     * An option to allow end users to upload files directly during chat.
+     * </p>
+     * 
+     * @return An option to allow end users to upload files directly during chat.
+     */
+
+    public AttachmentsConfiguration getAttachmentsConfiguration() {
+        return this.attachmentsConfiguration;
+    }
+
+    /**
+     * <p>
+     * An option to allow end users to upload files directly during chat.
+     * </p>
+     * 
+     * @param attachmentsConfiguration
+     *        An option to allow end users to upload files directly during chat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withAttachmentsConfiguration(AttachmentsConfiguration attachmentsConfiguration) {
+        setAttachmentsConfiguration(attachmentsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -471,22 +471,22 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAttachmentsConfiguration() != null)
-            sb.append("AttachmentsConfiguration: ").append(getAttachmentsConfiguration()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
-        if (getEncryptionConfiguration() != null)
-            sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration()).append(",");
-        if (getIdentityCenterInstanceArn() != null)
-            sb.append("IdentityCenterInstanceArn: ").append(getIdentityCenterInstanceArn()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getIdentityCenterInstanceArn() != null)
+            sb.append("IdentityCenterInstanceArn: ").append(getIdentityCenterInstanceArn()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getEncryptionConfiguration() != null)
+            sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getAttachmentsConfiguration() != null)
+            sb.append("AttachmentsConfiguration: ").append(getAttachmentsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -501,37 +501,37 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof CreateApplicationRequest == false)
             return false;
         CreateApplicationRequest other = (CreateApplicationRequest) obj;
-        if (other.getAttachmentsConfiguration() == null ^ this.getAttachmentsConfiguration() == null)
-            return false;
-        if (other.getAttachmentsConfiguration() != null && other.getAttachmentsConfiguration().equals(this.getAttachmentsConfiguration()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
-            return false;
-        if (other.getEncryptionConfiguration() == null ^ this.getEncryptionConfiguration() == null)
-            return false;
-        if (other.getEncryptionConfiguration() != null && other.getEncryptionConfiguration().equals(this.getEncryptionConfiguration()) == false)
-            return false;
-        if (other.getIdentityCenterInstanceArn() == null ^ this.getIdentityCenterInstanceArn() == null)
-            return false;
-        if (other.getIdentityCenterInstanceArn() != null && other.getIdentityCenterInstanceArn().equals(this.getIdentityCenterInstanceArn()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getIdentityCenterInstanceArn() == null ^ this.getIdentityCenterInstanceArn() == null)
+            return false;
+        if (other.getIdentityCenterInstanceArn() != null && other.getIdentityCenterInstanceArn().equals(this.getIdentityCenterInstanceArn()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getEncryptionConfiguration() == null ^ this.getEncryptionConfiguration() == null)
+            return false;
+        if (other.getEncryptionConfiguration() != null && other.getEncryptionConfiguration().equals(this.getEncryptionConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getAttachmentsConfiguration() == null ^ this.getAttachmentsConfiguration() == null)
+            return false;
+        if (other.getAttachmentsConfiguration() != null && other.getAttachmentsConfiguration().equals(this.getAttachmentsConfiguration()) == false)
             return false;
         return true;
     }
@@ -541,14 +541,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAttachmentsConfiguration() == null) ? 0 : getAttachmentsConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
-        hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getIdentityCenterInstanceArn() == null) ? 0 : getIdentityCenterInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getIdentityCenterInstanceArn() == null) ? 0 : getIdentityCenterInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentsConfiguration() == null) ? 0 : getAttachmentsConfiguration().hashCode());
         return hashCode;
     }
 

@@ -27,18 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DataSourceMarshaller {
 
-    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceId").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
 
     private static final DataSourceMarshaller instance = new DataSourceMarshaller();
 
@@ -56,12 +56,12 @@ public class DataSourceMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(dataSource.getCreatedAt(), CREATEDAT_BINDING);
-            protocolMarshaller.marshall(dataSource.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(dataSource.getDisplayName(), DISPLAYNAME_BINDING);
-            protocolMarshaller.marshall(dataSource.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(dataSource.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(dataSource.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(dataSource.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(dataSource.getUpdatedAt(), UPDATEDAT_BINDING);
+            protocolMarshaller.marshall(dataSource.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

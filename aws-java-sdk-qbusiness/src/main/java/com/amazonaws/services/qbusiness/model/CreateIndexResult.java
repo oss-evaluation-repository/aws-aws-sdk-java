@@ -25,56 +25,16 @@ public class CreateIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Q Business index.
-     * </p>
-     */
-    private String indexArn;
-    /**
-     * <p>
      * The identifier for the Amazon Q Business index.
      * </p>
      */
     private String indexId;
-
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an Amazon Q Business index.
      * </p>
-     * 
-     * @param indexArn
-     *        The Amazon Resource Name (ARN) of an Amazon Q Business index.
      */
-
-    public void setIndexArn(String indexArn) {
-        this.indexArn = indexArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Q Business index.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of an Amazon Q Business index.
-     */
-
-    public String getIndexArn() {
-        return this.indexArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of an Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexArn
-     *        The Amazon Resource Name (ARN) of an Amazon Q Business index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateIndexResult withIndexArn(String indexArn) {
-        setIndexArn(indexArn);
-        return this;
-    }
+    private String indexArn;
 
     /**
      * <p>
@@ -117,6 +77,46 @@ public class CreateIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Q Business index.
+     * </p>
+     * 
+     * @param indexArn
+     *        The Amazon Resource Name (ARN) of an Amazon Q Business index.
+     */
+
+    public void setIndexArn(String indexArn) {
+        this.indexArn = indexArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Q Business index.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an Amazon Q Business index.
+     */
+
+    public String getIndexArn() {
+        return this.indexArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Q Business index.
+     * </p>
+     * 
+     * @param indexArn
+     *        The Amazon Resource Name (ARN) of an Amazon Q Business index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIndexResult withIndexArn(String indexArn) {
+        setIndexArn(indexArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -128,10 +128,10 @@ public class CreateIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIndexArn() != null)
-            sb.append("IndexArn: ").append(getIndexArn()).append(",");
         if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId());
+            sb.append("IndexId: ").append(getIndexId()).append(",");
+        if (getIndexArn() != null)
+            sb.append("IndexArn: ").append(getIndexArn());
         sb.append("}");
         return sb.toString();
     }
@@ -146,13 +146,13 @@ public class CreateIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (obj instanceof CreateIndexResult == false)
             return false;
         CreateIndexResult other = (CreateIndexResult) obj;
-        if (other.getIndexArn() == null ^ this.getIndexArn() == null)
-            return false;
-        if (other.getIndexArn() != null && other.getIndexArn().equals(this.getIndexArn()) == false)
-            return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+            return false;
+        if (other.getIndexArn() == null ^ this.getIndexArn() == null)
+            return false;
+        if (other.getIndexArn() != null && other.getIndexArn().equals(this.getIndexArn()) == false)
             return false;
         return true;
     }
@@ -162,8 +162,8 @@ public class CreateIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
         return hashCode;
     }
 

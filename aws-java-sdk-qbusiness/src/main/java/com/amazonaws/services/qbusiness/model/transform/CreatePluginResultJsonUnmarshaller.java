@@ -48,13 +48,17 @@ public class CreatePluginResultJsonUnmarshaller implements Unmarshaller<CreatePl
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("pluginId", targetDepth)) {
+                    context.nextToken();
+                    createPluginResult.setPluginId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("pluginArn", targetDepth)) {
                     context.nextToken();
                     createPluginResult.setPluginArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("pluginId", targetDepth)) {
+                if (context.testExpression("buildStatus", targetDepth)) {
                     context.nextToken();
-                    createPluginResult.setPluginId(context.getUnmarshaller(String.class).unmarshall(context));
+                    createPluginResult.setBuildStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

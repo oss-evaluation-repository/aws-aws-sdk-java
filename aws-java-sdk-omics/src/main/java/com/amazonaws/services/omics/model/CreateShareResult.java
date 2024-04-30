@@ -25,30 +25,30 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An ID generated for the share.
+     * The ID that HealthOmics generates for the share.
      * </p>
      */
     private String shareId;
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * A name given to the share.
+     * The name of the share.
      * </p>
      */
     private String shareName;
 
     /**
      * <p>
-     * An ID generated for the share.
+     * The ID that HealthOmics generates for the share.
      * </p>
      * 
      * @param shareId
-     *        An ID generated for the share.
+     *        The ID that HealthOmics generates for the share.
      */
 
     public void setShareId(String shareId) {
@@ -57,10 +57,10 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An ID generated for the share.
+     * The ID that HealthOmics generates for the share.
      * </p>
      * 
-     * @return An ID generated for the share.
+     * @return The ID that HealthOmics generates for the share.
      */
 
     public String getShareId() {
@@ -69,11 +69,11 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An ID generated for the share.
+     * The ID that HealthOmics generates for the share.
      * </p>
      * 
      * @param shareId
-     *        An ID generated for the share.
+     *        The ID that HealthOmics generates for the share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      * 
      * @param status
-     *        The status of a share.
+     *        The status of the share.
      * @see ShareStatus
      */
 
@@ -98,10 +98,10 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      * 
-     * @return The status of a share.
+     * @return The status of the share.
      * @see ShareStatus
      */
 
@@ -111,11 +111,11 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      * 
      * @param status
-     *        The status of a share.
+     *        The status of the share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */
@@ -127,11 +127,11 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      * 
      * @param status
-     *        The status of a share.
+     *        The status of the share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */
@@ -143,11 +143,11 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A name given to the share.
+     * The name of the share.
      * </p>
      * 
      * @param shareName
-     *        A name given to the share.
+     *        The name of the share.
      */
 
     public void setShareName(String shareName) {
@@ -156,10 +156,10 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A name given to the share.
+     * The name of the share.
      * </p>
      * 
-     * @return A name given to the share.
+     * @return The name of the share.
      */
 
     public String getShareName() {
@@ -168,11 +168,11 @@ public class CreateShareResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A name given to the share.
+     * The name of the share.
      * </p>
      * 
      * @param shareName
-     *        A name given to the share.
+     *        The name of the share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

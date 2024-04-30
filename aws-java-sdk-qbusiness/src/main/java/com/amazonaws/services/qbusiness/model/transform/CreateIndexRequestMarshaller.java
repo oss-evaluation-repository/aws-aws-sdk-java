@@ -32,17 +32,19 @@ public class CreateIndexRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> CAPACITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityConfiguration").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
-    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
 
     private static final CreateIndexRequestMarshaller instance = new CreateIndexRequestMarshaller();
 
@@ -61,11 +63,12 @@ public class CreateIndexRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createIndexRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createIndexRequest.getCapacityConfiguration(), CAPACITYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createIndexRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createIndexRequest.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(createIndexRequest.getDisplayName(), DISPLAYNAME_BINDING);
-            protocolMarshaller.marshall(createIndexRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

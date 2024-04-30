@@ -33,18 +33,18 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
     private String applicationId;
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * The type of retriever you are using.
      * </p>
      */
-    private String clientToken;
-
-    private RetrieverConfiguration configuration;
+    private String type;
     /**
      * <p>
      * The name of your retriever.
      * </p>
      */
     private String displayName;
+
+    private RetrieverConfiguration configuration;
     /**
      * <p>
      * The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a
@@ -54,18 +54,18 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
     private String roleArn;
     /**
      * <p>
+     * A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
      * A list of key-value pairs that identify or categorize the retriever. You can also use tags to help control access
      * to the retriever. Tag keys and values can consist of Unicode letters, digits, white space, and any of the
      * following symbols: _ . : / = + - @.
      * </p>
      */
     private java.util.List<Tag> tags;
-    /**
-     * <p>
-     * The type of retriever you are using.
-     * </p>
-     */
-    private String type;
 
     /**
      * <p>
@@ -109,67 +109,60 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * The type of retriever you are using.
      * </p>
      * 
-     * @param clientToken
-     *        A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * @param type
+     *        The type of retriever you are using.
+     * @see RetrieverType
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * The type of retriever you are using.
      * </p>
      * 
-     * @return A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * @return The type of retriever you are using.
+     * @see RetrieverType
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getType() {
+        return this.type;
     }
 
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * The type of retriever you are using.
      * </p>
      * 
-     * @param clientToken
-     *        A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * @param type
+     *        The type of retriever you are using.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RetrieverType
      */
 
-    public CreateRetrieverRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public CreateRetrieverRequest withType(String type) {
+        setType(type);
         return this;
     }
 
     /**
-     * @param configuration
-     */
-
-    public void setConfiguration(RetrieverConfiguration configuration) {
-        this.configuration = configuration;
-    }
-
-    /**
-     * @return
-     */
-
-    public RetrieverConfiguration getConfiguration() {
-        return this.configuration;
-    }
-
-    /**
-     * @param configuration
+     * <p>
+     * The type of retriever you are using.
+     * </p>
+     * 
+     * @param type
+     *        The type of retriever you are using.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RetrieverType
      */
 
-    public CreateRetrieverRequest withConfiguration(RetrieverConfiguration configuration) {
-        setConfiguration(configuration);
+    public CreateRetrieverRequest withType(RetrieverType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -210,6 +203,32 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateRetrieverRequest withDisplayName(String displayName) {
         setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * @param configuration
+     */
+
+    public void setConfiguration(RetrieverConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * @return
+     */
+
+    public RetrieverConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * @param configuration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRetrieverRequest withConfiguration(RetrieverConfiguration configuration) {
+        setConfiguration(configuration);
         return this;
     }
 
@@ -256,6 +275,46 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateRetrieverRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * </p>
+     * 
+     * @return A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create your Amazon Q Business application retriever.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRetrieverRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -346,65 +405,6 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <p>
-     * The type of retriever you are using.
-     * </p>
-     * 
-     * @param type
-     *        The type of retriever you are using.
-     * @see RetrieverType
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The type of retriever you are using.
-     * </p>
-     * 
-     * @return The type of retriever you are using.
-     * @see RetrieverType
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The type of retriever you are using.
-     * </p>
-     * 
-     * @param type
-     *        The type of retriever you are using.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RetrieverType
-     */
-
-    public CreateRetrieverRequest withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of retriever you are using.
-     * </p>
-     * 
-     * @param type
-     *        The type of retriever you are using.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RetrieverType
-     */
-
-    public CreateRetrieverRequest withType(RetrieverType type) {
-        this.type = type.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -418,18 +418,18 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -448,29 +448,29 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
-        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
-            return false;
-        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -481,12 +481,12 @@ public class CreateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

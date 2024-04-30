@@ -30,12 +30,12 @@ public class UpdateUserRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<List> USERALIASESTODELETE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAliasesToDelete").build();
-    private static final MarshallingInfo<List> USERALIASESTOUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAliasesToUpdate").build();
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("userId").build();
+    private static final MarshallingInfo<List> USERALIASESTOUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAliasesToUpdate").build();
+    private static final MarshallingInfo<List> USERALIASESTODELETE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAliasesToDelete").build();
 
     private static final UpdateUserRequestMarshaller instance = new UpdateUserRequestMarshaller();
 
@@ -54,9 +54,9 @@ public class UpdateUserRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateUserRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(updateUserRequest.getUserAliasesToDelete(), USERALIASESTODELETE_BINDING);
-            protocolMarshaller.marshall(updateUserRequest.getUserAliasesToUpdate(), USERALIASESTOUPDATE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getUserAliasesToUpdate(), USERALIASESTOUPDATE_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getUserAliasesToDelete(), USERALIASESTODELETE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

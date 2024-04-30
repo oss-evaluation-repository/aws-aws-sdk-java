@@ -36,6 +36,12 @@ public class DataSourceSyncJobMetrics implements Serializable, Cloneable, Struct
     private String documentsAdded;
     /**
      * <p>
+     * The current count of documents modified in the data source during the data source sync.
+     * </p>
+     */
+    private String documentsModified;
+    /**
+     * <p>
      * The current count of documents deleted from the data source during the data source sync.
      * </p>
      */
@@ -46,12 +52,6 @@ public class DataSourceSyncJobMetrics implements Serializable, Cloneable, Struct
      * </p>
      */
     private String documentsFailed;
-    /**
-     * <p>
-     * The current count of documents modified in the data source during the data source sync.
-     * </p>
-     */
-    private String documentsModified;
     /**
      * <p>
      * The current count of documents crawled by the ongoing sync job in the data source.
@@ -96,6 +96,46 @@ public class DataSourceSyncJobMetrics implements Serializable, Cloneable, Struct
 
     public DataSourceSyncJobMetrics withDocumentsAdded(String documentsAdded) {
         setDocumentsAdded(documentsAdded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current count of documents modified in the data source during the data source sync.
+     * </p>
+     * 
+     * @param documentsModified
+     *        The current count of documents modified in the data source during the data source sync.
+     */
+
+    public void setDocumentsModified(String documentsModified) {
+        this.documentsModified = documentsModified;
+    }
+
+    /**
+     * <p>
+     * The current count of documents modified in the data source during the data source sync.
+     * </p>
+     * 
+     * @return The current count of documents modified in the data source during the data source sync.
+     */
+
+    public String getDocumentsModified() {
+        return this.documentsModified;
+    }
+
+    /**
+     * <p>
+     * The current count of documents modified in the data source during the data source sync.
+     * </p>
+     * 
+     * @param documentsModified
+     *        The current count of documents modified in the data source during the data source sync.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceSyncJobMetrics withDocumentsModified(String documentsModified) {
+        setDocumentsModified(documentsModified);
         return this;
     }
 
@@ -181,46 +221,6 @@ public class DataSourceSyncJobMetrics implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The current count of documents modified in the data source during the data source sync.
-     * </p>
-     * 
-     * @param documentsModified
-     *        The current count of documents modified in the data source during the data source sync.
-     */
-
-    public void setDocumentsModified(String documentsModified) {
-        this.documentsModified = documentsModified;
-    }
-
-    /**
-     * <p>
-     * The current count of documents modified in the data source during the data source sync.
-     * </p>
-     * 
-     * @return The current count of documents modified in the data source during the data source sync.
-     */
-
-    public String getDocumentsModified() {
-        return this.documentsModified;
-    }
-
-    /**
-     * <p>
-     * The current count of documents modified in the data source during the data source sync.
-     * </p>
-     * 
-     * @param documentsModified
-     *        The current count of documents modified in the data source during the data source sync.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataSourceSyncJobMetrics withDocumentsModified(String documentsModified) {
-        setDocumentsModified(documentsModified);
-        return this;
-    }
-
-    /**
-     * <p>
      * The current count of documents crawled by the ongoing sync job in the data source.
      * </p>
      * 
@@ -273,12 +273,12 @@ public class DataSourceSyncJobMetrics implements Serializable, Cloneable, Struct
         sb.append("{");
         if (getDocumentsAdded() != null)
             sb.append("DocumentsAdded: ").append(getDocumentsAdded()).append(",");
+        if (getDocumentsModified() != null)
+            sb.append("DocumentsModified: ").append(getDocumentsModified()).append(",");
         if (getDocumentsDeleted() != null)
             sb.append("DocumentsDeleted: ").append(getDocumentsDeleted()).append(",");
         if (getDocumentsFailed() != null)
             sb.append("DocumentsFailed: ").append(getDocumentsFailed()).append(",");
-        if (getDocumentsModified() != null)
-            sb.append("DocumentsModified: ").append(getDocumentsModified()).append(",");
         if (getDocumentsScanned() != null)
             sb.append("DocumentsScanned: ").append(getDocumentsScanned());
         sb.append("}");
@@ -299,6 +299,10 @@ public class DataSourceSyncJobMetrics implements Serializable, Cloneable, Struct
             return false;
         if (other.getDocumentsAdded() != null && other.getDocumentsAdded().equals(this.getDocumentsAdded()) == false)
             return false;
+        if (other.getDocumentsModified() == null ^ this.getDocumentsModified() == null)
+            return false;
+        if (other.getDocumentsModified() != null && other.getDocumentsModified().equals(this.getDocumentsModified()) == false)
+            return false;
         if (other.getDocumentsDeleted() == null ^ this.getDocumentsDeleted() == null)
             return false;
         if (other.getDocumentsDeleted() != null && other.getDocumentsDeleted().equals(this.getDocumentsDeleted()) == false)
@@ -306,10 +310,6 @@ public class DataSourceSyncJobMetrics implements Serializable, Cloneable, Struct
         if (other.getDocumentsFailed() == null ^ this.getDocumentsFailed() == null)
             return false;
         if (other.getDocumentsFailed() != null && other.getDocumentsFailed().equals(this.getDocumentsFailed()) == false)
-            return false;
-        if (other.getDocumentsModified() == null ^ this.getDocumentsModified() == null)
-            return false;
-        if (other.getDocumentsModified() != null && other.getDocumentsModified().equals(this.getDocumentsModified()) == false)
             return false;
         if (other.getDocumentsScanned() == null ^ this.getDocumentsScanned() == null)
             return false;
@@ -324,9 +324,9 @@ public class DataSourceSyncJobMetrics implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDocumentsAdded() == null) ? 0 : getDocumentsAdded().hashCode());
+        hashCode = prime * hashCode + ((getDocumentsModified() == null) ? 0 : getDocumentsModified().hashCode());
         hashCode = prime * hashCode + ((getDocumentsDeleted() == null) ? 0 : getDocumentsDeleted().hashCode());
         hashCode = prime * hashCode + ((getDocumentsFailed() == null) ? 0 : getDocumentsFailed().hashCode());
-        hashCode = prime * hashCode + ((getDocumentsModified() == null) ? 0 : getDocumentsModified().hashCode());
         hashCode = prime * hashCode + ((getDocumentsScanned() == null) ? 0 : getDocumentsScanned().hashCode());
         return hashCode;
     }

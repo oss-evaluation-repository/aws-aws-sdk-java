@@ -35,6 +35,8 @@ public class RegisteredUserEmbeddingExperienceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QSearchBar").build();
     private static final MarshallingInfo<StructuredPojo> DASHBOARDVISUAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashboardVisual").build();
+    private static final MarshallingInfo<StructuredPojo> GENERATIVEQNA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenerativeQnA").build();
 
     private static final RegisteredUserEmbeddingExperienceConfigurationMarshaller instance = new RegisteredUserEmbeddingExperienceConfigurationMarshaller();
 
@@ -56,6 +58,7 @@ public class RegisteredUserEmbeddingExperienceConfigurationMarshaller {
             protocolMarshaller.marshall(registeredUserEmbeddingExperienceConfiguration.getQuickSightConsole(), QUICKSIGHTCONSOLE_BINDING);
             protocolMarshaller.marshall(registeredUserEmbeddingExperienceConfiguration.getQSearchBar(), QSEARCHBAR_BINDING);
             protocolMarshaller.marshall(registeredUserEmbeddingExperienceConfiguration.getDashboardVisual(), DASHBOARDVISUAL_BINDING);
+            protocolMarshaller.marshall(registeredUserEmbeddingExperienceConfiguration.getGenerativeQnA(), GENERATIVEQNA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

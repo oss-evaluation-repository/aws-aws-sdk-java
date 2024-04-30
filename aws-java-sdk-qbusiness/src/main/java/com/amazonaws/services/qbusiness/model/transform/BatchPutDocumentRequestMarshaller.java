@@ -30,14 +30,14 @@ public class BatchPutDocumentRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<String> DATASOURCESYNCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceSyncId").build();
-    private static final MarshallingInfo<List> DOCUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("documents").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
+    private static final MarshallingInfo<List> DOCUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("documents").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<String> DATASOURCESYNCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceSyncId").build();
 
     private static final BatchPutDocumentRequestMarshaller instance = new BatchPutDocumentRequestMarshaller();
 
@@ -56,10 +56,10 @@ public class BatchPutDocumentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(batchPutDocumentRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(batchPutDocumentRequest.getDataSourceSyncId(), DATASOURCESYNCID_BINDING);
-            protocolMarshaller.marshall(batchPutDocumentRequest.getDocuments(), DOCUMENTS_BINDING);
             protocolMarshaller.marshall(batchPutDocumentRequest.getIndexId(), INDEXID_BINDING);
+            protocolMarshaller.marshall(batchPutDocumentRequest.getDocuments(), DOCUMENTS_BINDING);
             protocolMarshaller.marshall(batchPutDocumentRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(batchPutDocumentRequest.getDataSourceSyncId(), DATASOURCESYNCID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

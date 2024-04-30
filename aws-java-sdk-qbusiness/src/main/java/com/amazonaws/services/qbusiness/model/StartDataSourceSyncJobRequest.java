@@ -27,62 +27,22 @@ public class StartDataSourceSyncJobRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of Amazon Q Business application the data source is connected to.
-     * </p>
-     */
-    private String applicationId;
-    /**
-     * <p>
      * The identifier of the data source connector.
      * </p>
      */
     private String dataSourceId;
     /**
      * <p>
+     * The identifier of Amazon Q Business application the data source is connected to.
+     * </p>
+     */
+    private String applicationId;
+    /**
+     * <p>
      * The identifier of the index used with the data source connector.
      * </p>
      */
     private String indexId;
-
-    /**
-     * <p>
-     * The identifier of Amazon Q Business application the data source is connected to.
-     * </p>
-     * 
-     * @param applicationId
-     *        The identifier of Amazon Q Business application the data source is connected to.
-     */
-
-    public void setApplicationId(String applicationId) {
-        this.applicationId = applicationId;
-    }
-
-    /**
-     * <p>
-     * The identifier of Amazon Q Business application the data source is connected to.
-     * </p>
-     * 
-     * @return The identifier of Amazon Q Business application the data source is connected to.
-     */
-
-    public String getApplicationId() {
-        return this.applicationId;
-    }
-
-    /**
-     * <p>
-     * The identifier of Amazon Q Business application the data source is connected to.
-     * </p>
-     * 
-     * @param applicationId
-     *        The identifier of Amazon Q Business application the data source is connected to.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StartDataSourceSyncJobRequest withApplicationId(String applicationId) {
-        setApplicationId(applicationId);
-        return this;
-    }
 
     /**
      * <p>
@@ -121,6 +81,46 @@ public class StartDataSourceSyncJobRequest extends com.amazonaws.AmazonWebServic
 
     public StartDataSourceSyncJobRequest withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of Amazon Q Business application the data source is connected to.
+     * </p>
+     * 
+     * @param applicationId
+     *        The identifier of Amazon Q Business application the data source is connected to.
+     */
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
+
+    /**
+     * <p>
+     * The identifier of Amazon Q Business application the data source is connected to.
+     * </p>
+     * 
+     * @return The identifier of Amazon Q Business application the data source is connected to.
+     */
+
+    public String getApplicationId() {
+        return this.applicationId;
+    }
+
+    /**
+     * <p>
+     * The identifier of Amazon Q Business application the data source is connected to.
+     * </p>
+     * 
+     * @param applicationId
+     *        The identifier of Amazon Q Business application the data source is connected to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartDataSourceSyncJobRequest withApplicationId(String applicationId) {
+        setApplicationId(applicationId);
         return this;
     }
 
@@ -176,10 +176,10 @@ public class StartDataSourceSyncJobRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplicationId() != null)
-            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getDataSourceId() != null)
             sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
+        if (getApplicationId() != null)
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId());
         sb.append("}");
@@ -196,13 +196,13 @@ public class StartDataSourceSyncJobRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof StartDataSourceSyncJobRequest == false)
             return false;
         StartDataSourceSyncJobRequest other = (StartDataSourceSyncJobRequest) obj;
-        if (other.getApplicationId() == null ^ this.getApplicationId() == null)
-            return false;
-        if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
-            return false;
         if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
             return false;
         if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
+            return false;
+        if (other.getApplicationId() == null ^ this.getApplicationId() == null)
+            return false;
+        if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
@@ -216,8 +216,8 @@ public class StartDataSourceSyncJobRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
+        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
         return hashCode;
     }

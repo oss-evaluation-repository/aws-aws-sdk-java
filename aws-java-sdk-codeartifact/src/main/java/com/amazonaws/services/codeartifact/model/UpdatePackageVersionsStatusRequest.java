@@ -74,8 +74,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
-     * not have a namespace.
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -329,8 +329,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
-     * not have a namespace.
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -356,8 +356,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
-     *        formats do not have a namespace.
+     *        Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *        those formats do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -389,8 +389,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
-     * not have a namespace.
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -415,8 +415,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         Python and NuGet package versions do not contain a corresponding component, package versions of those
-     *         formats do not have a namespace.
+     *         Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *         those formats do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -448,8 +448,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Python and NuGet package versions do not contain a corresponding component, package versions of those formats do
-     * not have a namespace.
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -475,8 +475,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet package versions do not contain a corresponding component, package versions of those
-     *        formats do not have a namespace.
+     *        Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *        those formats do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

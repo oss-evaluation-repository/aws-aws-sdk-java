@@ -27,62 +27,22 @@ public class DeleteConversationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business application associated with the conversation.
-     * </p>
-     */
-    private String applicationId;
-    /**
-     * <p>
      * The identifier of the Amazon Q Business web experience conversation being deleted.
      * </p>
      */
     private String conversationId;
     /**
      * <p>
+     * The identifier of the Amazon Q Business application associated with the conversation.
+     * </p>
+     */
+    private String applicationId;
+    /**
+     * <p>
      * The identifier of the user who is deleting the conversation.
      * </p>
      */
     private String userId;
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business application associated with the conversation.
-     * </p>
-     * 
-     * @param applicationId
-     *        The identifier of the Amazon Q Business application associated with the conversation.
-     */
-
-    public void setApplicationId(String applicationId) {
-        this.applicationId = applicationId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business application associated with the conversation.
-     * </p>
-     * 
-     * @return The identifier of the Amazon Q Business application associated with the conversation.
-     */
-
-    public String getApplicationId() {
-        return this.applicationId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business application associated with the conversation.
-     * </p>
-     * 
-     * @param applicationId
-     *        The identifier of the Amazon Q Business application associated with the conversation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteConversationRequest withApplicationId(String applicationId) {
-        setApplicationId(applicationId);
-        return this;
-    }
 
     /**
      * <p>
@@ -121,6 +81,46 @@ public class DeleteConversationRequest extends com.amazonaws.AmazonWebServiceReq
 
     public DeleteConversationRequest withConversationId(String conversationId) {
         setConversationId(conversationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business application associated with the conversation.
+     * </p>
+     * 
+     * @param applicationId
+     *        The identifier of the Amazon Q Business application associated with the conversation.
+     */
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business application associated with the conversation.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Q Business application associated with the conversation.
+     */
+
+    public String getApplicationId() {
+        return this.applicationId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business application associated with the conversation.
+     * </p>
+     * 
+     * @param applicationId
+     *        The identifier of the Amazon Q Business application associated with the conversation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteConversationRequest withApplicationId(String applicationId) {
+        setApplicationId(applicationId);
         return this;
     }
 
@@ -176,10 +176,10 @@ public class DeleteConversationRequest extends com.amazonaws.AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplicationId() != null)
-            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getConversationId() != null)
             sb.append("ConversationId: ").append(getConversationId()).append(",");
+        if (getApplicationId() != null)
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getUserId() != null)
             sb.append("UserId: ").append(getUserId());
         sb.append("}");
@@ -196,13 +196,13 @@ public class DeleteConversationRequest extends com.amazonaws.AmazonWebServiceReq
         if (obj instanceof DeleteConversationRequest == false)
             return false;
         DeleteConversationRequest other = (DeleteConversationRequest) obj;
-        if (other.getApplicationId() == null ^ this.getApplicationId() == null)
-            return false;
-        if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
-            return false;
         if (other.getConversationId() == null ^ this.getConversationId() == null)
             return false;
         if (other.getConversationId() != null && other.getConversationId().equals(this.getConversationId()) == false)
+            return false;
+        if (other.getApplicationId() == null ^ this.getApplicationId() == null)
+            return false;
+        if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
         if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
@@ -216,8 +216,8 @@ public class DeleteConversationRequest extends com.amazonaws.AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getConversationId() == null) ? 0 : getConversationId().hashCode());
+        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         return hashCode;
     }

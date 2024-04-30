@@ -30,64 +30,18 @@ public class RetrieverConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business application is
-     * configured.
-     * </p>
-     */
-    private KendraIndexConfiguration kendraIndexConfiguration;
-    /**
-     * <p>
      * Provides information on how a Amazon Q Business index used as a retriever for your Amazon Q Business application
      * is configured.
      * </p>
      */
     private NativeIndexConfiguration nativeIndexConfiguration;
-
     /**
      * <p>
      * Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business application is
      * configured.
      * </p>
-     * 
-     * @param kendraIndexConfiguration
-     *        Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business
-     *        application is configured.
      */
-
-    public void setKendraIndexConfiguration(KendraIndexConfiguration kendraIndexConfiguration) {
-        this.kendraIndexConfiguration = kendraIndexConfiguration;
-    }
-
-    /**
-     * <p>
-     * Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business application is
-     * configured.
-     * </p>
-     * 
-     * @return Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business
-     *         application is configured.
-     */
-
-    public KendraIndexConfiguration getKendraIndexConfiguration() {
-        return this.kendraIndexConfiguration;
-    }
-
-    /**
-     * <p>
-     * Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business application is
-     * configured.
-     * </p>
-     * 
-     * @param kendraIndexConfiguration
-     *        Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business
-     *        application is configured.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RetrieverConfiguration withKendraIndexConfiguration(KendraIndexConfiguration kendraIndexConfiguration) {
-        setKendraIndexConfiguration(kendraIndexConfiguration);
-        return this;
-    }
+    private KendraIndexConfiguration kendraIndexConfiguration;
 
     /**
      * <p>
@@ -136,6 +90,52 @@ public class RetrieverConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business application is
+     * configured.
+     * </p>
+     * 
+     * @param kendraIndexConfiguration
+     *        Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business
+     *        application is configured.
+     */
+
+    public void setKendraIndexConfiguration(KendraIndexConfiguration kendraIndexConfiguration) {
+        this.kendraIndexConfiguration = kendraIndexConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business application is
+     * configured.
+     * </p>
+     * 
+     * @return Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business
+     *         application is configured.
+     */
+
+    public KendraIndexConfiguration getKendraIndexConfiguration() {
+        return this.kendraIndexConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business application is
+     * configured.
+     * </p>
+     * 
+     * @param kendraIndexConfiguration
+     *        Provides information on how the Amazon Kendra index used as a retriever for your Amazon Q Business
+     *        application is configured.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetrieverConfiguration withKendraIndexConfiguration(KendraIndexConfiguration kendraIndexConfiguration) {
+        setKendraIndexConfiguration(kendraIndexConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -147,10 +147,10 @@ public class RetrieverConfiguration implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKendraIndexConfiguration() != null)
-            sb.append("KendraIndexConfiguration: ").append(getKendraIndexConfiguration()).append(",");
         if (getNativeIndexConfiguration() != null)
-            sb.append("NativeIndexConfiguration: ").append(getNativeIndexConfiguration());
+            sb.append("NativeIndexConfiguration: ").append(getNativeIndexConfiguration()).append(",");
+        if (getKendraIndexConfiguration() != null)
+            sb.append("KendraIndexConfiguration: ").append(getKendraIndexConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -165,13 +165,13 @@ public class RetrieverConfiguration implements Serializable, Cloneable, Structur
         if (obj instanceof RetrieverConfiguration == false)
             return false;
         RetrieverConfiguration other = (RetrieverConfiguration) obj;
-        if (other.getKendraIndexConfiguration() == null ^ this.getKendraIndexConfiguration() == null)
-            return false;
-        if (other.getKendraIndexConfiguration() != null && other.getKendraIndexConfiguration().equals(this.getKendraIndexConfiguration()) == false)
-            return false;
         if (other.getNativeIndexConfiguration() == null ^ this.getNativeIndexConfiguration() == null)
             return false;
         if (other.getNativeIndexConfiguration() != null && other.getNativeIndexConfiguration().equals(this.getNativeIndexConfiguration()) == false)
+            return false;
+        if (other.getKendraIndexConfiguration() == null ^ this.getKendraIndexConfiguration() == null)
+            return false;
+        if (other.getKendraIndexConfiguration() != null && other.getKendraIndexConfiguration().equals(this.getKendraIndexConfiguration()) == false)
             return false;
         return true;
     }
@@ -181,8 +181,8 @@ public class RetrieverConfiguration implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getKendraIndexConfiguration() == null) ? 0 : getKendraIndexConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNativeIndexConfiguration() == null) ? 0 : getNativeIndexConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getKendraIndexConfiguration() == null) ? 0 : getKendraIndexConfiguration().hashCode());
         return hashCode;
     }
 

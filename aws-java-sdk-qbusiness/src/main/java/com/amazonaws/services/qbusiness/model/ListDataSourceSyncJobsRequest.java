@@ -27,34 +27,22 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business application connected to the data source.
-     * </p>
-     */
-    private String applicationId;
-    /**
-     * <p>
      * The identifier of the data source connector.
      * </p>
      */
     private String dataSourceId;
     /**
      * <p>
-     * The end time of the data source connector sync.
+     * The identifier of the Amazon Q Business application connected to the data source.
      * </p>
      */
-    private java.util.Date endTime;
+    private String applicationId;
     /**
      * <p>
      * The identifier of the index used with the Amazon Q Business data source connector.
      * </p>
      */
     private String indexId;
-    /**
-     * <p>
-     * The maximum number of synchronization jobs to return in the response.
-     * </p>
-     */
-    private Integer maxResults;
     /**
      * <p>
      * If the <code>maxResults</code> response was incpmplete because there is more data to retriever, Amazon Q Business
@@ -65,56 +53,28 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
     private String nextToken;
     /**
      * <p>
+     * The maximum number of synchronization jobs to return in the response.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
      * The start time of the data source connector sync.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
+     * The end time of the data source connector sync.
+     * </p>
+     */
+    private java.util.Date endTime;
+    /**
+     * <p>
      * Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.
      * </p>
      */
     private String statusFilter;
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business application connected to the data source.
-     * </p>
-     * 
-     * @param applicationId
-     *        The identifier of the Amazon Q Business application connected to the data source.
-     */
-
-    public void setApplicationId(String applicationId) {
-        this.applicationId = applicationId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business application connected to the data source.
-     * </p>
-     * 
-     * @return The identifier of the Amazon Q Business application connected to the data source.
-     */
-
-    public String getApplicationId() {
-        return this.applicationId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business application connected to the data source.
-     * </p>
-     * 
-     * @param applicationId
-     *        The identifier of the Amazon Q Business application connected to the data source.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListDataSourceSyncJobsRequest withApplicationId(String applicationId) {
-        setApplicationId(applicationId);
-        return this;
-    }
 
     /**
      * <p>
@@ -158,41 +118,41 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The end time of the data source connector sync.
+     * The identifier of the Amazon Q Business application connected to the data source.
      * </p>
      * 
-     * @param endTime
-     *        The end time of the data source connector sync.
+     * @param applicationId
+     *        The identifier of the Amazon Q Business application connected to the data source.
      */
 
-    public void setEndTime(java.util.Date endTime) {
-        this.endTime = endTime;
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
     }
 
     /**
      * <p>
-     * The end time of the data source connector sync.
+     * The identifier of the Amazon Q Business application connected to the data source.
      * </p>
      * 
-     * @return The end time of the data source connector sync.
+     * @return The identifier of the Amazon Q Business application connected to the data source.
      */
 
-    public java.util.Date getEndTime() {
-        return this.endTime;
+    public String getApplicationId() {
+        return this.applicationId;
     }
 
     /**
      * <p>
-     * The end time of the data source connector sync.
+     * The identifier of the Amazon Q Business application connected to the data source.
      * </p>
      * 
-     * @param endTime
-     *        The end time of the data source connector sync.
+     * @param applicationId
+     *        The identifier of the Amazon Q Business application connected to the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListDataSourceSyncJobsRequest withEndTime(java.util.Date endTime) {
-        setEndTime(endTime);
+    public ListDataSourceSyncJobsRequest withApplicationId(String applicationId) {
+        setApplicationId(applicationId);
         return this;
     }
 
@@ -233,46 +193,6 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     public ListDataSourceSyncJobsRequest withIndexId(String indexId) {
         setIndexId(indexId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The maximum number of synchronization jobs to return in the response.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of synchronization jobs to return in the response.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of synchronization jobs to return in the response.
-     * </p>
-     * 
-     * @return The maximum number of synchronization jobs to return in the response.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of synchronization jobs to return in the response.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of synchronization jobs to return in the response.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListDataSourceSyncJobsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
         return this;
     }
 
@@ -330,6 +250,46 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The maximum number of synchronization jobs to return in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of synchronization jobs to return in the response.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of synchronization jobs to return in the response.
+     * </p>
+     * 
+     * @return The maximum number of synchronization jobs to return in the response.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of synchronization jobs to return in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of synchronization jobs to return in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDataSourceSyncJobsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
      * The start time of the data source connector sync.
      * </p>
      * 
@@ -365,6 +325,46 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
 
     public ListDataSourceSyncJobsRequest withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The end time of the data source connector sync.
+     * </p>
+     * 
+     * @param endTime
+     *        The end time of the data source connector sync.
+     */
+
+    public void setEndTime(java.util.Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * <p>
+     * The end time of the data source connector sync.
+     * </p>
+     * 
+     * @return The end time of the data source connector sync.
+     */
+
+    public java.util.Date getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * <p>
+     * The end time of the data source connector sync.
+     * </p>
+     * 
+     * @param endTime
+     *        The end time of the data source connector sync.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDataSourceSyncJobsRequest withEndTime(java.util.Date endTime) {
+        setEndTime(endTime);
         return this;
     }
 
@@ -439,20 +439,20 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplicationId() != null)
-            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getDataSourceId() != null)
             sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
-        if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getApplicationId() != null)
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getEndTime() != null)
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getStatusFilter() != null)
             sb.append("StatusFilter: ").append(getStatusFilter());
         sb.append("}");
@@ -469,33 +469,33 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof ListDataSourceSyncJobsRequest == false)
             return false;
         ListDataSourceSyncJobsRequest other = (ListDataSourceSyncJobsRequest) obj;
-        if (other.getApplicationId() == null ^ this.getApplicationId() == null)
-            return false;
-        if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
-            return false;
         if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
             return false;
         if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
-        if (other.getEndTime() == null ^ this.getEndTime() == null)
+        if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
-        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
+        if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getEndTime() == null ^ this.getEndTime() == null)
+            return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
         if (other.getStatusFilter() == null ^ this.getStatusFilter() == null)
             return false;
@@ -509,13 +509,13 @@ public class ListDataSourceSyncJobsRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
-        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getStatusFilter() == null) ? 0 : getStatusFilter().hashCode());
         return hashCode;
     }

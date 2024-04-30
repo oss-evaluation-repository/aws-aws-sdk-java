@@ -31,16 +31,36 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private String applicationId;
     /**
      * <p>
-     * The storage capacity units chosen for your Amazon Q Business index.
+     * The identifier of the Amazon Q Business index.
      * </p>
      */
-    private IndexCapacityConfiguration capacityConfiguration;
+    private String indexId;
     /**
      * <p>
-     * The Unix timestamp when the Amazon Q Business index was created.
+     * The name of the Amazon Q Business index.
      * </p>
      */
-    private java.util.Date createdAt;
+    private String displayName;
+    /**
+     * <p>
+     * The type of index attached to your Amazon Q Business application.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q Business index.
+     * </p>
+     */
+    private String indexArn;
+    /**
+     * <p>
+     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
+     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
+     * that explains why.
+     * </p>
+     */
+    private String status;
     /**
      * <p>
      * The description for the Amazon Q Business index.
@@ -49,10 +69,22 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private String description;
     /**
      * <p>
-     * The name of the Amazon Q Business index.
+     * The Unix timestamp when the Amazon Q Business index was created.
      * </p>
      */
-    private String displayName;
+    private java.util.Date createdAt;
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business index was last updated.
+     * </p>
+     */
+    private java.util.Date updatedAt;
+    /**
+     * <p>
+     * The storage capacity units chosen for your Amazon Q Business index.
+     * </p>
+     */
+    private IndexCapacityConfiguration capacityConfiguration;
     /**
      * <p>
      * Configuration information for document attributes or metadata. Document metadata are fields associated with your
@@ -71,36 +103,10 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private ErrorDetail error;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business index.
-     * </p>
-     */
-    private String indexArn;
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index.
-     * </p>
-     */
-    private String indexId;
-    /**
-     * <p>
      * Provides information about the number of documents indexed.
      * </p>
      */
     private IndexStatistics indexStatistics;
-    /**
-     * <p>
-     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
-     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
-     * that explains why.
-     * </p>
-     */
-    private String status;
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business index was last updated.
-     * </p>
-     */
-    private java.util.Date updatedAt;
 
     /**
      * <p>
@@ -144,81 +150,255 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The storage capacity units chosen for your Amazon Q Business index.
+     * The identifier of the Amazon Q Business index.
      * </p>
      * 
-     * @param capacityConfiguration
-     *        The storage capacity units chosen for your Amazon Q Business index.
+     * @param indexId
+     *        The identifier of the Amazon Q Business index.
      */
 
-    public void setCapacityConfiguration(IndexCapacityConfiguration capacityConfiguration) {
-        this.capacityConfiguration = capacityConfiguration;
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
     }
 
     /**
      * <p>
-     * The storage capacity units chosen for your Amazon Q Business index.
+     * The identifier of the Amazon Q Business index.
      * </p>
      * 
-     * @return The storage capacity units chosen for your Amazon Q Business index.
+     * @return The identifier of the Amazon Q Business index.
      */
 
-    public IndexCapacityConfiguration getCapacityConfiguration() {
-        return this.capacityConfiguration;
+    public String getIndexId() {
+        return this.indexId;
     }
 
     /**
      * <p>
-     * The storage capacity units chosen for your Amazon Q Business index.
+     * The identifier of the Amazon Q Business index.
      * </p>
      * 
-     * @param capacityConfiguration
-     *        The storage capacity units chosen for your Amazon Q Business index.
+     * @param indexId
+     *        The identifier of the Amazon Q Business index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetIndexResult withCapacityConfiguration(IndexCapacityConfiguration capacityConfiguration) {
-        setCapacityConfiguration(capacityConfiguration);
+    public GetIndexResult withIndexId(String indexId) {
+        setIndexId(indexId);
         return this;
     }
 
     /**
      * <p>
-     * The Unix timestamp when the Amazon Q Business index was created.
+     * The name of the Amazon Q Business index.
      * </p>
      * 
-     * @param createdAt
-     *        The Unix timestamp when the Amazon Q Business index was created.
+     * @param displayName
+     *        The name of the Amazon Q Business index.
      */
 
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     /**
      * <p>
-     * The Unix timestamp when the Amazon Q Business index was created.
+     * The name of the Amazon Q Business index.
      * </p>
      * 
-     * @return The Unix timestamp when the Amazon Q Business index was created.
+     * @return The name of the Amazon Q Business index.
      */
 
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
+    public String getDisplayName() {
+        return this.displayName;
     }
 
     /**
      * <p>
-     * The Unix timestamp when the Amazon Q Business index was created.
+     * The name of the Amazon Q Business index.
      * </p>
      * 
-     * @param createdAt
-     *        The Unix timestamp when the Amazon Q Business index was created.
+     * @param displayName
+     *        The name of the Amazon Q Business index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetIndexResult withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
+    public GetIndexResult withDisplayName(String displayName) {
+        setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of index attached to your Amazon Q Business application.
+     * </p>
+     * 
+     * @param type
+     *        The type of index attached to your Amazon Q Business application.
+     * @see IndexType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of index attached to your Amazon Q Business application.
+     * </p>
+     * 
+     * @return The type of index attached to your Amazon Q Business application.
+     * @see IndexType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of index attached to your Amazon Q Business application.
+     * </p>
+     * 
+     * @param type
+     *        The type of index attached to your Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexType
+     */
+
+    public GetIndexResult withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of index attached to your Amazon Q Business application.
+     * </p>
+     * 
+     * @param type
+     *        The type of index attached to your Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexType
+     */
+
+    public GetIndexResult withType(IndexType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q Business index.
+     * </p>
+     * 
+     * @param indexArn
+     *        The Amazon Resource Name (ARN) of the Amazon Q Business index.
+     */
+
+    public void setIndexArn(String indexArn) {
+        this.indexArn = indexArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q Business index.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon Q Business index.
+     */
+
+    public String getIndexArn() {
+        return this.indexArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q Business index.
+     * </p>
+     * 
+     * @param indexArn
+     *        The Amazon Resource Name (ARN) of the Amazon Q Business index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetIndexResult withIndexArn(String indexArn) {
+        setIndexArn(indexArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
+     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
+     * that explains why.
+     * </p>
+     * 
+     * @param status
+     *        The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
+     *        <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a
+     *        message that explains why.
+     * @see IndexStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
+     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
+     * that explains why.
+     * </p>
+     * 
+     * @return The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If
+     *         the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains
+     *         a message that explains why.
+     * @see IndexStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
+     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
+     * that explains why.
+     * </p>
+     * 
+     * @param status
+     *        The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
+     *        <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a
+     *        message that explains why.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexStatus
+     */
+
+    public GetIndexResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
+     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
+     * that explains why.
+     * </p>
+     * 
+     * @param status
+     *        The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
+     *        <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a
+     *        message that explains why.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IndexStatus
+     */
+
+    public GetIndexResult withStatus(IndexStatus status) {
+        this.status = status.toString();
         return this;
     }
 
@@ -264,41 +444,121 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The name of the Amazon Q Business index.
+     * The Unix timestamp when the Amazon Q Business index was created.
      * </p>
      * 
-     * @param displayName
-     *        The name of the Amazon Q Business index.
+     * @param createdAt
+     *        The Unix timestamp when the Amazon Q Business index was created.
      */
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
     }
 
     /**
      * <p>
-     * The name of the Amazon Q Business index.
+     * The Unix timestamp when the Amazon Q Business index was created.
      * </p>
      * 
-     * @return The name of the Amazon Q Business index.
+     * @return The Unix timestamp when the Amazon Q Business index was created.
      */
 
-    public String getDisplayName() {
-        return this.displayName;
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
     }
 
     /**
      * <p>
-     * The name of the Amazon Q Business index.
+     * The Unix timestamp when the Amazon Q Business index was created.
      * </p>
      * 
-     * @param displayName
-     *        The name of the Amazon Q Business index.
+     * @param createdAt
+     *        The Unix timestamp when the Amazon Q Business index was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetIndexResult withDisplayName(String displayName) {
-        setDisplayName(displayName);
+    public GetIndexResult withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business index was last updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The Unix timestamp when the Amazon Q Business index was last updated.
+     */
+
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business index was last updated.
+     * </p>
+     * 
+     * @return The Unix timestamp when the Amazon Q Business index was last updated.
+     */
+
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business index was last updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The Unix timestamp when the Amazon Q Business index was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetIndexResult withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage capacity units chosen for your Amazon Q Business index.
+     * </p>
+     * 
+     * @param capacityConfiguration
+     *        The storage capacity units chosen for your Amazon Q Business index.
+     */
+
+    public void setCapacityConfiguration(IndexCapacityConfiguration capacityConfiguration) {
+        this.capacityConfiguration = capacityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The storage capacity units chosen for your Amazon Q Business index.
+     * </p>
+     * 
+     * @return The storage capacity units chosen for your Amazon Q Business index.
+     */
+
+    public IndexCapacityConfiguration getCapacityConfiguration() {
+        return this.capacityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The storage capacity units chosen for your Amazon Q Business index.
+     * </p>
+     * 
+     * @param capacityConfiguration
+     *        The storage capacity units chosen for your Amazon Q Business index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetIndexResult withCapacityConfiguration(IndexCapacityConfiguration capacityConfiguration) {
+        setCapacityConfiguration(capacityConfiguration);
         return this;
     }
 
@@ -448,86 +708,6 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexArn
-     *        The Amazon Resource Name (ARN) of the Amazon Q Business index.
-     */
-
-    public void setIndexArn(String indexArn) {
-        this.indexArn = indexArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business index.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Q Business index.
-     */
-
-    public String getIndexArn() {
-        return this.indexArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexArn
-     *        The Amazon Resource Name (ARN) of the Amazon Q Business index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetIndexResult withIndexArn(String indexArn) {
-        setIndexArn(indexArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the Amazon Q Business index.
-     */
-
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index.
-     * </p>
-     * 
-     * @return The identifier of the Amazon Q Business index.
-     */
-
-    public String getIndexId() {
-        return this.indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the Amazon Q Business index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetIndexResult withIndexId(String indexId) {
-        setIndexId(indexId);
-        return this;
-    }
-
-    /**
-     * <p>
      * Provides information about the number of documents indexed.
      * </p>
      * 
@@ -567,121 +747,6 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * <p>
-     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
-     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
-     * that explains why.
-     * </p>
-     * 
-     * @param status
-     *        The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
-     *        <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a
-     *        message that explains why.
-     * @see IndexStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
-     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
-     * that explains why.
-     * </p>
-     * 
-     * @return The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If
-     *         the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains
-     *         a message that explains why.
-     * @see IndexStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
-     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
-     * that explains why.
-     * </p>
-     * 
-     * @param status
-     *        The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
-     *        <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a
-     *        message that explains why.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see IndexStatus
-     */
-
-    public GetIndexResult withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
-     * <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message
-     * that explains why.
-     * </p>
-     * 
-     * @param status
-     *        The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the
-     *        <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a
-     *        message that explains why.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see IndexStatus
-     */
-
-    public GetIndexResult withStatus(IndexStatus status) {
-        this.status = status.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business index was last updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when the Amazon Q Business index was last updated.
-     */
-
-    public void setUpdatedAt(java.util.Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business index was last updated.
-     * </p>
-     * 
-     * @return The Unix timestamp when the Amazon Q Business index was last updated.
-     */
-
-    public java.util.Date getUpdatedAt() {
-        return this.updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business index was last updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when the Amazon Q Business index was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetIndexResult withUpdatedAt(java.util.Date updatedAt) {
-        setUpdatedAt(updatedAt);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -695,28 +760,30 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getCapacityConfiguration() != null)
-            sb.append("CapacityConfiguration: ").append(getCapacityConfiguration()).append(",");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+        if (getIndexId() != null)
+            sb.append("IndexId: ").append(getIndexId()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getIndexArn() != null)
+            sb.append("IndexArn: ").append(getIndexArn()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getUpdatedAt() != null)
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getCapacityConfiguration() != null)
+            sb.append("CapacityConfiguration: ").append(getCapacityConfiguration()).append(",");
         if (getDocumentAttributeConfigurations() != null)
             sb.append("DocumentAttributeConfigurations: ").append(getDocumentAttributeConfigurations()).append(",");
         if (getError() != null)
             sb.append("Error: ").append(getError()).append(",");
-        if (getIndexArn() != null)
-            sb.append("IndexArn: ").append(getIndexArn()).append(",");
-        if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId()).append(",");
         if (getIndexStatistics() != null)
-            sb.append("IndexStatistics: ").append(getIndexStatistics()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
-        if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("IndexStatistics: ").append(getIndexStatistics());
         sb.append("}");
         return sb.toString();
     }
@@ -735,21 +802,41 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getCapacityConfiguration() == null ^ this.getCapacityConfiguration() == null)
+        if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
-        if (other.getCapacityConfiguration() != null && other.getCapacityConfiguration().equals(this.getCapacityConfiguration()) == false)
+        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getIndexArn() == null ^ this.getIndexArn() == null)
+            return false;
+        if (other.getIndexArn() != null && other.getIndexArn().equals(this.getIndexArn()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
+            return false;
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+            return false;
+        if (other.getCapacityConfiguration() == null ^ this.getCapacityConfiguration() == null)
+            return false;
+        if (other.getCapacityConfiguration() != null && other.getCapacityConfiguration().equals(this.getCapacityConfiguration()) == false)
             return false;
         if (other.getDocumentAttributeConfigurations() == null ^ this.getDocumentAttributeConfigurations() == null)
             return false;
@@ -760,25 +847,9 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             return false;
         if (other.getError() != null && other.getError().equals(this.getError()) == false)
             return false;
-        if (other.getIndexArn() == null ^ this.getIndexArn() == null)
-            return false;
-        if (other.getIndexArn() != null && other.getIndexArn().equals(this.getIndexArn()) == false)
-            return false;
-        if (other.getIndexId() == null ^ this.getIndexId() == null)
-            return false;
-        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
-            return false;
         if (other.getIndexStatistics() == null ^ this.getIndexStatistics() == null)
             return false;
         if (other.getIndexStatistics() != null && other.getIndexStatistics().equals(this.getIndexStatistics()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
-            return false;
-        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
         return true;
     }
@@ -789,17 +860,18 @@ public class GetIndexResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getCapacityConfiguration() == null) ? 0 : getCapacityConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getCapacityConfiguration() == null) ? 0 : getCapacityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDocumentAttributeConfigurations() == null) ? 0 : getDocumentAttributeConfigurations().hashCode());
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
-        hashCode = prime * hashCode + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
-        hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
         hashCode = prime * hashCode + ((getIndexStatistics() == null) ? 0 : getIndexStatistics().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }
 

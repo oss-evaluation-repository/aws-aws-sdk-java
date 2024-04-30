@@ -48,13 +48,13 @@ public class PrincipalJsonUnmarshaller implements Unmarshaller<Principal, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("group", targetDepth)) {
-                    context.nextToken();
-                    principal.setGroup(PrincipalGroupJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("user", targetDepth)) {
                     context.nextToken();
                     principal.setUser(PrincipalUserJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("group", targetDepth)) {
+                    context.nextToken();
+                    principal.setGroup(PrincipalGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

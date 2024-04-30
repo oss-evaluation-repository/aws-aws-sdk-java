@@ -98,6 +98,12 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean dryRun;
+    /**
+     * <p>
+     * The unique identifier for the protect configuration.
+     * </p>
+     */
+    private String protectConfigurationId;
 
     /**
      * <p>
@@ -674,6 +680,46 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The unique identifier for the protect configuration.
+     * </p>
+     * 
+     * @param protectConfigurationId
+     *        The unique identifier for the protect configuration.
+     */
+
+    public void setProtectConfigurationId(String protectConfigurationId) {
+        this.protectConfigurationId = protectConfigurationId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the protect configuration.
+     * </p>
+     * 
+     * @return The unique identifier for the protect configuration.
+     */
+
+    public String getProtectConfigurationId() {
+        return this.protectConfigurationId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the protect configuration.
+     * </p>
+     * 
+     * @param protectConfigurationId
+     *        The unique identifier for the protect configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendTextMessageRequest withProtectConfigurationId(String protectConfigurationId) {
+        setProtectConfigurationId(protectConfigurationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -706,7 +752,9 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
         if (getDestinationCountryParameters() != null)
             sb.append("DestinationCountryParameters: ").append(getDestinationCountryParameters()).append(",");
         if (getDryRun() != null)
-            sb.append("DryRun: ").append(getDryRun());
+            sb.append("DryRun: ").append(getDryRun()).append(",");
+        if (getProtectConfigurationId() != null)
+            sb.append("ProtectConfigurationId: ").append(getProtectConfigurationId());
         sb.append("}");
         return sb.toString();
     }
@@ -765,6 +813,10 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
             return false;
+        if (other.getProtectConfigurationId() == null ^ this.getProtectConfigurationId() == null)
+            return false;
+        if (other.getProtectConfigurationId() != null && other.getProtectConfigurationId().equals(this.getProtectConfigurationId()) == false)
+            return false;
         return true;
     }
 
@@ -784,6 +836,7 @@ public class SendTextMessageRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getDestinationCountryParameters() == null) ? 0 : getDestinationCountryParameters().hashCode());
         hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
+        hashCode = prime * hashCode + ((getProtectConfigurationId() == null) ? 0 : getProtectConfigurationId().hashCode());
         return hashCode;
     }
 

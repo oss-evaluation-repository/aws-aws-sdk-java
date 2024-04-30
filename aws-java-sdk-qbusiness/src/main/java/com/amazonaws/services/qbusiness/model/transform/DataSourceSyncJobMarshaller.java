@@ -27,20 +27,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DataSourceSyncJobMarshaller {
 
-    private static final MarshallingInfo<String> DATASOURCEERRORCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceErrorCode").build();
-    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<StructuredPojo> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("error").build();
     private static final MarshallingInfo<String> EXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionId").build();
-    private static final MarshallingInfo<StructuredPojo> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metrics").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<StructuredPojo> ERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("error").build();
+    private static final MarshallingInfo<String> DATASOURCEERRORCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataSourceErrorCode").build();
+    private static final MarshallingInfo<StructuredPojo> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metrics").build();
 
     private static final DataSourceSyncJobMarshaller instance = new DataSourceSyncJobMarshaller();
 
@@ -58,13 +58,13 @@ public class DataSourceSyncJobMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(dataSourceSyncJob.getDataSourceErrorCode(), DATASOURCEERRORCODE_BINDING);
-            protocolMarshaller.marshall(dataSourceSyncJob.getEndTime(), ENDTIME_BINDING);
-            protocolMarshaller.marshall(dataSourceSyncJob.getError(), ERROR_BINDING);
             protocolMarshaller.marshall(dataSourceSyncJob.getExecutionId(), EXECUTIONID_BINDING);
-            protocolMarshaller.marshall(dataSourceSyncJob.getMetrics(), METRICS_BINDING);
             protocolMarshaller.marshall(dataSourceSyncJob.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(dataSourceSyncJob.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(dataSourceSyncJob.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(dataSourceSyncJob.getError(), ERROR_BINDING);
+            protocolMarshaller.marshall(dataSourceSyncJob.getDataSourceErrorCode(), DATASOURCEERRORCODE_BINDING);
+            protocolMarshaller.marshall(dataSourceSyncJob.getMetrics(), METRICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

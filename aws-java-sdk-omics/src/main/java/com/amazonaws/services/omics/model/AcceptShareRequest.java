@@ -27,18 +27,18 @@ public class AcceptShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID for a share offer for analytics store data.
+     * The ID of the resource share.
      * </p>
      */
     private String shareId;
 
     /**
      * <p>
-     * The ID for a share offer for analytics store data.
+     * The ID of the resource share.
      * </p>
      * 
      * @param shareId
-     *        The ID for a share offer for analytics store data.
+     *        The ID of the resource share.
      */
 
     public void setShareId(String shareId) {
@@ -47,10 +47,10 @@ public class AcceptShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID for a share offer for analytics store data.
+     * The ID of the resource share.
      * </p>
      * 
-     * @return The ID for a share offer for analytics store data.
+     * @return The ID of the resource share.
      */
 
     public String getShareId() {
@@ -59,11 +59,11 @@ public class AcceptShareRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID for a share offer for analytics store data.
+     * The ID of the resource share.
      * </p>
      * 
      * @param shareId
-     *        The ID for a share offer for analytics store data.
+     *        The ID of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

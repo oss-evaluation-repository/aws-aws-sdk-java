@@ -54,15 +54,15 @@ public class UpdateUserResultJsonUnmarshaller implements Unmarshaller<UpdateUser
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("userAliasesDeleted", targetDepth)) {
-                    context.nextToken();
-                    updateUserResult.setUserAliasesDeleted(new ListUnmarshaller<UserAlias>(UserAliasJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
                 if (context.testExpression("userAliasesUpdated", targetDepth)) {
                     context.nextToken();
                     updateUserResult.setUserAliasesUpdated(new ListUnmarshaller<UserAlias>(UserAliasJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("userAliasesDeleted", targetDepth)) {
+                    context.nextToken();
+                    updateUserResult.setUserAliasesDeleted(new ListUnmarshaller<UserAlias>(UserAliasJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

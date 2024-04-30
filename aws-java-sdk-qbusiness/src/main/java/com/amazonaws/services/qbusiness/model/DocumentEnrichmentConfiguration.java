@@ -42,9 +42,9 @@ public class DocumentEnrichmentConfiguration implements Serializable, Cloneable,
      */
     private java.util.List<InlineDocumentEnrichmentConfiguration> inlineConfigurations;
 
-    private HookConfiguration postExtractionHookConfiguration;
-
     private HookConfiguration preExtractionHookConfiguration;
+
+    private HookConfiguration postExtractionHookConfiguration;
 
     /**
      * <p>
@@ -125,32 +125,6 @@ public class DocumentEnrichmentConfiguration implements Serializable, Cloneable,
     }
 
     /**
-     * @param postExtractionHookConfiguration
-     */
-
-    public void setPostExtractionHookConfiguration(HookConfiguration postExtractionHookConfiguration) {
-        this.postExtractionHookConfiguration = postExtractionHookConfiguration;
-    }
-
-    /**
-     * @return
-     */
-
-    public HookConfiguration getPostExtractionHookConfiguration() {
-        return this.postExtractionHookConfiguration;
-    }
-
-    /**
-     * @param postExtractionHookConfiguration
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DocumentEnrichmentConfiguration withPostExtractionHookConfiguration(HookConfiguration postExtractionHookConfiguration) {
-        setPostExtractionHookConfiguration(postExtractionHookConfiguration);
-        return this;
-    }
-
-    /**
      * @param preExtractionHookConfiguration
      */
 
@@ -177,6 +151,32 @@ public class DocumentEnrichmentConfiguration implements Serializable, Cloneable,
     }
 
     /**
+     * @param postExtractionHookConfiguration
+     */
+
+    public void setPostExtractionHookConfiguration(HookConfiguration postExtractionHookConfiguration) {
+        this.postExtractionHookConfiguration = postExtractionHookConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public HookConfiguration getPostExtractionHookConfiguration() {
+        return this.postExtractionHookConfiguration;
+    }
+
+    /**
+     * @param postExtractionHookConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentEnrichmentConfiguration withPostExtractionHookConfiguration(HookConfiguration postExtractionHookConfiguration) {
+        setPostExtractionHookConfiguration(postExtractionHookConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -190,10 +190,10 @@ public class DocumentEnrichmentConfiguration implements Serializable, Cloneable,
         sb.append("{");
         if (getInlineConfigurations() != null)
             sb.append("InlineConfigurations: ").append(getInlineConfigurations()).append(",");
-        if (getPostExtractionHookConfiguration() != null)
-            sb.append("PostExtractionHookConfiguration: ").append(getPostExtractionHookConfiguration()).append(",");
         if (getPreExtractionHookConfiguration() != null)
-            sb.append("PreExtractionHookConfiguration: ").append(getPreExtractionHookConfiguration());
+            sb.append("PreExtractionHookConfiguration: ").append(getPreExtractionHookConfiguration()).append(",");
+        if (getPostExtractionHookConfiguration() != null)
+            sb.append("PostExtractionHookConfiguration: ").append(getPostExtractionHookConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -212,15 +212,15 @@ public class DocumentEnrichmentConfiguration implements Serializable, Cloneable,
             return false;
         if (other.getInlineConfigurations() != null && other.getInlineConfigurations().equals(this.getInlineConfigurations()) == false)
             return false;
-        if (other.getPostExtractionHookConfiguration() == null ^ this.getPostExtractionHookConfiguration() == null)
-            return false;
-        if (other.getPostExtractionHookConfiguration() != null
-                && other.getPostExtractionHookConfiguration().equals(this.getPostExtractionHookConfiguration()) == false)
-            return false;
         if (other.getPreExtractionHookConfiguration() == null ^ this.getPreExtractionHookConfiguration() == null)
             return false;
         if (other.getPreExtractionHookConfiguration() != null
                 && other.getPreExtractionHookConfiguration().equals(this.getPreExtractionHookConfiguration()) == false)
+            return false;
+        if (other.getPostExtractionHookConfiguration() == null ^ this.getPostExtractionHookConfiguration() == null)
+            return false;
+        if (other.getPostExtractionHookConfiguration() != null
+                && other.getPostExtractionHookConfiguration().equals(this.getPostExtractionHookConfiguration()) == false)
             return false;
         return true;
     }
@@ -231,8 +231,8 @@ public class DocumentEnrichmentConfiguration implements Serializable, Cloneable,
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInlineConfigurations() == null) ? 0 : getInlineConfigurations().hashCode());
-        hashCode = prime * hashCode + ((getPostExtractionHookConfiguration() == null) ? 0 : getPostExtractionHookConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPreExtractionHookConfiguration() == null) ? 0 : getPreExtractionHookConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPostExtractionHookConfiguration() == null) ? 0 : getPostExtractionHookConfiguration().hashCode());
         return hashCode;
     }
 

@@ -48,13 +48,13 @@ public class BasicAuthConfigurationJsonUnmarshaller implements Unmarshaller<Basi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("roleArn", targetDepth)) {
-                    context.nextToken();
-                    basicAuthConfiguration.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("secretArn", targetDepth)) {
                     context.nextToken();
                     basicAuthConfiguration.setSecretArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    basicAuthConfiguration.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

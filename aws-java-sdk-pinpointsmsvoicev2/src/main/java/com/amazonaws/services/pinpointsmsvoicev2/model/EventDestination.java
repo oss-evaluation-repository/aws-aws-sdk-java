@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Event destinations are associated with configuration sets, which enable you to publish message sending events to
- * CloudWatch, Kinesis Data Firehose,or Amazon SNS.
+ * CloudWatch, Kinesis Data Firehose, or Amazon SNS.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/EventDestination"

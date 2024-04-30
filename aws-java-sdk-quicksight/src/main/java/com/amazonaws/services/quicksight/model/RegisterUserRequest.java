@@ -27,20 +27,8 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String identityType;
     /**
@@ -158,7 +146,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
-     * QuickSight (admin, author, reader).
+     * QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      * </p>
      * <p>
      * This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -211,35 +199,11 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two
-     *        values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     *        </p>
-     *        </li>
+     *        The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * @see IdentityType
      */
 
@@ -249,34 +213,10 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two
-     *         values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     *         </p>
-     *         </li>
+     * @return The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * @see IdentityType
      */
 
@@ -286,35 +226,11 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two
-     *        values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     *        </p>
-     *        </li>
+     *        The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -326,35 +242,11 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two
-     *        values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     *        </p>
-     *        </li>
+     *        The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -951,7 +843,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
-     * QuickSight (admin, author, reader).
+     * QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      * </p>
      * <p>
      * This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -997,7 +889,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *        permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
-     *        in Amazon QuickSight (admin, author, reader).
+     *        in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      *        </p>
      *        <p>
      *        This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1047,7 +939,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
-     * QuickSight (admin, author, reader).
+     * QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      * </p>
      * <p>
      * This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1092,7 +984,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *         permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
-     *         in Amazon QuickSight (admin, author, reader).
+     *         in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      *         </p>
      *         <p>
      *         This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1142,7 +1034,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
-     * QuickSight (admin, author, reader).
+     * QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      * </p>
      * <p>
      * This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1188,7 +1080,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *        permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
-     *        in Amazon QuickSight (admin, author, reader).
+     *        in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      *        </p>
      *        <p>
      *        This feature is available only to Amazon QuickSight Enterprise edition subscriptions.

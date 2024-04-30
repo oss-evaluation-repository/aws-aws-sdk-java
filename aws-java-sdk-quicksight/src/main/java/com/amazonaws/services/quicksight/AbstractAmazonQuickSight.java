@@ -828,6 +828,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public UpdateSPICECapacityConfigurationResult updateSPICECapacityConfiguration(UpdateSPICECapacityConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateTemplateResult updateTemplate(UpdateTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

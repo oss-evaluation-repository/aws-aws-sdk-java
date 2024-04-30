@@ -52,13 +52,13 @@ public class DocumentAttributeConfigurationJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     documentAttributeConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("search", targetDepth)) {
-                    context.nextToken();
-                    documentAttributeConfiguration.setSearch(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     documentAttributeConfiguration.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("search", targetDepth)) {
+                    context.nextToken();
+                    documentAttributeConfiguration.setSearch(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -32,6 +32,8 @@ public class FilterMarshaller {
             .marshallLocationName("resourceArns").build();
     private static final MarshallingInfo<List> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<List> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
 
     private static final FilterMarshaller instance = new FilterMarshaller();
 
@@ -51,6 +53,7 @@ public class FilterMarshaller {
         try {
             protocolMarshaller.marshall(filter.getResourceArns(), RESOURCEARNS_BINDING);
             protocolMarshaller.marshall(filter.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(filter.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

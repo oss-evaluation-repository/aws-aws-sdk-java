@@ -206,6 +206,7 @@ public class AbstractAmazonChimeSDKVoice implements AmazonChimeSDKVoice {
     }
 
     @Override
+    @Deprecated
     public GetSipMediaApplicationAlexaSkillConfigurationResult getSipMediaApplicationAlexaSkillConfiguration(
             GetSipMediaApplicationAlexaSkillConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -353,6 +354,7 @@ public class AbstractAmazonChimeSDKVoice implements AmazonChimeSDKVoice {
     }
 
     @Override
+    @Deprecated
     public PutSipMediaApplicationAlexaSkillConfigurationResult putSipMediaApplicationAlexaSkillConfiguration(
             PutSipMediaApplicationAlexaSkillConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();

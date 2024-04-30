@@ -32,21 +32,21 @@ public class CreateWebExperienceRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
+    private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("title").build();
+    private static final MarshallingInfo<String> SUBTITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("subtitle").build();
+    private static final MarshallingInfo<String> WELCOMEMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("welcomeMessage").build();
+    private static final MarshallingInfo<String> SAMPLEPROMPTSCONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("samplePromptsControlMode").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
-    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("roleArn").build();
-    private static final MarshallingInfo<String> SAMPLEPROMPTSCONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("samplePromptsControlMode").build();
-    private static final MarshallingInfo<String> SUBTITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("subtitle").build();
-    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("title").build();
-    private static final MarshallingInfo<String> WELCOMEMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("welcomeMessage").build();
 
     private static final CreateWebExperienceRequestMarshaller instance = new CreateWebExperienceRequestMarshaller();
 
@@ -65,13 +65,13 @@ public class CreateWebExperienceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createWebExperienceRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(createWebExperienceRequest.getClientToken(), CLIENTTOKEN_BINDING);
-            protocolMarshaller.marshall(createWebExperienceRequest.getRoleArn(), ROLEARN_BINDING);
-            protocolMarshaller.marshall(createWebExperienceRequest.getSamplePromptsControlMode(), SAMPLEPROMPTSCONTROLMODE_BINDING);
-            protocolMarshaller.marshall(createWebExperienceRequest.getSubtitle(), SUBTITLE_BINDING);
-            protocolMarshaller.marshall(createWebExperienceRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createWebExperienceRequest.getTitle(), TITLE_BINDING);
+            protocolMarshaller.marshall(createWebExperienceRequest.getSubtitle(), SUBTITLE_BINDING);
             protocolMarshaller.marshall(createWebExperienceRequest.getWelcomeMessage(), WELCOMEMESSAGE_BINDING);
+            protocolMarshaller.marshall(createWebExperienceRequest.getSamplePromptsControlMode(), SAMPLEPROMPTSCONTROLMODE_BINDING);
+            protocolMarshaller.marshall(createWebExperienceRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createWebExperienceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createWebExperienceRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

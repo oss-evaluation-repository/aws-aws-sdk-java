@@ -95,7 +95,10 @@ public interface AmazonRoute53Resolver {
      *         being deleted.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -177,7 +180,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.AssociateResolverQueryLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverQueryLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -232,7 +238,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -259,7 +268,10 @@ public interface AmazonRoute53Resolver {
      *         The request caused one or more limits to be exceeded.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -285,7 +297,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -305,7 +320,10 @@ public interface AmazonRoute53Resolver {
      * @return Result of the CreateOutpostResolver operation returned by the service.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ResourceNotFoundException
@@ -352,7 +370,10 @@ public interface AmazonRoute53Resolver {
      *         The resource that you tried to create already exists.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws LimitExceededException
      *         The request caused one or more limits to be exceeded.
      * @throws InternalServiceErrorException
@@ -402,7 +423,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.CreateResolverQueryLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -433,7 +457,10 @@ public interface AmazonRoute53Resolver {
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ThrottlingException
      *         The request was throttled. Try again in a few minutes.
      * @sample AmazonRoute53Resolver.CreateResolverRule
@@ -457,7 +484,10 @@ public interface AmazonRoute53Resolver {
      *         being deleted.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -479,7 +509,10 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -508,7 +541,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -528,7 +564,10 @@ public interface AmazonRoute53Resolver {
      * @return Result of the DeleteOutpostResolver operation returned by the service.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ConflictException
      *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
      *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
@@ -619,7 +658,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.DeleteResolverQueryLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverQueryLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -666,7 +708,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ConflictException
      *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
      *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
@@ -752,7 +797,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.DisassociateResolverQueryLogConfig
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig"
@@ -800,7 +848,10 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -825,7 +876,10 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -847,7 +901,10 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -870,7 +927,10 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -896,7 +956,10 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -917,7 +980,10 @@ public interface AmazonRoute53Resolver {
      * @return Result of the GetOutpostResolver operation returned by the service.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ResourceNotFoundException
@@ -951,7 +1017,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ValidationException
      *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
@@ -980,7 +1049,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverDnssecConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1029,7 +1101,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverQueryLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1057,7 +1132,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverQueryLogConfigAssociation
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigAssociation"
@@ -1084,7 +1162,10 @@ public interface AmazonRoute53Resolver {
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverQueryLogConfigPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -1154,7 +1235,10 @@ public interface AmazonRoute53Resolver {
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverRulePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRulePolicy"
      *      target="_top">AWS API Documentation</a>
@@ -1194,7 +1278,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws LimitExceededException
@@ -1230,7 +1317,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1258,7 +1348,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1286,7 +1379,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1313,7 +1409,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1340,7 +1439,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1369,7 +1471,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1389,7 +1494,10 @@ public interface AmazonRoute53Resolver {
      * @return Result of the ListOutpostResolvers operation returned by the service.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ResourceNotFoundException
@@ -1425,7 +1533,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ValidationException
      *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
@@ -1454,7 +1565,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.ListResolverDnssecConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -1526,7 +1640,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.ListResolverQueryLogConfigAssociations
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverQueryLogConfigAssociations"
@@ -1555,7 +1672,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.ListResolverQueryLogConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverQueryLogConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -1649,7 +1769,10 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1681,7 +1804,10 @@ public interface AmazonRoute53Resolver {
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.PutResolverQueryLogConfigPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -1706,7 +1832,10 @@ public interface AmazonRoute53Resolver {
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.PutResolverRulePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy"
      *      target="_top">AWS API Documentation</a>
@@ -1778,7 +1907,10 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1801,7 +1933,10 @@ public interface AmazonRoute53Resolver {
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws LimitExceededException
@@ -1838,7 +1973,10 @@ public interface AmazonRoute53Resolver {
      *         being deleted.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1868,7 +2006,10 @@ public interface AmazonRoute53Resolver {
      *         being deleted.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1891,7 +2032,10 @@ public interface AmazonRoute53Resolver {
      * @return Result of the UpdateOutpostResolver operation returned by the service.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ConflictException
      *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
      *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
@@ -1937,7 +2081,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ValidationException
      *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
      *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
@@ -1967,7 +2114,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.UpdateResolverDnssecConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1990,7 +2140,10 @@ public interface AmazonRoute53Resolver {
      *         The request is invalid.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -2025,7 +2178,10 @@ public interface AmazonRoute53Resolver {
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.UpdateResolverRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverRule"
      *      target="_top">AWS API Documentation</a>

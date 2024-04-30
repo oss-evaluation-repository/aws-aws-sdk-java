@@ -30,16 +30,56 @@ public class MemberUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the user.
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
      * The identifier of the user you want to map to a group.
      * </p>
      */
     private String userId;
+    /**
+     * <p>
+     * The type of the user.
+     * </p>
+     */
+    private String type;
+
+    /**
+     * <p>
+     * The identifier of the user you want to map to a group.
+     * </p>
+     * 
+     * @param userId
+     *        The identifier of the user you want to map to a group.
+     */
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the user you want to map to a group.
+     * </p>
+     * 
+     * @return The identifier of the user you want to map to a group.
+     */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the user you want to map to a group.
+     * </p>
+     * 
+     * @param userId
+     *        The identifier of the user you want to map to a group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberUser withUserId(String userId) {
+        setUserId(userId);
+        return this;
+    }
 
     /**
      * <p>
@@ -101,46 +141,6 @@ public class MemberUser implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The identifier of the user you want to map to a group.
-     * </p>
-     * 
-     * @param userId
-     *        The identifier of the user you want to map to a group.
-     */
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the user you want to map to a group.
-     * </p>
-     * 
-     * @return The identifier of the user you want to map to a group.
-     */
-
-    public String getUserId() {
-        return this.userId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the user you want to map to a group.
-     * </p>
-     * 
-     * @param userId
-     *        The identifier of the user you want to map to a group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public MemberUser withUserId(String userId) {
-        setUserId(userId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,10 +152,10 @@ public class MemberUser implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+            sb.append("UserId: ").append(getUserId()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -170,13 +170,13 @@ public class MemberUser implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof MemberUser == false)
             return false;
         MemberUser other = (MemberUser) obj;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
         if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
         if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -186,8 +186,8 @@ public class MemberUser implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

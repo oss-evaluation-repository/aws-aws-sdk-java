@@ -18,6 +18,10 @@ import javax.annotation.Generated;
  * <p>
  * The current account doesn't have the IAM permissions required to perform the specified Resolver operation.
  * </p>
+ * <p>
+ * This error can also be thrown when a customer has reached the 5120 character limit for a resource policy for
+ * CloudWatch Logs.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccessDeniedException extends com.amazonaws.services.route53resolver.model.AmazonRoute53ResolverException {

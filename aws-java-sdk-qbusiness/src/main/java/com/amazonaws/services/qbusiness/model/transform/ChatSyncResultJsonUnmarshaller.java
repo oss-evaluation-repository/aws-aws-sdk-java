@@ -48,25 +48,9 @@ public class ChatSyncResultJsonUnmarshaller implements Unmarshaller<ChatSyncResu
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("actionReview", targetDepth)) {
-                    context.nextToken();
-                    chatSyncResult.setActionReview(ActionReviewJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("conversationId", targetDepth)) {
                     context.nextToken();
                     chatSyncResult.setConversationId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("failedAttachments", targetDepth)) {
-                    context.nextToken();
-                    chatSyncResult.setFailedAttachments(new ListUnmarshaller<AttachmentOutput>(AttachmentOutputJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("sourceAttributions", targetDepth)) {
-                    context.nextToken();
-                    chatSyncResult.setSourceAttributions(new ListUnmarshaller<SourceAttribution>(SourceAttributionJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
                 }
                 if (context.testExpression("systemMessage", targetDepth)) {
                     context.nextToken();
@@ -79,6 +63,26 @@ public class ChatSyncResultJsonUnmarshaller implements Unmarshaller<ChatSyncResu
                 if (context.testExpression("userMessageId", targetDepth)) {
                     context.nextToken();
                     chatSyncResult.setUserMessageId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("actionReview", targetDepth)) {
+                    context.nextToken();
+                    chatSyncResult.setActionReview(ActionReviewJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("authChallengeRequest", targetDepth)) {
+                    context.nextToken();
+                    chatSyncResult.setAuthChallengeRequest(AuthChallengeRequestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("sourceAttributions", targetDepth)) {
+                    context.nextToken();
+                    chatSyncResult.setSourceAttributions(new ListUnmarshaller<SourceAttribution>(SourceAttributionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("failedAttachments", targetDepth)) {
+                    context.nextToken();
+                    chatSyncResult.setFailedAttachments(new ListUnmarshaller<AttachmentOutput>(AttachmentOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

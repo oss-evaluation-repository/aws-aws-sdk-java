@@ -29,16 +29,16 @@ public class ListGroupsRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("dataSourceId").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDEARLIERTHAN_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("updatedEarlierThan").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("dataSourceId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListGroupsRequestMarshaller instance = new ListGroupsRequestMarshaller();
 
@@ -57,11 +57,11 @@ public class ListGroupsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listGroupsRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(listGroupsRequest.getDataSourceId(), DATASOURCEID_BINDING);
             protocolMarshaller.marshall(listGroupsRequest.getIndexId(), INDEXID_BINDING);
-            protocolMarshaller.marshall(listGroupsRequest.getMaxResults(), MAXRESULTS_BINDING);
-            protocolMarshaller.marshall(listGroupsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listGroupsRequest.getUpdatedEarlierThan(), UPDATEDEARLIERTHAN_BINDING);
+            protocolMarshaller.marshall(listGroupsRequest.getDataSourceId(), DATASOURCEID_BINDING);
+            protocolMarshaller.marshall(listGroupsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listGroupsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

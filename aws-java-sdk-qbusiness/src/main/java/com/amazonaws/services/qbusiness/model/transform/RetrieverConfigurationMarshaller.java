@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RetrieverConfigurationMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> KENDRAINDEXCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kendraIndexConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> NATIVEINDEXCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nativeIndexConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> KENDRAINDEXCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kendraIndexConfiguration").build();
 
     private static final RetrieverConfigurationMarshaller instance = new RetrieverConfigurationMarshaller();
 
@@ -48,8 +48,8 @@ public class RetrieverConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(retrieverConfiguration.getKendraIndexConfiguration(), KENDRAINDEXCONFIGURATION_BINDING);
             protocolMarshaller.marshall(retrieverConfiguration.getNativeIndexConfiguration(), NATIVEINDEXCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(retrieverConfiguration.getKendraIndexConfiguration(), KENDRAINDEXCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

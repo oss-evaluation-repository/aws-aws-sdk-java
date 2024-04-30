@@ -30,10 +30,10 @@ public class DocumentEnrichmentConfigurationMarshaller {
 
     private static final MarshallingInfo<List> INLINECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inlineConfigurations").build();
-    private static final MarshallingInfo<StructuredPojo> POSTEXTRACTIONHOOKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("postExtractionHookConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> PREEXTRACTIONHOOKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("preExtractionHookConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> POSTEXTRACTIONHOOKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("postExtractionHookConfiguration").build();
 
     private static final DocumentEnrichmentConfigurationMarshaller instance = new DocumentEnrichmentConfigurationMarshaller();
 
@@ -52,8 +52,8 @@ public class DocumentEnrichmentConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(documentEnrichmentConfiguration.getInlineConfigurations(), INLINECONFIGURATIONS_BINDING);
-            protocolMarshaller.marshall(documentEnrichmentConfiguration.getPostExtractionHookConfiguration(), POSTEXTRACTIONHOOKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(documentEnrichmentConfiguration.getPreExtractionHookConfiguration(), PREEXTRACTIONHOOKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(documentEnrichmentConfiguration.getPostExtractionHookConfiguration(), POSTEXTRACTIONHOOKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

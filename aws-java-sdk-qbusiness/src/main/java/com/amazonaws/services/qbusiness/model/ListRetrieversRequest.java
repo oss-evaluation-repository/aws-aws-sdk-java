@@ -33,17 +33,17 @@ public class ListRetrieversRequest extends com.amazonaws.AmazonWebServiceRequest
     private String applicationId;
     /**
      * <p>
-     * The maximum number of retrievers returned.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
      * If the number of retrievers returned exceeds <code>maxResults</code>, Amazon Q Business returns a next token as a
      * pagination token to retrieve the next set of retrievers.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The maximum number of retrievers returned.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -82,46 +82,6 @@ public class ListRetrieversRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public ListRetrieversRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The maximum number of retrievers returned.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of retrievers returned.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of retrievers returned.
-     * </p>
-     * 
-     * @return The maximum number of retrievers returned.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of retrievers returned.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of retrievers returned.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListRetrieversRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
         return this;
     }
 
@@ -172,6 +132,46 @@ public class ListRetrieversRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The maximum number of retrievers returned.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of retrievers returned.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of retrievers returned.
+     * </p>
+     * 
+     * @return The maximum number of retrievers returned.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of retrievers returned.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of retrievers returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRetrieversRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,10 +185,10 @@ public class ListRetrieversRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -207,13 +207,13 @@ public class ListRetrieversRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -224,8 +224,8 @@ public class ListRetrieversRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

@@ -30,22 +30,10 @@ public class DocumentDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The timestamp for when the document was created.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
      * The identifier of the document.
      * </p>
      */
     private String documentId;
-    /**
-     * <p>
-     * An error message associated with the document.
-     * </p>
-     */
-    private ErrorDetail error;
     /**
      * <p>
      * The current status of the document.
@@ -54,50 +42,22 @@ public class DocumentDetails implements Serializable, Cloneable, StructuredPojo 
     private String status;
     /**
      * <p>
+     * An error message associated with the document.
+     * </p>
+     */
+    private ErrorDetail error;
+    /**
+     * <p>
+     * The timestamp for when the document was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
      * The timestamp for when the document was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
-
-    /**
-     * <p>
-     * The timestamp for when the document was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The timestamp for when the document was created.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The timestamp for when the document was created.
-     * </p>
-     * 
-     * @return The timestamp for when the document was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The timestamp for when the document was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The timestamp for when the document was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DocumentDetails withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
 
     /**
      * <p>
@@ -136,46 +96,6 @@ public class DocumentDetails implements Serializable, Cloneable, StructuredPojo 
 
     public DocumentDetails withDocumentId(String documentId) {
         setDocumentId(documentId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An error message associated with the document.
-     * </p>
-     * 
-     * @param error
-     *        An error message associated with the document.
-     */
-
-    public void setError(ErrorDetail error) {
-        this.error = error;
-    }
-
-    /**
-     * <p>
-     * An error message associated with the document.
-     * </p>
-     * 
-     * @return An error message associated with the document.
-     */
-
-    public ErrorDetail getError() {
-        return this.error;
-    }
-
-    /**
-     * <p>
-     * An error message associated with the document.
-     * </p>
-     * 
-     * @param error
-     *        An error message associated with the document.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DocumentDetails withError(ErrorDetail error) {
-        setError(error);
         return this;
     }
 
@@ -240,6 +160,86 @@ public class DocumentDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * An error message associated with the document.
+     * </p>
+     * 
+     * @param error
+     *        An error message associated with the document.
+     */
+
+    public void setError(ErrorDetail error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * An error message associated with the document.
+     * </p>
+     * 
+     * @return An error message associated with the document.
+     */
+
+    public ErrorDetail getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * An error message associated with the document.
+     * </p>
+     * 
+     * @param error
+     *        An error message associated with the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDetails withError(ErrorDetail error) {
+        setError(error);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the document was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The timestamp for when the document was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the document was created.
+     * </p>
+     * 
+     * @return The timestamp for when the document was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the document was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The timestamp for when the document was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDetails withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp for when the document was last updated.
      * </p>
      * 
@@ -290,14 +290,14 @@ public class DocumentDetails implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDocumentId() != null)
             sb.append("DocumentId: ").append(getDocumentId()).append(",");
-        if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
@@ -314,21 +314,21 @@ public class DocumentDetails implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof DocumentDetails == false)
             return false;
         DocumentDetails other = (DocumentDetails) obj;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
         if (other.getDocumentId() == null ^ this.getDocumentId() == null)
             return false;
         if (other.getDocumentId() != null && other.getDocumentId().equals(this.getDocumentId()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getError() == null ^ this.getError() == null)
             return false;
         if (other.getError() != null && other.getError().equals(this.getError()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
@@ -342,10 +342,10 @@ public class DocumentDetails implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDocumentId() == null) ? 0 : getDocumentId().hashCode());
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }

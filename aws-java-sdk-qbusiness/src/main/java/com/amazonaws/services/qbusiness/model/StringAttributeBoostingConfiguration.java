@@ -46,16 +46,75 @@ public class StringAttributeBoostingConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Specifies specific values of a <code>STRING</code> type document attribute being boosted.
-     * </p>
-     */
-    private java.util.Map<String, String> attributeValueBoosting;
-    /**
-     * <p>
      * Specifies how much a document attribute is boosted.
      * </p>
      */
     private String boostingLevel;
+    /**
+     * <p>
+     * Specifies specific values of a <code>STRING</code> type document attribute being boosted.
+     * </p>
+     */
+    private java.util.Map<String, String> attributeValueBoosting;
+
+    /**
+     * <p>
+     * Specifies how much a document attribute is boosted.
+     * </p>
+     * 
+     * @param boostingLevel
+     *        Specifies how much a document attribute is boosted.
+     * @see DocumentAttributeBoostingLevel
+     */
+
+    public void setBoostingLevel(String boostingLevel) {
+        this.boostingLevel = boostingLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies how much a document attribute is boosted.
+     * </p>
+     * 
+     * @return Specifies how much a document attribute is boosted.
+     * @see DocumentAttributeBoostingLevel
+     */
+
+    public String getBoostingLevel() {
+        return this.boostingLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies how much a document attribute is boosted.
+     * </p>
+     * 
+     * @param boostingLevel
+     *        Specifies how much a document attribute is boosted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentAttributeBoostingLevel
+     */
+
+    public StringAttributeBoostingConfiguration withBoostingLevel(String boostingLevel) {
+        setBoostingLevel(boostingLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how much a document attribute is boosted.
+     * </p>
+     * 
+     * @param boostingLevel
+     *        Specifies how much a document attribute is boosted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentAttributeBoostingLevel
+     */
+
+    public StringAttributeBoostingConfiguration withBoostingLevel(DocumentAttributeBoostingLevel boostingLevel) {
+        this.boostingLevel = boostingLevel.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -126,65 +185,6 @@ public class StringAttributeBoostingConfiguration implements Serializable, Clone
     }
 
     /**
-     * <p>
-     * Specifies how much a document attribute is boosted.
-     * </p>
-     * 
-     * @param boostingLevel
-     *        Specifies how much a document attribute is boosted.
-     * @see DocumentAttributeBoostingLevel
-     */
-
-    public void setBoostingLevel(String boostingLevel) {
-        this.boostingLevel = boostingLevel;
-    }
-
-    /**
-     * <p>
-     * Specifies how much a document attribute is boosted.
-     * </p>
-     * 
-     * @return Specifies how much a document attribute is boosted.
-     * @see DocumentAttributeBoostingLevel
-     */
-
-    public String getBoostingLevel() {
-        return this.boostingLevel;
-    }
-
-    /**
-     * <p>
-     * Specifies how much a document attribute is boosted.
-     * </p>
-     * 
-     * @param boostingLevel
-     *        Specifies how much a document attribute is boosted.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DocumentAttributeBoostingLevel
-     */
-
-    public StringAttributeBoostingConfiguration withBoostingLevel(String boostingLevel) {
-        setBoostingLevel(boostingLevel);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies how much a document attribute is boosted.
-     * </p>
-     * 
-     * @param boostingLevel
-     *        Specifies how much a document attribute is boosted.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see DocumentAttributeBoostingLevel
-     */
-
-    public StringAttributeBoostingConfiguration withBoostingLevel(DocumentAttributeBoostingLevel boostingLevel) {
-        this.boostingLevel = boostingLevel.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -196,10 +196,10 @@ public class StringAttributeBoostingConfiguration implements Serializable, Clone
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAttributeValueBoosting() != null)
-            sb.append("AttributeValueBoosting: ").append(getAttributeValueBoosting()).append(",");
         if (getBoostingLevel() != null)
-            sb.append("BoostingLevel: ").append(getBoostingLevel());
+            sb.append("BoostingLevel: ").append(getBoostingLevel()).append(",");
+        if (getAttributeValueBoosting() != null)
+            sb.append("AttributeValueBoosting: ").append(getAttributeValueBoosting());
         sb.append("}");
         return sb.toString();
     }
@@ -214,13 +214,13 @@ public class StringAttributeBoostingConfiguration implements Serializable, Clone
         if (obj instanceof StringAttributeBoostingConfiguration == false)
             return false;
         StringAttributeBoostingConfiguration other = (StringAttributeBoostingConfiguration) obj;
-        if (other.getAttributeValueBoosting() == null ^ this.getAttributeValueBoosting() == null)
-            return false;
-        if (other.getAttributeValueBoosting() != null && other.getAttributeValueBoosting().equals(this.getAttributeValueBoosting()) == false)
-            return false;
         if (other.getBoostingLevel() == null ^ this.getBoostingLevel() == null)
             return false;
         if (other.getBoostingLevel() != null && other.getBoostingLevel().equals(this.getBoostingLevel()) == false)
+            return false;
+        if (other.getAttributeValueBoosting() == null ^ this.getAttributeValueBoosting() == null)
+            return false;
+        if (other.getAttributeValueBoosting() != null && other.getAttributeValueBoosting().equals(this.getAttributeValueBoosting()) == false)
             return false;
         return true;
     }
@@ -230,8 +230,8 @@ public class StringAttributeBoostingConfiguration implements Serializable, Clone
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAttributeValueBoosting() == null) ? 0 : getAttributeValueBoosting().hashCode());
         hashCode = prime * hashCode + ((getBoostingLevel() == null) ? 0 : getBoostingLevel().hashCode());
+        hashCode = prime * hashCode + ((getAttributeValueBoosting() == null) ? 0 : getAttributeValueBoosting().hashCode());
         return hashCode;
     }
 

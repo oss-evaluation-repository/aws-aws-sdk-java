@@ -52,57 +52,57 @@ public class GetWebExperienceResultJsonUnmarshaller implements Unmarshaller<GetW
                     context.nextToken();
                     getWebExperienceResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("authenticationConfiguration", targetDepth)) {
+                if (context.testExpression("webExperienceId", targetDepth)) {
                     context.nextToken();
-                    getWebExperienceResult.setAuthenticationConfiguration(WebExperienceAuthConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("createdAt", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
-                if (context.testExpression("defaultEndpoint", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setDefaultEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("error", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("roleArn", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("samplePromptsControlMode", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setSamplePromptsControlMode(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("subtitle", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setSubtitle(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("title", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("updatedAt", targetDepth)) {
-                    context.nextToken();
-                    getWebExperienceResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    getWebExperienceResult.setWebExperienceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("webExperienceArn", targetDepth)) {
                     context.nextToken();
                     getWebExperienceResult.setWebExperienceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("webExperienceId", targetDepth)) {
+                if (context.testExpression("defaultEndpoint", targetDepth)) {
                     context.nextToken();
-                    getWebExperienceResult.setWebExperienceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getWebExperienceResult.setDefaultEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("updatedAt", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("title", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("subtitle", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setSubtitle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("welcomeMessage", targetDepth)) {
                     context.nextToken();
                     getWebExperienceResult.setWelcomeMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("samplePromptsControlMode", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setSamplePromptsControlMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("authenticationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setAuthenticationConfiguration(WebExperienceAuthConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("error", targetDepth)) {
+                    context.nextToken();
+                    getWebExperienceResult.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

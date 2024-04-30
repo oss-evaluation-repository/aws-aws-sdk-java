@@ -31,6 +31,12 @@ public class UpdateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String applicationId;
+    /**
+     * <p>
+     * The identifier of your retriever.
+     * </p>
+     */
+    private String retrieverId;
 
     private RetrieverConfiguration configuration;
     /**
@@ -39,12 +45,6 @@ public class UpdateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String displayName;
-    /**
-     * <p>
-     * The identifier of your retriever.
-     * </p>
-     */
-    private String retrieverId;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.
@@ -89,6 +89,46 @@ public class UpdateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
 
     public UpdateRetrieverRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of your retriever.
+     * </p>
+     * 
+     * @param retrieverId
+     *        The identifier of your retriever.
+     */
+
+    public void setRetrieverId(String retrieverId) {
+        this.retrieverId = retrieverId;
+    }
+
+    /**
+     * <p>
+     * The identifier of your retriever.
+     * </p>
+     * 
+     * @return The identifier of your retriever.
+     */
+
+    public String getRetrieverId() {
+        return this.retrieverId;
+    }
+
+    /**
+     * <p>
+     * The identifier of your retriever.
+     * </p>
+     * 
+     * @param retrieverId
+     *        The identifier of your retriever.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateRetrieverRequest withRetrieverId(String retrieverId) {
+        setRetrieverId(retrieverId);
         return this;
     }
 
@@ -160,46 +200,6 @@ public class UpdateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of your retriever.
-     * </p>
-     * 
-     * @param retrieverId
-     *        The identifier of your retriever.
-     */
-
-    public void setRetrieverId(String retrieverId) {
-        this.retrieverId = retrieverId;
-    }
-
-    /**
-     * <p>
-     * The identifier of your retriever.
-     * </p>
-     * 
-     * @return The identifier of your retriever.
-     */
-
-    public String getRetrieverId() {
-        return this.retrieverId;
-    }
-
-    /**
-     * <p>
-     * The identifier of your retriever.
-     * </p>
-     * 
-     * @param retrieverId
-     *        The identifier of your retriever.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateRetrieverRequest withRetrieverId(String retrieverId) {
-        setRetrieverId(retrieverId);
-        return this;
-    }
-
-    /**
-     * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to access the retriever and required resources.
      * </p>
      * 
@@ -255,12 +255,12 @@ public class UpdateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getRetrieverId() != null)
+            sb.append("RetrieverId: ").append(getRetrieverId()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
-        if (getRetrieverId() != null)
-            sb.append("RetrieverId: ").append(getRetrieverId()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
@@ -281,6 +281,10 @@ public class UpdateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
+        if (other.getRetrieverId() == null ^ this.getRetrieverId() == null)
+            return false;
+        if (other.getRetrieverId() != null && other.getRetrieverId().equals(this.getRetrieverId()) == false)
+            return false;
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
@@ -288,10 +292,6 @@ public class UpdateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
-            return false;
-        if (other.getRetrieverId() == null ^ this.getRetrieverId() == null)
-            return false;
-        if (other.getRetrieverId() != null && other.getRetrieverId().equals(this.getRetrieverId()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
@@ -306,9 +306,9 @@ public class UpdateRetrieverRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getRetrieverId() == null) ? 0 : getRetrieverId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
-        hashCode = prime * hashCode + ((getRetrieverId() == null) ? 0 : getRetrieverId().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }

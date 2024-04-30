@@ -48,9 +48,9 @@ public class DocumentJsonUnmarshaller implements Unmarshaller<Document, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("accessConfiguration", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    document.setAccessConfiguration(AccessConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                    document.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
@@ -66,17 +66,17 @@ public class DocumentJsonUnmarshaller implements Unmarshaller<Document, JsonUnma
                     context.nextToken();
                     document.setContentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("documentEnrichmentConfiguration", targetDepth)) {
-                    context.nextToken();
-                    document.setDocumentEnrichmentConfiguration(DocumentEnrichmentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("id", targetDepth)) {
-                    context.nextToken();
-                    document.setId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("title", targetDepth)) {
                     context.nextToken();
                     document.setTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("accessConfiguration", targetDepth)) {
+                    context.nextToken();
+                    document.setAccessConfiguration(AccessConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("documentEnrichmentConfiguration", targetDepth)) {
+                    context.nextToken();
+                    document.setDocumentEnrichmentConfiguration(DocumentEnrichmentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

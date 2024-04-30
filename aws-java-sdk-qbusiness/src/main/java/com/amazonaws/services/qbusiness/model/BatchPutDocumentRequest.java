@@ -33,10 +33,10 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     private String applicationId;
     /**
      * <p>
-     * The identifier of the data source sync during which the documents were added.
+     * The identifier of the Amazon Q Business index to add the documents to.
      * </p>
      */
-    private String dataSourceSyncId;
+    private String indexId;
     /**
      * <p>
      * One or more documents to add to the index.
@@ -45,16 +45,16 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<Document> documents;
     /**
      * <p>
-     * The identifier of the Amazon Q Business index to add the documents to.
-     * </p>
-     */
-    private String indexId;
-    /**
-     * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The identifier of the data source sync during which the documents were added.
+     * </p>
+     */
+    private String dataSourceSyncId;
 
     /**
      * <p>
@@ -98,41 +98,41 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the data source sync during which the documents were added.
+     * The identifier of the Amazon Q Business index to add the documents to.
      * </p>
      * 
-     * @param dataSourceSyncId
-     *        The identifier of the data source sync during which the documents were added.
+     * @param indexId
+     *        The identifier of the Amazon Q Business index to add the documents to.
      */
 
-    public void setDataSourceSyncId(String dataSourceSyncId) {
-        this.dataSourceSyncId = dataSourceSyncId;
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
     }
 
     /**
      * <p>
-     * The identifier of the data source sync during which the documents were added.
+     * The identifier of the Amazon Q Business index to add the documents to.
      * </p>
      * 
-     * @return The identifier of the data source sync during which the documents were added.
+     * @return The identifier of the Amazon Q Business index to add the documents to.
      */
 
-    public String getDataSourceSyncId() {
-        return this.dataSourceSyncId;
+    public String getIndexId() {
+        return this.indexId;
     }
 
     /**
      * <p>
-     * The identifier of the data source sync during which the documents were added.
+     * The identifier of the Amazon Q Business index to add the documents to.
      * </p>
      * 
-     * @param dataSourceSyncId
-     *        The identifier of the data source sync during which the documents were added.
+     * @param indexId
+     *        The identifier of the Amazon Q Business index to add the documents to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchPutDocumentRequest withDataSourceSyncId(String dataSourceSyncId) {
-        setDataSourceSyncId(dataSourceSyncId);
+    public BatchPutDocumentRequest withIndexId(String indexId) {
+        setIndexId(indexId);
         return this;
     }
 
@@ -208,46 +208,6 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business index to add the documents to.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the Amazon Q Business index to add the documents to.
-     */
-
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index to add the documents to.
-     * </p>
-     * 
-     * @return The identifier of the Amazon Q Business index to add the documents to.
-     */
-
-    public String getIndexId() {
-        return this.indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the Amazon Q Business index to add the documents to.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier of the Amazon Q Business index to add the documents to.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BatchPutDocumentRequest withIndexId(String indexId) {
-        setIndexId(indexId);
-        return this;
-    }
-
-    /**
-     * <p>
      * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
      * </p>
      * 
@@ -287,6 +247,46 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The identifier of the data source sync during which the documents were added.
+     * </p>
+     * 
+     * @param dataSourceSyncId
+     *        The identifier of the data source sync during which the documents were added.
+     */
+
+    public void setDataSourceSyncId(String dataSourceSyncId) {
+        this.dataSourceSyncId = dataSourceSyncId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source sync during which the documents were added.
+     * </p>
+     * 
+     * @return The identifier of the data source sync during which the documents were added.
+     */
+
+    public String getDataSourceSyncId() {
+        return this.dataSourceSyncId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source sync during which the documents were added.
+     * </p>
+     * 
+     * @param dataSourceSyncId
+     *        The identifier of the data source sync during which the documents were added.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutDocumentRequest withDataSourceSyncId(String dataSourceSyncId) {
+        setDataSourceSyncId(dataSourceSyncId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -300,14 +300,14 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDataSourceSyncId() != null)
-            sb.append("DataSourceSyncId: ").append(getDataSourceSyncId()).append(",");
-        if (getDocuments() != null)
-            sb.append("Documents: ").append(getDocuments()).append(",");
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId()).append(",");
+        if (getDocuments() != null)
+            sb.append("Documents: ").append(getDocuments()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getDataSourceSyncId() != null)
+            sb.append("DataSourceSyncId: ").append(getDataSourceSyncId());
         sb.append("}");
         return sb.toString();
     }
@@ -326,21 +326,21 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDataSourceSyncId() == null ^ this.getDataSourceSyncId() == null)
+        if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
-        if (other.getDataSourceSyncId() != null && other.getDataSourceSyncId().equals(this.getDataSourceSyncId()) == false)
+        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
         if (other.getDocuments() == null ^ this.getDocuments() == null)
             return false;
         if (other.getDocuments() != null && other.getDocuments().equals(this.getDocuments()) == false)
             return false;
-        if (other.getIndexId() == null ^ this.getIndexId() == null)
-            return false;
-        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
-            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getDataSourceSyncId() == null ^ this.getDataSourceSyncId() == null)
+            return false;
+        if (other.getDataSourceSyncId() != null && other.getDataSourceSyncId().equals(this.getDataSourceSyncId()) == false)
             return false;
         return true;
     }
@@ -351,10 +351,10 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDataSourceSyncId() == null) ? 0 : getDataSourceSyncId().hashCode());
-        hashCode = prime * hashCode + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceSyncId() == null) ? 0 : getDataSourceSyncId().hashCode());
         return hashCode;
     }
 

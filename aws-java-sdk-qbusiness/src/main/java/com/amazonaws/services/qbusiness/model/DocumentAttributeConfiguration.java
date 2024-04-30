@@ -42,17 +42,17 @@ public class DocumentAttributeConfiguration implements Serializable, Cloneable, 
     private String name;
     /**
      * <p>
+     * The type of document attribute.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * Information about whether the document attribute can be used by an end user to search for information on their
      * web experience.
      * </p>
      */
     private String search;
-    /**
-     * <p>
-     * The type of document attribute.
-     * </p>
-     */
-    private String type;
 
     /**
      * <p>
@@ -91,6 +91,65 @@ public class DocumentAttributeConfiguration implements Serializable, Cloneable, 
 
     public DocumentAttributeConfiguration withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of document attribute.
+     * </p>
+     * 
+     * @param type
+     *        The type of document attribute.
+     * @see AttributeType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of document attribute.
+     * </p>
+     * 
+     * @return The type of document attribute.
+     * @see AttributeType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of document attribute.
+     * </p>
+     * 
+     * @param type
+     *        The type of document attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AttributeType
+     */
+
+    public DocumentAttributeConfiguration withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of document attribute.
+     * </p>
+     * 
+     * @param type
+     *        The type of document attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AttributeType
+     */
+
+    public DocumentAttributeConfiguration withType(AttributeType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -162,65 +221,6 @@ public class DocumentAttributeConfiguration implements Serializable, Cloneable, 
     }
 
     /**
-     * <p>
-     * The type of document attribute.
-     * </p>
-     * 
-     * @param type
-     *        The type of document attribute.
-     * @see AttributeType
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The type of document attribute.
-     * </p>
-     * 
-     * @return The type of document attribute.
-     * @see AttributeType
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The type of document attribute.
-     * </p>
-     * 
-     * @param type
-     *        The type of document attribute.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AttributeType
-     */
-
-    public DocumentAttributeConfiguration withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of document attribute.
-     * </p>
-     * 
-     * @param type
-     *        The type of document attribute.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AttributeType
-     */
-
-    public DocumentAttributeConfiguration withType(AttributeType type) {
-        this.type = type.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -234,10 +234,10 @@ public class DocumentAttributeConfiguration implements Serializable, Cloneable, 
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
-        if (getSearch() != null)
-            sb.append("Search: ").append(getSearch()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getSearch() != null)
+            sb.append("Search: ").append(getSearch());
         sb.append("}");
         return sb.toString();
     }
@@ -256,13 +256,13 @@ public class DocumentAttributeConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getSearch() == null ^ this.getSearch() == null)
-            return false;
-        if (other.getSearch() != null && other.getSearch().equals(this.getSearch()) == false)
-            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getSearch() == null ^ this.getSearch() == null)
+            return false;
+        if (other.getSearch() != null && other.getSearch().equals(this.getSearch()) == false)
             return false;
         return true;
     }
@@ -273,8 +273,8 @@ public class DocumentAttributeConfiguration implements Serializable, Cloneable, 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getSearch() == null) ? 0 : getSearch().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getSearch() == null) ? 0 : getSearch().hashCode());
         return hashCode;
     }
 

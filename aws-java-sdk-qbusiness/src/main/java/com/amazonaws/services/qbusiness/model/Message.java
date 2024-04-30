@@ -28,19 +28,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Message implements Serializable, Cloneable, StructuredPojo {
 
-    private ActionReview actionReview;
-    /**
-     * <p>
-     * A file directly uploaded into an Amazon Q Business web experience chat.
-     * </p>
-     */
-    private java.util.List<AttachmentOutput> attachments;
-    /**
-     * <p>
-     * The content of the Amazon Q Business web experience message.
-     * </p>
-     */
-    private String body;
     /**
      * <p>
      * The identifier of the Amazon Q Business web experience message.
@@ -49,10 +36,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     private String messageId;
     /**
      * <p>
-     * The source documents used to generate Amazon Q Business web experience message.
+     * The content of the Amazon Q Business web experience message.
      * </p>
      */
-    private java.util.List<SourceAttribution> sourceAttribution;
+    private String body;
     /**
      * <p>
      * The timestamp of the first Amazon Q Business web experience message.
@@ -65,142 +52,20 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String type;
-
-    /**
-     * @param actionReview
-     */
-
-    public void setActionReview(ActionReview actionReview) {
-        this.actionReview = actionReview;
-    }
-
-    /**
-     * @return
-     */
-
-    public ActionReview getActionReview() {
-        return this.actionReview;
-    }
-
-    /**
-     * @param actionReview
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Message withActionReview(ActionReview actionReview) {
-        setActionReview(actionReview);
-        return this;
-    }
-
     /**
      * <p>
      * A file directly uploaded into an Amazon Q Business web experience chat.
      * </p>
-     * 
-     * @return A file directly uploaded into an Amazon Q Business web experience chat.
      */
-
-    public java.util.List<AttachmentOutput> getAttachments() {
-        return attachments;
-    }
-
+    private java.util.List<AttachmentOutput> attachments;
     /**
      * <p>
-     * A file directly uploaded into an Amazon Q Business web experience chat.
+     * The source documents used to generate Amazon Q Business web experience message.
      * </p>
-     * 
-     * @param attachments
-     *        A file directly uploaded into an Amazon Q Business web experience chat.
      */
+    private java.util.List<SourceAttribution> sourceAttribution;
 
-    public void setAttachments(java.util.Collection<AttachmentOutput> attachments) {
-        if (attachments == null) {
-            this.attachments = null;
-            return;
-        }
-
-        this.attachments = new java.util.ArrayList<AttachmentOutput>(attachments);
-    }
-
-    /**
-     * <p>
-     * A file directly uploaded into an Amazon Q Business web experience chat.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param attachments
-     *        A file directly uploaded into an Amazon Q Business web experience chat.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Message withAttachments(AttachmentOutput... attachments) {
-        if (this.attachments == null) {
-            setAttachments(new java.util.ArrayList<AttachmentOutput>(attachments.length));
-        }
-        for (AttachmentOutput ele : attachments) {
-            this.attachments.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A file directly uploaded into an Amazon Q Business web experience chat.
-     * </p>
-     * 
-     * @param attachments
-     *        A file directly uploaded into an Amazon Q Business web experience chat.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Message withAttachments(java.util.Collection<AttachmentOutput> attachments) {
-        setAttachments(attachments);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The content of the Amazon Q Business web experience message.
-     * </p>
-     * 
-     * @param body
-     *        The content of the Amazon Q Business web experience message.
-     */
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    /**
-     * <p>
-     * The content of the Amazon Q Business web experience message.
-     * </p>
-     * 
-     * @return The content of the Amazon Q Business web experience message.
-     */
-
-    public String getBody() {
-        return this.body;
-    }
-
-    /**
-     * <p>
-     * The content of the Amazon Q Business web experience message.
-     * </p>
-     * 
-     * @param body
-     *        The content of the Amazon Q Business web experience message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Message withBody(String body) {
-        setBody(body);
-        return this;
-    }
+    private ActionReview actionReview;
 
     /**
      * <p>
@@ -244,71 +109,41 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source documents used to generate Amazon Q Business web experience message.
+     * The content of the Amazon Q Business web experience message.
      * </p>
      * 
-     * @return The source documents used to generate Amazon Q Business web experience message.
+     * @param body
+     *        The content of the Amazon Q Business web experience message.
      */
 
-    public java.util.List<SourceAttribution> getSourceAttribution() {
-        return sourceAttribution;
+    public void setBody(String body) {
+        this.body = body;
     }
 
     /**
      * <p>
-     * The source documents used to generate Amazon Q Business web experience message.
+     * The content of the Amazon Q Business web experience message.
      * </p>
      * 
-     * @param sourceAttribution
-     *        The source documents used to generate Amazon Q Business web experience message.
+     * @return The content of the Amazon Q Business web experience message.
      */
 
-    public void setSourceAttribution(java.util.Collection<SourceAttribution> sourceAttribution) {
-        if (sourceAttribution == null) {
-            this.sourceAttribution = null;
-            return;
-        }
-
-        this.sourceAttribution = new java.util.ArrayList<SourceAttribution>(sourceAttribution);
+    public String getBody() {
+        return this.body;
     }
 
     /**
      * <p>
-     * The source documents used to generate Amazon Q Business web experience message.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSourceAttribution(java.util.Collection)} or {@link #withSourceAttribution(java.util.Collection)} if
-     * you want to override the existing values.
+     * The content of the Amazon Q Business web experience message.
      * </p>
      * 
-     * @param sourceAttribution
-     *        The source documents used to generate Amazon Q Business web experience message.
+     * @param body
+     *        The content of the Amazon Q Business web experience message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Message withSourceAttribution(SourceAttribution... sourceAttribution) {
-        if (this.sourceAttribution == null) {
-            setSourceAttribution(new java.util.ArrayList<SourceAttribution>(sourceAttribution.length));
-        }
-        for (SourceAttribution ele : sourceAttribution) {
-            this.sourceAttribution.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The source documents used to generate Amazon Q Business web experience message.
-     * </p>
-     * 
-     * @param sourceAttribution
-     *        The source documents used to generate Amazon Q Business web experience message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Message withSourceAttribution(java.util.Collection<SourceAttribution> sourceAttribution) {
-        setSourceAttribution(sourceAttribution);
+    public Message withBody(String body) {
+        setBody(body);
         return this;
     }
 
@@ -412,6 +247,172 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A file directly uploaded into an Amazon Q Business web experience chat.
+     * </p>
+     * 
+     * @return A file directly uploaded into an Amazon Q Business web experience chat.
+     */
+
+    public java.util.List<AttachmentOutput> getAttachments() {
+        return attachments;
+    }
+
+    /**
+     * <p>
+     * A file directly uploaded into an Amazon Q Business web experience chat.
+     * </p>
+     * 
+     * @param attachments
+     *        A file directly uploaded into an Amazon Q Business web experience chat.
+     */
+
+    public void setAttachments(java.util.Collection<AttachmentOutput> attachments) {
+        if (attachments == null) {
+            this.attachments = null;
+            return;
+        }
+
+        this.attachments = new java.util.ArrayList<AttachmentOutput>(attachments);
+    }
+
+    /**
+     * <p>
+     * A file directly uploaded into an Amazon Q Business web experience chat.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param attachments
+     *        A file directly uploaded into an Amazon Q Business web experience chat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withAttachments(AttachmentOutput... attachments) {
+        if (this.attachments == null) {
+            setAttachments(new java.util.ArrayList<AttachmentOutput>(attachments.length));
+        }
+        for (AttachmentOutput ele : attachments) {
+            this.attachments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A file directly uploaded into an Amazon Q Business web experience chat.
+     * </p>
+     * 
+     * @param attachments
+     *        A file directly uploaded into an Amazon Q Business web experience chat.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withAttachments(java.util.Collection<AttachmentOutput> attachments) {
+        setAttachments(attachments);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source documents used to generate Amazon Q Business web experience message.
+     * </p>
+     * 
+     * @return The source documents used to generate Amazon Q Business web experience message.
+     */
+
+    public java.util.List<SourceAttribution> getSourceAttribution() {
+        return sourceAttribution;
+    }
+
+    /**
+     * <p>
+     * The source documents used to generate Amazon Q Business web experience message.
+     * </p>
+     * 
+     * @param sourceAttribution
+     *        The source documents used to generate Amazon Q Business web experience message.
+     */
+
+    public void setSourceAttribution(java.util.Collection<SourceAttribution> sourceAttribution) {
+        if (sourceAttribution == null) {
+            this.sourceAttribution = null;
+            return;
+        }
+
+        this.sourceAttribution = new java.util.ArrayList<SourceAttribution>(sourceAttribution);
+    }
+
+    /**
+     * <p>
+     * The source documents used to generate Amazon Q Business web experience message.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSourceAttribution(java.util.Collection)} or {@link #withSourceAttribution(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param sourceAttribution
+     *        The source documents used to generate Amazon Q Business web experience message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withSourceAttribution(SourceAttribution... sourceAttribution) {
+        if (this.sourceAttribution == null) {
+            setSourceAttribution(new java.util.ArrayList<SourceAttribution>(sourceAttribution.length));
+        }
+        for (SourceAttribution ele : sourceAttribution) {
+            this.sourceAttribution.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source documents used to generate Amazon Q Business web experience message.
+     * </p>
+     * 
+     * @param sourceAttribution
+     *        The source documents used to generate Amazon Q Business web experience message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withSourceAttribution(java.util.Collection<SourceAttribution> sourceAttribution) {
+        setSourceAttribution(sourceAttribution);
+        return this;
+    }
+
+    /**
+     * @param actionReview
+     */
+
+    public void setActionReview(ActionReview actionReview) {
+        this.actionReview = actionReview;
+    }
+
+    /**
+     * @return
+     */
+
+    public ActionReview getActionReview() {
+        return this.actionReview;
+    }
+
+    /**
+     * @param actionReview
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withActionReview(ActionReview actionReview) {
+        setActionReview(actionReview);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -423,20 +424,20 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getActionReview() != null)
-            sb.append("ActionReview: ").append(getActionReview()).append(",");
-        if (getAttachments() != null)
-            sb.append("Attachments: ").append(getAttachments()).append(",");
-        if (getBody() != null)
-            sb.append("Body: ").append(getBody()).append(",");
         if (getMessageId() != null)
             sb.append("MessageId: ").append(getMessageId()).append(",");
-        if (getSourceAttribution() != null)
-            sb.append("SourceAttribution: ").append(getSourceAttribution()).append(",");
+        if (getBody() != null)
+            sb.append("Body: ").append(getBody()).append(",");
         if (getTime() != null)
             sb.append("Time: ").append(getTime()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getAttachments() != null)
+            sb.append("Attachments: ").append(getAttachments()).append(",");
+        if (getSourceAttribution() != null)
+            sb.append("SourceAttribution: ").append(getSourceAttribution()).append(",");
+        if (getActionReview() != null)
+            sb.append("ActionReview: ").append(getActionReview());
         sb.append("}");
         return sb.toString();
     }
@@ -451,25 +452,13 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Message == false)
             return false;
         Message other = (Message) obj;
-        if (other.getActionReview() == null ^ this.getActionReview() == null)
-            return false;
-        if (other.getActionReview() != null && other.getActionReview().equals(this.getActionReview()) == false)
-            return false;
-        if (other.getAttachments() == null ^ this.getAttachments() == null)
-            return false;
-        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
-            return false;
-        if (other.getBody() == null ^ this.getBody() == null)
-            return false;
-        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
-            return false;
         if (other.getMessageId() == null ^ this.getMessageId() == null)
             return false;
         if (other.getMessageId() != null && other.getMessageId().equals(this.getMessageId()) == false)
             return false;
-        if (other.getSourceAttribution() == null ^ this.getSourceAttribution() == null)
+        if (other.getBody() == null ^ this.getBody() == null)
             return false;
-        if (other.getSourceAttribution() != null && other.getSourceAttribution().equals(this.getSourceAttribution()) == false)
+        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
         if (other.getTime() == null ^ this.getTime() == null)
             return false;
@@ -479,6 +468,18 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getAttachments() == null ^ this.getAttachments() == null)
+            return false;
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
+        if (other.getSourceAttribution() == null ^ this.getSourceAttribution() == null)
+            return false;
+        if (other.getSourceAttribution() != null && other.getSourceAttribution().equals(this.getSourceAttribution()) == false)
+            return false;
+        if (other.getActionReview() == null ^ this.getActionReview() == null)
+            return false;
+        if (other.getActionReview() != null && other.getActionReview().equals(this.getActionReview()) == false)
+            return false;
         return true;
     }
 
@@ -487,13 +488,13 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getActionReview() == null) ? 0 : getActionReview().hashCode());
-        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
-        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
-        hashCode = prime * hashCode + ((getSourceAttribution() == null) ? 0 : getSourceAttribution().hashCode());
+        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getTime() == null) ? 0 : getTime().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
+        hashCode = prime * hashCode + ((getSourceAttribution() == null) ? 0 : getSourceAttribution().hashCode());
+        hashCode = prime * hashCode + ((getActionReview() == null) ? 0 : getActionReview().hashCode());
         return hashCode;
     }
 

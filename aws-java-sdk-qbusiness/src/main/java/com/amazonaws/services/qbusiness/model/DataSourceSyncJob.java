@@ -30,17 +30,30 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * If the reason that the synchronization failed is due to an error with the underlying data source, this field
-     * contains a code that identifies the error.
+     * The identifier of a data source synchronization job.
      * </p>
      */
-    private String dataSourceErrorCode;
+    private String executionId;
+    /**
+     * <p>
+     * The Unix time stamp when the data source synchronization job started.
+     * </p>
+     */
+    private java.util.Date startTime;
     /**
      * <p>
      * The Unix timestamp when the synchronization job completed.
      * </p>
      */
     private java.util.Date endTime;
+    /**
+     * <p>
+     * The status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the
+     * synchronization job is done. If the status code is <code>FAILED</code>, the <code>ErrorCode</code> and
+     * <code>ErrorMessage</code> fields give you the reason for the failure.
+     * </p>
+     */
+    private String status;
     /**
      * <p>
      * If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the
@@ -50,10 +63,11 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
     private ErrorDetail error;
     /**
      * <p>
-     * The identifier of a data source synchronization job.
+     * If the reason that the synchronization failed is due to an error with the underlying data source, this field
+     * contains a code that identifies the error.
      * </p>
      */
-    private String executionId;
+    private String dataSourceErrorCode;
     /**
      * <p>
      * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
@@ -61,152 +75,6 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private DataSourceSyncJobMetrics metrics;
-    /**
-     * <p>
-     * The Unix time stamp when the data source synchronization job started.
-     * </p>
-     */
-    private java.util.Date startTime;
-    /**
-     * <p>
-     * The status of the synchronization job. When the <code>Status</code> field is set to <code>SUCCEEDED</code>, the
-     * synchronization job is done. If the status code is <code>FAILED</code>, the <code>ErrorCode</code> and
-     * <code>ErrorMessage</code> fields give you the reason for the failure.
-     * </p>
-     */
-    private String status;
-
-    /**
-     * <p>
-     * If the reason that the synchronization failed is due to an error with the underlying data source, this field
-     * contains a code that identifies the error.
-     * </p>
-     * 
-     * @param dataSourceErrorCode
-     *        If the reason that the synchronization failed is due to an error with the underlying data source, this
-     *        field contains a code that identifies the error.
-     */
-
-    public void setDataSourceErrorCode(String dataSourceErrorCode) {
-        this.dataSourceErrorCode = dataSourceErrorCode;
-    }
-
-    /**
-     * <p>
-     * If the reason that the synchronization failed is due to an error with the underlying data source, this field
-     * contains a code that identifies the error.
-     * </p>
-     * 
-     * @return If the reason that the synchronization failed is due to an error with the underlying data source, this
-     *         field contains a code that identifies the error.
-     */
-
-    public String getDataSourceErrorCode() {
-        return this.dataSourceErrorCode;
-    }
-
-    /**
-     * <p>
-     * If the reason that the synchronization failed is due to an error with the underlying data source, this field
-     * contains a code that identifies the error.
-     * </p>
-     * 
-     * @param dataSourceErrorCode
-     *        If the reason that the synchronization failed is due to an error with the underlying data source, this
-     *        field contains a code that identifies the error.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataSourceSyncJob withDataSourceErrorCode(String dataSourceErrorCode) {
-        setDataSourceErrorCode(dataSourceErrorCode);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the synchronization job completed.
-     * </p>
-     * 
-     * @param endTime
-     *        The Unix timestamp when the synchronization job completed.
-     */
-
-    public void setEndTime(java.util.Date endTime) {
-        this.endTime = endTime;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the synchronization job completed.
-     * </p>
-     * 
-     * @return The Unix timestamp when the synchronization job completed.
-     */
-
-    public java.util.Date getEndTime() {
-        return this.endTime;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the synchronization job completed.
-     * </p>
-     * 
-     * @param endTime
-     *        The Unix timestamp when the synchronization job completed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataSourceSyncJob withEndTime(java.util.Date endTime) {
-        setEndTime(endTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the
-     * reason the synchronization failed.
-     * </p>
-     * 
-     * @param error
-     *        If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates
-     *        the reason the synchronization failed.
-     */
-
-    public void setError(ErrorDetail error) {
-        this.error = error;
-    }
-
-    /**
-     * <p>
-     * If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the
-     * reason the synchronization failed.
-     * </p>
-     * 
-     * @return If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field
-     *         indicates the reason the synchronization failed.
-     */
-
-    public ErrorDetail getError() {
-        return this.error;
-    }
-
-    /**
-     * <p>
-     * If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the
-     * reason the synchronization failed.
-     * </p>
-     * 
-     * @param error
-     *        If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates
-     *        the reason the synchronization failed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataSourceSyncJob withError(ErrorDetail error) {
-        setError(error);
-        return this;
-    }
 
     /**
      * <p>
@@ -250,52 +118,6 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
-     * supplied when documents are deleted by a data source connector.
-     * </p>
-     * 
-     * @param metrics
-     *        Maps a batch delete document request to a specific data source sync job. This is optional and should only
-     *        be supplied when documents are deleted by a data source connector.
-     */
-
-    public void setMetrics(DataSourceSyncJobMetrics metrics) {
-        this.metrics = metrics;
-    }
-
-    /**
-     * <p>
-     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
-     * supplied when documents are deleted by a data source connector.
-     * </p>
-     * 
-     * @return Maps a batch delete document request to a specific data source sync job. This is optional and should only
-     *         be supplied when documents are deleted by a data source connector.
-     */
-
-    public DataSourceSyncJobMetrics getMetrics() {
-        return this.metrics;
-    }
-
-    /**
-     * <p>
-     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
-     * supplied when documents are deleted by a data source connector.
-     * </p>
-     * 
-     * @param metrics
-     *        Maps a batch delete document request to a specific data source sync job. This is optional and should only
-     *        be supplied when documents are deleted by a data source connector.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataSourceSyncJob withMetrics(DataSourceSyncJobMetrics metrics) {
-        setMetrics(metrics);
-        return this;
-    }
-
-    /**
-     * <p>
      * The Unix time stamp when the data source synchronization job started.
      * </p>
      * 
@@ -331,6 +153,46 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
 
     public DataSourceSyncJob withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the synchronization job completed.
+     * </p>
+     * 
+     * @param endTime
+     *        The Unix timestamp when the synchronization job completed.
+     */
+
+    public void setEndTime(java.util.Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the synchronization job completed.
+     * </p>
+     * 
+     * @return The Unix timestamp when the synchronization job completed.
+     */
+
+    public java.util.Date getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the synchronization job completed.
+     * </p>
+     * 
+     * @param endTime
+     *        The Unix timestamp when the synchronization job completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceSyncJob withEndTime(java.util.Date endTime) {
+        setEndTime(endTime);
         return this;
     }
 
@@ -410,6 +272,144 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the
+     * reason the synchronization failed.
+     * </p>
+     * 
+     * @param error
+     *        If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates
+     *        the reason the synchronization failed.
+     */
+
+    public void setError(ErrorDetail error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the
+     * reason the synchronization failed.
+     * </p>
+     * 
+     * @return If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field
+     *         indicates the reason the synchronization failed.
+     */
+
+    public ErrorDetail getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates the
+     * reason the synchronization failed.
+     * </p>
+     * 
+     * @param error
+     *        If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code> field indicates
+     *        the reason the synchronization failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceSyncJob withError(ErrorDetail error) {
+        setError(error);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the reason that the synchronization failed is due to an error with the underlying data source, this field
+     * contains a code that identifies the error.
+     * </p>
+     * 
+     * @param dataSourceErrorCode
+     *        If the reason that the synchronization failed is due to an error with the underlying data source, this
+     *        field contains a code that identifies the error.
+     */
+
+    public void setDataSourceErrorCode(String dataSourceErrorCode) {
+        this.dataSourceErrorCode = dataSourceErrorCode;
+    }
+
+    /**
+     * <p>
+     * If the reason that the synchronization failed is due to an error with the underlying data source, this field
+     * contains a code that identifies the error.
+     * </p>
+     * 
+     * @return If the reason that the synchronization failed is due to an error with the underlying data source, this
+     *         field contains a code that identifies the error.
+     */
+
+    public String getDataSourceErrorCode() {
+        return this.dataSourceErrorCode;
+    }
+
+    /**
+     * <p>
+     * If the reason that the synchronization failed is due to an error with the underlying data source, this field
+     * contains a code that identifies the error.
+     * </p>
+     * 
+     * @param dataSourceErrorCode
+     *        If the reason that the synchronization failed is due to an error with the underlying data source, this
+     *        field contains a code that identifies the error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceSyncJob withDataSourceErrorCode(String dataSourceErrorCode) {
+        setDataSourceErrorCode(dataSourceErrorCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
+     * supplied when documents are deleted by a data source connector.
+     * </p>
+     * 
+     * @param metrics
+     *        Maps a batch delete document request to a specific data source sync job. This is optional and should only
+     *        be supplied when documents are deleted by a data source connector.
+     */
+
+    public void setMetrics(DataSourceSyncJobMetrics metrics) {
+        this.metrics = metrics;
+    }
+
+    /**
+     * <p>
+     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
+     * supplied when documents are deleted by a data source connector.
+     * </p>
+     * 
+     * @return Maps a batch delete document request to a specific data source sync job. This is optional and should only
+     *         be supplied when documents are deleted by a data source connector.
+     */
+
+    public DataSourceSyncJobMetrics getMetrics() {
+        return this.metrics;
+    }
+
+    /**
+     * <p>
+     * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
+     * supplied when documents are deleted by a data source connector.
+     * </p>
+     * 
+     * @param metrics
+     *        Maps a batch delete document request to a specific data source sync job. This is optional and should only
+     *        be supplied when documents are deleted by a data source connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceSyncJob withMetrics(DataSourceSyncJobMetrics metrics) {
+        setMetrics(metrics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -421,20 +421,20 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDataSourceErrorCode() != null)
-            sb.append("DataSourceErrorCode: ").append(getDataSourceErrorCode()).append(",");
-        if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime()).append(",");
-        if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
         if (getExecutionId() != null)
             sb.append("ExecutionId: ").append(getExecutionId()).append(",");
-        if (getMetrics() != null)
-            sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getEndTime() != null)
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError()).append(",");
+        if (getDataSourceErrorCode() != null)
+            sb.append("DataSourceErrorCode: ").append(getDataSourceErrorCode()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -449,33 +449,33 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof DataSourceSyncJob == false)
             return false;
         DataSourceSyncJob other = (DataSourceSyncJob) obj;
-        if (other.getDataSourceErrorCode() == null ^ this.getDataSourceErrorCode() == null)
-            return false;
-        if (other.getDataSourceErrorCode() != null && other.getDataSourceErrorCode().equals(this.getDataSourceErrorCode()) == false)
-            return false;
-        if (other.getEndTime() == null ^ this.getEndTime() == null)
-            return false;
-        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
-            return false;
-        if (other.getError() == null ^ this.getError() == null)
-            return false;
-        if (other.getError() != null && other.getError().equals(this.getError()) == false)
-            return false;
         if (other.getExecutionId() == null ^ this.getExecutionId() == null)
             return false;
         if (other.getExecutionId() != null && other.getExecutionId().equals(this.getExecutionId()) == false)
-            return false;
-        if (other.getMetrics() == null ^ this.getMetrics() == null)
-            return false;
-        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
+        if (other.getEndTime() == null ^ this.getEndTime() == null)
+            return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
+        if (other.getDataSourceErrorCode() == null ^ this.getDataSourceErrorCode() == null)
+            return false;
+        if (other.getDataSourceErrorCode() != null && other.getDataSourceErrorCode().equals(this.getDataSourceErrorCode()) == false)
+            return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
         return true;
     }
@@ -485,13 +485,13 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDataSourceErrorCode() == null) ? 0 : getDataSourceErrorCode().hashCode());
-        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getExecutionId() == null) ? 0 : getExecutionId().hashCode());
-        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceErrorCode() == null) ? 0 : getDataSourceErrorCode().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }
 

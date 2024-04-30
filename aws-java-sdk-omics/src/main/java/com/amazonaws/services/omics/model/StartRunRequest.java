@@ -69,7 +69,8 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private Integer priority;
     /**
      * <p>
-     * A storage capacity for the run in gibibytes.
+     * A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the
+     * system ignores any value that you enter).
      * </p>
      */
     private Integer storageCapacity;
@@ -103,6 +104,20 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      */
     private String retentionMode;
+    /**
+     * <p>
+     * The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage.
+     * If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file
+     * system utilization.
+     * </p>
+     */
+    private String storageType;
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     */
+    private String workflowOwnerId;
 
     /**
      * <p>
@@ -405,11 +420,13 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A storage capacity for the run in gibibytes.
+     * A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the
+     * system ignores any value that you enter).
      * </p>
      * 
      * @param storageCapacity
-     *        A storage capacity for the run in gibibytes.
+     *        A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic
+     *        (the system ignores any value that you enter).
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -418,10 +435,12 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A storage capacity for the run in gibibytes.
+     * A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the
+     * system ignores any value that you enter).
      * </p>
      * 
-     * @return A storage capacity for the run in gibibytes.
+     * @return A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic
+     *         (the system ignores any value that you enter).
      */
 
     public Integer getStorageCapacity() {
@@ -430,11 +449,13 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A storage capacity for the run in gibibytes.
+     * A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic (the
+     * system ignores any value that you enter).
      * </p>
      * 
      * @param storageCapacity
-     *        A storage capacity for the run in gibibytes.
+     *        A storage capacity for the run in gibibytes. This field is not required if the storage type is dynamic
+     *        (the system ignores any value that you enter).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -710,6 +731,121 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage.
+     * If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file
+     * system utilization.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of
+     *        storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down,
+     *        based on file system utilization.
+     * @see StorageType
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage.
+     * If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file
+     * system utilization.
+     * </p>
+     * 
+     * @return The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of
+     *         storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down,
+     *         based on file system utilization.
+     * @see StorageType
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage.
+     * If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file
+     * system utilization.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of
+     *        storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down,
+     *        based on file system utilization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public StartRunRequest withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of storage.
+     * If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down, based on file
+     * system utilization.
+     * </p>
+     * 
+     * @param storageType
+     *        The run's storage type. By default, the run uses STATIC storage type, which allocates a fixed amount of
+     *        storage. If you set the storage type to DYNAMIC, HealthOmics dynamically scales the storage up or down,
+     *        based on file system utilization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StorageType
+     */
+
+    public StartRunRequest withStorageType(StorageType storageType) {
+        this.storageType = storageType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @param workflowOwnerId
+     *        The ID of the workflow owner.
+     */
+
+    public void setWorkflowOwnerId(String workflowOwnerId) {
+        this.workflowOwnerId = workflowOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @return The ID of the workflow owner.
+     */
+
+    public String getWorkflowOwnerId() {
+        return this.workflowOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workflow owner.
+     * </p>
+     * 
+     * @param workflowOwnerId
+     *        The ID of the workflow owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRunRequest withWorkflowOwnerId(String workflowOwnerId) {
+        setWorkflowOwnerId(workflowOwnerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -746,7 +882,11 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (getRequestId() != null)
             sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getRetentionMode() != null)
-            sb.append("RetentionMode: ").append(getRetentionMode());
+            sb.append("RetentionMode: ").append(getRetentionMode()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType()).append(",");
+        if (getWorkflowOwnerId() != null)
+            sb.append("WorkflowOwnerId: ").append(getWorkflowOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -813,6 +953,14 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getRetentionMode() != null && other.getRetentionMode().equals(this.getRetentionMode()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
+        if (other.getWorkflowOwnerId() == null ^ this.getWorkflowOwnerId() == null)
+            return false;
+        if (other.getWorkflowOwnerId() != null && other.getWorkflowOwnerId().equals(this.getWorkflowOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -834,6 +982,8 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getRetentionMode() == null) ? 0 : getRetentionMode().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getWorkflowOwnerId() == null) ? 0 : getWorkflowOwnerId().hashCode());
         return hashCode;
     }
 

@@ -47,6 +47,8 @@ public class RunListItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> STOPTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageType").build();
 
     private static final RunListItemMarshaller instance = new RunListItemMarshaller();
 
@@ -74,6 +76,7 @@ public class RunListItemMarshaller {
             protocolMarshaller.marshall(runListItem.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(runListItem.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(runListItem.getStopTime(), STOPTIME_BINDING);
+            protocolMarshaller.marshall(runListItem.getStorageType(), STORAGETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

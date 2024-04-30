@@ -29,10 +29,10 @@ public class DocumentAttributeConfigurationMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> SEARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("search").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> SEARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("search").build();
 
     private static final DocumentAttributeConfigurationMarshaller instance = new DocumentAttributeConfigurationMarshaller();
 
@@ -51,8 +51,8 @@ public class DocumentAttributeConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(documentAttributeConfiguration.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(documentAttributeConfiguration.getSearch(), SEARCH_BINDING);
             protocolMarshaller.marshall(documentAttributeConfiguration.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(documentAttributeConfiguration.getSearch(), SEARCH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

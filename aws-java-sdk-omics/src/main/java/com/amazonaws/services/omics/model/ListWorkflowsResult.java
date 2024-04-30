@@ -25,7 +25,7 @@ public class ListWorkflowsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The workflows' items.
+     * A list of workflow items.
      * </p>
      */
     private java.util.List<WorkflowListItem> items;
@@ -38,10 +38,10 @@ public class ListWorkflowsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The workflows' items.
+     * A list of workflow items.
      * </p>
      * 
-     * @return The workflows' items.
+     * @return A list of workflow items.
      */
 
     public java.util.List<WorkflowListItem> getItems() {
@@ -50,11 +50,11 @@ public class ListWorkflowsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The workflows' items.
+     * A list of workflow items.
      * </p>
      * 
      * @param items
-     *        The workflows' items.
+     *        A list of workflow items.
      */
 
     public void setItems(java.util.Collection<WorkflowListItem> items) {
@@ -68,7 +68,7 @@ public class ListWorkflowsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The workflows' items.
+     * A list of workflow items.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListWorkflowsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param items
-     *        The workflows' items.
+     *        A list of workflow items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListWorkflowsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The workflows' items.
+     * A list of workflow items.
      * </p>
      * 
      * @param items
-     *        The workflows' items.
+     *        A list of workflow items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

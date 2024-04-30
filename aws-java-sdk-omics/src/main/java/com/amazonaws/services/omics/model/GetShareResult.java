@@ -25,18 +25,18 @@ public class GetShareResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * An analytic store share details object. contains status, resourceArn, ownerId, etc.
+     * A resource share details object. The object includes the status, the resourceArn, and ownerId.
      * </p>
      */
     private ShareDetails share;
 
     /**
      * <p>
-     * An analytic store share details object. contains status, resourceArn, ownerId, etc.
+     * A resource share details object. The object includes the status, the resourceArn, and ownerId.
      * </p>
      * 
      * @param share
-     *        An analytic store share details object. contains status, resourceArn, ownerId, etc.
+     *        A resource share details object. The object includes the status, the resourceArn, and ownerId.
      */
 
     public void setShare(ShareDetails share) {
@@ -45,10 +45,10 @@ public class GetShareResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * An analytic store share details object. contains status, resourceArn, ownerId, etc.
+     * A resource share details object. The object includes the status, the resourceArn, and ownerId.
      * </p>
      * 
-     * @return An analytic store share details object. contains status, resourceArn, ownerId, etc.
+     * @return A resource share details object. The object includes the status, the resourceArn, and ownerId.
      */
 
     public ShareDetails getShare() {
@@ -57,11 +57,11 @@ public class GetShareResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * An analytic store share details object. contains status, resourceArn, ownerId, etc.
+     * A resource share details object. The object includes the status, the resourceArn, and ownerId.
      * </p>
      * 
      * @param share
-     *        An analytic store share details object. contains status, resourceArn, ownerId, etc.
+     *        A resource share details object. The object includes the status, the resourceArn, and ownerId.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

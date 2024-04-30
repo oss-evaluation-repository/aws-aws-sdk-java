@@ -81,6 +81,10 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
                     domainStatus.setEndpoints(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("DomainEndpointV2HostedZoneId", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setDomainEndpointV2HostedZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Processing", targetDepth)) {
                     context.nextToken();
                     domainStatus.setProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));

@@ -52,21 +52,41 @@ public class GetIndexResultJsonUnmarshaller implements Unmarshaller<GetIndexResu
                     context.nextToken();
                     getIndexResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("capacityConfiguration", targetDepth)) {
+                if (context.testExpression("indexId", targetDepth)) {
                     context.nextToken();
-                    getIndexResult.setCapacityConfiguration(IndexCapacityConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                    getIndexResult.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("createdAt", targetDepth)) {
+                if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
-                    getIndexResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    getIndexResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    getIndexResult.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("indexArn", targetDepth)) {
+                    context.nextToken();
+                    getIndexResult.setIndexArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    getIndexResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     getIndexResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("displayName", targetDepth)) {
+                if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    getIndexResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                    getIndexResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("updatedAt", targetDepth)) {
+                    context.nextToken();
+                    getIndexResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("capacityConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getIndexResult.setCapacityConfiguration(IndexCapacityConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("documentAttributeConfigurations", targetDepth)) {
                     context.nextToken();
@@ -79,25 +99,9 @@ public class GetIndexResultJsonUnmarshaller implements Unmarshaller<GetIndexResu
                     context.nextToken();
                     getIndexResult.setError(ErrorDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("indexArn", targetDepth)) {
-                    context.nextToken();
-                    getIndexResult.setIndexArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("indexId", targetDepth)) {
-                    context.nextToken();
-                    getIndexResult.setIndexId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("indexStatistics", targetDepth)) {
                     context.nextToken();
                     getIndexResult.setIndexStatistics(IndexStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    context.nextToken();
-                    getIndexResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("updatedAt", targetDepth)) {
-                    context.nextToken();
-                    getIndexResult.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

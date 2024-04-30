@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MessageUsefulnessFeedbackMarshaller {
 
-    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("comment").build();
-    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("reason").build();
-    private static final MarshallingInfo<java.util.Date> SUBMITTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("submittedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> USEFULNESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("usefulness").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("reason").build();
+    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("comment").build();
+    private static final MarshallingInfo<java.util.Date> SUBMITTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("submittedAt").timestampFormat("unixTimestamp").build();
 
     private static final MessageUsefulnessFeedbackMarshaller instance = new MessageUsefulnessFeedbackMarshaller();
 
@@ -52,10 +52,10 @@ public class MessageUsefulnessFeedbackMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(messageUsefulnessFeedback.getComment(), COMMENT_BINDING);
-            protocolMarshaller.marshall(messageUsefulnessFeedback.getReason(), REASON_BINDING);
-            protocolMarshaller.marshall(messageUsefulnessFeedback.getSubmittedAt(), SUBMITTEDAT_BINDING);
             protocolMarshaller.marshall(messageUsefulnessFeedback.getUsefulness(), USEFULNESS_BINDING);
+            protocolMarshaller.marshall(messageUsefulnessFeedback.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(messageUsefulnessFeedback.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(messageUsefulnessFeedback.getSubmittedAt(), SUBMITTEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

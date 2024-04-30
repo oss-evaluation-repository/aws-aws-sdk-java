@@ -31,14 +31,6 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String applicationId;
-
-    private PluginAuthConfiguration authConfiguration;
-    /**
-     * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business plugin.
-     * </p>
-     */
-    private String clientToken;
     /**
      * <p>
      * A the name for your plugin.
@@ -47,10 +39,24 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String displayName;
     /**
      * <p>
+     * The type of plugin you want to create.
+     * </p>
+     */
+    private String type;
+
+    private PluginAuthConfiguration authConfiguration;
+    /**
+     * <p>
      * The source URL used for plugin configuration.
      * </p>
      */
     private String serverUrl;
+    /**
+     * <p>
+     * Contains configuration for a custom plugin.
+     * </p>
+     */
+    private CustomPluginConfiguration customPluginConfiguration;
     /**
      * <p>
      * A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help
@@ -61,10 +67,10 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The type of plugin you want to create.
+     * A token that you provide to identify the request to create your Amazon Q Business plugin.
      * </p>
      */
-    private String type;
+    private String clientToken;
 
     /**
      * <p>
@@ -103,72 +109,6 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public CreatePluginRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
-        return this;
-    }
-
-    /**
-     * @param authConfiguration
-     */
-
-    public void setAuthConfiguration(PluginAuthConfiguration authConfiguration) {
-        this.authConfiguration = authConfiguration;
-    }
-
-    /**
-     * @return
-     */
-
-    public PluginAuthConfiguration getAuthConfiguration() {
-        return this.authConfiguration;
-    }
-
-    /**
-     * @param authConfiguration
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreatePluginRequest withAuthConfiguration(PluginAuthConfiguration authConfiguration) {
-        setAuthConfiguration(authConfiguration);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business plugin.
-     * </p>
-     * 
-     * @param clientToken
-     *        A token that you provide to identify the request to create your Amazon Q Business plugin.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business plugin.
-     * </p>
-     * 
-     * @return A token that you provide to identify the request to create your Amazon Q Business plugin.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business plugin.
-     * </p>
-     * 
-     * @param clientToken
-     *        A token that you provide to identify the request to create your Amazon Q Business plugin.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreatePluginRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
         return this;
     }
 
@@ -214,6 +154,91 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The type of plugin you want to create.
+     * </p>
+     * 
+     * @param type
+     *        The type of plugin you want to create.
+     * @see PluginType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of plugin you want to create.
+     * </p>
+     * 
+     * @return The type of plugin you want to create.
+     * @see PluginType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of plugin you want to create.
+     * </p>
+     * 
+     * @param type
+     *        The type of plugin you want to create.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginType
+     */
+
+    public CreatePluginRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of plugin you want to create.
+     * </p>
+     * 
+     * @param type
+     *        The type of plugin you want to create.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginType
+     */
+
+    public CreatePluginRequest withType(PluginType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * @param authConfiguration
+     */
+
+    public void setAuthConfiguration(PluginAuthConfiguration authConfiguration) {
+        this.authConfiguration = authConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public PluginAuthConfiguration getAuthConfiguration() {
+        return this.authConfiguration;
+    }
+
+    /**
+     * @param authConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePluginRequest withAuthConfiguration(PluginAuthConfiguration authConfiguration) {
+        setAuthConfiguration(authConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The source URL used for plugin configuration.
      * </p>
      * 
@@ -249,6 +274,46 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public CreatePluginRequest withServerUrl(String serverUrl) {
         setServerUrl(serverUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains configuration for a custom plugin.
+     * </p>
+     * 
+     * @param customPluginConfiguration
+     *        Contains configuration for a custom plugin.
+     */
+
+    public void setCustomPluginConfiguration(CustomPluginConfiguration customPluginConfiguration) {
+        this.customPluginConfiguration = customPluginConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains configuration for a custom plugin.
+     * </p>
+     * 
+     * @return Contains configuration for a custom plugin.
+     */
+
+    public CustomPluginConfiguration getCustomPluginConfiguration() {
+        return this.customPluginConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains configuration for a custom plugin.
+     * </p>
+     * 
+     * @param customPluginConfiguration
+     *        Contains configuration for a custom plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePluginRequest withCustomPluginConfiguration(CustomPluginConfiguration customPluginConfiguration) {
+        setCustomPluginConfiguration(customPluginConfiguration);
         return this;
     }
 
@@ -340,60 +405,41 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of plugin you want to create.
+     * A token that you provide to identify the request to create your Amazon Q Business plugin.
      * </p>
      * 
-     * @param type
-     *        The type of plugin you want to create.
-     * @see PluginType
+     * @param clientToken
+     *        A token that you provide to identify the request to create your Amazon Q Business plugin.
      */
 
-    public void setType(String type) {
-        this.type = type;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The type of plugin you want to create.
+     * A token that you provide to identify the request to create your Amazon Q Business plugin.
      * </p>
      * 
-     * @return The type of plugin you want to create.
-     * @see PluginType
+     * @return A token that you provide to identify the request to create your Amazon Q Business plugin.
      */
 
-    public String getType() {
-        return this.type;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The type of plugin you want to create.
+     * A token that you provide to identify the request to create your Amazon Q Business plugin.
      * </p>
      * 
-     * @param type
-     *        The type of plugin you want to create.
+     * @param clientToken
+     *        A token that you provide to identify the request to create your Amazon Q Business plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PluginType
      */
 
-    public CreatePluginRequest withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of plugin you want to create.
-     * </p>
-     * 
-     * @param type
-     *        The type of plugin you want to create.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PluginType
-     */
-
-    public CreatePluginRequest withType(PluginType type) {
-        this.type = type.toString();
+    public CreatePluginRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -411,18 +457,20 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getAuthConfiguration() != null)
-            sb.append("AuthConfiguration: ").append(getAuthConfiguration()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getAuthConfiguration() != null)
+            sb.append("AuthConfiguration: ").append(getAuthConfiguration()).append(",");
         if (getServerUrl() != null)
             sb.append("ServerUrl: ").append(getServerUrl()).append(",");
+        if (getCustomPluginConfiguration() != null)
+            sb.append("CustomPluginConfiguration: ").append(getCustomPluginConfiguration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType());
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -441,29 +489,33 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getAuthConfiguration() == null ^ this.getAuthConfiguration() == null)
-            return false;
-        if (other.getAuthConfiguration() != null && other.getAuthConfiguration().equals(this.getAuthConfiguration()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getAuthConfiguration() == null ^ this.getAuthConfiguration() == null)
+            return false;
+        if (other.getAuthConfiguration() != null && other.getAuthConfiguration().equals(this.getAuthConfiguration()) == false)
             return false;
         if (other.getServerUrl() == null ^ this.getServerUrl() == null)
             return false;
         if (other.getServerUrl() != null && other.getServerUrl().equals(this.getServerUrl()) == false)
             return false;
+        if (other.getCustomPluginConfiguration() == null ^ this.getCustomPluginConfiguration() == null)
+            return false;
+        if (other.getCustomPluginConfiguration() != null && other.getCustomPluginConfiguration().equals(this.getCustomPluginConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -474,12 +526,13 @@ public class CreatePluginRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getAuthConfiguration() == null) ? 0 : getAuthConfiguration().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
-        hashCode = prime * hashCode + ((getServerUrl() == null) ? 0 : getServerUrl().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAuthConfiguration() == null) ? 0 : getAuthConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getServerUrl() == null) ? 0 : getServerUrl().hashCode());
+        hashCode = prime * hashCode + ((getCustomPluginConfiguration() == null) ? 0 : getCustomPluginConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

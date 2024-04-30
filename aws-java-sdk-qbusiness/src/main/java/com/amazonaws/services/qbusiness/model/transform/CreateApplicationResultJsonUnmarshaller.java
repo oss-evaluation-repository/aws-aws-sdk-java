@@ -48,13 +48,13 @@ public class CreateApplicationResultJsonUnmarshaller implements Unmarshaller<Cre
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("applicationArn", targetDepth)) {
-                    context.nextToken();
-                    createApplicationResult.setApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("applicationId", targetDepth)) {
                     context.nextToken();
                     createApplicationResult.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("applicationArn", targetDepth)) {
+                    context.nextToken();
+                    createApplicationResult.setApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

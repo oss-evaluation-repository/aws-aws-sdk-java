@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PrincipalUserMarshaller {
 
-    private static final MarshallingInfo<String> ACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("access").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> ACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("access").build();
     private static final MarshallingInfo<String> MEMBERSHIPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("membershipType").build();
 
@@ -50,8 +50,8 @@ public class PrincipalUserMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(principalUser.getAccess(), ACCESS_BINDING);
             protocolMarshaller.marshall(principalUser.getId(), ID_BINDING);
+            protocolMarshaller.marshall(principalUser.getAccess(), ACCESS_BINDING);
             protocolMarshaller.marshall(principalUser.getMembershipType(), MEMBERSHIPTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

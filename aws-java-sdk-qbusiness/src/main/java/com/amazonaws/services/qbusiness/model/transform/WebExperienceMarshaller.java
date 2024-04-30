@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class WebExperienceMarshaller {
 
+    private static final MarshallingInfo<String> WEBEXPERIENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("webExperienceId").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DEFAULTENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultEndpoint").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
-    private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> WEBEXPERIENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("webExperienceId").build();
 
     private static final WebExperienceMarshaller instance = new WebExperienceMarshaller();
 
@@ -54,11 +54,11 @@ public class WebExperienceMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(webExperience.getWebExperienceId(), WEBEXPERIENCEID_BINDING);
             protocolMarshaller.marshall(webExperience.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(webExperience.getUpdatedAt(), UPDATEDAT_BINDING);
             protocolMarshaller.marshall(webExperience.getDefaultEndpoint(), DEFAULTENDPOINT_BINDING);
             protocolMarshaller.marshall(webExperience.getStatus(), STATUS_BINDING);
-            protocolMarshaller.marshall(webExperience.getUpdatedAt(), UPDATEDAT_BINDING);
-            protocolMarshaller.marshall(webExperience.getWebExperienceId(), WEBEXPERIENCEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

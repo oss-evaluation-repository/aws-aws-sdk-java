@@ -31,56 +31,16 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group associated with the principal.
-     * </p>
-     */
-    private PrincipalGroup group;
-    /**
-     * <p>
      * The user associated with the principal.
      * </p>
      */
     private PrincipalUser user;
-
     /**
      * <p>
      * The group associated with the principal.
      * </p>
-     * 
-     * @param group
-     *        The group associated with the principal.
      */
-
-    public void setGroup(PrincipalGroup group) {
-        this.group = group;
-    }
-
-    /**
-     * <p>
-     * The group associated with the principal.
-     * </p>
-     * 
-     * @return The group associated with the principal.
-     */
-
-    public PrincipalGroup getGroup() {
-        return this.group;
-    }
-
-    /**
-     * <p>
-     * The group associated with the principal.
-     * </p>
-     * 
-     * @param group
-     *        The group associated with the principal.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Principal withGroup(PrincipalGroup group) {
-        setGroup(group);
-        return this;
-    }
+    private PrincipalGroup group;
 
     /**
      * <p>
@@ -123,6 +83,46 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The group associated with the principal.
+     * </p>
+     * 
+     * @param group
+     *        The group associated with the principal.
+     */
+
+    public void setGroup(PrincipalGroup group) {
+        this.group = group;
+    }
+
+    /**
+     * <p>
+     * The group associated with the principal.
+     * </p>
+     * 
+     * @return The group associated with the principal.
+     */
+
+    public PrincipalGroup getGroup() {
+        return this.group;
+    }
+
+    /**
+     * <p>
+     * The group associated with the principal.
+     * </p>
+     * 
+     * @param group
+     *        The group associated with the principal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Principal withGroup(PrincipalGroup group) {
+        setGroup(group);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -134,10 +134,10 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroup() != null)
-            sb.append("Group: ").append(getGroup()).append(",");
         if (getUser() != null)
-            sb.append("User: ").append(getUser());
+            sb.append("User: ").append(getUser()).append(",");
+        if (getGroup() != null)
+            sb.append("Group: ").append(getGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -152,13 +152,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Principal == false)
             return false;
         Principal other = (Principal) obj;
-        if (other.getGroup() == null ^ this.getGroup() == null)
-            return false;
-        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
-            return false;
         if (other.getUser() == null ^ this.getUser() == null)
             return false;
         if (other.getUser() != null && other.getUser().equals(this.getUser()) == false)
+            return false;
+        if (other.getGroup() == null ^ this.getGroup() == null)
+            return false;
+        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
             return false;
         return true;
     }
@@ -168,8 +168,8 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
+        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         return hashCode;
     }
 

@@ -30,12 +30,6 @@ public class Index implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp when the index was created.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
      * The name of the index.
      * </p>
      */
@@ -48,56 +42,22 @@ public class Index implements Serializable, Cloneable, StructuredPojo {
     private String indexId;
     /**
      * <p>
-     * The current status of the index. When the status is <code>ACTIVE</code>, the index is ready.
+     * The Unix timestamp when the index was created.
      * </p>
      */
-    private String status;
+    private java.util.Date createdAt;
     /**
      * <p>
      * The Unix timestamp when the index was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
-
     /**
      * <p>
-     * The Unix timestamp when the index was created.
+     * The current status of the index. When the status is <code>ACTIVE</code>, the index is ready.
      * </p>
-     * 
-     * @param createdAt
-     *        The Unix timestamp when the index was created.
      */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the index was created.
-     * </p>
-     * 
-     * @return The Unix timestamp when the index was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the index was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The Unix timestamp when the index was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Index withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
-        return this;
-    }
+    private String status;
 
     /**
      * <p>
@@ -181,6 +141,86 @@ public class Index implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Unix timestamp when the index was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The Unix timestamp when the index was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the index was created.
+     * </p>
+     * 
+     * @return The Unix timestamp when the index was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the index was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The Unix timestamp when the index was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Index withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the index was last updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The Unix timestamp when the index was last updated.
+     */
+
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the index was last updated.
+     * </p>
+     * 
+     * @return The Unix timestamp when the index was last updated.
+     */
+
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the index was last updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The Unix timestamp when the index was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Index withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current status of the index. When the status is <code>ACTIVE</code>, the index is ready.
      * </p>
      * 
@@ -239,46 +279,6 @@ public class Index implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The Unix timestamp when the index was last updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when the index was last updated.
-     */
-
-    public void setUpdatedAt(java.util.Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the index was last updated.
-     * </p>
-     * 
-     * @return The Unix timestamp when the index was last updated.
-     */
-
-    public java.util.Date getUpdatedAt() {
-        return this.updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the index was last updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when the index was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Index withUpdatedAt(java.util.Date updatedAt) {
-        setUpdatedAt(updatedAt);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -290,16 +290,16 @@ public class Index implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getIndexId() != null)
             sb.append("IndexId: ").append(getIndexId()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -314,10 +314,6 @@ public class Index implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Index == false)
             return false;
         Index other = (Index) obj;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
         if (other.getDisplayName() == null ^ this.getDisplayName() == null)
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
@@ -326,13 +322,17 @@ public class Index implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -342,11 +342,11 @@ public class Index implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

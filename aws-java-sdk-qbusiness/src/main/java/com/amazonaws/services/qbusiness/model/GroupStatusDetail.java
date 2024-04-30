@@ -30,10 +30,10 @@ public class GroupStatusDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The details of an error associated a group status.
+     * The status of a group.
      * </p>
      */
-    private ErrorDetail errorDetail;
+    private String status;
     /**
      * <p>
      * The Unix timestamp when the Amazon Q Business application was last updated.
@@ -42,90 +42,10 @@ public class GroupStatusDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
-     * The status of a group.
-     * </p>
-     */
-    private String status;
-
-    /**
-     * <p>
      * The details of an error associated a group status.
      * </p>
-     * 
-     * @param errorDetail
-     *        The details of an error associated a group status.
      */
-
-    public void setErrorDetail(ErrorDetail errorDetail) {
-        this.errorDetail = errorDetail;
-    }
-
-    /**
-     * <p>
-     * The details of an error associated a group status.
-     * </p>
-     * 
-     * @return The details of an error associated a group status.
-     */
-
-    public ErrorDetail getErrorDetail() {
-        return this.errorDetail;
-    }
-
-    /**
-     * <p>
-     * The details of an error associated a group status.
-     * </p>
-     * 
-     * @param errorDetail
-     *        The details of an error associated a group status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GroupStatusDetail withErrorDetail(ErrorDetail errorDetail) {
-        setErrorDetail(errorDetail);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @param lastUpdatedAt
-     *        The Unix timestamp when the Amazon Q Business application was last updated.
-     */
-
-    public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
-        this.lastUpdatedAt = lastUpdatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @return The Unix timestamp when the Amazon Q Business application was last updated.
-     */
-
-    public java.util.Date getLastUpdatedAt() {
-        return this.lastUpdatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when the Amazon Q Business application was last updated.
-     * </p>
-     * 
-     * @param lastUpdatedAt
-     *        The Unix timestamp when the Amazon Q Business application was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GroupStatusDetail withLastUpdatedAt(java.util.Date lastUpdatedAt) {
-        setLastUpdatedAt(lastUpdatedAt);
-        return this;
-    }
+    private ErrorDetail errorDetail;
 
     /**
      * <p>
@@ -187,6 +107,86 @@ public class GroupStatusDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
+     * 
+     * @param lastUpdatedAt
+     *        The Unix timestamp when the Amazon Q Business application was last updated.
+     */
+
+    public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
+        this.lastUpdatedAt = lastUpdatedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
+     * 
+     * @return The Unix timestamp when the Amazon Q Business application was last updated.
+     */
+
+    public java.util.Date getLastUpdatedAt() {
+        return this.lastUpdatedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the Amazon Q Business application was last updated.
+     * </p>
+     * 
+     * @param lastUpdatedAt
+     *        The Unix timestamp when the Amazon Q Business application was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GroupStatusDetail withLastUpdatedAt(java.util.Date lastUpdatedAt) {
+        setLastUpdatedAt(lastUpdatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of an error associated a group status.
+     * </p>
+     * 
+     * @param errorDetail
+     *        The details of an error associated a group status.
+     */
+
+    public void setErrorDetail(ErrorDetail errorDetail) {
+        this.errorDetail = errorDetail;
+    }
+
+    /**
+     * <p>
+     * The details of an error associated a group status.
+     * </p>
+     * 
+     * @return The details of an error associated a group status.
+     */
+
+    public ErrorDetail getErrorDetail() {
+        return this.errorDetail;
+    }
+
+    /**
+     * <p>
+     * The details of an error associated a group status.
+     * </p>
+     * 
+     * @param errorDetail
+     *        The details of an error associated a group status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GroupStatusDetail withErrorDetail(ErrorDetail errorDetail) {
+        setErrorDetail(errorDetail);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,12 +198,12 @@ public class GroupStatusDetail implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getErrorDetail() != null)
-            sb.append("ErrorDetail: ").append(getErrorDetail()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+        if (getErrorDetail() != null)
+            sb.append("ErrorDetail: ").append(getErrorDetail());
         sb.append("}");
         return sb.toString();
     }
@@ -218,17 +218,17 @@ public class GroupStatusDetail implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof GroupStatusDetail == false)
             return false;
         GroupStatusDetail other = (GroupStatusDetail) obj;
-        if (other.getErrorDetail() == null ^ this.getErrorDetail() == null)
+        if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
-        if (other.getErrorDetail() != null && other.getErrorDetail().equals(this.getErrorDetail()) == false)
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
             return false;
         if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getErrorDetail() == null ^ this.getErrorDetail() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getErrorDetail() != null && other.getErrorDetail().equals(this.getErrorDetail()) == false)
             return false;
         return true;
     }
@@ -238,9 +238,9 @@ public class GroupStatusDetail implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getErrorDetail() == null) ? 0 : getErrorDetail().hashCode());
-        hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getErrorDetail() == null) ? 0 : getErrorDetail().hashCode());
         return hashCode;
     }
 

@@ -25,56 +25,16 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
-     * </p>
-     */
-    private String applicationArn;
-    /**
-     * <p>
      * The identifier of the Amazon Q Business application.
      * </p>
      */
     private String applicationId;
-
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon Q Business application.
      * </p>
-     * 
-     * @param applicationArn
-     *        The Amazon Resource Name (ARN) of the Amazon Q Business application.
      */
-
-    public void setApplicationArn(String applicationArn) {
-        this.applicationArn = applicationArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Q Business application.
-     */
-
-    public String getApplicationArn() {
-        return this.applicationArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
-     * </p>
-     * 
-     * @param applicationArn
-     *        The Amazon Resource Name (ARN) of the Amazon Q Business application.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateApplicationResult withApplicationArn(String applicationArn) {
-        setApplicationArn(applicationArn);
-        return this;
-    }
+    private String applicationArn;
 
     /**
      * <p>
@@ -117,6 +77,46 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     */
+
+    public void setApplicationArn(String applicationArn) {
+        this.applicationArn = applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     */
+
+    public String getApplicationArn() {
+        return this.applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationResult withApplicationArn(String applicationArn) {
+        setApplicationArn(applicationArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -128,10 +128,10 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplicationArn() != null)
-            sb.append("ApplicationArn: ").append(getApplicationArn()).append(",");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: ").append(getApplicationId());
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getApplicationArn() != null)
+            sb.append("ApplicationArn: ").append(getApplicationArn());
         sb.append("}");
         return sb.toString();
     }
@@ -146,13 +146,13 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof CreateApplicationResult == false)
             return false;
         CreateApplicationResult other = (CreateApplicationResult) obj;
-        if (other.getApplicationArn() == null ^ this.getApplicationArn() == null)
-            return false;
-        if (other.getApplicationArn() != null && other.getApplicationArn().equals(this.getApplicationArn()) == false)
-            return false;
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
+            return false;
+        if (other.getApplicationArn() == null ^ this.getApplicationArn() == null)
+            return false;
+        if (other.getApplicationArn() != null && other.getApplicationArn().equals(this.getApplicationArn()) == false)
             return false;
         return true;
     }
@@ -162,8 +162,8 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
         return hashCode;
     }
 

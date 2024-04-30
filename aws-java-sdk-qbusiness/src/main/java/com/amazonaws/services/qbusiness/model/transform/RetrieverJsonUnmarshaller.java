@@ -52,21 +52,21 @@ public class RetrieverJsonUnmarshaller implements Unmarshaller<Retriever, JsonUn
                     context.nextToken();
                     retriever.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("displayName", targetDepth)) {
-                    context.nextToken();
-                    retriever.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("retrieverId", targetDepth)) {
                     context.nextToken();
                     retriever.setRetrieverId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    retriever.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     retriever.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("type", targetDepth)) {
+                if (context.testExpression("displayName", targetDepth)) {
                     context.nextToken();
-                    retriever.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                    retriever.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

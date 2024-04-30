@@ -30,68 +30,28 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Users and groups to be excluded from a rule.
-     * </p>
-     */
-    private UsersAndGroups excludedUsersAndGroups;
-    /**
-     * <p>
      * Users and groups to be included in a rule.
      * </p>
      */
     private UsersAndGroups includedUsersAndGroups;
     /**
      * <p>
-     * The configuration information for a rule.
+     * Users and groups to be excluded from a rule.
      * </p>
      */
-    private RuleConfiguration ruleConfiguration;
+    private UsersAndGroups excludedUsersAndGroups;
     /**
      * <p>
      * The type of rule.
      * </p>
      */
     private String ruleType;
-
     /**
      * <p>
-     * Users and groups to be excluded from a rule.
+     * The configuration information for a rule.
      * </p>
-     * 
-     * @param excludedUsersAndGroups
-     *        Users and groups to be excluded from a rule.
      */
-
-    public void setExcludedUsersAndGroups(UsersAndGroups excludedUsersAndGroups) {
-        this.excludedUsersAndGroups = excludedUsersAndGroups;
-    }
-
-    /**
-     * <p>
-     * Users and groups to be excluded from a rule.
-     * </p>
-     * 
-     * @return Users and groups to be excluded from a rule.
-     */
-
-    public UsersAndGroups getExcludedUsersAndGroups() {
-        return this.excludedUsersAndGroups;
-    }
-
-    /**
-     * <p>
-     * Users and groups to be excluded from a rule.
-     * </p>
-     * 
-     * @param excludedUsersAndGroups
-     *        Users and groups to be excluded from a rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Rule withExcludedUsersAndGroups(UsersAndGroups excludedUsersAndGroups) {
-        setExcludedUsersAndGroups(excludedUsersAndGroups);
-        return this;
-    }
+    private RuleConfiguration ruleConfiguration;
 
     /**
      * <p>
@@ -135,41 +95,41 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration information for a rule.
+     * Users and groups to be excluded from a rule.
      * </p>
      * 
-     * @param ruleConfiguration
-     *        The configuration information for a rule.
+     * @param excludedUsersAndGroups
+     *        Users and groups to be excluded from a rule.
      */
 
-    public void setRuleConfiguration(RuleConfiguration ruleConfiguration) {
-        this.ruleConfiguration = ruleConfiguration;
+    public void setExcludedUsersAndGroups(UsersAndGroups excludedUsersAndGroups) {
+        this.excludedUsersAndGroups = excludedUsersAndGroups;
     }
 
     /**
      * <p>
-     * The configuration information for a rule.
+     * Users and groups to be excluded from a rule.
      * </p>
      * 
-     * @return The configuration information for a rule.
+     * @return Users and groups to be excluded from a rule.
      */
 
-    public RuleConfiguration getRuleConfiguration() {
-        return this.ruleConfiguration;
+    public UsersAndGroups getExcludedUsersAndGroups() {
+        return this.excludedUsersAndGroups;
     }
 
     /**
      * <p>
-     * The configuration information for a rule.
+     * Users and groups to be excluded from a rule.
      * </p>
      * 
-     * @param ruleConfiguration
-     *        The configuration information for a rule.
+     * @param excludedUsersAndGroups
+     *        Users and groups to be excluded from a rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Rule withRuleConfiguration(RuleConfiguration ruleConfiguration) {
-        setRuleConfiguration(ruleConfiguration);
+    public Rule withExcludedUsersAndGroups(UsersAndGroups excludedUsersAndGroups) {
+        setExcludedUsersAndGroups(excludedUsersAndGroups);
         return this;
     }
 
@@ -233,6 +193,46 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration information for a rule.
+     * </p>
+     * 
+     * @param ruleConfiguration
+     *        The configuration information for a rule.
+     */
+
+    public void setRuleConfiguration(RuleConfiguration ruleConfiguration) {
+        this.ruleConfiguration = ruleConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for a rule.
+     * </p>
+     * 
+     * @return The configuration information for a rule.
+     */
+
+    public RuleConfiguration getRuleConfiguration() {
+        return this.ruleConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for a rule.
+     * </p>
+     * 
+     * @param ruleConfiguration
+     *        The configuration information for a rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Rule withRuleConfiguration(RuleConfiguration ruleConfiguration) {
+        setRuleConfiguration(ruleConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -244,14 +244,14 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getExcludedUsersAndGroups() != null)
-            sb.append("ExcludedUsersAndGroups: ").append(getExcludedUsersAndGroups()).append(",");
         if (getIncludedUsersAndGroups() != null)
             sb.append("IncludedUsersAndGroups: ").append(getIncludedUsersAndGroups()).append(",");
-        if (getRuleConfiguration() != null)
-            sb.append("RuleConfiguration: ").append(getRuleConfiguration()).append(",");
+        if (getExcludedUsersAndGroups() != null)
+            sb.append("ExcludedUsersAndGroups: ").append(getExcludedUsersAndGroups()).append(",");
         if (getRuleType() != null)
-            sb.append("RuleType: ").append(getRuleType());
+            sb.append("RuleType: ").append(getRuleType()).append(",");
+        if (getRuleConfiguration() != null)
+            sb.append("RuleConfiguration: ").append(getRuleConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -266,21 +266,21 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Rule == false)
             return false;
         Rule other = (Rule) obj;
-        if (other.getExcludedUsersAndGroups() == null ^ this.getExcludedUsersAndGroups() == null)
-            return false;
-        if (other.getExcludedUsersAndGroups() != null && other.getExcludedUsersAndGroups().equals(this.getExcludedUsersAndGroups()) == false)
-            return false;
         if (other.getIncludedUsersAndGroups() == null ^ this.getIncludedUsersAndGroups() == null)
             return false;
         if (other.getIncludedUsersAndGroups() != null && other.getIncludedUsersAndGroups().equals(this.getIncludedUsersAndGroups()) == false)
             return false;
-        if (other.getRuleConfiguration() == null ^ this.getRuleConfiguration() == null)
+        if (other.getExcludedUsersAndGroups() == null ^ this.getExcludedUsersAndGroups() == null)
             return false;
-        if (other.getRuleConfiguration() != null && other.getRuleConfiguration().equals(this.getRuleConfiguration()) == false)
+        if (other.getExcludedUsersAndGroups() != null && other.getExcludedUsersAndGroups().equals(this.getExcludedUsersAndGroups()) == false)
             return false;
         if (other.getRuleType() == null ^ this.getRuleType() == null)
             return false;
         if (other.getRuleType() != null && other.getRuleType().equals(this.getRuleType()) == false)
+            return false;
+        if (other.getRuleConfiguration() == null ^ this.getRuleConfiguration() == null)
+            return false;
+        if (other.getRuleConfiguration() != null && other.getRuleConfiguration().equals(this.getRuleConfiguration()) == false)
             return false;
         return true;
     }
@@ -290,10 +290,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getExcludedUsersAndGroups() == null) ? 0 : getExcludedUsersAndGroups().hashCode());
         hashCode = prime * hashCode + ((getIncludedUsersAndGroups() == null) ? 0 : getIncludedUsersAndGroups().hashCode());
-        hashCode = prime * hashCode + ((getRuleConfiguration() == null) ? 0 : getRuleConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getExcludedUsersAndGroups() == null) ? 0 : getExcludedUsersAndGroups().hashCode());
         hashCode = prime * hashCode + ((getRuleType() == null) ? 0 : getRuleType().hashCode());
+        hashCode = prime * hashCode + ((getRuleConfiguration() == null) ? 0 : getRuleConfiguration().hashCode());
         return hashCode;
     }
 

@@ -30,16 +30,56 @@ public class NativeIndexConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Overrides the default boosts applied by Amazon Q Business to supported document attribute data types.
-     * </p>
-     */
-    private java.util.Map<String, DocumentAttributeBoostingConfiguration> boostingOverride;
-    /**
-     * <p>
      * The identifier for the Amazon Q Business index.
      * </p>
      */
     private String indexId;
+    /**
+     * <p>
+     * Overrides the default boosts applied by Amazon Q Business to supported document attribute data types.
+     * </p>
+     */
+    private java.util.Map<String, DocumentAttributeBoostingConfiguration> boostingOverride;
+
+    /**
+     * <p>
+     * The identifier for the Amazon Q Business index.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier for the Amazon Q Business index.
+     */
+
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Amazon Q Business index.
+     * </p>
+     * 
+     * @return The identifier for the Amazon Q Business index.
+     */
+
+    public String getIndexId() {
+        return this.indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Amazon Q Business index.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier for the Amazon Q Business index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NativeIndexConfiguration withIndexId(String indexId) {
+        setIndexId(indexId);
+        return this;
+    }
 
     /**
      * <p>
@@ -110,46 +150,6 @@ public class NativeIndexConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p>
-     * The identifier for the Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier for the Amazon Q Business index.
-     */
-
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier for the Amazon Q Business index.
-     * </p>
-     * 
-     * @return The identifier for the Amazon Q Business index.
-     */
-
-    public String getIndexId() {
-        return this.indexId;
-    }
-
-    /**
-     * <p>
-     * The identifier for the Amazon Q Business index.
-     * </p>
-     * 
-     * @param indexId
-     *        The identifier for the Amazon Q Business index.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NativeIndexConfiguration withIndexId(String indexId) {
-        setIndexId(indexId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -161,10 +161,10 @@ public class NativeIndexConfiguration implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getBoostingOverride() != null)
-            sb.append("BoostingOverride: ").append(getBoostingOverride()).append(",");
         if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId());
+            sb.append("IndexId: ").append(getIndexId()).append(",");
+        if (getBoostingOverride() != null)
+            sb.append("BoostingOverride: ").append(getBoostingOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -179,13 +179,13 @@ public class NativeIndexConfiguration implements Serializable, Cloneable, Struct
         if (obj instanceof NativeIndexConfiguration == false)
             return false;
         NativeIndexConfiguration other = (NativeIndexConfiguration) obj;
-        if (other.getBoostingOverride() == null ^ this.getBoostingOverride() == null)
-            return false;
-        if (other.getBoostingOverride() != null && other.getBoostingOverride().equals(this.getBoostingOverride()) == false)
-            return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+            return false;
+        if (other.getBoostingOverride() == null ^ this.getBoostingOverride() == null)
+            return false;
+        if (other.getBoostingOverride() != null && other.getBoostingOverride().equals(this.getBoostingOverride()) == false)
             return false;
         return true;
     }
@@ -195,8 +195,8 @@ public class NativeIndexConfiguration implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getBoostingOverride() == null) ? 0 : getBoostingOverride().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getBoostingOverride() == null) ? 0 : getBoostingOverride().hashCode());
         return hashCode;
     }
 

@@ -68,6 +68,10 @@ public class GaugeChartConfigurationJsonUnmarshaller implements Unmarshaller<Gau
                     context.nextToken();
                     gaugeChartConfiguration.setVisualPalette(VisualPaletteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ColorConfiguration", targetDepth)) {
+                    context.nextToken();
+                    gaugeChartConfiguration.setColorConfiguration(GaugeChartColorConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Interactions", targetDepth)) {
                     context.nextToken();
                     gaugeChartConfiguration.setInteractions(VisualInteractionOptionsJsonUnmarshaller.getInstance().unmarshall(context));

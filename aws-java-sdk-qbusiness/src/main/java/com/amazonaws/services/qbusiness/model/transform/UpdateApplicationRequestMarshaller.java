@@ -29,14 +29,16 @@ public class UpdateApplicationRequestMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<StructuredPojo> ATTACHMENTSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attachmentsConfiguration").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> IDENTITYCENTERINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identityCenterInstanceArn").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<StructuredPojo> ATTACHMENTSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attachmentsConfiguration").build();
 
     private static final UpdateApplicationRequestMarshaller instance = new UpdateApplicationRequestMarshaller();
 
@@ -55,10 +57,11 @@ public class UpdateApplicationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateApplicationRequest.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(updateApplicationRequest.getAttachmentsConfiguration(), ATTACHMENTSCONFIGURATION_BINDING);
-            protocolMarshaller.marshall(updateApplicationRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getIdentityCenterInstanceArn(), IDENTITYCENTERINSTANCEARN_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getAttachmentsConfiguration(), ATTACHMENTSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

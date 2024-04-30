@@ -33,16 +33,22 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
     private String applicationId;
     /**
      * <p>
-     * A token you provide to identify a request to create an Amazon Q Business web experience.
+     * The title for your Amazon Q Business web experience.
      * </p>
      */
-    private String clientToken;
+    private String title;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service role attached to your web experience.
+     * A subtitle to personalize your Amazon Q Business web experience.
      * </p>
      */
-    private String roleArn;
+    private String subtitle;
+    /**
+     * <p>
+     * The customized welcome message for end users of an Amazon Q Business web experience.
+     * </p>
+     */
+    private String welcomeMessage;
     /**
      * <p>
      * Determines whether sample prompts are enabled in the web experience for an end user.
@@ -51,10 +57,10 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
     private String samplePromptsControlMode;
     /**
      * <p>
-     * A subtitle to personalize your Amazon Q Business web experience.
+     * The Amazon Resource Name (ARN) of the service role attached to your web experience.
      * </p>
      */
-    private String subtitle;
+    private String roleArn;
     /**
      * <p>
      * A list of key-value pairs that identify or categorize your Amazon Q Business web experience. You can also use
@@ -65,16 +71,10 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The title for your Amazon Q Business web experience.
+     * A token you provide to identify a request to create an Amazon Q Business web experience.
      * </p>
      */
-    private String title;
-    /**
-     * <p>
-     * The customized welcome message for end users of an Amazon Q Business web experience.
-     * </p>
-     */
-    private String welcomeMessage;
+    private String clientToken;
 
     /**
      * <p>
@@ -118,81 +118,121 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token you provide to identify a request to create an Amazon Q Business web experience.
+     * The title for your Amazon Q Business web experience.
      * </p>
      * 
-     * @param clientToken
-     *        A token you provide to identify a request to create an Amazon Q Business web experience.
+     * @param title
+     *        The title for your Amazon Q Business web experience.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     /**
      * <p>
-     * A token you provide to identify a request to create an Amazon Q Business web experience.
+     * The title for your Amazon Q Business web experience.
      * </p>
      * 
-     * @return A token you provide to identify a request to create an Amazon Q Business web experience.
+     * @return The title for your Amazon Q Business web experience.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getTitle() {
+        return this.title;
     }
 
     /**
      * <p>
-     * A token you provide to identify a request to create an Amazon Q Business web experience.
+     * The title for your Amazon Q Business web experience.
      * </p>
      * 
-     * @param clientToken
-     *        A token you provide to identify a request to create an Amazon Q Business web experience.
+     * @param title
+     *        The title for your Amazon Q Business web experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateWebExperienceRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public CreateWebExperienceRequest withTitle(String title) {
+        setTitle(title);
         return this;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service role attached to your web experience.
+     * A subtitle to personalize your Amazon Q Business web experience.
      * </p>
      * 
-     * @param roleArn
-     *        The Amazon Resource Name (ARN) of the service role attached to your web experience.
+     * @param subtitle
+     *        A subtitle to personalize your Amazon Q Business web experience.
      */
 
-    public void setRoleArn(String roleArn) {
-        this.roleArn = roleArn;
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service role attached to your web experience.
+     * A subtitle to personalize your Amazon Q Business web experience.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the service role attached to your web experience.
+     * @return A subtitle to personalize your Amazon Q Business web experience.
      */
 
-    public String getRoleArn() {
-        return this.roleArn;
+    public String getSubtitle() {
+        return this.subtitle;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service role attached to your web experience.
+     * A subtitle to personalize your Amazon Q Business web experience.
      * </p>
      * 
-     * @param roleArn
-     *        The Amazon Resource Name (ARN) of the service role attached to your web experience.
+     * @param subtitle
+     *        A subtitle to personalize your Amazon Q Business web experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateWebExperienceRequest withRoleArn(String roleArn) {
-        setRoleArn(roleArn);
+    public CreateWebExperienceRequest withSubtitle(String subtitle) {
+        setSubtitle(subtitle);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The customized welcome message for end users of an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param welcomeMessage
+     *        The customized welcome message for end users of an Amazon Q Business web experience.
+     */
+
+    public void setWelcomeMessage(String welcomeMessage) {
+        this.welcomeMessage = welcomeMessage;
+    }
+
+    /**
+     * <p>
+     * The customized welcome message for end users of an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @return The customized welcome message for end users of an Amazon Q Business web experience.
+     */
+
+    public String getWelcomeMessage() {
+        return this.welcomeMessage;
+    }
+
+    /**
+     * <p>
+     * The customized welcome message for end users of an Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param welcomeMessage
+     *        The customized welcome message for end users of an Amazon Q Business web experience.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebExperienceRequest withWelcomeMessage(String welcomeMessage) {
+        setWelcomeMessage(welcomeMessage);
         return this;
     }
 
@@ -257,41 +297,41 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A subtitle to personalize your Amazon Q Business web experience.
+     * The Amazon Resource Name (ARN) of the service role attached to your web experience.
      * </p>
      * 
-     * @param subtitle
-     *        A subtitle to personalize your Amazon Q Business web experience.
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the service role attached to your web experience.
      */
 
-    public void setSubtitle(String subtitle) {
-        this.subtitle = subtitle;
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
     }
 
     /**
      * <p>
-     * A subtitle to personalize your Amazon Q Business web experience.
+     * The Amazon Resource Name (ARN) of the service role attached to your web experience.
      * </p>
      * 
-     * @return A subtitle to personalize your Amazon Q Business web experience.
+     * @return The Amazon Resource Name (ARN) of the service role attached to your web experience.
      */
 
-    public String getSubtitle() {
-        return this.subtitle;
+    public String getRoleArn() {
+        return this.roleArn;
     }
 
     /**
      * <p>
-     * A subtitle to personalize your Amazon Q Business web experience.
+     * The Amazon Resource Name (ARN) of the service role attached to your web experience.
      * </p>
      * 
-     * @param subtitle
-     *        A subtitle to personalize your Amazon Q Business web experience.
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the service role attached to your web experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateWebExperienceRequest withSubtitle(String subtitle) {
-        setSubtitle(subtitle);
+    public CreateWebExperienceRequest withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
         return this;
     }
 
@@ -383,81 +423,41 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The title for your Amazon Q Business web experience.
+     * A token you provide to identify a request to create an Amazon Q Business web experience.
      * </p>
      * 
-     * @param title
-     *        The title for your Amazon Q Business web experience.
+     * @param clientToken
+     *        A token you provide to identify a request to create an Amazon Q Business web experience.
      */
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The title for your Amazon Q Business web experience.
+     * A token you provide to identify a request to create an Amazon Q Business web experience.
      * </p>
      * 
-     * @return The title for your Amazon Q Business web experience.
+     * @return A token you provide to identify a request to create an Amazon Q Business web experience.
      */
 
-    public String getTitle() {
-        return this.title;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The title for your Amazon Q Business web experience.
+     * A token you provide to identify a request to create an Amazon Q Business web experience.
      * </p>
      * 
-     * @param title
-     *        The title for your Amazon Q Business web experience.
+     * @param clientToken
+     *        A token you provide to identify a request to create an Amazon Q Business web experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateWebExperienceRequest withTitle(String title) {
-        setTitle(title);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The customized welcome message for end users of an Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param welcomeMessage
-     *        The customized welcome message for end users of an Amazon Q Business web experience.
-     */
-
-    public void setWelcomeMessage(String welcomeMessage) {
-        this.welcomeMessage = welcomeMessage;
-    }
-
-    /**
-     * <p>
-     * The customized welcome message for end users of an Amazon Q Business web experience.
-     * </p>
-     * 
-     * @return The customized welcome message for end users of an Amazon Q Business web experience.
-     */
-
-    public String getWelcomeMessage() {
-        return this.welcomeMessage;
-    }
-
-    /**
-     * <p>
-     * The customized welcome message for end users of an Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param welcomeMessage
-     *        The customized welcome message for end users of an Amazon Q Business web experience.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateWebExperienceRequest withWelcomeMessage(String welcomeMessage) {
-        setWelcomeMessage(welcomeMessage);
+    public CreateWebExperienceRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -475,20 +475,20 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn()).append(",");
-        if (getSamplePromptsControlMode() != null)
-            sb.append("SamplePromptsControlMode: ").append(getSamplePromptsControlMode()).append(",");
-        if (getSubtitle() != null)
-            sb.append("Subtitle: ").append(getSubtitle()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
         if (getTitle() != null)
             sb.append("Title: ").append(getTitle()).append(",");
+        if (getSubtitle() != null)
+            sb.append("Subtitle: ").append(getSubtitle()).append(",");
         if (getWelcomeMessage() != null)
-            sb.append("WelcomeMessage: ").append(getWelcomeMessage());
+            sb.append("WelcomeMessage: ").append(getWelcomeMessage()).append(",");
+        if (getSamplePromptsControlMode() != null)
+            sb.append("SamplePromptsControlMode: ").append(getSamplePromptsControlMode()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -507,33 +507,33 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
-        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
-            return false;
-        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
-            return false;
-        if (other.getSamplePromptsControlMode() == null ^ this.getSamplePromptsControlMode() == null)
-            return false;
-        if (other.getSamplePromptsControlMode() != null && other.getSamplePromptsControlMode().equals(this.getSamplePromptsControlMode()) == false)
+        if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
             return false;
         if (other.getSubtitle() == null ^ this.getSubtitle() == null)
             return false;
         if (other.getSubtitle() != null && other.getSubtitle().equals(this.getSubtitle()) == false)
             return false;
+        if (other.getWelcomeMessage() == null ^ this.getWelcomeMessage() == null)
+            return false;
+        if (other.getWelcomeMessage() != null && other.getWelcomeMessage().equals(this.getWelcomeMessage()) == false)
+            return false;
+        if (other.getSamplePromptsControlMode() == null ^ this.getSamplePromptsControlMode() == null)
+            return false;
+        if (other.getSamplePromptsControlMode() != null && other.getSamplePromptsControlMode().equals(this.getSamplePromptsControlMode()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
-        if (other.getTitle() == null ^ this.getTitle() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
-            return false;
-        if (other.getWelcomeMessage() == null ^ this.getWelcomeMessage() == null)
-            return false;
-        if (other.getWelcomeMessage() != null && other.getWelcomeMessage().equals(this.getWelcomeMessage()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -544,13 +544,13 @@ public class CreateWebExperienceRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
-        hashCode = prime * hashCode + ((getSamplePromptsControlMode() == null) ? 0 : getSamplePromptsControlMode().hashCode());
-        hashCode = prime * hashCode + ((getSubtitle() == null) ? 0 : getSubtitle().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
+        hashCode = prime * hashCode + ((getSubtitle() == null) ? 0 : getSubtitle().hashCode());
         hashCode = prime * hashCode + ((getWelcomeMessage() == null) ? 0 : getWelcomeMessage().hashCode());
+        hashCode = prime * hashCode + ((getSamplePromptsControlMode() == null) ? 0 : getSamplePromptsControlMode().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

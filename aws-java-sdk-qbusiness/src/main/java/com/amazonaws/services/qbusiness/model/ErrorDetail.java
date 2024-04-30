@@ -30,16 +30,56 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code associated with the data source sync error.
-     * </p>
-     */
-    private String errorCode;
-    /**
-     * <p>
      * The message explaining the data source sync error.
      * </p>
      */
     private String errorMessage;
+    /**
+     * <p>
+     * The code associated with the data source sync error.
+     * </p>
+     */
+    private String errorCode;
+
+    /**
+     * <p>
+     * The message explaining the data source sync error.
+     * </p>
+     * 
+     * @param errorMessage
+     *        The message explaining the data source sync error.
+     */
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    /**
+     * <p>
+     * The message explaining the data source sync error.
+     * </p>
+     * 
+     * @return The message explaining the data source sync error.
+     */
+
+    public String getErrorMessage() {
+        return this.errorMessage;
+    }
+
+    /**
+     * <p>
+     * The message explaining the data source sync error.
+     * </p>
+     * 
+     * @param errorMessage
+     *        The message explaining the data source sync error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ErrorDetail withErrorMessage(String errorMessage) {
+        setErrorMessage(errorMessage);
+        return this;
+    }
 
     /**
      * <p>
@@ -101,46 +141,6 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The message explaining the data source sync error.
-     * </p>
-     * 
-     * @param errorMessage
-     *        The message explaining the data source sync error.
-     */
-
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
-    }
-
-    /**
-     * <p>
-     * The message explaining the data source sync error.
-     * </p>
-     * 
-     * @return The message explaining the data source sync error.
-     */
-
-    public String getErrorMessage() {
-        return this.errorMessage;
-    }
-
-    /**
-     * <p>
-     * The message explaining the data source sync error.
-     * </p>
-     * 
-     * @param errorMessage
-     *        The message explaining the data source sync error.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ErrorDetail withErrorMessage(String errorMessage) {
-        setErrorMessage(errorMessage);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,10 +152,10 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getErrorCode() != null)
-            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: ").append(getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getErrorCode() != null)
+            sb.append("ErrorCode: ").append(getErrorCode());
         sb.append("}");
         return sb.toString();
     }
@@ -170,13 +170,13 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ErrorDetail == false)
             return false;
         ErrorDetail other = (ErrorDetail) obj;
-        if (other.getErrorCode() == null ^ this.getErrorCode() == null)
-            return false;
-        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
-            return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+            return false;
+        if (other.getErrorCode() == null ^ this.getErrorCode() == null)
+            return false;
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
             return false;
         return true;
     }
@@ -186,8 +186,8 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         return hashCode;
     }
 

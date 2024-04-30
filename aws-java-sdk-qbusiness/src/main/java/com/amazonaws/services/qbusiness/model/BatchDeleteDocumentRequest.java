@@ -33,10 +33,10 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
     private String applicationId;
     /**
      * <p>
-     * The identifier of the data source sync during which the documents were deleted.
+     * The identifier of the Amazon Q Business index that contains the documents to delete.
      * </p>
      */
-    private String dataSourceSyncId;
+    private String indexId;
     /**
      * <p>
      * Documents deleted from the Amazon Q Business index.
@@ -45,10 +45,10 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<DeleteDocument> documents;
     /**
      * <p>
-     * The identifier of the Amazon Q Business index that contains the documents to delete.
+     * The identifier of the data source sync during which the documents were deleted.
      * </p>
      */
-    private String indexId;
+    private String dataSourceSyncId;
 
     /**
      * <p>
@@ -92,41 +92,41 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier of the data source sync during which the documents were deleted.
+     * The identifier of the Amazon Q Business index that contains the documents to delete.
      * </p>
      * 
-     * @param dataSourceSyncId
-     *        The identifier of the data source sync during which the documents were deleted.
+     * @param indexId
+     *        The identifier of the Amazon Q Business index that contains the documents to delete.
      */
 
-    public void setDataSourceSyncId(String dataSourceSyncId) {
-        this.dataSourceSyncId = dataSourceSyncId;
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
     }
 
     /**
      * <p>
-     * The identifier of the data source sync during which the documents were deleted.
+     * The identifier of the Amazon Q Business index that contains the documents to delete.
      * </p>
      * 
-     * @return The identifier of the data source sync during which the documents were deleted.
+     * @return The identifier of the Amazon Q Business index that contains the documents to delete.
      */
 
-    public String getDataSourceSyncId() {
-        return this.dataSourceSyncId;
+    public String getIndexId() {
+        return this.indexId;
     }
 
     /**
      * <p>
-     * The identifier of the data source sync during which the documents were deleted.
+     * The identifier of the Amazon Q Business index that contains the documents to delete.
      * </p>
      * 
-     * @param dataSourceSyncId
-     *        The identifier of the data source sync during which the documents were deleted.
+     * @param indexId
+     *        The identifier of the Amazon Q Business index that contains the documents to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchDeleteDocumentRequest withDataSourceSyncId(String dataSourceSyncId) {
-        setDataSourceSyncId(dataSourceSyncId);
+    public BatchDeleteDocumentRequest withIndexId(String indexId) {
+        setIndexId(indexId);
         return this;
     }
 
@@ -202,41 +202,41 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business index that contains the documents to delete.
+     * The identifier of the data source sync during which the documents were deleted.
      * </p>
      * 
-     * @param indexId
-     *        The identifier of the Amazon Q Business index that contains the documents to delete.
+     * @param dataSourceSyncId
+     *        The identifier of the data source sync during which the documents were deleted.
      */
 
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
+    public void setDataSourceSyncId(String dataSourceSyncId) {
+        this.dataSourceSyncId = dataSourceSyncId;
     }
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business index that contains the documents to delete.
+     * The identifier of the data source sync during which the documents were deleted.
      * </p>
      * 
-     * @return The identifier of the Amazon Q Business index that contains the documents to delete.
+     * @return The identifier of the data source sync during which the documents were deleted.
      */
 
-    public String getIndexId() {
-        return this.indexId;
+    public String getDataSourceSyncId() {
+        return this.dataSourceSyncId;
     }
 
     /**
      * <p>
-     * The identifier of the Amazon Q Business index that contains the documents to delete.
+     * The identifier of the data source sync during which the documents were deleted.
      * </p>
      * 
-     * @param indexId
-     *        The identifier of the Amazon Q Business index that contains the documents to delete.
+     * @param dataSourceSyncId
+     *        The identifier of the data source sync during which the documents were deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BatchDeleteDocumentRequest withIndexId(String indexId) {
-        setIndexId(indexId);
+    public BatchDeleteDocumentRequest withDataSourceSyncId(String dataSourceSyncId) {
+        setDataSourceSyncId(dataSourceSyncId);
         return this;
     }
 
@@ -254,12 +254,12 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDataSourceSyncId() != null)
-            sb.append("DataSourceSyncId: ").append(getDataSourceSyncId()).append(",");
+        if (getIndexId() != null)
+            sb.append("IndexId: ").append(getIndexId()).append(",");
         if (getDocuments() != null)
             sb.append("Documents: ").append(getDocuments()).append(",");
-        if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId());
+        if (getDataSourceSyncId() != null)
+            sb.append("DataSourceSyncId: ").append(getDataSourceSyncId());
         sb.append("}");
         return sb.toString();
     }
@@ -278,17 +278,17 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDataSourceSyncId() == null ^ this.getDataSourceSyncId() == null)
+        if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
-        if (other.getDataSourceSyncId() != null && other.getDataSourceSyncId().equals(this.getDataSourceSyncId()) == false)
+        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
         if (other.getDocuments() == null ^ this.getDocuments() == null)
             return false;
         if (other.getDocuments() != null && other.getDocuments().equals(this.getDocuments()) == false)
             return false;
-        if (other.getIndexId() == null ^ this.getIndexId() == null)
+        if (other.getDataSourceSyncId() == null ^ this.getDataSourceSyncId() == null)
             return false;
-        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+        if (other.getDataSourceSyncId() != null && other.getDataSourceSyncId().equals(this.getDataSourceSyncId()) == false)
             return false;
         return true;
     }
@@ -299,9 +299,9 @@ public class BatchDeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDataSourceSyncId() == null) ? 0 : getDataSourceSyncId().hashCode());
-        hashCode = prime * hashCode + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceSyncId() == null) ? 0 : getDataSourceSyncId().hashCode());
         return hashCode;
     }
 

@@ -31,6 +31,8 @@ public class PluginAuthConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("basicAuthConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> OAUTH2CLIENTCREDENTIALCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("oAuth2ClientCredentialConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> NOAUTHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("noAuthConfiguration").build();
 
     private static final PluginAuthConfigurationMarshaller instance = new PluginAuthConfigurationMarshaller();
 
@@ -50,6 +52,7 @@ public class PluginAuthConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(pluginAuthConfiguration.getBasicAuthConfiguration(), BASICAUTHCONFIGURATION_BINDING);
             protocolMarshaller.marshall(pluginAuthConfiguration.getOAuth2ClientCredentialConfiguration(), OAUTH2CLIENTCREDENTIALCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(pluginAuthConfiguration.getNoAuthConfiguration(), NOAUTHCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

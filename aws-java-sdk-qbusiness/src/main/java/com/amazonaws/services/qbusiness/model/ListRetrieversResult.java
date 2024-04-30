@@ -25,63 +25,17 @@ public class ListRetrieversResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * An array of summary information for one or more retrievers.
+     * </p>
+     */
+    private java.util.List<Retriever> retrievers;
+    /**
+     * <p>
      * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
      * the next set of retrievers.
      * </p>
      */
     private String nextToken;
-    /**
-     * <p>
-     * An array of summary information for one or more retrievers.
-     * </p>
-     */
-    private java.util.List<Retriever> retrievers;
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
-     * the next set of retrievers.
-     * </p>
-     * 
-     * @param nextToken
-     *        If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
-     *        to list the next set of retrievers.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
-     * the next set of retrievers.
-     * </p>
-     * 
-     * @return If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
-     *         to list the next set of retrievers.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
-     * the next set of retrievers.
-     * </p>
-     * 
-     * @param nextToken
-     *        If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
-     *        to list the next set of retrievers.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListRetrieversResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
 
     /**
      * <p>
@@ -154,6 +108,52 @@ public class ListRetrieversResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
+     * the next set of retrievers.
+     * </p>
+     * 
+     * @param nextToken
+     *        If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
+     *        to list the next set of retrievers.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
+     * the next set of retrievers.
+     * </p>
+     * 
+     * @return If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
+     *         to list the next set of retrievers.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * If the response is truncated, Amazon Q Business returns this token, which you can use in a later request to list
+     * the next set of retrievers.
+     * </p>
+     * 
+     * @param nextToken
+     *        If the response is truncated, Amazon Q Business returns this token, which you can use in a later request
+     *        to list the next set of retrievers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRetrieversResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,10 +165,10 @@ public class ListRetrieversResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getRetrievers() != null)
-            sb.append("Retrievers: ").append(getRetrievers());
+            sb.append("Retrievers: ").append(getRetrievers()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -183,13 +183,13 @@ public class ListRetrieversResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof ListRetrieversResult == false)
             return false;
         ListRetrieversResult other = (ListRetrieversResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getRetrievers() == null ^ this.getRetrievers() == null)
             return false;
         if (other.getRetrievers() != null && other.getRetrievers().equals(this.getRetrievers()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -199,8 +199,8 @@ public class ListRetrieversResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getRetrievers() == null) ? 0 : getRetrievers().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

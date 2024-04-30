@@ -29,10 +29,10 @@ public class InlineDocumentEnrichmentConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> CONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("condition").build();
-    private static final MarshallingInfo<String> DOCUMENTCONTENTOPERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentContentOperator").build();
     private static final MarshallingInfo<StructuredPojo> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("target").build();
+    private static final MarshallingInfo<String> DOCUMENTCONTENTOPERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentContentOperator").build();
 
     private static final InlineDocumentEnrichmentConfigurationMarshaller instance = new InlineDocumentEnrichmentConfigurationMarshaller();
 
@@ -51,8 +51,8 @@ public class InlineDocumentEnrichmentConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(inlineDocumentEnrichmentConfiguration.getCondition(), CONDITION_BINDING);
-            protocolMarshaller.marshall(inlineDocumentEnrichmentConfiguration.getDocumentContentOperator(), DOCUMENTCONTENTOPERATOR_BINDING);
             protocolMarshaller.marshall(inlineDocumentEnrichmentConfiguration.getTarget(), TARGET_BINDING);
+            protocolMarshaller.marshall(inlineDocumentEnrichmentConfiguration.getDocumentContentOperator(), DOCUMENTCONTENTOPERATOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

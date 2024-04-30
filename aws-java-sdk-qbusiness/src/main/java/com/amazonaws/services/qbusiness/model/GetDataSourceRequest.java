@@ -33,16 +33,16 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String applicationId;
     /**
      * <p>
-     * The identifier of the data source connector.
-     * </p>
-     */
-    private String dataSourceId;
-    /**
-     * <p>
      * The identfier of the index used with the data source connector.
      * </p>
      */
     private String indexId;
+    /**
+     * <p>
+     * The identifier of the data source connector.
+     * </p>
+     */
+    private String dataSourceId;
 
     /**
      * <p>
@@ -81,46 +81,6 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public GetDataSourceRequest withApplicationId(String applicationId) {
         setApplicationId(applicationId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source connector.
-     * </p>
-     * 
-     * @param dataSourceId
-     *        The identifier of the data source connector.
-     */
-
-    public void setDataSourceId(String dataSourceId) {
-        this.dataSourceId = dataSourceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source connector.
-     * </p>
-     * 
-     * @return The identifier of the data source connector.
-     */
-
-    public String getDataSourceId() {
-        return this.dataSourceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the data source connector.
-     * </p>
-     * 
-     * @param dataSourceId
-     *        The identifier of the data source connector.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetDataSourceRequest withDataSourceId(String dataSourceId) {
-        setDataSourceId(dataSourceId);
         return this;
     }
 
@@ -165,6 +125,46 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The identifier of the data source connector.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source connector.
+     */
+
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source connector.
+     * </p>
+     * 
+     * @return The identifier of the data source connector.
+     */
+
+    public String getDataSourceId() {
+        return this.dataSourceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source connector.
+     * </p>
+     * 
+     * @param dataSourceId
+     *        The identifier of the data source connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataSourceRequest withDataSourceId(String dataSourceId) {
+        setDataSourceId(dataSourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -178,10 +178,10 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDataSourceId() != null)
-            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId());
+            sb.append("IndexId: ").append(getIndexId()).append(",");
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -200,13 +200,13 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
-            return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
-            return false;
         if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
         if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+            return false;
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+            return false;
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
         return true;
     }
@@ -217,8 +217,8 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         return hashCode;
     }
 

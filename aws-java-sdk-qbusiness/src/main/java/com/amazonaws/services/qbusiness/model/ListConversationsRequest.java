@@ -33,10 +33,10 @@ public class ListConversationsRequest extends com.amazonaws.AmazonWebServiceRequ
     private String applicationId;
     /**
      * <p>
-     * The maximum number of Amazon Q Business conversations to return.
+     * The identifier of the user involved in the Amazon Q Business web experience conversation.
      * </p>
      */
-    private Integer maxResults;
+    private String userId;
     /**
      * <p>
      * If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business
@@ -47,10 +47,10 @@ public class ListConversationsRequest extends com.amazonaws.AmazonWebServiceRequ
     private String nextToken;
     /**
      * <p>
-     * The identifier of the user involved in the Amazon Q Business web experience conversation.
+     * The maximum number of Amazon Q Business conversations to return.
      * </p>
      */
-    private String userId;
+    private Integer maxResults;
 
     /**
      * <p>
@@ -94,41 +94,41 @@ public class ListConversationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of Amazon Q Business conversations to return.
+     * The identifier of the user involved in the Amazon Q Business web experience conversation.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of Amazon Q Business conversations to return.
+     * @param userId
+     *        The identifier of the user involved in the Amazon Q Business web experience conversation.
      */
 
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     /**
      * <p>
-     * The maximum number of Amazon Q Business conversations to return.
+     * The identifier of the user involved in the Amazon Q Business web experience conversation.
      * </p>
      * 
-     * @return The maximum number of Amazon Q Business conversations to return.
+     * @return The identifier of the user involved in the Amazon Q Business web experience conversation.
      */
 
-    public Integer getMaxResults() {
-        return this.maxResults;
+    public String getUserId() {
+        return this.userId;
     }
 
     /**
      * <p>
-     * The maximum number of Amazon Q Business conversations to return.
+     * The identifier of the user involved in the Amazon Q Business web experience conversation.
      * </p>
      * 
-     * @param maxResults
-     *        The maximum number of Amazon Q Business conversations to return.
+     * @param userId
+     *        The identifier of the user involved in the Amazon Q Business web experience conversation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListConversationsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
+    public ListConversationsRequest withUserId(String userId) {
+        setUserId(userId);
         return this;
     }
 
@@ -186,41 +186,41 @@ public class ListConversationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the user involved in the Amazon Q Business web experience conversation.
+     * The maximum number of Amazon Q Business conversations to return.
      * </p>
      * 
-     * @param userId
-     *        The identifier of the user involved in the Amazon Q Business web experience conversation.
+     * @param maxResults
+     *        The maximum number of Amazon Q Business conversations to return.
      */
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * The identifier of the user involved in the Amazon Q Business web experience conversation.
+     * The maximum number of Amazon Q Business conversations to return.
      * </p>
      * 
-     * @return The identifier of the user involved in the Amazon Q Business web experience conversation.
+     * @return The maximum number of Amazon Q Business conversations to return.
      */
 
-    public String getUserId() {
-        return this.userId;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * The identifier of the user involved in the Amazon Q Business web experience conversation.
+     * The maximum number of Amazon Q Business conversations to return.
      * </p>
      * 
-     * @param userId
-     *        The identifier of the user involved in the Amazon Q Business web experience conversation.
+     * @param maxResults
+     *        The maximum number of Amazon Q Business conversations to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListConversationsRequest withUserId(String userId) {
-        setUserId(userId);
+    public ListConversationsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -238,12 +238,12 @@ public class ListConversationsRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -262,17 +262,17 @@ public class ListConversationsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getUserId() == null ^ this.getUserId() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -283,9 +283,9 @@ public class ListConversationsRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

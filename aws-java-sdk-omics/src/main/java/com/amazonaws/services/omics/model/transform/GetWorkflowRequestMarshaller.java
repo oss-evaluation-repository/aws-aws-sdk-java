@@ -34,6 +34,8 @@ public class GetWorkflowRequestMarshaller {
             .marshallLocationName("type").build();
     private static final MarshallingInfo<List> EXPORT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("export").build();
+    private static final MarshallingInfo<String> WORKFLOWOWNERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("workflowOwnerId").build();
 
     private static final GetWorkflowRequestMarshaller instance = new GetWorkflowRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class GetWorkflowRequestMarshaller {
             protocolMarshaller.marshall(getWorkflowRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(getWorkflowRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(getWorkflowRequest.getExport(), EXPORT_BINDING);
+            protocolMarshaller.marshall(getWorkflowRequest.getWorkflowOwnerId(), WORKFLOWOWNERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

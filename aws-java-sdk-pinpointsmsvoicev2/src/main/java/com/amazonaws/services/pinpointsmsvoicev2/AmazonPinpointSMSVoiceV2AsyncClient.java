@@ -32,15 +32,16 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * Amazon Pinpoint is an Amazon Web Services service that you can use to engage with your recipients across multiple
  * messaging channels. The Amazon Pinpoint SMS and Voice, version 2 API provides programmatic access to options that are
- * unique to the SMS and voice channels and supplements the resources provided by the Amazon Pinpoint API.
+ * unique to the SMS and voice channels. Amazon Pinpoint SMS and Voice, version 2 resources such as phone numbers,
+ * sender IDs, and opt-out lists can be used by the Amazon Pinpoint API.
  * </p>
  * <p>
- * If you're new to Amazon Pinpoint, it's also helpful to review the <a
- * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html"> Amazon Pinpoint Developer Guide</a>.
- * The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that demonstrate how to
- * use Amazon Pinpoint features programmatically and how to integrate Amazon Pinpoint functionality into mobile apps and
- * other types of applications. The guide also provides key information, such as Amazon Pinpoint integration with other
- * Amazon Web Services services, and the quotas that apply to use of the service.
+ * If you're new to Amazon Pinpoint SMS, it's also helpful to review the <a
+ * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-service.html"> Amazon Pinpoint SMS User
+ * Guide</a>. The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that
+ * demonstrate how to use Amazon Pinpoint SMS features programmatically and how to integrate Amazon Pinpoint
+ * functionality into mobile apps and other types of applications. The guide also provides key information, such as
+ * Amazon Pinpoint integration with other Amazon Web Services services, and the quotas that apply to use of the service.
  * </p>
  * <p>
  * <b>Regional availability</b>
@@ -126,6 +127,40 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeAssociateOriginationIdentity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateProtectConfigurationResult> associateProtectConfigurationAsync(AssociateProtectConfigurationRequest request) {
+
+        return associateProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateProtectConfigurationResult> associateProtectConfigurationAsync(
+            final AssociateProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateProtectConfigurationRequest, AssociateProtectConfigurationResult> asyncHandler) {
+        final AssociateProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateProtectConfigurationResult>() {
+            @Override
+            public AssociateProtectConfigurationResult call() throws Exception {
+                AssociateProtectConfigurationResult result = null;
+
+                try {
+                    result = executeAssociateProtectConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -258,6 +293,39 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeCreatePool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProtectConfigurationResult> createProtectConfigurationAsync(CreateProtectConfigurationRequest request) {
+
+        return createProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProtectConfigurationResult> createProtectConfigurationAsync(final CreateProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateProtectConfigurationRequest, CreateProtectConfigurationResult> asyncHandler) {
+        final CreateProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateProtectConfigurationResult>() {
+            @Override
+            public CreateProtectConfigurationResult call() throws Exception {
+                CreateProtectConfigurationResult result = null;
+
+                try {
+                    result = executeCreateProtectConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -442,6 +510,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAccountDefaultProtectConfigurationResult> deleteAccountDefaultProtectConfigurationAsync(
+            DeleteAccountDefaultProtectConfigurationRequest request) {
+
+        return deleteAccountDefaultProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountDefaultProtectConfigurationResult> deleteAccountDefaultProtectConfigurationAsync(
+            final DeleteAccountDefaultProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccountDefaultProtectConfigurationRequest, DeleteAccountDefaultProtectConfigurationResult> asyncHandler) {
+        final DeleteAccountDefaultProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccountDefaultProtectConfigurationResult>() {
+            @Override
+            public DeleteAccountDefaultProtectConfigurationResult call() throws Exception {
+                DeleteAccountDefaultProtectConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteAccountDefaultProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(DeleteConfigurationSetRequest request) {
 
         return deleteConfigurationSetAsync(request, null);
@@ -607,6 +710,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMediaMessageSpendLimitOverrideResult> deleteMediaMessageSpendLimitOverrideAsync(
+            DeleteMediaMessageSpendLimitOverrideRequest request) {
+
+        return deleteMediaMessageSpendLimitOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaMessageSpendLimitOverrideResult> deleteMediaMessageSpendLimitOverrideAsync(
+            final DeleteMediaMessageSpendLimitOverrideRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMediaMessageSpendLimitOverrideRequest, DeleteMediaMessageSpendLimitOverrideResult> asyncHandler) {
+        final DeleteMediaMessageSpendLimitOverrideRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMediaMessageSpendLimitOverrideResult>() {
+            @Override
+            public DeleteMediaMessageSpendLimitOverrideResult call() throws Exception {
+                DeleteMediaMessageSpendLimitOverrideResult result = null;
+
+                try {
+                    result = executeDeleteMediaMessageSpendLimitOverride(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOptOutListResult> deleteOptOutListAsync(DeleteOptOutListRequest request) {
 
         return deleteOptOutListAsync(request, null);
@@ -690,6 +828,39 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeDeletePool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProtectConfigurationResult> deleteProtectConfigurationAsync(DeleteProtectConfigurationRequest request) {
+
+        return deleteProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProtectConfigurationResult> deleteProtectConfigurationAsync(final DeleteProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProtectConfigurationRequest, DeleteProtectConfigurationResult> asyncHandler) {
+        final DeleteProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteProtectConfigurationResult>() {
+            @Override
+            public DeleteProtectConfigurationResult call() throws Exception {
+                DeleteProtectConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteProtectConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1174,6 +1345,40 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeProtectConfigurationsResult> describeProtectConfigurationsAsync(DescribeProtectConfigurationsRequest request) {
+
+        return describeProtectConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProtectConfigurationsResult> describeProtectConfigurationsAsync(
+            final DescribeProtectConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProtectConfigurationsRequest, DescribeProtectConfigurationsResult> asyncHandler) {
+        final DescribeProtectConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProtectConfigurationsResult>() {
+            @Override
+            public DescribeProtectConfigurationsResult call() throws Exception {
+                DescribeProtectConfigurationsResult result = null;
+
+                try {
+                    result = executeDescribeProtectConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRegistrationAttachmentsResult> describeRegistrationAttachmentsAsync(
             DescribeRegistrationAttachmentsRequest request) {
 
@@ -1551,6 +1756,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateProtectConfigurationResult> disassociateProtectConfigurationAsync(
+            DisassociateProtectConfigurationRequest request) {
+
+        return disassociateProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateProtectConfigurationResult> disassociateProtectConfigurationAsync(
+            final DisassociateProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateProtectConfigurationRequest, DisassociateProtectConfigurationResult> asyncHandler) {
+        final DisassociateProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateProtectConfigurationResult>() {
+            @Override
+            public DisassociateProtectConfigurationResult call() throws Exception {
+                DisassociateProtectConfigurationResult result = null;
+
+                try {
+                    result = executeDisassociateProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DiscardRegistrationVersionResult> discardRegistrationVersionAsync(DiscardRegistrationVersionRequest request) {
 
         return discardRegistrationVersionAsync(request, null);
@@ -1568,6 +1808,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeDiscardRegistrationVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtectConfigurationCountryRuleSetResult> getProtectConfigurationCountryRuleSetAsync(
+            GetProtectConfigurationCountryRuleSetRequest request) {
+
+        return getProtectConfigurationCountryRuleSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtectConfigurationCountryRuleSetResult> getProtectConfigurationCountryRuleSetAsync(
+            final GetProtectConfigurationCountryRuleSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetProtectConfigurationCountryRuleSetRequest, GetProtectConfigurationCountryRuleSetResult> asyncHandler) {
+        final GetProtectConfigurationCountryRuleSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetProtectConfigurationCountryRuleSetResult>() {
+            @Override
+            public GetProtectConfigurationCountryRuleSetResult call() throws Exception {
+                GetProtectConfigurationCountryRuleSetResult result = null;
+
+                try {
+                    result = executeGetProtectConfigurationCountryRuleSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1950,6 +2225,39 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<SendMediaMessageResult> sendMediaMessageAsync(SendMediaMessageRequest request) {
+
+        return sendMediaMessageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendMediaMessageResult> sendMediaMessageAsync(final SendMediaMessageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendMediaMessageRequest, SendMediaMessageResult> asyncHandler) {
+        final SendMediaMessageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendMediaMessageResult>() {
+            @Override
+            public SendMediaMessageResult call() throws Exception {
+                SendMediaMessageResult result = null;
+
+                try {
+                    result = executeSendMediaMessage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SendTextMessageResult> sendTextMessageAsync(SendTextMessageRequest request) {
 
         return sendTextMessageAsync(request, null);
@@ -2016,6 +2324,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
     }
 
     @Override
+    public java.util.concurrent.Future<SetAccountDefaultProtectConfigurationResult> setAccountDefaultProtectConfigurationAsync(
+            SetAccountDefaultProtectConfigurationRequest request) {
+
+        return setAccountDefaultProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetAccountDefaultProtectConfigurationResult> setAccountDefaultProtectConfigurationAsync(
+            final SetAccountDefaultProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetAccountDefaultProtectConfigurationRequest, SetAccountDefaultProtectConfigurationResult> asyncHandler) {
+        final SetAccountDefaultProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetAccountDefaultProtectConfigurationResult>() {
+            @Override
+            public SetAccountDefaultProtectConfigurationResult call() throws Exception {
+                SetAccountDefaultProtectConfigurationResult result = null;
+
+                try {
+                    result = executeSetAccountDefaultProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetDefaultMessageTypeResult> setDefaultMessageTypeAsync(SetDefaultMessageTypeRequest request) {
 
         return setDefaultMessageTypeAsync(request, null);
@@ -2066,6 +2409,41 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeSetDefaultSenderId(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetMediaMessageSpendLimitOverrideResult> setMediaMessageSpendLimitOverrideAsync(
+            SetMediaMessageSpendLimitOverrideRequest request) {
+
+        return setMediaMessageSpendLimitOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetMediaMessageSpendLimitOverrideResult> setMediaMessageSpendLimitOverrideAsync(
+            final SetMediaMessageSpendLimitOverrideRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetMediaMessageSpendLimitOverrideRequest, SetMediaMessageSpendLimitOverrideResult> asyncHandler) {
+        final SetMediaMessageSpendLimitOverrideRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetMediaMessageSpendLimitOverrideResult>() {
+            @Override
+            public SetMediaMessageSpendLimitOverrideResult call() throws Exception {
+                SetMediaMessageSpendLimitOverrideResult result = null;
+
+                try {
+                    result = executeSetMediaMessageSpendLimitOverride(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2334,6 +2712,74 @@ public class AmazonPinpointSMSVoiceV2AsyncClient extends AmazonPinpointSMSVoiceV
 
                 try {
                     result = executeUpdatePool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectConfigurationResult> updateProtectConfigurationAsync(UpdateProtectConfigurationRequest request) {
+
+        return updateProtectConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectConfigurationResult> updateProtectConfigurationAsync(final UpdateProtectConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProtectConfigurationRequest, UpdateProtectConfigurationResult> asyncHandler) {
+        final UpdateProtectConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProtectConfigurationResult>() {
+            @Override
+            public UpdateProtectConfigurationResult call() throws Exception {
+                UpdateProtectConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateProtectConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectConfigurationCountryRuleSetResult> updateProtectConfigurationCountryRuleSetAsync(
+            UpdateProtectConfigurationCountryRuleSetRequest request) {
+
+        return updateProtectConfigurationCountryRuleSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProtectConfigurationCountryRuleSetResult> updateProtectConfigurationCountryRuleSetAsync(
+            final UpdateProtectConfigurationCountryRuleSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProtectConfigurationCountryRuleSetRequest, UpdateProtectConfigurationCountryRuleSetResult> asyncHandler) {
+        final UpdateProtectConfigurationCountryRuleSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProtectConfigurationCountryRuleSetResult>() {
+            @Override
+            public UpdateProtectConfigurationCountryRuleSetResult call() throws Exception {
+                UpdateProtectConfigurationCountryRuleSetResult result = null;
+
+                try {
+                    result = executeUpdateProtectConfigurationCountryRuleSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

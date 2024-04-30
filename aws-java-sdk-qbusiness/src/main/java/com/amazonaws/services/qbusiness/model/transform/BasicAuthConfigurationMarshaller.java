@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class BasicAuthConfigurationMarshaller {
 
-    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("secretArn").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
 
     private static final BasicAuthConfigurationMarshaller instance = new BasicAuthConfigurationMarshaller();
 
@@ -48,8 +48,8 @@ public class BasicAuthConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(basicAuthConfiguration.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(basicAuthConfiguration.getSecretArn(), SECRETARN_BINDING);
+            protocolMarshaller.marshall(basicAuthConfiguration.getRoleArn(), ROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

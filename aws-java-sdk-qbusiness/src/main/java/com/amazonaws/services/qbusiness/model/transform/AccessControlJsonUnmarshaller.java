@@ -48,15 +48,15 @@ public class AccessControlJsonUnmarshaller implements Unmarshaller<AccessControl
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("memberRelation", targetDepth)) {
-                    context.nextToken();
-                    accessControl.setMemberRelation(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("principals", targetDepth)) {
                     context.nextToken();
                     accessControl.setPrincipals(new ListUnmarshaller<Principal>(PrincipalJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("memberRelation", targetDepth)) {
+                    context.nextToken();
+                    accessControl.setMemberRelation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

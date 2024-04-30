@@ -33,22 +33,10 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
     private String applicationId;
     /**
      * <p>
-     * The phrases blocked from chat by your chat control configuration.
-     * </p>
-     */
-    private BlockedPhrasesConfigurationUpdate blockedPhrasesConfigurationUpdate;
-    /**
-     * <p>
      * A token that you provide to identify the request to update a Amazon Q Business application chat configuration.
      * </p>
      */
     private String clientToken;
-    /**
-     * <p>
-     * The configuration details for <code>CREATOR_MODE</code>.
-     * </p>
-     */
-    private CreatorModeConfiguration creatorModeConfiguration;
     /**
      * <p>
      * The response scope configured for your application. This determines whether your application uses its retrieval
@@ -57,6 +45,12 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
      * </p>
      */
     private String responseScope;
+    /**
+     * <p>
+     * The phrases blocked from chat by your chat control configuration.
+     * </p>
+     */
+    private BlockedPhrasesConfigurationUpdate blockedPhrasesConfigurationUpdate;
     /**
      * <p>
      * The configured topic specific chat controls you want to update.
@@ -69,6 +63,12 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
      * </p>
      */
     private java.util.List<TopicConfiguration> topicConfigurationsToDelete;
+    /**
+     * <p>
+     * The configuration details for <code>CREATOR_MODE</code>.
+     * </p>
+     */
+    private CreatorModeConfiguration creatorModeConfiguration;
 
     /**
      * <p>
@@ -112,46 +112,6 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The phrases blocked from chat by your chat control configuration.
-     * </p>
-     * 
-     * @param blockedPhrasesConfigurationUpdate
-     *        The phrases blocked from chat by your chat control configuration.
-     */
-
-    public void setBlockedPhrasesConfigurationUpdate(BlockedPhrasesConfigurationUpdate blockedPhrasesConfigurationUpdate) {
-        this.blockedPhrasesConfigurationUpdate = blockedPhrasesConfigurationUpdate;
-    }
-
-    /**
-     * <p>
-     * The phrases blocked from chat by your chat control configuration.
-     * </p>
-     * 
-     * @return The phrases blocked from chat by your chat control configuration.
-     */
-
-    public BlockedPhrasesConfigurationUpdate getBlockedPhrasesConfigurationUpdate() {
-        return this.blockedPhrasesConfigurationUpdate;
-    }
-
-    /**
-     * <p>
-     * The phrases blocked from chat by your chat control configuration.
-     * </p>
-     * 
-     * @param blockedPhrasesConfigurationUpdate
-     *        The phrases blocked from chat by your chat control configuration.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateChatControlsConfigurationRequest withBlockedPhrasesConfigurationUpdate(BlockedPhrasesConfigurationUpdate blockedPhrasesConfigurationUpdate) {
-        setBlockedPhrasesConfigurationUpdate(blockedPhrasesConfigurationUpdate);
-        return this;
-    }
-
-    /**
-     * <p>
      * A token that you provide to identify the request to update a Amazon Q Business application chat configuration.
      * </p>
      * 
@@ -190,46 +150,6 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
 
     public UpdateChatControlsConfigurationRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The configuration details for <code>CREATOR_MODE</code>.
-     * </p>
-     * 
-     * @param creatorModeConfiguration
-     *        The configuration details for <code>CREATOR_MODE</code>.
-     */
-
-    public void setCreatorModeConfiguration(CreatorModeConfiguration creatorModeConfiguration) {
-        this.creatorModeConfiguration = creatorModeConfiguration;
-    }
-
-    /**
-     * <p>
-     * The configuration details for <code>CREATOR_MODE</code>.
-     * </p>
-     * 
-     * @return The configuration details for <code>CREATOR_MODE</code>.
-     */
-
-    public CreatorModeConfiguration getCreatorModeConfiguration() {
-        return this.creatorModeConfiguration;
-    }
-
-    /**
-     * <p>
-     * The configuration details for <code>CREATOR_MODE</code>.
-     * </p>
-     * 
-     * @param creatorModeConfiguration
-     *        The configuration details for <code>CREATOR_MODE</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateChatControlsConfigurationRequest withCreatorModeConfiguration(CreatorModeConfiguration creatorModeConfiguration) {
-        setCreatorModeConfiguration(creatorModeConfiguration);
         return this;
     }
 
@@ -305,6 +225,46 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
 
     public UpdateChatControlsConfigurationRequest withResponseScope(ResponseScope responseScope) {
         this.responseScope = responseScope.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The phrases blocked from chat by your chat control configuration.
+     * </p>
+     * 
+     * @param blockedPhrasesConfigurationUpdate
+     *        The phrases blocked from chat by your chat control configuration.
+     */
+
+    public void setBlockedPhrasesConfigurationUpdate(BlockedPhrasesConfigurationUpdate blockedPhrasesConfigurationUpdate) {
+        this.blockedPhrasesConfigurationUpdate = blockedPhrasesConfigurationUpdate;
+    }
+
+    /**
+     * <p>
+     * The phrases blocked from chat by your chat control configuration.
+     * </p>
+     * 
+     * @return The phrases blocked from chat by your chat control configuration.
+     */
+
+    public BlockedPhrasesConfigurationUpdate getBlockedPhrasesConfigurationUpdate() {
+        return this.blockedPhrasesConfigurationUpdate;
+    }
+
+    /**
+     * <p>
+     * The phrases blocked from chat by your chat control configuration.
+     * </p>
+     * 
+     * @param blockedPhrasesConfigurationUpdate
+     *        The phrases blocked from chat by your chat control configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChatControlsConfigurationRequest withBlockedPhrasesConfigurationUpdate(BlockedPhrasesConfigurationUpdate blockedPhrasesConfigurationUpdate) {
+        setBlockedPhrasesConfigurationUpdate(blockedPhrasesConfigurationUpdate);
         return this;
     }
 
@@ -451,6 +411,46 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The configuration details for <code>CREATOR_MODE</code>.
+     * </p>
+     * 
+     * @param creatorModeConfiguration
+     *        The configuration details for <code>CREATOR_MODE</code>.
+     */
+
+    public void setCreatorModeConfiguration(CreatorModeConfiguration creatorModeConfiguration) {
+        this.creatorModeConfiguration = creatorModeConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration details for <code>CREATOR_MODE</code>.
+     * </p>
+     * 
+     * @return The configuration details for <code>CREATOR_MODE</code>.
+     */
+
+    public CreatorModeConfiguration getCreatorModeConfiguration() {
+        return this.creatorModeConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration details for <code>CREATOR_MODE</code>.
+     * </p>
+     * 
+     * @param creatorModeConfiguration
+     *        The configuration details for <code>CREATOR_MODE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChatControlsConfigurationRequest withCreatorModeConfiguration(CreatorModeConfiguration creatorModeConfiguration) {
+        setCreatorModeConfiguration(creatorModeConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -464,18 +464,18 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getBlockedPhrasesConfigurationUpdate() != null)
-            sb.append("BlockedPhrasesConfigurationUpdate: ").append(getBlockedPhrasesConfigurationUpdate()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getCreatorModeConfiguration() != null)
-            sb.append("CreatorModeConfiguration: ").append(getCreatorModeConfiguration()).append(",");
         if (getResponseScope() != null)
             sb.append("ResponseScope: ").append(getResponseScope()).append(",");
+        if (getBlockedPhrasesConfigurationUpdate() != null)
+            sb.append("BlockedPhrasesConfigurationUpdate: ").append(getBlockedPhrasesConfigurationUpdate()).append(",");
         if (getTopicConfigurationsToCreateOrUpdate() != null)
             sb.append("TopicConfigurationsToCreateOrUpdate: ").append(getTopicConfigurationsToCreateOrUpdate()).append(",");
         if (getTopicConfigurationsToDelete() != null)
-            sb.append("TopicConfigurationsToDelete: ").append(getTopicConfigurationsToDelete());
+            sb.append("TopicConfigurationsToDelete: ").append(getTopicConfigurationsToDelete()).append(",");
+        if (getCreatorModeConfiguration() != null)
+            sb.append("CreatorModeConfiguration: ").append(getCreatorModeConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -494,22 +494,18 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getBlockedPhrasesConfigurationUpdate() == null ^ this.getBlockedPhrasesConfigurationUpdate() == null)
-            return false;
-        if (other.getBlockedPhrasesConfigurationUpdate() != null
-                && other.getBlockedPhrasesConfigurationUpdate().equals(this.getBlockedPhrasesConfigurationUpdate()) == false)
-            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
-        if (other.getCreatorModeConfiguration() == null ^ this.getCreatorModeConfiguration() == null)
-            return false;
-        if (other.getCreatorModeConfiguration() != null && other.getCreatorModeConfiguration().equals(this.getCreatorModeConfiguration()) == false)
-            return false;
         if (other.getResponseScope() == null ^ this.getResponseScope() == null)
             return false;
         if (other.getResponseScope() != null && other.getResponseScope().equals(this.getResponseScope()) == false)
+            return false;
+        if (other.getBlockedPhrasesConfigurationUpdate() == null ^ this.getBlockedPhrasesConfigurationUpdate() == null)
+            return false;
+        if (other.getBlockedPhrasesConfigurationUpdate() != null
+                && other.getBlockedPhrasesConfigurationUpdate().equals(this.getBlockedPhrasesConfigurationUpdate()) == false)
             return false;
         if (other.getTopicConfigurationsToCreateOrUpdate() == null ^ this.getTopicConfigurationsToCreateOrUpdate() == null)
             return false;
@@ -520,6 +516,10 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
             return false;
         if (other.getTopicConfigurationsToDelete() != null && other.getTopicConfigurationsToDelete().equals(this.getTopicConfigurationsToDelete()) == false)
             return false;
+        if (other.getCreatorModeConfiguration() == null ^ this.getCreatorModeConfiguration() == null)
+            return false;
+        if (other.getCreatorModeConfiguration() != null && other.getCreatorModeConfiguration().equals(this.getCreatorModeConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -529,12 +529,12 @@ public class UpdateChatControlsConfigurationRequest extends com.amazonaws.Amazon
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getBlockedPhrasesConfigurationUpdate() == null) ? 0 : getBlockedPhrasesConfigurationUpdate().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getCreatorModeConfiguration() == null) ? 0 : getCreatorModeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getResponseScope() == null) ? 0 : getResponseScope().hashCode());
+        hashCode = prime * hashCode + ((getBlockedPhrasesConfigurationUpdate() == null) ? 0 : getBlockedPhrasesConfigurationUpdate().hashCode());
         hashCode = prime * hashCode + ((getTopicConfigurationsToCreateOrUpdate() == null) ? 0 : getTopicConfigurationsToCreateOrUpdate().hashCode());
         hashCode = prime * hashCode + ((getTopicConfigurationsToDelete() == null) ? 0 : getTopicConfigurationsToDelete().hashCode());
+        hashCode = prime * hashCode + ((getCreatorModeConfiguration() == null) ? 0 : getCreatorModeConfiguration().hashCode());
         return hashCode;
     }
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The details of a share.
+ * The details of a resource share.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ShareDetails" target="_top">AWS API
@@ -30,66 +30,72 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for a share offer for an analytics store .
+     * The ID of the resource share.
      * </p>
      */
     private String shareId;
     /**
      * <p>
-     * The resource Arn of the analytics store being shared.
+     * The Arn of the shared resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The principal subscriber is the account the analytics store data is being shared with.
+     * The ID of the shared resource.
+     * </p>
+     */
+    private String resourceId;
+    /**
+     * <p>
+     * The principal subscriber is the account that is sharing the resource.
      * </p>
      */
     private String principalSubscriber;
     /**
      * <p>
-     * The account ID for the data owner. The owner creates the share offer.
+     * The account ID for the data owner. The owner creates the resource share.
      * </p>
      */
     private String ownerId;
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The status message for a share. It provides more details on the status of the share.
+     * The status message for a resource share. It provides additional details about the share status.
      * </p>
      */
     private String statusMessage;
     /**
      * <p>
-     * The name of the share.
+     * The name of the resource share.
      * </p>
      */
     private String shareName;
     /**
      * <p>
-     * The timestamp for when the share was created.
+     * The timestamp of when the resource share was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The timestamp of the share update.
+     * The timestamp of the resource share update.
      * </p>
      */
     private java.util.Date updateTime;
 
     /**
      * <p>
-     * The ID for a share offer for an analytics store .
+     * The ID of the resource share.
      * </p>
      * 
      * @param shareId
-     *        The ID for a share offer for an analytics store .
+     *        The ID of the resource share.
      */
 
     public void setShareId(String shareId) {
@@ -98,10 +104,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for a share offer for an analytics store .
+     * The ID of the resource share.
      * </p>
      * 
-     * @return The ID for a share offer for an analytics store .
+     * @return The ID of the resource share.
      */
 
     public String getShareId() {
@@ -110,11 +116,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for a share offer for an analytics store .
+     * The ID of the resource share.
      * </p>
      * 
      * @param shareId
-     *        The ID for a share offer for an analytics store .
+     *        The ID of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,11 +131,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource Arn of the analytics store being shared.
+     * The Arn of the shared resource.
      * </p>
      * 
      * @param resourceArn
-     *        The resource Arn of the analytics store being shared.
+     *        The Arn of the shared resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -138,10 +144,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource Arn of the analytics store being shared.
+     * The Arn of the shared resource.
      * </p>
      * 
-     * @return The resource Arn of the analytics store being shared.
+     * @return The Arn of the shared resource.
      */
 
     public String getResourceArn() {
@@ -150,11 +156,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource Arn of the analytics store being shared.
+     * The Arn of the shared resource.
      * </p>
      * 
      * @param resourceArn
-     *        The resource Arn of the analytics store being shared.
+     *        The Arn of the shared resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +171,51 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal subscriber is the account the analytics store data is being shared with.
+     * The ID of the shared resource.
+     * </p>
+     * 
+     * @param resourceId
+     *        The ID of the shared resource.
+     */
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the shared resource.
+     * </p>
+     * 
+     * @return The ID of the shared resource.
+     */
+
+    public String getResourceId() {
+        return this.resourceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the shared resource.
+     * </p>
+     * 
+     * @param resourceId
+     *        The ID of the shared resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareDetails withResourceId(String resourceId) {
+        setResourceId(resourceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The principal subscriber is the account that is sharing the resource.
      * </p>
      * 
      * @param principalSubscriber
-     *        The principal subscriber is the account the analytics store data is being shared with.
+     *        The principal subscriber is the account that is sharing the resource.
      */
 
     public void setPrincipalSubscriber(String principalSubscriber) {
@@ -178,10 +224,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal subscriber is the account the analytics store data is being shared with.
+     * The principal subscriber is the account that is sharing the resource.
      * </p>
      * 
-     * @return The principal subscriber is the account the analytics store data is being shared with.
+     * @return The principal subscriber is the account that is sharing the resource.
      */
 
     public String getPrincipalSubscriber() {
@@ -190,11 +236,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal subscriber is the account the analytics store data is being shared with.
+     * The principal subscriber is the account that is sharing the resource.
      * </p>
      * 
      * @param principalSubscriber
-     *        The principal subscriber is the account the analytics store data is being shared with.
+     *        The principal subscriber is the account that is sharing the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +251,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID for the data owner. The owner creates the share offer.
+     * The account ID for the data owner. The owner creates the resource share.
      * </p>
      * 
      * @param ownerId
-     *        The account ID for the data owner. The owner creates the share offer.
+     *        The account ID for the data owner. The owner creates the resource share.
      */
 
     public void setOwnerId(String ownerId) {
@@ -218,10 +264,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID for the data owner. The owner creates the share offer.
+     * The account ID for the data owner. The owner creates the resource share.
      * </p>
      * 
-     * @return The account ID for the data owner. The owner creates the share offer.
+     * @return The account ID for the data owner. The owner creates the resource share.
      */
 
     public String getOwnerId() {
@@ -230,11 +276,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID for the data owner. The owner creates the share offer.
+     * The account ID for the data owner. The owner creates the resource share.
      * </p>
      * 
      * @param ownerId
-     *        The account ID for the data owner. The owner creates the share offer.
+     *        The account ID for the data owner. The owner creates the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +291,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      * 
      * @param status
-     *        The status of a share.
+     *        The status of the share.
      * @see ShareStatus
      */
 
@@ -259,10 +305,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      * 
-     * @return The status of a share.
+     * @return The status of the share.
      * @see ShareStatus
      */
 
@@ -272,11 +318,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      * 
      * @param status
-     *        The status of a share.
+     *        The status of the share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */
@@ -288,11 +334,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a share.
+     * The status of the share.
      * </p>
      * 
      * @param status
-     *        The status of a share.
+     *        The status of the share.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
      */
@@ -304,11 +350,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status message for a share. It provides more details on the status of the share.
+     * The status message for a resource share. It provides additional details about the share status.
      * </p>
      * 
      * @param statusMessage
-     *        The status message for a share. It provides more details on the status of the share.
+     *        The status message for a resource share. It provides additional details about the share status.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -317,10 +363,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status message for a share. It provides more details on the status of the share.
+     * The status message for a resource share. It provides additional details about the share status.
      * </p>
      * 
-     * @return The status message for a share. It provides more details on the status of the share.
+     * @return The status message for a resource share. It provides additional details about the share status.
      */
 
     public String getStatusMessage() {
@@ -329,11 +375,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status message for a share. It provides more details on the status of the share.
+     * The status message for a resource share. It provides additional details about the share status.
      * </p>
      * 
      * @param statusMessage
-     *        The status message for a share. It provides more details on the status of the share.
+     *        The status message for a resource share. It provides additional details about the share status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,11 +390,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the share.
+     * The name of the resource share.
      * </p>
      * 
      * @param shareName
-     *        The name of the share.
+     *        The name of the resource share.
      */
 
     public void setShareName(String shareName) {
@@ -357,10 +403,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the share.
+     * The name of the resource share.
      * </p>
      * 
-     * @return The name of the share.
+     * @return The name of the resource share.
      */
 
     public String getShareName() {
@@ -369,11 +415,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the share.
+     * The name of the resource share.
      * </p>
      * 
      * @param shareName
-     *        The name of the share.
+     *        The name of the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,11 +430,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp for when the share was created.
+     * The timestamp of when the resource share was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp for when the share was created.
+     *        The timestamp of when the resource share was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -397,10 +443,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp for when the share was created.
+     * The timestamp of when the resource share was created.
      * </p>
      * 
-     * @return The timestamp for when the share was created.
+     * @return The timestamp of when the resource share was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -409,11 +455,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp for when the share was created.
+     * The timestamp of when the resource share was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp for when the share was created.
+     *        The timestamp of when the resource share was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,11 +470,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of the share update.
+     * The timestamp of the resource share update.
      * </p>
      * 
      * @param updateTime
-     *        The timestamp of the share update.
+     *        The timestamp of the resource share update.
      */
 
     public void setUpdateTime(java.util.Date updateTime) {
@@ -437,10 +483,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of the share update.
+     * The timestamp of the resource share update.
      * </p>
      * 
-     * @return The timestamp of the share update.
+     * @return The timestamp of the resource share update.
      */
 
     public java.util.Date getUpdateTime() {
@@ -449,11 +495,11 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of the share update.
+     * The timestamp of the resource share update.
      * </p>
      * 
      * @param updateTime
-     *        The timestamp of the share update.
+     *        The timestamp of the resource share update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,6 +524,8 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
             sb.append("ShareId: ").append(getShareId()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getResourceId() != null)
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getPrincipalSubscriber() != null)
             sb.append("PrincipalSubscriber: ").append(getPrincipalSubscriber()).append(",");
         if (getOwnerId() != null)
@@ -513,6 +561,10 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
+        if (other.getResourceId() == null ^ this.getResourceId() == null)
+            return false;
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
         if (other.getPrincipalSubscriber() == null ^ this.getPrincipalSubscriber() == null)
             return false;
@@ -552,6 +604,7 @@ public class ShareDetails implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getShareId() == null) ? 0 : getShareId().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getPrincipalSubscriber() == null) ? 0 : getPrincipalSubscriber().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

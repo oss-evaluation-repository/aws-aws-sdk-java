@@ -30,10 +30,10 @@ public class MessageUsefulnessFeedback implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A comment given by an end user on the usefulness of an AI-generated chat message.
+     * The usefulness value assigned by an end user to a message.
      * </p>
      */
-    private String comment;
+    private String usefulness;
     /**
      * <p>
      * The reason for a usefulness rating.
@@ -42,54 +42,73 @@ public class MessageUsefulnessFeedback implements Serializable, Cloneable, Struc
     private String reason;
     /**
      * <p>
+     * A comment given by an end user on the usefulness of an AI-generated chat message.
+     * </p>
+     */
+    private String comment;
+    /**
+     * <p>
      * The timestamp for when the feedback was submitted.
      * </p>
      */
     private java.util.Date submittedAt;
+
     /**
      * <p>
      * The usefulness value assigned by an end user to a message.
      * </p>
-     */
-    private String usefulness;
-
-    /**
-     * <p>
-     * A comment given by an end user on the usefulness of an AI-generated chat message.
-     * </p>
      * 
-     * @param comment
-     *        A comment given by an end user on the usefulness of an AI-generated chat message.
+     * @param usefulness
+     *        The usefulness value assigned by an end user to a message.
+     * @see MessageUsefulness
      */
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setUsefulness(String usefulness) {
+        this.usefulness = usefulness;
     }
 
     /**
      * <p>
-     * A comment given by an end user on the usefulness of an AI-generated chat message.
+     * The usefulness value assigned by an end user to a message.
      * </p>
      * 
-     * @return A comment given by an end user on the usefulness of an AI-generated chat message.
+     * @return The usefulness value assigned by an end user to a message.
+     * @see MessageUsefulness
      */
 
-    public String getComment() {
-        return this.comment;
+    public String getUsefulness() {
+        return this.usefulness;
     }
 
     /**
      * <p>
-     * A comment given by an end user on the usefulness of an AI-generated chat message.
+     * The usefulness value assigned by an end user to a message.
      * </p>
      * 
-     * @param comment
-     *        A comment given by an end user on the usefulness of an AI-generated chat message.
+     * @param usefulness
+     *        The usefulness value assigned by an end user to a message.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MessageUsefulness
      */
 
-    public MessageUsefulnessFeedback withComment(String comment) {
-        setComment(comment);
+    public MessageUsefulnessFeedback withUsefulness(String usefulness) {
+        setUsefulness(usefulness);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The usefulness value assigned by an end user to a message.
+     * </p>
+     * 
+     * @param usefulness
+     *        The usefulness value assigned by an end user to a message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MessageUsefulness
+     */
+
+    public MessageUsefulnessFeedback withUsefulness(MessageUsefulness usefulness) {
+        this.usefulness = usefulness.toString();
         return this;
     }
 
@@ -154,6 +173,46 @@ public class MessageUsefulnessFeedback implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * A comment given by an end user on the usefulness of an AI-generated chat message.
+     * </p>
+     * 
+     * @param comment
+     *        A comment given by an end user on the usefulness of an AI-generated chat message.
+     */
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    /**
+     * <p>
+     * A comment given by an end user on the usefulness of an AI-generated chat message.
+     * </p>
+     * 
+     * @return A comment given by an end user on the usefulness of an AI-generated chat message.
+     */
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    /**
+     * <p>
+     * A comment given by an end user on the usefulness of an AI-generated chat message.
+     * </p>
+     * 
+     * @param comment
+     *        A comment given by an end user on the usefulness of an AI-generated chat message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageUsefulnessFeedback withComment(String comment) {
+        setComment(comment);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp for when the feedback was submitted.
      * </p>
      * 
@@ -193,65 +252,6 @@ public class MessageUsefulnessFeedback implements Serializable, Cloneable, Struc
     }
 
     /**
-     * <p>
-     * The usefulness value assigned by an end user to a message.
-     * </p>
-     * 
-     * @param usefulness
-     *        The usefulness value assigned by an end user to a message.
-     * @see MessageUsefulness
-     */
-
-    public void setUsefulness(String usefulness) {
-        this.usefulness = usefulness;
-    }
-
-    /**
-     * <p>
-     * The usefulness value assigned by an end user to a message.
-     * </p>
-     * 
-     * @return The usefulness value assigned by an end user to a message.
-     * @see MessageUsefulness
-     */
-
-    public String getUsefulness() {
-        return this.usefulness;
-    }
-
-    /**
-     * <p>
-     * The usefulness value assigned by an end user to a message.
-     * </p>
-     * 
-     * @param usefulness
-     *        The usefulness value assigned by an end user to a message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see MessageUsefulness
-     */
-
-    public MessageUsefulnessFeedback withUsefulness(String usefulness) {
-        setUsefulness(usefulness);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The usefulness value assigned by an end user to a message.
-     * </p>
-     * 
-     * @param usefulness
-     *        The usefulness value assigned by an end user to a message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see MessageUsefulness
-     */
-
-    public MessageUsefulnessFeedback withUsefulness(MessageUsefulness usefulness) {
-        this.usefulness = usefulness.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -263,14 +263,14 @@ public class MessageUsefulnessFeedback implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getComment() != null)
-            sb.append("Comment: ").append(getComment()).append(",");
+        if (getUsefulness() != null)
+            sb.append("Usefulness: ").append(getUsefulness()).append(",");
         if (getReason() != null)
             sb.append("Reason: ").append(getReason()).append(",");
+        if (getComment() != null)
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getSubmittedAt() != null)
-            sb.append("SubmittedAt: ").append(getSubmittedAt()).append(",");
-        if (getUsefulness() != null)
-            sb.append("Usefulness: ").append(getUsefulness());
+            sb.append("SubmittedAt: ").append(getSubmittedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -285,21 +285,21 @@ public class MessageUsefulnessFeedback implements Serializable, Cloneable, Struc
         if (obj instanceof MessageUsefulnessFeedback == false)
             return false;
         MessageUsefulnessFeedback other = (MessageUsefulnessFeedback) obj;
-        if (other.getComment() == null ^ this.getComment() == null)
+        if (other.getUsefulness() == null ^ this.getUsefulness() == null)
             return false;
-        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+        if (other.getUsefulness() != null && other.getUsefulness().equals(this.getUsefulness()) == false)
             return false;
         if (other.getReason() == null ^ this.getReason() == null)
             return false;
         if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
+        if (other.getComment() == null ^ this.getComment() == null)
+            return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+            return false;
         if (other.getSubmittedAt() == null ^ this.getSubmittedAt() == null)
             return false;
         if (other.getSubmittedAt() != null && other.getSubmittedAt().equals(this.getSubmittedAt()) == false)
-            return false;
-        if (other.getUsefulness() == null ^ this.getUsefulness() == null)
-            return false;
-        if (other.getUsefulness() != null && other.getUsefulness().equals(this.getUsefulness()) == false)
             return false;
         return true;
     }
@@ -309,10 +309,10 @@ public class MessageUsefulnessFeedback implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
-        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
-        hashCode = prime * hashCode + ((getSubmittedAt() == null) ? 0 : getSubmittedAt().hashCode());
         hashCode = prime * hashCode + ((getUsefulness() == null) ? 0 : getUsefulness().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getSubmittedAt() == null) ? 0 : getSubmittedAt().hashCode());
         return hashCode;
     }
 

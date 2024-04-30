@@ -31,10 +31,10 @@ public class ListDataSourcesRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<String> INDEXID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("indexId").build();
-    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
     private static final ListDataSourcesRequestMarshaller instance = new ListDataSourcesRequestMarshaller();
 
@@ -54,8 +54,8 @@ public class ListDataSourcesRequestMarshaller {
         try {
             protocolMarshaller.marshall(listDataSourcesRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(listDataSourcesRequest.getIndexId(), INDEXID_BINDING);
-            protocolMarshaller.marshall(listDataSourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listDataSourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listDataSourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

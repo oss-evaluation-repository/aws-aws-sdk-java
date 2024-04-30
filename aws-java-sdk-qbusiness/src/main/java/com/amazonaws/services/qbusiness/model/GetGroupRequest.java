@@ -33,10 +33,10 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String applicationId;
     /**
      * <p>
-     * The identifier of the data source the group is attached to.
+     * The identifier of the index the group is attached to.
      * </p>
      */
-    private String dataSourceId;
+    private String indexId;
     /**
      * <p>
      * The name of the group.
@@ -45,10 +45,10 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String groupName;
     /**
      * <p>
-     * The identifier of the index the group is attached to.
+     * The identifier of the data source the group is attached to.
      * </p>
      */
-    private String indexId;
+    private String dataSourceId;
 
     /**
      * <p>
@@ -92,41 +92,41 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The identifier of the data source the group is attached to.
+     * The identifier of the index the group is attached to.
      * </p>
      * 
-     * @param dataSourceId
-     *        The identifier of the data source the group is attached to.
+     * @param indexId
+     *        The identifier of the index the group is attached to.
      */
 
-    public void setDataSourceId(String dataSourceId) {
-        this.dataSourceId = dataSourceId;
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
     }
 
     /**
      * <p>
-     * The identifier of the data source the group is attached to.
+     * The identifier of the index the group is attached to.
      * </p>
      * 
-     * @return The identifier of the data source the group is attached to.
+     * @return The identifier of the index the group is attached to.
      */
 
-    public String getDataSourceId() {
-        return this.dataSourceId;
+    public String getIndexId() {
+        return this.indexId;
     }
 
     /**
      * <p>
-     * The identifier of the data source the group is attached to.
+     * The identifier of the index the group is attached to.
      * </p>
      * 
-     * @param dataSourceId
-     *        The identifier of the data source the group is attached to.
+     * @param indexId
+     *        The identifier of the index the group is attached to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetGroupRequest withDataSourceId(String dataSourceId) {
-        setDataSourceId(dataSourceId);
+    public GetGroupRequest withIndexId(String indexId) {
+        setIndexId(indexId);
         return this;
     }
 
@@ -172,41 +172,41 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The identifier of the index the group is attached to.
+     * The identifier of the data source the group is attached to.
      * </p>
      * 
-     * @param indexId
-     *        The identifier of the index the group is attached to.
+     * @param dataSourceId
+     *        The identifier of the data source the group is attached to.
      */
 
-    public void setIndexId(String indexId) {
-        this.indexId = indexId;
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
     }
 
     /**
      * <p>
-     * The identifier of the index the group is attached to.
+     * The identifier of the data source the group is attached to.
      * </p>
      * 
-     * @return The identifier of the index the group is attached to.
+     * @return The identifier of the data source the group is attached to.
      */
 
-    public String getIndexId() {
-        return this.indexId;
+    public String getDataSourceId() {
+        return this.dataSourceId;
     }
 
     /**
      * <p>
-     * The identifier of the index the group is attached to.
+     * The identifier of the data source the group is attached to.
      * </p>
      * 
-     * @param indexId
-     *        The identifier of the index the group is attached to.
+     * @param dataSourceId
+     *        The identifier of the data source the group is attached to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetGroupRequest withIndexId(String indexId) {
-        setIndexId(indexId);
+    public GetGroupRequest withDataSourceId(String dataSourceId) {
+        setDataSourceId(dataSourceId);
         return this;
     }
 
@@ -224,12 +224,12 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getDataSourceId() != null)
-            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
+        if (getIndexId() != null)
+            sb.append("IndexId: ").append(getIndexId()).append(",");
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
-        if (getIndexId() != null)
-            sb.append("IndexId: ").append(getIndexId());
+        if (getDataSourceId() != null)
+            sb.append("DataSourceId: ").append(getDataSourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -248,17 +248,17 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
+        if (other.getIndexId() == null ^ this.getIndexId() == null)
             return false;
-        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
+        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
             return false;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
-        if (other.getIndexId() == null ^ this.getIndexId() == null)
+        if (other.getDataSourceId() == null ^ this.getDataSourceId() == null)
             return false;
-        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+        if (other.getDataSourceId() != null && other.getDataSourceId().equals(this.getDataSourceId()) == false)
             return false;
         return true;
     }
@@ -269,9 +269,9 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceId() == null) ? 0 : getDataSourceId().hashCode());
         return hashCode;
     }
 

@@ -27,14 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RuleMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> EXCLUDEDUSERSANDGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excludedUsersAndGroups").build();
     private static final MarshallingInfo<StructuredPojo> INCLUDEDUSERSANDGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includedUsersAndGroups").build();
-    private static final MarshallingInfo<StructuredPojo> RULECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ruleConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> EXCLUDEDUSERSANDGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excludedUsersAndGroups").build();
     private static final MarshallingInfo<String> RULETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ruleType").build();
+    private static final MarshallingInfo<StructuredPojo> RULECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ruleConfiguration").build();
 
     private static final RuleMarshaller instance = new RuleMarshaller();
 
@@ -52,10 +52,10 @@ public class RuleMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(rule.getExcludedUsersAndGroups(), EXCLUDEDUSERSANDGROUPS_BINDING);
             protocolMarshaller.marshall(rule.getIncludedUsersAndGroups(), INCLUDEDUSERSANDGROUPS_BINDING);
-            protocolMarshaller.marshall(rule.getRuleConfiguration(), RULECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(rule.getExcludedUsersAndGroups(), EXCLUDEDUSERSANDGROUPS_BINDING);
             protocolMarshaller.marshall(rule.getRuleType(), RULETYPE_BINDING);
+            protocolMarshaller.marshall(rule.getRuleConfiguration(), RULECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

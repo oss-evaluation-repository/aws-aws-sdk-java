@@ -33,10 +33,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String applicationId;
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business user mapping.
+     * The user emails attached to a user mapping.
      * </p>
      */
-    private String clientToken;
+    private String userId;
     /**
      * <p>
      * The list of user aliases in the mapping.
@@ -45,10 +45,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<UserAlias> userAliases;
     /**
      * <p>
-     * The user emails attached to a user mapping.
+     * A token that you provide to identify the request to create your Amazon Q Business user mapping.
      * </p>
      */
-    private String userId;
+    private String clientToken;
 
     /**
      * <p>
@@ -92,41 +92,41 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business user mapping.
+     * The user emails attached to a user mapping.
      * </p>
      * 
-     * @param clientToken
-     *        A token that you provide to identify the request to create your Amazon Q Business user mapping.
+     * @param userId
+     *        The user emails attached to a user mapping.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business user mapping.
+     * The user emails attached to a user mapping.
      * </p>
      * 
-     * @return A token that you provide to identify the request to create your Amazon Q Business user mapping.
+     * @return The user emails attached to a user mapping.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getUserId() {
+        return this.userId;
     }
 
     /**
      * <p>
-     * A token that you provide to identify the request to create your Amazon Q Business user mapping.
+     * The user emails attached to a user mapping.
      * </p>
      * 
-     * @param clientToken
-     *        A token that you provide to identify the request to create your Amazon Q Business user mapping.
+     * @param userId
+     *        The user emails attached to a user mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateUserRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public CreateUserRequest withUserId(String userId) {
+        setUserId(userId);
         return this;
     }
 
@@ -202,41 +202,41 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The user emails attached to a user mapping.
+     * A token that you provide to identify the request to create your Amazon Q Business user mapping.
      * </p>
      * 
-     * @param userId
-     *        The user emails attached to a user mapping.
+     * @param clientToken
+     *        A token that you provide to identify the request to create your Amazon Q Business user mapping.
      */
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The user emails attached to a user mapping.
+     * A token that you provide to identify the request to create your Amazon Q Business user mapping.
      * </p>
      * 
-     * @return The user emails attached to a user mapping.
+     * @return A token that you provide to identify the request to create your Amazon Q Business user mapping.
      */
 
-    public String getUserId() {
-        return this.userId;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The user emails attached to a user mapping.
+     * A token that you provide to identify the request to create your Amazon Q Business user mapping.
      * </p>
      * 
-     * @param userId
-     *        The user emails attached to a user mapping.
+     * @param clientToken
+     *        A token that you provide to identify the request to create your Amazon Q Business user mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateUserRequest withUserId(String userId) {
-        setUserId(userId);
+    public CreateUserRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -254,12 +254,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getUserAliases() != null)
             sb.append("UserAliases: ").append(getUserAliases()).append(",");
-        if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId());
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -278,17 +278,17 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
             return false;
         if (other.getUserAliases() == null ^ this.getUserAliases() == null)
             return false;
         if (other.getUserAliases() != null && other.getUserAliases().equals(this.getUserAliases()) == false)
             return false;
-        if (other.getUserId() == null ^ this.getUserId() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         return true;
     }
@@ -299,9 +299,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getUserAliases() == null) ? 0 : getUserAliases().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getUserAliases() == null) ? 0 : getUserAliases().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

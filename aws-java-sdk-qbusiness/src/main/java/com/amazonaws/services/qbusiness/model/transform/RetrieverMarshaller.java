@@ -29,14 +29,14 @@ public class RetrieverMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationId").build();
-    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
     private static final MarshallingInfo<String> RETRIEVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retrieverId").build();
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("status").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
 
     private static final RetrieverMarshaller instance = new RetrieverMarshaller();
 
@@ -55,10 +55,10 @@ public class RetrieverMarshaller {
 
         try {
             protocolMarshaller.marshall(retriever.getApplicationId(), APPLICATIONID_BINDING);
-            protocolMarshaller.marshall(retriever.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(retriever.getRetrieverId(), RETRIEVERID_BINDING);
-            protocolMarshaller.marshall(retriever.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(retriever.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(retriever.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(retriever.getDisplayName(), DISPLAYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

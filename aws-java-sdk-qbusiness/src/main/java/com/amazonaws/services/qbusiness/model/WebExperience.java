@@ -30,10 +30,22 @@ public class WebExperience implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The identifier of your Amazon Q Business web experience.
+     * </p>
+     */
+    private String webExperienceId;
+    /**
+     * <p>
      * The Unix timestamp when the Amazon Q Business application was last updated.
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * The Unix timestamp when your Amazon Q Business web experience was updated.
+     * </p>
+     */
+    private java.util.Date updatedAt;
     /**
      * <p>
      * The endpoint URLs for your Amazon Q Business web experience. The URLs are unique and fully hosted by Amazon Web
@@ -47,18 +59,46 @@ public class WebExperience implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String status;
-    /**
-     * <p>
-     * The Unix timestamp when your Amazon Q Business web experience was updated.
-     * </p>
-     */
-    private java.util.Date updatedAt;
+
     /**
      * <p>
      * The identifier of your Amazon Q Business web experience.
      * </p>
+     * 
+     * @param webExperienceId
+     *        The identifier of your Amazon Q Business web experience.
      */
-    private String webExperienceId;
+
+    public void setWebExperienceId(String webExperienceId) {
+        this.webExperienceId = webExperienceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of your Amazon Q Business web experience.
+     * </p>
+     * 
+     * @return The identifier of your Amazon Q Business web experience.
+     */
+
+    public String getWebExperienceId() {
+        return this.webExperienceId;
+    }
+
+    /**
+     * <p>
+     * The identifier of your Amazon Q Business web experience.
+     * </p>
+     * 
+     * @param webExperienceId
+     *        The identifier of your Amazon Q Business web experience.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebExperience withWebExperienceId(String webExperienceId) {
+        setWebExperienceId(webExperienceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -97,6 +137,46 @@ public class WebExperience implements Serializable, Cloneable, StructuredPojo {
 
     public WebExperience withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when your Amazon Q Business web experience was updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The Unix timestamp when your Amazon Q Business web experience was updated.
+     */
+
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when your Amazon Q Business web experience was updated.
+     * </p>
+     * 
+     * @return The Unix timestamp when your Amazon Q Business web experience was updated.
+     */
+
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when your Amazon Q Business web experience was updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The Unix timestamp when your Amazon Q Business web experience was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebExperience withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
         return this;
     }
 
@@ -206,86 +286,6 @@ public class WebExperience implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The Unix timestamp when your Amazon Q Business web experience was updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when your Amazon Q Business web experience was updated.
-     */
-
-    public void setUpdatedAt(java.util.Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when your Amazon Q Business web experience was updated.
-     * </p>
-     * 
-     * @return The Unix timestamp when your Amazon Q Business web experience was updated.
-     */
-
-    public java.util.Date getUpdatedAt() {
-        return this.updatedAt;
-    }
-
-    /**
-     * <p>
-     * The Unix timestamp when your Amazon Q Business web experience was updated.
-     * </p>
-     * 
-     * @param updatedAt
-     *        The Unix timestamp when your Amazon Q Business web experience was updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public WebExperience withUpdatedAt(java.util.Date updatedAt) {
-        setUpdatedAt(updatedAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of your Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param webExperienceId
-     *        The identifier of your Amazon Q Business web experience.
-     */
-
-    public void setWebExperienceId(String webExperienceId) {
-        this.webExperienceId = webExperienceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of your Amazon Q Business web experience.
-     * </p>
-     * 
-     * @return The identifier of your Amazon Q Business web experience.
-     */
-
-    public String getWebExperienceId() {
-        return this.webExperienceId;
-    }
-
-    /**
-     * <p>
-     * The identifier of your Amazon Q Business web experience.
-     * </p>
-     * 
-     * @param webExperienceId
-     *        The identifier of your Amazon Q Business web experience.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public WebExperience withWebExperienceId(String webExperienceId) {
-        setWebExperienceId(webExperienceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,16 +297,16 @@ public class WebExperience implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWebExperienceId() != null)
+            sb.append("WebExperienceId: ").append(getWebExperienceId()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getUpdatedAt() != null)
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
         if (getDefaultEndpoint() != null)
             sb.append("DefaultEndpoint: ").append(getDefaultEndpoint()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
-        if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
-        if (getWebExperienceId() != null)
-            sb.append("WebExperienceId: ").append(getWebExperienceId());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -321,9 +321,17 @@ public class WebExperience implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof WebExperience == false)
             return false;
         WebExperience other = (WebExperience) obj;
+        if (other.getWebExperienceId() == null ^ this.getWebExperienceId() == null)
+            return false;
+        if (other.getWebExperienceId() != null && other.getWebExperienceId().equals(this.getWebExperienceId()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
+            return false;
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
         if (other.getDefaultEndpoint() == null ^ this.getDefaultEndpoint() == null)
             return false;
@@ -333,14 +341,6 @@ public class WebExperience implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
-            return false;
-        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
-            return false;
-        if (other.getWebExperienceId() == null ^ this.getWebExperienceId() == null)
-            return false;
-        if (other.getWebExperienceId() != null && other.getWebExperienceId().equals(this.getWebExperienceId()) == false)
-            return false;
         return true;
     }
 
@@ -349,11 +349,11 @@ public class WebExperience implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWebExperienceId() == null) ? 0 : getWebExperienceId().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getDefaultEndpoint() == null) ? 0 : getDefaultEndpoint().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
-        hashCode = prime * hashCode + ((getWebExperienceId() == null) ? 0 : getWebExperienceId().hashCode());
         return hashCode;
     }
 

@@ -48,13 +48,13 @@ public class DateAttributeBoostingConfigurationJsonUnmarshaller implements Unmar
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("boostingDurationInSeconds", targetDepth)) {
-                    context.nextToken();
-                    dateAttributeBoostingConfiguration.setBoostingDurationInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
-                }
                 if (context.testExpression("boostingLevel", targetDepth)) {
                     context.nextToken();
                     dateAttributeBoostingConfiguration.setBoostingLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("boostingDurationInSeconds", targetDepth)) {
+                    context.nextToken();
+                    dateAttributeBoostingConfiguration.setBoostingDurationInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

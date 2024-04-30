@@ -32,6 +32,18 @@ public class ActionReview implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The identifier of the plugin associated with the action review.
+     * </p>
+     */
+    private String pluginId;
+    /**
+     * <p>
+     * The type of plugin.
+     * </p>
+     */
+    private String pluginType;
+    /**
+     * <p>
      * Field values that an end user needs to provide to Amazon Q Business for Amazon Q Business to perform the
      * requested plugin action.
      * </p>
@@ -43,18 +55,105 @@ public class ActionReview implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String payloadFieldNameSeparator;
+
     /**
      * <p>
      * The identifier of the plugin associated with the action review.
      * </p>
+     * 
+     * @param pluginId
+     *        The identifier of the plugin associated with the action review.
      */
-    private String pluginId;
+
+    public void setPluginId(String pluginId) {
+        this.pluginId = pluginId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the plugin associated with the action review.
+     * </p>
+     * 
+     * @return The identifier of the plugin associated with the action review.
+     */
+
+    public String getPluginId() {
+        return this.pluginId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the plugin associated with the action review.
+     * </p>
+     * 
+     * @param pluginId
+     *        The identifier of the plugin associated with the action review.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionReview withPluginId(String pluginId) {
+        setPluginId(pluginId);
+        return this;
+    }
+
     /**
      * <p>
      * The type of plugin.
      * </p>
+     * 
+     * @param pluginType
+     *        The type of plugin.
+     * @see PluginType
      */
-    private String pluginType;
+
+    public void setPluginType(String pluginType) {
+        this.pluginType = pluginType;
+    }
+
+    /**
+     * <p>
+     * The type of plugin.
+     * </p>
+     * 
+     * @return The type of plugin.
+     * @see PluginType
+     */
+
+    public String getPluginType() {
+        return this.pluginType;
+    }
+
+    /**
+     * <p>
+     * The type of plugin.
+     * </p>
+     * 
+     * @param pluginType
+     *        The type of plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginType
+     */
+
+    public ActionReview withPluginType(String pluginType) {
+        setPluginType(pluginType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of plugin.
+     * </p>
+     * 
+     * @param pluginType
+     *        The type of plugin.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PluginType
+     */
+
+    public ActionReview withPluginType(PluginType pluginType) {
+        this.pluginType = pluginType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -171,105 +270,6 @@ public class ActionReview implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The identifier of the plugin associated with the action review.
-     * </p>
-     * 
-     * @param pluginId
-     *        The identifier of the plugin associated with the action review.
-     */
-
-    public void setPluginId(String pluginId) {
-        this.pluginId = pluginId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the plugin associated with the action review.
-     * </p>
-     * 
-     * @return The identifier of the plugin associated with the action review.
-     */
-
-    public String getPluginId() {
-        return this.pluginId;
-    }
-
-    /**
-     * <p>
-     * The identifier of the plugin associated with the action review.
-     * </p>
-     * 
-     * @param pluginId
-     *        The identifier of the plugin associated with the action review.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ActionReview withPluginId(String pluginId) {
-        setPluginId(pluginId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of plugin.
-     * </p>
-     * 
-     * @param pluginType
-     *        The type of plugin.
-     * @see PluginType
-     */
-
-    public void setPluginType(String pluginType) {
-        this.pluginType = pluginType;
-    }
-
-    /**
-     * <p>
-     * The type of plugin.
-     * </p>
-     * 
-     * @return The type of plugin.
-     * @see PluginType
-     */
-
-    public String getPluginType() {
-        return this.pluginType;
-    }
-
-    /**
-     * <p>
-     * The type of plugin.
-     * </p>
-     * 
-     * @param pluginType
-     *        The type of plugin.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PluginType
-     */
-
-    public ActionReview withPluginType(String pluginType) {
-        setPluginType(pluginType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of plugin.
-     * </p>
-     * 
-     * @param pluginType
-     *        The type of plugin.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PluginType
-     */
-
-    public ActionReview withPluginType(PluginType pluginType) {
-        this.pluginType = pluginType.toString();
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,14 +281,14 @@ public class ActionReview implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPayload() != null)
-            sb.append("Payload: ").append(getPayload()).append(",");
-        if (getPayloadFieldNameSeparator() != null)
-            sb.append("PayloadFieldNameSeparator: ").append(getPayloadFieldNameSeparator()).append(",");
         if (getPluginId() != null)
             sb.append("PluginId: ").append(getPluginId()).append(",");
         if (getPluginType() != null)
-            sb.append("PluginType: ").append(getPluginType());
+            sb.append("PluginType: ").append(getPluginType()).append(",");
+        if (getPayload() != null)
+            sb.append("Payload: ").append(getPayload()).append(",");
+        if (getPayloadFieldNameSeparator() != null)
+            sb.append("PayloadFieldNameSeparator: ").append(getPayloadFieldNameSeparator());
         sb.append("}");
         return sb.toString();
     }
@@ -303,14 +303,6 @@ public class ActionReview implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ActionReview == false)
             return false;
         ActionReview other = (ActionReview) obj;
-        if (other.getPayload() == null ^ this.getPayload() == null)
-            return false;
-        if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
-            return false;
-        if (other.getPayloadFieldNameSeparator() == null ^ this.getPayloadFieldNameSeparator() == null)
-            return false;
-        if (other.getPayloadFieldNameSeparator() != null && other.getPayloadFieldNameSeparator().equals(this.getPayloadFieldNameSeparator()) == false)
-            return false;
         if (other.getPluginId() == null ^ this.getPluginId() == null)
             return false;
         if (other.getPluginId() != null && other.getPluginId().equals(this.getPluginId()) == false)
@@ -318,6 +310,14 @@ public class ActionReview implements Serializable, Cloneable, StructuredPojo {
         if (other.getPluginType() == null ^ this.getPluginType() == null)
             return false;
         if (other.getPluginType() != null && other.getPluginType().equals(this.getPluginType()) == false)
+            return false;
+        if (other.getPayload() == null ^ this.getPayload() == null)
+            return false;
+        if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
+            return false;
+        if (other.getPayloadFieldNameSeparator() == null ^ this.getPayloadFieldNameSeparator() == null)
+            return false;
+        if (other.getPayloadFieldNameSeparator() != null && other.getPayloadFieldNameSeparator().equals(this.getPayloadFieldNameSeparator()) == false)
             return false;
         return true;
     }
@@ -327,10 +327,10 @@ public class ActionReview implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
-        hashCode = prime * hashCode + ((getPayloadFieldNameSeparator() == null) ? 0 : getPayloadFieldNameSeparator().hashCode());
         hashCode = prime * hashCode + ((getPluginId() == null) ? 0 : getPluginId().hashCode());
         hashCode = prime * hashCode + ((getPluginType() == null) ? 0 : getPluginType().hashCode());
+        hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
+        hashCode = prime * hashCode + ((getPayloadFieldNameSeparator() == null) ? 0 : getPayloadFieldNameSeparator().hashCode());
         return hashCode;
     }
 

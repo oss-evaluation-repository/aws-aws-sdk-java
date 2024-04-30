@@ -30,17 +30,60 @@ public class OAuth2ClientCredentialConfiguration implements Serializable, Clonea
 
     /**
      * <p>
+     * The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.
+     * </p>
+     */
+    private String secretArn;
+    /**
+     * <p>
      * The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0 authentication credentials stored in a
      * Secrets Manager secret.
      * </p>
      */
     private String roleArn;
+
     /**
      * <p>
      * The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.
      * </p>
+     * 
+     * @param secretArn
+     *        The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin
+     *        configuration.
      */
-    private String secretArn;
+
+    public void setSecretArn(String secretArn) {
+        this.secretArn = secretArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.
+     * </p>
+     * 
+     * @return The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin
+     *         configuration.
+     */
+
+    public String getSecretArn() {
+        return this.secretArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.
+     * </p>
+     * 
+     * @param secretArn
+     *        The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin
+     *        configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OAuth2ClientCredentialConfiguration withSecretArn(String secretArn) {
+        setSecretArn(secretArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -89,49 +132,6 @@ public class OAuth2ClientCredentialConfiguration implements Serializable, Clonea
     }
 
     /**
-     * <p>
-     * The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.
-     * </p>
-     * 
-     * @param secretArn
-     *        The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin
-     *        configuration.
-     */
-
-    public void setSecretArn(String secretArn) {
-        this.secretArn = secretArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.
-     * </p>
-     * 
-     * @return The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin
-     *         configuration.
-     */
-
-    public String getSecretArn() {
-        return this.secretArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin configuration.
-     * </p>
-     * 
-     * @param secretArn
-     *        The ARN of the Secrets Manager secret that stores the OAuth 2.0 credentials/token used for plugin
-     *        configuration.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public OAuth2ClientCredentialConfiguration withSecretArn(String secretArn) {
-        setSecretArn(secretArn);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -143,10 +143,10 @@ public class OAuth2ClientCredentialConfiguration implements Serializable, Clonea
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSecretArn() != null)
-            sb.append("SecretArn: ").append(getSecretArn());
+            sb.append("SecretArn: ").append(getSecretArn()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -161,13 +161,13 @@ public class OAuth2ClientCredentialConfiguration implements Serializable, Clonea
         if (obj instanceof OAuth2ClientCredentialConfiguration == false)
             return false;
         OAuth2ClientCredentialConfiguration other = (OAuth2ClientCredentialConfiguration) obj;
-        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
-            return false;
-        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
-            return false;
         if (other.getSecretArn() == null ^ this.getSecretArn() == null)
             return false;
         if (other.getSecretArn() != null && other.getSecretArn().equals(this.getSecretArn()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         return true;
     }
@@ -177,8 +177,8 @@ public class OAuth2ClientCredentialConfiguration implements Serializable, Clonea
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }
 

@@ -64,6 +64,11 @@ public class AnonymousUserEmbeddingExperienceConfigurationJsonUnmarshaller imple
                     anonymousUserEmbeddingExperienceConfiguration.setQSearchBar(AnonymousUserQSearchBarEmbeddingConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("GenerativeQnA", targetDepth)) {
+                    context.nextToken();
+                    anonymousUserEmbeddingExperienceConfiguration.setGenerativeQnA(AnonymousUserGenerativeQnAEmbeddingConfigurationJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
