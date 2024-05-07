@@ -39,10 +39,11 @@ public class UpdateProfileResourceAssociationRequest extends com.amazonaws.Amazo
     private String profileResourceAssociationId;
     /**
      * <p>
-     * If you are adding a DNS Firewall rule group, include also a priority in this format:
+     * If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order
+     * for the rule groups, starting with the priority assinged the lowest value.
      * </p>
      * <p>
-     * <code>Key=FirewallRuleGroupPriority,Value=100</code>.
+     * The allowed values for priority are between 100 and 9900.
      * </p>
      */
     private String resourceProperties;
@@ -129,16 +130,18 @@ public class UpdateProfileResourceAssociationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * If you are adding a DNS Firewall rule group, include also a priority in this format:
+     * If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order
+     * for the rule groups, starting with the priority assinged the lowest value.
      * </p>
      * <p>
-     * <code>Key=FirewallRuleGroupPriority,Value=100</code>.
+     * The allowed values for priority are between 100 and 9900.
      * </p>
      * 
      * @param resourceProperties
-     *        If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
+     *        If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the
+     *        processing order for the rule groups, starting with the priority assinged the lowest value. </p>
      *        <p>
-     *        <code>Key=FirewallRuleGroupPriority,Value=100</code>.
+     *        The allowed values for priority are between 100 and 9900.
      */
 
     public void setResourceProperties(String resourceProperties) {
@@ -147,15 +150,17 @@ public class UpdateProfileResourceAssociationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * If you are adding a DNS Firewall rule group, include also a priority in this format:
+     * If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order
+     * for the rule groups, starting with the priority assinged the lowest value.
      * </p>
      * <p>
-     * <code>Key=FirewallRuleGroupPriority,Value=100</code>.
+     * The allowed values for priority are between 100 and 9900.
      * </p>
      * 
-     * @return If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
+     * @return If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the
+     *         processing order for the rule groups, starting with the priority assinged the lowest value. </p>
      *         <p>
-     *         <code>Key=FirewallRuleGroupPriority,Value=100</code>.
+     *         The allowed values for priority are between 100 and 9900.
      */
 
     public String getResourceProperties() {
@@ -164,16 +169,18 @@ public class UpdateProfileResourceAssociationRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * If you are adding a DNS Firewall rule group, include also a priority in this format:
+     * If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order
+     * for the rule groups, starting with the priority assinged the lowest value.
      * </p>
      * <p>
-     * <code>Key=FirewallRuleGroupPriority,Value=100</code>.
+     * The allowed values for priority are between 100 and 9900.
      * </p>
      * 
      * @param resourceProperties
-     *        If you are adding a DNS Firewall rule group, include also a priority in this format:</p>
+     *        If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the
+     *        processing order for the rule groups, starting with the priority assinged the lowest value. </p>
      *        <p>
-     *        <code>Key=FirewallRuleGroupPriority,Value=100</code>.
+     *        The allowed values for priority are between 100 and 9900.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1143,6 +1143,41 @@ public interface AWSResilienceHubAsync extends AWSResilienceHub {
 
     /**
      * <p>
+     * Indicates the list of resource drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentResourceDriftsRequest
+     * @return A Java Future containing the result of the ListAppAssessmentResourceDrifts operation returned by the
+     *         service.
+     * @sample AWSResilienceHubAsync.ListAppAssessmentResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            ListAppAssessmentResourceDriftsRequest listAppAssessmentResourceDriftsRequest);
+
+    /**
+     * <p>
+     * Indicates the list of resource drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentResourceDriftsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAppAssessmentResourceDrifts operation returned by the
+     *         service.
+     * @sample AWSResilienceHubAsyncHandler.ListAppAssessmentResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            ListAppAssessmentResourceDriftsRequest listAppAssessmentResourceDriftsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAppAssessmentResourceDriftsRequest, ListAppAssessmentResourceDriftsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the assessments for an Resilience Hub application. You can use request parameters to refine the results for
      * the response object.
      * </p>

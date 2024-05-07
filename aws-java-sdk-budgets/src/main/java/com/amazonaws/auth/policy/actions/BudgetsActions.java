@@ -63,6 +63,12 @@ public enum BudgetsActions implements Action {
     DescribeSubscribersForNotification("budgets:DescribeSubscribersForNotification"),
     /** Action for the ExecuteBudgetAction operation. */
     ExecuteBudgetAction("budgets:ExecuteBudgetAction"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("budgets:ListTagsForResource"),
+    /** Action for the TagResource operation. */
+    TagResource("budgets:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("budgets:UntagResource"),
     /** Action for the UpdateBudget operation. */
     UpdateBudget("budgets:UpdateBudget"),
     /** Action for the UpdateBudgetAction operation. */

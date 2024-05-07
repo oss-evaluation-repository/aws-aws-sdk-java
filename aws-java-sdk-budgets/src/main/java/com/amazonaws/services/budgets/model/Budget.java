@@ -95,8 +95,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, Spend> plannedBudgetLimits;
     /**
      * <p>
-     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     * <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.
+     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>
+     * , or <code>CostCategory</code>, that are applied to a budget.
      * </p>
      * <p>
      * Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:
@@ -596,8 +596,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     * <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.
+     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>
+     * , or <code>CostCategory</code>, that are applied to a budget.
      * </p>
      * <p>
      * Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:
@@ -630,8 +630,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     *         <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+     * @return The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>,
+     *         <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
      *         <p>
      *         Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI
      *         budgets:
@@ -670,8 +670,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     * <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.
+     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>
+     * , or <code>CostCategory</code>, that are applied to a budget.
      * </p>
      * <p>
      * Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:
@@ -705,8 +705,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param costFilters
-     *        The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     *        <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+     *        The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>,
+     *        <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
      *        <p>
      *        Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI
      *        budgets:
@@ -745,8 +745,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     * <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.
+     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>
+     * , or <code>CostCategory</code>, that are applied to a budget.
      * </p>
      * <p>
      * Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:
@@ -780,8 +780,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param costFilters
-     *        The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     *        <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+     *        The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>,
+     *        <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
      *        <p>
      *        Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI
      *        budgets:

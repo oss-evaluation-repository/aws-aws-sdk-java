@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DriftType {
 
-    ApplicationCompliance("ApplicationCompliance");
+    ApplicationCompliance("ApplicationCompliance"),
+    AppComponentResiliencyComplianceStatus("AppComponentResiliencyComplianceStatus");
 
     private String value;
 

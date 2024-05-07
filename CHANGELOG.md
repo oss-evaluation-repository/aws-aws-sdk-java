@@ -1,3 +1,20 @@
+# __1.12.717__ __2024-05-07__
+## __AWS B2B Data Interchange__
+  - ### Features
+    - Documentation update to clarify the MappingTemplate definition.
+
+## __AWS Budgets__
+  - ### Features
+    - This release adds tag support for budgets and budget actions.
+
+## __AWS Resilience Hub__
+  - ### Features
+    - AWS Resilience Hub has expanded its drift detection capabilities by introducing a new type of drift detection - application resource drift. This new enhancement detects changes, such as the addition or deletion of resources within the application's input sources.
+
+## __Route 53 Profiles__
+  - ### Features
+    - Doc only update for Route 53 profiles that fixes some link  issues
+
 # __1.12.716__ __2024-05-06__
 ## __AWS Elemental MediaLive__
   - ### Features

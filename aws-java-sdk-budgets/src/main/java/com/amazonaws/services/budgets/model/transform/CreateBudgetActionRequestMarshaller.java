@@ -46,6 +46,8 @@ public class CreateBudgetActionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalModel").build();
     private static final MarshallingInfo<List> SUBSCRIBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Subscribers").build();
+    private static final MarshallingInfo<List> RESOURCETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ResourceTags").build();
 
     private static final CreateBudgetActionRequestMarshaller instance = new CreateBudgetActionRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateBudgetActionRequestMarshaller {
             protocolMarshaller.marshall(createBudgetActionRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(createBudgetActionRequest.getApprovalModel(), APPROVALMODEL_BINDING);
             protocolMarshaller.marshall(createBudgetActionRequest.getSubscribers(), SUBSCRIBERS_BINDING);
+            protocolMarshaller.marshall(createBudgetActionRequest.getResourceTags(), RESOURCETAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

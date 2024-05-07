@@ -378,6 +378,21 @@ public class AbstractAWSResilienceHubAsync extends AbstractAWSResilienceHub impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            ListAppAssessmentResourceDriftsRequest request) {
+
+        return listAppAssessmentResourceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            ListAppAssessmentResourceDriftsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAppAssessmentResourceDriftsRequest, ListAppAssessmentResourceDriftsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppAssessmentsResult> listAppAssessmentsAsync(ListAppAssessmentsRequest request) {
 
         return listAppAssessmentsAsync(request, null);

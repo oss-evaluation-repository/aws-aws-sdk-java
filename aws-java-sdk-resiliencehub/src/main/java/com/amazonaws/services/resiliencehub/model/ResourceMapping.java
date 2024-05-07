@@ -30,13 +30,15 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the application this resource is mapped to.
+     * Name of the application this resource is mapped to when the <code>mappingType</code> is
+     * <code>AppRegistryApp</code>.
      * </p>
      */
     private String appRegistryAppName;
     /**
      * <p>
-     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace that this resource is mapped to when the
+     * <code>mappingType</code> is <code>EKS</code>.
      * </p>
      * <note>
      * <p>
@@ -47,7 +49,8 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
     private String eksSourceName;
     /**
      * <p>
-     * The name of the CloudFormation stack this resource is mapped to.
+     * Name of the CloudFormation stack this resource is mapped to when the <code>mappingType</code> is
+     * <code>CfnStack</code>.
      * </p>
      */
     private String logicalStackName;
@@ -55,36 +58,6 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Specifies the type of resource mapping.
      * </p>
-     * <dl>
-     * <dt>AppRegistryApp</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another application. The name of the application is contained in the
-     * <code>appRegistryAppName</code> property.
-     * </p>
-     * </dd>
-     * <dt>CfnStack</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the
-     * <code>logicalStackName</code> property.
-     * </p>
-     * </dd>
-     * <dt>Resource</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another resource. The name of the resource is contained in the
-     * <code>resourceName</code> property.
-     * </p>
-     * </dd>
-     * <dt>ResourceGroup</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     * <code>resourceGroupName</code> property.
-     * </p>
-     * </dd>
-     * </dl>
      */
     private String mappingType;
     /**
@@ -95,30 +68,34 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
     private PhysicalResourceId physicalResourceId;
     /**
      * <p>
-     * Name of the resource group that the resource is mapped to.
+     * Name of the Resource Groups that this resource is mapped to when the <code>mappingType</code> is
+     * <code>ResourceGroup</code>.
      * </p>
      */
     private String resourceGroupName;
     /**
      * <p>
-     * Name of the resource that the resource is mapped to.
+     * Name of the resource that this resource is mapped to when the <code>mappingType</code> is <code>Resource</code>.
      * </p>
      */
     private String resourceName;
     /**
      * <p>
-     * The short name of the Terraform source.
+     * Name of the Terraform source that this resource is mapped to when the <code>mappingType</code> is
+     * <code>Terraform</code>.
      * </p>
      */
     private String terraformSourceName;
 
     /**
      * <p>
-     * The name of the application this resource is mapped to.
+     * Name of the application this resource is mapped to when the <code>mappingType</code> is
+     * <code>AppRegistryApp</code>.
      * </p>
      * 
      * @param appRegistryAppName
-     *        The name of the application this resource is mapped to.
+     *        Name of the application this resource is mapped to when the <code>mappingType</code> is
+     *        <code>AppRegistryApp</code>.
      */
 
     public void setAppRegistryAppName(String appRegistryAppName) {
@@ -127,10 +104,12 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the application this resource is mapped to.
+     * Name of the application this resource is mapped to when the <code>mappingType</code> is
+     * <code>AppRegistryApp</code>.
      * </p>
      * 
-     * @return The name of the application this resource is mapped to.
+     * @return Name of the application this resource is mapped to when the <code>mappingType</code> is
+     *         <code>AppRegistryApp</code>.
      */
 
     public String getAppRegistryAppName() {
@@ -139,11 +118,13 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the application this resource is mapped to.
+     * Name of the application this resource is mapped to when the <code>mappingType</code> is
+     * <code>AppRegistryApp</code>.
      * </p>
      * 
      * @param appRegistryAppName
-     *        The name of the application this resource is mapped to.
+     *        Name of the application this resource is mapped to when the <code>mappingType</code> is
+     *        <code>AppRegistryApp</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +135,8 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace that this resource is mapped to when the
+     * <code>mappingType</code> is <code>EKS</code>.
      * </p>
      * <note>
      * <p>
@@ -163,7 +145,8 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param eksSourceName
-     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace that this resource is mapped to when
+     *        the <code>mappingType</code> is <code>EKS</code>.</p> <note>
      *        <p>
      *        This parameter accepts values in "eks-cluster/namespace" format.
      *        </p>
@@ -175,7 +158,8 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace that this resource is mapped to when the
+     * <code>mappingType</code> is <code>EKS</code>.
      * </p>
      * <note>
      * <p>
@@ -183,7 +167,8 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+     * @return Name of the Amazon Elastic Kubernetes Service cluster and namespace that this resource is mapped to when
+     *         the <code>mappingType</code> is <code>EKS</code>.</p> <note>
      *         <p>
      *         This parameter accepts values in "eks-cluster/namespace" format.
      *         </p>
@@ -195,7 +180,8 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace that this resource is mapped to when the
+     * <code>mappingType</code> is <code>EKS</code>.
      * </p>
      * <note>
      * <p>
@@ -204,7 +190,8 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param eksSourceName
-     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace that this resource is mapped to when
+     *        the <code>mappingType</code> is <code>EKS</code>.</p> <note>
      *        <p>
      *        This parameter accepts values in "eks-cluster/namespace" format.
      *        </p>
@@ -218,11 +205,13 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudFormation stack this resource is mapped to.
+     * Name of the CloudFormation stack this resource is mapped to when the <code>mappingType</code> is
+     * <code>CfnStack</code>.
      * </p>
      * 
      * @param logicalStackName
-     *        The name of the CloudFormation stack this resource is mapped to.
+     *        Name of the CloudFormation stack this resource is mapped to when the <code>mappingType</code> is
+     *        <code>CfnStack</code>.
      */
 
     public void setLogicalStackName(String logicalStackName) {
@@ -231,10 +220,12 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudFormation stack this resource is mapped to.
+     * Name of the CloudFormation stack this resource is mapped to when the <code>mappingType</code> is
+     * <code>CfnStack</code>.
      * </p>
      * 
-     * @return The name of the CloudFormation stack this resource is mapped to.
+     * @return Name of the CloudFormation stack this resource is mapped to when the <code>mappingType</code> is
+     *         <code>CfnStack</code>.
      */
 
     public String getLogicalStackName() {
@@ -243,11 +234,13 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the CloudFormation stack this resource is mapped to.
+     * Name of the CloudFormation stack this resource is mapped to when the <code>mappingType</code> is
+     * <code>CfnStack</code>.
      * </p>
      * 
      * @param logicalStackName
-     *        The name of the CloudFormation stack this resource is mapped to.
+     *        Name of the CloudFormation stack this resource is mapped to when the <code>mappingType</code> is
+     *        <code>CfnStack</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,68 +253,9 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Specifies the type of resource mapping.
      * </p>
-     * <dl>
-     * <dt>AppRegistryApp</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another application. The name of the application is contained in the
-     * <code>appRegistryAppName</code> property.
-     * </p>
-     * </dd>
-     * <dt>CfnStack</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the
-     * <code>logicalStackName</code> property.
-     * </p>
-     * </dd>
-     * <dt>Resource</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another resource. The name of the resource is contained in the
-     * <code>resourceName</code> property.
-     * </p>
-     * </dd>
-     * <dt>ResourceGroup</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     * <code>resourceGroupName</code> property.
-     * </p>
-     * </dd>
-     * </dl>
      * 
      * @param mappingType
-     *        Specifies the type of resource mapping.</p>
-     *        <dl>
-     *        <dt>AppRegistryApp</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to another application. The name of the application is contained in the
-     *        <code>appRegistryAppName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>CfnStack</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the
-     *        <code>logicalStackName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>Resource</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to another resource. The name of the resource is contained in the
-     *        <code>resourceName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>ResourceGroup</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     *        <code>resourceGroupName</code> property.
-     *        </p>
-     *        </dd>
+     *        Specifies the type of resource mapping.
      * @see ResourceMappingType
      */
 
@@ -333,67 +267,8 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Specifies the type of resource mapping.
      * </p>
-     * <dl>
-     * <dt>AppRegistryApp</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another application. The name of the application is contained in the
-     * <code>appRegistryAppName</code> property.
-     * </p>
-     * </dd>
-     * <dt>CfnStack</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the
-     * <code>logicalStackName</code> property.
-     * </p>
-     * </dd>
-     * <dt>Resource</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another resource. The name of the resource is contained in the
-     * <code>resourceName</code> property.
-     * </p>
-     * </dd>
-     * <dt>ResourceGroup</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     * <code>resourceGroupName</code> property.
-     * </p>
-     * </dd>
-     * </dl>
      * 
-     * @return Specifies the type of resource mapping.</p>
-     *         <dl>
-     *         <dt>AppRegistryApp</dt>
-     *         <dd>
-     *         <p>
-     *         The resource is mapped to another application. The name of the application is contained in the
-     *         <code>appRegistryAppName</code> property.
-     *         </p>
-     *         </dd>
-     *         <dt>CfnStack</dt>
-     *         <dd>
-     *         <p>
-     *         The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in
-     *         the <code>logicalStackName</code> property.
-     *         </p>
-     *         </dd>
-     *         <dt>Resource</dt>
-     *         <dd>
-     *         <p>
-     *         The resource is mapped to another resource. The name of the resource is contained in the
-     *         <code>resourceName</code> property.
-     *         </p>
-     *         </dd>
-     *         <dt>ResourceGroup</dt>
-     *         <dd>
-     *         <p>
-     *         The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     *         <code>resourceGroupName</code> property.
-     *         </p>
-     *         </dd>
+     * @return Specifies the type of resource mapping.
      * @see ResourceMappingType
      */
 
@@ -405,68 +280,9 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Specifies the type of resource mapping.
      * </p>
-     * <dl>
-     * <dt>AppRegistryApp</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another application. The name of the application is contained in the
-     * <code>appRegistryAppName</code> property.
-     * </p>
-     * </dd>
-     * <dt>CfnStack</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the
-     * <code>logicalStackName</code> property.
-     * </p>
-     * </dd>
-     * <dt>Resource</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another resource. The name of the resource is contained in the
-     * <code>resourceName</code> property.
-     * </p>
-     * </dd>
-     * <dt>ResourceGroup</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     * <code>resourceGroupName</code> property.
-     * </p>
-     * </dd>
-     * </dl>
      * 
      * @param mappingType
-     *        Specifies the type of resource mapping.</p>
-     *        <dl>
-     *        <dt>AppRegistryApp</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to another application. The name of the application is contained in the
-     *        <code>appRegistryAppName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>CfnStack</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the
-     *        <code>logicalStackName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>Resource</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to another resource. The name of the resource is contained in the
-     *        <code>resourceName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>ResourceGroup</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     *        <code>resourceGroupName</code> property.
-     *        </p>
-     *        </dd>
+     *        Specifies the type of resource mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceMappingType
      */
@@ -480,68 +296,9 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Specifies the type of resource mapping.
      * </p>
-     * <dl>
-     * <dt>AppRegistryApp</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another application. The name of the application is contained in the
-     * <code>appRegistryAppName</code> property.
-     * </p>
-     * </dd>
-     * <dt>CfnStack</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the
-     * <code>logicalStackName</code> property.
-     * </p>
-     * </dd>
-     * <dt>Resource</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to another resource. The name of the resource is contained in the
-     * <code>resourceName</code> property.
-     * </p>
-     * </dd>
-     * <dt>ResourceGroup</dt>
-     * <dd>
-     * <p>
-     * The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     * <code>resourceGroupName</code> property.
-     * </p>
-     * </dd>
-     * </dl>
      * 
      * @param mappingType
-     *        Specifies the type of resource mapping.</p>
-     *        <dl>
-     *        <dt>AppRegistryApp</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to another application. The name of the application is contained in the
-     *        <code>appRegistryAppName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>CfnStack</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the
-     *        <code>logicalStackName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>Resource</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to another resource. The name of the resource is contained in the
-     *        <code>resourceName</code> property.
-     *        </p>
-     *        </dd>
-     *        <dt>ResourceGroup</dt>
-     *        <dd>
-     *        <p>
-     *        The resource is mapped to Resource Groups. The name of the resource group is contained in the
-     *        <code>resourceGroupName</code> property.
-     *        </p>
-     *        </dd>
+     *        Specifies the type of resource mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceMappingType
      */
@@ -593,11 +350,13 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the resource group that the resource is mapped to.
+     * Name of the Resource Groups that this resource is mapped to when the <code>mappingType</code> is
+     * <code>ResourceGroup</code>.
      * </p>
      * 
      * @param resourceGroupName
-     *        Name of the resource group that the resource is mapped to.
+     *        Name of the Resource Groups that this resource is mapped to when the <code>mappingType</code> is
+     *        <code>ResourceGroup</code>.
      */
 
     public void setResourceGroupName(String resourceGroupName) {
@@ -606,10 +365,12 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the resource group that the resource is mapped to.
+     * Name of the Resource Groups that this resource is mapped to when the <code>mappingType</code> is
+     * <code>ResourceGroup</code>.
      * </p>
      * 
-     * @return Name of the resource group that the resource is mapped to.
+     * @return Name of the Resource Groups that this resource is mapped to when the <code>mappingType</code> is
+     *         <code>ResourceGroup</code>.
      */
 
     public String getResourceGroupName() {
@@ -618,11 +379,13 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the resource group that the resource is mapped to.
+     * Name of the Resource Groups that this resource is mapped to when the <code>mappingType</code> is
+     * <code>ResourceGroup</code>.
      * </p>
      * 
      * @param resourceGroupName
-     *        Name of the resource group that the resource is mapped to.
+     *        Name of the Resource Groups that this resource is mapped to when the <code>mappingType</code> is
+     *        <code>ResourceGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -633,11 +396,12 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the resource that the resource is mapped to.
+     * Name of the resource that this resource is mapped to when the <code>mappingType</code> is <code>Resource</code>.
      * </p>
      * 
      * @param resourceName
-     *        Name of the resource that the resource is mapped to.
+     *        Name of the resource that this resource is mapped to when the <code>mappingType</code> is
+     *        <code>Resource</code>.
      */
 
     public void setResourceName(String resourceName) {
@@ -646,10 +410,11 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the resource that the resource is mapped to.
+     * Name of the resource that this resource is mapped to when the <code>mappingType</code> is <code>Resource</code>.
      * </p>
      * 
-     * @return Name of the resource that the resource is mapped to.
+     * @return Name of the resource that this resource is mapped to when the <code>mappingType</code> is
+     *         <code>Resource</code>.
      */
 
     public String getResourceName() {
@@ -658,11 +423,12 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the resource that the resource is mapped to.
+     * Name of the resource that this resource is mapped to when the <code>mappingType</code> is <code>Resource</code>.
      * </p>
      * 
      * @param resourceName
-     *        Name of the resource that the resource is mapped to.
+     *        Name of the resource that this resource is mapped to when the <code>mappingType</code> is
+     *        <code>Resource</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -673,11 +439,13 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The short name of the Terraform source.
+     * Name of the Terraform source that this resource is mapped to when the <code>mappingType</code> is
+     * <code>Terraform</code>.
      * </p>
      * 
      * @param terraformSourceName
-     *        The short name of the Terraform source.
+     *        Name of the Terraform source that this resource is mapped to when the <code>mappingType</code> is
+     *        <code>Terraform</code>.
      */
 
     public void setTerraformSourceName(String terraformSourceName) {
@@ -686,10 +454,12 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The short name of the Terraform source.
+     * Name of the Terraform source that this resource is mapped to when the <code>mappingType</code> is
+     * <code>Terraform</code>.
      * </p>
      * 
-     * @return The short name of the Terraform source.
+     * @return Name of the Terraform source that this resource is mapped to when the <code>mappingType</code> is
+     *         <code>Terraform</code>.
      */
 
     public String getTerraformSourceName() {
@@ -698,11 +468,13 @@ public class ResourceMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The short name of the Terraform source.
+     * Name of the Terraform source that this resource is mapped to when the <code>mappingType</code> is
+     * <code>Terraform</code>.
      * </p>
      * 
      * @param terraformSourceName
-     *        The short name of the Terraform source.
+     *        Name of the Terraform source that this resource is mapped to when the <code>mappingType</code> is
+     *        <code>Terraform</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

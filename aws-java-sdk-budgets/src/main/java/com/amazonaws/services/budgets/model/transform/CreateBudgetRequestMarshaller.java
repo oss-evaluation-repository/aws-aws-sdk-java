@@ -34,6 +34,8 @@ public class CreateBudgetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Budget").build();
     private static final MarshallingInfo<List> NOTIFICATIONSWITHSUBSCRIBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationsWithSubscribers").build();
+    private static final MarshallingInfo<List> RESOURCETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ResourceTags").build();
 
     private static final CreateBudgetRequestMarshaller instance = new CreateBudgetRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class CreateBudgetRequestMarshaller {
             protocolMarshaller.marshall(createBudgetRequest.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(createBudgetRequest.getBudget(), BUDGET_BINDING);
             protocolMarshaller.marshall(createBudgetRequest.getNotificationsWithSubscribers(), NOTIFICATIONSWITHSUBSCRIBERS_BINDING);
+            protocolMarshaller.marshall(createBudgetRequest.getResourceTags(), RESOURCETAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

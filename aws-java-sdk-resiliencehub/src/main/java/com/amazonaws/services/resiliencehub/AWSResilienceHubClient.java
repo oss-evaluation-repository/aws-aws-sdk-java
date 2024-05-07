@@ -82,26 +82,26 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.resiliencehub.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resiliencehub.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resiliencehub.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.resiliencehub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.resiliencehub.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resiliencehub.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resiliencehub.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.resiliencehub.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.resiliencehub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.resiliencehub.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.resiliencehub.model.AWSResilienceHubException.class));
 
     public static AWSResilienceHubClientBuilder builder() {
@@ -2098,6 +2098,73 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<ListAppAssessmentComplianceDriftsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListAppAssessmentComplianceDriftsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Indicates the list of resource drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentResourceDriftsRequest
+     * @return Result of the ListAppAssessmentResourceDrifts operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.ListAppAssessmentResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAppAssessmentResourceDriftsResult listAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppAssessmentResourceDrifts(request);
+    }
+
+    @SdkInternalApi
+    final ListAppAssessmentResourceDriftsResult executeListAppAssessmentResourceDrifts(
+            ListAppAssessmentResourceDriftsRequest listAppAssessmentResourceDriftsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppAssessmentResourceDriftsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppAssessmentResourceDriftsRequest> request = null;
+        Response<ListAppAssessmentResourceDriftsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppAssessmentResourceDriftsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAppAssessmentResourceDriftsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppAssessmentResourceDrifts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppAssessmentResourceDriftsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAppAssessmentResourceDriftsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

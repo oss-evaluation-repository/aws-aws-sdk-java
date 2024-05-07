@@ -35,34 +35,38 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
      * Number of recommendations that were excluded from the assessment.
      * </p>
      * <p>
-     * For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 7, it
-     * indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
+     * For example, if the <code>excludedCount</code> for Alarms coverage scoring component is 7, it indicates that 7
+     * Amazon CloudWatch alarms are excluded from the assessment.
      * </p>
      */
     private Long excludedCount;
     /**
      * <p>
-     * Number of issues that must be resolved to obtain the maximum possible score for the scoring component. For SOPs,
-     * alarms, and FIS experiments, these are the number of recommendations that must be implemented. For compliance, it
-     * is the number of Application Components that has breached the resiliency policy.
+     * Number of recommendations that must be implemented to obtain the maximum possible score for the scoring
+     * component. For SOPs, alarms, and tests, these are the number of recommendations that must be implemented. For
+     * compliance, these are the number of Application Components that have breached the resiliency policy.
      * </p>
      * <p>
-     * For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 5,
-     * it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible score.
+     * For example, if the <code>outstandingCount</code> for Alarms coverage scoring component is 5, it indicates that 5
+     * Amazon CloudWatch alarms need to be implemented to achieve the maximum possible score.
      * </p>
      */
     private Long outstandingCount;
     /**
      * <p>
-     * Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code> is 20
-     * points, it indicates the maximum possible score you can achieve for your application when you run a new
-     * assessment after implementing all the Resilience Hub recommendations.
+     * Maximum possible score that can be obtained for the scoring component.
+     * </p>
+     * <p>
+     * For example, if the <code>possibleScore</code> is 20 points, it indicates the maximum possible score you can
+     * achieve for the scoring component when you run a new assessment after implementing all the Resilience Hub
+     * recommendations.
      * </p>
      */
     private Double possibleScore;
     /**
      * <p>
-     * Resiliency score of your application.
+     * Resiliency score points given for the scoring component. The score is always less than or equal to the
+     * <code>possibleScore</code>.
      * </p>
      */
     private Double score;
@@ -72,15 +76,15 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
      * Number of recommendations that were excluded from the assessment.
      * </p>
      * <p>
-     * For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 7, it
-     * indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
+     * For example, if the <code>excludedCount</code> for Alarms coverage scoring component is 7, it indicates that 7
+     * Amazon CloudWatch alarms are excluded from the assessment.
      * </p>
      * 
      * @param excludedCount
      *        Number of recommendations that were excluded from the assessment.</p>
      *        <p>
-     *        For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is
-     *        7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
+     *        For example, if the <code>excludedCount</code> for Alarms coverage scoring component is 7, it indicates
+     *        that 7 Amazon CloudWatch alarms are excluded from the assessment.
      */
 
     public void setExcludedCount(Long excludedCount) {
@@ -92,14 +96,14 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
      * Number of recommendations that were excluded from the assessment.
      * </p>
      * <p>
-     * For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 7, it
-     * indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
+     * For example, if the <code>excludedCount</code> for Alarms coverage scoring component is 7, it indicates that 7
+     * Amazon CloudWatch alarms are excluded from the assessment.
      * </p>
      * 
      * @return Number of recommendations that were excluded from the assessment.</p>
      *         <p>
-     *         For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms
-     *         is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
+     *         For example, if the <code>excludedCount</code> for Alarms coverage scoring component is 7, it indicates
+     *         that 7 Amazon CloudWatch alarms are excluded from the assessment.
      */
 
     public Long getExcludedCount() {
@@ -111,15 +115,15 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
      * Number of recommendations that were excluded from the assessment.
      * </p>
      * <p>
-     * For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 7, it
-     * indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
+     * For example, if the <code>excludedCount</code> for Alarms coverage scoring component is 7, it indicates that 7
+     * Amazon CloudWatch alarms are excluded from the assessment.
      * </p>
      * 
      * @param excludedCount
      *        Number of recommendations that were excluded from the assessment.</p>
      *        <p>
-     *        For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon CloudWatch alarms is
-     *        7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
+     *        For example, if the <code>excludedCount</code> for Alarms coverage scoring component is 7, it indicates
+     *        that 7 Amazon CloudWatch alarms are excluded from the assessment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,22 +134,23 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Number of issues that must be resolved to obtain the maximum possible score for the scoring component. For SOPs,
-     * alarms, and FIS experiments, these are the number of recommendations that must be implemented. For compliance, it
-     * is the number of Application Components that has breached the resiliency policy.
+     * Number of recommendations that must be implemented to obtain the maximum possible score for the scoring
+     * component. For SOPs, alarms, and tests, these are the number of recommendations that must be implemented. For
+     * compliance, these are the number of Application Components that have breached the resiliency policy.
      * </p>
      * <p>
-     * For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 5,
-     * it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible score.
+     * For example, if the <code>outstandingCount</code> for Alarms coverage scoring component is 5, it indicates that 5
+     * Amazon CloudWatch alarms need to be implemented to achieve the maximum possible score.
      * </p>
      * 
      * @param outstandingCount
-     *        Number of issues that must be resolved to obtain the maximum possible score for the scoring component. For
-     *        SOPs, alarms, and FIS experiments, these are the number of recommendations that must be implemented. For
-     *        compliance, it is the number of Application Components that has breached the resiliency policy.</p>
+     *        Number of recommendations that must be implemented to obtain the maximum possible score for the scoring
+     *        component. For SOPs, alarms, and tests, these are the number of recommendations that must be implemented.
+     *        For compliance, these are the number of Application Components that have breached the resiliency
+     *        policy.</p>
      *        <p>
-     *        For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch alarms
-     *        is 5, it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible score.
+     *        For example, if the <code>outstandingCount</code> for Alarms coverage scoring component is 5, it indicates
+     *        that 5 Amazon CloudWatch alarms need to be implemented to achieve the maximum possible score.
      */
 
     public void setOutstandingCount(Long outstandingCount) {
@@ -154,22 +159,22 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Number of issues that must be resolved to obtain the maximum possible score for the scoring component. For SOPs,
-     * alarms, and FIS experiments, these are the number of recommendations that must be implemented. For compliance, it
-     * is the number of Application Components that has breached the resiliency policy.
+     * Number of recommendations that must be implemented to obtain the maximum possible score for the scoring
+     * component. For SOPs, alarms, and tests, these are the number of recommendations that must be implemented. For
+     * compliance, these are the number of Application Components that have breached the resiliency policy.
      * </p>
      * <p>
-     * For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 5,
-     * it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible score.
+     * For example, if the <code>outstandingCount</code> for Alarms coverage scoring component is 5, it indicates that 5
+     * Amazon CloudWatch alarms need to be implemented to achieve the maximum possible score.
      * </p>
      * 
-     * @return Number of issues that must be resolved to obtain the maximum possible score for the scoring component.
-     *         For SOPs, alarms, and FIS experiments, these are the number of recommendations that must be implemented.
-     *         For compliance, it is the number of Application Components that has breached the resiliency policy.</p>
+     * @return Number of recommendations that must be implemented to obtain the maximum possible score for the scoring
+     *         component. For SOPs, alarms, and tests, these are the number of recommendations that must be implemented.
+     *         For compliance, these are the number of Application Components that have breached the resiliency
+     *         policy.</p>
      *         <p>
-     *         For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch
-     *         alarms is 5, it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible
-     *         score.
+     *         For example, if the <code>outstandingCount</code> for Alarms coverage scoring component is 5, it
+     *         indicates that 5 Amazon CloudWatch alarms need to be implemented to achieve the maximum possible score.
      */
 
     public Long getOutstandingCount() {
@@ -178,22 +183,23 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Number of issues that must be resolved to obtain the maximum possible score for the scoring component. For SOPs,
-     * alarms, and FIS experiments, these are the number of recommendations that must be implemented. For compliance, it
-     * is the number of Application Components that has breached the resiliency policy.
+     * Number of recommendations that must be implemented to obtain the maximum possible score for the scoring
+     * component. For SOPs, alarms, and tests, these are the number of recommendations that must be implemented. For
+     * compliance, these are the number of Application Components that have breached the resiliency policy.
      * </p>
      * <p>
-     * For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch alarms is 5,
-     * it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible score.
+     * For example, if the <code>outstandingCount</code> for Alarms coverage scoring component is 5, it indicates that 5
+     * Amazon CloudWatch alarms need to be implemented to achieve the maximum possible score.
      * </p>
      * 
      * @param outstandingCount
-     *        Number of issues that must be resolved to obtain the maximum possible score for the scoring component. For
-     *        SOPs, alarms, and FIS experiments, these are the number of recommendations that must be implemented. For
-     *        compliance, it is the number of Application Components that has breached the resiliency policy.</p>
+     *        Number of recommendations that must be implemented to obtain the maximum possible score for the scoring
+     *        component. For SOPs, alarms, and tests, these are the number of recommendations that must be implemented.
+     *        For compliance, these are the number of Application Components that have breached the resiliency
+     *        policy.</p>
      *        <p>
-     *        For example, if the <code>Outstanding count</code> for Resilience Hub recommended Amazon CloudWatch alarms
-     *        is 5, it indicates that 5 Amazon CloudWatch alarms must be fixed to achieve the maximum possible score.
+     *        For example, if the <code>outstandingCount</code> for Alarms coverage scoring component is 5, it indicates
+     *        that 5 Amazon CloudWatch alarms need to be implemented to achieve the maximum possible score.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,15 +210,20 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code> is 20
-     * points, it indicates the maximum possible score you can achieve for your application when you run a new
-     * assessment after implementing all the Resilience Hub recommendations.
+     * Maximum possible score that can be obtained for the scoring component.
+     * </p>
+     * <p>
+     * For example, if the <code>possibleScore</code> is 20 points, it indicates the maximum possible score you can
+     * achieve for the scoring component when you run a new assessment after implementing all the Resilience Hub
+     * recommendations.
      * </p>
      * 
      * @param possibleScore
-     *        Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code>
-     *        is 20 points, it indicates the maximum possible score you can achieve for your application when you run a
-     *        new assessment after implementing all the Resilience Hub recommendations.
+     *        Maximum possible score that can be obtained for the scoring component. </p>
+     *        <p>
+     *        For example, if the <code>possibleScore</code> is 20 points, it indicates the maximum possible score you
+     *        can achieve for the scoring component when you run a new assessment after implementing all the Resilience
+     *        Hub recommendations.
      */
 
     public void setPossibleScore(Double possibleScore) {
@@ -221,14 +232,19 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code> is 20
-     * points, it indicates the maximum possible score you can achieve for your application when you run a new
-     * assessment after implementing all the Resilience Hub recommendations.
+     * Maximum possible score that can be obtained for the scoring component.
+     * </p>
+     * <p>
+     * For example, if the <code>possibleScore</code> is 20 points, it indicates the maximum possible score you can
+     * achieve for the scoring component when you run a new assessment after implementing all the Resilience Hub
+     * recommendations.
      * </p>
      * 
-     * @return Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code>
-     *         is 20 points, it indicates the maximum possible score you can achieve for your application when you run a
-     *         new assessment after implementing all the Resilience Hub recommendations.
+     * @return Maximum possible score that can be obtained for the scoring component. </p>
+     *         <p>
+     *         For example, if the <code>possibleScore</code> is 20 points, it indicates the maximum possible score you
+     *         can achieve for the scoring component when you run a new assessment after implementing all the Resilience
+     *         Hub recommendations.
      */
 
     public Double getPossibleScore() {
@@ -237,15 +253,20 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code> is 20
-     * points, it indicates the maximum possible score you can achieve for your application when you run a new
-     * assessment after implementing all the Resilience Hub recommendations.
+     * Maximum possible score that can be obtained for the scoring component.
+     * </p>
+     * <p>
+     * For example, if the <code>possibleScore</code> is 20 points, it indicates the maximum possible score you can
+     * achieve for the scoring component when you run a new assessment after implementing all the Resilience Hub
+     * recommendations.
      * </p>
      * 
      * @param possibleScore
-     *        Maximum possible score that can be obtained for the scoring component. If the <code>Possible score</code>
-     *        is 20 points, it indicates the maximum possible score you can achieve for your application when you run a
-     *        new assessment after implementing all the Resilience Hub recommendations.
+     *        Maximum possible score that can be obtained for the scoring component. </p>
+     *        <p>
+     *        For example, if the <code>possibleScore</code> is 20 points, it indicates the maximum possible score you
+     *        can achieve for the scoring component when you run a new assessment after implementing all the Resilience
+     *        Hub recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,11 +277,13 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Resiliency score of your application.
+     * Resiliency score points given for the scoring component. The score is always less than or equal to the
+     * <code>possibleScore</code>.
      * </p>
      * 
      * @param score
-     *        Resiliency score of your application.
+     *        Resiliency score points given for the scoring component. The score is always less than or equal to the
+     *        <code>possibleScore</code>.
      */
 
     public void setScore(Double score) {
@@ -269,10 +292,12 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Resiliency score of your application.
+     * Resiliency score points given for the scoring component. The score is always less than or equal to the
+     * <code>possibleScore</code>.
      * </p>
      * 
-     * @return Resiliency score of your application.
+     * @return Resiliency score points given for the scoring component. The score is always less than or equal to the
+     *         <code>possibleScore</code>.
      */
 
     public Double getScore() {
@@ -281,11 +306,13 @@ public class ScoringComponentResiliencyScore implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Resiliency score of your application.
+     * Resiliency score points given for the scoring component. The score is always less than or equal to the
+     * <code>possibleScore</code>.
      * </p>
      * 
      * @param score
-     *        Resiliency score of your application.
+     *        Resiliency score points given for the scoring component. The score is always less than or equal to the
+     *        <code>possibleScore</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DifferenceType {
 
-    NotEqual("NotEqual");
+    NotEqual("NotEqual"),
+    Added("Added"),
+    Removed("Removed");
 
     private String value;
 

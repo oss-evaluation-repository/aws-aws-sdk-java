@@ -870,6 +870,28 @@ public interface AWSResilienceHub {
 
     /**
      * <p>
+     * Indicates the list of resource drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentResourceDriftsRequest
+     * @return Result of the ListAppAssessmentResourceDrifts operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.ListAppAssessmentResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAppAssessmentResourceDriftsResult listAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest listAppAssessmentResourceDriftsRequest);
+
+    /**
+     * <p>
      * Lists the assessments for an Resilience Hub application. You can use request parameters to refine the results for
      * the response object.
      * </p>

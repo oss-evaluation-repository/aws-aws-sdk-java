@@ -160,6 +160,11 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
     }
 
     @Override
+    public ListAppAssessmentResourceDriftsResult listAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAppAssessmentsResult listAppAssessments(ListAppAssessmentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

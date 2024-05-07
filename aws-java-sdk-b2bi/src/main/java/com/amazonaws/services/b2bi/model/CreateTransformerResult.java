@@ -51,8 +51,8 @@ public class CreateTransformerResult extends com.amazonaws.AmazonWebServiceResul
     private String fileFormat;
     /**
      * <p>
-     * Returns the name of the mapping template for the transformer. This template is used to convert the input document
-     * into the correct set of objects.
+     * Returns the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata
+     * or XSLT.
      * </p>
      */
     private String mappingTemplate;
@@ -278,13 +278,13 @@ public class CreateTransformerResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the name of the mapping template for the transformer. This template is used to convert the input document
-     * into the correct set of objects.
+     * Returns the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata
+     * or XSLT.
      * </p>
      * 
      * @param mappingTemplate
-     *        Returns the name of the mapping template for the transformer. This template is used to convert the input
-     *        document into the correct set of objects.
+     *        Returns the mapping template for the transformer. This template is used to map the parsed EDI file using
+     *        JSONata or XSLT.
      */
 
     public void setMappingTemplate(String mappingTemplate) {
@@ -293,12 +293,12 @@ public class CreateTransformerResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the name of the mapping template for the transformer. This template is used to convert the input document
-     * into the correct set of objects.
+     * Returns the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata
+     * or XSLT.
      * </p>
      * 
-     * @return Returns the name of the mapping template for the transformer. This template is used to convert the input
-     *         document into the correct set of objects.
+     * @return Returns the mapping template for the transformer. This template is used to map the parsed EDI file using
+     *         JSONata or XSLT.
      */
 
     public String getMappingTemplate() {
@@ -307,13 +307,13 @@ public class CreateTransformerResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the name of the mapping template for the transformer. This template is used to convert the input document
-     * into the correct set of objects.
+     * Returns the mapping template for the transformer. This template is used to map the parsed EDI file using JSONata
+     * or XSLT.
      * </p>
      * 
      * @param mappingTemplate
-     *        Returns the name of the mapping template for the transformer. This template is used to convert the input
-     *        document into the correct set of objects.
+     *        Returns the mapping template for the transformer. This template is used to map the parsed EDI file using
+     *        JSONata or XSLT.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

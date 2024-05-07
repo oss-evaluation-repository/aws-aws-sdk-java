@@ -88,7 +88,7 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
     private String resourceName;
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      */
     private String resourceType;
@@ -535,11 +535,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      */
 
     public void setResourceType(String resourceType) {
@@ -548,10 +548,10 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
-     * @return The type of resource.
+     * @return Type of resource.
      */
 
     public String getResourceType() {
@@ -560,11 +560,11 @@ public class PhysicalResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of resource.
+     * Type of resource.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        Type of resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

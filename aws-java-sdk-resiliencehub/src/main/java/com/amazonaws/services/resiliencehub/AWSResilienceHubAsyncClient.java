@@ -950,6 +950,41 @@ public class AWSResilienceHubAsyncClient extends AWSResilienceHubClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            ListAppAssessmentResourceDriftsRequest request) {
+
+        return listAppAssessmentResourceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppAssessmentResourceDriftsResult> listAppAssessmentResourceDriftsAsync(
+            final ListAppAssessmentResourceDriftsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppAssessmentResourceDriftsRequest, ListAppAssessmentResourceDriftsResult> asyncHandler) {
+        final ListAppAssessmentResourceDriftsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppAssessmentResourceDriftsResult>() {
+            @Override
+            public ListAppAssessmentResourceDriftsResult call() throws Exception {
+                ListAppAssessmentResourceDriftsResult result = null;
+
+                try {
+                    result = executeListAppAssessmentResourceDrifts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppAssessmentsResult> listAppAssessmentsAsync(ListAppAssessmentsRequest request) {
 
         return listAppAssessmentsAsync(request, null);
