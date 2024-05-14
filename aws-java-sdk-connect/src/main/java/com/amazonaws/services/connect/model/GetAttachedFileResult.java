@@ -67,11 +67,6 @@ public class GetAttachedFileResult extends com.amazonaws.AmazonWebServiceResult<
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are
      * the only current supported resource.
      * </p>
-     * <note>
-     * <p>
-     * This value must be a valid ARN.
-     * </p>
-     * </note>
      */
     private String associatedResourceArn;
     /**
@@ -371,19 +366,11 @@ public class GetAttachedFileResult extends com.amazonaws.AmazonWebServiceResult<
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are
      * the only current supported resource.
      * </p>
-     * <note>
-     * <p>
-     * This value must be a valid ARN.
-     * </p>
-     * </note>
      * 
      * @param associatedResourceArn
      *        The resource to which the attached file is (being) uploaded to. <a
      *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     *        are the only current supported resource.</p> <note>
-     *        <p>
-     *        This value must be a valid ARN.
-     *        </p>
+     *        are the only current supported resource.
      */
 
     public void setAssociatedResourceArn(String associatedResourceArn) {
@@ -396,18 +383,10 @@ public class GetAttachedFileResult extends com.amazonaws.AmazonWebServiceResult<
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are
      * the only current supported resource.
      * </p>
-     * <note>
-     * <p>
-     * This value must be a valid ARN.
-     * </p>
-     * </note>
      * 
      * @return The resource to which the attached file is (being) uploaded to. <a
      *         href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html"
-     *         >Cases</a> are the only current supported resource.</p> <note>
-     *         <p>
-     *         This value must be a valid ARN.
-     *         </p>
+     *         >Cases</a> are the only current supported resource.
      */
 
     public String getAssociatedResourceArn() {
@@ -420,19 +399,11 @@ public class GetAttachedFileResult extends com.amazonaws.AmazonWebServiceResult<
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are
      * the only current supported resource.
      * </p>
-     * <note>
-     * <p>
-     * This value must be a valid ARN.
-     * </p>
-     * </note>
      * 
      * @param associatedResourceArn
      *        The resource to which the attached file is (being) uploaded to. <a
      *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a>
-     *        are the only current supported resource.</p> <note>
-     *        <p>
-     *        This value must be a valid ARN.
-     *        </p>
+     *        are the only current supported resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

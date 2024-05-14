@@ -5503,6 +5503,16 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
      * language</a>.
      * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
+     * <p>
+     * In the response, <b>Status</b> indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>.
+     * The <code>PUBLISHED</code> status will initiate validation on the content. <code>SAVED</code> does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>
+     * </p>
      * 
      * @param describeContactFlowRequest
      * @return Result of the DescribeContactFlow operation returned by the service.
@@ -5569,6 +5579,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Describes the specified flow module.
+     * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
      * </p>
      * 
      * @param describeContactFlowModuleRequest
@@ -12373,6 +12388,138 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Searches the flow modules in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchContactFlowModulesRequest
+     * @return Result of the SearchContactFlowModules operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.SearchContactFlowModules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SearchContactFlowModulesResult searchContactFlowModules(SearchContactFlowModulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchContactFlowModules(request);
+    }
+
+    @SdkInternalApi
+    final SearchContactFlowModulesResult executeSearchContactFlowModules(SearchContactFlowModulesRequest searchContactFlowModulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchContactFlowModulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchContactFlowModulesRequest> request = null;
+        Response<SearchContactFlowModulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchContactFlowModulesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(searchContactFlowModulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchContactFlowModules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchContactFlowModulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SearchContactFlowModulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Searches the contact flows in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchContactFlowsRequest
+     * @return Result of the SearchContactFlows operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.SearchContactFlows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SearchContactFlowsResult searchContactFlows(SearchContactFlowsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchContactFlows(request);
+    }
+
+    @SdkInternalApi
+    final SearchContactFlowsResult executeSearchContactFlows(SearchContactFlowsRequest searchContactFlowsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchContactFlowsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchContactFlowsRequest> request = null;
+        Response<SearchContactFlowsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchContactFlowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchContactFlowsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchContactFlows");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchContactFlowsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchContactFlowsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Searches contacts in an Amazon Connect instance.
      * </p>
      * 
@@ -14932,6 +15079,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
      * language</a>.
      * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
      * 
      * @param updateContactFlowContentRequest
      * @return Result of the UpdateContactFlowContent operation returned by the service.
@@ -15069,6 +15221,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Updates specified flow module for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
      * </p>
      * 
      * @param updateContactFlowModuleContentRequest

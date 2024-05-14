@@ -54,7 +54,7 @@ public class StartAttachedFileUploadRequest extends com.amazonaws.AmazonWebServi
     private Long fileSizeInBytes;
     /**
      * <p>
-     * Optional override for the expiry of the pre-signed S3 URL in seconds.
+     * Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.
      * </p>
      */
     private Integer urlExpiryInSeconds;
@@ -271,11 +271,11 @@ public class StartAttachedFileUploadRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional override for the expiry of the pre-signed S3 URL in seconds.
+     * Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.
      * </p>
      * 
      * @param urlExpiryInSeconds
-     *        Optional override for the expiry of the pre-signed S3 URL in seconds.
+     *        Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.
      */
 
     public void setUrlExpiryInSeconds(Integer urlExpiryInSeconds) {
@@ -284,10 +284,10 @@ public class StartAttachedFileUploadRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional override for the expiry of the pre-signed S3 URL in seconds.
+     * Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.
      * </p>
      * 
-     * @return Optional override for the expiry of the pre-signed S3 URL in seconds.
+     * @return Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.
      */
 
     public Integer getUrlExpiryInSeconds() {
@@ -296,11 +296,11 @@ public class StartAttachedFileUploadRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Optional override for the expiry of the pre-signed S3 URL in seconds.
+     * Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.
      * </p>
      * 
      * @param urlExpiryInSeconds
-     *        Optional override for the expiry of the pre-signed S3 URL in seconds.
+     *        Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

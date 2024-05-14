@@ -178,7 +178,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     * <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      * </p>
      * </li>
      * <li>
@@ -202,6 +202,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be
      * kept as is.
      * </p>
+     * <p>
+     * <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     * <code>Q_CONNECT_ENABLED</code> filter key.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This filter is available only for contact record-driven metrics.
+     * </p>
      * </li>
      * </ul>
      */
@@ -220,7 +239,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     * <code>Q_CONNECT_ENABLED</code>
      * </p>
      */
     private java.util.List<String> groupings;
@@ -239,7 +259,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -384,7 +404,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -398,7 +418,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -416,7 +436,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -457,7 +477,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -506,7 +526,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -525,7 +545,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -543,7 +563,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -577,7 +597,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -596,7 +616,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -611,7 +631,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -630,7 +650,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -647,7 +667,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -669,7 +690,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -687,7 +708,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -705,7 +726,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -719,7 +740,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -737,7 +759,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -755,7 +778,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -773,7 +796,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -791,7 +814,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -823,7 +846,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -840,7 +863,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -862,7 +886,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -883,7 +907,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q
+     * in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -898,7 +923,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -912,7 +937,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -926,7 +951,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -940,7 +965,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -954,7 +979,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -968,7 +993,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -983,7 +1008,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1011,7 +1036,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -1030,7 +1056,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1049,7 +1075,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1064,7 +1090,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1096,7 +1122,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1155,7 +1181,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -1173,7 +1199,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -1191,7 +1217,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1209,7 +1235,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1260,7 +1286,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -1290,7 +1316,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -1327,7 +1353,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1355,7 +1381,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -1373,7 +1400,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -1395,7 +1423,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1423,7 +1451,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1437,7 +1465,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1465,7 +1493,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -1521,7 +1549,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -2172,7 +2201,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     * <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      * </p>
      * </li>
      * <li>
@@ -2195,6 +2224,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is
      * case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be
      * kept as is.
+     * </p>
+     * <p>
+     * <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     * <code>Q_CONNECT_ENABLED</code> filter key.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This filter is available only for contact record-driven metrics.
      * </p>
      * </li>
      * </ul>
@@ -2257,7 +2305,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *         <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      *         <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     *         <code>ROUTING_STEP_EXPRESSION</code>
+     *         <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      *         </p>
      *         </li>
      *         <li>
@@ -2280,6 +2328,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This
      *         filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array
      *         order should be kept as is.
+     *         </p>
+     *         <p>
+     *         <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     *         <code>Q_CONNECT_ENABLED</code> filter key.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         This filter is available only for contact record-driven metrics.
      *         </p>
      *         </li>
      */
@@ -2349,7 +2416,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     * <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      * </p>
      * </li>
      * <li>
@@ -2372,6 +2439,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is
      * case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be
      * kept as is.
+     * </p>
+     * <p>
+     * <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     * <code>Q_CONNECT_ENABLED</code> filter key.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This filter is available only for contact record-driven metrics.
      * </p>
      * </li>
      * </ul>
@@ -2435,7 +2521,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      *        <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     *        <code>ROUTING_STEP_EXPRESSION</code>
+     *        <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2458,6 +2544,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This
      *        filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array
      *        order should be kept as is.
+     *        </p>
+     *        <p>
+     *        <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     *        <code>Q_CONNECT_ENABLED</code> filter key.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This filter is available only for contact record-driven metrics.
      *        </p>
      *        </li>
      */
@@ -2532,7 +2637,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     * <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      * </p>
      * </li>
      * <li>
@@ -2555,6 +2660,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is
      * case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be
      * kept as is.
+     * </p>
+     * <p>
+     * <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     * <code>Q_CONNECT_ENABLED</code> filter key.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This filter is available only for contact record-driven metrics.
      * </p>
      * </li>
      * </ul>
@@ -2623,7 +2747,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      *        <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     *        <code>ROUTING_STEP_EXPRESSION</code>
+     *        <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2646,6 +2770,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This
      *        filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array
      *        order should be kept as is.
+     *        </p>
+     *        <p>
+     *        <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     *        <code>Q_CONNECT_ENABLED</code> filter key.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This filter is available only for contact record-driven metrics.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2722,7 +2865,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      * <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     * <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      * </p>
      * </li>
      * <li>
@@ -2745,6 +2888,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is
      * case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be
      * kept as is.
+     * </p>
+     * <p>
+     * <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     * <code>Q_CONNECT_ENABLED</code> filter key.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This filter is available only for contact record-driven metrics.
      * </p>
      * </li>
      * </ul>
@@ -2808,7 +2970,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>CASE_TEMPLATE_ARN</code> |
      *        <code>CASE_STATUS</code> | <code>contact/segmentAttributes/connect:Subtype</code> |
-     *        <code>ROUTING_STEP_EXPRESSION</code>
+     *        <code>ROUTING_STEP_EXPRESSION</code> | <code>Q_CONNECT_ENABLED</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2831,6 +2993,25 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This
      *        filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array
      *        order should be kept as is.
+     *        </p>
+     *        <p>
+     *        <code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the
+     *        <code>Q_CONNECT_ENABLED</code> filter key.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        TRUE includes all contacts that had Amazon Q in Connect enabled as part of the flow.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FALSE includes all contacts that did not have Amazon Q in Connect enabled as part of the flow
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This filter is available only for contact record-driven metrics.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2855,7 +3036,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     * <code>Q_CONNECT_ENABLED</code>
      * </p>
      * 
      * @return The grouping applied to the metrics that are returned. For example, when results are grouped by queue,
@@ -2869,7 +3051,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *         <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *         <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     *         <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     *         <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     *         <code>Q_CONNECT_ENABLED</code>
      */
 
     public java.util.List<String> getGroupings() {
@@ -2890,7 +3073,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     * <code>Q_CONNECT_ENABLED</code>
      * </p>
      * 
      * @param groupings
@@ -2905,7 +3089,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     *        <code>Q_CONNECT_ENABLED</code>
      */
 
     public void setGroupings(java.util.Collection<String> groupings) {
@@ -2931,7 +3116,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     * <code>Q_CONNECT_ENABLED</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2951,7 +3137,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     *        <code>Q_CONNECT_ENABLED</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2979,7 +3166,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      * <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     * <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     * <code>Q_CONNECT_ENABLED</code>
      * </p>
      * 
      * @param groupings
@@ -2994,7 +3182,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      *        <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> |
-     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code>
+     *        <code>contact/segmentAttributes/connect:Subtype</code> | <code>ROUTING_STEP_EXPRESSION</code> |
+     *        <code>Q_CONNECT_ENABLED</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3018,7 +3207,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3163,7 +3352,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3177,7 +3366,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3195,7 +3384,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3236,7 +3425,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3285,7 +3474,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3304,7 +3493,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3322,7 +3511,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3356,7 +3545,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3375,7 +3564,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3390,7 +3579,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3409,7 +3598,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3426,7 +3615,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3448,7 +3638,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3466,7 +3656,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3484,7 +3674,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3498,7 +3688,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3516,7 +3707,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3534,7 +3726,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3552,7 +3744,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3570,7 +3762,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3602,7 +3794,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3619,7 +3811,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3641,7 +3834,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3662,7 +3855,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q
+     * in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3677,7 +3871,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3691,7 +3885,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3705,7 +3899,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3719,7 +3913,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3733,7 +3927,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3747,7 +3941,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3762,7 +3956,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3790,7 +3984,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -3809,7 +4004,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3828,7 +4023,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3843,7 +4038,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3875,7 +4070,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3934,7 +4129,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -3952,7 +4147,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -3970,7 +4165,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -3988,7 +4183,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -4039,7 +4234,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -4069,7 +4264,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -4106,7 +4301,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -4134,7 +4329,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -4152,7 +4348,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -4174,7 +4371,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -4202,7 +4399,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -4216,7 +4413,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -4244,7 +4441,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -4300,7 +4497,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -4322,7 +4520,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4467,7 +4665,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4481,7 +4679,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Seconds
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4499,7 +4697,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4540,7 +4738,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Seconds
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4589,7 +4787,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4608,7 +4806,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4626,7 +4824,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4660,7 +4858,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4679,7 +4877,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4694,7 +4892,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4713,7 +4911,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4731,7 +4929,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4753,7 +4951,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4771,7 +4969,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4789,7 +4987,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4804,7 +5002,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4822,7 +5020,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Seconds
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+     *         Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4840,7 +5039,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4858,7 +5057,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4876,7 +5075,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4908,7 +5107,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     *         contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4926,7 +5125,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4948,7 +5147,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     *         contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4970,7 +5169,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4985,7 +5184,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -4999,7 +5198,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5013,7 +5212,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5027,7 +5226,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5041,7 +5240,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5055,7 +5254,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Percent
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5070,7 +5269,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5099,7 +5298,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+     *         Q in Connect
      *         </p>
      *         <p>
      *         Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in
@@ -5118,7 +5318,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5137,7 +5337,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5152,7 +5352,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5184,7 +5384,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5243,7 +5443,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5261,7 +5461,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5279,7 +5479,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5297,7 +5497,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5348,7 +5548,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Percent
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      *         </p>
      *         <p>
      *         Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -5378,7 +5578,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Seconds
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5415,7 +5615,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Seconds
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5443,7 +5643,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+     *         Q in Connect
      *         </p>
      *         <p>
      *         Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -5461,7 +5662,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+     *         Q in Connect
      *         </p>
      *         <p>
      *         Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -5483,7 +5685,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *         contact/segmentAttributes/connect:Subtype
+     *         contact/segmentAttributes/connect:Subtype, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5511,7 +5713,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Seconds
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5525,7 +5727,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5553,7 +5755,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Seconds
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5609,7 +5811,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *         Unit: Count
      *         </p>
      *         <p>
-     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *         Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype,
+     *         Q in Connect
      *         </p>
      *         <p>
      *         UI name: <a href=
@@ -5638,7 +5841,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5783,7 +5986,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5797,7 +6000,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5815,7 +6018,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5856,7 +6059,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5905,7 +6108,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5924,7 +6127,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5942,7 +6145,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5976,7 +6179,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -5995,7 +6198,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6010,7 +6213,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6029,7 +6232,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6046,7 +6249,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6068,7 +6272,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6086,7 +6290,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6104,7 +6308,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6118,7 +6322,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6136,7 +6341,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6154,7 +6360,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6172,7 +6378,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6190,7 +6396,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6222,7 +6428,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6239,7 +6445,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6261,7 +6468,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6282,7 +6489,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q
+     * in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6297,7 +6505,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6311,7 +6519,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6325,7 +6533,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6339,7 +6547,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6353,7 +6561,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6367,7 +6575,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6382,7 +6590,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6410,7 +6618,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -6429,7 +6638,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6448,7 +6657,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6463,7 +6672,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6495,7 +6704,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6554,7 +6763,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -6572,7 +6781,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -6590,7 +6799,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6608,7 +6817,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6659,7 +6868,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -6689,7 +6898,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -6726,7 +6935,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6754,7 +6963,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -6772,7 +6982,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -6794,7 +7005,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6822,7 +7033,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6836,7 +7047,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6864,7 +7075,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6920,7 +7131,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -6943,7 +7155,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7088,7 +7300,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7102,7 +7314,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7120,7 +7332,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7161,7 +7373,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7210,7 +7422,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7229,7 +7441,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7247,7 +7459,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7281,7 +7493,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7300,7 +7512,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7315,7 +7527,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7334,7 +7546,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7352,7 +7564,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7374,7 +7586,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7392,7 +7604,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7410,7 +7622,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7425,7 +7637,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7443,7 +7655,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7461,7 +7674,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7479,7 +7692,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7497,7 +7710,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7529,7 +7742,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7547,7 +7760,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7569,7 +7782,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7591,7 +7804,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7606,7 +7819,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7620,7 +7833,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7634,7 +7847,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7648,7 +7861,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7662,7 +7875,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7676,7 +7889,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Percent
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7691,7 +7904,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7720,7 +7933,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in
@@ -7739,7 +7953,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7758,7 +7972,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7773,7 +7987,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7805,7 +8019,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7864,7 +8078,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7882,7 +8096,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7900,7 +8114,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7918,7 +8132,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -7969,7 +8183,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Percent
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -7999,7 +8213,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -8036,7 +8250,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -8064,7 +8278,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -8082,7 +8297,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -8104,7 +8320,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -8132,7 +8348,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -8146,7 +8362,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -8174,7 +8390,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -8230,7 +8446,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -8264,7 +8481,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8409,7 +8626,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8423,7 +8640,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8441,7 +8658,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8482,7 +8699,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8531,7 +8748,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8550,7 +8767,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8568,7 +8785,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8602,7 +8819,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8621,7 +8838,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8636,7 +8853,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8655,7 +8872,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8672,7 +8889,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8694,7 +8912,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8712,7 +8930,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8730,7 +8948,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8744,7 +8962,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8762,7 +8981,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8780,7 +9000,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8798,7 +9018,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8816,7 +9036,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8848,7 +9068,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8865,7 +9085,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8887,7 +9108,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8908,7 +9129,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q
+     * in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8923,7 +9145,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8937,7 +9159,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8951,7 +9173,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8965,7 +9187,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8979,7 +9201,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -8993,7 +9215,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9008,7 +9230,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9036,7 +9258,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -9055,7 +9278,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9074,7 +9297,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9089,7 +9312,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9121,7 +9344,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9180,7 +9403,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -9198,7 +9421,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -9216,7 +9439,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9234,7 +9457,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9285,7 +9508,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -9315,7 +9538,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -9352,7 +9575,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9380,7 +9603,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -9398,7 +9622,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -9420,7 +9645,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9448,7 +9673,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9462,7 +9687,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9490,7 +9715,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9546,7 +9771,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -9574,7 +9800,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9719,7 +9945,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9733,7 +9959,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9751,7 +9977,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9792,7 +10018,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9841,7 +10067,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9860,7 +10086,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9878,7 +10104,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9912,7 +10138,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9931,7 +10157,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9946,7 +10172,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9965,7 +10191,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -9983,7 +10209,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10005,7 +10231,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10023,7 +10249,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10041,7 +10267,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10056,7 +10282,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10074,7 +10300,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10092,7 +10319,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10110,7 +10337,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10128,7 +10355,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10160,7 +10387,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10178,7 +10405,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10200,7 +10427,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10222,7 +10449,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10237,7 +10464,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10251,7 +10478,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10265,7 +10492,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10279,7 +10506,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10293,7 +10520,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10307,7 +10534,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Percent
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10322,7 +10549,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10351,7 +10578,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in
@@ -10370,7 +10598,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10389,7 +10617,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10404,7 +10632,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10436,7 +10664,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10495,7 +10723,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10513,7 +10741,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10531,7 +10759,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10549,7 +10777,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10600,7 +10828,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Percent
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -10630,7 +10858,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10667,7 +10895,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10695,7 +10923,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -10713,7 +10942,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -10735,7 +10965,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10763,7 +10993,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10777,7 +11007,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10805,7 +11035,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10861,7 +11091,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -10897,7 +11128,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11042,7 +11273,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11056,7 +11287,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11074,7 +11305,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11115,7 +11346,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11164,7 +11395,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11183,7 +11414,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11201,7 +11432,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11235,7 +11466,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11254,7 +11485,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11269,7 +11500,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11288,7 +11519,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11305,7 +11536,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11327,7 +11559,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11345,7 +11577,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11363,7 +11595,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11377,7 +11609,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11395,7 +11628,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11413,7 +11647,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11431,7 +11665,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11449,7 +11683,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11481,7 +11715,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11498,7 +11732,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype,
+     * Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11520,7 +11755,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     * contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11541,7 +11776,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Valid metric filter key: <code>INITIATION_METHOD</code>
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q
+     * in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11556,7 +11792,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11570,7 +11806,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11584,7 +11820,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11598,7 +11834,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11612,7 +11848,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11626,7 +11862,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11641,7 +11877,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11669,7 +11905,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -11688,7 +11925,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11707,7 +11944,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11722,7 +11959,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11754,7 +11991,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11813,7 +12050,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -11831,7 +12068,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -11849,7 +12086,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11867,7 +12104,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -11918,7 +12155,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Percent
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -11948,7 +12185,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a
@@ -11985,7 +12222,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -12013,7 +12250,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -12031,7 +12269,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
@@ -12053,7 +12292,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     * contact/segmentAttributes/connect:Subtype
+     * contact/segmentAttributes/connect:Subtype, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -12081,7 +12320,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -12095,7 +12334,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -12123,7 +12362,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Seconds
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     * Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -12179,7 +12418,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      * Unit: Count
      * </p>
      * <p>
-     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     * Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in
+     * Connect
      * </p>
      * <p>
      * UI name: <a href=
@@ -12202,7 +12442,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12347,7 +12587,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12361,7 +12601,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12379,7 +12619,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12420,7 +12660,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12469,7 +12709,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12488,7 +12728,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12506,7 +12746,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12540,7 +12780,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12559,7 +12799,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12574,7 +12814,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12593,7 +12833,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12611,7 +12851,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12633,7 +12873,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12651,7 +12891,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12669,7 +12909,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12684,7 +12924,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12702,7 +12942,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12720,7 +12961,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12738,7 +12979,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12756,7 +12997,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12788,7 +13029,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12806,7 +13047,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12828,7 +13069,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+     *        contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12850,7 +13091,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12865,7 +13106,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12879,7 +13120,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12893,7 +13134,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12907,7 +13148,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12921,7 +13162,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12935,7 +13176,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Percent
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12950,7 +13191,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -12979,7 +13220,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800 (inclusive), in
@@ -12998,7 +13240,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13017,7 +13259,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13032,7 +13274,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13064,7 +13306,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13123,7 +13365,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13141,7 +13383,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13159,7 +13401,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13177,7 +13419,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13228,7 +13470,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Percent
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -13258,7 +13500,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13295,7 +13537,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13323,7 +13565,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -13341,7 +13584,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
@@ -13363,7 +13607,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
-     *        contact/segmentAttributes/connect:Subtype
+     *        contact/segmentAttributes/connect:Subtype, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13391,7 +13635,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13405,7 +13649,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13433,7 +13677,7 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Seconds
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=
@@ -13489,7 +13733,8 @@ public class GetMetricDataV2Request extends com.amazonaws.AmazonWebServiceReques
      *        Unit: Count
      *        </p>
      *        <p>
-     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype
+     *        Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q
+     *        in Connect
      *        </p>
      *        <p>
      *        UI name: <a href=

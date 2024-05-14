@@ -39,6 +39,8 @@ public class CreateContactFlowRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Content").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -63,6 +65,7 @@ public class CreateContactFlowRequestMarshaller {
             protocolMarshaller.marshall(createContactFlowRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(createContactFlowRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createContactFlowRequest.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(createContactFlowRequest.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(createContactFlowRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -5802,6 +5802,72 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<SearchContactFlowModulesResult> searchContactFlowModulesAsync(SearchContactFlowModulesRequest request) {
+
+        return searchContactFlowModulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchContactFlowModulesResult> searchContactFlowModulesAsync(final SearchContactFlowModulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchContactFlowModulesRequest, SearchContactFlowModulesResult> asyncHandler) {
+        final SearchContactFlowModulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchContactFlowModulesResult>() {
+            @Override
+            public SearchContactFlowModulesResult call() throws Exception {
+                SearchContactFlowModulesResult result = null;
+
+                try {
+                    result = executeSearchContactFlowModules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchContactFlowsResult> searchContactFlowsAsync(SearchContactFlowsRequest request) {
+
+        return searchContactFlowsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchContactFlowsResult> searchContactFlowsAsync(final SearchContactFlowsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchContactFlowsRequest, SearchContactFlowsResult> asyncHandler) {
+        final SearchContactFlowsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchContactFlowsResult>() {
+            @Override
+            public SearchContactFlowsResult call() throws Exception {
+                SearchContactFlowsResult result = null;
+
+                try {
+                    result = executeSearchContactFlows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchContactsResult> searchContactsAsync(SearchContactsRequest request) {
 
         return searchContactsAsync(request, null);

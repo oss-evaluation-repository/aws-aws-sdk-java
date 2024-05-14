@@ -64,6 +64,14 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
     private String content;
     /**
      * <p>
+     * Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code>
+     * status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the
+     * content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
      * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
@@ -334,6 +342,81 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code>
+     * status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the
+     * content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * </p>
+     * 
+     * @param status
+     *        Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The
+     *        <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does
+     *        not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * @see ContactFlowStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code>
+     * status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the
+     * content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * </p>
+     * 
+     * @return Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The
+     *         <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does
+     *         not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * @see ContactFlowStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code>
+     * status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the
+     * content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * </p>
+     * 
+     * @param status
+     *        Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The
+     *        <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does
+     *        not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContactFlowStatus
+     */
+
+    public CreateContactFlowRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The <code>PUBLISHED</code>
+     * status will initiate validation on the content. the <code>SAVED</code> status does not initiate validation of the
+     * content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * </p>
+     * 
+     * @param status
+     *        Indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>. The
+     *        <code>PUBLISHED</code> status will initiate validation on the content. the <code>SAVED</code> status does
+     *        not initiate validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContactFlowStatus
+     */
+
+    public CreateContactFlowRequest withStatus(ContactFlowStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
@@ -428,6 +511,8 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Description: ").append(getDescription()).append(",");
         if (getContent() != null)
             sb.append("Content: ").append(getContent()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -464,6 +549,10 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -481,6 +570,7 @@ public class CreateContactFlowRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

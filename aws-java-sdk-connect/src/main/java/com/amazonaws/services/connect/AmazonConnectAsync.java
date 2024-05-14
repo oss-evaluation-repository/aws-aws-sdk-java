@@ -3038,6 +3038,16 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
      * language</a>.
      * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
+     * <p>
+     * In the response, <b>Status</b> indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>.
+     * The <code>PUBLISHED</code> status will initiate validation on the content. <code>SAVED</code> does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>
+     * </p>
      * 
      * @param describeContactFlowRequest
      * @return A Java Future containing the result of the DescribeContactFlow operation returned by the service.
@@ -3055,6 +3065,16 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * You can also create and update flows using the <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
      * language</a>.
+     * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
+     * <p>
+     * In the response, <b>Status</b> indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>.
+     * The <code>PUBLISHED</code> status will initiate validation on the content. <code>SAVED</code> does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>
      * </p>
      * 
      * @param describeContactFlowRequest
@@ -3074,6 +3094,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Describes the specified flow module.
      * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
      * 
      * @param describeContactFlowModuleRequest
      * @return A Java Future containing the result of the DescribeContactFlowModule operation returned by the service.
@@ -3087,6 +3112,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
     /**
      * <p>
      * Describes the specified flow module.
+     * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
      * </p>
      * 
      * @param describeContactFlowModuleRequest
@@ -6862,6 +6892,68 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Searches the flow modules in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchContactFlowModulesRequest
+     * @return A Java Future containing the result of the SearchContactFlowModules operation returned by the service.
+     * @sample AmazonConnectAsync.SearchContactFlowModules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchContactFlowModulesResult> searchContactFlowModulesAsync(SearchContactFlowModulesRequest searchContactFlowModulesRequest);
+
+    /**
+     * <p>
+     * Searches the flow modules in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchContactFlowModulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchContactFlowModules operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.SearchContactFlowModules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchContactFlowModulesResult> searchContactFlowModulesAsync(SearchContactFlowModulesRequest searchContactFlowModulesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchContactFlowModulesRequest, SearchContactFlowModulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Searches the contact flows in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchContactFlowsRequest
+     * @return A Java Future containing the result of the SearchContactFlows operation returned by the service.
+     * @sample AmazonConnectAsync.SearchContactFlows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchContactFlowsResult> searchContactFlowsAsync(SearchContactFlowsRequest searchContactFlowsRequest);
+
+    /**
+     * <p>
+     * Searches the contact flows in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchContactFlowsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchContactFlows operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.SearchContactFlows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchContactFlowsResult> searchContactFlowsAsync(SearchContactFlowsRequest searchContactFlowsRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchContactFlowsRequest, SearchContactFlowsResult> asyncHandler);
+
+    /**
+     * <p>
      * Searches contacts in an Amazon Connect instance.
      * </p>
      * 
@@ -8553,6 +8645,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
      * language</a>.
      * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
      * 
      * @param updateContactFlowContentRequest
      * @return A Java Future containing the result of the UpdateContactFlowContent operation returned by the service.
@@ -8570,6 +8667,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * You can also create and update flows using the <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
      * language</a>.
+     * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
      * </p>
      * 
      * @param updateContactFlowContentRequest
@@ -8622,6 +8724,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Updates specified flow module for the specified Amazon Connect instance.
      * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
      * 
      * @param updateContactFlowModuleContentRequest
      * @return A Java Future containing the result of the UpdateContactFlowModuleContent operation returned by the
@@ -8636,6 +8743,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
     /**
      * <p>
      * Updates specified flow module for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
      * </p>
      * 
      * @param updateContactFlowModuleContentRequest

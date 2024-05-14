@@ -37,6 +37,8 @@ public class ContactFlowSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContactFlowType").build();
     private static final MarshallingInfo<String> CONTACTFLOWSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContactFlowState").build();
+    private static final MarshallingInfo<String> CONTACTFLOWSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContactFlowStatus").build();
 
     private static final ContactFlowSummaryMarshaller instance = new ContactFlowSummaryMarshaller();
 
@@ -59,6 +61,7 @@ public class ContactFlowSummaryMarshaller {
             protocolMarshaller.marshall(contactFlowSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(contactFlowSummary.getContactFlowType(), CONTACTFLOWTYPE_BINDING);
             protocolMarshaller.marshall(contactFlowSummary.getContactFlowState(), CONTACTFLOWSTATE_BINDING);
+            protocolMarshaller.marshall(contactFlowSummary.getContactFlowStatus(), CONTACTFLOWSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

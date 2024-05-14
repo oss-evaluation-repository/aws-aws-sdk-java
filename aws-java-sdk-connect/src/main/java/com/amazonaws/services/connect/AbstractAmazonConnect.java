@@ -888,6 +888,16 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public SearchContactFlowModulesResult searchContactFlowModules(SearchContactFlowModulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchContactFlowsResult searchContactFlows(SearchContactFlowsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchContactsResult searchContacts(SearchContactsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

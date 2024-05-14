@@ -2212,6 +2212,16 @@ public interface AmazonConnect {
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
      * language</a>.
      * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
+     * <p>
+     * In the response, <b>Status</b> indicates the flow status as either <code>SAVED</code> or <code>PUBLISHED</code>.
+     * The <code>PUBLISHED</code> status will initiate validation on the content. <code>SAVED</code> does not initiate
+     * validation of the content. <code>SAVED</code> | <code>PUBLISHED</code>
+     * </p>
      * 
      * @param describeContactFlowRequest
      * @return Result of the DescribeContactFlow operation returned by the service.
@@ -2236,6 +2246,11 @@ public interface AmazonConnect {
     /**
      * <p>
      * Describes the specified flow module.
+     * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
      * </p>
      * 
      * @param describeContactFlowModuleRequest
@@ -4842,6 +4857,52 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Searches the flow modules in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchContactFlowModulesRequest
+     * @return Result of the SearchContactFlowModules operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.SearchContactFlowModules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlowModules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchContactFlowModulesResult searchContactFlowModules(SearchContactFlowModulesRequest searchContactFlowModulesRequest);
+
+    /**
+     * <p>
+     * Searches the contact flows in an Amazon Connect instance, with optional filtering.
+     * </p>
+     * 
+     * @param searchContactFlowsRequest
+     * @return Result of the SearchContactFlows operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.SearchContactFlows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactFlows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SearchContactFlowsResult searchContactFlows(SearchContactFlowsRequest searchContactFlowsRequest);
+
+    /**
+     * <p>
      * Searches contacts in an Amazon Connect instance.
      * </p>
      * 
@@ -5950,6 +6011,11 @@ public interface AmazonConnect {
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
      * language</a>.
      * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
+     * </p>
      * 
      * @param updateContactFlowContentRequest
      * @return Result of the UpdateContactFlowContent operation returned by the service.
@@ -5999,6 +6065,11 @@ public interface AmazonConnect {
     /**
      * <p>
      * Updates specified flow module for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <code>$SAVED</code> alias in the request to describe the <code>SAVED</code> content of a Flow. For
+     * example, <code>arn:aws:.../contact-flow/{id}:$SAVED</code>. Once a contact flow is published, <code>$SAVED</code>
+     * needs to be supplied to view saved content that has not been published.
      * </p>
      * 
      * @param updateContactFlowModuleContentRequest

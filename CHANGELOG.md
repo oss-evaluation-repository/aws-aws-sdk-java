@@ -1,3 +1,12 @@
+# __1.12.722__ __2024-05-14__
+## __Amazon Connect Service__
+  - ### Features
+    - Amazon Connect provides enhanced search capabilities for flows & flow modules on the Connect admin website and programmatically using APIs. You can search for flows and flow modules by name, description, type, status, and tags, to filter and identify a specific flow in your Connect instances.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Updated a few x-id in the http uri traits
+
 # __1.12.721__ __2024-05-13__
 ## __Amazon EventBridge__
   - ### Features
