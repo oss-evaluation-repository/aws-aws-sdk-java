@@ -92,6 +92,14 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                     context.nextToken();
                     fleet.setOverflowBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("vpcConfig", targetDepth)) {
+                    context.nextToken();
+                    fleet.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("fleetServiceRole", targetDepth)) {
+                    context.nextToken();
+                    fleet.setFleetServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     fleet.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

@@ -32,11 +32,17 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the process.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 64.
+     * </p>
      */
     private String name;
     /**
      * <p>
      * The path to the process executable.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 512.
      * </p>
      */
     private String path;
@@ -133,9 +139,14 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the process.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 64.
+     * </p>
      * 
      * @param name
-     *        The name of the process.
+     *        The name of the process.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 64.
      */
 
     public void setName(String name) {
@@ -146,8 +157,13 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the process.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 64.
+     * </p>
      * 
-     * @return The name of the process.
+     * @return The name of the process.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 64.
      */
 
     public String getName() {
@@ -158,9 +174,14 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the process.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 64.
+     * </p>
      * 
      * @param name
-     *        The name of the process.
+     *        The name of the process.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,9 +194,14 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The path to the process executable.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 512.
+     * </p>
      * 
      * @param path
-     *        The path to the process executable.
+     *        The path to the process executable.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 512.
      */
 
     public void setPath(String path) {
@@ -186,8 +212,13 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The path to the process executable.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 512.
+     * </p>
      * 
-     * @return The path to the process executable.
+     * @return The path to the process executable.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 512.
      */
 
     public String getPath() {
@@ -198,9 +229,14 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The path to the process executable.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 512.
+     * </p>
      * 
      * @param path
-     *        The path to the process executable.
+     *        The path to the process executable.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 512.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

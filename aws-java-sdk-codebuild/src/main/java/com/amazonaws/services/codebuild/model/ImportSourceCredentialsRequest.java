@@ -35,7 +35,7 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access
-     * token or the app password.
+     * token or the app password. For the <code>authType</code> CODECONNECTIONS, this is the <code>connectionArn</code>.
      * </p>
      */
     private String token;
@@ -47,8 +47,9 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     private String serverType;
     /**
      * <p>
-     * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the CodeBuild console.
+     * The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     * Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild
+     * console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * </p>
      */
     private String authType;
@@ -109,12 +110,13 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access
-     * token or the app password.
+     * token or the app password. For the <code>authType</code> CODECONNECTIONS, this is the <code>connectionArn</code>.
      * </p>
      * 
      * @param token
      *        For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the
-     *        access token or the app password.
+     *        access token or the app password. For the <code>authType</code> CODECONNECTIONS, this is the
+     *        <code>connectionArn</code>.
      */
 
     public void setToken(String token) {
@@ -124,11 +126,12 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access
-     * token or the app password.
+     * token or the app password. For the <code>authType</code> CODECONNECTIONS, this is the <code>connectionArn</code>.
      * </p>
      * 
      * @return For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the
-     *         access token or the app password.
+     *         access token or the app password. For the <code>authType</code> CODECONNECTIONS, this is the
+     *         <code>connectionArn</code>.
      */
 
     public String getToken() {
@@ -138,12 +141,13 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the access
-     * token or the app password.
+     * token or the app password. For the <code>authType</code> CODECONNECTIONS, this is the <code>connectionArn</code>.
      * </p>
      * 
      * @param token
      *        For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is either the
-     *        access token or the app password.
+     *        access token or the app password. For the <code>authType</code> CODECONNECTIONS, this is the
+     *        <code>connectionArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,13 +217,15 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the CodeBuild console.
+     * The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     * Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild
+     * console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * </p>
      * 
      * @param authType
-     *        The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An
-     *        OAUTH connection is not supported by the API and must be created using the CodeBuild console.
+     *        The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     *        Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the
+     *        CodeBuild console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * @see AuthType
      */
 
@@ -229,12 +235,14 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the CodeBuild console.
+     * The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     * Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild
+     * console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * </p>
      * 
-     * @return The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An
-     *         OAUTH connection is not supported by the API and must be created using the CodeBuild console.
+     * @return The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed,
+     *         or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the
+     *         CodeBuild console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * @see AuthType
      */
 
@@ -244,13 +252,15 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the CodeBuild console.
+     * The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     * Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild
+     * console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * </p>
      * 
      * @param authType
-     *        The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An
-     *        OAUTH connection is not supported by the API and must be created using the CodeBuild console.
+     *        The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     *        Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the
+     *        CodeBuild console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthType
      */
@@ -262,13 +272,15 @@ public class ImportSourceCredentialsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH
-     * connection is not supported by the API and must be created using the CodeBuild console.
+     * The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     * Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild
+     * console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * </p>
      * 
      * @param authType
-     *        The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An
-     *        OAUTH connection is not supported by the API and must be created using the CodeBuild console.
+     *        The type of authentication used to connect to a GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     *        Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the
+     *        CodeBuild console. Note that CODECONNECTIONS is only valid for GitLab and GitLab Self Managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthType
      */

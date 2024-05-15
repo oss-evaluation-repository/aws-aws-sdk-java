@@ -38,6 +38,9 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
      * <p>
      * The value of a threat intelligence indicator.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 512 length.
+     * </p>
      */
     private String value;
     /**
@@ -87,6 +90,9 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The source of the threat intelligence indicator.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 64 length.
      * </p>
      */
     private String source;
@@ -160,9 +166,14 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
      * <p>
      * The value of a threat intelligence indicator.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 512 length.
+     * </p>
      * 
      * @param value
-     *        The value of a threat intelligence indicator.
+     *        The value of a threat intelligence indicator.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 512 length.
      */
 
     public void setValue(String value) {
@@ -173,8 +184,13 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
      * <p>
      * The value of a threat intelligence indicator.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 512 length.
+     * </p>
      * 
-     * @return The value of a threat intelligence indicator.
+     * @return The value of a threat intelligence indicator.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 512 length.
      */
 
     public String getValue() {
@@ -185,9 +201,14 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
      * <p>
      * The value of a threat intelligence indicator.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 512 length.
+     * </p>
      * 
      * @param value
-     *        The value of a threat intelligence indicator.
+     *        The value of a threat intelligence indicator.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 512 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,9 +512,14 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
      * <p>
      * The source of the threat intelligence indicator.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 64 length.
+     * </p>
      * 
      * @param source
-     *        The source of the threat intelligence indicator.
+     *        The source of the threat intelligence indicator.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 64 length.
      */
 
     public void setSource(String source) {
@@ -504,8 +530,13 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
      * <p>
      * The source of the threat intelligence indicator.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 64 length.
+     * </p>
      * 
-     * @return The source of the threat intelligence indicator.
+     * @return The source of the threat intelligence indicator.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 64 length.
      */
 
     public String getSource() {
@@ -516,9 +547,14 @@ public class ThreatIntelIndicator implements Serializable, Cloneable, Structured
      * <p>
      * The source of the threat intelligence indicator.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 64 length.
+     * </p>
      * 
      * @param source
-     *        The source of the threat intelligence indicator.
+     *        The source of the threat intelligence indicator.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 64 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

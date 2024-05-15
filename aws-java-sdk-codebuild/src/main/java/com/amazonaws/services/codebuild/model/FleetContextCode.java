@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum FleetContextCode {
 
     CREATE_FAILED("CREATE_FAILED"),
-    UPDATE_FAILED("UPDATE_FAILED");
+    UPDATE_FAILED("UPDATE_FAILED"),
+    ACTION_REQUIRED("ACTION_REQUIRED");
 
     private String value;
 

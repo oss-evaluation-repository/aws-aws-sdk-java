@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Specifies the filters to use on the metadata attributes in the knowledge base data sources before returning results.
  * For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
- * configurations</a>.
+ * configurations</a>. See the examples below to see how to use these filters.
  * </p>
  * <p>
  * This data type is used in the following API operations:
@@ -51,27 +51,27 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list are
-     * returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions inside
+     * this list.
      * </p>
      */
     private java.util.List<RetrievalFilter> andAll;
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions inside this
-     * list are returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     * conditions inside this list.
      * </p>
      */
     private java.util.List<RetrievalFilter> orAll;
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list are
-     * returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions inside
+     * this list.
      * </p>
      * 
-     * @return Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list
-     *         are returned.
+     * @return Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions
+     *         inside this list.
      */
 
     public java.util.List<RetrievalFilter> getAndAll() {
@@ -80,13 +80,13 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list are
-     * returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions inside
+     * this list.
      * </p>
      * 
      * @param andAll
-     *        Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list
-     *        are returned.
+     *        Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions
+     *        inside this list.
      */
 
     public void setAndAll(java.util.Collection<RetrievalFilter> andAll) {
@@ -100,8 +100,8 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list are
-     * returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions inside
+     * this list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -110,8 +110,8 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param andAll
-     *        Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list
-     *        are returned.
+     *        Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions
+     *        inside this list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +127,13 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list are
-     * returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions inside
+     * this list.
      * </p>
      * 
      * @param andAll
-     *        Knowledge base data sources whose metadata attributes fulfill all the filter conditions inside this list
-     *        are returned.
+     *        Knowledge base data sources are returned if their metadata attributes fulfill all the filter conditions
+     *        inside this list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,12 +144,12 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions inside this
-     * list are returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     * conditions inside this list.
      * </p>
      * 
-     * @return Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions
-     *         inside this list are returned.
+     * @return Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     *         conditions inside this list.
      */
 
     public java.util.List<RetrievalFilter> getOrAll() {
@@ -158,13 +158,13 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions inside this
-     * list are returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     * conditions inside this list.
      * </p>
      * 
      * @param orAll
-     *        Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions inside
-     *        this list are returned.
+     *        Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     *        conditions inside this list.
      */
 
     public void setOrAll(java.util.Collection<RetrievalFilter> orAll) {
@@ -178,8 +178,8 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions inside this
-     * list are returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     * conditions inside this list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -188,8 +188,8 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param orAll
-     *        Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions inside
-     *        this list are returned.
+     *        Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     *        conditions inside this list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,13 +205,13 @@ public class RetrievalFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions inside this
-     * list are returned.
+     * Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     * conditions inside this list.
      * </p>
      * 
      * @param orAll
-     *        Knowledge base data sources whose metadata attributes fulfill at least one of the filter conditions inside
-     *        this list are returned.
+     *        Knowledge base data sources are returned if their metadata attributes fulfill at least one of the filter
+     *        conditions inside this list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

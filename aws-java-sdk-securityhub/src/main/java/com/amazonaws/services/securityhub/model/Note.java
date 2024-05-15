@@ -32,6 +32,9 @@ public class Note implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The text of a note.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 512.
+     * </p>
      */
     private String text;
     /**
@@ -83,9 +86,14 @@ public class Note implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The text of a note.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 512.
+     * </p>
      * 
      * @param text
-     *        The text of a note.
+     *        The text of a note.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 512.
      */
 
     public void setText(String text) {
@@ -96,8 +104,13 @@ public class Note implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The text of a note.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 512.
+     * </p>
      * 
-     * @return The text of a note.
+     * @return The text of a note.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 512.
      */
 
     public String getText() {
@@ -108,9 +121,14 @@ public class Note implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The text of a note.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 512.
+     * </p>
      * 
      * @param text
-     *        The text of a note.
+     *        The text of a note.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 512.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

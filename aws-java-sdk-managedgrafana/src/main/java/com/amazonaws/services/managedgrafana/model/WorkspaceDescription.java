@@ -100,7 +100,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
      * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
-     * >Register with Grafana Labs</a>.
+     * >Link your account with Grafana Labs</a>.
      * </p>
      */
     private String grafanaToken;
@@ -779,13 +779,13 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
      * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
-     * >Register with Grafana Labs</a>.
+     * >Link your account with Grafana Labs</a>.
      * </p>
      * 
      * @param grafanaToken
      *        The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
-     *        >Register with Grafana Labs</a>.
+     *        >Link your account with Grafana Labs</a>.
      */
 
     public void setGrafanaToken(String grafanaToken) {
@@ -796,12 +796,12 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
      * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
-     * >Register with Grafana Labs</a>.
+     * >Link your account with Grafana Labs</a>.
      * </p>
      * 
      * @return The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
      *         "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
-     *         >Register with Grafana Labs</a>.
+     *         >Link your account with Grafana Labs</a>.
      */
 
     public String getGrafanaToken() {
@@ -812,13 +812,13 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * <p>
      * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
      * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
-     * >Register with Grafana Labs</a>.
+     * >Link your account with Grafana Labs</a>.
      * </p>
      * 
      * @param grafanaToken
      *        The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
-     *        >Register with Grafana Labs</a>.
+     *        >Link your account with Grafana Labs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

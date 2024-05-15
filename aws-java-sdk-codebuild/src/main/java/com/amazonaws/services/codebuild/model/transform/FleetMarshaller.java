@@ -50,6 +50,10 @@ public class FleetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scalingConfiguration").build();
     private static final MarshallingInfo<String> OVERFLOWBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("overflowBehavior").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
+    private static final MarshallingInfo<String> FLEETSERVICEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fleetServiceRole").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -80,6 +84,8 @@ public class FleetMarshaller {
             protocolMarshaller.marshall(fleet.getComputeType(), COMPUTETYPE_BINDING);
             protocolMarshaller.marshall(fleet.getScalingConfiguration(), SCALINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(fleet.getOverflowBehavior(), OVERFLOWBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(fleet.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(fleet.getFleetServiceRole(), FLEETSERVICEROLE_BINDING);
             protocolMarshaller.marshall(fleet.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

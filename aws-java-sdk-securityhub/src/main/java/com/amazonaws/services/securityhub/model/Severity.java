@@ -118,6 +118,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <code>Label</code>.
      * </p>
      * <p>
+     * The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     * </p>
+     * <p>
      * If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set
      * automatically as follows.
      * </p>
@@ -153,6 +156,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The native severity from the finding product that generated the finding.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
      * </p>
      */
     private String original;
@@ -749,6 +755,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <code>Label</code>.
      * </p>
      * <p>
+     * The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     * </p>
+     * <p>
      * If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set
      * automatically as follows.
      * </p>
@@ -783,6 +792,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * @param normalized
      *        Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
      *        <code>Label</code>.</p>
+     *        <p>
+     *        The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     *        </p>
      *        <p>
      *        If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code>
      *        is set automatically as follows.
@@ -825,6 +837,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <code>Label</code>.
      * </p>
      * <p>
+     * The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     * </p>
+     * <p>
      * If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set
      * automatically as follows.
      * </p>
@@ -858,6 +873,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
      *         <code>Label</code>.</p>
+     *         <p>
+     *         The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     *         </p>
      *         <p>
      *         If you provide <code>Label</code> and do not provide <code>Normalized</code>, then
      *         <code>Normalized</code> is set automatically as follows.
@@ -900,6 +918,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <code>Label</code>.
      * </p>
      * <p>
+     * The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     * </p>
+     * <p>
      * If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set
      * automatically as follows.
      * </p>
@@ -934,6 +955,9 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * @param normalized
      *        Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
      *        <code>Label</code>.</p>
+     *        <p>
+     *        The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     *        </p>
      *        <p>
      *        If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code>
      *        is set automatically as follows.
@@ -976,9 +1000,14 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The native severity from the finding product that generated the finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param original
-     *        The native severity from the finding product that generated the finding.
+     *        The native severity from the finding product that generated the finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public void setOriginal(String original) {
@@ -989,8 +1018,13 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The native severity from the finding product that generated the finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
-     * @return The native severity from the finding product that generated the finding.
+     * @return The native severity from the finding product that generated the finding.</p>
+     *         <p>
+     *         Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public String getOriginal() {
@@ -1001,9 +1035,14 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The native severity from the finding product that generated the finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param original
-     *        The native severity from the finding product that generated the finding.
+     *        The native severity from the finding product that generated the finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

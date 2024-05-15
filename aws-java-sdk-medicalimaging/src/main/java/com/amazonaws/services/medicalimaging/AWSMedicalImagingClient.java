@@ -1260,12 +1260,12 @@ public class AWSMedicalImagingClient extends AmazonWebServiceClient implements A
      * <note>
      * <p>
      * <code>SearchImageSets</code> accepts a single search query parameter and returns a paginated response of all
-     * image sets that have the matching criteria. All range queries must be input as
+     * image sets that have the matching criteria. All date range queries must be input as
      * <code>(lowerBound, upperBound)</code>.
      * </p>
      * <p>
-     * <code>SearchImageSets</code> uses the <code>updatedAt</code> field for sorting in decreasing order from latest to
-     * oldest.
+     * By default, <code>SearchImageSets</code> uses the <code>updatedAt</code> field for sorting in descending order
+     * from newest to oldest.
      * </p>
      * </note>
      * 

@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum TaskExecutionStatus {
 
     QUEUED("QUEUED"),
+    CANCELLING("CANCELLING"),
     LAUNCHING("LAUNCHING"),
     PREPARING("PREPARING"),
     TRANSFERRING("TRANSFERRING"),

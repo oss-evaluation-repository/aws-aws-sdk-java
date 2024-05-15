@@ -46,6 +46,9 @@ public class GeneratorDetails implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of tags used to identify the detector associated with the finding.
      * </p>
+     * <p>
+     * Array Members: Minimum number of 0 items. Maximum number of 10 items.
+     * </p>
      */
     private java.util.List<String> labels;
 
@@ -133,8 +136,13 @@ public class GeneratorDetails implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of tags used to identify the detector associated with the finding.
      * </p>
+     * <p>
+     * Array Members: Minimum number of 0 items. Maximum number of 10 items.
+     * </p>
      * 
-     * @return An array of tags used to identify the detector associated with the finding.
+     * @return An array of tags used to identify the detector associated with the finding. </p>
+     *         <p>
+     *         Array Members: Minimum number of 0 items. Maximum number of 10 items.
      */
 
     public java.util.List<String> getLabels() {
@@ -145,9 +153,14 @@ public class GeneratorDetails implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of tags used to identify the detector associated with the finding.
      * </p>
+     * <p>
+     * Array Members: Minimum number of 0 items. Maximum number of 10 items.
+     * </p>
      * 
      * @param labels
-     *        An array of tags used to identify the detector associated with the finding.
+     *        An array of tags used to identify the detector associated with the finding. </p>
+     *        <p>
+     *        Array Members: Minimum number of 0 items. Maximum number of 10 items.
      */
 
     public void setLabels(java.util.Collection<String> labels) {
@@ -164,13 +177,18 @@ public class GeneratorDetails implements Serializable, Cloneable, StructuredPojo
      * An array of tags used to identify the detector associated with the finding.
      * </p>
      * <p>
+     * Array Members: Minimum number of 0 items. Maximum number of 10 items.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLabels(java.util.Collection)} or {@link #withLabels(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param labels
-     *        An array of tags used to identify the detector associated with the finding.
+     *        An array of tags used to identify the detector associated with the finding. </p>
+     *        <p>
+     *        Array Members: Minimum number of 0 items. Maximum number of 10 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,9 +206,14 @@ public class GeneratorDetails implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An array of tags used to identify the detector associated with the finding.
      * </p>
+     * <p>
+     * Array Members: Minimum number of 0 items. Maximum number of 10 items.
+     * </p>
      * 
      * @param labels
-     *        An array of tags used to identify the detector associated with the finding.
+     *        An array of tags used to identify the detector associated with the finding. </p>
+     *        <p>
+     *        Array Members: Minimum number of 0 items. Maximum number of 10 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

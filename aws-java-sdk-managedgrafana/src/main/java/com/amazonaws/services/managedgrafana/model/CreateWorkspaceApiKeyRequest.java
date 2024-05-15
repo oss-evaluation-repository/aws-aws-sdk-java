@@ -36,7 +36,7 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
      * Specifies the permission level of the key.
      * </p>
      * <p>
-     * Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
+     * Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code>
      * </p>
      */
     private String keyRole;
@@ -98,13 +98,13 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
      * Specifies the permission level of the key.
      * </p>
      * <p>
-     * Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
+     * Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code>
      * </p>
      * 
      * @param keyRole
      *        Specifies the permission level of the key.</p>
      *        <p>
-     *        Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
+     *        Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code>
      */
 
     public void setKeyRole(String keyRole) {
@@ -116,12 +116,12 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
      * Specifies the permission level of the key.
      * </p>
      * <p>
-     * Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
+     * Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code>
      * </p>
      * 
      * @return Specifies the permission level of the key.</p>
      *         <p>
-     *         Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
+     *         Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code>
      */
 
     public String getKeyRole() {
@@ -133,13 +133,13 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
      * Specifies the permission level of the key.
      * </p>
      * <p>
-     * Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
+     * Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code>
      * </p>
      * 
      * @param keyRole
      *        Specifies the permission level of the key.</p>
      *        <p>
-     *        Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
+     *        Valid values: <code>ADMIN</code>|<code>EDITOR</code>|<code>VIEWER</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

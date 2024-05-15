@@ -61,7 +61,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest
-     * version (for example, 9.4).
+     * version (for example, 10.4).
      * </p>
      * <p>
      * To get a list of supported versions, use the <code>ListVersions</code> operation.
@@ -516,7 +516,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest
-     * version (for example, 9.4).
+     * version (for example, 10.4).
      * </p>
      * <p>
      * To get a list of supported versions, use the <code>ListVersions</code> operation.
@@ -524,7 +524,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param grafanaVersion
      *        Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest
-     *        version (for example, 9.4).</p>
+     *        version (for example, 10.4).</p>
      *        <p>
      *        To get a list of supported versions, use the <code>ListVersions</code> operation.
      */
@@ -536,14 +536,14 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest
-     * version (for example, 9.4).
+     * version (for example, 10.4).
      * </p>
      * <p>
      * To get a list of supported versions, use the <code>ListVersions</code> operation.
      * </p>
      * 
      * @return Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the
-     *         latest version (for example, 9.4).</p>
+     *         latest version (for example, 10.4).</p>
      *         <p>
      *         To get a list of supported versions, use the <code>ListVersions</code> operation.
      */
@@ -555,7 +555,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest
-     * version (for example, 9.4).
+     * version (for example, 10.4).
      * </p>
      * <p>
      * To get a list of supported versions, use the <code>ListVersions</code> operation.
@@ -563,7 +563,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param grafanaVersion
      *        Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest
-     *        version (for example, 9.4).</p>
+     *        version (for example, 10.4).</p>
      *        <p>
      *        To get a list of supported versions, use the <code>ListVersions</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.

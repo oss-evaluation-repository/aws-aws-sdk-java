@@ -224,10 +224,26 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you
+     * add the required VPC permissions to your project service role. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     * >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC
+     * network interface</a>.
+     * </p>
+     * </note></li>
      * </ul>
      */
     private String overflowBehavior;
+
+    private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * The service role associated with the compute fleet.
+     * </p>
+     */
+    private String fleetServiceRole;
     /**
      * <p>
      * A list of tag key and value pairs associated with this compute fleet.
@@ -1653,7 +1669,15 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you
+     * add the required VPC permissions to your project service role. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     * >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC
+     * network interface</a>.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param overflowBehavior
@@ -1669,7 +1693,15 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure
+     *        that you add the required VPC permissions to your project service role. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     *        >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a
+     *        VPC network interface</a>.
+     *        </p>
+     *        </note></li>
      * @see FleetOverflowBehavior
      */
 
@@ -1692,7 +1724,15 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you
+     * add the required VPC permissions to your project service role. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     * >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC
+     * network interface</a>.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @return The compute fleet overflow behavior.</p>
@@ -1707,7 +1747,16 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      *         </p>
-     *         </li>
+     *         <note>
+     *         <p>
+     *         If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure
+     *         that you add the required VPC permissions to your project service role. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     *         >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a
+     *         VPC network interface</a>.
+     *         </p>
+     *         </note></li>
      * @see FleetOverflowBehavior
      */
 
@@ -1730,7 +1779,15 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you
+     * add the required VPC permissions to your project service role. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     * >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC
+     * network interface</a>.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param overflowBehavior
@@ -1746,7 +1803,15 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure
+     *        that you add the required VPC permissions to your project service role. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     *        >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a
+     *        VPC network interface</a>.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetOverflowBehavior
      */
@@ -1771,7 +1836,15 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      * </p>
-     * </li>
+     * <note>
+     * <p>
+     * If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure that you
+     * add the required VPC permissions to your project service role. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     * >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a VPC
+     * network interface</a>.
+     * </p>
+     * </note></li>
      * </ul>
      * 
      * @param overflowBehavior
@@ -1787,13 +1860,87 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For overflow behavior <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.
      *        </p>
-     *        </li>
+     *        <note>
+     *        <p>
+     *        If you choose to set your overflow behavior to on-demand while creating a VPC-connected fleet, make sure
+     *        that you add the required VPC permissions to your project service role. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#customer-managed-policies-example-create-vpc-network-interface"
+     *        >Example policy statement to allow CodeBuild access to Amazon Web Services services required to create a
+     *        VPC network interface</a>.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetOverflowBehavior
      */
 
     public Fleet withOverflowBehavior(FleetOverflowBehavior overflowBehavior) {
         this.overflowBehavior = overflowBehavior.toString();
+        return this;
+    }
+
+    /**
+     * @param vpcConfig
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * @param vpcConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The service role associated with the compute fleet.
+     * </p>
+     * 
+     * @param fleetServiceRole
+     *        The service role associated with the compute fleet.
+     */
+
+    public void setFleetServiceRole(String fleetServiceRole) {
+        this.fleetServiceRole = fleetServiceRole;
+    }
+
+    /**
+     * <p>
+     * The service role associated with the compute fleet.
+     * </p>
+     * 
+     * @return The service role associated with the compute fleet.
+     */
+
+    public String getFleetServiceRole() {
+        return this.fleetServiceRole;
+    }
+
+    /**
+     * <p>
+     * The service role associated with the compute fleet.
+     * </p>
+     * 
+     * @param fleetServiceRole
+     *        The service role associated with the compute fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withFleetServiceRole(String fleetServiceRole) {
+        setFleetServiceRole(fleetServiceRole);
         return this;
     }
 
@@ -1925,6 +2072,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             sb.append("ScalingConfiguration: ").append(getScalingConfiguration()).append(",");
         if (getOverflowBehavior() != null)
             sb.append("OverflowBehavior: ").append(getOverflowBehavior()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getFleetServiceRole() != null)
+            sb.append("FleetServiceRole: ").append(getFleetServiceRole()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1985,6 +2136,14 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOverflowBehavior() != null && other.getOverflowBehavior().equals(this.getOverflowBehavior()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
+        if (other.getFleetServiceRole() == null ^ this.getFleetServiceRole() == null)
+            return false;
+        if (other.getFleetServiceRole() != null && other.getFleetServiceRole().equals(this.getFleetServiceRole()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -2008,6 +2167,8 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
         hashCode = prime * hashCode + ((getScalingConfiguration() == null) ? 0 : getScalingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOverflowBehavior() == null) ? 0 : getOverflowBehavior().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getFleetServiceRole() == null) ? 0 : getFleetServiceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

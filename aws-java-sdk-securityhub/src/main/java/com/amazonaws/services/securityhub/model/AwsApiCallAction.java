@@ -33,11 +33,17 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The name of the API method that was issued.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      */
     private String api;
     /**
      * <p>
      * The name of the Amazon Web Services service that the API method belongs to.
+     * </p>
+     * <p>
+     * Length Constraints: 128.
      * </p>
      */
     private String serviceName;
@@ -149,9 +155,14 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The name of the API method that was issued.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param api
-     *        The name of the API method that was issued.
+     *        The name of the API method that was issued.</p>
+     *        <p>
+     *        Length Constraints: 128.
      */
 
     public void setApi(String api) {
@@ -162,8 +173,13 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The name of the API method that was issued.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
-     * @return The name of the API method that was issued.
+     * @return The name of the API method that was issued.</p>
+     *         <p>
+     *         Length Constraints: 128.
      */
 
     public String getApi() {
@@ -174,9 +190,14 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The name of the API method that was issued.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param api
-     *        The name of the API method that was issued.
+     *        The name of the API method that was issued.</p>
+     *        <p>
+     *        Length Constraints: 128.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,9 +210,14 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The name of the Amazon Web Services service that the API method belongs to.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param serviceName
-     *        The name of the Amazon Web Services service that the API method belongs to.
+     *        The name of the Amazon Web Services service that the API method belongs to.</p>
+     *        <p>
+     *        Length Constraints: 128.
      */
 
     public void setServiceName(String serviceName) {
@@ -202,8 +228,13 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The name of the Amazon Web Services service that the API method belongs to.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
-     * @return The name of the Amazon Web Services service that the API method belongs to.
+     * @return The name of the Amazon Web Services service that the API method belongs to.</p>
+     *         <p>
+     *         Length Constraints: 128.
      */
 
     public String getServiceName() {
@@ -214,9 +245,14 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The name of the Amazon Web Services service that the API method belongs to.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param serviceName
-     *        The name of the Amazon Web Services service that the API method belongs to.
+     *        The name of the Amazon Web Services service that the API method belongs to.</p>
+     *        <p>
+     *        Length Constraints: 128.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

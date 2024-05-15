@@ -61,6 +61,12 @@ public class StartDICOMImportJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String outputS3Uri;
+    /**
+     * <p>
+     * The account ID of the source S3 bucket owner.
+     * </p>
+     */
+    private String inputOwnerAccountId;
 
     /**
      * <p>
@@ -304,6 +310,46 @@ public class StartDICOMImportJobRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The account ID of the source S3 bucket owner.
+     * </p>
+     * 
+     * @param inputOwnerAccountId
+     *        The account ID of the source S3 bucket owner.
+     */
+
+    public void setInputOwnerAccountId(String inputOwnerAccountId) {
+        this.inputOwnerAccountId = inputOwnerAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID of the source S3 bucket owner.
+     * </p>
+     * 
+     * @return The account ID of the source S3 bucket owner.
+     */
+
+    public String getInputOwnerAccountId() {
+        return this.inputOwnerAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID of the source S3 bucket owner.
+     * </p>
+     * 
+     * @param inputOwnerAccountId
+     *        The account ID of the source S3 bucket owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartDICOMImportJobRequest withInputOwnerAccountId(String inputOwnerAccountId) {
+        setInputOwnerAccountId(inputOwnerAccountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -326,7 +372,9 @@ public class StartDICOMImportJobRequest extends com.amazonaws.AmazonWebServiceRe
         if (getInputS3Uri() != null)
             sb.append("InputS3Uri: ").append(getInputS3Uri()).append(",");
         if (getOutputS3Uri() != null)
-            sb.append("OutputS3Uri: ").append(getOutputS3Uri());
+            sb.append("OutputS3Uri: ").append(getOutputS3Uri()).append(",");
+        if (getInputOwnerAccountId() != null)
+            sb.append("InputOwnerAccountId: ").append(getInputOwnerAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -365,6 +413,10 @@ public class StartDICOMImportJobRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getOutputS3Uri() != null && other.getOutputS3Uri().equals(this.getOutputS3Uri()) == false)
             return false;
+        if (other.getInputOwnerAccountId() == null ^ this.getInputOwnerAccountId() == null)
+            return false;
+        if (other.getInputOwnerAccountId() != null && other.getInputOwnerAccountId().equals(this.getInputOwnerAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -379,6 +431,7 @@ public class StartDICOMImportJobRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getDatastoreId() == null) ? 0 : getDatastoreId().hashCode());
         hashCode = prime * hashCode + ((getInputS3Uri() == null) ? 0 : getInputS3Uri().hashCode());
         hashCode = prime * hashCode + ((getOutputS3Uri() == null) ? 0 : getOutputS3Uri().hashCode());
+        hashCode = prime * hashCode + ((getInputOwnerAccountId() == null) ? 0 : getInputOwnerAccountId().hashCode());
         return hashCode;
     }
 

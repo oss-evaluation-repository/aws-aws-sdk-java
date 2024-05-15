@@ -235,7 +235,8 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     private LogsLocation logs;
     /**
      * <p>
-     * How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.
+     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not
+     * get marked as completed.
      * </p>
      */
     private Integer timeoutInMinutes;
@@ -1985,12 +1986,13 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.
+     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not
+     * get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as
-     *        completed.
+     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it
+     *        does not get marked as completed.
      */
 
     public void setTimeoutInMinutes(Integer timeoutInMinutes) {
@@ -1999,11 +2001,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.
+     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not
+     * get marked as completed.
      * </p>
      * 
-     * @return How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as
-     *         completed.
+     * @return How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it
+     *         does not get marked as completed.
      */
 
     public Integer getTimeoutInMinutes() {
@@ -2012,12 +2015,13 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as completed.
+     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it does not
+     * get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, for CodeBuild to wait before timing out this build if it does not get marked as
-     *        completed.
+     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out this build if it
+     *        does not get marked as completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

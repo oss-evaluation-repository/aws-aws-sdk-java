@@ -37,6 +37,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 256.
+     * </p>
      */
     private String type;
     /**
@@ -55,6 +58,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The canonical Amazon Web Services external Region name where this resource is located.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 16.
+     * </p>
      */
     private String region;
     /**
@@ -66,7 +72,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private String resourceRole;
     /**
      * <p>
-     * A list of Amazon Web Services tags associated with a resource at the time the finding was processed.
+     * A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must
+     * follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web
+     * Services tag naming limits and requirements</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -104,13 +112,20 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 256.
+     * </p>
      * 
      * @param type
      *        The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
      *        supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
      *        <code>AwsEc2Instance</code>.</p>
      *        <p>
-     *        If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
+     *        If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>
+     *        .
+     *        </p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 256.
      */
 
     public void setType(String type) {
@@ -126,6 +141,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 256.
+     * </p>
      * 
      * @return The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
      *         supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
@@ -133,6 +151,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         If the resource does not match any of the provided types, then set <code>Type</code> to
      *         <code>Other</code>.
+     *         </p>
+     *         <p>
+     *         Length Constraints: Minimum length of 1. Maximum length of 256.
      */
 
     public String getType() {
@@ -148,13 +169,20 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 256.
+     * </p>
      * 
      * @param type
      *        The type of the resource that details are provided for. If possible, set <code>Type</code> to one of the
      *        supported resource types. For example, if the resource is an EC2 instance, then set <code>Type</code> to
      *        <code>AwsEc2Instance</code>.</p>
      *        <p>
-     *        If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>.
+     *        If the resource does not match any of the provided types, then set <code>Type</code> to <code>Other</code>
+     *        .
+     *        </p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 256.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,9 +294,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The canonical Amazon Web Services external Region name where this resource is located.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 16.
+     * </p>
      * 
      * @param region
-     *        The canonical Amazon Web Services external Region name where this resource is located.
+     *        The canonical Amazon Web Services external Region name where this resource is located.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 16.
      */
 
     public void setRegion(String region) {
@@ -279,8 +312,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The canonical Amazon Web Services external Region name where this resource is located.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 16.
+     * </p>
      * 
-     * @return The canonical Amazon Web Services external Region name where this resource is located.
+     * @return The canonical Amazon Web Services external Region name where this resource is located.</p>
+     *         <p>
+     *         Length Constraints: Minimum length of 1. Maximum length of 16.
      */
 
     public String getRegion() {
@@ -291,9 +329,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The canonical Amazon Web Services external Region name where this resource is located.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 16.
+     * </p>
      * 
      * @param region
-     *        The canonical Amazon Web Services external Region name where this resource is located.
+     *        The canonical Amazon Web Services external Region name where this resource is located.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 16.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,10 +393,15 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of Amazon Web Services tags associated with a resource at the time the finding was processed.
+     * A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must
+     * follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web
+     * Services tag naming limits and requirements</a>.
      * </p>
      * 
-     * @return A list of Amazon Web Services tags associated with a resource at the time the finding was processed.
+     * @return A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags
+     *         must follow <a
+     *         href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web
+     *         Services tag naming limits and requirements</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -362,11 +410,16 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of Amazon Web Services tags associated with a resource at the time the finding was processed.
+     * A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must
+     * follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web
+     * Services tag naming limits and requirements</a>.
      * </p>
      * 
      * @param tags
-     *        A list of Amazon Web Services tags associated with a resource at the time the finding was processed.
+     *        A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags
+     *        must follow <a
+     *        href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web
+     *        Services tag naming limits and requirements</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -375,11 +428,16 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of Amazon Web Services tags associated with a resource at the time the finding was processed.
+     * A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags must
+     * follow <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web
+     * Services tag naming limits and requirements</a>.
      * </p>
      * 
      * @param tags
-     *        A list of Amazon Web Services tags associated with a resource at the time the finding was processed.
+     *        A list of Amazon Web Services tags associated with a resource at the time the finding was processed. Tags
+     *        must follow <a
+     *        href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions">Amazon Web
+     *        Services tag naming limits and requirements</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

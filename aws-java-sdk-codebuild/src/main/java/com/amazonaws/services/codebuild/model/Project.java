@@ -79,6 +79,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -507,6 +512,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -543,6 +553,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *        the source code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitLab: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>
@@ -593,6 +608,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -628,6 +648,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *         the source code you want to build. If a pull request ID is specified, it must use the format
      *         <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *         branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For GitLab: the commit ID, branch, or Git tag to use.
      *         </p>
      *         </li>
      *         <li>
@@ -678,6 +703,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For GitLab: the commit ID, branch, or Git tag to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you
      * want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default
      * branch's HEAD commit ID is used.
@@ -714,6 +744,11 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
      *        the source code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For GitLab: the commit ID, branch, or Git tag to use.
      *        </p>
      *        </li>
      *        <li>

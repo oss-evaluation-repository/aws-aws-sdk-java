@@ -67,6 +67,34 @@ public class AbstractAmazonManagedGrafanaAsync extends AbstractAmazonManagedGraf
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkspaceServiceAccountResult> createWorkspaceServiceAccountAsync(CreateWorkspaceServiceAccountRequest request) {
+
+        return createWorkspaceServiceAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkspaceServiceAccountResult> createWorkspaceServiceAccountAsync(CreateWorkspaceServiceAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkspaceServiceAccountRequest, CreateWorkspaceServiceAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkspaceServiceAccountTokenResult> createWorkspaceServiceAccountTokenAsync(
+            CreateWorkspaceServiceAccountTokenRequest request) {
+
+        return createWorkspaceServiceAccountTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkspaceServiceAccountTokenResult> createWorkspaceServiceAccountTokenAsync(
+            CreateWorkspaceServiceAccountTokenRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkspaceServiceAccountTokenRequest, CreateWorkspaceServiceAccountTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWorkspaceResult> deleteWorkspaceAsync(DeleteWorkspaceRequest request) {
 
         return deleteWorkspaceAsync(request, null);
@@ -88,6 +116,34 @@ public class AbstractAmazonManagedGrafanaAsync extends AbstractAmazonManagedGraf
     @Override
     public java.util.concurrent.Future<DeleteWorkspaceApiKeyResult> deleteWorkspaceApiKeyAsync(DeleteWorkspaceApiKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceApiKeyRequest, DeleteWorkspaceApiKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceServiceAccountResult> deleteWorkspaceServiceAccountAsync(DeleteWorkspaceServiceAccountRequest request) {
+
+        return deleteWorkspaceServiceAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceServiceAccountResult> deleteWorkspaceServiceAccountAsync(DeleteWorkspaceServiceAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceServiceAccountRequest, DeleteWorkspaceServiceAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceServiceAccountTokenResult> deleteWorkspaceServiceAccountTokenAsync(
+            DeleteWorkspaceServiceAccountTokenRequest request) {
+
+        return deleteWorkspaceServiceAccountTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceServiceAccountTokenResult> deleteWorkspaceServiceAccountTokenAsync(
+            DeleteWorkspaceServiceAccountTokenRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceServiceAccountTokenRequest, DeleteWorkspaceServiceAccountTokenResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -181,6 +237,34 @@ public class AbstractAmazonManagedGrafanaAsync extends AbstractAmazonManagedGraf
     @Override
     public java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListVersionsRequest, ListVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkspaceServiceAccountTokensResult> listWorkspaceServiceAccountTokensAsync(
+            ListWorkspaceServiceAccountTokensRequest request) {
+
+        return listWorkspaceServiceAccountTokensAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkspaceServiceAccountTokensResult> listWorkspaceServiceAccountTokensAsync(
+            ListWorkspaceServiceAccountTokensRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkspaceServiceAccountTokensRequest, ListWorkspaceServiceAccountTokensResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkspaceServiceAccountsResult> listWorkspaceServiceAccountsAsync(ListWorkspaceServiceAccountsRequest request) {
+
+        return listWorkspaceServiceAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkspaceServiceAccountsResult> listWorkspaceServiceAccountsAsync(ListWorkspaceServiceAccountsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkspaceServiceAccountsRequest, ListWorkspaceServiceAccountsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

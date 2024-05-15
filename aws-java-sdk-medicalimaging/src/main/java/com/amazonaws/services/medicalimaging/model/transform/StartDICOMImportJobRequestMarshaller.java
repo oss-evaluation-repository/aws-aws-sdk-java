@@ -42,6 +42,8 @@ public class StartDICOMImportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputS3Uri").build();
     private static final MarshallingInfo<String> OUTPUTS3URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputS3Uri").build();
+    private static final MarshallingInfo<String> INPUTOWNERACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputOwnerAccountId").build();
 
     private static final StartDICOMImportJobRequestMarshaller instance = new StartDICOMImportJobRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class StartDICOMImportJobRequestMarshaller {
             protocolMarshaller.marshall(startDICOMImportJobRequest.getDatastoreId(), DATASTOREID_BINDING);
             protocolMarshaller.marshall(startDICOMImportJobRequest.getInputS3Uri(), INPUTS3URI_BINDING);
             protocolMarshaller.marshall(startDICOMImportJobRequest.getOutputS3Uri(), OUTPUTS3URI_BINDING);
+            protocolMarshaller.marshall(startDICOMImportJobRequest.getInputOwnerAccountId(), INPUTOWNERACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

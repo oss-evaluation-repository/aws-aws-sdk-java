@@ -43,12 +43,32 @@ public class AbstractAmazonManagedGrafana implements AmazonManagedGrafana {
     }
 
     @Override
+    public CreateWorkspaceServiceAccountResult createWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateWorkspaceServiceAccountTokenResult createWorkspaceServiceAccountToken(CreateWorkspaceServiceAccountTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteWorkspaceResult deleteWorkspace(DeleteWorkspaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteWorkspaceApiKeyResult deleteWorkspaceApiKey(DeleteWorkspaceApiKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorkspaceServiceAccountResult deleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorkspaceServiceAccountTokenResult deleteWorkspaceServiceAccountToken(DeleteWorkspaceServiceAccountTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +104,16 @@ public class AbstractAmazonManagedGrafana implements AmazonManagedGrafana {
 
     @Override
     public ListVersionsResult listVersions(ListVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorkspaceServiceAccountTokensResult listWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorkspaceServiceAccountsResult listWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

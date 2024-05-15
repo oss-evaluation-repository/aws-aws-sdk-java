@@ -58,7 +58,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
      * result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3
+     * days.
      * </p>
      * </li>
      * </ul>
@@ -70,6 +71,9 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For a control, the industry or regulatory framework requirements that are related to the control. The check for
      * that control is aligned with these requirements.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 32 items.
      * </p>
      */
     private java.util.List<String> relatedRequirements;
@@ -131,7 +135,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
      * result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3
+     * days.
      * </p>
      * </li>
      * </ul>
@@ -165,7 +170,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because
      *        the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     *        <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     *        <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding
+     *        after 3 days.
      *        </p>
      *        </li>
      *        </ul>
@@ -206,7 +212,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
      * result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3
+     * days.
      * </p>
      * </li>
      * </ul>
@@ -239,7 +246,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because
      *         the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     *         <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     *         <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding
+     *         after 3 days.
      *         </p>
      *         </li>
      *         </ul>
@@ -280,7 +288,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
      * result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3
+     * days.
      * </p>
      * </li>
      * </ul>
@@ -314,7 +323,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because
      *        the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     *        <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     *        <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding
+     *        after 3 days.
      *        </p>
      *        </li>
      *        </ul>
@@ -357,7 +367,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the
      * result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     * <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     * <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding after 3
+     * days.
      * </p>
      * </li>
      * </ul>
@@ -391,7 +402,8 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because
      *        the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was
-     *        <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.
+     *        <code>NOT_APPLICABLE</code> for a Security Hub control, Security Hub automatically archives the finding
+     *        after 3 days.
      *        </p>
      *        </li>
      *        </ul>
@@ -410,9 +422,14 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * For a control, the industry or regulatory framework requirements that are related to the control. The check for
      * that control is aligned with these requirements.
      * </p>
+     * <p>
+     * Array Members: Maximum number of 32 items.
+     * </p>
      * 
      * @return For a control, the industry or regulatory framework requirements that are related to the control. The
-     *         check for that control is aligned with these requirements.
+     *         check for that control is aligned with these requirements.</p>
+     *         <p>
+     *         Array Members: Maximum number of 32 items.
      */
 
     public java.util.List<String> getRelatedRequirements() {
@@ -424,10 +441,15 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * For a control, the industry or regulatory framework requirements that are related to the control. The check for
      * that control is aligned with these requirements.
      * </p>
+     * <p>
+     * Array Members: Maximum number of 32 items.
+     * </p>
      * 
      * @param relatedRequirements
      *        For a control, the industry or regulatory framework requirements that are related to the control. The
-     *        check for that control is aligned with these requirements.
+     *        check for that control is aligned with these requirements.</p>
+     *        <p>
+     *        Array Members: Maximum number of 32 items.
      */
 
     public void setRelatedRequirements(java.util.Collection<String> relatedRequirements) {
@@ -445,6 +467,9 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * that control is aligned with these requirements.
      * </p>
      * <p>
+     * Array Members: Maximum number of 32 items.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRelatedRequirements(java.util.Collection)} or {@link #withRelatedRequirements(java.util.Collection)}
      * if you want to override the existing values.
@@ -452,7 +477,9 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param relatedRequirements
      *        For a control, the industry or regulatory framework requirements that are related to the control. The
-     *        check for that control is aligned with these requirements.
+     *        check for that control is aligned with these requirements.</p>
+     *        <p>
+     *        Array Members: Maximum number of 32 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,10 +498,15 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      * For a control, the industry or regulatory framework requirements that are related to the control. The check for
      * that control is aligned with these requirements.
      * </p>
+     * <p>
+     * Array Members: Maximum number of 32 items.
+     * </p>
      * 
      * @param relatedRequirements
      *        For a control, the industry or regulatory framework requirements that are related to the control. The
-     *        check for that control is aligned with these requirements.
+     *        check for that control is aligned with these requirements.</p>
+     *        <p>
+     *        Array Members: Maximum number of 32 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -65,6 +65,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the default branch's HEAD commit ID is used.
      * </p>
      * </dd>
+     * <dt>GitLab</dt>
+     * <dd>
+     * <p>
+     * The commit ID, branch, or Git tag to use.
+     * </p>
+     * </dd>
      * <dt>Bitbucket</dt>
      * <dd>
      * <p>
@@ -126,7 +132,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An authorization type for this build that overrides the one defined in the build project. This override applies
-     * only if the build project's source is BitBucket or GitHub.
+     * only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * </p>
      */
     private SourceAuth sourceAuthOverride;
@@ -544,6 +550,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the default branch's HEAD commit ID is used.
      * </p>
      * </dd>
+     * <dt>GitLab</dt>
+     * <dd>
+     * <p>
+     * The commit ID, branch, or Git tag to use.
+     * </p>
+     * </dd>
      * <dt>Bitbucket</dt>
      * <dd>
      * <p>
@@ -586,6 +598,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </dd>
+     *        <dt>GitLab</dt>
+     *        <dd>
+     *        <p>
+     *        The commit ID, branch, or Git tag to use.
      *        </p>
      *        </dd>
      *        <dt>Bitbucket</dt>
@@ -638,6 +656,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the default branch's HEAD commit ID is used.
      * </p>
      * </dd>
+     * <dt>GitLab</dt>
+     * <dd>
+     * <p>
+     * The commit ID, branch, or Git tag to use.
+     * </p>
+     * </dd>
      * <dt>Bitbucket</dt>
      * <dd>
      * <p>
@@ -679,6 +703,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         code you want to build. If a pull request ID is specified, it must use the format
      *         <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *         branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *         </p>
+     *         </dd>
+     *         <dt>GitLab</dt>
+     *         <dd>
+     *         <p>
+     *         The commit ID, branch, or Git tag to use.
      *         </p>
      *         </dd>
      *         <dt>Bitbucket</dt>
@@ -731,6 +761,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the default branch's HEAD commit ID is used.
      * </p>
      * </dd>
+     * <dt>GitLab</dt>
+     * <dd>
+     * <p>
+     * The commit ID, branch, or Git tag to use.
+     * </p>
+     * </dd>
      * <dt>Bitbucket</dt>
      * <dd>
      * <p>
@@ -773,6 +809,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </dd>
+     *        <dt>GitLab</dt>
+     *        <dd>
+     *        <p>
+     *        The commit ID, branch, or Git tag to use.
      *        </p>
      *        </dd>
      *        <dt>Bitbucket</dt>
@@ -1102,12 +1144,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An authorization type for this build that overrides the one defined in the build project. This override applies
-     * only if the build project's source is BitBucket or GitHub.
+     * only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * </p>
      * 
      * @param sourceAuthOverride
      *        An authorization type for this build that overrides the one defined in the build project. This override
-     *        applies only if the build project's source is BitBucket or GitHub.
+     *        applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      */
 
     public void setSourceAuthOverride(SourceAuth sourceAuthOverride) {
@@ -1117,11 +1159,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An authorization type for this build that overrides the one defined in the build project. This override applies
-     * only if the build project's source is BitBucket or GitHub.
+     * only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * </p>
      * 
      * @return An authorization type for this build that overrides the one defined in the build project. This override
-     *         applies only if the build project's source is BitBucket or GitHub.
+     *         applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      */
 
     public SourceAuth getSourceAuthOverride() {
@@ -1131,12 +1173,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An authorization type for this build that overrides the one defined in the build project. This override applies
-     * only if the build project's source is BitBucket or GitHub.
+     * only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * </p>
      * 
      * @param sourceAuthOverride
      *        An authorization type for this build that overrides the one defined in the build project. This override
-     *        applies only if the build project's source is BitBucket or GitHub.
+     *        applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
