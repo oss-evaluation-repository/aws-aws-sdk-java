@@ -136,6 +136,11 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public GetDataLakePrincipalResult getDataLakePrincipal(GetDataLakePrincipalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDataLakeSettingsResult getDataLakeSettings(GetDataLakeSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

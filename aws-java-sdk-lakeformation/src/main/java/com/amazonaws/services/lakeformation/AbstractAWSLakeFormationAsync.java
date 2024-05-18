@@ -307,6 +307,19 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataLakePrincipalResult> getDataLakePrincipalAsync(GetDataLakePrincipalRequest request) {
+
+        return getDataLakePrincipalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataLakePrincipalResult> getDataLakePrincipalAsync(GetDataLakePrincipalRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakePrincipalRequest, GetDataLakePrincipalResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDataLakeSettingsResult> getDataLakeSettingsAsync(GetDataLakeSettingsRequest request) {
 
         return getDataLakeSettingsAsync(request, null);

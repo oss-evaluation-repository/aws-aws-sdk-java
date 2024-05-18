@@ -146,8 +146,8 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private String serviceRole;
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did
-     * not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that
+     * did not get marked as completed. The default is 60 minutes.
      * </p>
      */
     private Integer timeoutInMinutes;
@@ -1100,12 +1100,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did
-     * not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that
+     * did not get marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build
      *        that did not get marked as completed. The default is 60 minutes.
      */
 
@@ -1115,12 +1115,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did
-     * not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that
+     * did not get marked as completed. The default is 60 minutes.
      * </p>
      * 
-     * @return How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build
-     *         that did not get marked as completed. The default is 60 minutes.
+     * @return How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related
+     *         build that did not get marked as completed. The default is 60 minutes.
      */
 
     public Integer getTimeoutInMinutes() {
@@ -1129,12 +1129,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build that did
-     * not get marked as completed. The default is 60 minutes.
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that
+     * did not get marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related build
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build
      *        that did not get marked as completed. The default is 60 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

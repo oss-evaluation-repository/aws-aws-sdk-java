@@ -79,7 +79,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private ProtocolDetails protocolDetails;
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      */
     private String domain;
@@ -636,11 +637,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @see Domain
      */
 
@@ -650,10 +654,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
-     * @return Specifies the domain of the storage system that is used for file transfers.
+     * @return Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *         available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *         default value is S3.
      * @see Domain
      */
 
@@ -663,11 +670,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -679,11 +689,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the domain of the storage system that is used for file transfers.
+     * Specifies the domain of the storage system that is used for file transfers. There are two domains available:
+     * Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
      * </p>
      * 
      * @param domain
-     *        Specifies the domain of the storage system that is used for file transfers.
+     *        Specifies the domain of the storage system that is used for file transfers. There are two domains
+     *        available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+     *        default value is S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */

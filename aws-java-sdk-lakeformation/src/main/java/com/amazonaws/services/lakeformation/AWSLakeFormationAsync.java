@@ -768,6 +768,37 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Returns the identity of the invoking principal.
+     * </p>
+     * 
+     * @param getDataLakePrincipalRequest
+     * @return A Java Future containing the result of the GetDataLakePrincipal operation returned by the service.
+     * @sample AWSLakeFormationAsync.GetDataLakePrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataLakePrincipalResult> getDataLakePrincipalAsync(GetDataLakePrincipalRequest getDataLakePrincipalRequest);
+
+    /**
+     * <p>
+     * Returns the identity of the invoking principal.
+     * </p>
+     * 
+     * @param getDataLakePrincipalRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataLakePrincipal operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.GetDataLakePrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataLakePrincipalResult> getDataLakePrincipalAsync(GetDataLakePrincipalRequest getDataLakePrincipalRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataLakePrincipalRequest, GetDataLakePrincipalResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the list of the data lake administrators of a Lake Formation-managed data lake.
      * </p>
      * 

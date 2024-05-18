@@ -776,6 +776,39 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataLakePrincipalResult> getDataLakePrincipalAsync(GetDataLakePrincipalRequest request) {
+
+        return getDataLakePrincipalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataLakePrincipalResult> getDataLakePrincipalAsync(final GetDataLakePrincipalRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataLakePrincipalRequest, GetDataLakePrincipalResult> asyncHandler) {
+        final GetDataLakePrincipalRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDataLakePrincipalResult>() {
+            @Override
+            public GetDataLakePrincipalResult call() throws Exception {
+                GetDataLakePrincipalResult result = null;
+
+                try {
+                    result = executeGetDataLakePrincipal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDataLakeSettingsResult> getDataLakeSettingsAsync(GetDataLakeSettingsRequest request) {
 
         return getDataLakeSettingsAsync(request, null);

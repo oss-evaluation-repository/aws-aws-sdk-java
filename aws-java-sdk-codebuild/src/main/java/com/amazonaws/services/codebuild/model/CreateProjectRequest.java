@@ -138,7 +138,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String serviceRole;
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not
      * been marked as completed. The default is 60 minutes.
      * </p>
      */
@@ -1027,12 +1027,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not
      * been marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that
      *        has not been marked as completed. The default is 60 minutes.
      */
 
@@ -1042,11 +1042,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not
      * been marked as completed. The default is 60 minutes.
      * </p>
      * 
-     * @return How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that
+     * @return How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that
      *         has not been marked as completed. The default is 60 minutes.
      */
 
@@ -1056,12 +1056,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not
+     * How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that has not
      * been marked as completed. The default is 60 minutes.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that
+     *        How long, in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before it times out any build that
      *        has not been marked as completed. The default is 60 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

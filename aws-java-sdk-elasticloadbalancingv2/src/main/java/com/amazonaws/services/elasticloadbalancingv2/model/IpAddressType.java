@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum IpAddressType {
 
     Ipv4("ipv4"),
-    Dualstack("dualstack");
+    Dualstack("dualstack"),
+    DualstackWithoutPublicIpv4("dualstack-without-public-ipv4");
 
     private String value;
 

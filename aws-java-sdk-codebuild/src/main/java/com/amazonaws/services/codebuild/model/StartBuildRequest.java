@@ -253,7 +253,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Boolean privilegedModeOverride;
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest
      * setting already defined in the build project.
      * </p>
      */
@@ -2035,12 +2035,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest
      * setting already defined in the build project.
      * </p>
      * 
      * @param timeoutInMinutesOverride
-     *        The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     *        The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the
      *        latest setting already defined in the build project.
      */
 
@@ -2050,11 +2050,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest
      * setting already defined in the build project.
      * </p>
      * 
-     * @return The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     * @return The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the
      *         latest setting already defined in the build project.
      */
 
@@ -2064,12 +2064,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest
      * setting already defined in the build project.
      * </p>
      * 
      * @param timeoutInMinutesOverride
-     *        The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     *        The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the
      *        latest setting already defined in the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

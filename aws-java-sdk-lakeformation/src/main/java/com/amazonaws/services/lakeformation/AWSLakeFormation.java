@@ -581,6 +581,25 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
+     * Returns the identity of the invoking principal.
+     * </p>
+     * 
+     * @param getDataLakePrincipalRequest
+     * @return Result of the GetDataLakePrincipal operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.GetDataLakePrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDataLakePrincipalResult getDataLakePrincipal(GetDataLakePrincipalRequest getDataLakePrincipalRequest);
+
+    /**
+     * <p>
      * Retrieves the list of the data lake administrators of a Lake Formation-managed data lake.
      * </p>
      * 

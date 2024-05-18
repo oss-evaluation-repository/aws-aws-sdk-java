@@ -1,3 +1,24 @@
+# __1.12.725__ __2024-05-17__
+## __AWS CodeBuild__
+  - ### Features
+    - Aws CodeBuild now supports 36 hours build timeout
+
+## __AWS Lake Formation__
+  - ### Features
+    - Introduces a new API, GetDataLakePrincipal, that returns the identity of the invoking principal
+
+## __AWS Transfer Family__
+  - ### Features
+    - Enable use of CloudFormation traits in Smithy model to improve generated CloudFormation schema from the Smithy API model.
+
+## __Application Auto Scaling__
+  - ### Features
+    - add v2 smoke tests and smithy smokeTests trait for SDK testing.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release adds dualstack-without-public-ipv4 IP address type for ALB.
+
 # __1.12.724__ __2024-05-16__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features

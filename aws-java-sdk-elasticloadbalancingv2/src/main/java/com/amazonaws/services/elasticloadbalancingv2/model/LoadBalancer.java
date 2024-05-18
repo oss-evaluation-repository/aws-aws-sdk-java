@@ -101,8 +101,15 @@ public class LoadBalancer implements Serializable, Cloneable {
     private java.util.List<String> securityGroups;
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * [Application Load Balancers] The type of IP addresses used for public or private connections by the subnets
+     * attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses),
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6
+     * only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     * connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      */
     private String ipAddressType;
@@ -753,13 +760,27 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * [Application Load Balancers] The type of IP addresses used for public or private connections by the subnets
+     * attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses),
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6
+     * only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     * connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     *        [Application Load Balancers] The type of IP addresses used for public or private connections by the
+     *        subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *        <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *        addresses).</p>
+     *        <p>
+     *        [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     *        connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for
+     *        only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @see IpAddressType
      */
 
@@ -769,12 +790,26 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * [Application Load Balancers] The type of IP addresses used for public or private connections by the subnets
+     * attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses),
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6
+     * only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     * connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
-     * @return The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *         <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * @return [Application Load Balancers] The type of IP addresses used for public or private connections by the
+     *         subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4
+     *         addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *         <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *         addresses).</p>
+     *         <p>
+     *         [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     *         connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for
+     *         only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @see IpAddressType
      */
 
@@ -784,13 +819,27 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * [Application Load Balancers] The type of IP addresses used for public or private connections by the subnets
+     * attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses),
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6
+     * only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     * connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     *        [Application Load Balancers] The type of IP addresses used for public or private connections by the
+     *        subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *        <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *        addresses).</p>
+     *        <p>
+     *        [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     *        connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for
+     *        only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -802,13 +851,27 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * [Application Load Balancers] The type of IP addresses used for public or private connections by the subnets
+     * attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses),
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6
+     * only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     * connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     *        [Application Load Balancers] The type of IP addresses used for public or private connections by the
+     *        subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *        <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *        addresses).</p>
+     *        <p>
+     *        [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     *        connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for
+     *        only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @see IpAddressType
      */
 
@@ -818,13 +881,27 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * [Application Load Balancers] The type of IP addresses used for public or private connections by the subnets
+     * attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4 addresses),
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code> (for IPv6
+     * only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     * connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only
+     * IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     *        [Application Load Balancers] The type of IP addresses used for public or private connections by the
+     *        subnets attached to your load balancer. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *        <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *        addresses).</p>
+     *        <p>
+     *        [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used for public or private
+     *        connections by the subnets attached to your load balancer. The possible values are <code>ipv4</code> (for
+     *        only IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */

@@ -142,7 +142,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String serviceRole;
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related
+     * The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related
      * build that did not get marked as completed.
      * </p>
      */
@@ -1045,12 +1045,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related
+     * The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related
      * build that did not get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any
+     *        The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any
      *        related build that did not get marked as completed.
      */
 
@@ -1060,11 +1060,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related
+     * The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related
      * build that did not get marked as completed.
      * </p>
      * 
-     * @return The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any
+     * @return The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any
      *         related build that did not get marked as completed.
      */
 
@@ -1074,12 +1074,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any related
+     * The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related
      * build that did not get marked as completed.
      * </p>
      * 
      * @param timeoutInMinutes
-     *        The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any
+     *        The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any
      *        related build that did not get marked as completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

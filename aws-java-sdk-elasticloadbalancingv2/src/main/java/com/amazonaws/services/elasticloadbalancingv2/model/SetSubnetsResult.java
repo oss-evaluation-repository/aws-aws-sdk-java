@@ -31,6 +31,9 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<AvailabilityZone> availabilityZones;
     /**
      * <p>
+     * [Application Load Balancers] The IP address type.
+     * </p>
+     * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
      * <p>
@@ -111,6 +114,9 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * [Application Load Balancers] The IP address type.
+     * </p>
+     * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
      * <p>
@@ -118,7 +124,10 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param ipAddressType
-     *        [Network Load Balancers] The IP address type.</p>
+     *        [Application Load Balancers] The IP address type.</p>
+     *        <p>
+     *        [Network Load Balancers] The IP address type.
+     *        </p>
      *        <p>
      *        [Gateway Load Balancers] The IP address type.
      * @see IpAddressType
@@ -130,13 +139,19 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * [Application Load Balancers] The IP address type.
+     * </p>
+     * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
      * <p>
      * [Gateway Load Balancers] The IP address type.
      * </p>
      * 
-     * @return [Network Load Balancers] The IP address type.</p>
+     * @return [Application Load Balancers] The IP address type.</p>
+     *         <p>
+     *         [Network Load Balancers] The IP address type.
+     *         </p>
      *         <p>
      *         [Gateway Load Balancers] The IP address type.
      * @see IpAddressType
@@ -148,6 +163,9 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * [Application Load Balancers] The IP address type.
+     * </p>
+     * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
      * <p>
@@ -155,7 +173,10 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param ipAddressType
-     *        [Network Load Balancers] The IP address type.</p>
+     *        [Application Load Balancers] The IP address type.</p>
+     *        <p>
+     *        [Network Load Balancers] The IP address type.
+     *        </p>
      *        <p>
      *        [Gateway Load Balancers] The IP address type.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -169,6 +190,9 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
+     * [Application Load Balancers] The IP address type.
+     * </p>
+     * <p>
      * [Network Load Balancers] The IP address type.
      * </p>
      * <p>
@@ -176,7 +200,10 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param ipAddressType
-     *        [Network Load Balancers] The IP address type.</p>
+     *        [Application Load Balancers] The IP address type.</p>
+     *        <p>
+     *        [Network Load Balancers] The IP address type.
+     *        </p>
      *        <p>
      *        [Gateway Load Balancers] The IP address type.
      * @return Returns a reference to this object so that method calls can be chained together.

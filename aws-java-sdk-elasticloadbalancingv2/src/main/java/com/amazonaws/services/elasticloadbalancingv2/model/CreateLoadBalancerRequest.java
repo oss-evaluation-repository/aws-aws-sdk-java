@@ -123,8 +123,21 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     private String type;
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Note: Internal load balancers must use the <code>ipv4</code> IP address type.
+     * </p>
+     * <p>
+     * [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     * addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
+     * balancer with a UDP or TCP_UDP listener.
+     * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      */
     private String ipAddressType;
@@ -1048,13 +1061,39 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Note: Internal load balancers must use the <code>ipv4</code> IP address type.
+     * </p>
+     * <p>
+     * [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     * addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
+     * balancer with a UDP or TCP_UDP listener.
+     * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     *        Note: Internal load balancers must use the <code>ipv4</code> IP address type.</p>
+     *        <p>
+     *        [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *        <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *        addresses).
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
+     *        <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @see IpAddressType
      */
 
@@ -1064,12 +1103,38 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Note: Internal load balancers must use the <code>ipv4</code> IP address type.
+     * </p>
+     * <p>
+     * [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     * addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
+     * balancer with a UDP or TCP_UDP listener.
+     * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
-     * @return The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *         <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * @return Note: Internal load balancers must use the <code>ipv4</code> IP address type.</p>
+     *         <p>
+     *         [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only
+     *         IPv4 addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *         <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *         addresses).
+     *         </p>
+     *         <p>
+     *         [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *         addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
+     *         <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+     *         </p>
+     *         <p>
+     *         [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *         addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @see IpAddressType
      */
 
@@ -1079,13 +1144,39 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Note: Internal load balancers must use the <code>ipv4</code> IP address type.
+     * </p>
+     * <p>
+     * [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     * addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
+     * balancer with a UDP or TCP_UDP listener.
+     * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     *        Note: Internal load balancers must use the <code>ipv4</code> IP address type.</p>
+     *        <p>
+     *        [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *        <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *        addresses).
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
+     *        <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -1097,13 +1188,39 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Note: Internal load balancers must use the <code>ipv4</code> IP address type.
+     * </p>
+     * <p>
+     * [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     * addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
+     * balancer with a UDP or TCP_UDP listener.
+     * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     *        Note: Internal load balancers must use the <code>ipv4</code> IP address type.</p>
+     *        <p>
+     *        [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *        <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *        addresses).
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
+     *        <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @see IpAddressType
      */
 
@@ -1113,13 +1230,39 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of IP addresses used by the subnets for your load balancer. The possible values are <code>ipv4</code>
-     * (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     * Note: Internal load balancers must use the <code>ipv4</code> IP address type.
+     * </p>
+     * <p>
+     * [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     * addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and <code>dualstack-without-public-ipv4</code>
+     * (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+     * </p>
+     * <p>
+     * [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
+     * balancer with a UDP or TCP_UDP listener.
+     * </p>
+     * <p>
+     * [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4 addresses)
+     * and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * </p>
      * 
      * @param ipAddressType
-     *        The type of IP addresses used by the subnets for your load balancer. The possible values are
-     *        <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
+     *        Note: Internal load balancers must use the <code>ipv4</code> IP address type.</p>
+     *        <p>
+     *        [Application Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses), <code>dualstack</code> (for IPv4 and IPv6 addresses), and
+     *        <code>dualstack-without-public-ipv4</code> (for IPv6 only public addresses, with private IPv4 and IPv6
+     *        addresses).
+     *        </p>
+     *        <p>
+     *        [Network Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify
+     *        <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.
+     *        </p>
+     *        <p>
+     *        [Gateway Load Balancers] The IP address type. The possible values are <code>ipv4</code> (for only IPv4
+     *        addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
