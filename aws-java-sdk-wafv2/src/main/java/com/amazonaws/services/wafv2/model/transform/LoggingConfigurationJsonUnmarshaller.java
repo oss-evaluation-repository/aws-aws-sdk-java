@@ -72,6 +72,14 @@ public class LoggingConfigurationJsonUnmarshaller implements Unmarshaller<Loggin
                     context.nextToken();
                     loggingConfiguration.setLoggingFilter(LoggingFilterJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LogType", targetDepth)) {
+                    context.nextToken();
+                    loggingConfiguration.setLogType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LogScope", targetDepth)) {
+                    context.nextToken();
+                    loggingConfiguration.setLogScope(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

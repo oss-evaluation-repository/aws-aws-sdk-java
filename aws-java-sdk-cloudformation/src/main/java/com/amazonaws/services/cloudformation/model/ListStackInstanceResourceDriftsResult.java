@@ -26,7 +26,7 @@ public class ListStackInstanceResourceDriftsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified
+     * A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the specified
      * stack instances.
      * </p>
      */
@@ -43,11 +43,11 @@ public class ListStackInstanceResourceDriftsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified
+     * A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the specified
      * stack instances.
      * </p>
      * 
-     * @return A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the
+     * @return A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the
      *         specified stack instances.
      */
 
@@ -60,12 +60,12 @@ public class ListStackInstanceResourceDriftsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified
+     * A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the specified
      * stack instances.
      * </p>
      * 
      * @param summaries
-     *        A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the
+     *        A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the
      *        specified stack instances.
      */
 
@@ -80,7 +80,7 @@ public class ListStackInstanceResourceDriftsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified
+     * A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the specified
      * stack instances.
      * </p>
      * <p>
@@ -90,7 +90,7 @@ public class ListStackInstanceResourceDriftsResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param summaries
-     *        A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the
+     *        A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the
      *        specified stack instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -107,12 +107,12 @@ public class ListStackInstanceResourceDriftsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the specified
+     * A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the specified
      * stack instances.
      * </p>
      * 
      * @param summaries
-     *        A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information about the
+     *        A list of <code>StackInstanceResourceDriftsSummary</code> structures that contain information about the
      *        specified stack instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

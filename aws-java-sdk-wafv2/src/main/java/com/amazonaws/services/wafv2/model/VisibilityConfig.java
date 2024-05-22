@@ -33,6 +33,13 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
      * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      */
     private Boolean sampledRequestsEnabled;
     /**
@@ -64,10 +71,22 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
      * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      * 
      * @param sampledRequestsEnabled
      *        Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the
-     *        sampled requests through the WAF console.
+     *        sampled requests through the WAF console. </p> <note>
+     *        <p>
+     *        Request sampling doesn't provide a field redaction option, and any field redaction that you specify in
+     *        your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling
+     *        is by disabling sampling in the web ACL visibility configuration.
+     *        </p>
      */
 
     public void setSampledRequestsEnabled(Boolean sampledRequestsEnabled) {
@@ -79,9 +98,21 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
      * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      * 
      * @return Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the
-     *         sampled requests through the WAF console.
+     *         sampled requests through the WAF console. </p> <note>
+     *         <p>
+     *         Request sampling doesn't provide a field redaction option, and any field redaction that you specify in
+     *         your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling
+     *         is by disabling sampling in the web ACL visibility configuration.
+     *         </p>
      */
 
     public Boolean getSampledRequestsEnabled() {
@@ -93,10 +124,22 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
      * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      * 
      * @param sampledRequestsEnabled
      *        Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the
-     *        sampled requests through the WAF console.
+     *        sampled requests through the WAF console. </p> <note>
+     *        <p>
+     *        Request sampling doesn't provide a field redaction option, and any field redaction that you specify in
+     *        your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling
+     *        is by disabling sampling in the web ACL visibility configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,9 +153,21 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
      * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      * 
      * @return Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the
-     *         sampled requests through the WAF console.
+     *         sampled requests through the WAF console. </p> <note>
+     *         <p>
+     *         Request sampling doesn't provide a field redaction option, and any field redaction that you specify in
+     *         your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling
+     *         is by disabling sampling in the web ACL visibility configuration.
+     *         </p>
      */
 
     public Boolean isSampledRequestsEnabled() {

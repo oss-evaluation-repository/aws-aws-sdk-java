@@ -5614,7 +5614,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <ul>
      * <li>
      * <p>
-     * The public key (or "wrapping key") of an RSA key pair that KMS generates.
+     * The public key (or "wrapping key") of an asymmetric key pair that KMS generates.
      * </p>
      * <p>
      * You will use this public key to encrypt ("wrap") your key material while it's in transit to KMS.

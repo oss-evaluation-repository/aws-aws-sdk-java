@@ -60,6 +60,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * inspect, but for field redaction, you are specifying the component type to redact from the logs.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * If you have request sampling enabled, the redacted fields configuration for logging has no impact on sampling. The
+ * only way to exclude fields from request sampling is by disabling sampling in the web ACL visibility configuration.
+ * </p>
+ * </li>
  * </ul>
  * </li>
  * </ul>
@@ -217,10 +223,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
     private HeaderOrder headerOrder;
     /**
      * <p>
-     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
-     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
-     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
-     * information for the calculation. Almost all web requests include this information.
+     * Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF
+     * calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the
+     * calculation. Almost all web requests include this information.
      * </p>
      * <note>
      * <p>
@@ -1155,10 +1162,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
-     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
-     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
-     * information for the calculation. Almost all web requests include this information.
+     * Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF
+     * calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the
+     * calculation. Almost all web requests include this information.
      * </p>
      * <note>
      * <p>
@@ -1178,10 +1186,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param jA3Fingerprint
-     *        Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
-     *        TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
-     *        TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
-     *        Hello information for the calculation. Almost all web requests include this information.</p> <note>
+     *        Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     *        request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of
+     *        an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration.
+     *        WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for
+     *        the calculation. Almost all web requests include this information.</p> <note>
      *        <p>
      *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
      *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
@@ -1204,10 +1213,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
-     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
-     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
-     * information for the calculation. Almost all web requests include this information.
+     * Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF
+     * calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the
+     * calculation. Almost all web requests include this information.
      * </p>
      * <note>
      * <p>
@@ -1226,10 +1236,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * future requests that have the same TLS configuration.
      * </p>
      * 
-     * @return Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
-     *         TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
-     *         TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
-     *         Hello information for the calculation. Almost all web requests include this information.</p> <note>
+     * @return Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     *         request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello
+     *         of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     *         configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     *         information for the calculation. Almost all web requests include this information.</p> <note>
      *         <p>
      *         You can use this choice only with a string match <code>ByteMatchStatement</code> with the
      *         <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
@@ -1252,10 +1263,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS
-     * Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
-     * configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
-     * information for the calculation. Almost all web requests include this information.
+     * Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF
+     * calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the
+     * calculation. Almost all web requests include this information.
      * </p>
      * <note>
      * <p>
@@ -1275,10 +1287,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param jA3Fingerprint
-     *        Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the
-     *        TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's
-     *        TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client
-     *        Hello information for the calculation. Almost all web requests include this information.</p> <note>
+     *        Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     *        request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of
+     *        an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration.
+     *        WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for
+     *        the calculation. Almost all web requests include this information.</p> <note>
      *        <p>
      *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
      *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.

@@ -70,6 +70,10 @@ public class DeleteStackRequestMarshaller implements Marshaller<Request<DeleteSt
             request.addParameter("ClientRequestToken", StringUtils.fromString(deleteStackRequest.getClientRequestToken()));
         }
 
+        if (deleteStackRequest.getDeletionMode() != null) {
+            request.addParameter("DeletionMode", StringUtils.fromString(deleteStackRequest.getDeletionMode()));
+        }
+
         return request;
     }
 

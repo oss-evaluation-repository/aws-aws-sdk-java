@@ -22,7 +22,8 @@ public enum WrappingKeySpec {
 
     RSA_2048("RSA_2048"),
     RSA_3072("RSA_3072"),
-    RSA_4096("RSA_4096");
+    RSA_4096("RSA_4096"),
+    SM2("SM2");
 
     private String value;
 

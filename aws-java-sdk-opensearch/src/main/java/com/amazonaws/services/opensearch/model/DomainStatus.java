@@ -96,7 +96,7 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> endpoints;
     /**
      * <p>
-     * The DualStack Hosted Zone Id for the domain.
+     * The dual stack hosted zone ID for the domain.
      * </p>
      */
     private String domainEndpointV2HostedZoneId;
@@ -744,11 +744,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The DualStack Hosted Zone Id for the domain.
+     * The dual stack hosted zone ID for the domain.
      * </p>
      * 
      * @param domainEndpointV2HostedZoneId
-     *        The DualStack Hosted Zone Id for the domain.
+     *        The dual stack hosted zone ID for the domain.
      */
 
     public void setDomainEndpointV2HostedZoneId(String domainEndpointV2HostedZoneId) {
@@ -757,10 +757,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The DualStack Hosted Zone Id for the domain.
+     * The dual stack hosted zone ID for the domain.
      * </p>
      * 
-     * @return The DualStack Hosted Zone Id for the domain.
+     * @return The dual stack hosted zone ID for the domain.
      */
 
     public String getDomainEndpointV2HostedZoneId() {
@@ -769,11 +769,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The DualStack Hosted Zone Id for the domain.
+     * The dual stack hosted zone ID for the domain.
      * </p>
      * 
      * @param domainEndpointV2HostedZoneId
-     *        The DualStack Hosted Zone Id for the domain.
+     *        The dual stack hosted zone ID for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

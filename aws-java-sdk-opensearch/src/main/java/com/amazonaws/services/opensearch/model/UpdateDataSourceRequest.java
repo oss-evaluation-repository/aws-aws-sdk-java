@@ -49,6 +49,12 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The status of the data source update request.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -211,6 +217,65 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The status of the data source update request.
+     * </p>
+     * 
+     * @param status
+     *        The status of the data source update request.
+     * @see DataSourceStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the data source update request.
+     * </p>
+     * 
+     * @return The status of the data source update request.
+     * @see DataSourceStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the data source update request.
+     * </p>
+     * 
+     * @param status
+     *        The status of the data source update request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataSourceStatus
+     */
+
+    public UpdateDataSourceRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the data source update request.
+     * </p>
+     * 
+     * @param status
+     *        The status of the data source update request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataSourceStatus
+     */
+
+    public UpdateDataSourceRequest withStatus(DataSourceStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -229,7 +294,9 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getDataSourceType() != null)
             sb.append("DataSourceType: ").append(getDataSourceType()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +327,10 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +343,7 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDataSourceType() == null) ? 0 : getDataSourceType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

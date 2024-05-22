@@ -33,6 +33,8 @@ public class ListLoggingConfigurationsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextMarker").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> LOGSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogScope").build();
 
     private static final ListLoggingConfigurationsRequestMarshaller instance = new ListLoggingConfigurationsRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListLoggingConfigurationsRequestMarshaller {
             protocolMarshaller.marshall(listLoggingConfigurationsRequest.getScope(), SCOPE_BINDING);
             protocolMarshaller.marshall(listLoggingConfigurationsRequest.getNextMarker(), NEXTMARKER_BINDING);
             protocolMarshaller.marshall(listLoggingConfigurationsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listLoggingConfigurationsRequest.getLogScope(), LOGSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

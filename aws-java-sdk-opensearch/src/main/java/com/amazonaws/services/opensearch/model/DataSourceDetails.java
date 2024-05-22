@@ -43,6 +43,12 @@ public class DataSourceDetails implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The status of the data source.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -165,6 +171,65 @@ public class DataSourceDetails implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The status of the data source.
+     * </p>
+     * 
+     * @param status
+     *        The status of the data source.
+     * @see DataSourceStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the data source.
+     * </p>
+     * 
+     * @return The status of the data source.
+     * @see DataSourceStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the data source.
+     * </p>
+     * 
+     * @param status
+     *        The status of the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataSourceStatus
+     */
+
+    public DataSourceDetails withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the data source.
+     * </p>
+     * 
+     * @param status
+     *        The status of the data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataSourceStatus
+     */
+
+    public DataSourceDetails withStatus(DataSourceStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +246,9 @@ public class DataSourceDetails implements Serializable, Cloneable, StructuredPoj
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +275,10 @@ public class DataSourceDetails implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +290,7 @@ public class DataSourceDetails implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getDataSourceType() == null) ? 0 : getDataSourceType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

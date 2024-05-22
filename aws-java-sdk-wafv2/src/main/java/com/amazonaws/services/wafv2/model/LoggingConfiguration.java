@@ -106,6 +106,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
      * </note>
      */
     private java.util.List<FieldToMatch> redactedFields;
@@ -123,6 +128,32 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * </p>
      */
     private LoggingFilter loggingFilter;
+    /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     */
+    private String logType;
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     */
+    private String logScope;
 
     /**
      * <p>
@@ -287,6 +318,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
      * </note>
      * 
      * @return The parts of the request that you want to keep out of the logs.</p>
@@ -304,6 +340,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      *         <p>
      *         You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      *         <code>SingleHeader</code>, and <code>Method</code>.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         This setting has no impact on request sampling. With request sampling, the only way to exclude fields is
+     *         by disabling sampling in the web ACL visibility configuration.
      *         </p>
      */
 
@@ -329,6 +370,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
      * </note>
      * 
      * @param redactedFields
@@ -347,6 +393,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      *        <p>
      *        You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      *        <code>SingleHeader</code>, and <code>Method</code>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This setting has no impact on request sampling. With request sampling, the only way to exclude fields is
+     *        by disabling sampling in the web ACL visibility configuration.
      *        </p>
      */
 
@@ -377,6 +428,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
      * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -400,6 +456,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      *        <p>
      *        You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      *        <code>SingleHeader</code>, and <code>Method</code>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This setting has no impact on request sampling. With request sampling, the only way to exclude fields is
+     *        by disabling sampling in the web ACL visibility configuration.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -432,6 +493,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      * <code>SingleHeader</code>, and <code>Method</code>.
      * </p>
+     * </note> <note>
+     * <p>
+     * This setting has no impact on request sampling. With request sampling, the only way to exclude fields is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
      * </note>
      * 
      * @param redactedFields
@@ -450,6 +516,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      *        <p>
      *        You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>,
      *        <code>SingleHeader</code>, and <code>Method</code>.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This setting has no impact on request sampling. With request sampling, the only way to exclude fields is
+     *        by disabling sampling in the web ACL visibility configuration.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -569,6 +640,228 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     * 
+     * @param logType
+     *        Used to distinguish between various logging options. Currently, there is one option.</p>
+     *        <p>
+     *        Default: <code>WAF_LOGS</code>
+     * @see LogType
+     */
+
+    public void setLogType(String logType) {
+        this.logType = logType;
+    }
+
+    /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     * 
+     * @return Used to distinguish between various logging options. Currently, there is one option.</p>
+     *         <p>
+     *         Default: <code>WAF_LOGS</code>
+     * @see LogType
+     */
+
+    public String getLogType() {
+        return this.logType;
+    }
+
+    /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     * 
+     * @param logType
+     *        Used to distinguish between various logging options. Currently, there is one option.</p>
+     *        <p>
+     *        Default: <code>WAF_LOGS</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogType
+     */
+
+    public LoggingConfiguration withLogType(String logType) {
+        setLogType(logType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     * 
+     * @param logType
+     *        Used to distinguish between various logging options. Currently, there is one option.</p>
+     *        <p>
+     *        Default: <code>WAF_LOGS</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogType
+     */
+
+    public LoggingConfiguration withLogType(LogType logType) {
+        this.logType = logType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     * 
+     * @param logScope
+     *        The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations
+     *        that you manage. </p>
+     *        <p>
+     *        The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security
+     *        Lake. You can use Security Lake to collect log and event data from various sources for normalization,
+     *        analysis, and management. For information, see <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data
+     *        from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>CUSTOMER</code>
+     * @see LogScope
+     */
+
+    public void setLogScope(String logScope) {
+        this.logScope = logScope;
+    }
+
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     * 
+     * @return The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations
+     *         that you manage. </p>
+     *         <p>
+     *         The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon
+     *         Security Lake. You can use Security Lake to collect log and event data from various sources for
+     *         normalization, analysis, and management. For information, see <a
+     *         href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data
+     *         from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     *         </p>
+     *         <p>
+     *         Default: <code>CUSTOMER</code>
+     * @see LogScope
+     */
+
+    public String getLogScope() {
+        return this.logScope;
+    }
+
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     * 
+     * @param logScope
+     *        The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations
+     *        that you manage. </p>
+     *        <p>
+     *        The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security
+     *        Lake. You can use Security Lake to collect log and event data from various sources for normalization,
+     *        analysis, and management. For information, see <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data
+     *        from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>CUSTOMER</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogScope
+     */
+
+    public LoggingConfiguration withLogScope(String logScope) {
+        setLogScope(logScope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     * 
+     * @param logScope
+     *        The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations
+     *        that you manage. </p>
+     *        <p>
+     *        The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security
+     *        Lake. You can use Security Lake to collect log and event data from various sources for normalization,
+     *        analysis, and management. For information, see <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data
+     *        from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>CUSTOMER</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogScope
+     */
+
+    public LoggingConfiguration withLogScope(LogScope logScope) {
+        this.logScope = logScope.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -589,7 +882,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         if (getManagedByFirewallManager() != null)
             sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager()).append(",");
         if (getLoggingFilter() != null)
-            sb.append("LoggingFilter: ").append(getLoggingFilter());
+            sb.append("LoggingFilter: ").append(getLoggingFilter()).append(",");
+        if (getLogType() != null)
+            sb.append("LogType: ").append(getLogType()).append(",");
+        if (getLogScope() != null)
+            sb.append("LogScope: ").append(getLogScope());
         sb.append("}");
         return sb.toString();
     }
@@ -624,6 +921,14 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getLoggingFilter() != null && other.getLoggingFilter().equals(this.getLoggingFilter()) == false)
             return false;
+        if (other.getLogType() == null ^ this.getLogType() == null)
+            return false;
+        if (other.getLogType() != null && other.getLogType().equals(this.getLogType()) == false)
+            return false;
+        if (other.getLogScope() == null ^ this.getLogScope() == null)
+            return false;
+        if (other.getLogScope() != null && other.getLogScope().equals(this.getLogScope()) == false)
+            return false;
         return true;
     }
 
@@ -637,6 +942,8 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getRedactedFields() == null) ? 0 : getRedactedFields().hashCode());
         hashCode = prime * hashCode + ((getManagedByFirewallManager() == null) ? 0 : getManagedByFirewallManager().hashCode());
         hashCode = prime * hashCode + ((getLoggingFilter() == null) ? 0 : getLoggingFilter().hashCode());
+        hashCode = prime * hashCode + ((getLogType() == null) ? 0 : getLogType().hashCode());
+        hashCode = prime * hashCode + ((getLogScope() == null) ? 0 : getLogScope().hashCode());
         return hashCode;
     }
 

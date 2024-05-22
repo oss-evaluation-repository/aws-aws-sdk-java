@@ -1,3 +1,24 @@
+# __1.12.728__ __2024-05-22__
+## __AWS Chatbot__
+  - ### Features
+    - This change adds support for tagging Chatbot configurations.
+
+## __AWS CloudFormation__
+  - ### Features
+    - Added DeletionMode FORCE_DELETE_STACK for deleting a stack that is stuck in DELETE_FAILED state due to resource deletion failure.
+
+## __AWS Key Management Service__
+  - ### Features
+    - This release includes feature to import customer's asymmetric (RSA, ECC and SM2) and HMAC keys into KMS in China.
+
+## __AWS WAFV2__
+  - ### Features
+    - You can now use Security Lake to collect web ACL traffic data.
+
+## __Amazon OpenSearch Service__
+  - ### Features
+    - This release adds support for enabling or disabling a data source configured as part of Zero-ETL integration with Amazon S3, by setting its status.
+
 # __1.12.727__ __2024-05-21__
 ## __AWS Glue__
   - ### Features

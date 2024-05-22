@@ -46,6 +46,8 @@ public class CreateSlackChannelConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GuardrailPolicyArns").build();
     private static final MarshallingInfo<Boolean> USERAUTHORIZATIONREQUIRED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserAuthorizationRequired").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateSlackChannelConfigurationRequestMarshaller instance = new CreateSlackChannelConfigurationRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateSlackChannelConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createSlackChannelConfigurationRequest.getLoggingLevel(), LOGGINGLEVEL_BINDING);
             protocolMarshaller.marshall(createSlackChannelConfigurationRequest.getGuardrailPolicyArns(), GUARDRAILPOLICYARNS_BINDING);
             protocolMarshaller.marshall(createSlackChannelConfigurationRequest.getUserAuthorizationRequired(), USERAUTHORIZATIONREQUIRED_BINDING);
+            protocolMarshaller.marshall(createSlackChannelConfigurationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

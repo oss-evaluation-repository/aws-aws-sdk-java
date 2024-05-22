@@ -40,6 +40,8 @@ public class CreateChimeWebhookConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationName").build();
     private static final MarshallingInfo<String> LOGGINGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingLevel").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateChimeWebhookConfigurationRequestMarshaller instance = new CreateChimeWebhookConfigurationRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateChimeWebhookConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createChimeWebhookConfigurationRequest.getIamRoleArn(), IAMROLEARN_BINDING);
             protocolMarshaller.marshall(createChimeWebhookConfigurationRequest.getConfigurationName(), CONFIGURATIONNAME_BINDING);
             protocolMarshaller.marshall(createChimeWebhookConfigurationRequest.getLoggingLevel(), LOGGINGLEVEL_BINDING);
+            protocolMarshaller.marshall(createChimeWebhookConfigurationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -384,6 +384,62 @@ public interface AWSChatbot {
     ListMicrosoftTeamsUserIdentitiesResult listMicrosoftTeamsUserIdentities(ListMicrosoftTeamsUserIdentitiesRequest listMicrosoftTeamsUserIdentitiesRequest);
 
     /**
+     * Retrieves the list of tags applied to a configuration.
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         Customer/consumer-facing internal service exception.
+     *         https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+     * @throws ServiceUnavailableException
+     *         We can’t process your request right now because of a server issue. Try again later.
+     * @throws ResourceNotFoundException
+     *         We were not able to find the resource for your request.
+     * @sample AWSChatbot.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * Applies the supplied tags to a configuration.
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         Customer/consumer-facing internal service exception.
+     *         https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+     * @throws ServiceUnavailableException
+     *         We can’t process your request right now because of a server issue. Try again later.
+     * @throws ResourceNotFoundException
+     *         We were not able to find the resource for your request.
+     * @throws TooManyTagsException
+     *         The supplied list of tags contains too many tags.
+     * @sample AWSChatbot.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * Removes the supplied tags from a configuration
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         Customer/consumer-facing internal service exception.
+     *         https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+     * @throws ServiceUnavailableException
+     *         We can’t process your request right now because of a server issue. Try again later.
+     * @throws ResourceNotFoundException
+     *         We were not able to find the resource for your request.
+     * @sample AWSChatbot.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
      * Update Chatbot account level preferences
      * 
      * @param updateAccountPreferencesRequest

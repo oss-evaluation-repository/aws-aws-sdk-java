@@ -50,6 +50,8 @@ public class CreateMicrosoftTeamsChannelConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GuardrailPolicyArns").build();
     private static final MarshallingInfo<Boolean> USERAUTHORIZATIONREQUIRED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserAuthorizationRequired").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateMicrosoftTeamsChannelConfigurationRequestMarshaller instance = new CreateMicrosoftTeamsChannelConfigurationRequestMarshaller();
 
@@ -78,6 +80,7 @@ public class CreateMicrosoftTeamsChannelConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createMicrosoftTeamsChannelConfigurationRequest.getLoggingLevel(), LOGGINGLEVEL_BINDING);
             protocolMarshaller.marshall(createMicrosoftTeamsChannelConfigurationRequest.getGuardrailPolicyArns(), GUARDRAILPOLICYARNS_BINDING);
             protocolMarshaller.marshall(createMicrosoftTeamsChannelConfigurationRequest.getUserAuthorizationRequired(), USERAUTHORIZATIONREQUIRED_BINDING);
+            protocolMarshaller.marshall(createMicrosoftTeamsChannelConfigurationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

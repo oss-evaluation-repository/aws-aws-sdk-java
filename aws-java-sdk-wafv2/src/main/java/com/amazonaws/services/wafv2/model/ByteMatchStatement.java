@@ -54,10 +54,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
-     * hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for
-     * the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code>
-     * with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from
+     * the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      * </p>
      * <p>
      * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
@@ -194,10 +195,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
-     * hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for
-     * the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code>
-     * with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from
+     * the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      * </p>
      * <p>
      * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
@@ -267,9 +269,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a
-     *        32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a
-     *        unique identifier for the client's TLS configuration. You can use this choice only with a string match
+     *        <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront distributions and Application Load
+     *        Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived
+     *        from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the
+     *        client's TLS configuration. You can use this choice only with a string match
      *        <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      *        </p>
      *        <p>
@@ -337,10 +340,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
-     * hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for
-     * the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code>
-     * with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from
+     * the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      * </p>
      * <p>
      * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
@@ -406,9 +410,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a
-     *         32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a
-     *         unique identifier for the client's TLS configuration. You can use this choice only with a string match
+     *         <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront distributions and Application Load
+     *         Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash
+     *         derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier
+     *         for the client's TLS configuration. You can use this choice only with a string match
      *         <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      *         </p>
      *         <p>
@@ -476,10 +481,11 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      * </li>
      * <li>
      * <p>
-     * <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character
-     * hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for
-     * the client's TLS configuration. You can use this choice only with a string match <code>ByteMatchStatement</code>
-     * with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront distributions and Application Load
+     * Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from
+     * the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     * configuration. You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      * </p>
      * <p>
      * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
@@ -549,9 +555,10 @@ public class ByteMatchStatement implements Serializable, Cloneable, StructuredPo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>JA3Fingerprint</code>: Match against the request's JA3 fingerprint. The JA3 fingerprint is a
-     *        32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a
-     *        unique identifier for the client's TLS configuration. You can use this choice only with a string match
+     *        <code>JA3Fingerprint</code>: Available for use with Amazon CloudFront distributions and Application Load
+     *        Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived
+     *        from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the
+     *        client's TLS configuration. You can use this choice only with a string match
      *        <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
      *        </p>
      *        <p>

@@ -134,7 +134,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number
      * of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual
      * concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of
-     * <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of
      * failures. This is the default behavior.
      * </p>
      * <p>
@@ -797,7 +797,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number
      * of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual
      * concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of
-     * <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of
      * failures. This is the default behavior.
      * </p>
      * <p>
@@ -822,8 +822,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the
      *        number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      *        actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the
-     *        value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the
-     *        number of failures. This is the default behavior.
+     *        value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by
+     *        the number of failures. This is the default behavior.
      *        </p>
      *        <p>
      *        If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.
@@ -854,7 +854,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number
      * of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual
      * concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of
-     * <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of
      * failures. This is the default behavior.
      * </p>
      * <p>
@@ -878,8 +878,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *         <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the
      *         number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      *         actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the
-     *         value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the
-     *         number of failures. This is the default behavior.
+     *         value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by
+     *         the number of failures. This is the default behavior.
      *         </p>
      *         <p>
      *         If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.
@@ -910,7 +910,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number
      * of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual
      * concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of
-     * <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of
      * failures. This is the default behavior.
      * </p>
      * <p>
@@ -935,8 +935,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the
      *        number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      *        actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the
-     *        value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the
-     *        number of failures. This is the default behavior.
+     *        value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by
+     *        the number of failures. This is the default behavior.
      *        </p>
      *        <p>
      *        If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.
@@ -969,7 +969,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the number
      * of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial actual
      * concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the value of
-     * <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the number of
+     * <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by the number of
      * failures. This is the default behavior.
      * </p>
      * <p>
@@ -994,8 +994,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <code>STRICT_FAILURE_TOLERANCE</code>: This option dynamically lowers the concurrency level to ensure the
      *        number of failed accounts never exceeds the value of <code>FailureToleranceCount</code> +1. The initial
      *        actual concurrency is set to the lower of either the value of the <code>MaxConcurrentCount</code>, or the
-     *        value of <code>MaxConcurrentCount</code> +1. The actual concurrency is then reduced proportionally by the
-     *        number of failures. This is the default behavior.
+     *        value of <code>FailureToleranceCount</code> +1. The actual concurrency is then reduced proportionally by
+     *        the number of failures. This is the default behavior.
      *        </p>
      *        <p>
      *        If failure tolerance or Maximum concurrent accounts are set to percentages, the behavior is similar.

@@ -60,6 +60,10 @@ public class DataSourceDetailsJsonUnmarshaller implements Unmarshaller<DataSourc
                     context.nextToken();
                     dataSourceDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    dataSourceDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

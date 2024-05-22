@@ -29,6 +29,10 @@ public class DeleteLoggingConfigurationRequestMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
+    private static final MarshallingInfo<String> LOGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogType").build();
+    private static final MarshallingInfo<String> LOGSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogScope").build();
 
     private static final DeleteLoggingConfigurationRequestMarshaller instance = new DeleteLoggingConfigurationRequestMarshaller();
 
@@ -47,6 +51,8 @@ public class DeleteLoggingConfigurationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteLoggingConfigurationRequest.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(deleteLoggingConfigurationRequest.getLogType(), LOGTYPE_BINDING);
+            protocolMarshaller.marshall(deleteLoggingConfigurationRequest.getLogScope(), LOGSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

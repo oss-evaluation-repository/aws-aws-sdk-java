@@ -61,6 +61,8 @@ public class TeamsChannelConfiguration implements Serializable, Cloneable, Struc
     private java.util.List<String> guardrailPolicyArns;
     /** Enables use of a user role requirement in your chat configuration. */
     private Boolean userAuthorizationRequired;
+    /** A list of tags applied to the configuration. */
+    private java.util.List<Tag> tags;
 
     /**
      * The ID of the Microsoft Teams channel.
@@ -572,6 +574,68 @@ public class TeamsChannelConfiguration implements Serializable, Cloneable, Struc
     }
 
     /**
+     * A list of tags applied to the configuration.
+     * 
+     * @return A list of tags applied to the configuration.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * A list of tags applied to the configuration.
+     * 
+     * @param tags
+     *        A list of tags applied to the configuration.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * A list of tags applied to the configuration.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags applied to the configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TeamsChannelConfiguration withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * A list of tags applied to the configuration.
+     * 
+     * @param tags
+     *        A list of tags applied to the configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TeamsChannelConfiguration withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -606,7 +670,9 @@ public class TeamsChannelConfiguration implements Serializable, Cloneable, Struc
         if (getGuardrailPolicyArns() != null)
             sb.append("GuardrailPolicyArns: ").append(getGuardrailPolicyArns()).append(",");
         if (getUserAuthorizationRequired() != null)
-            sb.append("UserAuthorizationRequired: ").append(getUserAuthorizationRequired());
+            sb.append("UserAuthorizationRequired: ").append(getUserAuthorizationRequired()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -669,6 +735,10 @@ public class TeamsChannelConfiguration implements Serializable, Cloneable, Struc
             return false;
         if (other.getUserAuthorizationRequired() != null && other.getUserAuthorizationRequired().equals(this.getUserAuthorizationRequired()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -689,6 +759,7 @@ public class TeamsChannelConfiguration implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getLoggingLevel() == null) ? 0 : getLoggingLevel().hashCode());
         hashCode = prime * hashCode + ((getGuardrailPolicyArns() == null) ? 0 : getGuardrailPolicyArns().hashCode());
         hashCode = prime * hashCode + ((getUserAuthorizationRequired() == null) ? 0 : getUserAuthorizationRequired().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
