@@ -52,6 +52,8 @@ public class UpdateApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageConfiguration").build();
     private static final MarshallingInfo<Map> WORKERTYPESPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workerTypeSpecifications").build();
+    private static final MarshallingInfo<StructuredPojo> INTERACTIVECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interactiveConfiguration").build();
     private static final MarshallingInfo<String> RELEASELABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("releaseLabel").build();
     private static final MarshallingInfo<List> RUNTIMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -85,6 +87,7 @@ public class UpdateApplicationRequestMarshaller {
             protocolMarshaller.marshall(updateApplicationRequest.getArchitecture(), ARCHITECTURE_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getImageConfiguration(), IMAGECONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getWorkerTypeSpecifications(), WORKERTYPESPECIFICATIONS_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getInteractiveConfiguration(), INTERACTIVECONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getReleaseLabel(), RELEASELABEL_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getRuntimeConfiguration(), RUNTIMECONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getMonitoringConfiguration(), MONITORINGCONFIGURATION_BINDING);

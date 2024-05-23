@@ -69,6 +69,8 @@ public class ApplicationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> MONITORINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("monitoringConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> INTERACTIVECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interactiveConfiguration").build();
 
     private static final ApplicationMarshaller instance = new ApplicationMarshaller();
 
@@ -106,6 +108,7 @@ public class ApplicationMarshaller {
             protocolMarshaller.marshall(application.getWorkerTypeSpecifications(), WORKERTYPESPECIFICATIONS_BINDING);
             protocolMarshaller.marshall(application.getRuntimeConfiguration(), RUNTIMECONFIGURATION_BINDING);
             protocolMarshaller.marshall(application.getMonitoringConfiguration(), MONITORINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(application.getInteractiveConfiguration(), INTERACTIVECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

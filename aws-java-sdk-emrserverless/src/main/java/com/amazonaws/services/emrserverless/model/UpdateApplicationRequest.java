@@ -90,6 +90,12 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Map<String, WorkerTypeSpecificationInput> workerTypeSpecifications;
     /**
      * <p>
+     * The interactive configuration object that contains new interactive use cases when the application is updated.
+     * </p>
+     */
+    private InteractiveConfiguration interactiveConfiguration;
+    /**
+     * <p>
      * The Amazon EMR release label for the application. You can change the release label to use a different release of
      * Amazon EMR.
      * </p>
@@ -616,6 +622,49 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The interactive configuration object that contains new interactive use cases when the application is updated.
+     * </p>
+     * 
+     * @param interactiveConfiguration
+     *        The interactive configuration object that contains new interactive use cases when the application is
+     *        updated.
+     */
+
+    public void setInteractiveConfiguration(InteractiveConfiguration interactiveConfiguration) {
+        this.interactiveConfiguration = interactiveConfiguration;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that contains new interactive use cases when the application is updated.
+     * </p>
+     * 
+     * @return The interactive configuration object that contains new interactive use cases when the application is
+     *         updated.
+     */
+
+    public InteractiveConfiguration getInteractiveConfiguration() {
+        return this.interactiveConfiguration;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that contains new interactive use cases when the application is updated.
+     * </p>
+     * 
+     * @param interactiveConfiguration
+     *        The interactive configuration object that contains new interactive use cases when the application is
+     *        updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest withInteractiveConfiguration(InteractiveConfiguration interactiveConfiguration) {
+        setInteractiveConfiguration(interactiveConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon EMR release label for the application. You can change the release label to use a different release of
      * Amazon EMR.
      * </p>
@@ -826,6 +875,8 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("ImageConfiguration: ").append(getImageConfiguration()).append(",");
         if (getWorkerTypeSpecifications() != null)
             sb.append("WorkerTypeSpecifications: ").append(getWorkerTypeSpecifications()).append(",");
+        if (getInteractiveConfiguration() != null)
+            sb.append("InteractiveConfiguration: ").append(getInteractiveConfiguration()).append(",");
         if (getReleaseLabel() != null)
             sb.append("ReleaseLabel: ").append(getReleaseLabel()).append(",");
         if (getRuntimeConfiguration() != null)
@@ -886,6 +937,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getWorkerTypeSpecifications() != null && other.getWorkerTypeSpecifications().equals(this.getWorkerTypeSpecifications()) == false)
             return false;
+        if (other.getInteractiveConfiguration() == null ^ this.getInteractiveConfiguration() == null)
+            return false;
+        if (other.getInteractiveConfiguration() != null && other.getInteractiveConfiguration().equals(this.getInteractiveConfiguration()) == false)
+            return false;
         if (other.getReleaseLabel() == null ^ this.getReleaseLabel() == null)
             return false;
         if (other.getReleaseLabel() != null && other.getReleaseLabel().equals(this.getReleaseLabel()) == false)
@@ -916,6 +971,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
         hashCode = prime * hashCode + ((getImageConfiguration() == null) ? 0 : getImageConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkerTypeSpecifications() == null) ? 0 : getWorkerTypeSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getInteractiveConfiguration() == null) ? 0 : getInteractiveConfiguration().hashCode());
         hashCode = prime * hashCode + ((getReleaseLabel() == null) ? 0 : getReleaseLabel().hashCode());
         hashCode = prime * hashCode + ((getRuntimeConfiguration() == null) ? 0 : getRuntimeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getMonitoringConfiguration() == null) ? 0 : getMonitoringConfiguration().hashCode());

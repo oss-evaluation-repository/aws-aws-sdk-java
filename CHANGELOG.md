@@ -1,3 +1,12 @@
+# __1.12.729__ __2024-05-23__
+## __AWS OpsWorks__
+  - ### Features
+    - Documentation-only update for OpsWorks Stacks.
+
+## __EMR Serverless__
+  - ### Features
+    - This release adds the capability to run interactive workloads using Apache Livy Endpoint.
+
 # __1.12.728__ __2024-05-22__
 ## __AWS Chatbot__
   - ### Features

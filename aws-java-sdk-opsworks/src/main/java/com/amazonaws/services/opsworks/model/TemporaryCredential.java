@@ -43,14 +43,14 @@ public class TemporaryCredential implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the
-     * user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be
+     * user will no longer be able to use the credentials to log in. If they are logged in at the time, they are
      * automatically logged out.
      * </p>
      */
     private Integer validForInMinutes;
     /**
      * <p>
-     * The instance's AWS OpsWorks Stacks ID.
+     * The instance's OpsWorks Stacks ID.
      * </p>
      */
     private String instanceId;
@@ -138,14 +138,14 @@ public class TemporaryCredential implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the
-     * user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be
+     * user will no longer be able to use the credentials to log in. If they are logged in at the time, they are
      * automatically logged out.
      * </p>
      * 
      * @param validForInMinutes
      *        The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this
      *        period, the user will no longer be able to use the credentials to log in. If they are logged in at the
-     *        time, they will be automatically logged out.
+     *        time, they are automatically logged out.
      */
 
     public void setValidForInMinutes(Integer validForInMinutes) {
@@ -155,13 +155,13 @@ public class TemporaryCredential implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the
-     * user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be
+     * user will no longer be able to use the credentials to log in. If they are logged in at the time, they are
      * automatically logged out.
      * </p>
      * 
      * @return The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this
      *         period, the user will no longer be able to use the credentials to log in. If they are logged in at the
-     *         time, they will be automatically logged out.
+     *         time, they are automatically logged out.
      */
 
     public Integer getValidForInMinutes() {
@@ -171,14 +171,14 @@ public class TemporaryCredential implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this period, the
-     * user will no longer be able to use the credentials to log in. If they are logged in at the time, they will be
+     * user will no longer be able to use the credentials to log in. If they are logged in at the time, they are
      * automatically logged out.
      * </p>
      * 
      * @param validForInMinutes
      *        The length of time (in minutes) that the grant is valid. When the grant expires, at the end of this
      *        period, the user will no longer be able to use the credentials to log in. If they are logged in at the
-     *        time, they will be automatically logged out.
+     *        time, they are automatically logged out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +189,11 @@ public class TemporaryCredential implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance's AWS OpsWorks Stacks ID.
+     * The instance's OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance's AWS OpsWorks Stacks ID.
+     *        The instance's OpsWorks Stacks ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -202,10 +202,10 @@ public class TemporaryCredential implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance's AWS OpsWorks Stacks ID.
+     * The instance's OpsWorks Stacks ID.
      * </p>
      * 
-     * @return The instance's AWS OpsWorks Stacks ID.
+     * @return The instance's OpsWorks Stacks ID.
      */
 
     public String getInstanceId() {
@@ -214,11 +214,11 @@ public class TemporaryCredential implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance's AWS OpsWorks Stacks ID.
+     * The instance's OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance's AWS OpsWorks Stacks ID.
+     *        The instance's OpsWorks Stacks ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

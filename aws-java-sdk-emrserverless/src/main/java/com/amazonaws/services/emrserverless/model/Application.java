@@ -152,6 +152,12 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Configuration> runtimeConfiguration;
 
     private MonitoringConfiguration monitoringConfiguration;
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases for an application.
+     * </p>
+     */
+    private InteractiveConfiguration interactiveConfiguration;
 
     /**
      * <p>
@@ -1149,6 +1155,46 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases for an application.
+     * </p>
+     * 
+     * @param interactiveConfiguration
+     *        The interactive configuration object that enables the interactive use cases for an application.
+     */
+
+    public void setInteractiveConfiguration(InteractiveConfiguration interactiveConfiguration) {
+        this.interactiveConfiguration = interactiveConfiguration;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases for an application.
+     * </p>
+     * 
+     * @return The interactive configuration object that enables the interactive use cases for an application.
+     */
+
+    public InteractiveConfiguration getInteractiveConfiguration() {
+        return this.interactiveConfiguration;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases for an application.
+     * </p>
+     * 
+     * @param interactiveConfiguration
+     *        The interactive configuration object that enables the interactive use cases for an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application withInteractiveConfiguration(InteractiveConfiguration interactiveConfiguration) {
+        setInteractiveConfiguration(interactiveConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1199,7 +1245,9 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         if (getRuntimeConfiguration() != null)
             sb.append("RuntimeConfiguration: ").append(getRuntimeConfiguration()).append(",");
         if (getMonitoringConfiguration() != null)
-            sb.append("MonitoringConfiguration: ").append(getMonitoringConfiguration());
+            sb.append("MonitoringConfiguration: ").append(getMonitoringConfiguration()).append(",");
+        if (getInteractiveConfiguration() != null)
+            sb.append("InteractiveConfiguration: ").append(getInteractiveConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1294,6 +1342,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMonitoringConfiguration() != null && other.getMonitoringConfiguration().equals(this.getMonitoringConfiguration()) == false)
             return false;
+        if (other.getInteractiveConfiguration() == null ^ this.getInteractiveConfiguration() == null)
+            return false;
+        if (other.getInteractiveConfiguration() != null && other.getInteractiveConfiguration().equals(this.getInteractiveConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1322,6 +1374,7 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getWorkerTypeSpecifications() == null) ? 0 : getWorkerTypeSpecifications().hashCode());
         hashCode = prime * hashCode + ((getRuntimeConfiguration() == null) ? 0 : getRuntimeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getMonitoringConfiguration() == null) ? 0 : getMonitoringConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInteractiveConfiguration() == null) ? 0 : getInteractiveConfiguration().hashCode());
         return hashCode;
     }
 

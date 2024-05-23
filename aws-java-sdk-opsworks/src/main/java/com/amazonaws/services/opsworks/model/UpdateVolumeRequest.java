@@ -33,7 +33,7 @@ public class UpdateVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String volumeId;
     /**
      * <p>
-     * The new name.
+     * The new name. Volume names can be a maximum of 128 characters.
      * </p>
      */
     private String name;
@@ -86,11 +86,11 @@ public class UpdateVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The new name.
+     * The new name. Volume names can be a maximum of 128 characters.
      * </p>
      * 
      * @param name
-     *        The new name.
+     *        The new name. Volume names can be a maximum of 128 characters.
      */
 
     public void setName(String name) {
@@ -99,10 +99,10 @@ public class UpdateVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The new name.
+     * The new name. Volume names can be a maximum of 128 characters.
      * </p>
      * 
-     * @return The new name.
+     * @return The new name. Volume names can be a maximum of 128 characters.
      */
 
     public String getName() {
@@ -111,11 +111,11 @@ public class UpdateVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The new name.
+     * The new name. Volume names can be a maximum of 128 characters.
      * </p>
      * 
      * @param name
-     *        The new name.
+     *        The new name. Volume names can be a maximum of 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

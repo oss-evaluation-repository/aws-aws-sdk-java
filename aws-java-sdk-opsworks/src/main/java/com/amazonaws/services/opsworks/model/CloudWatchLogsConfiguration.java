@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the Amazon CloudWatch logs configuration for a layer.
+ * Describes the Amazon CloudWatch Logs configuration for a layer.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloudWatchLogsConfiguration"
